@@ -15,18 +15,20 @@ body {
 }
 
 .topnav a {
-    text-align: center;
-    font-size: 40px;
-    text-decoration: none;
+    width: 200px;
+    height: 40px;
     color: black;
+    font-size: 35px;
+    text-align: center;
+    padding: 10px 10px; /* Justér polstring efter behov */
+    margin: 10px 10px; /* Justér for at oprette plads mellem knapperne */
+    text-decoration: none;
     background-color:#b0dfed;
-    border-radius: 10px;
     border: 2px solid black;
-    padding: 10px 20px;
-    border-radius: 20px; /*curved edges*/
-    margin: 0 10px; /* spacing mellem knapper */
     transition: background-color 0.3s ease;
-}
+    border-radius: 20px;
+
+  }
 
 .topnav a:hover {
     background-color: #e7f5f8;
