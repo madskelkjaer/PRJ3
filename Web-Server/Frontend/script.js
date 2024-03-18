@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalMinutes = hours * 60 + minutes;
     const percentageOfDay = (totalMinutes / (24 * 60)) * 100; //beregning af hvor meget af dagen der er gået
 
+    const startDay = 8 * 60 * 60;
+    const endDay = 20 * 60 * 60;
+    
     //kurve
     const curveFactor = 0.2; //kurvegrad
     const curve = Math.sin((percentageOfDay / 100) * Math.PI) * curveFactor; //kurve ud fra kurvegrad
