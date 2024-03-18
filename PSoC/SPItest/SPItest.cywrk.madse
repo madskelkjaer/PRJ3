@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>SPItest</v>
+<v>SPItest\SPItest</v>
+<v>SPItest\SPItest\TopDesign</v>
+<v>SPItest\SPItest\SPItest.cydwr</v>
+<v>SPItest\SPItest\SPItest.cydwr\Pins</v>
+<v>SPItest\SPItest\SPItest.cydwr\Analog</v>
+<v>SPItest\SPItest\SPItest.cydwr\Clocks</v>
+<v>SPItest\SPItest\SPItest.cydwr\Interrupts</v>
+<v>SPItest\SPItest\SPItest.cydwr\DMA</v>
+<v>SPItest\SPItest\SPItest.cydwr\System</v>
+<v>SPItest\SPItest\SPItest.cydwr\Directives</v>
+<v>SPItest\SPItest\SPItest.cydwr\Flash Security</v>
+<v>SPItest\SPItest\SPItest.cydwr\EEPROM</v>
+<v>SPItest\SPItest\Header Files</v>
+<v>SPItest\SPItest\Header Files\cyapicallbacks.h</v>
+<v>SPItest\SPItest\Source Files</v>
+<v>SPItest\SPItest\Source Files\main.c</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>SPItest</v>
+<v>SPItest\SPItest</v>
+<v>SPItest\SPItest\TopDesign</v>
+<v>SPItest\SPItest\SPItest.cydwr</v>
+<v>SPItest\SPItest\SPItest.cydwr\Pins</v>
+<v>SPItest\SPItest\SPItest.cydwr\Analog</v>
+<v>SPItest\SPItest\SPItest.cydwr\Clocks</v>
+<v>SPItest\SPItest\SPItest.cydwr\Interrupts</v>
+<v>SPItest\SPItest\SPItest.cydwr\DMA</v>
+<v>SPItest\SPItest\SPItest.cydwr\System</v>
+<v>SPItest\SPItest\SPItest.cydwr\Directives</v>
+<v>SPItest\SPItest\SPItest.cydwr\Flash Security</v>
+<v>SPItest\SPItest\SPItest.cydwr\EEPROM</v>
+<v>SPItest\SPItest\Header Files</v>
+<v>SPItest\SPItest\Header Files\cyapicallbacks.h</v>
+<v>SPItest\SPItest\Source Files</v>
+<v>SPItest\SPItest\Source Files\main.c</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>SPItest</v>
+<v>SPItest\SPItest</v>
+<v>SPItest\SPItest\TopDesign</v>
+<v>SPItest\SPItest\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>SPItest</v>
+<v>SPItest\SPItest</v>
+<v>SPItest\SPItest\TopDesign</v>
+<v>SPItest\SPItest\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>SPItest</v>
+<v>SPItest\SPItest</v>
+<v>SPItest\SPItest\SPItest.gpdsc</v>
+<v>SPItest\SPItest\SPItest.rpt</v>
+<v>SPItest\SPItest\SPItest_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>SPItest</v>
+<v>SPItest\SPItest</v>
+<v>SPItest\SPItest\SPItest.gpdsc</v>
+<v>SPItest\SPItest\SPItest.rpt</v>
+<v>SPItest\SPItest\SPItest_timing.html</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>SPItest</v>
+<v>SPItest\SPItest</v>
+<v>SPItest\SPItest\PSoC 5LP Architecture TRM</v>
+<v>SPItest\SPItest\CY8C58LP Family Datasheet</v>
+<v>SPItest\SPItest\System Reference Guides</v>
+<v>SPItest\SPItest\System Reference Guides\cy_boot_v6_10</v>
+<v>SPItest\SPItest\cy_pins_v2_20</v>
+<v>SPItest\SPItest\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>SPItest\SPItest\SPI_Slave_v2_70.pdf</v>
+<v>SPItest\SPItest\ZeroTerminal.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>SPItest</v>
+<v>SPItest\SPItest</v>
+<v>SPItest\SPItest\PSoC 5LP Architecture TRM</v>
+<v>SPItest\SPItest\CY8C58LP Family Datasheet</v>
+<v>SPItest\SPItest\System Reference Guides</v>
+<v>SPItest\SPItest\System Reference Guides\cy_boot_v6_10</v>
+<v>SPItest\SPItest\cy_pins_v2_20</v>
+<v>SPItest\SPItest\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>SPItest\SPItest\SPI_Slave_v2_70.pdf</v>
+<v>SPItest\SPItest\ZeroTerminal.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\SPItest.cydsn\TopDesign\TopDesign.cysch" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1088, 538" SelectedTabbedMdiWindow="36c8bf9f-e926-48b7-b349-e43bfbf85074"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ff222b99-ca19-4998-985b-f9e050176289" /><DocumentWindow Key="C:\code\PRJ3\PSoC\SPItest\SPItest.cydsn\TopDesign\TopDesign.cysch" Guid="36c8bf9f-e926-48b7-b349-e43bfbf85074" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
