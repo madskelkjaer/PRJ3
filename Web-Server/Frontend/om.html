@@ -1,24 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Om Page</title>
 </head>
+
 <body>
-<h1 style="text-align: center; font-size: 200%;">
-    <a href="index.html" style="text-decoration: none; color: inherit;">PRJ3 - WAM</a>
-</h1>
+    <h1 style="text-align: center; font-size: 200%;">
+        <a href="index.html" style="text-decoration: none; color: inherit;">PRJ3 - WAM</a>
+    </h1>
 
-<div class="topnav">
-    <a href="styring.html">STYRING</a>
-    <a href="batteri.html">BATTERI</a>
-    <a href="data.html">DATA</a>
-</div>
+    <div class="topnav">
+        <a href="styring.html">STYRING</a>
+        <a href="batteri.html">BATTERI</a>
+        <a href="data.html">DATA</a>
+    </div>
 
-<h1>Welcome to the Om Page</h1>
-<p>This is the content for the Om subpage.</p>
+    <section class="about">
+        <h1>Om projektet</h1>
+        <p style="font-weight: bold">
+            Watt-A-Move (WAM) Solcelleprojekt
+        </p>
+        <div class="about-info">
+            <div>
+                <p>
+                    WAM er et solcelleprojekt udarbejdet af 3. semsterstuderende fra Aarhus Univeristet i en blandet
+                    gruppe af Softwareteknologi- og Elektronik studerende. Projektet omhandler optimering af en
+                    solcelle, så denne selv kan bevæge sig, sådan at der opnåes optimal position i forhold til solens
+                    placering. Dette er for at maksimere
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <form action="action_page.php">
+
+            <label for="fname">Fornavn</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname">Efternavn</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <label for="subject">Besked</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
 
 </body>
+
 </html>
