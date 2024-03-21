@@ -1,0 +1,28 @@
+.infoboks {
+    border: 2px solid #000;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    /* Juster bredden efter behov */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+    position: absolute;
+    /* Eller 'fixed' hvis det skal være i forhold til viewport */
+    right: 0;
+    /* Placerer boksen i højre side */
+    margin-right: 10px;
+    /* Juster margin for at skabe plads til højre */
+    top: 10px;
+    /* Juster positionen vertikalt */
+}
+
+.infoboks h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.infoboks p {
+    color: #666;
+    font-size: 1rem;
+}
