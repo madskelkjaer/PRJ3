@@ -41,14 +41,14 @@ let rotateInterval;
 
 document.getElementById("rotateUp").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		rotateX -= rotationIncrement;
+		rotateX += rotationIncrement;
 		updateRotation();
 	}, 50); // Adjust the interval as needed
 });
 
 document.getElementById("rotateDown").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		rotateX += rotationIncrement;
+		rotateX -= rotationIncrement;
 		updateRotation();
 	}, 50); // Adjust the interval as needed
 });
