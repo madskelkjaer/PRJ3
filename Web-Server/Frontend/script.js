@@ -1,8 +1,13 @@
-let manuelTime = 0;
-console.log("Manuel tid: ", manuelTime);
-window.changeTime = function (nytid) {
-	manuelTime = nytid;
-	return manuelTime;
+let isNightMode = false;
+
+let manualTime = 0; //bruges kun til manuel
+console.log("Manuel tid: ", manualTime); //tjek hvad den er i console
+window.changeTime = function (newTime) {
+	//kan kaldes i console
+	manualTime = newTime;
+	console.log("Manuel tid: ", manualTime);
+	updateWeatherStatus(); //alt andet opdaterer auto naar man skifter tiden
+	return manualTime;
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -49,7 +54,7 @@ function updateWeatherStatus() {
 				//hvis der er over 70% skyet
 				sun.src = "sun_totally_cloudy.png";
 			}
-			updateSunriseAndSunset();
+			updateSunriseAndSunset(); //kalder updateSunriseAndSunset hver gang der opdateres weather status
 		})
 		.catch((error) => {
 			console.error("Fejl i opdatering af weathercondition:", error);
@@ -119,7 +124,7 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 	//const totalMinutes = hours * 60 + minutes; //beregner total
 
 	//manuel tid
-	const totalMinutes = manuelTime; //kan aendres mauelt, hvis man vil se hvor den er paa et givent tidspunkt
+	const totalMinutes = manualTime; //kan aendres mauelt, hvis man vil se hvor den er paa et givent tidspunkt
 	console.log("Total minutes:: ", totalMinutes);
 
 	//sunrise og sunset paa den paagaeldende dag
@@ -134,9 +139,11 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 	let xPos, yPos; //skal bruges til pos
 
 	if (totalMinutes + 10 <= startTime || totalMinutes - 10 >= endTime) {
-		document.body.style.backgroundImage = "url('background_night.jpg')"; //nattebaggrund
+		isNightMode = true;
+		nightMode();
 	} else {
-		document.body.style.backgroundImage = "url('background.jpg')"; //dagsbaggrund
+		isNightMode = false;
+		nightMode();
 	}
 
 	if (totalMinutes + 10 <= startTime || totalMinutes - 10 >= endTime) {
@@ -173,4 +180,19 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 	//rent faktisk update sun pos
 	sun.style.left = xPos + "px"; // set solens leftpos for at centrere horisontalt
 	sun.style.top = yPos + "px"; // set solens toppos
+}
+
+function nightMode() {
+	const topnav = document.getElementById("topnav");
+
+	if (isNightMode) {
+		topnav.classList.add("night-mode"); //bruger topnav.night-mode
+		document.body.style.backgroundImage = "url('background_night.jpg')"; //nattebaggrund
+		document.body.style.color = "white"; //hvid tekst
+	} else {
+		topnav.classList.remove("night-mode"); //fjerner, saa det er normal topnav
+		document.body.style.backgroundImage = "url('background.jpg')"; //dagsbaggrund
+		document.body.style.color = "black"; //sort tekst
+	}
+	console.log("Nightmode: ", isNightMode);
 }
