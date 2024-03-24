@@ -1,6 +1,7 @@
 /* prøver at lave figur */
 :root {
 	--cube-width: 300px;
+	--cube-height: 50px;
 	--translateZ: 150px;
 }
 
@@ -25,50 +26,53 @@ header {
 
 .cube-container .cube {
 	width: var(--cube-width);
-	height: var(--cube-width);
+	height: var(--cube-height);
 	transform-style: preserve-3d;
 	transition: transform 0.2s ease;
 }
 
 .cube-container .cube-face {
 	width: var(--cube-width);
-	height: var(--cube-width);
+	height: var(--cube-height);
+	font-size: 40px;
 	position: absolute;
 	display: flex;
 	background: yellow;
-	color: black;
+	color: white;
 	justify-content: center;
 	align-items: center;
 }
 
 .cube-container .front {
-	background: green;
+	background: rgb(57, 124, 163);
 	transform: translateZ(var(--translateZ));
 }
 
 .cube-container .back {
-	background: red;
+	background: rgb(57, 124, 163);
 	transform: rotateY(180deg) translateZ(var(--translateZ));
 }
 
 .cube-container .left {
-	background: pink;
+	background: rgb(57, 124, 163);
 	transform: rotateY(-90deg) translateZ(var(--translateZ));
 }
 
 .cube-container .right {
-	background: blueviolet;
+	background: rgb(57, 124, 163);
 	transform: rotateY(90deg) translateZ(var(--translateZ));
 }
 
 .cube-container .top {
-	background: blue;
+	height: var(--cube-width);
+	background: rgb(57, 124, 163);
 	transform: rotateX(90deg) translateZ(var(--translateZ));
 }
 
 .cube-container .bottom {
-	background: yellowgreen;
-	transform: rotateX(-90deg) translateZ(var(--translateZ));
+	height: var(--cube-width);
+	background: rgb(57, 124, 163);
+	transform: rotateX(-90deg) translateZ(-100px);
 }
 
 /* BRUGES TIL KNAPPERNE TIL HOEJRE */
