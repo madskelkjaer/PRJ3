@@ -44,34 +44,35 @@ header {
 }
 
 .cube-container .front {
-	background: rgb(57, 124, 163);
+	background: rgb(125, 162, 192);
 	transform: translateZ(var(--translateZ));
 }
 
 .cube-container .back {
-	background: rgb(57, 124, 163);
+	background: rgb(125, 162, 192);
 	transform: rotateY(180deg) translateZ(var(--translateZ));
 }
 
 .cube-container .left {
-	background: rgb(57, 124, 163);
+	background: rgb(125, 162, 192);
 	transform: rotateY(-90deg) translateZ(var(--translateZ));
 }
 
 .cube-container .right {
-	background: rgb(57, 124, 163);
+	background: rgb(125, 162, 192);
 	transform: rotateY(90deg) translateZ(var(--translateZ));
 }
 
 .cube-container .top {
 	height: var(--cube-width);
-	background: rgb(57, 124, 163);
+	background-image: url("test_solcelle_top.png");
+	background-size: cover;
 	transform: rotateX(90deg) translateZ(var(--translateZ));
 }
 
 .cube-container .bottom {
 	height: var(--cube-width);
-	background: rgb(57, 124, 163);
+	background: rgb(125, 162, 192);
 	transform: rotateX(-90deg) translateZ(-100px);
 }
 
