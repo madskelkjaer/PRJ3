@@ -50,7 +50,7 @@ button {
 /* random sol */
 .sun {
   position: absolute;
-  width: 100px; /* Adjust width as needed */
+  width: 480px; /* Adjust width as needed */
   height: auto; /* Maintain aspect ratio */
   transition: transform 0.6s ease-in-out;
 }

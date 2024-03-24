@@ -1,9 +1,15 @@
+let manuelTime = 0;
+console.log("Manuel tid: ", manuelTime);
+window.changeTime = function (nytid) {
+	manuelTime = nytid;
+	return manuelTime;
+};
+
 document.addEventListener("DOMContentLoaded", function () {
-	updateWeatherStatus();
-	setInterval(updateWeatherStatus, 60000); //opdaterer hvert minut
-	updateSunriseAndSunset();
-	setInterval(updateSunriseAndSunset, 60000); //opdaterer sunrise and sunset hvert minut - skal maaske saettes ned, det lidt exxtra
-	setInterval(updateSunPosition, 60000); //opdaterer sun pos hvert minut
+	updateWeatherStatus(); //vil godt have hvordan vejret er med det samme
+	setInterval(updateWeatherStatus, 60000); //opdaterer billedet af solen hvert minut (60k ms er 1 min)
+	//updateSunPosition og updateSunriseAndSunset bliver kaldt indeni updateWeatherStatus
+	//saa behoever kun at kalde updateWeatherStatus for at alt opdateres.
 });
 
 function getWeather() {
@@ -14,7 +20,7 @@ function getWeather() {
 	return fetch(apiUrl)
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data); //tjek data i konsol
+			console.log(data); //se data i console
 			return data;
 		})
 		.catch((error) => {
@@ -31,7 +37,7 @@ function updateWeatherStatus() {
 			const weatherCondition =
 				weatherData.properties.timeseries[0].data.instant.details
 					.cloud_area_fraction; //der hvor dataen er i API
-			console.log(weatherCondition); //tjek cloud fraction i konsol
+			console.log("Cloud fraction: ", weatherCondition); //tjek cloud fraction i console
 
 			if (weatherCondition <= 20) {
 				//hvis der er lig med eller mindre end 20% skyet
@@ -43,6 +49,7 @@ function updateWeatherStatus() {
 				//hvis der er over 70% skyet
 				sun.src = "sun_totally_cloudy.png";
 			}
+			updateSunriseAndSunset();
 		})
 		.catch((error) => {
 			console.error("Fejl i opdatering af weathercondition:", error);
@@ -52,12 +59,12 @@ function updateWeatherStatus() {
 function getSunriseAndSunset() {
 	//faar sunrise og sunset fra api som madse fandt
 	const apiSunriseAndSunset =
-		"https://api.sunrisesunset.io/json?lat=56.17196325252197&lng=10.189021378664656";
+		"https://api.met.no/weatherapi/sunrise/3.0/sun?lat=56.17172975774113&lon=10.190219876194428&offset=%2B01%3A00";
 
 	return fetch(apiSunriseAndSunset)
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data); //logger data
+			console.log(data); //se data i console
 			return data;
 		})
 		.catch((error) => {
@@ -70,10 +77,10 @@ function updateSunriseAndSunset() {
 	getSunriseAndSunset()
 		.then((sunriseAndSunsetData) => {
 			//finder data i placeringen fraa api
-			const sunriseTime = sunriseAndSunsetData.results.sunrise;
-			console.log("Sunrise:", sunriseTime);
-			const sunsetTime = sunriseAndSunsetData.results.sunset;
-			console.log("Sunset: ", sunsetTime);
+			const sunriseTime = sunriseAndSunsetData.properties.sunrise.time;
+			console.log("Sunrise:", sunriseTime); //se sunrise i console
+			const sunsetTime = sunriseAndSunsetData.properties.sunset.time;
+			console.log("Sunset: ", sunsetTime); //se sunset i console
 			updateSunPosition(sunriseTime, sunsetTime); //kalder updateSunPosition hver gang der hentes data for sunrise and sunset
 		})
 		.catch((error) => {
@@ -82,38 +89,63 @@ function updateSunriseAndSunset() {
 }
 
 function timeStringToMinutes(timeString) {
-	//splitter den returnerede string til hours, minutes og seconds
-	const [time, period] = timeString.split(" ");
-	const [hours, minutes, seconds] = time.split(":").map(Number);
-	const hourIn24Format = period === "AM" ? hours : hours + 12; //aendrer alt efter om det er AM eller PM
+	if (!timeString || typeof timeString !== "string") {
+		throw new Error("time string virker ikke");
+	}
+	//splitter den returnerede string til hours, minutes, offset
+	//dataen kommer ud saadan:
+	//2024-03-24T06:10+01:00
+	//saa den skal splittes mange gange :(
+	const [, timeWithOffset] = timeString.split("T"); //gemmer kun tiden
+	const [time, offset] = timeWithOffset.split("+"); //deler op mellem tid og offset
+	const [hours, minutes] = time.split(":").map(Number); //deler tiden op i timer og min
+	const [offsetReal] = offset.split(":").map(Number); //deler offset op, behoever ikke enden
 
 	//beregning om til minutter
-	const totalMinutes = hourIn24Format * 60 + minutes;
-
-	return totalMinutes;
+	const timeInMinutes = (hours + offsetReal) * 60 + minutes; //plus 1 fordi offset er +1 i dk
+	return timeInMinutes;
 }
 
 function updateSunPosition(sunriseTime, sunsetTime) {
+	//ramme for bevaegelse
 	const sun = document.getElementById("sun"); //den skal flytte den kaere sol
-	const viewportWidth = window.innerWidth; //finder bredde paa window
+	const viewportWidth = window.innerWidth - 480; //finder bredde paa window, minus 480 pga bredden af billedet
 	const viewportHeight = window.innerHeight; //finder hoejde paa window
+
+	//tid
 	const now = new Date(); //datoen
 	const hours = now.getHours(); //timer ift nuvaerende tidspunkt
 	const minutes = now.getMinutes(); //minutter ift nuvaerende tidspunkt
-	const totalMinutes = hours * 60 + minutes; //beregner total
+	//const totalMinutes = hours * 60 + minutes; //beregner total
+
+	//manuel tid
+	const totalMinutes = manuelTime; //kan aendres mauelt, hvis man vil se hvor den er paa et givent tidspunkt
+	console.log("Total minutes:: ", totalMinutes);
 
 	//sunrise og sunset paa den paagaeldende dag
 	const sunriseMinutes = timeStringToMinutes(sunriseTime); //laver fx 6AM om til 360
 	const sunsetMinutes = timeStringToMinutes(sunsetTime); //samme som ovenstaaende
-	console.log("Sunrise in minutes:", sunriseMinutes); //tjekker i console
-	console.log("Sunset in minutes:", sunsetMinutes); //tjekker i console
+	console.log("Sunrise i min:", sunriseMinutes); //tjekker i console
+	console.log("Sunset i min:", sunsetMinutes); //tjekker i console
 	const startTime = sunriseMinutes; //set af start
 	const endTime = sunsetMinutes; //set af slut
 	const midTime = startTime + (endTime - startTime) / 2; //finder bare midten af dagen ud fra sunrise og sunset
 
 	let xPos, yPos; //skal bruges til pos
 
-	if (totalMinutes <= startTime) {
+	if (totalMinutes + 10 <= startTime || totalMinutes - 10 >= endTime) {
+		document.body.style.backgroundImage = "url('background_night.jpg')"; //nattebaggrund
+	} else {
+		document.body.style.backgroundImage = "url('background.jpg')"; //dagsbaggrund
+	}
+
+	if (totalMinutes + 10 <= startTime || totalMinutes - 10 >= endTime) {
+		//hvis det er mere end 10 min foer sunrise eller 10 min efter sunset
+		sun.src = "nat.png"; //viser natkatten, very cute
+		xPos = viewportWidth / 2; //midten af billedet
+		yPos = viewportHeight / 2 - 100; //ca. midten af billedet pga topnav
+		//body.style.backgroudImage = "background_night.jpg";
+	} else if (totalMinutes <= startTime) {
 		//foer sunrise skal den bare vaere til venstre i midten
 		xPos = 0;
 		yPos = viewportHeight / 2;
@@ -139,56 +171,6 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 	console.log("Sun position:", "x: ", xPos + "px", "y: ", yPos + "px"); //sun pos i konsol
 
 	//rent faktisk update sun pos
-	sun.style.left = xPos - sun.clientWidth / 2 + "px"; // set solens leftpos for at centrere horisontalt
+	sun.style.left = xPos + "px"; // set solens leftpos for at centrere horisontalt
 	sun.style.top = yPos + "px"; // set solens toppos
 }
-
-//simuleringsfunktion brugt til at teste
-// function simulateSunMovement() {
-// 	const fakeTime = new Date(2024, 2, 23, 16, 0); // Set the fake time to noon
-// 	updateSunPosition(fakeTime);
-// }
-
-// function updateSunPosition(fakeTime) {
-// 	const sun = document.getElementById("sun");
-// 	const viewportWidth = window.innerWidth;
-// 	const viewportHeight = window.innerHeight;
-
-// 	const hours = fakeTime.getHours();
-// 	const minutes = fakeTime.getMinutes();
-// 	const totalMinutes = hours * 60 + minutes;
-
-// 	// Define the start and end times (in minutes)
-// 	const startTime = 8 * 60; // 8 AM
-// 	const endTime = 20 * 60; // 8 PM
-// 	const midTime = startTime + (endTime - startTime) / 2;
-
-// 	let xPos, yPos;
-
-// 	if (totalMinutes <= startTime) {
-// 		// Before sunrise (far left, middle vertically)
-// 		xPos = 0;
-// 		yPos = viewportHeight / 2;
-// 	} else if (totalMinutes >= endTime) {
-// 		// After sundown (far right, middle vertically)
-// 		xPos = viewportWidth;
-// 		yPos = viewportHeight / 2;
-// 	} else {
-// 		// During daytime (middle horizontally, 25% from the top vertically)
-// 		const percentOfDay = (totalMinutes - startTime) / (endTime - startTime);
-// 		xPos = percentOfDay * viewportWidth;
-// 		if (totalMinutes < midTime) {
-// 			yPos = (viewportHeight / 4) * (1 - percentOfDay) + viewportHeight / 4;
-// 		} else {
-// 			const reversePercentOfDay =
-// 				(totalMinutes - midTime) / (endTime - midTime);
-// 			yPos = (viewportHeight / 4) * reversePercentOfDay + viewportHeight / 4;
-// 		}
-// 	}
-
-// 	console.log("Sun position:", "x: ", xPos + "px", "y: ", yPos + "px"); // Log sun position to console
-
-// 	// Update the sun's position
-// 	sun.style.left = xPos - sun.clientWidth / 2 + "px"; // Set sun's left position to center it horizontally
-// 	sun.style.top = yPos + "px"; // Set sun's top position
-// }
