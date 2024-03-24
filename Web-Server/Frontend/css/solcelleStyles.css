@@ -65,7 +65,7 @@ header {
 
 .cube-container .top {
 	height: var(--cube-width);
-	background-image: url("test_solcelle_top.png");
+	background-image: url("/images/test_solcelle_top.png");
 	background-size: cover;
 	transform: rotateX(90deg) translateZ(var(--translateZ));
 }

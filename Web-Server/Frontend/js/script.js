@@ -48,13 +48,13 @@ function updateWeatherStatus() {
 
 			if (weatherCondition <= 20) {
 				//hvis der er lig med eller mindre end 20% skyet
-				sun.src = "sun_clear.png";
+				sun.src = "images/sun_clear.png";
 			} else if (weatherCondition > 20 && weatherCondition <= 70) {
 				//hvis der er mellem 20 og 70% skyet
-				sun.src = "sun_partly_cloudy.png";
+				sun.src = "images/sun_partly_cloudy.png";
 			} else if (weatherCondition > 70) {
 				//hvis der er over 70% skyet
-				sun.src = "sun_totally_cloudy.png";
+				sun.src = "images/sun_totally_cloudy.png";
 			}
 			updateSunriseAndSunset(); //kalder updateSunriseAndSunset hver gang der opdateres weather status
 		})
@@ -151,7 +151,7 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 
 	if (totalMinutes + 10 <= startTime || totalMinutes - 10 >= endTime) {
 		//hvis det er mere end 10 min foer sunrise eller 10 min efter sunset
-		sun.src = "nat.png"; //viser natkatten, very cute
+		sun.src = "images/nat.png"; //viser natkatten, very cute
 		xPos = viewportWidth / 2; //midten af billedet
 		yPos = viewportHeight / 2 - 100; //ca. midten af billedet pga topnav
 		//body.style.backgroudImage = "background_night.jpg";
@@ -190,11 +190,11 @@ function nightMode() {
 
 	if (isNightMode) {
 		topnav.classList.add("night-mode"); //bruger topnav.night-mode
-		document.body.style.backgroundImage = "url('background_night.jpg')"; //nattebaggrund
+		document.body.style.backgroundImage = "url('images/background_night.jpg')"; //nattebaggrund
 		document.body.style.color = "white"; //hvid tekst
 	} else {
 		topnav.classList.remove("night-mode"); //fjerner, saa det er normal topnav
-		document.body.style.backgroundImage = "url('background.jpg')"; //dagsbaggrund
+		document.body.style.backgroundImage = "url('images/background.jpg')"; //dagsbaggrund
 		document.body.style.color = "black"; //sort tekst
 	}
 	console.log("Nightmode: ", isNightMode);
