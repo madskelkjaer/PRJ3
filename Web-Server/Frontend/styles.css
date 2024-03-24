@@ -8,11 +8,11 @@ body {
 
 /* knapper */
 button {
-	background-color: #04aa6d;
+	background-color: #097885;
 	color: black;
 	border: 2px black;
 	border-radius: 20px;
-	width: 200px;
+	width: 100px;
 	height: 40px;
 }
 

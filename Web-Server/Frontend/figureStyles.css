@@ -1,0 +1,101 @@
+/* prøver at lave figur */
+:root {
+	--cube-width: 300px;
+	--translateZ: 150px;
+}
+
+/* BRUGES TIL CUBEN */
+header {
+	color: white;
+	display: flex;
+	align-items: center;
+}
+
+.container {
+	max-width: 500px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+
+.cube-container {
+	perspective: 1000px;
+	margin-right: 100px;
+}
+
+.cube-container .cube {
+	width: var(--cube-width);
+	height: var(--cube-width);
+	transform-style: preserve-3d;
+	transition: transform 0.2s ease;
+}
+
+.cube-container .cube-face {
+	width: var(--cube-width);
+	height: var(--cube-width);
+	position: absolute;
+	display: flex;
+	background: yellow;
+	color: black;
+	justify-content: center;
+	align-items: center;
+}
+
+.cube-container .front {
+	background: green;
+	transform: translateZ(var(--translateZ));
+}
+
+.cube-container .back {
+	background: red;
+	transform: rotateY(180deg) translateZ(var(--translateZ));
+}
+
+.cube-container .left {
+	background: pink;
+	transform: rotateY(-90deg) translateZ(var(--translateZ));
+}
+
+.cube-container .right {
+	background: blueviolet;
+	transform: rotateY(90deg) translateZ(var(--translateZ));
+}
+
+.cube-container .top {
+	background: blue;
+	transform: rotateX(90deg) translateZ(var(--translateZ));
+}
+
+.cube-container .bottom {
+	background: yellowgreen;
+	transform: rotateX(-90deg) translateZ(var(--translateZ));
+}
+
+/* BRUGES TIL KNAPPERNE TIL HOEJRE */
+.buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 20px;
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttons button {
+	font-size: 26px;
+	width: 40px;
+	height: 40px;
+	margin: 2px;
+	border: none;
+	background-color: lightgray;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.buttons button:hover {
+	background-color: gray;
+}
