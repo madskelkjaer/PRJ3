@@ -1,14 +1,15 @@
 let isNightMode = false;
 
-let manualTime = 0; //bruges kun til manuel
-console.log("Manuel tid: ", manualTime); //tjek hvad den er i console
-window.changeTime = function (newTime) {
-	//kan kaldes i console
-	manualTime = newTime;
-	console.log("Manuel tid: ", manualTime);
-	updateWeatherStatus(); //alt andet opdaterer auto naar man skifter tiden
-	return manualTime;
-};
+//manual time ---------------------------------------------------------------------------------
+// let manualTime = 0; //bruges kun til manuel
+// console.log("Manuel tid: ", manualTime); //tjek hvad den er i console
+// window.changeTime = function (newTime) { //kan kaldes i console
+// 	manualTime = newTime;
+// 	console.log("Manuel tid: ", manualTime);
+// 	updateWeatherStatus(); //alt andet opdaterer auto naar man skifter tiden
+// 	return manualTime;
+// };
+//---------------------------------------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {
 	updateWeatherStatus(); //vil godt have hvordan vejret er med det samme
@@ -25,7 +26,7 @@ function getWeather() {
 	return fetch(apiUrl)
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data); //se data i console
+			//console.log(data); //se data i console
 			return data;
 		})
 		.catch((error) => {
@@ -69,7 +70,7 @@ function getSunriseAndSunset() {
 	return fetch(apiSunriseAndSunset)
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data); //se data i console
+			//console.log(data); //se data i console
 			return data;
 		})
 		.catch((error) => {
@@ -121,11 +122,12 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 	const now = new Date(); //datoen
 	const hours = now.getHours(); //timer ift nuvaerende tidspunkt
 	const minutes = now.getMinutes(); //minutter ift nuvaerende tidspunkt
-	//const totalMinutes = hours * 60 + minutes; //beregner total
+	const totalMinutes = hours * 60 + minutes; //beregner total - skal kommenteres hvis der anvendes manuel tid!!!!!!!!!!!
 
-	//manuel tid
-	const totalMinutes = manualTime; //kan aendres mauelt, hvis man vil se hvor den er paa et givent tidspunkt
-	console.log("Total minutes:: ", totalMinutes);
+	//manuel tid--------------------------------------------------------------------------------------------------------
+	//const totalMinutes = manualTime; //kan aendres vha changeTime(minutter) i console
+	//console.log("Total minutes:: ", totalMinutes);
+	//------------------------------------------------------------------------------------------------------------------
 
 	//sunrise og sunset paa den paagaeldende dag
 	const sunriseMinutes = timeStringToMinutes(sunriseTime); //laver fx 6AM om til 360
