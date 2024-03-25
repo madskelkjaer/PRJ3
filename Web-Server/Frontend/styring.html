@@ -24,14 +24,14 @@
 		<p>der er ikke noget indhold endnuuuuuuuuu</p>
 		<header>
 			<div class="container">
-				<div class="cube-container">
-					<div class="cube">
-						<div class="cube-face front">Front</div>
-						<div class="cube-face back">Back</div>
-						<div class="cube-face left">Left</div>
-						<div class="cube-face right">Right</div>
-						<div class="cube-face top">Top</div>
-						<div class="cube-face bottom">Bottom</div>
+				<div class="solarcell-container">
+					<div class="solarcell">
+						<div class="solarcell-face front">Front</div>
+						<div class="solarcell-face back">Back</div>
+						<div class="solarcell-face left">Left</div>
+						<div class="solarcell-face right">Right</div>
+						<div class="solarcell-face top">Top</div>
+						<div class="solarcell-face bottom">Bottom</div>
 					</div>
 				</div>
 				<div class="buttons">
@@ -48,5 +48,14 @@
 		</header>
 
 		<script src="/js/solcelle.js"></script>
+		<script>
+			// Retrieve the night mode state from localStorage
+			const nightModeEnabled = localStorage.getItem("nightMode");
+
+			// Check if night mode is enabled and apply it to the body
+			if (nightModeEnabled === "true") {
+				document.body.classList.add("night-mode");
+			}
+		</script>
 	</body>
 </html>

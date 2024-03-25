@@ -1,11 +1,11 @@
-/* prøver at lave figur */
+/* variables */
 :root {
-	--cube-width: 300px;
-	--cube-height: 50px;
+	--solarcell-width: 300px;
+	--solarcell-height: 50px;
 	--translateZ: 150px;
 }
 
-/* BRUGES TIL CUBEN */
+/* BRUGES TIL SOLCELLEN */
 header {
 	color: white;
 	display: flex;
@@ -19,21 +19,21 @@ header {
 	align-items: center;
 }
 
-.cube-container {
+.solarcell-container {
 	perspective: 1000px;
 	margin-right: 100px;
 }
 
-.cube-container .cube {
-	width: var(--cube-width);
-	height: var(--cube-height);
+.solarcell-container .solarcell {
+	width: var(--solarcell-width);
+	height: var(--solarcell-height);
 	transform-style: preserve-3d;
 	transition: transform 0.2s ease;
 }
 
-.cube-container .cube-face {
-	width: var(--cube-width);
-	height: var(--cube-height);
+.solarcell-container .solarcell-face {
+	width: var(--solarcell-width);
+	height: var(--solarcell-height);
 	font-size: 40px;
 	position: absolute;
 	display: flex;
@@ -43,35 +43,35 @@ header {
 	align-items: center;
 }
 
-.cube-container .front {
+.solarcell-container .front {
 	background: rgb(125, 162, 192);
 	transform: translateZ(var(--translateZ));
 }
 
-.cube-container .back {
+.solarcell-container .back {
 	background: rgb(125, 162, 192);
 	transform: rotateY(180deg) translateZ(var(--translateZ));
 }
 
-.cube-container .left {
+.solarcell-container .left {
 	background: rgb(125, 162, 192);
 	transform: rotateY(-90deg) translateZ(var(--translateZ));
 }
 
-.cube-container .right {
+.solarcell-container .right {
 	background: rgb(125, 162, 192);
 	transform: rotateY(90deg) translateZ(var(--translateZ));
 }
 
-.cube-container .top {
-	height: var(--cube-width);
+.solarcell-container .top {
+	height: var(--solarcell-width);
 	background-image: url("/images/test_solcelle_top.png");
 	background-size: cover;
 	transform: rotateX(90deg) translateZ(var(--translateZ));
 }
 
-.cube-container .bottom {
-	height: var(--cube-width);
+.solarcell-container .bottom {
+	height: var(--solarcell-width);
 	background: rgb(125, 162, 192);
 	transform: rotateX(-90deg) translateZ(-100px);
 }

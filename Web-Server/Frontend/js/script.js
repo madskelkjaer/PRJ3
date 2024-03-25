@@ -1,15 +1,15 @@
 let isNightMode = false;
 
 //manual time ---------------------------------------------------------------------------------
-let manualTime = 0; //bruges kun til manuel
-console.log("Manuel tid: ", manualTime); //tjek hvad den er i console
-window.changeTime = function (newTime) {
-	//kan kaldes i console
-	manualTime = newTime;
-	console.log("Manuel tid: ", manualTime);
-	updateWeatherStatus(); //alt andet opdaterer auto naar man skifter tiden
-	return manualTime;
-};
+// let manualTime = 0; //bruges kun til manuel
+// console.log("Manuel tid: ", manualTime); //tjek hvad den er i console
+// window.changeTime = function (newTime) {
+// 	//kan kaldes i console
+// 	manualTime = newTime;
+// 	console.log("Manuel tid: ", manualTime);
+// 	updateWeatherStatus(); //alt andet opdaterer auto naar man skifter tiden
+// 	return manualTime;
+// };
 //---------------------------------------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -123,11 +123,12 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 	const now = new Date(); //datoen
 	const hours = now.getHours(); //timer ift nuvaerende tidspunkt
 	const minutes = now.getMinutes(); //minutter ift nuvaerende tidspunkt
-	//const totalMinutes = hours * 60 + minutes; //beregner total - skal kommenteres hvis der anvendes manuel tid!!!!!!!!!!!
+	const totalMinutes = hours * 60 + minutes; //beregner total - skal kommenteres hvis der anvendes manuel tid!!!!!!!!!!!
+	console.log("Tid lige nu i min:", totalMinutes);
 
 	//manuel tid--------------------------------------------------------------------------------------------------------
-	const totalMinutes = manualTime; //kan aendres vha changeTime(minutter) i console
-	console.log("Total minutes:: ", totalMinutes);
+	// const totalMinutes = manualTime; //kan aendres vha changeTime(minutter) i console
+	// console.log("Total minutes:: ", totalMinutes);
 	//------------------------------------------------------------------------------------------------------------------
 
 	//sunrise og sunset paa den paagaeldende dag

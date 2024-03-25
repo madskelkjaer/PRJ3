@@ -1,6 +1,6 @@
 //MED PILETASER -----------------------------------------------
 
-const cube = document.querySelector(".cube");
+const solarcell = document.querySelector(".solarcell");
 let rotateX = 0;
 let rotateY = 0;
 const rotationIncrement = 2; // Adjust this value to control the rotation speed
@@ -27,12 +27,12 @@ document.addEventListener("keydown", (event) => {
 });
 
 function updateRotation() {
-	cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+	solarcell.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 }
 
 //MED KNAPPERNE -----------------------------------------------
 
-// const cube = document.querySelector(".cube");
+// const solarcell = document.querySelector(".solarcell");
 // let rotateX = 0;
 // let rotateY = 0;
 // const rotationIncrement = 5; // Adjust this value to control the rotation speed
@@ -72,17 +72,17 @@ document.addEventListener("mouseup", () => {
 });
 
 function updateRotation() {
-	cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+	solarcell.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 }
 
 //MED MUSEN -----------------------------------------------
-// const cube = document.querySelector(".cube");
+// const solarcell = document.querySelector(".solarcell");
 // let mouseX = 0;
 // let mouseY = 0;
 // let isMouseDown;
 // const rotationValue = 360;
 
-// cube.addEventListener("mousedown", (e) => {
+// solarcell.addEventListener("mousedown", (e) => {
 // 	isMouseDown = true;
 // 	prevX = e.clientX;
 // 	console.log("mousedown");
@@ -100,7 +100,7 @@ function updateRotation() {
 // 		rotateX = -(mouseY / window.innerHeight - 0.5) * rotationValue;
 // 		rotateY = (mouseX / window.innerWidth - 0.5) * rotationValue;
 // 		console.log("hej");
-// 		cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+// 		solarcell.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 // 		console.log("mousemove");
 // 	}
 // });
