@@ -200,3 +200,16 @@ function nightMode() {
 	}
 	console.log("Nightmode: ", isNightMode);
 }
+
+ function updateData() {
+            fetch('spi_data.txt')
+            .then(response => response.text())
+            .then(data => {
+                // Split the data by newline and get the last line
+                var lines = data.trim().split('\n');
+                var latestValue = lines[lines.length - 1];
+                document.getElementById('spiValue').innerText = latestValue;
+            });
+        }
+        updateData();
+        setInterval(updateData, 1000);
