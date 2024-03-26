@@ -1,0 +1,1 @@
+This is where the data from the python code is sent :) aka a shitty fucking database
