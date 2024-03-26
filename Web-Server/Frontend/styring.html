@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Styring Page</title>
-</head>
-<body>
-<h1 style="text-align: center; font-size: 200%;">
-    <a href="index.html" style="text-decoration: none; color: inherit;">PRJ3 - WAM</a>
-</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="stylesheet" href="/css/solcelleStyles.css" />
+		<title>Styring Page</title>
+	</head>
+	<body>
+		<h1 style="text-align: center; font-size: 200%">
+			<a href="index.html" style="text-decoration: none; color: inherit"
+				>PRJ3 - WAM</a
+			>
+		</h1>
 
-<div class="topnav">
-    <a href="batteri.html">BATTERI</a>
-    <a href="data.html">DATA</a>
-    <a href="om.html">OM</a>
-</div>
+		<div class="topnav">
+			<a href="batteri.html">BATTERI</a>
+			<a href="data.html">DATA</a>
+			<a href="om.html">OM</a>
+		</div>
 
+		<h1>Random header</h1>
+		<p>der er ikke noget indhold endnuuuuuuuuu</p>
+		<header>
+			<div class="container">
+				<div class="solarcell-container">
+					<div class="solarcell">
+						<div class="solarcell-face front">Front</div>
+						<div class="solarcell-face back">Back</div>
+						<div class="solarcell-face left">Left</div>
+						<div class="solarcell-face right">Right</div>
+						<div class="solarcell-face top">Top</div>
+						<div class="solarcell-face bottom">Bottom</div>
+					</div>
+				</div>
+				<div class="buttons">
+					<div class="row">
+						<button id="rotateUp">↑</button>
+					</div>
+					<div class="row">
+						<button id="rotateLeft">←</button>
+						<button id="rotateDown">↓</button>
+						<button id="rotateRight">→</button>
+					</div>
+				</div>
+			</div>
+		</header>
 
-<h1>Welcome to the Styring Page</h1>
-<p>This is the content for the Styring subpage.</p>
+		<script src="/js/solcelle.js"></script>
+		<script>
+			// Retrieve the night mode state from localStorage
+			const nightModeEnabled = localStorage.getItem("nightMode");
 
-</body>
+			// Check if night mode is enabled and apply it to the body
+			if (nightModeEnabled === "true") {
+				document.body.classList.add("night-mode");
+			}
+		</script>
+	</body>
 </html>

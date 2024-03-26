@@ -1,0 +1,106 @@
+/* variables */
+:root {
+	--solarcell-width: 300px;
+	--solarcell-height: 50px;
+	--translateZ: 150px;
+}
+
+/* BRUGES TIL SOLCELLEN */
+header {
+	color: white;
+	display: flex;
+	align-items: center;
+}
+
+.container {
+	max-width: 500px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+
+.solarcell-container {
+	perspective: 1000px;
+	margin-right: 100px;
+}
+
+.solarcell-container .solarcell {
+	width: var(--solarcell-width);
+	height: var(--solarcell-height);
+	transform-style: preserve-3d;
+	transition: transform 0.2s ease;
+}
+
+.solarcell-container .solarcell-face {
+	width: var(--solarcell-width);
+	height: var(--solarcell-height);
+	font-size: 40px;
+	position: absolute;
+	display: flex;
+	background: yellow;
+	color: white;
+	justify-content: center;
+	align-items: center;
+}
+
+.solarcell-container .front {
+	background: rgb(125, 162, 192);
+	transform: translateZ(var(--translateZ));
+}
+
+.solarcell-container .back {
+	background: rgb(125, 162, 192);
+	transform: rotateY(180deg) translateZ(var(--translateZ));
+}
+
+.solarcell-container .left {
+	background: rgb(125, 162, 192);
+	transform: rotateY(-90deg) translateZ(var(--translateZ));
+}
+
+.solarcell-container .right {
+	background: rgb(125, 162, 192);
+	transform: rotateY(90deg) translateZ(var(--translateZ));
+}
+
+.solarcell-container .top {
+	height: var(--solarcell-width);
+	background-image: url("/images/test_solcelle_top.png");
+	background-size: cover;
+	transform: rotateX(90deg) translateZ(var(--translateZ));
+}
+
+.solarcell-container .bottom {
+	height: var(--solarcell-width);
+	background: rgb(125, 162, 192);
+	transform: rotateX(-90deg) translateZ(-100px);
+}
+
+/* BRUGES TIL KNAPPERNE TIL HOEJRE */
+.buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 20px;
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttons button {
+	font-size: 26px;
+	width: 40px;
+	height: 40px;
+	margin: 2px;
+	border: none;
+	background-color: lightgray;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.buttons button:hover {
+	background-color: gray;
+}

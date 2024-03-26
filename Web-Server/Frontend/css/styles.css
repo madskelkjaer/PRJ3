@@ -1,0 +1,64 @@
+body {
+	font-family: "Helvetica", cursive;
+	color: black;
+	font-size: 150%;
+	background-image: url("/images/background.jpg");
+	background-size: cover;
+}
+
+/* knapper */
+button {
+	background-color: #097885;
+	color: black;
+	border: 2px black;
+	border-radius: 20px;
+	width: 100px;
+	height: 40px;
+}
+
+/* navigationsknapper */
+.topnav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 80px;
+}
+
+.topnav a {
+	width: 200px;
+	height: 40px;
+	color: black;
+	font-size: 35px;
+	text-align: center;
+	padding: 10px 10px;
+	/* Justér polstring efter behov */
+	margin: 10px 10px;
+	/* Justér for at oprette plads mellem knapperne */
+	text-decoration: none;
+	background-color: #b6d5d8;
+	transition: background-color 0.3s ease;
+	border-radius: 20px;
+}
+
+.topnav.night-mode a:hover {
+	background-color: #097885;
+	color: white;
+}
+
+.topnav.night-mode a {
+	background-color: #32465a; /* Darker background color in night mode */
+	color: white; /* Text color set to white in night mode */
+}
+
+.topnav a:hover {
+	background-color: #097885; /* Darker background color on hover */
+	color: white; /* Text color set to white on hover */
+}
+
+/* random sol */
+.sun {
+	position: absolute;
+	width: 480px; /* Adjust width as needed */
+	height: auto; /* Maintain aspect ratio */
+	transition: transform 0.6s ease-in-out;
+}
