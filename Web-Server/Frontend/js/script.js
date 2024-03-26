@@ -211,5 +211,6 @@ function nightMode() {
                 document.getElementById('spiValue').innerText = latestValue;
             });
         }
+		
         updateData();
         setInterval(updateData, 1000);
