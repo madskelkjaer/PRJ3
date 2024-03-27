@@ -13,5 +13,6 @@ function updateData() {
 			var latestValue = lines[lines.length - 1];
 			document.getElementById("spiValue").innerText = latestValue;
 			console.log("SPI value: ", latestValue);
+			console.log("Hej August");
 		});
 }
