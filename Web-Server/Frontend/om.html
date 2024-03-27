@@ -1,73 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" href="/images/favicon.png" />
-		<link rel="stylesheet" href="/css/styles.css" />
-		<link rel="stylesheet" href="/css/omStyles.css" />
-		<title>Om Page</title>
-	</head>
 
-	<body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/omStyles.css" />
+	<link rel="stylesheet" href="/css/tilbageKnap.css" />
+	<title>Om Page</title>
+</head>
+
+<body>
+	<div class="header-container">
 		<h1 style="text-align: center; font-size: 200%">
-			<a href="index.html" style="text-decoration: none; color: inherit"
-				>PRJ3 - WAM</a
-			>
+			<a href="index.html" style="text-decoration: none; color: inherit">PRJ3 - WAM</a>
 		</h1>
+		<a href="index.html" class="custom-button">
+			<div class="arrow"></div>
+		</a>
+	</div>
 
-		<div class="topnav">
-			<!---skal lige finde ud af hvordan knappen skal se ud - emilieeeeeeeeeeee-->
-			<a href="index.html">&larr;</a>
-			<a href="styring.html">STYRING</a>
-			<a href="batteri.html">BATTERI</a>
-			<a href="data.html">DATA</a>
-		</div>
+	<div class="topnav">
+		<a href="styring.html">STYRING</a>
+		<a href="batteri.html">BATTERI</a>
+		<a href="data.html">DATA</a>
+	</div>
 
-		<section class="about">
-			<h1>Om projektet</h1>
-			<p style="font-weight: bold">Watt-A-Move (WAM) Solcelleprojekt</p>
-			<div class="about-info">
-				<div>
-					<p>
-						WAM er et solcelleprojekt udarbejdet af 3. semesterstuderende fra
-						Aarhus Univeristet i en blandet gruppe af Softwareteknologi- og
-						Elektronik studerende. Projektet omhandler optimering af en
-						solcelle, så denne selv kan bevæge sig, sådan at der opnåes optimal
-						position i forhold til solens placering. Dette er for at maksimere
-					</p>
-				</div>
+	<section class="about">
+		<h1>Om projektet</h1>
+		<p style="font-weight: bold">Watt-A-Move (WAM) Solcelleprojekt</p>
+		<div class="about-info">
+			<div>
+				<p>
+					WAM er et solcelleprojekt udarbejdet af 3. semesterstuderende fra
+					Aarhus Univeristet i en blandet gruppe af Softwareteknologi- og
+					Elektronik studerende. Projektet omhandler optimering af en
+					solcelle, så denne selv kan bevæge sig, sådan at der opnåes optimal
+					position i forhold til solens placering. Dette er for at maksimere
+				</p>
 			</div>
-		</section>
-
-		<div class="container">
-			<form action="action_page.php">
-				<label for="fname">Fornavn</label>
-				<input
-					type="text"
-					id="fname"
-					name="firstname"
-					placeholder="Your name.."
-				/>
-
-				<label for="lname">Efternavn</label>
-				<input
-					type="text"
-					id="lname"
-					name="lastname"
-					placeholder="Your last name.."
-				/>
-
-				<label for="subject">Besked</label>
-				<textarea
-					id="subject"
-					name="subject"
-					placeholder="Write something.."
-					style="height: 200px"
-				></textarea>
-
-				<input type="submit" value="Submit" />
-			</form>
 		</div>
-	</body>
+	</section>
+
+	<div class="container">
+		<form action="action_page.php">
+			<label for="fname">Fornavn</label>
+			<input type="text" id="fname" name="firstname" placeholder="Your name.." />
+
+			<label for="lname">Efternavn</label>
+			<input type="text" id="lname" name="lastname" placeholder="Your last name.." />
+
+			<label for="subject">Besked</label>
+			<textarea id="subject" name="subject" placeholder="Write something.." style="height: 200px"></textarea>
+
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
+</body>
+
 </html>

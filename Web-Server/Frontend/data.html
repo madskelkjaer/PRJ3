@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" href="/images/favicon.png" />
-		<link rel="stylesheet" href="/css/styles.css" />
-		<link rel="stylesheet" href="/css/data.css" />
-		<title>Data Page</title>
-	</head>
 
-	<body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/data.css" />
+	<link rel="stylesheet" href="/css/tilbageKnap.css" />
+	<title>Data Page</title>
+</head>
+
+<body>
+	<div class="header-container">
 		<h1 style="text-align: center; font-size: 200%">
-			<a href="index.html" style="text-decoration: none; color: inherit"
-				>PRJ3 - WAM</a
-			>
+			<a href="index.html" style="text-decoration: none; color: inherit">PRJ3 - WAM</a>
 		</h1>
+		<a href="index.html" class="custom-button">
+			<div class="arrow"></div>
+		</a>
+	</div>
 
-		<div class="topnav">
-			<a href="index.html">&larr;Startside</a>
-			<!---skal lige finde ud af hvordan knappen skal se ud - emilieeeeeeeeeeee-->
-			<a href="styring.html">STYRING</a>
-			<a href="batteri.html">BATTERI</a>
-			<a href="om.html">OM</a>
-		</div>
+	<div class="topnav">
+		<a href="styring.html">STYRING</a>
+		<a href="batteri.html">BATTERI</a>
+		<a href="om.html">OM</a>
+	</div>
 
-		<h1>Welcome to the Data Page</h1>
-		<table class="data-table">
-			<!-- Table header -->
-			<thead>
-				<tr>
-					<th>Data nr</th>
-					<th>Et sejt tal</th>
-					<th>Endnu et sejt tal</th>
-				</tr>
-			</thead>
+	<h1>Welcome to the Data Page</h1>
+	<table class="data-table">
+		<!-- Table header -->
+		<thead>
+			<tr>
+				<th>Data nr</th>
+				<th>Et sejt tal</th>
+				<th>Endnu et sejt tal</th>
+			</tr>
+		</thead>
 
-			<tbody>
-				<tr>
-					<td>Data 1</td>
-					<td>Data 2</td>
-					<td>Data 3</td>
-				</tr>
-				<tr>
-					<td>Data 4</td>
-					<td>Data 5</td>
-					<td>Data 6</td>
-				</tr>
-				<tr>
-					<td>Data 7</td>
-					<td>Data 8</td>
-					<td>Data 9</td>
-				</tr>
-			</tbody>
-		</table>
-		<h1>SPI Data Display</h1>
-		<p>Latest SPI Value: <span id="spiValue"></span></p>
-		<p>This is the content for the Data subpage.</p>
-		<script src="/js/data.js"></script>
-	</body>
+		<tbody>
+			<tr>
+				<td>Data 1</td>
+				<td>Data 2</td>
+				<td>Data 3</td>
+			</tr>
+			<tr>
+				<td>Data 4</td>
+				<td>Data 5</td>
+				<td>Data 6</td>
+			</tr>
+			<tr>
+				<td>Data 7</td>
+				<td>Data 8</td>
+				<td>Data 9</td>
+			</tr>
+		</tbody>
+	</table>
+	<h1>SPI Data Display</h1>
+	<p>Latest SPI Value: <span id="spiValue"></span></p>
+	<p>This is the content for the Data subpage.</p>
+	<script src="/js/data.js"></script>
+</body>
+
 </html>
