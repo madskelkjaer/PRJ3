@@ -1,15 +1,30 @@
 let isNightMode = false;
 
 //manual time ---------------------------------------------------------------------------------
-// let manualTime = 0; //bruges kun til manuel
-// console.log("Manuel tid: ", manualTime); //tjek hvad den er i console
-// window.changeTime = function (newTime) {
-// 	//kan kaldes i console
-// 	manualTime = newTime;
-// 	console.log("Manuel tid: ", manualTime);
-// 	updateWeatherStatus(); //alt andet opdaterer auto naar man skifter tiden
-// 	return manualTime;
-// };
+let manualTime = 0; //bruges kun til manuel
+window.setTime = function (newTime) {
+	//kan kaldes i console
+	manualTime = newTime;
+	console.log("Manuel tid: ", manualTime);
+	updateWeatherStatus(); //alt andet opdaterer auto naar man skifter weatherstatus
+	return manualTime;
+};
+
+//Simuler med +100 timeMinutes hvert 1000 ms -------------------------------------------------
+window.simulateTime = function () {
+	if (manualTime >= 1300) {
+		//base, fordi jeg har lavet en rekursiv funktion
+		console.log("Simulering er done."); //tjek i console
+		return 0;
+	}
+	//kan kaldes i console
+	setTimeout(function () {
+		manualTime += 100; //plusser bare 100 minutter
+		console.log("Manuel tid: ", manualTime); //tjek i console
+		updateWeatherStatus(); //alt andet opdaterer auto naar man skifter weatherstatus
+		simulateTime(); //rekursiv
+	}, 1000); //setTimeout for at det kun sker hvert 1000 ms
+};
 //---------------------------------------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {
