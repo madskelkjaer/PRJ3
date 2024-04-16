@@ -1,79 +1,118 @@
-//MED PILETASER -----------------------------------------------
-
 const solarcell = document.querySelector(".solarcell");
-let rotateX = 0;
+let rotateX = 0; //Det her er omvendt, idk what to do :((( x er i opad og nedad, y er venstre og hoejre???
 let rotateY = 0;
-const rotationIncrement = 2; // Adjust this value to control the rotation speed
+const rotationIncrement = 2; //hvor hurtigt skal den dreje????
+const maxUp = 90;
+const maxDown = -90;
+const maxRight = 90;
+const maxLeft = -90;
 
+document.getElementById("maxUp").textContent = maxUp;
+document.getElementById("maxDown").textContent = maxDown;
+document.getElementById("maxRight").textContent = maxRight;
+document.getElementById("maxLeft").textContent = maxLeft;
+
+//MED PILETASER -----------------------------------------------
 document.addEventListener("keydown", (event) => {
+	//hvis man trykker en tast ned
 	switch (event.key) {
 		case "ArrowUp":
-			rotateX += rotationIncrement;
-			updateRotation();
-			break;
+			if (rotateX >= maxUp) {
+				console.log("for manage grader op!!!");
+				break;
+			} else {
+				rotateX += rotationIncrement;
+				updateRotation();
+				break;
+			}
 		case "ArrowDown":
-			rotateX -= rotationIncrement;
-			updateRotation();
-			break;
+			if (rotateX <= maxDown) {
+				console.log("for mange grader ned!!!!");
+				break;
+			} else {
+				rotateX -= rotationIncrement;
+				updateRotation();
+				break;
+			}
 		case "ArrowLeft":
-			rotateY -= rotationIncrement;
-			updateRotation();
-			break;
+			if (rotateY <= maxLeft) {
+				console.log("for mange grader til venstre!!!!");
+				break;
+			} else {
+				rotateY -= rotationIncrement;
+				updateRotation();
+				break;
+			}
 		case "ArrowRight":
-			rotateY += rotationIncrement;
-			updateRotation();
-			break;
+			if (rotateY >= maxRight) {
+				console.log("for mange grader til højre!!!");
+			} else {
+				rotateY += rotationIncrement;
+				updateRotation();
+				break;
+			}
 	}
 });
 
 function updateRotation() {
-	solarcell.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+	solarcell.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`; //drejer solcellen
+
+	//saa current rotation kommer i console
+	console.log(`Elevation lige nu: ${rotateX >= 0 ? "+" : ""}${rotateX} deg`);
+	console.log(`Azimuth lige nu: ${rotateY >= 0 ? "+" : ""}${rotateY} deg`);
 }
 
 //MED KNAPPERNE -----------------------------------------------
-
-// const solarcell = document.querySelector(".solarcell");
-// let rotateX = 0;
-// let rotateY = 0;
-// const rotationIncrement = 5; // Adjust this value to control the rotation speed
 
 let rotateInterval;
 
 document.getElementById("rotateUp").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		rotateX += rotationIncrement;
-		updateRotation();
-	}, 50); // Adjust the interval as needed
+		if (rotateX >= maxUp) {
+			console.log("for mange grader til op!!!");
+		} else {
+			rotateX += rotationIncrement;
+			updateRotation();
+		}
+	}, 50); //50 ms tryk foer den registrerer, samme for de andre 3
 });
 
 document.getElementById("rotateDown").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		rotateX -= rotationIncrement;
-		updateRotation();
-	}, 50); // Adjust the interval as needed
-});
-
-document.getElementById("rotateLeft").addEventListener("mousedown", () => {
-	rotateInterval = setInterval(() => {
-		rotateY -= rotationIncrement;
-		updateRotation();
-	}, 50); // Adjust the interval as needed
+		if (rotateX <= maxDown) {
+			console.log("for mange grader til ned!!!");
+		} else {
+			rotateX -= rotationIncrement;
+			updateRotation();
+		}
+	}, 50);
 });
 
 document.getElementById("rotateRight").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		rotateY += rotationIncrement;
-		updateRotation();
-	}, 50); // Adjust the interval as needed
+		if (rotateX >= maxRight) {
+			console.log("for mange grader til til højre!!!");
+		} else {
+			rotateY += rotationIncrement;
+			updateRotation();
+		}
+	}, 50);
+});
+
+document.getElementById("rotateLeft").addEventListener("mousedown", () => {
+	rotateInterval = setInterval(() => {
+		if (rotateX <= maxLeft) {
+			console.log("for mange grader til til venstre!!!");
+		} else {
+			rotateY -= rotationIncrement;
+			updateRotation();
+		}
+	}, 50);
 });
 
 document.addEventListener("mouseup", () => {
 	clearInterval(rotateInterval);
 });
-
-function updateRotation() {
-	solarcell.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-}
 
 //MED MUSEN -----------------------------------------------
 // const solarcell = document.querySelector(".solarcell");

@@ -19,7 +19,7 @@ window.simulateTime = function () {
 	}
 	//kan kaldes i console
 	setTimeout(function () {
-		manualTime += 100; //plusser bare 100 minutter
+		manualTime += 50; //plusser bare 100 minutter
 		console.log("Manuel tid: ", manualTime); //tjek i console
 		updateWeatherStatus(); //alt andet opdaterer auto naar man skifter weatherstatus
 		simulateTime(); //rekursiv
@@ -138,12 +138,12 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 	const now = new Date(); //datoen
 	const hours = now.getHours(); //timer ift nuvaerende tidspunkt
 	const minutes = now.getMinutes(); //minutter ift nuvaerende tidspunkt
-	const totalMinutes = hours * 60 + minutes; //beregner total - skal kommenteres hvis der anvendes manuel tid!!!!!!!!!!!
-	console.log("Tid lige nu i min:", totalMinutes);
+	// const totalMinutes = hours * 60 + minutes; //beregner total - skal kommenteres hvis der anvendes manuel tid!!!!!!!!!!!
+	// console.log("Tid lige nu i min:", totalMinutes);
 
 	//manuel tid--------------------------------------------------------------------------------------------------------
-	// const totalMinutes = manualTime; //kan aendres vha changeTime(minutter) i console
-	// console.log("Total minutes:: ", totalMinutes);
+	const totalMinutes = manualTime; //kan aendres vha changeTime(minutter) i console
+	console.log("Total minutes:: ", totalMinutes);
 	//------------------------------------------------------------------------------------------------------------------
 
 	//sunrise og sunset paa den paagaeldende dag

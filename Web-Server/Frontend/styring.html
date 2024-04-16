@@ -1,70 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="/images/favicon.png" />
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="stylesheet" href="/css/solcelleStyles.css" />
+		<link rel="stylesheet" href="/css/tilbageKnap.css" />
+		<title>Styring Page</title>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/png" href="/images/favicon.png" />
-	<link rel="stylesheet" href="/css/styles.css" />
-	<link rel="stylesheet" href="/css/solcelleStyles.css" />
-	<link rel="stylesheet" href="/css/tilbageKnap.css" />
-	<title>Styring Page</title>
-</head>
-
-<body>
-	<div class="header-container">
-		<h1 style="text-align: center; font-size: 200%">
-			<a href="index.html" style="text-decoration: none; color: inherit">PRJ3 - WAM</a>
-		</h1>
-		<a href="index.html" class="custom-button">
-			<div class="arrow"></div>
-		</a>
-	</div>
-
-	<div class="topnav">
-		<a href="batteri.html">BATTERI</a>
-		<a href="data.html">DATA</a>
-		<a href="om.html">OM</a>
-	</div>
-
-	<h1>Manuel styring af solcellen</h1>
-	<p style="margin-bottom: 100px">der er ikke noget indhold endnuuuuuuuuu</p>
-
-	<header>
-		<div class="container">
-			<div class="solarcell-container">
-				<div class="solarcell">
-					<div class="solarcell-face front">Front</div>
-					<div class="solarcell-face back">Back</div>
-					<div class="solarcell-face left">Left</div>
-					<div class="solarcell-face right">Right</div>
-					<div class="solarcell-face top">Top</div>
-					<div class="solarcell-face bottom">Bottom</div>
-				</div>
-			</div>
-			<div class="buttons">
-				<div class="row">
-					<button id="rotateUp">↑</button>
-				</div>
-				<div class="row">
-					<button id="rotateLeft">←</button>
-					<button id="rotateDown">↓</button>
-					<button id="rotateRight">→</button>
-				</div>
-			</div>
+	<body>
+		<div class="header-container">
+			<h1 style="text-align: center; font-size: 200%">
+				<a href="index.html" style="text-decoration: none; color: inherit"
+					>PRJ3 - WAM</a
+				>
+			</h1>
+			<a href="index.html" class="custom-button">
+				<div class="arrow"></div>
+			</a>
 		</div>
-	</header>
 
-	<script src="/js/solcelle.js"></script>
-	<script>
-		// Retrieve the night mode state from localStorage
-		const nightModeEnabled = localStorage.getItem("nightMode");
+		<div class="topnav">
+			<a href="batteri.html">BATTERI</a>
+			<a href="data.html">DATA</a>
+			<a href="om.html">OM</a>
+		</div>
 
-		// Check if night mode is enabled and apply it to the body
-		if (nightModeEnabled === "true") {
-			document.body.classList.add("night-mode");
-		}
-	</script>
-</body>
+		<h1>Manuel styring af solcellen</h1>
+		<p>
+			Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
+			piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
+		</p>
+		<p>Man kan maksimalt dreje solcellen <span id="maxUp"></span> grader op</p>
+		<p>
+			Man kan maksimalt dreje solcellen (<span id="maxDown"></span>) grader ned
+		</p>
+		<p>
+			Man kan maksimalt dreje solcellen <span id="maxRight"></span> grader til
+			højre
+		</p>
+		<p style="margin-bottom: 150px">
+			Man kan maksimalt dreje solcellen (<span id="maxLeft"></span>) grader til
+			venstre
+		</p>
 
+		<header>
+			<div class="container">
+				<div class="solarcell-container">
+					<div class="solarcell">
+						<div class="solarcell-face front">Front</div>
+						<div class="solarcell-face back">Back</div>
+						<div class="solarcell-face left">Left</div>
+						<div class="solarcell-face right">Right</div>
+						<div class="solarcell-face top">Top</div>
+						<div class="solarcell-face bottom">Bottom</div>
+					</div>
+				</div>
+				<div class="buttons">
+					<div class="row">
+						<button id="rotateUp">↑</button>
+					</div>
+					<div class="row">
+						<button id="rotateLeft">←</button>
+						<button id="rotateDown">↓</button>
+						<button id="rotateRight">→</button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<script src="/js/solcelle.js"></script>
+		<script>
+			// Retrieve the night mode state from localStorage
+			const nightModeEnabled = localStorage.getItem("nightMode");
+
+			// Check if night mode is enabled and apply it to the body
+			if (nightModeEnabled === "true") {
+				document.body.classList.add("night-mode");
+			}
+		</script>
+	</body>
 </html>

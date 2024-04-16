@@ -2,70 +2,66 @@ var data = "./spi_data.txt";
 var txtArr = [];
 
 document.addEventListener("DOMContentLoaded", function () {
-	updateData();
-	setInterval(updateData, 60000); //opdaterer hvert 1000 ms
+	updateData(); //kalder funktion til at generere tabel
+	updateDataTest(); //kalder funktion til "latest spi value"
+	setInterval(updateData, 60000); // Update every 60 seconds
 });
 
+//Funktion til at indsaette data i tabel ud fra .txt
 function updateData() {
 	fetch(data)
 		.then((response) => response.text())
 		.then((data) => {
-			var lines = data.trim().split("\n"); //splitter i linjer
-			txtArr = []; //opretter array
-			lines.forEach((line) => {
-				line = line.trim(); //fjerner \r fra enden af datalinjer
-				txtArr.push(line.split(" ")); //splitter data på baggrund af mellemrum
-			});
-			console.log("Array af data: ", txtArr); //tjekker i console
+			var lines = data.trim().split("\n");
+			txtArr = []; //clear'er data
+			lines = lines.reverse(); //vender raekkefoelge paa linjer om, antager at nyeste data er i bunden
+			for (var i = 0; i < lines.length && i < 10; i++) {
+				var row = [(i + 1).toString(), ...lines[i].trim().split(" ")]; //tilfoejer datanr til hver raekke
+				txtArr.push(row);
+			}
+			console.log("Array of data: ", txtArr);
+			generateTable(); //kalder funktion til at generere tabel
 		})
 		.catch((error) => {
-			console.error("Fejl i håndtering af data.txt:", error);
+			console.error("Error fetching data.txt:", error);
 		});
 }
 
-function generate_table() {
-	if (typeof document.getElementsByClassName("data-table")[0] != "undefined") {
-		document.getElementsByClassName("data-table")[0].remove();
-	}
-	// get the reference for the body
-	var body = document.getElementsByTagName("body")[0];
+//funktion til at oprette tabel
+function generateTable() {
+	var tableBody = document.getElementById("data-table-body");
+	tableBody.innerHTML = ""; //clear'er eksisterende raekker
 
-	// creates a <table> element and a <tbody> element
-	var tbl = document.createElement("table");
-	var tblBody = document.createElement("tbody");
-
-	// creating all cells
-	for (var i = 0; i < txtArr.length; i++) {
-		// creates a table row
-		var row = document.createElement("tr");
-		for (var j = 0; j < 3; j++) {
-			var cell = document.createElement("td");
-			var cellText = document.createTextNode(txtArr[i][j]);
-			cell.appendChild(cellText);
-			row.appendChild(cell);
-			tblBody.appendChild(row);
-		}
-
-		// put the <tbody> in the <table>
-		tbl.appendChild(tblBody);
-		// appends <table> into <body>
-		body.appendChild(tbl);
-		// sets the border attribute of tbl to 2;
-		tbl.setAttribute("border", "2");
-	}
-	txtArr = [];
+	//genererer tabel ud fra .txt
+	txtArr.forEach((row) => {
+		var newRow = document.createElement("tr"); //table row
+		row.forEach((cellData) => {
+			var cell = document.createElement("td"); //table data
+			cell.textContent = cellData;
+			newRow.appendChild(cell);
+		});
+		tableBody.appendChild(newRow);
+	});
 }
 
-// //DATAAAAAAAA
-// function updateData() {
-// 	fetch(data)
-// 		.then((response) => response.text())
-// 		.then((data) => {
-// 			// Split the data by newline and get the last line
-// 			var lines = data.trim().split("\n");
-// 			var latestValue = lines[lines.length - 1];
-// 			document.getElementById("spiValue").innerText = latestValue;
-// 			console.log("SPI value: ", latestValue); //tjekker i console
-// 			console.log("Hej August"); //hej august :))
-// 		});
-// }
+//testfunktion til foerste stk data fra .txt
+function updateDataTest() {
+	fetch(data)
+		.then((response) => response.text())
+		.then((data) => {
+			//splitter data for hver linje
+			var lines = data.trim().split("\n");
+			if (lines.length > 0) {
+				var latestLine = lines[lines.length - 1];
+				var values = latestLine.trim().split(" "); //splitter data med mellemrum
+				if (values.length > 0) {
+					var firstValue = values[0]; //tager foerste value
+					document.getElementById("spiValue").innerText = firstValue;
+					console.log("SPI value: ", firstValue);
+				}
+			}
+		})
+		.catch((error) => {
+			console.error("Error fetching data.txt:", error);
+		});
+}
