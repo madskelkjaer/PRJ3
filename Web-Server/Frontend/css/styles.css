@@ -31,9 +31,7 @@ button {
 	font-size: 35px;
 	text-align: center;
 	padding: 10px 10px;
-	/* Justér polstring efter behov */
-	margin: 10px 10px;
-	/* Justér for at oprette plads mellem knapperne */
+	margin: 10px 10px; /*plads mellem knapper*/
 	text-decoration: none;
 	background-color: #b6d5d8;
 	transition: background-color 0.3s ease;
@@ -46,19 +44,19 @@ button {
 }
 
 .topnav.night-mode a {
-	background-color: #32465a; /* Darker background color in night mode */
-	color: white; /* Text color set to white in night mode */
+	background-color: #32465a; /*mørkere baggrund til night mode*/
+	color: white; /*hvid tekst i night mode*/
 }
 
 .topnav a:hover {
-	background-color: #097885; /* Darker background color on hover */
-	color: white; /* Text color set to white on hover */
+	background-color: #097885; /*mørkere baggrund ved hover*/
+	color: white; /*hvid tekst til hover*/
 }
 
 /* random sol */
 .sun {
 	position: absolute;
-	width: 480px; /* Adjust width as needed */
-	height: auto; /* Maintain aspect ratio */
+	width: 480px;
+	height: auto;
 	transition: transform 0.6s ease-in-out;
 }

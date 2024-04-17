@@ -86,12 +86,15 @@ header {
 
 .row {
 	display: flex;
-	justify-content: center;
+	justify-content: start;
 	align-items: center;
 }
 
 .buttons button {
-	font-size: 26px;
+	font-size: 25px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
 	width: 40px;
 	height: 40px;
 	margin: 2px;
@@ -103,4 +106,36 @@ header {
 
 .buttons button:hover {
 	background-color: gray;
+}
+
+/*Til home input field*/
+.input-home {
+	font-family: "Helvetica", cursive;
+	color: black;
+}
+
+#homeXInput,
+#homeYInput {
+	padding: 10px;
+	border: 1px solid rgb(125, 162, 192);
+	border-radius: 10px;
+	margin-right: 10px;
+	height: 20px;
+	width: 40px;
+}
+
+#updateButton {
+	padding: 10px 10px;
+	background-color: #b6d5d8;
+	color: black;
+	border: none;
+	border-radius: 10px;
+	transition: background-color 0.3s ease;
+
+	cursor: pointer;
+}
+
+#updateButton:hover {
+	background-color: #097885;
+	color: white;
 }

@@ -41,10 +41,18 @@
 			Man kan maksimalt dreje solcellen <span id="maxRight"></span> grader til
 			højre
 		</p>
-		<p style="margin-bottom: 150px">
+		<p>
 			Man kan maksimalt dreje solcellen (<span id="maxLeft"></span>) grader til
 			venstre
 		</p>
+		<p> Nedenfor kan du manuelt sætte return position/home position??</p>
+		<div class="input-home" style="margin-bottom: 150px">
+			<label for="homeXInput">Azimuth:</label>
+			<input type="number" id="homeXInput" value="0">
+			<label for="homeYInput">Elevation:</label>
+			<input type="number" id="homeYInput" value="0">
+			<button id="updateButton">Opdater</button>
+		  </div>
 
 		<header>
 			<div class="container">
@@ -60,6 +68,7 @@
 				</div>
 				<div class="buttons">
 					<div class="row">
+						<button id="reset">🏠</button>
 						<button id="rotateUp">↑</button>
 					</div>
 					<div class="row">
@@ -70,16 +79,7 @@
 				</div>
 			</div>
 		</header>
-
 		<script src="/js/solcelle.js"></script>
-		<script>
-			// Retrieve the night mode state from localStorage
-			const nightModeEnabled = localStorage.getItem("nightMode");
-
-			// Check if night mode is enabled and apply it to the body
-			if (nightModeEnabled === "true") {
-				document.body.classList.add("night-mode");
-			}
 		</script>
 	</body>
 </html>
