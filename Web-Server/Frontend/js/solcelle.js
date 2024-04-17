@@ -27,7 +27,7 @@ function updateHome() {
 	} else {
 		homeX = parseInt(document.getElementById("homeXInput").value) || 0;
 		homeY = parseInt(document.getElementById("homeYInput").value) || 0;
-		console.log(`Elevation: ${homeX}, Azimuth: ${homeY}`);
+		console.log(`HOME!! Elevation: ${homeX}, Azimuth: ${homeY}`);
 	}
 }
 
