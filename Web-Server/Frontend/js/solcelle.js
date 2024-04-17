@@ -3,9 +3,9 @@ let rotateX = 0; //Det her er omvendt, idk what to do :((( x er i opad og nedad,
 let rotateY = 0;
 const rotationIncrement = 2; //hvor hurtigt skal den dreje????
 const maxUp = 90;
-const maxDown = -90;
-const maxRight = 90;
-const maxLeft = -90;
+const maxDown = -15;
+const maxRight = 100;
+const maxLeft = -100;
 
 document.getElementById("maxUp").textContent = maxUp;
 document.getElementById("maxDown").textContent = maxDown;
