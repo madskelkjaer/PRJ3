@@ -66,6 +66,10 @@ def runner():
 		sendSpiData(to_send)
 
 		time.sleep(1)
+
+		yield "Running"
+
+	return "Data runner is running continuously"
 	
 
 if __name__ == "__main__":
