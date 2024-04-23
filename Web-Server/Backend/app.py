@@ -1,5 +1,6 @@
 from flask import Flask
 import spidev
+import time
 import sqlite3
 
 
@@ -62,7 +63,9 @@ def runner():
 	while True:
 		if (len(to_send) == 0):
 			to_send.append(0x00)
-			sendSpiData(to_send)
+		sendSpiData(to_send)
+
+		time.sleep(1)
 	
 
 if __name__ == "__main__":
