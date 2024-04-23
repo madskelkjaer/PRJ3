@@ -53,7 +53,7 @@ def sendSpiData(data):
 
 @app.route("/")
 def hello_world():
-	to_send.append(0xff)
+	to_send.append(0xFF)
 	return "<p>hejsa</p>"
 
 @app.route("/datarunner")
