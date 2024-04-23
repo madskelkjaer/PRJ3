@@ -32,6 +32,8 @@
 <v>SPItest\SPItest\Header Files\cyapicallbacks.h</v>
 <v>SPItest\SPItest\Source Files</v>
 <v>SPItest\SPItest\Source Files\main.c</v>
+<v>SPItest\SPItest\Generated_Source</v>
+<v>SPItest\SPItest\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>SPItest</v>
@@ -51,6 +53,14 @@
 <v>SPItest\SPItest\Header Files\cyapicallbacks.h</v>
 <v>SPItest\SPItest\Source Files</v>
 <v>SPItest\SPItest\Source Files\main.c</v>
+<v>SPItest\SPItest\Generated_Source</v>
+<v>SPItest\SPItest\Generated_Source\PSoC5</v>
+<v>SPItest\SPItest\Generated_Source\PSoC5\cy_boot</v>
+<v>SPItest\SPItest\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>SPItest\SPItest\Generated_Source\PSoC5\MISO_1</v>
+<v>SPItest\SPItest\Generated_Source\PSoC5\MOSI_1</v>
+<v>SPItest\SPItest\Generated_Source\PSoC5\SCLK_1</v>
+<v>SPItest\SPItest\Generated_Source\PSoC5\SPIS_1</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -71,6 +81,33 @@
 <ExpandedNodeIds>
 <v>SPItest</v>
 <v>SPItest\SPItest</v>
+<v>SPItest\SPItest\CortexM3</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\MISO_1.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\MOSI_1.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SCLK_1.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_BOOT.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_INT.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_IntClock.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_PM.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\SPItest.elf</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\SPItest.hex</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\SPItest.map</v>
 <v>SPItest\SPItest\SPItest.gpdsc</v>
 <v>SPItest\SPItest\SPItest.rpt</v>
 <v>SPItest\SPItest\SPItest_timing.html</v>
@@ -78,9 +115,29 @@
 <VisibleNodeIds>
 <v>SPItest</v>
 <v>SPItest\SPItest</v>
-<v>SPItest\SPItest\SPItest.gpdsc</v>
-<v>SPItest\SPItest\SPItest.rpt</v>
-<v>SPItest\SPItest\SPItest_timing.html</v>
+<v>SPItest\SPItest\CortexM3</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\MISO_1.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\MOSI_1.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SCLK_1.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_BOOT.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_INT.lst</v>
+<v>SPItest\SPItest\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_IntClock.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -122,6 +179,8 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\SPItest.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\SPItest.cydsn\SPItest.cydwr" />
+<name v=".\SPItest.cydsn\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -129,7 +188,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1088, 538" SelectedTabbedMdiWindow="36c8bf9f-e926-48b7-b349-e43bfbf85074"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ff222b99-ca19-4998-985b-f9e050176289" /><DocumentWindow Key="C:\code\PRJ3\PSoC\SPItest\SPItest.cydsn\TopDesign\TopDesign.cysch" Guid="36c8bf9f-e926-48b7-b349-e43bfbf85074" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="514, 498" SelectedTabbedMdiWindow="cfb0fbf6-4e1c-497e-8197-20586a78834b"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ff222b99-ca19-4998-985b-f9e050176289" /><DocumentWindow Key="C:\code\PRJ3\PSoC\SPItest\SPItest.cydsn\TopDesign\TopDesign.cysch" Guid="36c8bf9f-e926-48b7-b349-e43bfbf85074" /><DocumentWindow Key="C:\code\PRJ3\PSoC\SPItest\SPItest.cydsn\SPItest.cydwr" Guid="0fecd45d-5fb5-4492-a1aa-10575b16babf" /><DocumentWindow Key="C:\code\PRJ3\PSoC\SPItest\SPItest.cydsn\main.c" Guid="cfb0fbf6-4e1c-497e-8197-20586a78834b" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
