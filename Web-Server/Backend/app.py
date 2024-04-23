@@ -36,42 +36,33 @@ spi.mode = 0
 
 
 
-
-
 app = Flask(__name__)
+to_send = []
 
-def sendSpiData(data):
-	print("Data to be sent: ", data)
-	nextData = to_send.pop(0)
-	print("Sending next: ", nextData)
-
-	try:
-		response = spi.xfer([nextData])
-		print("Data sent: ", nextData)
-		print("Data recieved: ", response)
-	except Exception as e:
-		print("Fejl ", e)
-
+def sendSpiData():
+    if to_send:
+        data_to_send = to_send.pop(0)
+        print("----")
+        print("Sending data: ", data_to_send)
+        try:
+            response = spi.xfer([data_to_send])
+            print("Data sent: ", data_to_send)
+            print("Data received: ", response)
+            print("----")
+        except Exception as e:
+            print("Error in sending data: ", e)
 
 @app.route("/")
 def hello_world():
-	to_send.append(0xFF)
-	return "<p>hejsa</p>"
+    to_send.append(0xFF)
+    return "<p>hejsa</p>"
 
 @app.route("/datarunner")
 def runner():
-	global to_send
-	to_send = []
-
-	while True:
-		if (len(to_send) == 0):
-			to_send.append(0x00)
-		sendSpiData(to_send)
-
-		time.sleep(5)
-
-	return "Data runner is running continuously"
-	
+    while True:
+        sendSpiData()
+        time.sleep(5)
+    return "Data runner is running continuously"
 
 if __name__ == "__main__":
-	app.run(threaded=True, port=5000)
+    app.run(threaded=True, port=5000)
