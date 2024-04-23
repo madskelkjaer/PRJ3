@@ -67,8 +67,6 @@ def runner():
 
 		time.sleep(1)
 
-		yield "Running"
-
 	return "Data runner is running continuously"
 	
 
