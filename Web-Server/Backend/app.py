@@ -40,17 +40,19 @@ app = Flask(__name__)
 to_send = []
 
 def sendSpiData():
-    if to_send:
-        data_to_send = to_send.pop(0)
+    if not len(to_send) > 0:
+         to_send.append(0x00)
+         
+    data_to_send = to_send.pop(0)
+    print("----")
+    print("Sending data: ", data_to_send)
+    try:
+        response = spi.xfer([data_to_send])
+        print("Data sent: ", data_to_send)
+        print("Data received: ", response)
         print("----")
-        print("Sending data: ", data_to_send)
-        try:
-            response = spi.xfer([data_to_send])
-            print("Data sent: ", data_to_send)
-            print("Data received: ", response)
-            print("----")
-        except Exception as e:
-            print("Error in sending data: ", e)
+    except Exception as e:
+        print("Error in sending data: ", e)
 
 @app.route("/")
 def hello_world():
