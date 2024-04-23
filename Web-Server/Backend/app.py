@@ -46,7 +46,7 @@ def sendSpiData(data):
 	print("Sending next: ", nextData)
 
 	try:
-		response = spi.xfer(nextData)
+		response = spi.xfer([nextData])
 		print("Data sent: ", nextData)
 		print("Data recieved: ", response)
 	except Exception as e:
