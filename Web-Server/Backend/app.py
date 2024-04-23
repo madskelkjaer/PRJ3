@@ -41,12 +41,14 @@ spi.mode = 0
 app = Flask(__name__)
 
 def sendSpiData(data):
-	print("Data: ", data)
+	print("Data to be sent: ", data)
+	nextData = to_send.pop(0)
+	print("Sending next: ", nextData)
+
 	try:
-		response = spi.xfer(data)
-		print("Data sent: ", data)
+		response = spi.xfer(nextData)
+		print("Data sent: ", nextData)
 		print("Data recieved: ", response)
-		to_send.pop(0)
 	except:
 		print("Fejl")
 
