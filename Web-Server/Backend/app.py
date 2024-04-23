@@ -46,6 +46,7 @@ def sendSpiData(data):
 		response = spi.xfer(data)
 		print("Data sent: ", data)
 		print("Data recieved: ", response)
+		to_send.pop(0)
 	except:
 		print("Fejl")
 
