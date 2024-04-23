@@ -54,13 +54,15 @@ def hello_world():
 	to_send.append(0xff)
 	return "<p>hejsa</p>"
 
+@app.route("/datarunner")
 def runner():
 	global to_send
 	to_send = []
 
-	if (len(to_send) == 0):
-		to_send.append(0x00)
-		sendSpiData(to_send)
+	while True:
+		if (len(to_send) == 0):
+			to_send.append(0x00)
+			sendSpiData(to_send)
 	
 
 if __name__ == "__main__":
