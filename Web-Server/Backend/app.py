@@ -63,7 +63,7 @@ def hello_world():
 def runner():
     while True:
         sendSpiData()
-        time.sleep(5)
+        time.sleep(1)
     return "Data runner is running continuously"
 
 if __name__ == "__main__":
