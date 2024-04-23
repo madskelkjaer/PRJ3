@@ -66,7 +66,7 @@ def runner():
 			to_send.append(0x00)
 		sendSpiData(to_send)
 
-		time.sleep(1)
+		time.sleep(5)
 
 	return "Data runner is running continuously"
 	
