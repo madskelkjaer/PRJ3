@@ -46,8 +46,8 @@ def sendSpiData(data):
 		response = spi.xfer(data)
 		print("Data sent: ", data)
 		print("Data recieved: ", response)
-	finally:
-		spi.close()
+	except:
+		print("Fejl")
 
 
 @app.route("/")
