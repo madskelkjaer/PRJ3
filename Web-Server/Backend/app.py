@@ -1,5 +1,5 @@
 from flask import Flask
-import flask-cors
+from flask_cors import CORS
 import spidev
 import time
 import sqlite3
@@ -58,6 +58,7 @@ spi.mode = 0
 
 
 app = Flask(__name__)
+CORS(app)
 to_send = []
 
 def sendSpiData():
