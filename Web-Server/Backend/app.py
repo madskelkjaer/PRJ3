@@ -32,6 +32,19 @@ def insertData(date, azimuth, elevation, batteristatus):
     finally:
         con.close()
 
+def getData(limit: int):
+    try:
+        con = sqlite3.connect("database.db")
+        cur = con.cursor()
+        cur.execute("SELECT * FROM data ORDER BY id DESC LIMIT ?", (limit,))
+        data = cur.fetchall()
+    except Exception as e:
+        print("Error in inserting data: ", e)
+    finally:
+        con.close()
+    
+    return data
+
 ### SPI DEV ###
 spi = spidev.SpiDev()
 bus = 0
@@ -63,9 +76,7 @@ def sendSpiData():
 
 @app.route("/api/getdata/<int:limit>")
 def getdata(limit: int):
-    cur.execute("SELECT * FROM data ORDER BY id DESC LIMIT ?", (limit,))
-    data = cur.fetchall()
-    return data
+    return getData(limit)
 
 @app.route("/api/insertdata/<int:azimuth>/<int:elevation>/<float:batteristatus>")
 def insertdata(azimuth: int, elevation: int, batteristatus: float):
