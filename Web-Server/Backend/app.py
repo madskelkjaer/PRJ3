@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 import spidev
 import time
 import sqlite3
@@ -76,8 +76,8 @@ def sendSpiData():
 
 @app.route("/api/getdata/<int:limit>")
 def getdata(limit: int):
-    data = getData(limit)
-    data.headers.add("Access-Control-Allow-Origin", "*")
+    data = jsonify(getData(limit))
+    data.response.headers.add("Access-Control-Allow-Origin", "*")
     return data
 
 @app.route("/api/insertdata/<int:azimuth>/<int:elevation>/<float:batteristatus>")
