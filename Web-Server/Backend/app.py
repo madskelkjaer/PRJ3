@@ -76,7 +76,9 @@ def sendSpiData():
 
 @app.route("/api/getdata/<int:limit>")
 def getdata(limit: int):
-    return getData(limit)
+    data = getData(limit)
+    data.headers.add("Access-Control-Allow-Origin", "*")
+    return data
 
 @app.route("/api/insertdata/<int:azimuth>/<int:elevation>/<float:batteristatus>")
 def insertdata(azimuth: int, elevation: int, batteristatus: float):
