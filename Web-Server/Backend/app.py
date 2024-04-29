@@ -1,4 +1,5 @@
-from flask import Flask, jsonify
+from flask import Flask
+import flask-cors
 import spidev
 import time
 import sqlite3
@@ -75,10 +76,11 @@ def sendSpiData():
         print("Error in sending data: ", e)
 
 @app.route("/api/getdata/<int:limit>")
+@cross_origin()
 def getdata(limit: int):
-    data = jsonify(getData(limit))
-    data.response.headers.add("Access-Control-Allow-Origin", "*")
-    return data
+    response = jsonify(getData(limit))
+    response.response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 @app.route("/api/insertdata/<int:azimuth>/<int:elevation>/<float:batteristatus>")
 def insertdata(azimuth: int, elevation: int, batteristatus: float):
