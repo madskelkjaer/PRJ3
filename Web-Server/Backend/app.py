@@ -1,4 +1,5 @@
-from flask import Flask, request
+from flask import Flask
+from flask_cors import CORS
 import spidev
 import time
 import sqlite3
@@ -15,14 +16,35 @@ try:
     con.commit()
 except:
     pass
+finally:
+    con.close()
 
 def insertData(date, azimuth, elevation, batteristatus):
-    cur.execute(
-        "INSERT INTO data(date, azimuth, elevation, batteristatus) VALUES(?, ?, ?, ?)",
-        (date, azimuth, elevation, batteristatus)
-    )
-    con.commit()
+    try:
+        con = sqlite3.connect("database.db")
+        cur = con.cursor()
+        cur.execute(
+            "INSERT INTO data(date, azimuth, elevation, batteristatus) VALUES(?, ?, ?, ?)",
+            (date, azimuth, elevation, batteristatus)
+        )
+        con.commit()
+    except Exception as e:
+        print("Error in inserting data: ", e)
+    finally:
+        con.close()
 
+def getData(limit: int):
+    try:
+        con = sqlite3.connect("database.db")
+        cur = con.cursor()
+        cur.execute("SELECT * FROM data ORDER BY id DESC LIMIT ?", (limit,))
+        data = cur.fetchall()
+    except Exception as e:
+        print("Error in inserting data: ", e)
+    finally:
+        con.close()
+    
+    return data
 
 ### SPI DEV ###
 spi = spidev.SpiDev()
@@ -36,6 +58,7 @@ spi.mode = 0
 
 
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 to_send = []
 
 def sendSpiData():
@@ -55,9 +78,7 @@ def sendSpiData():
 
 @app.route("/api/getdata/<int:limit>")
 def getdata(limit: int):
-    cur.execute("SELECT * FROM data ORDER BY id DESC LIMIT ?", (limit,))
-    data = cur.fetchall()
-    return data
+    return getData(limit)
 
 @app.route("/api/insertdata/<int:azimuth>/<int:elevation>/<float:batteristatus>")
 def insertdata(azimuth: int, elevation: int, batteristatus: float):
@@ -77,7 +98,7 @@ def runner():
         time.sleep(1)
     return "Data runner is running continuously"
 
-@app.route("saveForm")
+@app.route("/saveForm")
 def form():
     # Hent data fra anmodningen
     data = request.json
