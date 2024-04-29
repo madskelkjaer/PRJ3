@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 1
 
 
    1              		.syntax unified
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
   23              		.thumb_func
   24              		.type	main, %function
   25              	main:
-  26              	.LFB63:
+  26              	.LFB64:
   27              		.file 1 "main.c"
    1:main.c        **** /* ========================================
    2:main.c        ****  *
@@ -37,10 +37,11 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
    7:main.c        **** 
    8:main.c        **** #include "project.h"
    9:main.c        **** #include "StepperMotorDriver.h"
-  10:main.c        **** 
-  11:main.c        **** int main(void)
-  12:main.c        **** {
-  28              		.loc 1 12 0
+  10:main.c        **** #include <stdio.h>
+  11:main.c        **** 
+  12:main.c        **** int main(void)
+  13:main.c        **** {
+  28              		.loc 1 13 0
   29              		.cfi_startproc
   30              		@ Volatile: function does not return.
   31              		@ args = 0, pretend = 0, frame = 0
@@ -49,33 +50,33 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 3, -8
   36              		.cfi_offset 14, -4
-  13:main.c        ****     CyGlobalIntEnable;                                                      // Enable global interr
-  37              		.loc 1 13 0
+  14:main.c        ****     CyGlobalIntEnable;                                                      // Enable global interr
+  37              		.loc 1 14 0
   38              		.syntax unified
-  39              	@ 13 "main.c" 1
+  39              	@ 14 "main.c" 1
   40 0002 62B6     		CPSIE   i
   41              	@ 0 "" 2
-  14:main.c        ****     UART_1_Start();                                                         // Enable UART
-  42              		.loc 1 14 0
+  15:main.c        ****     UART_1_Start();                                                         // Enable UART
+  42              		.loc 1 15 0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 2
+
+
   43              		.thumb
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 2
-
-
   44              		.syntax unified
   45 0004 FFF7FEFF 		bl	UART_1_Start
   46              	.LVL0:
-  15:main.c        ****     isr_uart_rx_StartEx(UART_HANDLER);                                      // Enable UART ISR
-  47              		.loc 1 15 0
+  16:main.c        ****     isr_uart_rx_StartEx(UART_HANDLER);                                      // Enable UART ISR
+  47              		.loc 1 16 0
   48 0008 0448     		ldr	r0, .L4
   49 000a FFF7FEFF 		bl	isr_uart_rx_StartEx
   50              	.LVL1:
-  16:main.c        ****     isr_motor_StartEx(MOTOR_STEP);                                          // Enable ISR for motor
-  51              		.loc 1 16 0
+  17:main.c        ****     isr_motor_StartEx(MOTOR_STEP);                                          // Enable ISR for motor
+  51              		.loc 1 17 0
   52 000e 0448     		ldr	r0, .L4+4
   53 0010 FFF7FEFF 		bl	isr_motor_StartEx
   54              	.LVL2:
-  17:main.c        ****     UART_1_PutString("Ready to test new ideas that doesn't work!\r\n");     // Show message on UART
-  55              		.loc 1 17 0
+  18:main.c        ****     UART_1_PutString("Ready to test new ideas that doesn't work!\r\n");     // Show message on UART
+  55              		.loc 1 18 0
   56 0014 0348     		ldr	r0, .L4+8
   57 0016 FFF7FEFF 		bl	UART_1_PutString
   58              	.LVL3:
@@ -88,7 +89,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
   65 0020 00000000 		.word	MOTOR_STEP
   66 0024 00000000 		.word	.LC0
   67              		.cfi_endproc
-  68              	.LFE63:
+  68              	.LFE64:
   69              		.size	main, .-main
   70              		.section	.rodata.str1.4,"aMS",%progbits,1
   71              		.align	2
@@ -117,10 +118,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
   90 0010 0C       		.byte	0xc
   91 0011 2E000000 		.4byte	.LASF21
   92 0015 2F010000 		.4byte	.LASF22
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 3
+
+
   93 0019 00000000 		.4byte	.Ldebug_ranges0+0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 3
-
-
   94 001d 00000000 		.4byte	0
   95 0021 00000000 		.4byte	.Ldebug_line0
   96 0025 02       		.uleb128 0x2
@@ -177,10 +178,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
  147 0082 04       		.byte	0x4
  148 0083 04       		.byte	0x4
  149 0084 E6010000 		.4byte	.LASF11
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 4
+
+
  150 0088 02       		.uleb128 0x2
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 4
-
-
  151 0089 08       		.byte	0x8
  152 008a 04       		.byte	0x4
  153 008b B0010000 		.4byte	.LASF12
@@ -199,10 +200,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
  166 00a4 05       		.uleb128 0x5
  167 00a5 35000000 		.4byte	.LASF23
  168 00a9 01       		.byte	0x1
- 169 00aa 0B       		.byte	0xb
+ 169 00aa 0C       		.byte	0xc
  170 00ab 68000000 		.4byte	0x68
- 171 00af 00000000 		.4byte	.LFB63
- 172 00b3 28000000 		.4byte	.LFE63-.LFB63
+ 171 00af 00000000 		.4byte	.LFB64
+ 172 00b3 28000000 		.4byte	.LFE64-.LFB64
  173 00b7 01       		.uleb128 0x1
  174 00b8 9C       		.byte	0x9c
  175 00b9 EC000000 		.4byte	0xec
@@ -237,10 +238,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
  204 00fe 02010000 		.4byte	.LASF16
  205 0102 02010000 		.4byte	.LASF16
  206 0106 04       		.byte	0x4
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 5
+
+
  207 0107 54       		.byte	0x54
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 5
-
-
  208 0108 0B       		.uleb128 0xb
  209 0109 EC010000 		.4byte	.LASF17
  210 010d EC010000 		.4byte	.LASF17
@@ -297,10 +298,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
  261 0023 3A       		.uleb128 0x3a
  262 0024 0B       		.uleb128 0xb
  263 0025 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 6
+
+
  264 0026 0B       		.uleb128 0xb
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 6
-
-
  265 0027 49       		.uleb128 0x49
  266 0028 13       		.uleb128 0x13
  267 0029 00       		.byte	0
@@ -357,10 +358,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
  318 0060 07       		.uleb128 0x7
  319 0061 898201   		.uleb128 0x4109
  320 0064 01       		.byte	0x1
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 7
+
+
  321 0065 11       		.uleb128 0x11
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 7
-
-
  322 0066 01       		.uleb128 0x1
  323 0067 31       		.uleb128 0x31
  324 0068 13       		.uleb128 0x13
@@ -417,10 +418,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
  375 009e 00       		.byte	0
  376 009f 00       		.byte	0
  377 00a0 00       		.byte	0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 8
+
+
  378              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 8
-
-
  379 0000 1C000000 		.4byte	0x1c
  380 0004 0200     		.2byte	0x2
  381 0006 00000000 		.4byte	.Ldebug_info0
@@ -428,14 +429,14 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
  383 000b 00       		.byte	0
  384 000c 0000     		.2byte	0
  385 000e 0000     		.2byte	0
- 386 0010 00000000 		.4byte	.LFB63
- 387 0014 28000000 		.4byte	.LFE63-.LFB63
+ 386 0010 00000000 		.4byte	.LFB64
+ 387 0014 28000000 		.4byte	.LFE64-.LFB64
  388 0018 00000000 		.4byte	0
  389 001c 00000000 		.4byte	0
  390              		.section	.debug_ranges,"",%progbits
  391              	.Ldebug_ranges0:
- 392 0000 00000000 		.4byte	.LFB63
- 393 0004 28000000 		.4byte	.LFE63
+ 392 0000 00000000 		.4byte	.LFB64
+ 393 0004 28000000 		.4byte	.LFE64
  394 0008 00000000 		.4byte	0
  395 000c 00000000 		.4byte	0
  396              		.section	.debug_line,"",%progbits
@@ -477,10 +478,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
  411      20726576 
  411      6973696F 
  411      6E203233 
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 9
+
+
  411      37373135 
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 9
-
-
  412 00a0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  412      66756E63 
  412      74696F6E 
@@ -537,10 +538,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 1
  428      69766572 
  428      2E637964 
  429              	.LASF13:
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccVFs9jV.s 			page 10
+
+
  430 01a2 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc79vuyR.s 			page 10
-
-
  430      00
  431              	.LASF4:
  432 01a7 6C6F6E67 		.ascii	"long int\000"

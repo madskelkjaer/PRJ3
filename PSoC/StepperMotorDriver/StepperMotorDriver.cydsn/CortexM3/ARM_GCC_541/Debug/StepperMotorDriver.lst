@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
   28:StepperMotorDriver.c **** static long elevationSteps = 8000000;   // counting steps for steppermotor moving solar panel verti
   29:StepperMotorDriver.c **** static int aStep = 0;                   // number of steps to be taken with azimuth motor
   30:StepperMotorDriver.c **** static int eStep = 0;                   // number of steps to be taken with elevation motor
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 2
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 2
 
 
   31:StepperMotorDriver.c **** 
@@ -105,8 +105,8 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
   47:StepperMotorDriver.c ****     }
   48:StepperMotorDriver.c ****     if (aStep > 0)
   49:StepperMotorDriver.c ****     {   // turning right (positiv steps)
-  50:StepperMotorDriver.c ****         if (Limit_Right_Read()) // ! when implemented *********************************************
-  51:StepperMotorDriver.c ****         {   // if limit is reached, don't move
+  50:StepperMotorDriver.c ****         if (!Limit_Right_Read())
+  51:StepperMotorDriver.c ****         {   // if right limit is reached, don't move
   52:StepperMotorDriver.c ****             aStep = 0;
   53:StepperMotorDriver.c ****             return 0;
   54:StepperMotorDriver.c ****         }
@@ -117,11 +117,11 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
   59:StepperMotorDriver.c ****     }
   60:StepperMotorDriver.c ****     else if (aStep < 0)
   61:StepperMotorDriver.c ****     {    // turning left (negativ steps)
-  62:StepperMotorDriver.c ****         if (Limit_Left_Read()) // ! when implemented **********************************************
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 3
+  62:StepperMotorDriver.c ****         if (!Limit_Left_Read())
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 3
 
 
-  63:StepperMotorDriver.c ****         {   // if limit is reached, don't move
+  63:StepperMotorDriver.c ****         {   // if left limit is reached, don't move
   64:StepperMotorDriver.c ****             aStep = 0;
   65:StepperMotorDriver.c ****             return 0;
   66:StepperMotorDriver.c ****         }
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
   89              		.type	azimuth, %function
   90              	azimuth:
   91              	.LFB65:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 4
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 4
 
 
   42:StepperMotorDriver.c ****     if (Azimuth_Pin_1_Read() == 0 && Azimuth_Pin_2_Read() == 0 && Azimuth_Pin_3_Read() == 0 && Azim
@@ -212,16 +212,16 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
  115 0018 78B9     		cbnz	r0, .L7
   45:StepperMotorDriver.c ****         return 0;
  116              		.loc 1 45 0 is_stmt 1
- 117 001a 294B     		ldr	r3, .L17
+ 117 001a 284B     		ldr	r3, .L17
  118 001c 1B68     		ldr	r3, [r3]
- 119 001e 294A     		ldr	r2, .L17+4
+ 119 001e 284A     		ldr	r2, .L17+4
  120 0020 1340     		ands	r3, r3, r2
  121 0022 03D5     		bpl	.L8
  122 0024 013B     		subs	r3, r3, #1
  123 0026 63F00703 		orn	r3, r3, #7
  124 002a 0133     		adds	r3, r3, #1
  125              	.L8:
- 126 002c 2648     		ldr	r0, .L17+8
+ 126 002c 2548     		ldr	r0, .L17+8
  127 002e 00EB0310 		add	r0, r0, r3, lsl #4
  128 0032 FFF7FEFF 		bl	azimuthStep
  129              	.LVL11:
@@ -232,162 +232,160 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
  133              	.L7:
   48:StepperMotorDriver.c ****     {   // turning right (positiv steps)
  134              		.loc 1 48 0
- 135 003a 244B     		ldr	r3, .L17+12
+ 135 003a 234B     		ldr	r3, .L17+12
  136 003c 1B68     		ldr	r3, [r3]
  137 003e 002B     		cmp	r3, #0
- 138 0040 1CDD     		ble	.L10
-  50:StepperMotorDriver.c ****         {   // if limit is reached, don't move
+ 138 0040 1BDD     		ble	.L10
+  50:StepperMotorDriver.c ****         {   // if right limit is reached, don't move
  139              		.loc 1 50 0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 5
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 5
 
 
  140 0042 FFF7FEFF 		bl	Limit_Right_Read
  141              	.LVL12:
- 142 0046 18B1     		cbz	r0, .L11
+ 142 0046 10B9     		cbnz	r0, .L11
   52:StepperMotorDriver.c ****             return 0;
  143              		.loc 1 52 0
- 144 0048 0020     		movs	r0, #0
- 145 004a 204B     		ldr	r3, .L17+12
- 146 004c 1860     		str	r0, [r3]
+ 144 0048 1F4B     		ldr	r3, .L17+12
+ 145 004a 1860     		str	r0, [r3]
   53:StepperMotorDriver.c ****         }
- 147              		.loc 1 53 0
- 148 004e 08BD     		pop	{r3, pc}
- 149              	.L11:
+ 146              		.loc 1 53 0
+ 147 004c 08BD     		pop	{r3, pc}
+ 148              	.L11:
   56:StepperMotorDriver.c ****         aStep = aStep - 1;
- 150              		.loc 1 56 0
- 151 0050 1B4A     		ldr	r2, .L17
- 152 0052 1368     		ldr	r3, [r2]
- 153 0054 0133     		adds	r3, r3, #1
- 154 0056 1360     		str	r3, [r2]
- 155 0058 1A48     		ldr	r0, .L17+4
- 156 005a 0340     		ands	r3, r3, r0
- 157 005c 03D5     		bpl	.L12
- 158 005e 013B     		subs	r3, r3, #1
- 159 0060 63F00703 		orn	r3, r3, #7
- 160 0064 0133     		adds	r3, r3, #1
- 161              	.L12:
- 162 0066 1848     		ldr	r0, .L17+8
- 163 0068 00EB0310 		add	r0, r0, r3, lsl #4
- 164 006c FFF7FEFF 		bl	azimuthStep
- 165              	.LVL13:
+ 149              		.loc 1 56 0
+ 150 004e 1B4A     		ldr	r2, .L17
+ 151 0050 1368     		ldr	r3, [r2]
+ 152 0052 0133     		adds	r3, r3, #1
+ 153 0054 1360     		str	r3, [r2]
+ 154 0056 1A48     		ldr	r0, .L17+4
+ 155 0058 0340     		ands	r3, r3, r0
+ 156 005a 03D5     		bpl	.L12
+ 157 005c 013B     		subs	r3, r3, #1
+ 158 005e 63F00703 		orn	r3, r3, #7
+ 159 0062 0133     		adds	r3, r3, #1
+ 160              	.L12:
+ 161 0064 1748     		ldr	r0, .L17+8
+ 162 0066 00EB0310 		add	r0, r0, r3, lsl #4
+ 163 006a FFF7FEFF 		bl	azimuthStep
+ 164              	.LVL13:
   57:StepperMotorDriver.c ****         return 1;
- 166              		.loc 1 57 0
- 167 0070 164A     		ldr	r2, .L17+12
- 168 0072 1368     		ldr	r3, [r2]
- 169 0074 013B     		subs	r3, r3, #1
- 170 0076 1360     		str	r3, [r2]
+ 165              		.loc 1 57 0
+ 166 006e 164A     		ldr	r2, .L17+12
+ 167 0070 1368     		ldr	r3, [r2]
+ 168 0072 013B     		subs	r3, r3, #1
+ 169 0074 1360     		str	r3, [r2]
   58:StepperMotorDriver.c ****     }
- 171              		.loc 1 58 0
- 172 0078 0120     		movs	r0, #1
- 173 007a 08BD     		pop	{r3, pc}
- 174              	.L10:
+ 170              		.loc 1 58 0
+ 171 0076 0120     		movs	r0, #1
+ 172 0078 08BD     		pop	{r3, pc}
+ 173              	.L10:
   60:StepperMotorDriver.c ****     {    // turning left (negativ steps)
- 175              		.loc 1 60 0
- 176 007c 002B     		cmp	r3, #0
- 177 007e 1CDA     		bge	.L15
-  62:StepperMotorDriver.c ****         {   // if limit is reached, don't move
- 178              		.loc 1 62 0
- 179 0080 FFF7FEFF 		bl	Limit_Left_Read
- 180              	.LVL14:
- 181 0084 18B1     		cbz	r0, .L13
+ 174              		.loc 1 60 0
+ 175 007a 002B     		cmp	r3, #0
+ 176 007c 1BDA     		bge	.L15
+  62:StepperMotorDriver.c ****         {   // if left limit is reached, don't move
+ 177              		.loc 1 62 0
+ 178 007e FFF7FEFF 		bl	Limit_Left_Read
+ 179              	.LVL14:
+ 180 0082 10B9     		cbnz	r0, .L13
   64:StepperMotorDriver.c ****             return 0;
- 182              		.loc 1 64 0
- 183 0086 0020     		movs	r0, #0
- 184 0088 104B     		ldr	r3, .L17+12
- 185 008a 1860     		str	r0, [r3]
+ 181              		.loc 1 64 0
+ 182 0084 104B     		ldr	r3, .L17+12
+ 183 0086 1860     		str	r0, [r3]
   65:StepperMotorDriver.c ****         }
- 186              		.loc 1 65 0
- 187 008c 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 6
-
-
- 188              	.L13:
+ 184              		.loc 1 65 0
+ 185 0088 08BD     		pop	{r3, pc}
+ 186              	.L13:
   68:StepperMotorDriver.c ****         aStep = aStep + 1;
- 189              		.loc 1 68 0
- 190 008e 0C4A     		ldr	r2, .L17
- 191 0090 1368     		ldr	r3, [r2]
- 192 0092 013B     		subs	r3, r3, #1
- 193 0094 1360     		str	r3, [r2]
- 194 0096 0B48     		ldr	r0, .L17+4
- 195 0098 0340     		ands	r3, r3, r0
- 196 009a 03D5     		bpl	.L14
- 197 009c 013B     		subs	r3, r3, #1
- 198 009e 63F00703 		orn	r3, r3, #7
- 199 00a2 0133     		adds	r3, r3, #1
- 200              	.L14:
- 201 00a4 0848     		ldr	r0, .L17+8
- 202 00a6 00EB0310 		add	r0, r0, r3, lsl #4
- 203 00aa FFF7FEFF 		bl	azimuthStep
- 204              	.LVL15:
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 6
+
+
+ 187              		.loc 1 68 0
+ 188 008a 0C4A     		ldr	r2, .L17
+ 189 008c 1368     		ldr	r3, [r2]
+ 190 008e 013B     		subs	r3, r3, #1
+ 191 0090 1360     		str	r3, [r2]
+ 192 0092 0B48     		ldr	r0, .L17+4
+ 193 0094 0340     		ands	r3, r3, r0
+ 194 0096 03D5     		bpl	.L14
+ 195 0098 013B     		subs	r3, r3, #1
+ 196 009a 63F00703 		orn	r3, r3, #7
+ 197 009e 0133     		adds	r3, r3, #1
+ 198              	.L14:
+ 199 00a0 0848     		ldr	r0, .L17+8
+ 200 00a2 00EB0310 		add	r0, r0, r3, lsl #4
+ 201 00a6 FFF7FEFF 		bl	azimuthStep
+ 202              	.LVL15:
   69:StepperMotorDriver.c ****         return 1;
- 205              		.loc 1 69 0
- 206 00ae 074A     		ldr	r2, .L17+12
- 207 00b0 1368     		ldr	r3, [r2]
- 208 00b2 0133     		adds	r3, r3, #1
- 209 00b4 1360     		str	r3, [r2]
+ 203              		.loc 1 69 0
+ 204 00aa 074A     		ldr	r2, .L17+12
+ 205 00ac 1368     		ldr	r3, [r2]
+ 206 00ae 0133     		adds	r3, r3, #1
+ 207 00b0 1360     		str	r3, [r2]
   70:StepperMotorDriver.c ****     }
- 210              		.loc 1 70 0
- 211 00b6 0120     		movs	r0, #1
- 212 00b8 08BD     		pop	{r3, pc}
- 213              	.L15:
+ 208              		.loc 1 70 0
+ 209 00b2 0120     		movs	r0, #1
+ 210 00b4 08BD     		pop	{r3, pc}
+ 211              	.L15:
   72:StepperMotorDriver.c **** }
- 214              		.loc 1 72 0
- 215 00ba 4FF0FF30 		mov	r0, #-1
+ 212              		.loc 1 72 0
+ 213 00b6 4FF0FF30 		mov	r0, #-1
   73:StepperMotorDriver.c **** 
- 216              		.loc 1 73 0
- 217 00be 08BD     		pop	{r3, pc}
- 218              	.L18:
- 219              		.align	2
- 220              	.L17:
- 221 00c0 00000000 		.word	.LANCHOR1
- 222 00c4 07000080 		.word	-2147483641
- 223 00c8 04000000 		.word	.LANCHOR1+4
- 224 00cc 00000000 		.word	.LANCHOR0
- 225              		.cfi_endproc
- 226              	.LFE65:
- 227              		.size	azimuth, .-azimuth
- 228              		.section	.text.moveElevation,"ax",%progbits
- 229              		.align	2
- 230              		.global	moveElevation
- 231              		.thumb
- 232              		.thumb_func
- 233              		.type	moveElevation, %function
- 234              	moveElevation:
- 235              	.LFB67:
+ 214              		.loc 1 73 0
+ 215 00ba 08BD     		pop	{r3, pc}
+ 216              	.L18:
+ 217              		.align	2
+ 218              	.L17:
+ 219 00bc 00000000 		.word	.LANCHOR1
+ 220 00c0 07000080 		.word	-2147483641
+ 221 00c4 04000000 		.word	.LANCHOR1+4
+ 222 00c8 00000000 		.word	.LANCHOR0
+ 223              		.cfi_endproc
+ 224              	.LFE65:
+ 225              		.size	azimuth, .-azimuth
+ 226              		.section	.text.moveElevation,"ax",%progbits
+ 227              		.align	2
+ 228              		.global	moveElevation
+ 229              		.thumb
+ 230              		.thumb_func
+ 231              		.type	moveElevation, %function
+ 232              	moveElevation:
+ 233              	.LFB67:
   81:StepperMotorDriver.c **** }
   82:StepperMotorDriver.c **** 
   83:StepperMotorDriver.c **** 
   84:StepperMotorDriver.c **** void moveElevation(int steps)
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 7
-
-
   85:StepperMotorDriver.c **** {   // function to set steps to be takben by elevation motor
- 236              		.loc 1 85 0
- 237              		.cfi_startproc
- 238              		@ args = 0, pretend = 0, frame = 0
- 239              		@ frame_needed = 0, uses_anonymous_args = 0
- 240              		@ link register save eliminated.
- 241              	.LVL16:
+ 234              		.loc 1 85 0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 7
+
+
+ 235              		.cfi_startproc
+ 236              		@ args = 0, pretend = 0, frame = 0
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 238              		@ link register save eliminated.
+ 239              	.LVL16:
   86:StepperMotorDriver.c ****     eStep = steps;
- 242              		.loc 1 86 0
- 243 0000 014B     		ldr	r3, .L20
- 244 0002 5860     		str	r0, [r3, #4]
- 245 0004 7047     		bx	lr
- 246              	.L21:
- 247 0006 00BF     		.align	2
- 248              	.L20:
- 249 0008 00000000 		.word	.LANCHOR0
- 250              		.cfi_endproc
- 251              	.LFE67:
- 252              		.size	moveElevation, .-moveElevation
- 253              		.section	.text.elevationStep,"ax",%progbits
- 254              		.align	2
- 255              		.global	elevationStep
- 256              		.thumb
- 257              		.thumb_func
- 258              		.type	elevationStep, %function
- 259              	elevationStep:
- 260              	.LFB69:
+ 240              		.loc 1 86 0
+ 241 0000 014B     		ldr	r3, .L20
+ 242 0002 5860     		str	r0, [r3, #4]
+ 243 0004 7047     		bx	lr
+ 244              	.L21:
+ 245 0006 00BF     		.align	2
+ 246              	.L20:
+ 247 0008 00000000 		.word	.LANCHOR0
+ 248              		.cfi_endproc
+ 249              	.LFE67:
+ 250              		.size	moveElevation, .-moveElevation
+ 251              		.section	.text.elevationStep,"ax",%progbits
+ 252              		.align	2
+ 253              		.global	elevationStep
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.type	elevationStep, %function
+ 257              	elevationStep:
+ 258              	.LFB69:
   87:StepperMotorDriver.c **** }
   88:StepperMotorDriver.c **** 
   89:StepperMotorDriver.c **** int elevation()
@@ -398,9 +396,9 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
   94:StepperMotorDriver.c ****         return 0;
   95:StepperMotorDriver.c ****     }
   96:StepperMotorDriver.c ****     if (eStep > 0)
-  97:StepperMotorDriver.c ****     {   // turning up (positiv steps)
-  98:StepperMotorDriver.c ****         if (Limit_Up_Read()) // ! when implemented ************************************************
-  99:StepperMotorDriver.c ****         {   // if limit is reached, don't move
+  97:StepperMotorDriver.c ****     {   // turning down (positiv steps)
+  98:StepperMotorDriver.c ****         if (!Limit_Down_Read())
+  99:StepperMotorDriver.c ****         {   // if down limit is reached, don't move
  100:StepperMotorDriver.c ****             eStep = 0;
  101:StepperMotorDriver.c ****             return 0;
  102:StepperMotorDriver.c ****         }
@@ -411,18 +409,18 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
  107:StepperMotorDriver.c ****     }
  108:StepperMotorDriver.c ****     
  109:StepperMotorDriver.c ****     else if (eStep < 0)
- 110:StepperMotorDriver.c ****     {   // turning down (negativ steps)
- 111:StepperMotorDriver.c ****         if (Limit_Down_Read()) // ! when implemented **********************************************
- 112:StepperMotorDriver.c ****         {   // if limit is reached, don't move
+ 110:StepperMotorDriver.c ****     {   // turning up (negativ steps)
+ 111:StepperMotorDriver.c ****         if (!Limit_Up_Read())
+ 112:StepperMotorDriver.c ****         {   // if up limit is reached, don't move
  113:StepperMotorDriver.c ****             eStep = 0;
  114:StepperMotorDriver.c ****             return 0;
  115:StepperMotorDriver.c ****         }
  116:StepperMotorDriver.c ****         // set elevation motor pins to next step and decrease steps to be taken
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 8
-
-
  117:StepperMotorDriver.c ****         elevationStep(stepSequence[--elevationSteps % STEPS]);
  118:StepperMotorDriver.c ****         eStep = eStep + 1;
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 8
+
+
  119:StepperMotorDriver.c ****         return 1;
  120:StepperMotorDriver.c ****     }
  121:StepperMotorDriver.c ****     return -1;
@@ -430,1872 +428,2036 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 1
  123:StepperMotorDriver.c **** 
  124:StepperMotorDriver.c **** void elevationStep(int sequence[4])
  125:StepperMotorDriver.c **** {   // function to write sequence to elevation motor pins
- 261              		.loc 1 125 0
- 262              		.cfi_startproc
- 263              		@ args = 0, pretend = 0, frame = 0
- 264              		@ frame_needed = 0, uses_anonymous_args = 0
- 265              	.LVL17:
- 266 0000 10B5     		push	{r4, lr}
- 267              		.cfi_def_cfa_offset 8
- 268              		.cfi_offset 4, -8
- 269              		.cfi_offset 14, -4
- 270 0002 0446     		mov	r4, r0
+ 259              		.loc 1 125 0
+ 260              		.cfi_startproc
+ 261              		@ args = 0, pretend = 0, frame = 0
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+ 263              	.LVL17:
+ 264 0000 10B5     		push	{r4, lr}
+ 265              		.cfi_def_cfa_offset 8
+ 266              		.cfi_offset 4, -8
+ 267              		.cfi_offset 14, -4
+ 268 0002 0446     		mov	r4, r0
  126:StepperMotorDriver.c ****     Elevation_Pin_1_Write(sequence[0]);
- 271              		.loc 1 126 0
- 272 0004 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
- 273              	.LVL18:
- 274 0006 FFF7FEFF 		bl	Elevation_Pin_1_Write
- 275              	.LVL19:
+ 269              		.loc 1 126 0
+ 270 0004 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 271              	.LVL18:
+ 272 0006 FFF7FEFF 		bl	Elevation_Pin_1_Write
+ 273              	.LVL19:
  127:StepperMotorDriver.c ****     Elevation_Pin_2_Write(sequence[1]);
- 276              		.loc 1 127 0
- 277 000a 2079     		ldrb	r0, [r4, #4]	@ zero_extendqisi2
- 278 000c FFF7FEFF 		bl	Elevation_Pin_2_Write
- 279              	.LVL20:
+ 274              		.loc 1 127 0
+ 275 000a 2079     		ldrb	r0, [r4, #4]	@ zero_extendqisi2
+ 276 000c FFF7FEFF 		bl	Elevation_Pin_2_Write
+ 277              	.LVL20:
  128:StepperMotorDriver.c ****     Elevation_Pin_3_Write(sequence[2]);
- 280              		.loc 1 128 0
- 281 0010 207A     		ldrb	r0, [r4, #8]	@ zero_extendqisi2
- 282 0012 FFF7FEFF 		bl	Elevation_Pin_3_Write
- 283              	.LVL21:
+ 278              		.loc 1 128 0
+ 279 0010 207A     		ldrb	r0, [r4, #8]	@ zero_extendqisi2
+ 280 0012 FFF7FEFF 		bl	Elevation_Pin_3_Write
+ 281              	.LVL21:
  129:StepperMotorDriver.c ****     Elevation_Pin_4_Write(sequence[3]);
- 284              		.loc 1 129 0
- 285 0016 207B     		ldrb	r0, [r4, #12]	@ zero_extendqisi2
- 286 0018 FFF7FEFF 		bl	Elevation_Pin_4_Write
- 287              	.LVL22:
- 288 001c 10BD     		pop	{r4, pc}
- 289              		.cfi_endproc
- 290              	.LFE69:
- 291              		.size	elevationStep, .-elevationStep
- 292 001e 00BF     		.section	.text.elevation,"ax",%progbits
- 293              		.align	2
- 294              		.global	elevation
- 295              		.thumb
- 296              		.thumb_func
- 297              		.type	elevation, %function
- 298              	elevation:
- 299              	.LFB68:
+ 282              		.loc 1 129 0
+ 283 0016 207B     		ldrb	r0, [r4, #12]	@ zero_extendqisi2
+ 284 0018 FFF7FEFF 		bl	Elevation_Pin_4_Write
+ 285              	.LVL22:
+ 286 001c 10BD     		pop	{r4, pc}
+ 287              		.cfi_endproc
+ 288              	.LFE69:
+ 289              		.size	elevationStep, .-elevationStep
+ 290 001e 00BF     		.section	.text.elevation,"ax",%progbits
+ 291              		.align	2
+ 292              		.global	elevation
+ 293              		.thumb
+ 294              		.thumb_func
+ 295              		.type	elevation, %function
+ 296              	elevation:
+ 297              	.LFB68:
   90:StepperMotorDriver.c ****     if (Elevation_Pin_1_Read() == 0 && Elevation_Pin_2_Read() == 0 && Elevation_Pin_3_Read() == 0 &
- 300              		.loc 1 90 0
- 301              		.cfi_startproc
- 302              		@ args = 0, pretend = 0, frame = 0
- 303              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 9
+ 298              		.loc 1 90 0
+ 299              		.cfi_startproc
+ 300              		@ args = 0, pretend = 0, frame = 0
+ 301              		@ frame_needed = 0, uses_anonymous_args = 0
+ 302 0000 08B5     		push	{r3, lr}
+ 303              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 9
 
 
- 304 0000 08B5     		push	{r3, lr}
- 305              		.cfi_def_cfa_offset 8
- 306              		.cfi_offset 3, -8
- 307              		.cfi_offset 14, -4
+ 304              		.cfi_offset 3, -8
+ 305              		.cfi_offset 14, -4
   91:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 308              		.loc 1 91 0
- 309 0002 FFF7FEFF 		bl	Elevation_Pin_1_Read
- 310              	.LVL23:
- 311 0006 C8B9     		cbnz	r0, .L25
+ 306              		.loc 1 91 0
+ 307 0002 FFF7FEFF 		bl	Elevation_Pin_1_Read
+ 308              	.LVL23:
+ 309 0006 C8B9     		cbnz	r0, .L25
   91:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 312              		.loc 1 91 0 is_stmt 0 discriminator 1
- 313 0008 FFF7FEFF 		bl	Elevation_Pin_2_Read
- 314              	.LVL24:
- 315 000c B0B9     		cbnz	r0, .L25
+ 310              		.loc 1 91 0 is_stmt 0 discriminator 1
+ 311 0008 FFF7FEFF 		bl	Elevation_Pin_2_Read
+ 312              	.LVL24:
+ 313 000c B0B9     		cbnz	r0, .L25
   91:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 316              		.loc 1 91 0 discriminator 2
- 317 000e FFF7FEFF 		bl	Elevation_Pin_3_Read
- 318              	.LVL25:
- 319 0012 98B9     		cbnz	r0, .L25
+ 314              		.loc 1 91 0 discriminator 2
+ 315 000e FFF7FEFF 		bl	Elevation_Pin_3_Read
+ 316              	.LVL25:
+ 317 0012 98B9     		cbnz	r0, .L25
   91:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 320              		.loc 1 91 0 discriminator 3
- 321 0014 FFF7FEFF 		bl	Elevation_Pin_4_Read
- 322              	.LVL26:
- 323 0018 80B9     		cbnz	r0, .L25
+ 318              		.loc 1 91 0 discriminator 3
+ 319 0014 FFF7FEFF 		bl	Elevation_Pin_4_Read
+ 320              	.LVL26:
+ 321 0018 80B9     		cbnz	r0, .L25
   93:StepperMotorDriver.c ****         return 0;
- 324              		.loc 1 93 0 is_stmt 1
- 325 001a 2C4B     		ldr	r3, .L35
- 326 001c D3F88430 		ldr	r3, [r3, #132]
- 327 0020 2B4A     		ldr	r2, .L35+4
- 328 0022 1340     		ands	r3, r3, r2
- 329 0024 03D5     		bpl	.L26
- 330 0026 013B     		subs	r3, r3, #1
- 331 0028 63F00703 		orn	r3, r3, #7
- 332 002c 0133     		adds	r3, r3, #1
- 333              	.L26:
- 334 002e 2948     		ldr	r0, .L35+8
- 335 0030 00EB0310 		add	r0, r0, r3, lsl #4
- 336 0034 FFF7FEFF 		bl	elevationStep
- 337              	.LVL27:
+ 322              		.loc 1 93 0 is_stmt 1
+ 323 001a 2B4B     		ldr	r3, .L35
+ 324 001c D3F88430 		ldr	r3, [r3, #132]
+ 325 0020 2A4A     		ldr	r2, .L35+4
+ 326 0022 1340     		ands	r3, r3, r2
+ 327 0024 03D5     		bpl	.L26
+ 328 0026 013B     		subs	r3, r3, #1
+ 329 0028 63F00703 		orn	r3, r3, #7
+ 330 002c 0133     		adds	r3, r3, #1
+ 331              	.L26:
+ 332 002e 2848     		ldr	r0, .L35+8
+ 333 0030 00EB0310 		add	r0, r0, r3, lsl #4
+ 334 0034 FFF7FEFF 		bl	elevationStep
+ 335              	.LVL27:
   94:StepperMotorDriver.c ****     }
- 338              		.loc 1 94 0
- 339 0038 0020     		movs	r0, #0
- 340 003a 08BD     		pop	{r3, pc}
- 341              	.L25:
-  96:StepperMotorDriver.c ****     {   // turning up (positiv steps)
- 342              		.loc 1 96 0
- 343 003c 264B     		ldr	r3, .L35+12
- 344 003e 5B68     		ldr	r3, [r3, #4]
- 345 0040 002B     		cmp	r3, #0
- 346 0042 1EDD     		ble	.L28
-  98:StepperMotorDriver.c ****         {   // if limit is reached, don't move
- 347              		.loc 1 98 0
- 348 0044 FFF7FEFF 		bl	Limit_Up_Read
- 349              	.LVL28:
- 350 0048 18B1     		cbz	r0, .L29
+ 336              		.loc 1 94 0
+ 337 0038 0020     		movs	r0, #0
+ 338 003a 08BD     		pop	{r3, pc}
+ 339              	.L25:
+  96:StepperMotorDriver.c ****     {   // turning down (positiv steps)
+ 340              		.loc 1 96 0
+ 341 003c 254B     		ldr	r3, .L35+12
+ 342 003e 5B68     		ldr	r3, [r3, #4]
+ 343 0040 002B     		cmp	r3, #0
+ 344 0042 1DDD     		ble	.L28
+  98:StepperMotorDriver.c ****         {   // if down limit is reached, don't move
+ 345              		.loc 1 98 0
+ 346 0044 FFF7FEFF 		bl	Limit_Down_Read
+ 347              	.LVL28:
+ 348 0048 10B9     		cbnz	r0, .L29
  100:StepperMotorDriver.c ****             return 0;
- 351              		.loc 1 100 0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 10
+ 349              		.loc 1 100 0
+ 350 004a 224B     		ldr	r3, .L35+12
+ 351 004c 5860     		str	r0, [r3, #4]
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 10
 
 
- 352 004a 0020     		movs	r0, #0
- 353 004c 224B     		ldr	r3, .L35+12
- 354 004e 5860     		str	r0, [r3, #4]
  101:StepperMotorDriver.c ****         }
- 355              		.loc 1 101 0
- 356 0050 08BD     		pop	{r3, pc}
- 357              	.L29:
+ 352              		.loc 1 101 0
+ 353 004e 08BD     		pop	{r3, pc}
+ 354              	.L29:
  104:StepperMotorDriver.c ****         eStep = eStep - 1;
- 358              		.loc 1 104 0
- 359 0052 1E4A     		ldr	r2, .L35
- 360 0054 D2F88430 		ldr	r3, [r2, #132]
- 361 0058 0133     		adds	r3, r3, #1
- 362 005a C2F88430 		str	r3, [r2, #132]
- 363 005e 1C48     		ldr	r0, .L35+4
- 364 0060 0340     		ands	r3, r3, r0
- 365 0062 03D5     		bpl	.L30
- 366 0064 013B     		subs	r3, r3, #1
- 367 0066 63F00703 		orn	r3, r3, #7
- 368 006a 0133     		adds	r3, r3, #1
- 369              	.L30:
- 370 006c 1948     		ldr	r0, .L35+8
- 371 006e 00EB0310 		add	r0, r0, r3, lsl #4
- 372 0072 FFF7FEFF 		bl	elevationStep
- 373              	.LVL29:
+ 355              		.loc 1 104 0
+ 356 0050 1D4A     		ldr	r2, .L35
+ 357 0052 D2F88430 		ldr	r3, [r2, #132]
+ 358 0056 0133     		adds	r3, r3, #1
+ 359 0058 C2F88430 		str	r3, [r2, #132]
+ 360 005c 1B48     		ldr	r0, .L35+4
+ 361 005e 0340     		ands	r3, r3, r0
+ 362 0060 03D5     		bpl	.L30
+ 363 0062 013B     		subs	r3, r3, #1
+ 364 0064 63F00703 		orn	r3, r3, #7
+ 365 0068 0133     		adds	r3, r3, #1
+ 366              	.L30:
+ 367 006a 1948     		ldr	r0, .L35+8
+ 368 006c 00EB0310 		add	r0, r0, r3, lsl #4
+ 369 0070 FFF7FEFF 		bl	elevationStep
+ 370              	.LVL29:
  105:StepperMotorDriver.c ****         return 1;
- 374              		.loc 1 105 0
- 375 0076 184A     		ldr	r2, .L35+12
- 376 0078 5368     		ldr	r3, [r2, #4]
- 377 007a 013B     		subs	r3, r3, #1
- 378 007c 5360     		str	r3, [r2, #4]
+ 371              		.loc 1 105 0
+ 372 0074 174A     		ldr	r2, .L35+12
+ 373 0076 5368     		ldr	r3, [r2, #4]
+ 374 0078 013B     		subs	r3, r3, #1
+ 375 007a 5360     		str	r3, [r2, #4]
  106:StepperMotorDriver.c ****     }
- 379              		.loc 1 106 0
- 380 007e 0120     		movs	r0, #1
- 381 0080 08BD     		pop	{r3, pc}
- 382              	.L28:
- 109:StepperMotorDriver.c ****     {   // turning down (negativ steps)
- 383              		.loc 1 109 0
- 384 0082 002B     		cmp	r3, #0
- 385 0084 1EDA     		bge	.L33
- 111:StepperMotorDriver.c ****         {   // if limit is reached, don't move
- 386              		.loc 1 111 0
- 387 0086 FFF7FEFF 		bl	Limit_Down_Read
- 388              	.LVL30:
- 389 008a 18B1     		cbz	r0, .L31
+ 376              		.loc 1 106 0
+ 377 007c 0120     		movs	r0, #1
+ 378 007e 08BD     		pop	{r3, pc}
+ 379              	.L28:
+ 109:StepperMotorDriver.c ****     {   // turning up (negativ steps)
+ 380              		.loc 1 109 0
+ 381 0080 002B     		cmp	r3, #0
+ 382 0082 1DDA     		bge	.L33
+ 111:StepperMotorDriver.c ****         {   // if up limit is reached, don't move
+ 383              		.loc 1 111 0
+ 384 0084 FFF7FEFF 		bl	Limit_Up_Read
+ 385              	.LVL30:
+ 386 0088 10B9     		cbnz	r0, .L31
  113:StepperMotorDriver.c ****             return 0;
- 390              		.loc 1 113 0
- 391 008c 0020     		movs	r0, #0
- 392 008e 124B     		ldr	r3, .L35+12
- 393 0090 5860     		str	r0, [r3, #4]
+ 387              		.loc 1 113 0
+ 388 008a 124B     		ldr	r3, .L35+12
+ 389 008c 5860     		str	r0, [r3, #4]
  114:StepperMotorDriver.c ****         }
- 394              		.loc 1 114 0
- 395 0092 08BD     		pop	{r3, pc}
- 396              	.L31:
+ 390              		.loc 1 114 0
+ 391 008e 08BD     		pop	{r3, pc}
+ 392              	.L31:
  117:StepperMotorDriver.c ****         eStep = eStep + 1;
- 397              		.loc 1 117 0
- 398 0094 0D4A     		ldr	r2, .L35
- 399 0096 D2F88430 		ldr	r3, [r2, #132]
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 11
+ 393              		.loc 1 117 0
+ 394 0090 0D4A     		ldr	r2, .L35
+ 395 0092 D2F88430 		ldr	r3, [r2, #132]
+ 396 0096 013B     		subs	r3, r3, #1
+ 397 0098 C2F88430 		str	r3, [r2, #132]
+ 398 009c 0B48     		ldr	r0, .L35+4
+ 399 009e 0340     		ands	r3, r3, r0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 11
 
 
- 400 009a 013B     		subs	r3, r3, #1
- 401 009c C2F88430 		str	r3, [r2, #132]
- 402 00a0 0B48     		ldr	r0, .L35+4
- 403 00a2 0340     		ands	r3, r3, r0
- 404 00a4 03D5     		bpl	.L32
- 405 00a6 013B     		subs	r3, r3, #1
- 406 00a8 63F00703 		orn	r3, r3, #7
- 407 00ac 0133     		adds	r3, r3, #1
- 408              	.L32:
- 409 00ae 0948     		ldr	r0, .L35+8
- 410 00b0 00EB0310 		add	r0, r0, r3, lsl #4
- 411 00b4 FFF7FEFF 		bl	elevationStep
- 412              	.LVL31:
+ 400 00a0 03D5     		bpl	.L32
+ 401 00a2 013B     		subs	r3, r3, #1
+ 402 00a4 63F00703 		orn	r3, r3, #7
+ 403 00a8 0133     		adds	r3, r3, #1
+ 404              	.L32:
+ 405 00aa 0948     		ldr	r0, .L35+8
+ 406 00ac 00EB0310 		add	r0, r0, r3, lsl #4
+ 407 00b0 FFF7FEFF 		bl	elevationStep
+ 408              	.LVL31:
  118:StepperMotorDriver.c ****         return 1;
- 413              		.loc 1 118 0
- 414 00b8 074A     		ldr	r2, .L35+12
- 415 00ba 5368     		ldr	r3, [r2, #4]
- 416 00bc 0133     		adds	r3, r3, #1
- 417 00be 5360     		str	r3, [r2, #4]
+ 409              		.loc 1 118 0
+ 410 00b4 074A     		ldr	r2, .L35+12
+ 411 00b6 5368     		ldr	r3, [r2, #4]
+ 412 00b8 0133     		adds	r3, r3, #1
+ 413 00ba 5360     		str	r3, [r2, #4]
  119:StepperMotorDriver.c ****     }
- 418              		.loc 1 119 0
- 419 00c0 0120     		movs	r0, #1
- 420 00c2 08BD     		pop	{r3, pc}
- 421              	.L33:
+ 414              		.loc 1 119 0
+ 415 00bc 0120     		movs	r0, #1
+ 416 00be 08BD     		pop	{r3, pc}
+ 417              	.L33:
  121:StepperMotorDriver.c **** }
- 422              		.loc 1 121 0
- 423 00c4 4FF0FF30 		mov	r0, #-1
+ 418              		.loc 1 121 0
+ 419 00c0 4FF0FF30 		mov	r0, #-1
  122:StepperMotorDriver.c **** 
- 424              		.loc 1 122 0
- 425 00c8 08BD     		pop	{r3, pc}
- 426              	.L36:
- 427 00ca 00BF     		.align	2
- 428              	.L35:
- 429 00cc 00000000 		.word	.LANCHOR1
- 430 00d0 07000080 		.word	-2147483641
- 431 00d4 04000000 		.word	.LANCHOR1+4
- 432 00d8 00000000 		.word	.LANCHOR0
- 433              		.cfi_endproc
- 434              	.LFE68:
- 435              		.size	elevation, .-elevation
- 436              		.section	.text.MOTOR_STEP,"ax",%progbits
- 437              		.align	2
- 438              		.global	MOTOR_STEP
- 439              		.thumb
- 440              		.thumb_func
- 441              		.type	MOTOR_STEP, %function
- 442              	MOTOR_STEP:
- 443              	.LFB70:
+ 420              		.loc 1 122 0
+ 421 00c4 08BD     		pop	{r3, pc}
+ 422              	.L36:
+ 423 00c6 00BF     		.align	2
+ 424              	.L35:
+ 425 00c8 00000000 		.word	.LANCHOR1
+ 426 00cc 07000080 		.word	-2147483641
+ 427 00d0 04000000 		.word	.LANCHOR1+4
+ 428 00d4 00000000 		.word	.LANCHOR0
+ 429              		.cfi_endproc
+ 430              	.LFE68:
+ 431              		.size	elevation, .-elevation
+ 432              		.section	.text.MOTOR_STEP,"ax",%progbits
+ 433              		.align	2
+ 434              		.global	MOTOR_STEP
+ 435              		.thumb
+ 436              		.thumb_func
+ 437              		.type	MOTOR_STEP, %function
+ 438              	MOTOR_STEP:
+ 439              	.LFB70:
  130:StepperMotorDriver.c **** }
  131:StepperMotorDriver.c **** 
  132:StepperMotorDriver.c **** 
  133:StepperMotorDriver.c **** CY_ISR(MOTOR_STEP)
  134:StepperMotorDriver.c **** {   // interupt rutine activated by clock to take steps
- 444              		.loc 1 134 0
- 445              		.cfi_startproc
- 446              		@ args = 0, pretend = 0, frame = 0
- 447              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 12
+ 440              		.loc 1 134 0
+ 441              		.cfi_startproc
+ 442              		@ args = 0, pretend = 0, frame = 0
+ 443              		@ frame_needed = 0, uses_anonymous_args = 0
+ 444 0000 08B5     		push	{r3, lr}
+ 445              		.cfi_def_cfa_offset 8
+ 446              		.cfi_offset 3, -8
+ 447              		.cfi_offset 14, -4
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 12
 
 
- 448 0000 08B5     		push	{r3, lr}
- 449              		.cfi_def_cfa_offset 8
- 450              		.cfi_offset 3, -8
- 451              		.cfi_offset 14, -4
  135:StepperMotorDriver.c ****     if (aStep)
- 452              		.loc 1 135 0
- 453 0002 194B     		ldr	r3, .L45
- 454 0004 1B68     		ldr	r3, [r3]
- 455 0006 13B1     		cbz	r3, .L38
+ 448              		.loc 1 135 0
+ 449 0002 194B     		ldr	r3, .L45
+ 450 0004 1B68     		ldr	r3, [r3]
+ 451 0006 13B1     		cbz	r3, .L38
  136:StepperMotorDriver.c ****     {   // if aStep != 0 move
  137:StepperMotorDriver.c ****         azimuth();
- 456              		.loc 1 137 0
- 457 0008 FFF7FEFF 		bl	azimuth
- 458              	.LVL32:
- 459 000c 12E0     		b	.L39
- 460              	.L38:
+ 452              		.loc 1 137 0
+ 453 0008 FFF7FEFF 		bl	azimuth
+ 454              	.LVL32:
+ 455 000c 12E0     		b	.L39
+ 456              	.L38:
  138:StepperMotorDriver.c ****     }
  139:StepperMotorDriver.c ****     else if (Azimuth_Pin_1_Read() == 1 || Azimuth_Pin_2_Read() == 1 || Azimuth_Pin_3_Read() == 1 ||
- 461              		.loc 1 139 0
- 462 000e FFF7FEFF 		bl	Azimuth_Pin_1_Read
- 463              	.LVL33:
- 464 0012 0128     		cmp	r0, #1
- 465 0014 0BD0     		beq	.L40
- 466              		.loc 1 139 0 is_stmt 0 discriminator 1
- 467 0016 FFF7FEFF 		bl	Azimuth_Pin_2_Read
- 468              	.LVL34:
- 469 001a 0128     		cmp	r0, #1
- 470 001c 07D0     		beq	.L40
- 471              		.loc 1 139 0 discriminator 2
- 472 001e FFF7FEFF 		bl	Azimuth_Pin_3_Read
- 473              	.LVL35:
- 474 0022 0128     		cmp	r0, #1
- 475 0024 03D0     		beq	.L40
- 476              		.loc 1 139 0 discriminator 3
- 477 0026 FFF7FEFF 		bl	Azimuth_Pin_4_Read
- 478              	.LVL36:
- 479 002a 0128     		cmp	r0, #1
- 480 002c 02D1     		bne	.L39
- 481              	.L40:
+ 457              		.loc 1 139 0
+ 458 000e FFF7FEFF 		bl	Azimuth_Pin_1_Read
+ 459              	.LVL33:
+ 460 0012 0128     		cmp	r0, #1
+ 461 0014 0BD0     		beq	.L40
+ 462              		.loc 1 139 0 is_stmt 0 discriminator 1
+ 463 0016 FFF7FEFF 		bl	Azimuth_Pin_2_Read
+ 464              	.LVL34:
+ 465 001a 0128     		cmp	r0, #1
+ 466 001c 07D0     		beq	.L40
+ 467              		.loc 1 139 0 discriminator 2
+ 468 001e FFF7FEFF 		bl	Azimuth_Pin_3_Read
+ 469              	.LVL35:
+ 470 0022 0128     		cmp	r0, #1
+ 471 0024 03D0     		beq	.L40
+ 472              		.loc 1 139 0 discriminator 3
+ 473 0026 FFF7FEFF 		bl	Azimuth_Pin_4_Read
+ 474              	.LVL36:
+ 475 002a 0128     		cmp	r0, #1
+ 476 002c 02D1     		bne	.L39
+ 477              	.L40:
  140:StepperMotorDriver.c ****     {   // if we didn't move and motor is on, turn it off
  141:StepperMotorDriver.c ****         azimuthStep(off);
- 482              		.loc 1 141 0 is_stmt 1
- 483 002e 0F48     		ldr	r0, .L45+4
- 484 0030 FFF7FEFF 		bl	azimuthStep
- 485              	.LVL37:
- 486              	.L39:
+ 478              		.loc 1 141 0 is_stmt 1
+ 479 002e 0F48     		ldr	r0, .L45+4
+ 480 0030 FFF7FEFF 		bl	azimuthStep
+ 481              	.LVL37:
+ 482              	.L39:
  142:StepperMotorDriver.c ****     }
  143:StepperMotorDriver.c ****     
  144:StepperMotorDriver.c ****     if (eStep)
- 487              		.loc 1 144 0
- 488 0034 0C4B     		ldr	r3, .L45
- 489 0036 5B68     		ldr	r3, [r3, #4]
- 490 0038 13B1     		cbz	r3, .L41
+ 483              		.loc 1 144 0
+ 484 0034 0C4B     		ldr	r3, .L45
+ 485 0036 5B68     		ldr	r3, [r3, #4]
+ 486 0038 13B1     		cbz	r3, .L41
  145:StepperMotorDriver.c ****     {   // if eStep != 0 move
  146:StepperMotorDriver.c ****         elevation();
- 491              		.loc 1 146 0
- 492 003a FFF7FEFF 		bl	elevation
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 13
-
-
- 493              	.LVL38:
- 494 003e 08BD     		pop	{r3, pc}
- 495              	.L41:
+ 487              		.loc 1 146 0
+ 488 003a FFF7FEFF 		bl	elevation
+ 489              	.LVL38:
+ 490 003e 08BD     		pop	{r3, pc}
+ 491              	.L41:
  147:StepperMotorDriver.c ****     }
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 13
+
+
  148:StepperMotorDriver.c ****     else if (Elevation_Pin_1_Read() == 1 || Elevation_Pin_2_Read() == 1 || Elevation_Pin_3_Read() =
- 496              		.loc 1 148 0
- 497 0040 FFF7FEFF 		bl	Elevation_Pin_1_Read
- 498              	.LVL39:
- 499 0044 0128     		cmp	r0, #1
- 500 0046 0BD0     		beq	.L43
- 501              		.loc 1 148 0 is_stmt 0 discriminator 1
- 502 0048 FFF7FEFF 		bl	Elevation_Pin_2_Read
- 503              	.LVL40:
- 504 004c 0128     		cmp	r0, #1
- 505 004e 07D0     		beq	.L43
- 506              		.loc 1 148 0 discriminator 2
- 507 0050 FFF7FEFF 		bl	Elevation_Pin_3_Read
- 508              	.LVL41:
- 509 0054 0128     		cmp	r0, #1
- 510 0056 03D0     		beq	.L43
- 511              		.loc 1 148 0 discriminator 3
- 512 0058 FFF7FEFF 		bl	Elevation_Pin_4_Read
- 513              	.LVL42:
- 514 005c 0128     		cmp	r0, #1
- 515 005e 02D1     		bne	.L37
- 516              	.L43:
+ 492              		.loc 1 148 0
+ 493 0040 FFF7FEFF 		bl	Elevation_Pin_1_Read
+ 494              	.LVL39:
+ 495 0044 0128     		cmp	r0, #1
+ 496 0046 0BD0     		beq	.L43
+ 497              		.loc 1 148 0 is_stmt 0 discriminator 1
+ 498 0048 FFF7FEFF 		bl	Elevation_Pin_2_Read
+ 499              	.LVL40:
+ 500 004c 0128     		cmp	r0, #1
+ 501 004e 07D0     		beq	.L43
+ 502              		.loc 1 148 0 discriminator 2
+ 503 0050 FFF7FEFF 		bl	Elevation_Pin_3_Read
+ 504              	.LVL41:
+ 505 0054 0128     		cmp	r0, #1
+ 506 0056 03D0     		beq	.L43
+ 507              		.loc 1 148 0 discriminator 3
+ 508 0058 FFF7FEFF 		bl	Elevation_Pin_4_Read
+ 509              	.LVL42:
+ 510 005c 0128     		cmp	r0, #1
+ 511 005e 02D1     		bne	.L37
+ 512              	.L43:
  149:StepperMotorDriver.c ****     {   // if we didn't move and motor is on, turn it off
  150:StepperMotorDriver.c ****         elevationStep(off);
- 517              		.loc 1 150 0 is_stmt 1
- 518 0060 0248     		ldr	r0, .L45+4
- 519 0062 FFF7FEFF 		bl	elevationStep
- 520              	.LVL43:
- 521              	.L37:
- 522 0066 08BD     		pop	{r3, pc}
- 523              	.L46:
- 524              		.align	2
- 525              	.L45:
- 526 0068 00000000 		.word	.LANCHOR0
- 527 006c 08000000 		.word	.LANCHOR0+8
- 528              		.cfi_endproc
- 529              	.LFE70:
- 530              		.size	MOTOR_STEP, .-MOTOR_STEP
- 531              		.section	.text.UART_HANDLER,"ax",%progbits
- 532              		.align	2
- 533              		.global	UART_HANDLER
- 534              		.thumb
- 535              		.thumb_func
- 536              		.type	UART_HANDLER, %function
- 537              	UART_HANDLER:
- 538              	.LFB71:
+ 513              		.loc 1 150 0 is_stmt 1
+ 514 0060 0248     		ldr	r0, .L45+4
+ 515 0062 FFF7FEFF 		bl	elevationStep
+ 516              	.LVL43:
+ 517              	.L37:
+ 518 0066 08BD     		pop	{r3, pc}
+ 519              	.L46:
+ 520              		.align	2
+ 521              	.L45:
+ 522 0068 00000000 		.word	.LANCHOR0
+ 523 006c 08000000 		.word	.LANCHOR0+8
+ 524              		.cfi_endproc
+ 525              	.LFE70:
+ 526              		.size	MOTOR_STEP, .-MOTOR_STEP
+ 527              		.section	.text.limitLeft,"ax",%progbits
+ 528              		.align	2
+ 529              		.global	limitLeft
+ 530              		.thumb
+ 531              		.thumb_func
+ 532              		.type	limitLeft, %function
+ 533              	limitLeft:
+ 534              	.LFB71:
  151:StepperMotorDriver.c ****     }
  152:StepperMotorDriver.c **** }
  153:StepperMotorDriver.c **** 
- 154:StepperMotorDriver.c **** // to be deleted
- 155:StepperMotorDriver.c **** CY_ISR(UART_HANDLER)
- 156:StepperMotorDriver.c **** {
- 539              		.loc 1 156 0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 14
+ 154:StepperMotorDriver.c **** bool limitLeft(){return !Limit_Left_Read();}
+ 535              		.loc 1 154 0
+ 536              		.cfi_startproc
+ 537              		@ args = 0, pretend = 0, frame = 0
+ 538              		@ frame_needed = 0, uses_anonymous_args = 0
+ 539 0000 08B5     		push	{r3, lr}
+ 540              		.cfi_def_cfa_offset 8
+ 541              		.cfi_offset 3, -8
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 14
 
 
- 540              		.cfi_startproc
- 541              		@ args = 0, pretend = 0, frame = 0
- 542              		@ frame_needed = 0, uses_anonymous_args = 0
- 543 0000 10B5     		push	{r4, lr}
- 544              		.cfi_def_cfa_offset 8
- 545              		.cfi_offset 4, -8
- 546              		.cfi_offset 14, -4
- 157:StepperMotorDriver.c ****     uint8_t c = UART_1_GetByte();
- 547              		.loc 1 157 0
- 548 0002 FFF7FEFF 		bl	UART_1_GetByte
- 549              	.LVL44:
- 550 0006 C4B2     		uxtb	r4, r0
- 551              	.LVL45:
- 158:StepperMotorDriver.c ****     UART_1_PutChar(c);
- 552              		.loc 1 158 0
- 553 0008 2046     		mov	r0, r4
- 554 000a FFF7FEFF 		bl	UART_1_PutChar
- 555              	.LVL46:
- 159:StepperMotorDriver.c ****     if (c == 'f')
- 556              		.loc 1 159 0
- 557 000e 662C     		cmp	r4, #102
- 558 0010 04D1     		bne	.L48
- 160:StepperMotorDriver.c ****     {
- 161:StepperMotorDriver.c ****         aStep = aStep - 1;
- 559              		.loc 1 161 0
- 560 0012 1B4A     		ldr	r2, .L57
- 561 0014 1368     		ldr	r3, [r2]
- 562 0016 013B     		subs	r3, r3, #1
- 563 0018 1360     		str	r3, [r2]
- 564 001a 10BD     		pop	{r4, pc}
- 565              	.LVL47:
- 566              	.L48:
- 162:StepperMotorDriver.c ****     }
- 163:StepperMotorDriver.c ****     else if (c == 'h')
- 567              		.loc 1 163 0
- 568 001c 682C     		cmp	r4, #104
- 569 001e 04D1     		bne	.L50
- 164:StepperMotorDriver.c ****     {
- 165:StepperMotorDriver.c ****         aStep = aStep + 1;
- 570              		.loc 1 165 0
- 571 0020 174A     		ldr	r2, .L57
- 572 0022 1368     		ldr	r3, [r2]
- 573 0024 0133     		adds	r3, r3, #1
- 574 0026 1360     		str	r3, [r2]
- 575 0028 10BD     		pop	{r4, pc}
- 576              	.LVL48:
- 577              	.L50:
- 166:StepperMotorDriver.c ****     }
- 167:StepperMotorDriver.c ****     else if (c == 'd')
- 578              		.loc 1 167 0
- 579 002a 642C     		cmp	r4, #100
- 580 002c 04D1     		bne	.L51
+ 542              		.cfi_offset 14, -4
+ 543              		.loc 1 154 0
+ 544 0002 FFF7FEFF 		bl	Limit_Left_Read
+ 545              	.LVL44:
+ 546 0006 B0FA80F0 		clz	r0, r0
+ 547 000a 4009     		lsrs	r0, r0, #5
+ 548 000c 08BD     		pop	{r3, pc}
+ 549              		.cfi_endproc
+ 550              	.LFE71:
+ 551              		.size	limitLeft, .-limitLeft
+ 552 000e 00BF     		.section	.text.limitRight,"ax",%progbits
+ 553              		.align	2
+ 554              		.global	limitRight
+ 555              		.thumb
+ 556              		.thumb_func
+ 557              		.type	limitRight, %function
+ 558              	limitRight:
+ 559              	.LFB72:
+ 155:StepperMotorDriver.c **** 
+ 156:StepperMotorDriver.c **** bool limitRight(){return !Limit_Right_Read();}
+ 560              		.loc 1 156 0
+ 561              		.cfi_startproc
+ 562              		@ args = 0, pretend = 0, frame = 0
+ 563              		@ frame_needed = 0, uses_anonymous_args = 0
+ 564 0000 08B5     		push	{r3, lr}
+ 565              		.cfi_def_cfa_offset 8
+ 566              		.cfi_offset 3, -8
+ 567              		.cfi_offset 14, -4
+ 568              		.loc 1 156 0
+ 569 0002 FFF7FEFF 		bl	Limit_Right_Read
+ 570              	.LVL45:
+ 571 0006 B0FA80F0 		clz	r0, r0
+ 572 000a 4009     		lsrs	r0, r0, #5
+ 573 000c 08BD     		pop	{r3, pc}
+ 574              		.cfi_endproc
+ 575              	.LFE72:
+ 576              		.size	limitRight, .-limitRight
+ 577 000e 00BF     		.section	.text.limitUp,"ax",%progbits
+ 578              		.align	2
+ 579              		.global	limitUp
+ 580              		.thumb
+ 581              		.thumb_func
+ 582              		.type	limitUp, %function
+ 583              	limitUp:
+ 584              	.LFB73:
+ 157:StepperMotorDriver.c **** 
+ 158:StepperMotorDriver.c **** bool limitUp(){return !Limit_Up_Read();}
+ 585              		.loc 1 158 0
+ 586              		.cfi_startproc
+ 587              		@ args = 0, pretend = 0, frame = 0
+ 588              		@ frame_needed = 0, uses_anonymous_args = 0
+ 589 0000 08B5     		push	{r3, lr}
+ 590              		.cfi_def_cfa_offset 8
+ 591              		.cfi_offset 3, -8
+ 592              		.cfi_offset 14, -4
+ 593              		.loc 1 158 0
+ 594 0002 FFF7FEFF 		bl	Limit_Up_Read
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 15
+
+
+ 595              	.LVL46:
+ 596 0006 B0FA80F0 		clz	r0, r0
+ 597 000a 4009     		lsrs	r0, r0, #5
+ 598 000c 08BD     		pop	{r3, pc}
+ 599              		.cfi_endproc
+ 600              	.LFE73:
+ 601              		.size	limitUp, .-limitUp
+ 602 000e 00BF     		.section	.text.limitDown,"ax",%progbits
+ 603              		.align	2
+ 604              		.global	limitDown
+ 605              		.thumb
+ 606              		.thumb_func
+ 607              		.type	limitDown, %function
+ 608              	limitDown:
+ 609              	.LFB74:
+ 159:StepperMotorDriver.c **** 
+ 160:StepperMotorDriver.c **** bool limitDown(){return !Limit_Down_Read();}
+ 610              		.loc 1 160 0
+ 611              		.cfi_startproc
+ 612              		@ args = 0, pretend = 0, frame = 0
+ 613              		@ frame_needed = 0, uses_anonymous_args = 0
+ 614 0000 08B5     		push	{r3, lr}
+ 615              		.cfi_def_cfa_offset 8
+ 616              		.cfi_offset 3, -8
+ 617              		.cfi_offset 14, -4
+ 618              		.loc 1 160 0
+ 619 0002 FFF7FEFF 		bl	Limit_Down_Read
+ 620              	.LVL47:
+ 621 0006 B0FA80F0 		clz	r0, r0
+ 622 000a 4009     		lsrs	r0, r0, #5
+ 623 000c 08BD     		pop	{r3, pc}
+ 624              		.cfi_endproc
+ 625              	.LFE74:
+ 626              		.size	limitDown, .-limitDown
+ 627 000e 00BF     		.section	.text.UART_HANDLER,"ax",%progbits
+ 628              		.align	2
+ 629              		.global	UART_HANDLER
+ 630              		.thumb
+ 631              		.thumb_func
+ 632              		.type	UART_HANDLER, %function
+ 633              	UART_HANDLER:
+ 634              	.LFB75:
+ 161:StepperMotorDriver.c **** 
+ 162:StepperMotorDriver.c **** // to be deleted
+ 163:StepperMotorDriver.c **** CY_ISR(UART_HANDLER)
+ 164:StepperMotorDriver.c **** {
+ 635              		.loc 1 164 0
+ 636              		.cfi_startproc
+ 637              		@ args = 0, pretend = 0, frame = 0
+ 638              		@ frame_needed = 0, uses_anonymous_args = 0
+ 639 0000 10B5     		push	{r4, lr}
+ 640              		.cfi_def_cfa_offset 8
+ 641              		.cfi_offset 4, -8
+ 642              		.cfi_offset 14, -4
+ 165:StepperMotorDriver.c ****     uint8_t c = UART_1_GetByte();
+ 643              		.loc 1 165 0
+ 644 0002 FFF7FEFF 		bl	UART_1_GetByte
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 16
+
+
+ 645              	.LVL48:
+ 646 0006 C4B2     		uxtb	r4, r0
+ 647              	.LVL49:
+ 166:StepperMotorDriver.c ****     UART_1_PutChar(c);
+ 648              		.loc 1 166 0
+ 649 0008 2046     		mov	r0, r4
+ 650 000a FFF7FEFF 		bl	UART_1_PutChar
+ 651              	.LVL50:
+ 167:StepperMotorDriver.c ****     if (c == 'j')
+ 652              		.loc 1 167 0
+ 653 000e 6A2C     		cmp	r4, #106
+ 654 0010 05D1     		bne	.L56
  168:StepperMotorDriver.c ****     {
- 169:StepperMotorDriver.c ****         aStep = aStep - 80;
- 581              		.loc 1 169 0
- 582 002e 144A     		ldr	r2, .L57
- 583 0030 1368     		ldr	r3, [r2]
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 15
-
-
- 584 0032 503B     		subs	r3, r3, #80
- 585 0034 1360     		str	r3, [r2]
- 586 0036 10BD     		pop	{r4, pc}
- 587              	.LVL49:
- 588              	.L51:
+ 169:StepperMotorDriver.c ****         aStep = aStep - 800;
+ 655              		.loc 1 169 0
+ 656 0012 134A     		ldr	r2, .L62
+ 657 0014 1368     		ldr	r3, [r2]
+ 658 0016 A3F54873 		sub	r3, r3, #800
+ 659 001a 1360     		str	r3, [r2]
+ 660 001c 10BD     		pop	{r4, pc}
+ 661              	.LVL51:
+ 662              	.L56:
  170:StepperMotorDriver.c ****     }
- 171:StepperMotorDriver.c ****     else if (c == 'j')
- 589              		.loc 1 171 0
- 590 0038 6A2C     		cmp	r4, #106
- 591 003a 04D1     		bne	.L52
+ 171:StepperMotorDriver.c ****     else if (c == 'h')
+ 663              		.loc 1 171 0
+ 664 001e 682C     		cmp	r4, #104
+ 665 0020 05D1     		bne	.L58
  172:StepperMotorDriver.c ****     {
- 173:StepperMotorDriver.c ****         aStep = aStep + 80;
- 592              		.loc 1 173 0
- 593 003c 104A     		ldr	r2, .L57
- 594 003e 1368     		ldr	r3, [r2]
- 595 0040 5033     		adds	r3, r3, #80
- 596 0042 1360     		str	r3, [r2]
- 597 0044 10BD     		pop	{r4, pc}
- 598              	.LVL50:
- 599              	.L52:
+ 173:StepperMotorDriver.c ****         aStep = aStep + 800;
+ 666              		.loc 1 173 0
+ 667 0022 0F4A     		ldr	r2, .L62
+ 668 0024 1368     		ldr	r3, [r2]
+ 669 0026 03F54873 		add	r3, r3, #800
+ 670 002a 1360     		str	r3, [r2]
+ 671 002c 10BD     		pop	{r4, pc}
+ 672              	.LVL52:
+ 673              	.L58:
  174:StepperMotorDriver.c ****     }
- 175:StepperMotorDriver.c ****     else if (c == 'b')
- 600              		.loc 1 175 0
- 601 0046 622C     		cmp	r4, #98
- 602 0048 04D1     		bne	.L53
+ 175:StepperMotorDriver.c ****     else if (c == 'u')
+ 674              		.loc 1 175 0
+ 675 002e 752C     		cmp	r4, #117
+ 676 0030 05D1     		bne	.L59
  176:StepperMotorDriver.c ****     {
- 177:StepperMotorDriver.c ****         eStep = eStep - 1;
- 603              		.loc 1 177 0
- 604 004a 0D4A     		ldr	r2, .L57
- 605 004c 5368     		ldr	r3, [r2, #4]
- 606 004e 013B     		subs	r3, r3, #1
- 607 0050 5360     		str	r3, [r2, #4]
- 608 0052 10BD     		pop	{r4, pc}
- 609              	.LVL51:
- 610              	.L53:
+ 177:StepperMotorDriver.c ****         eStep = eStep - 8000;
+ 677              		.loc 1 177 0
+ 678 0032 0B4A     		ldr	r2, .L62
+ 679 0034 5368     		ldr	r3, [r2, #4]
+ 680 0036 A3F5FA53 		sub	r3, r3, #8000
+ 681 003a 5360     		str	r3, [r2, #4]
+ 682 003c 10BD     		pop	{r4, pc}
+ 683              	.LVL53:
+ 684              	.L59:
  178:StepperMotorDriver.c ****     }
- 179:StepperMotorDriver.c ****     else if (c == 't')
- 611              		.loc 1 179 0
- 612 0054 742C     		cmp	r4, #116
- 613 0056 04D1     		bne	.L54
+ 179:StepperMotorDriver.c ****     else if (c == 'n')
+ 685              		.loc 1 179 0
+ 686 003e 6E2C     		cmp	r4, #110
+ 687 0040 05D1     		bne	.L60
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 17
+
+
  180:StepperMotorDriver.c ****     {
- 181:StepperMotorDriver.c ****         eStep = eStep + 1;
- 614              		.loc 1 181 0
- 615 0058 094A     		ldr	r2, .L57
- 616 005a 5368     		ldr	r3, [r2, #4]
- 617 005c 0133     		adds	r3, r3, #1
- 618 005e 5360     		str	r3, [r2, #4]
- 619 0060 10BD     		pop	{r4, pc}
- 620              	.LVL52:
- 621              	.L54:
+ 181:StepperMotorDriver.c ****         eStep = eStep + 8000;
+ 688              		.loc 1 181 0
+ 689 0042 074A     		ldr	r2, .L62
+ 690 0044 5368     		ldr	r3, [r2, #4]
+ 691 0046 03F5FA53 		add	r3, r3, #8000
+ 692 004a 5360     		str	r3, [r2, #4]
+ 693 004c 10BD     		pop	{r4, pc}
+ 694              	.LVL54:
+ 695              	.L60:
  182:StepperMotorDriver.c ****     }
- 183:StepperMotorDriver.c ****     else if (c == 'n')
- 622              		.loc 1 183 0
- 623 0062 6E2C     		cmp	r4, #110
- 624 0064 04D1     		bne	.L55
+ 183:StepperMotorDriver.c ****     else if (c == 'a')
+ 696              		.loc 1 183 0
+ 697 004e 612C     		cmp	r4, #97
+ 698 0050 04D1     		bne	.L55
  184:StepperMotorDriver.c ****     {
- 185:StepperMotorDriver.c ****         eStep = eStep - 80;
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 16
+ 185:StepperMotorDriver.c ****         eStep = eStep + 650;
+ 699              		.loc 1 185 0
+ 700 0052 034A     		ldr	r2, .L62
+ 701 0054 5368     		ldr	r3, [r2, #4]
+ 702 0056 03F28A23 		addw	r3, r3, #650
+ 703 005a 5360     		str	r3, [r2, #4]
+ 704              	.L55:
+ 705 005c 10BD     		pop	{r4, pc}
+ 706              	.LVL55:
+ 707              	.L63:
+ 708 005e 00BF     		.align	2
+ 709              	.L62:
+ 710 0060 00000000 		.word	.LANCHOR0
+ 711              		.cfi_endproc
+ 712              	.LFE75:
+ 713              		.size	UART_HANDLER, .-UART_HANDLER
+ 714              		.data
+ 715              		.align	2
+ 716              		.set	.LANCHOR1,. + 0
+ 717              		.type	azimuthSteps, %object
+ 718              		.size	azimuthSteps, 4
+ 719              	azimuthSteps:
+ 720 0000 00127A00 		.word	8000000
+ 721              		.type	stepSequence, %object
+ 722              		.size	stepSequence, 128
+ 723              	stepSequence:
+ 724 0004 01000000 		.word	1
+ 725 0008 00000000 		.word	0
+ 726 000c 00000000 		.word	0
+ 727 0010 00000000 		.word	0
+ 728 0014 01000000 		.word	1
+ 729 0018 01000000 		.word	1
+ 730 001c 00000000 		.word	0
+ 731 0020 00000000 		.word	0
+ 732 0024 00000000 		.word	0
+ 733 0028 01000000 		.word	1
+ 734 002c 00000000 		.word	0
+ 735 0030 00000000 		.word	0
+ 736 0034 00000000 		.word	0
+ 737 0038 01000000 		.word	1
+ 738 003c 01000000 		.word	1
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 18
 
 
- 625              		.loc 1 185 0
- 626 0066 064A     		ldr	r2, .L57
- 627 0068 5368     		ldr	r3, [r2, #4]
- 628 006a 503B     		subs	r3, r3, #80
- 629 006c 5360     		str	r3, [r2, #4]
- 630 006e 10BD     		pop	{r4, pc}
- 631              	.LVL53:
- 632              	.L55:
- 186:StepperMotorDriver.c ****     }
- 187:StepperMotorDriver.c ****     else if (c == 'y')
- 633              		.loc 1 187 0
- 634 0070 792C     		cmp	r4, #121
- 635 0072 03D1     		bne	.L47
- 188:StepperMotorDriver.c ****     {
- 189:StepperMotorDriver.c ****         eStep = eStep + 80;
- 636              		.loc 1 189 0
- 637 0074 024A     		ldr	r2, .L57
- 638 0076 5368     		ldr	r3, [r2, #4]
- 639 0078 5033     		adds	r3, r3, #80
- 640 007a 5360     		str	r3, [r2, #4]
- 641              	.L47:
- 642 007c 10BD     		pop	{r4, pc}
- 643              	.LVL54:
- 644              	.L58:
- 645 007e 00BF     		.align	2
- 646              	.L57:
- 647 0080 00000000 		.word	.LANCHOR0
- 648              		.cfi_endproc
- 649              	.LFE71:
- 650              		.size	UART_HANDLER, .-UART_HANDLER
- 651              		.data
- 652              		.align	2
- 653              		.set	.LANCHOR1,. + 0
- 654              		.type	azimuthSteps, %object
- 655              		.size	azimuthSteps, 4
- 656              	azimuthSteps:
- 657 0000 00127A00 		.word	8000000
- 658              		.type	stepSequence, %object
- 659              		.size	stepSequence, 128
- 660              	stepSequence:
- 661 0004 01000000 		.word	1
- 662 0008 00000000 		.word	0
- 663 000c 00000000 		.word	0
- 664 0010 00000000 		.word	0
- 665 0014 01000000 		.word	1
- 666 0018 01000000 		.word	1
- 667 001c 00000000 		.word	0
- 668 0020 00000000 		.word	0
- 669 0024 00000000 		.word	0
- 670 0028 01000000 		.word	1
- 671 002c 00000000 		.word	0
- 672 0030 00000000 		.word	0
- 673 0034 00000000 		.word	0
- 674 0038 01000000 		.word	1
- 675 003c 01000000 		.word	1
- 676 0040 00000000 		.word	0
- 677 0044 00000000 		.word	0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 17
+ 739 0040 00000000 		.word	0
+ 740 0044 00000000 		.word	0
+ 741 0048 00000000 		.word	0
+ 742 004c 01000000 		.word	1
+ 743 0050 00000000 		.word	0
+ 744 0054 00000000 		.word	0
+ 745 0058 00000000 		.word	0
+ 746 005c 01000000 		.word	1
+ 747 0060 01000000 		.word	1
+ 748 0064 00000000 		.word	0
+ 749 0068 00000000 		.word	0
+ 750 006c 00000000 		.word	0
+ 751 0070 01000000 		.word	1
+ 752 0074 01000000 		.word	1
+ 753 0078 00000000 		.word	0
+ 754 007c 00000000 		.word	0
+ 755 0080 01000000 		.word	1
+ 756              		.type	elevationSteps, %object
+ 757              		.size	elevationSteps, 4
+ 758              	elevationSteps:
+ 759 0084 00127A00 		.word	8000000
+ 760              		.bss
+ 761              		.align	2
+ 762              		.set	.LANCHOR0,. + 0
+ 763              		.type	aStep, %object
+ 764              		.size	aStep, 4
+ 765              	aStep:
+ 766 0000 00000000 		.space	4
+ 767              		.type	eStep, %object
+ 768              		.size	eStep, 4
+ 769              	eStep:
+ 770 0004 00000000 		.space	4
+ 771              		.type	off, %object
+ 772              		.size	off, 16
+ 773              	off:
+ 774 0008 00000000 		.space	16
+ 774      00000000 
+ 774      00000000 
+ 774      00000000 
+ 775              		.text
+ 776              	.Letext0:
+ 777              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 778              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 779              		.file 4 "Generated_Source\\PSoC5/Azimuth_Pin_1.h"
+ 780              		.file 5 "Generated_Source\\PSoC5/Azimuth_Pin_2.h"
+ 781              		.file 6 "Generated_Source\\PSoC5/Azimuth_Pin_3.h"
+ 782              		.file 7 "Generated_Source\\PSoC5/Azimuth_Pin_4.h"
+ 783              		.file 8 "Generated_Source\\PSoC5/Limit_Right.h"
+ 784              		.file 9 "Generated_Source\\PSoC5/Limit_Left.h"
+ 785              		.file 10 "Generated_Source\\PSoC5/Elevation_Pin_1.h"
+ 786              		.file 11 "Generated_Source\\PSoC5/Elevation_Pin_2.h"
+ 787              		.file 12 "Generated_Source\\PSoC5/Elevation_Pin_3.h"
+ 788              		.file 13 "Generated_Source\\PSoC5/Elevation_Pin_4.h"
+ 789              		.file 14 "Generated_Source\\PSoC5/Limit_Down.h"
+ 790              		.file 15 "Generated_Source\\PSoC5/Limit_Up.h"
+ 791              		.file 16 "Generated_Source\\PSoC5/UART_1.h"
+ 792              		.file 17 "Generated_Source\\PSoC5/core_cm3.h"
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 19
 
 
- 678 0048 00000000 		.word	0
- 679 004c 01000000 		.word	1
- 680 0050 00000000 		.word	0
- 681 0054 00000000 		.word	0
- 682 0058 00000000 		.word	0
- 683 005c 01000000 		.word	1
- 684 0060 01000000 		.word	1
- 685 0064 00000000 		.word	0
- 686 0068 00000000 		.word	0
- 687 006c 00000000 		.word	0
- 688 0070 01000000 		.word	1
- 689 0074 01000000 		.word	1
- 690 0078 00000000 		.word	0
- 691 007c 00000000 		.word	0
- 692 0080 01000000 		.word	1
- 693              		.type	elevationSteps, %object
- 694              		.size	elevationSteps, 4
- 695              	elevationSteps:
- 696 0084 00127A00 		.word	8000000
- 697              		.bss
- 698              		.align	2
- 699              		.set	.LANCHOR0,. + 0
- 700              		.type	aStep, %object
- 701              		.size	aStep, 4
- 702              	aStep:
- 703 0000 00000000 		.space	4
- 704              		.type	eStep, %object
- 705              		.size	eStep, 4
- 706              	eStep:
- 707 0004 00000000 		.space	4
- 708              		.type	off, %object
- 709              		.size	off, 16
- 710              	off:
- 711 0008 00000000 		.space	16
- 711      00000000 
- 711      00000000 
- 711      00000000 
- 712              		.text
- 713              	.Letext0:
- 714              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 715              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 716              		.file 4 "Generated_Source\\PSoC5/Azimuth_Pin_1.h"
- 717              		.file 5 "Generated_Source\\PSoC5/Azimuth_Pin_2.h"
- 718              		.file 6 "Generated_Source\\PSoC5/Azimuth_Pin_3.h"
- 719              		.file 7 "Generated_Source\\PSoC5/Azimuth_Pin_4.h"
- 720              		.file 8 "Generated_Source\\PSoC5/Limit_Right.h"
- 721              		.file 9 "Generated_Source\\PSoC5/Limit_Left.h"
- 722              		.file 10 "Generated_Source\\PSoC5/Elevation_Pin_1.h"
- 723              		.file 11 "Generated_Source\\PSoC5/Elevation_Pin_2.h"
- 724              		.file 12 "Generated_Source\\PSoC5/Elevation_Pin_3.h"
- 725              		.file 13 "Generated_Source\\PSoC5/Elevation_Pin_4.h"
- 726              		.file 14 "Generated_Source\\PSoC5/Limit_Up.h"
- 727              		.file 15 "Generated_Source\\PSoC5/Limit_Down.h"
- 728              		.file 16 "Generated_Source\\PSoC5/UART_1.h"
- 729              		.file 17 "Generated_Source\\PSoC5/core_cm3.h"
- 730              		.section	.debug_info,"",%progbits
- 731              	.Ldebug_info0:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 18
+ 793              		.section	.debug_info,"",%progbits
+ 794              	.Ldebug_info0:
+ 795 0000 63050000 		.4byte	0x563
+ 796 0004 0400     		.2byte	0x4
+ 797 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 798 000a 04       		.byte	0x4
+ 799 000b 01       		.uleb128 0x1
+ 800 000c 2B030000 		.4byte	.LASF60
+ 801 0010 0C       		.byte	0xc
+ 802 0011 F6020000 		.4byte	.LASF61
+ 803 0015 B9030000 		.4byte	.LASF62
+ 804 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 805 001d 00000000 		.4byte	0
+ 806 0021 00000000 		.4byte	.Ldebug_line0
+ 807 0025 02       		.uleb128 0x2
+ 808 0026 01       		.byte	0x1
+ 809 0027 06       		.byte	0x6
+ 810 0028 D7010000 		.4byte	.LASF0
+ 811 002c 03       		.uleb128 0x3
+ 812 002d 64010000 		.4byte	.LASF4
+ 813 0031 02       		.byte	0x2
+ 814 0032 1D       		.byte	0x1d
+ 815 0033 37000000 		.4byte	0x37
+ 816 0037 02       		.uleb128 0x2
+ 817 0038 01       		.byte	0x1
+ 818 0039 08       		.byte	0x8
+ 819 003a 6E010000 		.4byte	.LASF1
+ 820 003e 02       		.uleb128 0x2
+ 821 003f 02       		.byte	0x2
+ 822 0040 05       		.byte	0x5
+ 823 0041 A2000000 		.4byte	.LASF2
+ 824 0045 02       		.uleb128 0x2
+ 825 0046 02       		.byte	0x2
+ 826 0047 07       		.byte	0x7
+ 827 0048 58020000 		.4byte	.LASF3
+ 828 004c 03       		.uleb128 0x3
+ 829 004d DD020000 		.4byte	.LASF5
+ 830 0051 02       		.byte	0x2
+ 831 0052 3F       		.byte	0x3f
+ 832 0053 57000000 		.4byte	0x57
+ 833 0057 02       		.uleb128 0x2
+ 834 0058 04       		.byte	0x4
+ 835 0059 05       		.byte	0x5
+ 836 005a 5B010000 		.4byte	.LASF6
+ 837 005e 02       		.uleb128 0x2
+ 838 005f 04       		.byte	0x4
+ 839 0060 07       		.byte	0x7
+ 840 0061 B5020000 		.4byte	.LASF7
+ 841 0065 02       		.uleb128 0x2
+ 842 0066 08       		.byte	0x8
+ 843 0067 05       		.byte	0x5
+ 844 0068 43010000 		.4byte	.LASF8
+ 845 006c 02       		.uleb128 0x2
+ 846 006d 08       		.byte	0x8
+ 847 006e 07       		.byte	0x7
+ 848 006f EB010000 		.4byte	.LASF9
+ 849 0073 04       		.uleb128 0x4
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 20
 
 
- 732 0000 D0040000 		.4byte	0x4d0
- 733 0004 0400     		.2byte	0x4
- 734 0006 00000000 		.4byte	.Ldebug_abbrev0
- 735 000a 04       		.byte	0x4
- 736 000b 01       		.uleb128 0x1
- 737 000c 4C010000 		.4byte	.LASF55
- 738 0010 0C       		.byte	0xc
- 739 0011 E9020000 		.4byte	.LASF56
- 740 0015 31000000 		.4byte	.LASF57
- 741 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 742 001d 00000000 		.4byte	0
- 743 0021 00000000 		.4byte	.Ldebug_line0
- 744 0025 02       		.uleb128 0x2
- 745 0026 01       		.byte	0x1
- 746 0027 06       		.byte	0x6
- 747 0028 F3030000 		.4byte	.LASF0
- 748 002c 03       		.uleb128 0x3
- 749 002d 0E000000 		.4byte	.LASF4
- 750 0031 02       		.byte	0x2
- 751 0032 1D       		.byte	0x1d
- 752 0033 37000000 		.4byte	0x37
- 753 0037 02       		.uleb128 0x2
- 754 0038 01       		.byte	0x1
- 755 0039 08       		.byte	0x8
- 756 003a 3E010000 		.4byte	.LASF1
- 757 003e 02       		.uleb128 0x2
- 758 003f 02       		.byte	0x2
- 759 0040 05       		.byte	0x5
- 760 0041 8E030000 		.4byte	.LASF2
- 761 0045 02       		.uleb128 0x2
- 762 0046 02       		.byte	0x2
- 763 0047 07       		.byte	0x7
- 764 0048 13020000 		.4byte	.LASF3
- 765 004c 03       		.uleb128 0x3
- 766 004d 27000000 		.4byte	.LASF5
- 767 0051 02       		.byte	0x2
- 768 0052 3F       		.byte	0x3f
- 769 0053 57000000 		.4byte	0x57
- 770 0057 02       		.uleb128 0x2
- 771 0058 04       		.byte	0x4
- 772 0059 05       		.byte	0x5
- 773 005a DE030000 		.4byte	.LASF6
- 774 005e 02       		.uleb128 0x2
- 775 005f 04       		.byte	0x4
- 776 0060 07       		.byte	0x7
- 777 0061 01020000 		.4byte	.LASF7
- 778 0065 02       		.uleb128 0x2
- 779 0066 08       		.byte	0x8
- 780 0067 05       		.byte	0x5
- 781 0068 38030000 		.4byte	.LASF8
- 782 006c 02       		.uleb128 0x2
- 783 006d 08       		.byte	0x8
- 784 006e 07       		.byte	0x7
- 785 006f C2020000 		.4byte	.LASF9
- 786 0073 04       		.uleb128 0x4
- 787 0074 04       		.byte	0x4
- 788 0075 05       		.byte	0x5
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 19
+ 850 0074 04       		.byte	0x4
+ 851 0075 05       		.byte	0x5
+ 852 0076 696E7400 		.ascii	"int\000"
+ 853 007a 02       		.uleb128 0x2
+ 854 007b 04       		.byte	0x4
+ 855 007c 07       		.byte	0x7
+ 856 007d 2B020000 		.4byte	.LASF10
+ 857 0081 03       		.uleb128 0x3
+ 858 0082 13010000 		.4byte	.LASF11
+ 859 0086 03       		.byte	0x3
+ 860 0087 18       		.byte	0x18
+ 861 0088 2C000000 		.4byte	0x2c
+ 862 008c 03       		.uleb128 0x3
+ 863 008d E3010000 		.4byte	.LASF12
+ 864 0091 03       		.byte	0x3
+ 865 0092 2C       		.byte	0x2c
+ 866 0093 4C000000 		.4byte	0x4c
+ 867 0097 02       		.uleb128 0x2
+ 868 0098 04       		.byte	0x4
+ 869 0099 04       		.byte	0x4
+ 870 009a 3D010000 		.4byte	.LASF13
+ 871 009e 02       		.uleb128 0x2
+ 872 009f 08       		.byte	0x8
+ 873 00a0 04       		.byte	0x4
+ 874 00a1 C7020000 		.4byte	.LASF14
+ 875 00a5 02       		.uleb128 0x2
+ 876 00a6 01       		.byte	0x1
+ 877 00a7 08       		.byte	0x8
+ 878 00a8 81020000 		.4byte	.LASF15
+ 879 00ac 02       		.uleb128 0x2
+ 880 00ad 08       		.byte	0x8
+ 881 00ae 04       		.byte	0x4
+ 882 00af 89010000 		.4byte	.LASF16
+ 883 00b3 02       		.uleb128 0x2
+ 884 00b4 04       		.byte	0x4
+ 885 00b5 07       		.byte	0x7
+ 886 00b6 0B030000 		.4byte	.LASF17
+ 887 00ba 05       		.uleb128 0x5
+ 888 00bb 5A040000 		.4byte	.LASF18
+ 889 00bf 01       		.byte	0x1
+ 890 00c0 24       		.byte	0x24
+ 891 00c1 00000000 		.4byte	.LFB64
+ 892 00c5 0C000000 		.4byte	.LFE64-.LFB64
+ 893 00c9 01       		.uleb128 0x1
+ 894 00ca 9C       		.byte	0x9c
+ 895 00cb DD000000 		.4byte	0xdd
+ 896 00cf 06       		.uleb128 0x6
+ 897 00d0 52020000 		.4byte	.LASF20
+ 898 00d4 01       		.byte	0x1
+ 899 00d5 24       		.byte	0x24
+ 900 00d6 73000000 		.4byte	0x73
+ 901 00da 01       		.uleb128 0x1
+ 902 00db 50       		.byte	0x50
+ 903 00dc 00       		.byte	0
+ 904 00dd 05       		.uleb128 0x5
+ 905 00de 86020000 		.4byte	.LASF19
+ 906 00e2 01       		.byte	0x1
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 21
 
 
- 789 0076 696E7400 		.ascii	"int\000"
- 790 007a 02       		.uleb128 0x2
- 791 007b 04       		.byte	0x4
- 792 007c 07       		.byte	0x7
- 793 007d B5020000 		.4byte	.LASF10
- 794 0081 03       		.uleb128 0x3
- 795 0082 D9020000 		.4byte	.LASF11
- 796 0086 03       		.byte	0x3
- 797 0087 18       		.byte	0x18
- 798 0088 2C000000 		.4byte	0x2c
- 799 008c 03       		.uleb128 0x3
- 800 008d 04030000 		.4byte	.LASF12
- 801 0091 03       		.byte	0x3
- 802 0092 2C       		.byte	0x2c
- 803 0093 4C000000 		.4byte	0x4c
- 804 0097 02       		.uleb128 0x2
- 805 0098 04       		.byte	0x4
- 806 0099 04       		.byte	0x4
- 807 009a 15010000 		.4byte	.LASF13
- 808 009e 02       		.uleb128 0x2
- 809 009f 08       		.byte	0x8
- 810 00a0 04       		.byte	0x4
- 811 00a1 26020000 		.4byte	.LASF14
- 812 00a5 02       		.uleb128 0x2
- 813 00a6 01       		.byte	0x1
- 814 00a7 08       		.byte	0x8
- 815 00a8 5C030000 		.4byte	.LASF15
- 816 00ac 02       		.uleb128 0x2
- 817 00ad 08       		.byte	0x8
- 818 00ae 04       		.byte	0x4
- 819 00af E7030000 		.4byte	.LASF16
- 820 00b3 02       		.uleb128 0x2
- 821 00b4 04       		.byte	0x4
- 822 00b5 07       		.byte	0x7
- 823 00b6 0C030000 		.4byte	.LASF17
- 824 00ba 05       		.uleb128 0x5
- 825 00bb 75020000 		.4byte	.LASF18
- 826 00bf 01       		.byte	0x1
- 827 00c0 24       		.byte	0x24
- 828 00c1 00000000 		.4byte	.LFB64
- 829 00c5 0C000000 		.4byte	.LFE64-.LFB64
- 830 00c9 01       		.uleb128 0x1
- 831 00ca 9C       		.byte	0x9c
- 832 00cb DD000000 		.4byte	0xdd
- 833 00cf 06       		.uleb128 0x6
- 834 00d0 5A020000 		.4byte	.LASF20
- 835 00d4 01       		.byte	0x1
- 836 00d5 24       		.byte	0x24
- 837 00d6 73000000 		.4byte	0x73
- 838 00da 01       		.uleb128 0x1
- 839 00db 50       		.byte	0x50
- 840 00dc 00       		.byte	0
- 841 00dd 05       		.uleb128 0x5
- 842 00de B7030000 		.4byte	.LASF19
- 843 00e2 01       		.byte	0x1
- 844 00e3 4B       		.byte	0x4b
- 845 00e4 00000000 		.4byte	.LFB66
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 20
+ 907 00e3 4B       		.byte	0x4b
+ 908 00e4 00000000 		.4byte	.LFB66
+ 909 00e8 1E000000 		.4byte	.LFE66-.LFB66
+ 910 00ec 01       		.uleb128 0x1
+ 911 00ed 9C       		.byte	0x9c
+ 912 00ee 26010000 		.4byte	0x126
+ 913 00f2 07       		.uleb128 0x7
+ 914 00f3 AC000000 		.4byte	.LASF21
+ 915 00f7 01       		.byte	0x1
+ 916 00f8 4B       		.byte	0x4b
+ 917 00f9 26010000 		.4byte	0x126
+ 918 00fd 00000000 		.4byte	.LLST0
+ 919 0101 08       		.uleb128 0x8
+ 920 0102 0A000000 		.4byte	.LVL3
+ 921 0106 74040000 		.4byte	0x474
+ 922 010a 08       		.uleb128 0x8
+ 923 010b 10000000 		.4byte	.LVL4
+ 924 010f 7F040000 		.4byte	0x47f
+ 925 0113 08       		.uleb128 0x8
+ 926 0114 16000000 		.4byte	.LVL5
+ 927 0118 8A040000 		.4byte	0x48a
+ 928 011c 08       		.uleb128 0x8
+ 929 011d 1C000000 		.4byte	.LVL6
+ 930 0121 95040000 		.4byte	0x495
+ 931 0125 00       		.byte	0
+ 932 0126 09       		.uleb128 0x9
+ 933 0127 04       		.byte	0x4
+ 934 0128 73000000 		.4byte	0x73
+ 935 012c 0A       		.uleb128 0xa
+ 936 012d AD020000 		.4byte	.LASF22
+ 937 0131 01       		.byte	0x1
+ 938 0132 29       		.byte	0x29
+ 939 0133 73000000 		.4byte	0x73
+ 940 0137 00000000 		.4byte	.LFB65
+ 941 013b CC000000 		.4byte	.LFE65-.LFB65
+ 942 013f 01       		.uleb128 0x1
+ 943 0140 9C       		.byte	0x9c
+ 944 0141 97010000 		.4byte	0x197
+ 945 0145 08       		.uleb128 0x8
+ 946 0146 06000000 		.4byte	.LVL7
+ 947 014a A0040000 		.4byte	0x4a0
+ 948 014e 08       		.uleb128 0x8
+ 949 014f 0C000000 		.4byte	.LVL8
+ 950 0153 AB040000 		.4byte	0x4ab
+ 951 0157 08       		.uleb128 0x8
+ 952 0158 12000000 		.4byte	.LVL9
+ 953 015c B6040000 		.4byte	0x4b6
+ 954 0160 08       		.uleb128 0x8
+ 955 0161 18000000 		.4byte	.LVL10
+ 956 0165 C1040000 		.4byte	0x4c1
+ 957 0169 08       		.uleb128 0x8
+ 958 016a 36000000 		.4byte	.LVL11
+ 959 016e DD000000 		.4byte	0xdd
+ 960 0172 08       		.uleb128 0x8
+ 961 0173 46000000 		.4byte	.LVL12
+ 962 0177 CC040000 		.4byte	0x4cc
+ 963 017b 08       		.uleb128 0x8
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 22
 
 
- 846 00e8 1E000000 		.4byte	.LFE66-.LFB66
- 847 00ec 01       		.uleb128 0x1
- 848 00ed 9C       		.byte	0x9c
- 849 00ee 26010000 		.4byte	0x126
- 850 00f2 07       		.uleb128 0x7
- 851 00f3 9D020000 		.4byte	.LASF21
- 852 00f7 01       		.byte	0x1
- 853 00f8 4B       		.byte	0x4b
- 854 00f9 26010000 		.4byte	0x126
- 855 00fd 00000000 		.4byte	.LLST0
- 856 0101 08       		.uleb128 0x8
- 857 0102 0A000000 		.4byte	.LVL3
- 858 0106 E1030000 		.4byte	0x3e1
- 859 010a 08       		.uleb128 0x8
- 860 010b 10000000 		.4byte	.LVL4
- 861 010f EC030000 		.4byte	0x3ec
- 862 0113 08       		.uleb128 0x8
- 863 0114 16000000 		.4byte	.LVL5
- 864 0118 F7030000 		.4byte	0x3f7
- 865 011c 08       		.uleb128 0x8
- 866 011d 1C000000 		.4byte	.LVL6
- 867 0121 02040000 		.4byte	0x402
- 868 0125 00       		.byte	0
- 869 0126 09       		.uleb128 0x9
- 870 0127 04       		.byte	0x4
- 871 0128 73000000 		.4byte	0x73
- 872 012c 0A       		.uleb128 0xa
- 873 012d E1020000 		.4byte	.LASF22
- 874 0131 01       		.byte	0x1
- 875 0132 29       		.byte	0x29
- 876 0133 73000000 		.4byte	0x73
- 877 0137 00000000 		.4byte	.LFB65
- 878 013b D0000000 		.4byte	.LFE65-.LFB65
- 879 013f 01       		.uleb128 0x1
- 880 0140 9C       		.byte	0x9c
- 881 0141 97010000 		.4byte	0x197
- 882 0145 08       		.uleb128 0x8
- 883 0146 06000000 		.4byte	.LVL7
- 884 014a 0D040000 		.4byte	0x40d
- 885 014e 08       		.uleb128 0x8
- 886 014f 0C000000 		.4byte	.LVL8
- 887 0153 18040000 		.4byte	0x418
- 888 0157 08       		.uleb128 0x8
- 889 0158 12000000 		.4byte	.LVL9
- 890 015c 23040000 		.4byte	0x423
- 891 0160 08       		.uleb128 0x8
- 892 0161 18000000 		.4byte	.LVL10
- 893 0165 2E040000 		.4byte	0x42e
- 894 0169 08       		.uleb128 0x8
- 895 016a 36000000 		.4byte	.LVL11
- 896 016e DD000000 		.4byte	0xdd
- 897 0172 08       		.uleb128 0x8
- 898 0173 46000000 		.4byte	.LVL12
- 899 0177 39040000 		.4byte	0x439
- 900 017b 08       		.uleb128 0x8
- 901 017c 70000000 		.4byte	.LVL13
- 902 0180 DD000000 		.4byte	0xdd
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 21
+ 964 017c 6E000000 		.4byte	.LVL13
+ 965 0180 DD000000 		.4byte	0xdd
+ 966 0184 08       		.uleb128 0x8
+ 967 0185 82000000 		.4byte	.LVL14
+ 968 0189 D7040000 		.4byte	0x4d7
+ 969 018d 08       		.uleb128 0x8
+ 970 018e AA000000 		.4byte	.LVL15
+ 971 0192 DD000000 		.4byte	0xdd
+ 972 0196 00       		.byte	0
+ 973 0197 05       		.uleb128 0x5
+ 974 0198 05010000 		.4byte	.LASF23
+ 975 019c 01       		.byte	0x1
+ 976 019d 54       		.byte	0x54
+ 977 019e 00000000 		.4byte	.LFB67
+ 978 01a2 0C000000 		.4byte	.LFE67-.LFB67
+ 979 01a6 01       		.uleb128 0x1
+ 980 01a7 9C       		.byte	0x9c
+ 981 01a8 BA010000 		.4byte	0x1ba
+ 982 01ac 06       		.uleb128 0x6
+ 983 01ad 52020000 		.4byte	.LASF20
+ 984 01b1 01       		.byte	0x1
+ 985 01b2 54       		.byte	0x54
+ 986 01b3 73000000 		.4byte	0x73
+ 987 01b7 01       		.uleb128 0x1
+ 988 01b8 50       		.byte	0x50
+ 989 01b9 00       		.byte	0
+ 990 01ba 05       		.uleb128 0x5
+ 991 01bb 3D000000 		.4byte	.LASF24
+ 992 01bf 01       		.byte	0x1
+ 993 01c0 7C       		.byte	0x7c
+ 994 01c1 00000000 		.4byte	.LFB69
+ 995 01c5 1E000000 		.4byte	.LFE69-.LFB69
+ 996 01c9 01       		.uleb128 0x1
+ 997 01ca 9C       		.byte	0x9c
+ 998 01cb 03020000 		.4byte	0x203
+ 999 01cf 07       		.uleb128 0x7
+ 1000 01d0 AC000000 		.4byte	.LASF21
+ 1001 01d4 01       		.byte	0x1
+ 1002 01d5 7C       		.byte	0x7c
+ 1003 01d6 26010000 		.4byte	0x126
+ 1004 01da 1E000000 		.4byte	.LLST1
+ 1005 01de 08       		.uleb128 0x8
+ 1006 01df 0A000000 		.4byte	.LVL19
+ 1007 01e3 E2040000 		.4byte	0x4e2
+ 1008 01e7 08       		.uleb128 0x8
+ 1009 01e8 10000000 		.4byte	.LVL20
+ 1010 01ec ED040000 		.4byte	0x4ed
+ 1011 01f0 08       		.uleb128 0x8
+ 1012 01f1 16000000 		.4byte	.LVL21
+ 1013 01f5 F8040000 		.4byte	0x4f8
+ 1014 01f9 08       		.uleb128 0x8
+ 1015 01fa 1C000000 		.4byte	.LVL22
+ 1016 01fe 03050000 		.4byte	0x503
+ 1017 0202 00       		.byte	0
+ 1018 0203 0A       		.uleb128 0xa
+ 1019 0204 51010000 		.4byte	.LASF25
+ 1020 0208 01       		.byte	0x1
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 23
 
 
- 903 0184 08       		.uleb128 0x8
- 904 0185 84000000 		.4byte	.LVL14
- 905 0189 44040000 		.4byte	0x444
- 906 018d 08       		.uleb128 0x8
- 907 018e AE000000 		.4byte	.LVL15
- 908 0192 DD000000 		.4byte	0xdd
- 909 0196 00       		.byte	0
- 910 0197 05       		.uleb128 0x5
- 911 0198 00000000 		.4byte	.LASF23
- 912 019c 01       		.byte	0x1
- 913 019d 54       		.byte	0x54
- 914 019e 00000000 		.4byte	.LFB67
- 915 01a2 0C000000 		.4byte	.LFE67-.LFB67
- 916 01a6 01       		.uleb128 0x1
- 917 01a7 9C       		.byte	0x9c
- 918 01a8 BA010000 		.4byte	0x1ba
- 919 01ac 06       		.uleb128 0x6
- 920 01ad 5A020000 		.4byte	.LASF20
- 921 01b1 01       		.byte	0x1
- 922 01b2 54       		.byte	0x54
- 923 01b3 73000000 		.4byte	0x73
- 924 01b7 01       		.uleb128 0x1
- 925 01b8 50       		.byte	0x50
- 926 01b9 00       		.byte	0
- 927 01ba 05       		.uleb128 0x5
- 928 01bb F3000000 		.4byte	.LASF24
- 929 01bf 01       		.byte	0x1
- 930 01c0 7C       		.byte	0x7c
- 931 01c1 00000000 		.4byte	.LFB69
- 932 01c5 1E000000 		.4byte	.LFE69-.LFB69
- 933 01c9 01       		.uleb128 0x1
- 934 01ca 9C       		.byte	0x9c
- 935 01cb 03020000 		.4byte	0x203
- 936 01cf 07       		.uleb128 0x7
- 937 01d0 9D020000 		.4byte	.LASF21
- 938 01d4 01       		.byte	0x1
- 939 01d5 7C       		.byte	0x7c
- 940 01d6 26010000 		.4byte	0x126
- 941 01da 1E000000 		.4byte	.LLST1
- 942 01de 08       		.uleb128 0x8
- 943 01df 0A000000 		.4byte	.LVL19
- 944 01e3 4F040000 		.4byte	0x44f
- 945 01e7 08       		.uleb128 0x8
- 946 01e8 10000000 		.4byte	.LVL20
- 947 01ec 5A040000 		.4byte	0x45a
- 948 01f0 08       		.uleb128 0x8
- 949 01f1 16000000 		.4byte	.LVL21
- 950 01f5 65040000 		.4byte	0x465
- 951 01f9 08       		.uleb128 0x8
- 952 01fa 1C000000 		.4byte	.LVL22
- 953 01fe 70040000 		.4byte	0x470
- 954 0202 00       		.byte	0
- 955 0203 0A       		.uleb128 0xa
- 956 0204 61030000 		.4byte	.LASF25
- 957 0208 01       		.byte	0x1
- 958 0209 59       		.byte	0x59
- 959 020a 73000000 		.4byte	0x73
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 22
+ 1021 0209 59       		.byte	0x59
+ 1022 020a 73000000 		.4byte	0x73
+ 1023 020e 00000000 		.4byte	.LFB68
+ 1024 0212 D8000000 		.4byte	.LFE68-.LFB68
+ 1025 0216 01       		.uleb128 0x1
+ 1026 0217 9C       		.byte	0x9c
+ 1027 0218 6E020000 		.4byte	0x26e
+ 1028 021c 08       		.uleb128 0x8
+ 1029 021d 06000000 		.4byte	.LVL23
+ 1030 0221 0E050000 		.4byte	0x50e
+ 1031 0225 08       		.uleb128 0x8
+ 1032 0226 0C000000 		.4byte	.LVL24
+ 1033 022a 19050000 		.4byte	0x519
+ 1034 022e 08       		.uleb128 0x8
+ 1035 022f 12000000 		.4byte	.LVL25
+ 1036 0233 24050000 		.4byte	0x524
+ 1037 0237 08       		.uleb128 0x8
+ 1038 0238 18000000 		.4byte	.LVL26
+ 1039 023c 2F050000 		.4byte	0x52f
+ 1040 0240 08       		.uleb128 0x8
+ 1041 0241 38000000 		.4byte	.LVL27
+ 1042 0245 BA010000 		.4byte	0x1ba
+ 1043 0249 08       		.uleb128 0x8
+ 1044 024a 48000000 		.4byte	.LVL28
+ 1045 024e 3A050000 		.4byte	0x53a
+ 1046 0252 08       		.uleb128 0x8
+ 1047 0253 74000000 		.4byte	.LVL29
+ 1048 0257 BA010000 		.4byte	0x1ba
+ 1049 025b 08       		.uleb128 0x8
+ 1050 025c 88000000 		.4byte	.LVL30
+ 1051 0260 45050000 		.4byte	0x545
+ 1052 0264 08       		.uleb128 0x8
+ 1053 0265 B4000000 		.4byte	.LVL31
+ 1054 0269 BA010000 		.4byte	0x1ba
+ 1055 026d 00       		.byte	0
+ 1056 026e 05       		.uleb128 0x5
+ 1057 026f CC010000 		.4byte	.LASF26
+ 1058 0273 01       		.byte	0x1
+ 1059 0274 85       		.byte	0x85
+ 1060 0275 00000000 		.4byte	.LFB70
+ 1061 0279 70000000 		.4byte	.LFE70-.LFB70
+ 1062 027d 01       		.uleb128 0x1
+ 1063 027e 9C       		.byte	0x9c
+ 1064 027f 08030000 		.4byte	0x308
+ 1065 0283 08       		.uleb128 0x8
+ 1066 0284 0C000000 		.4byte	.LVL32
+ 1067 0288 2C010000 		.4byte	0x12c
+ 1068 028c 08       		.uleb128 0x8
+ 1069 028d 12000000 		.4byte	.LVL33
+ 1070 0291 A0040000 		.4byte	0x4a0
+ 1071 0295 08       		.uleb128 0x8
+ 1072 0296 1A000000 		.4byte	.LVL34
+ 1073 029a AB040000 		.4byte	0x4ab
+ 1074 029e 08       		.uleb128 0x8
+ 1075 029f 22000000 		.4byte	.LVL35
+ 1076 02a3 B6040000 		.4byte	0x4b6
+ 1077 02a7 08       		.uleb128 0x8
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 24
 
 
- 960 020e 00000000 		.4byte	.LFB68
- 961 0212 DC000000 		.4byte	.LFE68-.LFB68
- 962 0216 01       		.uleb128 0x1
- 963 0217 9C       		.byte	0x9c
- 964 0218 6E020000 		.4byte	0x26e
- 965 021c 08       		.uleb128 0x8
- 966 021d 06000000 		.4byte	.LVL23
- 967 0221 7B040000 		.4byte	0x47b
- 968 0225 08       		.uleb128 0x8
- 969 0226 0C000000 		.4byte	.LVL24
- 970 022a 86040000 		.4byte	0x486
- 971 022e 08       		.uleb128 0x8
- 972 022f 12000000 		.4byte	.LVL25
- 973 0233 91040000 		.4byte	0x491
- 974 0237 08       		.uleb128 0x8
- 975 0238 18000000 		.4byte	.LVL26
- 976 023c 9C040000 		.4byte	0x49c
- 977 0240 08       		.uleb128 0x8
- 978 0241 38000000 		.4byte	.LVL27
- 979 0245 BA010000 		.4byte	0x1ba
- 980 0249 08       		.uleb128 0x8
- 981 024a 48000000 		.4byte	.LVL28
- 982 024e A7040000 		.4byte	0x4a7
- 983 0252 08       		.uleb128 0x8
- 984 0253 76000000 		.4byte	.LVL29
- 985 0257 BA010000 		.4byte	0x1ba
- 986 025b 08       		.uleb128 0x8
- 987 025c 8A000000 		.4byte	.LVL30
- 988 0260 B2040000 		.4byte	0x4b2
- 989 0264 08       		.uleb128 0x8
- 990 0265 B8000000 		.4byte	.LVL31
- 991 0269 BA010000 		.4byte	0x1ba
- 992 026d 00       		.byte	0
- 993 026e 05       		.uleb128 0x5
- 994 026f 4F020000 		.4byte	.LASF26
- 995 0273 01       		.byte	0x1
- 996 0274 85       		.byte	0x85
- 997 0275 00000000 		.4byte	.LFB70
- 998 0279 70000000 		.4byte	.LFE70-.LFB70
- 999 027d 01       		.uleb128 0x1
- 1000 027e 9C       		.byte	0x9c
- 1001 027f 08030000 		.4byte	0x308
- 1002 0283 08       		.uleb128 0x8
- 1003 0284 0C000000 		.4byte	.LVL32
- 1004 0288 2C010000 		.4byte	0x12c
- 1005 028c 08       		.uleb128 0x8
- 1006 028d 12000000 		.4byte	.LVL33
- 1007 0291 0D040000 		.4byte	0x40d
- 1008 0295 08       		.uleb128 0x8
- 1009 0296 1A000000 		.4byte	.LVL34
- 1010 029a 18040000 		.4byte	0x418
- 1011 029e 08       		.uleb128 0x8
- 1012 029f 22000000 		.4byte	.LVL35
- 1013 02a3 23040000 		.4byte	0x423
- 1014 02a7 08       		.uleb128 0x8
- 1015 02a8 2A000000 		.4byte	.LVL36
- 1016 02ac 2E040000 		.4byte	0x42e
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 23
+ 1078 02a8 2A000000 		.4byte	.LVL36
+ 1079 02ac C1040000 		.4byte	0x4c1
+ 1080 02b0 0B       		.uleb128 0xb
+ 1081 02b1 34000000 		.4byte	.LVL37
+ 1082 02b5 DD000000 		.4byte	0xdd
+ 1083 02b9 C7020000 		.4byte	0x2c7
+ 1084 02bd 0C       		.uleb128 0xc
+ 1085 02be 01       		.uleb128 0x1
+ 1086 02bf 50       		.byte	0x50
+ 1087 02c0 05       		.uleb128 0x5
+ 1088 02c1 03       		.byte	0x3
+ 1089 02c2 08000000 		.4byte	.LANCHOR0+8
+ 1090 02c6 00       		.byte	0
+ 1091 02c7 08       		.uleb128 0x8
+ 1092 02c8 3E000000 		.4byte	.LVL38
+ 1093 02cc 03020000 		.4byte	0x203
+ 1094 02d0 08       		.uleb128 0x8
+ 1095 02d1 44000000 		.4byte	.LVL39
+ 1096 02d5 0E050000 		.4byte	0x50e
+ 1097 02d9 08       		.uleb128 0x8
+ 1098 02da 4C000000 		.4byte	.LVL40
+ 1099 02de 19050000 		.4byte	0x519
+ 1100 02e2 08       		.uleb128 0x8
+ 1101 02e3 54000000 		.4byte	.LVL41
+ 1102 02e7 24050000 		.4byte	0x524
+ 1103 02eb 08       		.uleb128 0x8
+ 1104 02ec 5C000000 		.4byte	.LVL42
+ 1105 02f0 2F050000 		.4byte	0x52f
+ 1106 02f4 0D       		.uleb128 0xd
+ 1107 02f5 66000000 		.4byte	.LVL43
+ 1108 02f9 BA010000 		.4byte	0x1ba
+ 1109 02fd 0C       		.uleb128 0xc
+ 1110 02fe 01       		.uleb128 0x1
+ 1111 02ff 50       		.byte	0x50
+ 1112 0300 05       		.uleb128 0x5
+ 1113 0301 03       		.byte	0x3
+ 1114 0302 08000000 		.4byte	.LANCHOR0+8
+ 1115 0306 00       		.byte	0
+ 1116 0307 00       		.byte	0
+ 1117 0308 0A       		.uleb128 0xa
+ 1118 0309 14030000 		.4byte	.LASF27
+ 1119 030d 01       		.byte	0x1
+ 1120 030e 9A       		.byte	0x9a
+ 1121 030f 2B030000 		.4byte	0x32b
+ 1122 0313 00000000 		.4byte	.LFB71
+ 1123 0317 0E000000 		.4byte	.LFE71-.LFB71
+ 1124 031b 01       		.uleb128 0x1
+ 1125 031c 9C       		.byte	0x9c
+ 1126 031d 2B030000 		.4byte	0x32b
+ 1127 0321 08       		.uleb128 0x8
+ 1128 0322 06000000 		.4byte	.LVL44
+ 1129 0326 D7040000 		.4byte	0x4d7
+ 1130 032a 00       		.byte	0
+ 1131 032b 02       		.uleb128 0x2
+ 1132 032c 01       		.byte	0x1
+ 1133 032d 02       		.byte	0x2
+ 1134 032e A7020000 		.4byte	.LASF28
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 25
 
 
- 1017 02b0 0B       		.uleb128 0xb
- 1018 02b1 34000000 		.4byte	.LVL37
- 1019 02b5 DD000000 		.4byte	0xdd
- 1020 02b9 C7020000 		.4byte	0x2c7
- 1021 02bd 0C       		.uleb128 0xc
- 1022 02be 01       		.uleb128 0x1
- 1023 02bf 50       		.byte	0x50
- 1024 02c0 05       		.uleb128 0x5
- 1025 02c1 03       		.byte	0x3
- 1026 02c2 08000000 		.4byte	.LANCHOR0+8
- 1027 02c6 00       		.byte	0
- 1028 02c7 08       		.uleb128 0x8
- 1029 02c8 3E000000 		.4byte	.LVL38
- 1030 02cc 03020000 		.4byte	0x203
- 1031 02d0 08       		.uleb128 0x8
- 1032 02d1 44000000 		.4byte	.LVL39
- 1033 02d5 7B040000 		.4byte	0x47b
- 1034 02d9 08       		.uleb128 0x8
- 1035 02da 4C000000 		.4byte	.LVL40
- 1036 02de 86040000 		.4byte	0x486
- 1037 02e2 08       		.uleb128 0x8
- 1038 02e3 54000000 		.4byte	.LVL41
- 1039 02e7 91040000 		.4byte	0x491
- 1040 02eb 08       		.uleb128 0x8
- 1041 02ec 5C000000 		.4byte	.LVL42
- 1042 02f0 9C040000 		.4byte	0x49c
- 1043 02f4 0D       		.uleb128 0xd
- 1044 02f5 66000000 		.4byte	.LVL43
- 1045 02f9 BA010000 		.4byte	0x1ba
- 1046 02fd 0C       		.uleb128 0xc
- 1047 02fe 01       		.uleb128 0x1
- 1048 02ff 50       		.byte	0x50
- 1049 0300 05       		.uleb128 0x5
- 1050 0301 03       		.byte	0x3
- 1051 0302 08000000 		.4byte	.LANCHOR0+8
- 1052 0306 00       		.byte	0
- 1053 0307 00       		.byte	0
- 1054 0308 05       		.uleb128 0x5
- 1055 0309 D1030000 		.4byte	.LASF27
- 1056 030d 01       		.byte	0x1
- 1057 030e 9B       		.byte	0x9b
- 1058 030f 00000000 		.4byte	.LFB71
- 1059 0313 84000000 		.4byte	.LFE71-.LFB71
- 1060 0317 01       		.uleb128 0x1
- 1061 0318 9C       		.byte	0x9c
- 1062 0319 44030000 		.4byte	0x344
- 1063 031d 0E       		.uleb128 0xe
- 1064 031e 6300     		.ascii	"c\000"
- 1065 0320 01       		.byte	0x1
- 1066 0321 9D       		.byte	0x9d
- 1067 0322 81000000 		.4byte	0x81
- 1068 0326 3C000000 		.4byte	.LLST2
- 1069 032a 08       		.uleb128 0x8
- 1070 032b 06000000 		.4byte	.LVL44
- 1071 032f BD040000 		.4byte	0x4bd
- 1072 0333 0D       		.uleb128 0xd
- 1073 0334 0E000000 		.4byte	.LVL46
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 24
+ 1135 0332 0A       		.uleb128 0xa
+ 1136 0333 23010000 		.4byte	.LASF29
+ 1137 0337 01       		.byte	0x1
+ 1138 0338 9C       		.byte	0x9c
+ 1139 0339 2B030000 		.4byte	0x32b
+ 1140 033d 00000000 		.4byte	.LFB72
+ 1141 0341 0E000000 		.4byte	.LFE72-.LFB72
+ 1142 0345 01       		.uleb128 0x1
+ 1143 0346 9C       		.byte	0x9c
+ 1144 0347 55030000 		.4byte	0x355
+ 1145 034b 08       		.uleb128 0x8
+ 1146 034c 06000000 		.4byte	.LVL45
+ 1147 0350 CC040000 		.4byte	0x4cc
+ 1148 0354 00       		.byte	0
+ 1149 0355 0A       		.uleb128 0xa
+ 1150 0356 1B010000 		.4byte	.LASF30
+ 1151 035a 01       		.byte	0x1
+ 1152 035b 9E       		.byte	0x9e
+ 1153 035c 2B030000 		.4byte	0x32b
+ 1154 0360 00000000 		.4byte	.LFB73
+ 1155 0364 0E000000 		.4byte	.LFE73-.LFB73
+ 1156 0368 01       		.uleb128 0x1
+ 1157 0369 9C       		.byte	0x9c
+ 1158 036a 78030000 		.4byte	0x378
+ 1159 036e 08       		.uleb128 0x8
+ 1160 036f 06000000 		.4byte	.LVL46
+ 1161 0373 45050000 		.4byte	0x545
+ 1162 0377 00       		.byte	0
+ 1163 0378 0A       		.uleb128 0xa
+ 1164 0379 D9000000 		.4byte	.LASF31
+ 1165 037d 01       		.byte	0x1
+ 1166 037e A0       		.byte	0xa0
+ 1167 037f 2B030000 		.4byte	0x32b
+ 1168 0383 00000000 		.4byte	.LFB74
+ 1169 0387 0E000000 		.4byte	.LFE74-.LFB74
+ 1170 038b 01       		.uleb128 0x1
+ 1171 038c 9C       		.byte	0x9c
+ 1172 038d 9B030000 		.4byte	0x39b
+ 1173 0391 08       		.uleb128 0x8
+ 1174 0392 06000000 		.4byte	.LVL47
+ 1175 0396 3A050000 		.4byte	0x53a
+ 1176 039a 00       		.byte	0
+ 1177 039b 05       		.uleb128 0x5
+ 1178 039c 7F000000 		.4byte	.LASF32
+ 1179 03a0 01       		.byte	0x1
+ 1180 03a1 A3       		.byte	0xa3
+ 1181 03a2 00000000 		.4byte	.LFB75
+ 1182 03a6 64000000 		.4byte	.LFE75-.LFB75
+ 1183 03aa 01       		.uleb128 0x1
+ 1184 03ab 9C       		.byte	0x9c
+ 1185 03ac D7030000 		.4byte	0x3d7
+ 1186 03b0 0E       		.uleb128 0xe
+ 1187 03b1 6300     		.ascii	"c\000"
+ 1188 03b3 01       		.byte	0x1
+ 1189 03b4 A5       		.byte	0xa5
+ 1190 03b5 81000000 		.4byte	0x81
+ 1191 03b9 3C000000 		.4byte	.LLST2
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 26
 
 
- 1074 0338 C8040000 		.4byte	0x4c8
- 1075 033c 0C       		.uleb128 0xc
- 1076 033d 01       		.uleb128 0x1
- 1077 033e 50       		.byte	0x50
- 1078 033f 02       		.uleb128 0x2
- 1079 0340 74       		.byte	0x74
- 1080 0341 00       		.sleb128 0
- 1081 0342 00       		.byte	0
- 1082 0343 00       		.byte	0
- 1083 0344 0F       		.uleb128 0xf
- 1084 0345 73000000 		.4byte	0x73
- 1085 0349 5A030000 		.4byte	0x35a
- 1086 034d 10       		.uleb128 0x10
- 1087 034e B3000000 		.4byte	0xb3
- 1088 0352 07       		.byte	0x7
- 1089 0353 10       		.uleb128 0x10
- 1090 0354 B3000000 		.4byte	0xb3
- 1091 0358 03       		.byte	0x3
- 1092 0359 00       		.byte	0
- 1093 035a 11       		.uleb128 0x11
- 1094 035b 6B030000 		.4byte	.LASF28
- 1095 035f 01       		.byte	0x1
- 1096 0360 10       		.byte	0x10
- 1097 0361 44030000 		.4byte	0x344
- 1098 0365 05       		.uleb128 0x5
- 1099 0366 03       		.byte	0x3
- 1100 0367 04000000 		.4byte	stepSequence
- 1101 036b 0F       		.uleb128 0xf
- 1102 036c 73000000 		.4byte	0x73
- 1103 0370 7B030000 		.4byte	0x37b
- 1104 0374 10       		.uleb128 0x10
- 1105 0375 B3000000 		.4byte	0xb3
- 1106 0379 03       		.byte	0x3
- 1107 037a 00       		.byte	0
- 1108 037b 12       		.uleb128 0x12
- 1109 037c 6F666600 		.ascii	"off\000"
- 1110 0380 01       		.byte	0x1
- 1111 0381 1A       		.byte	0x1a
- 1112 0382 6B030000 		.4byte	0x36b
- 1113 0386 05       		.uleb128 0x5
- 1114 0387 03       		.byte	0x3
- 1115 0388 08000000 		.4byte	off
- 1116 038c 11       		.uleb128 0x11
- 1117 038d 2B030000 		.4byte	.LASF29
- 1118 0391 01       		.byte	0x1
- 1119 0392 1B       		.byte	0x1b
- 1120 0393 57000000 		.4byte	0x57
- 1121 0397 05       		.uleb128 0x5
- 1122 0398 03       		.byte	0x3
- 1123 0399 00000000 		.4byte	azimuthSteps
- 1124 039d 11       		.uleb128 0x11
- 1125 039e A8030000 		.4byte	.LASF30
- 1126 03a2 01       		.byte	0x1
- 1127 03a3 1C       		.byte	0x1c
- 1128 03a4 57000000 		.4byte	0x57
- 1129 03a8 05       		.uleb128 0x5
- 1130 03a9 03       		.byte	0x3
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 25
+ 1192 03bd 08       		.uleb128 0x8
+ 1193 03be 06000000 		.4byte	.LVL48
+ 1194 03c2 50050000 		.4byte	0x550
+ 1195 03c6 0D       		.uleb128 0xd
+ 1196 03c7 0E000000 		.4byte	.LVL50
+ 1197 03cb 5B050000 		.4byte	0x55b
+ 1198 03cf 0C       		.uleb128 0xc
+ 1199 03d0 01       		.uleb128 0x1
+ 1200 03d1 50       		.byte	0x50
+ 1201 03d2 02       		.uleb128 0x2
+ 1202 03d3 74       		.byte	0x74
+ 1203 03d4 00       		.sleb128 0
+ 1204 03d5 00       		.byte	0
+ 1205 03d6 00       		.byte	0
+ 1206 03d7 0F       		.uleb128 0xf
+ 1207 03d8 73000000 		.4byte	0x73
+ 1208 03dc ED030000 		.4byte	0x3ed
+ 1209 03e0 10       		.uleb128 0x10
+ 1210 03e1 B3000000 		.4byte	0xb3
+ 1211 03e5 07       		.byte	0x7
+ 1212 03e6 10       		.uleb128 0x10
+ 1213 03e7 B3000000 		.4byte	0xb3
+ 1214 03eb 03       		.byte	0x3
+ 1215 03ec 00       		.byte	0
+ 1216 03ed 11       		.uleb128 0x11
+ 1217 03ee 7C010000 		.4byte	.LASF33
+ 1218 03f2 01       		.byte	0x1
+ 1219 03f3 10       		.byte	0x10
+ 1220 03f4 D7030000 		.4byte	0x3d7
+ 1221 03f8 05       		.uleb128 0x5
+ 1222 03f9 03       		.byte	0x3
+ 1223 03fa 04000000 		.4byte	stepSequence
+ 1224 03fe 0F       		.uleb128 0xf
+ 1225 03ff 73000000 		.4byte	0x73
+ 1226 0403 0E040000 		.4byte	0x40e
+ 1227 0407 10       		.uleb128 0x10
+ 1228 0408 B3000000 		.4byte	0xb3
+ 1229 040c 03       		.byte	0x3
+ 1230 040d 00       		.byte	0
+ 1231 040e 12       		.uleb128 0x12
+ 1232 040f 6F666600 		.ascii	"off\000"
+ 1233 0413 01       		.byte	0x1
+ 1234 0414 1A       		.byte	0x1a
+ 1235 0415 FE030000 		.4byte	0x3fe
+ 1236 0419 05       		.uleb128 0x5
+ 1237 041a 03       		.byte	0x3
+ 1238 041b 08000000 		.4byte	off
+ 1239 041f 11       		.uleb128 0x11
+ 1240 0420 E3000000 		.4byte	.LASF34
+ 1241 0424 01       		.byte	0x1
+ 1242 0425 1B       		.byte	0x1b
+ 1243 0426 57000000 		.4byte	0x57
+ 1244 042a 05       		.uleb128 0x5
+ 1245 042b 03       		.byte	0x3
+ 1246 042c 00000000 		.4byte	azimuthSteps
+ 1247 0430 11       		.uleb128 0x11
+ 1248 0431 CE020000 		.4byte	.LASF35
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 27
 
 
- 1131 03aa 84000000 		.4byte	elevationSteps
- 1132 03ae 11       		.uleb128 0x11
- 1133 03af FE020000 		.4byte	.LASF31
- 1134 03b3 01       		.byte	0x1
- 1135 03b4 1D       		.byte	0x1d
- 1136 03b5 73000000 		.4byte	0x73
- 1137 03b9 05       		.uleb128 0x5
- 1138 03ba 03       		.byte	0x3
- 1139 03bb 00000000 		.4byte	aStep
- 1140 03bf 11       		.uleb128 0x11
- 1141 03c0 97020000 		.4byte	.LASF32
- 1142 03c4 01       		.byte	0x1
- 1143 03c5 1E       		.byte	0x1e
- 1144 03c6 73000000 		.4byte	0x73
- 1145 03ca 05       		.uleb128 0x5
- 1146 03cb 03       		.byte	0x3
- 1147 03cc 04000000 		.4byte	eStep
- 1148 03d0 13       		.uleb128 0x13
- 1149 03d1 2D020000 		.4byte	.LASF58
- 1150 03d5 11       		.byte	0x11
- 1151 03d6 1207     		.2byte	0x712
- 1152 03d8 DC030000 		.4byte	0x3dc
- 1153 03dc 14       		.uleb128 0x14
- 1154 03dd 8C000000 		.4byte	0x8c
- 1155 03e1 15       		.uleb128 0x15
- 1156 03e2 DF000000 		.4byte	.LASF33
- 1157 03e6 DF000000 		.4byte	.LASF33
- 1158 03ea 04       		.byte	0x4
- 1159 03eb 26       		.byte	0x26
- 1160 03ec 15       		.uleb128 0x15
- 1161 03ed DA010000 		.4byte	.LASF34
- 1162 03f1 DA010000 		.4byte	.LASF34
- 1163 03f5 05       		.byte	0x5
- 1164 03f6 26       		.byte	0x26
- 1165 03f7 15       		.uleb128 0x15
- 1166 03f8 01010000 		.4byte	.LASF35
- 1167 03fc 01010000 		.4byte	.LASF35
- 1168 0400 06       		.byte	0x6
- 1169 0401 26       		.byte	0x26
- 1170 0402 15       		.uleb128 0x15
- 1171 0403 12040000 		.4byte	.LASF36
- 1172 0407 12040000 		.4byte	.LASF36
- 1173 040b 07       		.byte	0x7
- 1174 040c 26       		.byte	0x26
- 1175 040d 15       		.uleb128 0x15
- 1176 040e EE010000 		.4byte	.LASF37
- 1177 0412 EE010000 		.4byte	.LASF37
- 1178 0416 04       		.byte	0x4
- 1179 0417 29       		.byte	0x29
- 1180 0418 15       		.uleb128 0x15
- 1181 0419 26040000 		.4byte	.LASF38
- 1182 041d 26040000 		.4byte	.LASF38
- 1183 0421 05       		.byte	0x5
- 1184 0422 29       		.byte	0x29
- 1185 0423 15       		.uleb128 0x15
- 1186 0424 FF030000 		.4byte	.LASF39
- 1187 0428 FF030000 		.4byte	.LASF39
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 26
+ 1249 0435 01       		.byte	0x1
+ 1250 0436 1C       		.byte	0x1c
+ 1251 0437 57000000 		.4byte	0x57
+ 1252 043b 05       		.uleb128 0x5
+ 1253 043c 03       		.byte	0x3
+ 1254 043d 84000000 		.4byte	elevationSteps
+ 1255 0441 11       		.uleb128 0x11
+ 1256 0442 38020000 		.4byte	.LASF36
+ 1257 0446 01       		.byte	0x1
+ 1258 0447 1D       		.byte	0x1d
+ 1259 0448 73000000 		.4byte	0x73
+ 1260 044c 05       		.uleb128 0x5
+ 1261 044d 03       		.byte	0x3
+ 1262 044e 00000000 		.4byte	aStep
+ 1263 0452 11       		.uleb128 0x11
+ 1264 0453 2C040000 		.4byte	.LASF37
+ 1265 0457 01       		.byte	0x1
+ 1266 0458 1E       		.byte	0x1e
+ 1267 0459 73000000 		.4byte	0x73
+ 1268 045d 05       		.uleb128 0x5
+ 1269 045e 03       		.byte	0x3
+ 1270 045f 04000000 		.4byte	eStep
+ 1271 0463 13       		.uleb128 0x13
+ 1272 0464 1E030000 		.4byte	.LASF63
+ 1273 0468 11       		.byte	0x11
+ 1274 0469 1207     		.2byte	0x712
+ 1275 046b 6F040000 		.4byte	0x46f
+ 1276 046f 14       		.uleb128 0x14
+ 1277 0470 8C000000 		.4byte	0x8c
+ 1278 0474 15       		.uleb128 0x15
+ 1279 0475 AA010000 		.4byte	.LASF38
+ 1280 0479 AA010000 		.4byte	.LASF38
+ 1281 047d 04       		.byte	0x4
+ 1282 047e 26       		.byte	0x26
+ 1283 047f 15       		.uleb128 0x15
+ 1284 0480 16000000 		.4byte	.LASF39
+ 1285 0484 16000000 		.4byte	.LASF39
+ 1286 0488 05       		.byte	0x5
+ 1287 0489 26       		.byte	0x26
+ 1288 048a 15       		.uleb128 0x15
+ 1289 048b 3E020000 		.4byte	.LASF40
+ 1290 048f 3E020000 		.4byte	.LASF40
+ 1291 0493 06       		.byte	0x6
+ 1292 0494 26       		.byte	0x26
+ 1293 0495 15       		.uleb128 0x15
+ 1294 0496 B5000000 		.4byte	.LASF41
+ 1295 049a B5000000 		.4byte	.LASF41
+ 1296 049e 07       		.byte	0x7
+ 1297 049f 26       		.byte	0x26
+ 1298 04a0 15       		.uleb128 0x15
+ 1299 04a1 4B000000 		.4byte	.LASF42
+ 1300 04a5 4B000000 		.4byte	.LASF42
+ 1301 04a9 04       		.byte	0x4
+ 1302 04aa 29       		.byte	0x29
+ 1303 04ab 15       		.uleb128 0x15
+ 1304 04ac 32040000 		.4byte	.LASF43
+ 1305 04b0 32040000 		.4byte	.LASF43
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 28
 
 
- 1188 042c 06       		.byte	0x6
- 1189 042d 29       		.byte	0x29
- 1190 042e 15       		.uleb128 0x15
- 1191 042f 1B010000 		.4byte	.LASF40
- 1192 0433 1B010000 		.4byte	.LASF40
- 1193 0437 07       		.byte	0x7
- 1194 0438 29       		.byte	0x29
- 1195 0439 15       		.uleb128 0x15
- 1196 043a CE000000 		.4byte	.LASF41
- 1197 043e CE000000 		.4byte	.LASF41
- 1198 0442 08       		.byte	0x8
- 1199 0443 29       		.byte	0x29
- 1200 0444 15       		.uleb128 0x15
- 1201 0445 2E010000 		.4byte	.LASF42
- 1202 0449 2E010000 		.4byte	.LASF42
- 1203 044d 09       		.byte	0x9
- 1204 044e 29       		.byte	0x29
- 1205 044f 15       		.uleb128 0x15
- 1206 0450 81020000 		.4byte	.LASF43
- 1207 0454 81020000 		.4byte	.LASF43
- 1208 0458 0A       		.byte	0xa
- 1209 0459 26       		.byte	0x26
- 1210 045a 15       		.uleb128 0x15
- 1211 045b 46030000 		.4byte	.LASF44
- 1212 045f 46030000 		.4byte	.LASF44
- 1213 0463 0B       		.byte	0xb
- 1214 0464 26       		.byte	0x26
- 1215 0465 15       		.uleb128 0x15
- 1216 0466 15030000 		.4byte	.LASF45
- 1217 046a 15030000 		.4byte	.LASF45
- 1218 046e 0C       		.byte	0xc
- 1219 046f 26       		.byte	0x26
- 1220 0470 15       		.uleb128 0x15
- 1221 0471 78030000 		.4byte	.LASF46
- 1222 0475 78030000 		.4byte	.LASF46
- 1223 0479 0D       		.byte	0xd
- 1224 047a 26       		.byte	0x26
- 1225 047b 15       		.uleb128 0x15
- 1226 047c 60020000 		.4byte	.LASF47
- 1227 0480 60020000 		.4byte	.LASF47
- 1228 0484 0A       		.byte	0xa
- 1229 0485 29       		.byte	0x29
- 1230 0486 15       		.uleb128 0x15
- 1231 0487 A4000000 		.4byte	.LASF48
- 1232 048b A4000000 		.4byte	.LASF48
- 1233 048f 0B       		.byte	0xb
- 1234 0490 29       		.byte	0x29
- 1235 0491 15       		.uleb128 0x15
- 1236 0492 B9000000 		.4byte	.LASF49
- 1237 0496 B9000000 		.4byte	.LASF49
- 1238 049a 0C       		.byte	0xc
- 1239 049b 29       		.byte	0x29
- 1240 049c 15       		.uleb128 0x15
- 1241 049d 3A020000 		.4byte	.LASF50
- 1242 04a1 3A020000 		.4byte	.LASF50
- 1243 04a5 0D       		.byte	0xd
- 1244 04a6 29       		.byte	0x29
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 27
+ 1306 04b4 05       		.byte	0x5
+ 1307 04b5 29       		.byte	0x29
+ 1308 04b6 15       		.uleb128 0x15
+ 1309 04b7 02020000 		.4byte	.LASF44
+ 1310 04bb 02020000 		.4byte	.LASF44
+ 1311 04bf 06       		.byte	0x6
+ 1312 04c0 29       		.byte	0x29
+ 1313 04c1 15       		.uleb128 0x15
+ 1314 04c2 2A000000 		.4byte	.LASF45
+ 1315 04c6 2A000000 		.4byte	.LASF45
+ 1316 04ca 07       		.byte	0x7
+ 1317 04cb 29       		.byte	0x29
+ 1318 04cc 15       		.uleb128 0x15
+ 1319 04cd 5E000000 		.4byte	.LASF46
+ 1320 04d1 5E000000 		.4byte	.LASF46
+ 1321 04d5 08       		.byte	0x8
+ 1322 04d6 29       		.byte	0x29
+ 1323 04d7 15       		.uleb128 0x15
+ 1324 04d8 C9000000 		.4byte	.LASF47
+ 1325 04dc C9000000 		.4byte	.LASF47
+ 1326 04e0 09       		.byte	0x9
+ 1327 04e1 29       		.byte	0x29
+ 1328 04e2 15       		.uleb128 0x15
+ 1329 04e3 00000000 		.4byte	.LASF48
+ 1330 04e7 00000000 		.4byte	.LASF48
+ 1331 04eb 0A       		.byte	0xa
+ 1332 04ec 26       		.byte	0x26
+ 1333 04ed 15       		.uleb128 0x15
+ 1334 04ee 15020000 		.4byte	.LASF49
+ 1335 04f2 15020000 		.4byte	.LASF49
+ 1336 04f6 0B       		.byte	0xb
+ 1337 04f7 26       		.byte	0x26
+ 1338 04f8 15       		.uleb128 0x15
+ 1339 04f9 8C000000 		.4byte	.LASF50
+ 1340 04fd 8C000000 		.4byte	.LASF50
+ 1341 0501 0C       		.byte	0xc
+ 1342 0502 26       		.byte	0x26
+ 1343 0503 15       		.uleb128 0x15
+ 1344 0504 6B020000 		.4byte	.LASF51
+ 1345 0508 6B020000 		.4byte	.LASF51
+ 1346 050c 0D       		.byte	0xd
+ 1347 050d 26       		.byte	0x26
+ 1348 050e 15       		.uleb128 0x15
+ 1349 050f F0000000 		.4byte	.LASF52
+ 1350 0513 F0000000 		.4byte	.LASF52
+ 1351 0517 0A       		.byte	0xa
+ 1352 0518 29       		.byte	0x29
+ 1353 0519 15       		.uleb128 0x15
+ 1354 051a 45040000 		.4byte	.LASF53
+ 1355 051e 45040000 		.4byte	.LASF53
+ 1356 0522 0B       		.byte	0xb
+ 1357 0523 29       		.byte	0x29
+ 1358 0524 15       		.uleb128 0x15
+ 1359 0525 92020000 		.4byte	.LASF54
+ 1360 0529 92020000 		.4byte	.LASF54
+ 1361 052d 0C       		.byte	0xc
+ 1362 052e 29       		.byte	0x29
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 29
 
 
- 1245 04a7 15       		.uleb128 0x15
- 1246 04a8 C3030000 		.4byte	.LASF51
- 1247 04ac C3030000 		.4byte	.LASF51
- 1248 04b0 0E       		.byte	0xe
- 1249 04b1 29       		.byte	0x29
- 1250 04b2 15       		.uleb128 0x15
- 1251 04b3 98030000 		.4byte	.LASF52
- 1252 04b7 98030000 		.4byte	.LASF52
- 1253 04bb 0F       		.byte	0xf
- 1254 04bc 29       		.byte	0x29
- 1255 04bd 15       		.uleb128 0x15
- 1256 04be 18000000 		.4byte	.LASF53
- 1257 04c2 18000000 		.4byte	.LASF53
- 1258 04c6 10       		.byte	0x10
- 1259 04c7 72       		.byte	0x72
- 1260 04c8 15       		.uleb128 0x15
- 1261 04c9 A6020000 		.4byte	.LASF54
- 1262 04cd A6020000 		.4byte	.LASF54
- 1263 04d1 10       		.byte	0x10
- 1264 04d2 8A       		.byte	0x8a
- 1265 04d3 00       		.byte	0
- 1266              		.section	.debug_abbrev,"",%progbits
- 1267              	.Ldebug_abbrev0:
- 1268 0000 01       		.uleb128 0x1
- 1269 0001 11       		.uleb128 0x11
- 1270 0002 01       		.byte	0x1
- 1271 0003 25       		.uleb128 0x25
- 1272 0004 0E       		.uleb128 0xe
- 1273 0005 13       		.uleb128 0x13
- 1274 0006 0B       		.uleb128 0xb
- 1275 0007 03       		.uleb128 0x3
- 1276 0008 0E       		.uleb128 0xe
- 1277 0009 1B       		.uleb128 0x1b
- 1278 000a 0E       		.uleb128 0xe
- 1279 000b 55       		.uleb128 0x55
- 1280 000c 17       		.uleb128 0x17
- 1281 000d 11       		.uleb128 0x11
- 1282 000e 01       		.uleb128 0x1
- 1283 000f 10       		.uleb128 0x10
- 1284 0010 17       		.uleb128 0x17
- 1285 0011 00       		.byte	0
- 1286 0012 00       		.byte	0
- 1287 0013 02       		.uleb128 0x2
- 1288 0014 24       		.uleb128 0x24
- 1289 0015 00       		.byte	0
- 1290 0016 0B       		.uleb128 0xb
- 1291 0017 0B       		.uleb128 0xb
- 1292 0018 3E       		.uleb128 0x3e
- 1293 0019 0B       		.uleb128 0xb
- 1294 001a 03       		.uleb128 0x3
- 1295 001b 0E       		.uleb128 0xe
- 1296 001c 00       		.byte	0
- 1297 001d 00       		.byte	0
- 1298 001e 03       		.uleb128 0x3
- 1299 001f 16       		.uleb128 0x16
- 1300 0020 00       		.byte	0
- 1301 0021 03       		.uleb128 0x3
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 28
+ 1363 052f 15       		.uleb128 0x15
+ 1364 0530 95010000 		.4byte	.LASF55
+ 1365 0534 95010000 		.4byte	.LASF55
+ 1366 0538 0D       		.byte	0xd
+ 1367 0539 29       		.byte	0x29
+ 1368 053a 15       		.uleb128 0x15
+ 1369 053b 6F000000 		.4byte	.LASF56
+ 1370 053f 6F000000 		.4byte	.LASF56
+ 1371 0543 0E       		.byte	0xe
+ 1372 0544 29       		.byte	0x29
+ 1373 0545 15       		.uleb128 0x15
+ 1374 0546 BE010000 		.4byte	.LASF57
+ 1375 054a BE010000 		.4byte	.LASF57
+ 1376 054e 0F       		.byte	0xf
+ 1377 054f 29       		.byte	0x29
+ 1378 0550 15       		.uleb128 0x15
+ 1379 0551 E7020000 		.4byte	.LASF58
+ 1380 0555 E7020000 		.4byte	.LASF58
+ 1381 0559 10       		.byte	0x10
+ 1382 055a 72       		.byte	0x72
+ 1383 055b 15       		.uleb128 0x15
+ 1384 055c 2E010000 		.4byte	.LASF59
+ 1385 0560 2E010000 		.4byte	.LASF59
+ 1386 0564 10       		.byte	0x10
+ 1387 0565 8A       		.byte	0x8a
+ 1388 0566 00       		.byte	0
+ 1389              		.section	.debug_abbrev,"",%progbits
+ 1390              	.Ldebug_abbrev0:
+ 1391 0000 01       		.uleb128 0x1
+ 1392 0001 11       		.uleb128 0x11
+ 1393 0002 01       		.byte	0x1
+ 1394 0003 25       		.uleb128 0x25
+ 1395 0004 0E       		.uleb128 0xe
+ 1396 0005 13       		.uleb128 0x13
+ 1397 0006 0B       		.uleb128 0xb
+ 1398 0007 03       		.uleb128 0x3
+ 1399 0008 0E       		.uleb128 0xe
+ 1400 0009 1B       		.uleb128 0x1b
+ 1401 000a 0E       		.uleb128 0xe
+ 1402 000b 55       		.uleb128 0x55
+ 1403 000c 17       		.uleb128 0x17
+ 1404 000d 11       		.uleb128 0x11
+ 1405 000e 01       		.uleb128 0x1
+ 1406 000f 10       		.uleb128 0x10
+ 1407 0010 17       		.uleb128 0x17
+ 1408 0011 00       		.byte	0
+ 1409 0012 00       		.byte	0
+ 1410 0013 02       		.uleb128 0x2
+ 1411 0014 24       		.uleb128 0x24
+ 1412 0015 00       		.byte	0
+ 1413 0016 0B       		.uleb128 0xb
+ 1414 0017 0B       		.uleb128 0xb
+ 1415 0018 3E       		.uleb128 0x3e
+ 1416 0019 0B       		.uleb128 0xb
+ 1417 001a 03       		.uleb128 0x3
+ 1418 001b 0E       		.uleb128 0xe
+ 1419 001c 00       		.byte	0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 30
 
 
- 1302 0022 0E       		.uleb128 0xe
- 1303 0023 3A       		.uleb128 0x3a
- 1304 0024 0B       		.uleb128 0xb
- 1305 0025 3B       		.uleb128 0x3b
- 1306 0026 0B       		.uleb128 0xb
- 1307 0027 49       		.uleb128 0x49
- 1308 0028 13       		.uleb128 0x13
- 1309 0029 00       		.byte	0
- 1310 002a 00       		.byte	0
- 1311 002b 04       		.uleb128 0x4
- 1312 002c 24       		.uleb128 0x24
- 1313 002d 00       		.byte	0
- 1314 002e 0B       		.uleb128 0xb
- 1315 002f 0B       		.uleb128 0xb
- 1316 0030 3E       		.uleb128 0x3e
- 1317 0031 0B       		.uleb128 0xb
- 1318 0032 03       		.uleb128 0x3
- 1319 0033 08       		.uleb128 0x8
- 1320 0034 00       		.byte	0
- 1321 0035 00       		.byte	0
- 1322 0036 05       		.uleb128 0x5
- 1323 0037 2E       		.uleb128 0x2e
- 1324 0038 01       		.byte	0x1
- 1325 0039 3F       		.uleb128 0x3f
- 1326 003a 19       		.uleb128 0x19
- 1327 003b 03       		.uleb128 0x3
- 1328 003c 0E       		.uleb128 0xe
- 1329 003d 3A       		.uleb128 0x3a
- 1330 003e 0B       		.uleb128 0xb
- 1331 003f 3B       		.uleb128 0x3b
- 1332 0040 0B       		.uleb128 0xb
- 1333 0041 27       		.uleb128 0x27
- 1334 0042 19       		.uleb128 0x19
- 1335 0043 11       		.uleb128 0x11
- 1336 0044 01       		.uleb128 0x1
- 1337 0045 12       		.uleb128 0x12
- 1338 0046 06       		.uleb128 0x6
- 1339 0047 40       		.uleb128 0x40
- 1340 0048 18       		.uleb128 0x18
- 1341 0049 9742     		.uleb128 0x2117
- 1342 004b 19       		.uleb128 0x19
- 1343 004c 01       		.uleb128 0x1
- 1344 004d 13       		.uleb128 0x13
- 1345 004e 00       		.byte	0
- 1346 004f 00       		.byte	0
- 1347 0050 06       		.uleb128 0x6
- 1348 0051 05       		.uleb128 0x5
- 1349 0052 00       		.byte	0
- 1350 0053 03       		.uleb128 0x3
- 1351 0054 0E       		.uleb128 0xe
- 1352 0055 3A       		.uleb128 0x3a
- 1353 0056 0B       		.uleb128 0xb
- 1354 0057 3B       		.uleb128 0x3b
- 1355 0058 0B       		.uleb128 0xb
- 1356 0059 49       		.uleb128 0x49
- 1357 005a 13       		.uleb128 0x13
- 1358 005b 02       		.uleb128 0x2
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 29
+ 1420 001d 00       		.byte	0
+ 1421 001e 03       		.uleb128 0x3
+ 1422 001f 16       		.uleb128 0x16
+ 1423 0020 00       		.byte	0
+ 1424 0021 03       		.uleb128 0x3
+ 1425 0022 0E       		.uleb128 0xe
+ 1426 0023 3A       		.uleb128 0x3a
+ 1427 0024 0B       		.uleb128 0xb
+ 1428 0025 3B       		.uleb128 0x3b
+ 1429 0026 0B       		.uleb128 0xb
+ 1430 0027 49       		.uleb128 0x49
+ 1431 0028 13       		.uleb128 0x13
+ 1432 0029 00       		.byte	0
+ 1433 002a 00       		.byte	0
+ 1434 002b 04       		.uleb128 0x4
+ 1435 002c 24       		.uleb128 0x24
+ 1436 002d 00       		.byte	0
+ 1437 002e 0B       		.uleb128 0xb
+ 1438 002f 0B       		.uleb128 0xb
+ 1439 0030 3E       		.uleb128 0x3e
+ 1440 0031 0B       		.uleb128 0xb
+ 1441 0032 03       		.uleb128 0x3
+ 1442 0033 08       		.uleb128 0x8
+ 1443 0034 00       		.byte	0
+ 1444 0035 00       		.byte	0
+ 1445 0036 05       		.uleb128 0x5
+ 1446 0037 2E       		.uleb128 0x2e
+ 1447 0038 01       		.byte	0x1
+ 1448 0039 3F       		.uleb128 0x3f
+ 1449 003a 19       		.uleb128 0x19
+ 1450 003b 03       		.uleb128 0x3
+ 1451 003c 0E       		.uleb128 0xe
+ 1452 003d 3A       		.uleb128 0x3a
+ 1453 003e 0B       		.uleb128 0xb
+ 1454 003f 3B       		.uleb128 0x3b
+ 1455 0040 0B       		.uleb128 0xb
+ 1456 0041 27       		.uleb128 0x27
+ 1457 0042 19       		.uleb128 0x19
+ 1458 0043 11       		.uleb128 0x11
+ 1459 0044 01       		.uleb128 0x1
+ 1460 0045 12       		.uleb128 0x12
+ 1461 0046 06       		.uleb128 0x6
+ 1462 0047 40       		.uleb128 0x40
+ 1463 0048 18       		.uleb128 0x18
+ 1464 0049 9742     		.uleb128 0x2117
+ 1465 004b 19       		.uleb128 0x19
+ 1466 004c 01       		.uleb128 0x1
+ 1467 004d 13       		.uleb128 0x13
+ 1468 004e 00       		.byte	0
+ 1469 004f 00       		.byte	0
+ 1470 0050 06       		.uleb128 0x6
+ 1471 0051 05       		.uleb128 0x5
+ 1472 0052 00       		.byte	0
+ 1473 0053 03       		.uleb128 0x3
+ 1474 0054 0E       		.uleb128 0xe
+ 1475 0055 3A       		.uleb128 0x3a
+ 1476 0056 0B       		.uleb128 0xb
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 31
 
 
- 1359 005c 18       		.uleb128 0x18
- 1360 005d 00       		.byte	0
- 1361 005e 00       		.byte	0
- 1362 005f 07       		.uleb128 0x7
- 1363 0060 05       		.uleb128 0x5
- 1364 0061 00       		.byte	0
- 1365 0062 03       		.uleb128 0x3
- 1366 0063 0E       		.uleb128 0xe
- 1367 0064 3A       		.uleb128 0x3a
- 1368 0065 0B       		.uleb128 0xb
- 1369 0066 3B       		.uleb128 0x3b
- 1370 0067 0B       		.uleb128 0xb
- 1371 0068 49       		.uleb128 0x49
- 1372 0069 13       		.uleb128 0x13
- 1373 006a 02       		.uleb128 0x2
- 1374 006b 17       		.uleb128 0x17
- 1375 006c 00       		.byte	0
- 1376 006d 00       		.byte	0
- 1377 006e 08       		.uleb128 0x8
- 1378 006f 898201   		.uleb128 0x4109
- 1379 0072 00       		.byte	0
- 1380 0073 11       		.uleb128 0x11
- 1381 0074 01       		.uleb128 0x1
- 1382 0075 31       		.uleb128 0x31
- 1383 0076 13       		.uleb128 0x13
- 1384 0077 00       		.byte	0
- 1385 0078 00       		.byte	0
- 1386 0079 09       		.uleb128 0x9
- 1387 007a 0F       		.uleb128 0xf
- 1388 007b 00       		.byte	0
- 1389 007c 0B       		.uleb128 0xb
- 1390 007d 0B       		.uleb128 0xb
- 1391 007e 49       		.uleb128 0x49
- 1392 007f 13       		.uleb128 0x13
- 1393 0080 00       		.byte	0
- 1394 0081 00       		.byte	0
- 1395 0082 0A       		.uleb128 0xa
- 1396 0083 2E       		.uleb128 0x2e
- 1397 0084 01       		.byte	0x1
- 1398 0085 3F       		.uleb128 0x3f
- 1399 0086 19       		.uleb128 0x19
- 1400 0087 03       		.uleb128 0x3
- 1401 0088 0E       		.uleb128 0xe
- 1402 0089 3A       		.uleb128 0x3a
- 1403 008a 0B       		.uleb128 0xb
- 1404 008b 3B       		.uleb128 0x3b
- 1405 008c 0B       		.uleb128 0xb
- 1406 008d 49       		.uleb128 0x49
- 1407 008e 13       		.uleb128 0x13
- 1408 008f 11       		.uleb128 0x11
- 1409 0090 01       		.uleb128 0x1
- 1410 0091 12       		.uleb128 0x12
- 1411 0092 06       		.uleb128 0x6
- 1412 0093 40       		.uleb128 0x40
- 1413 0094 18       		.uleb128 0x18
- 1414 0095 9742     		.uleb128 0x2117
- 1415 0097 19       		.uleb128 0x19
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 30
+ 1477 0057 3B       		.uleb128 0x3b
+ 1478 0058 0B       		.uleb128 0xb
+ 1479 0059 49       		.uleb128 0x49
+ 1480 005a 13       		.uleb128 0x13
+ 1481 005b 02       		.uleb128 0x2
+ 1482 005c 18       		.uleb128 0x18
+ 1483 005d 00       		.byte	0
+ 1484 005e 00       		.byte	0
+ 1485 005f 07       		.uleb128 0x7
+ 1486 0060 05       		.uleb128 0x5
+ 1487 0061 00       		.byte	0
+ 1488 0062 03       		.uleb128 0x3
+ 1489 0063 0E       		.uleb128 0xe
+ 1490 0064 3A       		.uleb128 0x3a
+ 1491 0065 0B       		.uleb128 0xb
+ 1492 0066 3B       		.uleb128 0x3b
+ 1493 0067 0B       		.uleb128 0xb
+ 1494 0068 49       		.uleb128 0x49
+ 1495 0069 13       		.uleb128 0x13
+ 1496 006a 02       		.uleb128 0x2
+ 1497 006b 17       		.uleb128 0x17
+ 1498 006c 00       		.byte	0
+ 1499 006d 00       		.byte	0
+ 1500 006e 08       		.uleb128 0x8
+ 1501 006f 898201   		.uleb128 0x4109
+ 1502 0072 00       		.byte	0
+ 1503 0073 11       		.uleb128 0x11
+ 1504 0074 01       		.uleb128 0x1
+ 1505 0075 31       		.uleb128 0x31
+ 1506 0076 13       		.uleb128 0x13
+ 1507 0077 00       		.byte	0
+ 1508 0078 00       		.byte	0
+ 1509 0079 09       		.uleb128 0x9
+ 1510 007a 0F       		.uleb128 0xf
+ 1511 007b 00       		.byte	0
+ 1512 007c 0B       		.uleb128 0xb
+ 1513 007d 0B       		.uleb128 0xb
+ 1514 007e 49       		.uleb128 0x49
+ 1515 007f 13       		.uleb128 0x13
+ 1516 0080 00       		.byte	0
+ 1517 0081 00       		.byte	0
+ 1518 0082 0A       		.uleb128 0xa
+ 1519 0083 2E       		.uleb128 0x2e
+ 1520 0084 01       		.byte	0x1
+ 1521 0085 3F       		.uleb128 0x3f
+ 1522 0086 19       		.uleb128 0x19
+ 1523 0087 03       		.uleb128 0x3
+ 1524 0088 0E       		.uleb128 0xe
+ 1525 0089 3A       		.uleb128 0x3a
+ 1526 008a 0B       		.uleb128 0xb
+ 1527 008b 3B       		.uleb128 0x3b
+ 1528 008c 0B       		.uleb128 0xb
+ 1529 008d 49       		.uleb128 0x49
+ 1530 008e 13       		.uleb128 0x13
+ 1531 008f 11       		.uleb128 0x11
+ 1532 0090 01       		.uleb128 0x1
+ 1533 0091 12       		.uleb128 0x12
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 32
 
 
- 1416 0098 01       		.uleb128 0x1
- 1417 0099 13       		.uleb128 0x13
- 1418 009a 00       		.byte	0
- 1419 009b 00       		.byte	0
- 1420 009c 0B       		.uleb128 0xb
- 1421 009d 898201   		.uleb128 0x4109
- 1422 00a0 01       		.byte	0x1
- 1423 00a1 11       		.uleb128 0x11
- 1424 00a2 01       		.uleb128 0x1
- 1425 00a3 31       		.uleb128 0x31
- 1426 00a4 13       		.uleb128 0x13
- 1427 00a5 01       		.uleb128 0x1
- 1428 00a6 13       		.uleb128 0x13
- 1429 00a7 00       		.byte	0
- 1430 00a8 00       		.byte	0
- 1431 00a9 0C       		.uleb128 0xc
- 1432 00aa 8A8201   		.uleb128 0x410a
- 1433 00ad 00       		.byte	0
- 1434 00ae 02       		.uleb128 0x2
- 1435 00af 18       		.uleb128 0x18
- 1436 00b0 9142     		.uleb128 0x2111
- 1437 00b2 18       		.uleb128 0x18
- 1438 00b3 00       		.byte	0
- 1439 00b4 00       		.byte	0
- 1440 00b5 0D       		.uleb128 0xd
- 1441 00b6 898201   		.uleb128 0x4109
- 1442 00b9 01       		.byte	0x1
- 1443 00ba 11       		.uleb128 0x11
- 1444 00bb 01       		.uleb128 0x1
- 1445 00bc 31       		.uleb128 0x31
- 1446 00bd 13       		.uleb128 0x13
- 1447 00be 00       		.byte	0
- 1448 00bf 00       		.byte	0
- 1449 00c0 0E       		.uleb128 0xe
- 1450 00c1 34       		.uleb128 0x34
- 1451 00c2 00       		.byte	0
- 1452 00c3 03       		.uleb128 0x3
- 1453 00c4 08       		.uleb128 0x8
- 1454 00c5 3A       		.uleb128 0x3a
- 1455 00c6 0B       		.uleb128 0xb
- 1456 00c7 3B       		.uleb128 0x3b
- 1457 00c8 0B       		.uleb128 0xb
- 1458 00c9 49       		.uleb128 0x49
- 1459 00ca 13       		.uleb128 0x13
- 1460 00cb 02       		.uleb128 0x2
- 1461 00cc 17       		.uleb128 0x17
- 1462 00cd 00       		.byte	0
- 1463 00ce 00       		.byte	0
- 1464 00cf 0F       		.uleb128 0xf
- 1465 00d0 01       		.uleb128 0x1
- 1466 00d1 01       		.byte	0x1
- 1467 00d2 49       		.uleb128 0x49
- 1468 00d3 13       		.uleb128 0x13
- 1469 00d4 01       		.uleb128 0x1
- 1470 00d5 13       		.uleb128 0x13
- 1471 00d6 00       		.byte	0
- 1472 00d7 00       		.byte	0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 31
+ 1534 0092 06       		.uleb128 0x6
+ 1535 0093 40       		.uleb128 0x40
+ 1536 0094 18       		.uleb128 0x18
+ 1537 0095 9742     		.uleb128 0x2117
+ 1538 0097 19       		.uleb128 0x19
+ 1539 0098 01       		.uleb128 0x1
+ 1540 0099 13       		.uleb128 0x13
+ 1541 009a 00       		.byte	0
+ 1542 009b 00       		.byte	0
+ 1543 009c 0B       		.uleb128 0xb
+ 1544 009d 898201   		.uleb128 0x4109
+ 1545 00a0 01       		.byte	0x1
+ 1546 00a1 11       		.uleb128 0x11
+ 1547 00a2 01       		.uleb128 0x1
+ 1548 00a3 31       		.uleb128 0x31
+ 1549 00a4 13       		.uleb128 0x13
+ 1550 00a5 01       		.uleb128 0x1
+ 1551 00a6 13       		.uleb128 0x13
+ 1552 00a7 00       		.byte	0
+ 1553 00a8 00       		.byte	0
+ 1554 00a9 0C       		.uleb128 0xc
+ 1555 00aa 8A8201   		.uleb128 0x410a
+ 1556 00ad 00       		.byte	0
+ 1557 00ae 02       		.uleb128 0x2
+ 1558 00af 18       		.uleb128 0x18
+ 1559 00b0 9142     		.uleb128 0x2111
+ 1560 00b2 18       		.uleb128 0x18
+ 1561 00b3 00       		.byte	0
+ 1562 00b4 00       		.byte	0
+ 1563 00b5 0D       		.uleb128 0xd
+ 1564 00b6 898201   		.uleb128 0x4109
+ 1565 00b9 01       		.byte	0x1
+ 1566 00ba 11       		.uleb128 0x11
+ 1567 00bb 01       		.uleb128 0x1
+ 1568 00bc 31       		.uleb128 0x31
+ 1569 00bd 13       		.uleb128 0x13
+ 1570 00be 00       		.byte	0
+ 1571 00bf 00       		.byte	0
+ 1572 00c0 0E       		.uleb128 0xe
+ 1573 00c1 34       		.uleb128 0x34
+ 1574 00c2 00       		.byte	0
+ 1575 00c3 03       		.uleb128 0x3
+ 1576 00c4 08       		.uleb128 0x8
+ 1577 00c5 3A       		.uleb128 0x3a
+ 1578 00c6 0B       		.uleb128 0xb
+ 1579 00c7 3B       		.uleb128 0x3b
+ 1580 00c8 0B       		.uleb128 0xb
+ 1581 00c9 49       		.uleb128 0x49
+ 1582 00ca 13       		.uleb128 0x13
+ 1583 00cb 02       		.uleb128 0x2
+ 1584 00cc 17       		.uleb128 0x17
+ 1585 00cd 00       		.byte	0
+ 1586 00ce 00       		.byte	0
+ 1587 00cf 0F       		.uleb128 0xf
+ 1588 00d0 01       		.uleb128 0x1
+ 1589 00d1 01       		.byte	0x1
+ 1590 00d2 49       		.uleb128 0x49
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 33
 
 
- 1473 00d8 10       		.uleb128 0x10
- 1474 00d9 21       		.uleb128 0x21
- 1475 00da 00       		.byte	0
- 1476 00db 49       		.uleb128 0x49
- 1477 00dc 13       		.uleb128 0x13
- 1478 00dd 2F       		.uleb128 0x2f
- 1479 00de 0B       		.uleb128 0xb
- 1480 00df 00       		.byte	0
- 1481 00e0 00       		.byte	0
- 1482 00e1 11       		.uleb128 0x11
- 1483 00e2 34       		.uleb128 0x34
- 1484 00e3 00       		.byte	0
- 1485 00e4 03       		.uleb128 0x3
- 1486 00e5 0E       		.uleb128 0xe
- 1487 00e6 3A       		.uleb128 0x3a
- 1488 00e7 0B       		.uleb128 0xb
- 1489 00e8 3B       		.uleb128 0x3b
- 1490 00e9 0B       		.uleb128 0xb
- 1491 00ea 49       		.uleb128 0x49
- 1492 00eb 13       		.uleb128 0x13
- 1493 00ec 02       		.uleb128 0x2
- 1494 00ed 18       		.uleb128 0x18
- 1495 00ee 00       		.byte	0
- 1496 00ef 00       		.byte	0
- 1497 00f0 12       		.uleb128 0x12
- 1498 00f1 34       		.uleb128 0x34
- 1499 00f2 00       		.byte	0
- 1500 00f3 03       		.uleb128 0x3
- 1501 00f4 08       		.uleb128 0x8
- 1502 00f5 3A       		.uleb128 0x3a
- 1503 00f6 0B       		.uleb128 0xb
- 1504 00f7 3B       		.uleb128 0x3b
- 1505 00f8 0B       		.uleb128 0xb
- 1506 00f9 49       		.uleb128 0x49
- 1507 00fa 13       		.uleb128 0x13
- 1508 00fb 02       		.uleb128 0x2
- 1509 00fc 18       		.uleb128 0x18
- 1510 00fd 00       		.byte	0
- 1511 00fe 00       		.byte	0
- 1512 00ff 13       		.uleb128 0x13
- 1513 0100 34       		.uleb128 0x34
- 1514 0101 00       		.byte	0
- 1515 0102 03       		.uleb128 0x3
- 1516 0103 0E       		.uleb128 0xe
- 1517 0104 3A       		.uleb128 0x3a
- 1518 0105 0B       		.uleb128 0xb
- 1519 0106 3B       		.uleb128 0x3b
- 1520 0107 05       		.uleb128 0x5
- 1521 0108 49       		.uleb128 0x49
- 1522 0109 13       		.uleb128 0x13
- 1523 010a 3F       		.uleb128 0x3f
- 1524 010b 19       		.uleb128 0x19
- 1525 010c 3C       		.uleb128 0x3c
- 1526 010d 19       		.uleb128 0x19
- 1527 010e 00       		.byte	0
- 1528 010f 00       		.byte	0
- 1529 0110 14       		.uleb128 0x14
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 32
+ 1591 00d3 13       		.uleb128 0x13
+ 1592 00d4 01       		.uleb128 0x1
+ 1593 00d5 13       		.uleb128 0x13
+ 1594 00d6 00       		.byte	0
+ 1595 00d7 00       		.byte	0
+ 1596 00d8 10       		.uleb128 0x10
+ 1597 00d9 21       		.uleb128 0x21
+ 1598 00da 00       		.byte	0
+ 1599 00db 49       		.uleb128 0x49
+ 1600 00dc 13       		.uleb128 0x13
+ 1601 00dd 2F       		.uleb128 0x2f
+ 1602 00de 0B       		.uleb128 0xb
+ 1603 00df 00       		.byte	0
+ 1604 00e0 00       		.byte	0
+ 1605 00e1 11       		.uleb128 0x11
+ 1606 00e2 34       		.uleb128 0x34
+ 1607 00e3 00       		.byte	0
+ 1608 00e4 03       		.uleb128 0x3
+ 1609 00e5 0E       		.uleb128 0xe
+ 1610 00e6 3A       		.uleb128 0x3a
+ 1611 00e7 0B       		.uleb128 0xb
+ 1612 00e8 3B       		.uleb128 0x3b
+ 1613 00e9 0B       		.uleb128 0xb
+ 1614 00ea 49       		.uleb128 0x49
+ 1615 00eb 13       		.uleb128 0x13
+ 1616 00ec 02       		.uleb128 0x2
+ 1617 00ed 18       		.uleb128 0x18
+ 1618 00ee 00       		.byte	0
+ 1619 00ef 00       		.byte	0
+ 1620 00f0 12       		.uleb128 0x12
+ 1621 00f1 34       		.uleb128 0x34
+ 1622 00f2 00       		.byte	0
+ 1623 00f3 03       		.uleb128 0x3
+ 1624 00f4 08       		.uleb128 0x8
+ 1625 00f5 3A       		.uleb128 0x3a
+ 1626 00f6 0B       		.uleb128 0xb
+ 1627 00f7 3B       		.uleb128 0x3b
+ 1628 00f8 0B       		.uleb128 0xb
+ 1629 00f9 49       		.uleb128 0x49
+ 1630 00fa 13       		.uleb128 0x13
+ 1631 00fb 02       		.uleb128 0x2
+ 1632 00fc 18       		.uleb128 0x18
+ 1633 00fd 00       		.byte	0
+ 1634 00fe 00       		.byte	0
+ 1635 00ff 13       		.uleb128 0x13
+ 1636 0100 34       		.uleb128 0x34
+ 1637 0101 00       		.byte	0
+ 1638 0102 03       		.uleb128 0x3
+ 1639 0103 0E       		.uleb128 0xe
+ 1640 0104 3A       		.uleb128 0x3a
+ 1641 0105 0B       		.uleb128 0xb
+ 1642 0106 3B       		.uleb128 0x3b
+ 1643 0107 05       		.uleb128 0x5
+ 1644 0108 49       		.uleb128 0x49
+ 1645 0109 13       		.uleb128 0x13
+ 1646 010a 3F       		.uleb128 0x3f
+ 1647 010b 19       		.uleb128 0x19
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 34
 
 
- 1530 0111 35       		.uleb128 0x35
- 1531 0112 00       		.byte	0
- 1532 0113 49       		.uleb128 0x49
- 1533 0114 13       		.uleb128 0x13
- 1534 0115 00       		.byte	0
- 1535 0116 00       		.byte	0
- 1536 0117 15       		.uleb128 0x15
- 1537 0118 2E       		.uleb128 0x2e
- 1538 0119 00       		.byte	0
- 1539 011a 3F       		.uleb128 0x3f
- 1540 011b 19       		.uleb128 0x19
- 1541 011c 3C       		.uleb128 0x3c
- 1542 011d 19       		.uleb128 0x19
- 1543 011e 6E       		.uleb128 0x6e
- 1544 011f 0E       		.uleb128 0xe
- 1545 0120 03       		.uleb128 0x3
- 1546 0121 0E       		.uleb128 0xe
- 1547 0122 3A       		.uleb128 0x3a
- 1548 0123 0B       		.uleb128 0xb
- 1549 0124 3B       		.uleb128 0x3b
- 1550 0125 0B       		.uleb128 0xb
- 1551 0126 00       		.byte	0
- 1552 0127 00       		.byte	0
- 1553 0128 00       		.byte	0
- 1554              		.section	.debug_loc,"",%progbits
- 1555              	.Ldebug_loc0:
- 1556              	.LLST0:
- 1557 0000 00000000 		.4byte	.LVL1
- 1558 0004 06000000 		.4byte	.LVL2
- 1559 0008 0100     		.2byte	0x1
- 1560 000a 50       		.byte	0x50
- 1561 000b 06000000 		.4byte	.LVL2
- 1562 000f 1E000000 		.4byte	.LFE66
- 1563 0013 0100     		.2byte	0x1
- 1564 0015 54       		.byte	0x54
- 1565 0016 00000000 		.4byte	0
- 1566 001a 00000000 		.4byte	0
- 1567              	.LLST1:
- 1568 001e 00000000 		.4byte	.LVL17
- 1569 0022 06000000 		.4byte	.LVL18
- 1570 0026 0100     		.2byte	0x1
- 1571 0028 50       		.byte	0x50
- 1572 0029 06000000 		.4byte	.LVL18
- 1573 002d 1E000000 		.4byte	.LFE69
- 1574 0031 0100     		.2byte	0x1
- 1575 0033 54       		.byte	0x54
- 1576 0034 00000000 		.4byte	0
- 1577 0038 00000000 		.4byte	0
- 1578              	.LLST2:
- 1579 003c 08000000 		.4byte	.LVL45
- 1580 0040 7E000000 		.4byte	.LVL54
- 1581 0044 0100     		.2byte	0x1
- 1582 0046 54       		.byte	0x54
- 1583 0047 00000000 		.4byte	0
- 1584 004b 00000000 		.4byte	0
- 1585              		.section	.debug_aranges,"",%progbits
- 1586 0000 54000000 		.4byte	0x54
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 33
+ 1648 010c 3C       		.uleb128 0x3c
+ 1649 010d 19       		.uleb128 0x19
+ 1650 010e 00       		.byte	0
+ 1651 010f 00       		.byte	0
+ 1652 0110 14       		.uleb128 0x14
+ 1653 0111 35       		.uleb128 0x35
+ 1654 0112 00       		.byte	0
+ 1655 0113 49       		.uleb128 0x49
+ 1656 0114 13       		.uleb128 0x13
+ 1657 0115 00       		.byte	0
+ 1658 0116 00       		.byte	0
+ 1659 0117 15       		.uleb128 0x15
+ 1660 0118 2E       		.uleb128 0x2e
+ 1661 0119 00       		.byte	0
+ 1662 011a 3F       		.uleb128 0x3f
+ 1663 011b 19       		.uleb128 0x19
+ 1664 011c 3C       		.uleb128 0x3c
+ 1665 011d 19       		.uleb128 0x19
+ 1666 011e 6E       		.uleb128 0x6e
+ 1667 011f 0E       		.uleb128 0xe
+ 1668 0120 03       		.uleb128 0x3
+ 1669 0121 0E       		.uleb128 0xe
+ 1670 0122 3A       		.uleb128 0x3a
+ 1671 0123 0B       		.uleb128 0xb
+ 1672 0124 3B       		.uleb128 0x3b
+ 1673 0125 0B       		.uleb128 0xb
+ 1674 0126 00       		.byte	0
+ 1675 0127 00       		.byte	0
+ 1676 0128 00       		.byte	0
+ 1677              		.section	.debug_loc,"",%progbits
+ 1678              	.Ldebug_loc0:
+ 1679              	.LLST0:
+ 1680 0000 00000000 		.4byte	.LVL1
+ 1681 0004 06000000 		.4byte	.LVL2
+ 1682 0008 0100     		.2byte	0x1
+ 1683 000a 50       		.byte	0x50
+ 1684 000b 06000000 		.4byte	.LVL2
+ 1685 000f 1E000000 		.4byte	.LFE66
+ 1686 0013 0100     		.2byte	0x1
+ 1687 0015 54       		.byte	0x54
+ 1688 0016 00000000 		.4byte	0
+ 1689 001a 00000000 		.4byte	0
+ 1690              	.LLST1:
+ 1691 001e 00000000 		.4byte	.LVL17
+ 1692 0022 06000000 		.4byte	.LVL18
+ 1693 0026 0100     		.2byte	0x1
+ 1694 0028 50       		.byte	0x50
+ 1695 0029 06000000 		.4byte	.LVL18
+ 1696 002d 1E000000 		.4byte	.LFE69
+ 1697 0031 0100     		.2byte	0x1
+ 1698 0033 54       		.byte	0x54
+ 1699 0034 00000000 		.4byte	0
+ 1700 0038 00000000 		.4byte	0
+ 1701              	.LLST2:
+ 1702 003c 08000000 		.4byte	.LVL49
+ 1703 0040 5E000000 		.4byte	.LVL55
+ 1704 0044 0100     		.2byte	0x1
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 35
 
 
- 1587 0004 0200     		.2byte	0x2
- 1588 0006 00000000 		.4byte	.Ldebug_info0
- 1589 000a 04       		.byte	0x4
- 1590 000b 00       		.byte	0
- 1591 000c 0000     		.2byte	0
- 1592 000e 0000     		.2byte	0
- 1593 0010 00000000 		.4byte	.LFB64
- 1594 0014 0C000000 		.4byte	.LFE64-.LFB64
- 1595 0018 00000000 		.4byte	.LFB66
- 1596 001c 1E000000 		.4byte	.LFE66-.LFB66
- 1597 0020 00000000 		.4byte	.LFB65
- 1598 0024 D0000000 		.4byte	.LFE65-.LFB65
- 1599 0028 00000000 		.4byte	.LFB67
- 1600 002c 0C000000 		.4byte	.LFE67-.LFB67
- 1601 0030 00000000 		.4byte	.LFB69
- 1602 0034 1E000000 		.4byte	.LFE69-.LFB69
- 1603 0038 00000000 		.4byte	.LFB68
- 1604 003c DC000000 		.4byte	.LFE68-.LFB68
- 1605 0040 00000000 		.4byte	.LFB70
- 1606 0044 70000000 		.4byte	.LFE70-.LFB70
- 1607 0048 00000000 		.4byte	.LFB71
- 1608 004c 84000000 		.4byte	.LFE71-.LFB71
- 1609 0050 00000000 		.4byte	0
- 1610 0054 00000000 		.4byte	0
- 1611              		.section	.debug_ranges,"",%progbits
- 1612              	.Ldebug_ranges0:
- 1613 0000 00000000 		.4byte	.LFB64
- 1614 0004 0C000000 		.4byte	.LFE64
- 1615 0008 00000000 		.4byte	.LFB66
- 1616 000c 1E000000 		.4byte	.LFE66
- 1617 0010 00000000 		.4byte	.LFB65
- 1618 0014 D0000000 		.4byte	.LFE65
- 1619 0018 00000000 		.4byte	.LFB67
- 1620 001c 0C000000 		.4byte	.LFE67
- 1621 0020 00000000 		.4byte	.LFB69
- 1622 0024 1E000000 		.4byte	.LFE69
- 1623 0028 00000000 		.4byte	.LFB68
- 1624 002c DC000000 		.4byte	.LFE68
- 1625 0030 00000000 		.4byte	.LFB70
- 1626 0034 70000000 		.4byte	.LFE70
- 1627 0038 00000000 		.4byte	.LFB71
- 1628 003c 84000000 		.4byte	.LFE71
- 1629 0040 00000000 		.4byte	0
- 1630 0044 00000000 		.4byte	0
- 1631              		.section	.debug_line,"",%progbits
- 1632              	.Ldebug_line0:
- 1633 0000 4C030000 		.section	.debug_str,"MS",%progbits,1
- 1633      02003802 
- 1633      00000201 
- 1633      FB0E0D00 
- 1633      01010101 
- 1634              	.LASF23:
- 1635 0000 6D6F7665 		.ascii	"moveElevation\000"
- 1635      456C6576 
- 1635      6174696F 
- 1635      6E00
- 1636              	.LASF4:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 34
+ 1705 0046 54       		.byte	0x54
+ 1706 0047 00000000 		.4byte	0
+ 1707 004b 00000000 		.4byte	0
+ 1708              		.section	.debug_aranges,"",%progbits
+ 1709 0000 74000000 		.4byte	0x74
+ 1710 0004 0200     		.2byte	0x2
+ 1711 0006 00000000 		.4byte	.Ldebug_info0
+ 1712 000a 04       		.byte	0x4
+ 1713 000b 00       		.byte	0
+ 1714 000c 0000     		.2byte	0
+ 1715 000e 0000     		.2byte	0
+ 1716 0010 00000000 		.4byte	.LFB64
+ 1717 0014 0C000000 		.4byte	.LFE64-.LFB64
+ 1718 0018 00000000 		.4byte	.LFB66
+ 1719 001c 1E000000 		.4byte	.LFE66-.LFB66
+ 1720 0020 00000000 		.4byte	.LFB65
+ 1721 0024 CC000000 		.4byte	.LFE65-.LFB65
+ 1722 0028 00000000 		.4byte	.LFB67
+ 1723 002c 0C000000 		.4byte	.LFE67-.LFB67
+ 1724 0030 00000000 		.4byte	.LFB69
+ 1725 0034 1E000000 		.4byte	.LFE69-.LFB69
+ 1726 0038 00000000 		.4byte	.LFB68
+ 1727 003c D8000000 		.4byte	.LFE68-.LFB68
+ 1728 0040 00000000 		.4byte	.LFB70
+ 1729 0044 70000000 		.4byte	.LFE70-.LFB70
+ 1730 0048 00000000 		.4byte	.LFB71
+ 1731 004c 0E000000 		.4byte	.LFE71-.LFB71
+ 1732 0050 00000000 		.4byte	.LFB72
+ 1733 0054 0E000000 		.4byte	.LFE72-.LFB72
+ 1734 0058 00000000 		.4byte	.LFB73
+ 1735 005c 0E000000 		.4byte	.LFE73-.LFB73
+ 1736 0060 00000000 		.4byte	.LFB74
+ 1737 0064 0E000000 		.4byte	.LFE74-.LFB74
+ 1738 0068 00000000 		.4byte	.LFB75
+ 1739 006c 64000000 		.4byte	.LFE75-.LFB75
+ 1740 0070 00000000 		.4byte	0
+ 1741 0074 00000000 		.4byte	0
+ 1742              		.section	.debug_ranges,"",%progbits
+ 1743              	.Ldebug_ranges0:
+ 1744 0000 00000000 		.4byte	.LFB64
+ 1745 0004 0C000000 		.4byte	.LFE64
+ 1746 0008 00000000 		.4byte	.LFB66
+ 1747 000c 1E000000 		.4byte	.LFE66
+ 1748 0010 00000000 		.4byte	.LFB65
+ 1749 0014 CC000000 		.4byte	.LFE65
+ 1750 0018 00000000 		.4byte	.LFB67
+ 1751 001c 0C000000 		.4byte	.LFE67
+ 1752 0020 00000000 		.4byte	.LFB69
+ 1753 0024 1E000000 		.4byte	.LFE69
+ 1754 0028 00000000 		.4byte	.LFB68
+ 1755 002c D8000000 		.4byte	.LFE68
+ 1756 0030 00000000 		.4byte	.LFB70
+ 1757 0034 70000000 		.4byte	.LFE70
+ 1758 0038 00000000 		.4byte	.LFB71
+ 1759 003c 0E000000 		.4byte	.LFE71
+ 1760 0040 00000000 		.4byte	.LFB72
+ 1761 0044 0E000000 		.4byte	.LFE72
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 36
 
 
- 1637 000e 5F5F7569 		.ascii	"__uint8_t\000"
- 1637      6E74385F 
- 1637      7400
- 1638              	.LASF53:
- 1639 0018 55415254 		.ascii	"UART_1_GetByte\000"
- 1639      5F315F47 
- 1639      65744279 
- 1639      746500
- 1640              	.LASF5:
- 1641 0027 5F5F696E 		.ascii	"__int32_t\000"
- 1641      7433325F 
- 1641      7400
- 1642              	.LASF57:
- 1643 0031 433A5C55 		.ascii	"C:\\Users\\degn\\OneDrive - Aarhus universitet\\Skr"
- 1643      73657273 
- 1643      5C646567 
- 1643      6E5C4F6E 
- 1643      65447269 
- 1644 0060 69766562 		.ascii	"ivebord\\AU\\E3\\PRJ3\\Kode\\StepperMotorDriver\\St"
- 1644      6F72645C 
- 1644      41555C45 
- 1644      335C5052 
- 1644      4A335C4B 
- 1645 008d 65707065 		.ascii	"epperMotorDriver.cydsn\000"
- 1645      724D6F74 
- 1645      6F724472 
- 1645      69766572 
- 1645      2E637964 
- 1646              	.LASF48:
- 1647 00a4 456C6576 		.ascii	"Elevation_Pin_2_Read\000"
- 1647      6174696F 
- 1647      6E5F5069 
- 1647      6E5F325F 
- 1647      52656164 
- 1648              	.LASF49:
- 1649 00b9 456C6576 		.ascii	"Elevation_Pin_3_Read\000"
- 1649      6174696F 
- 1649      6E5F5069 
- 1649      6E5F335F 
- 1649      52656164 
- 1650              	.LASF41:
- 1651 00ce 4C696D69 		.ascii	"Limit_Right_Read\000"
- 1651      745F5269 
- 1651      6768745F 
- 1651      52656164 
- 1651      00
- 1652              	.LASF33:
- 1653 00df 417A696D 		.ascii	"Azimuth_Pin_1_Write\000"
- 1653      7574685F 
- 1653      50696E5F 
- 1653      315F5772 
- 1653      69746500 
- 1654              	.LASF24:
- 1655 00f3 656C6576 		.ascii	"elevationStep\000"
- 1655      6174696F 
- 1655      6E537465 
- 1655      7000
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 35
+ 1762 0048 00000000 		.4byte	.LFB73
+ 1763 004c 0E000000 		.4byte	.LFE73
+ 1764 0050 00000000 		.4byte	.LFB74
+ 1765 0054 0E000000 		.4byte	.LFE74
+ 1766 0058 00000000 		.4byte	.LFB75
+ 1767 005c 64000000 		.4byte	.LFE75
+ 1768 0060 00000000 		.4byte	0
+ 1769 0064 00000000 		.4byte	0
+ 1770              		.section	.debug_line,"",%progbits
+ 1771              	.Ldebug_line0:
+ 1772 0000 8A030000 		.section	.debug_str,"MS",%progbits,1
+ 1772      02003802 
+ 1772      00000201 
+ 1772      FB0E0D00 
+ 1772      01010101 
+ 1773              	.LASF48:
+ 1774 0000 456C6576 		.ascii	"Elevation_Pin_1_Write\000"
+ 1774      6174696F 
+ 1774      6E5F5069 
+ 1774      6E5F315F 
+ 1774      57726974 
+ 1775              	.LASF39:
+ 1776 0016 417A696D 		.ascii	"Azimuth_Pin_2_Write\000"
+ 1776      7574685F 
+ 1776      50696E5F 
+ 1776      325F5772 
+ 1776      69746500 
+ 1777              	.LASF45:
+ 1778 002a 417A696D 		.ascii	"Azimuth_Pin_4_Read\000"
+ 1778      7574685F 
+ 1778      50696E5F 
+ 1778      345F5265 
+ 1778      616400
+ 1779              	.LASF24:
+ 1780 003d 656C6576 		.ascii	"elevationStep\000"
+ 1780      6174696F 
+ 1780      6E537465 
+ 1780      7000
+ 1781              	.LASF42:
+ 1782 004b 417A696D 		.ascii	"Azimuth_Pin_1_Read\000"
+ 1782      7574685F 
+ 1782      50696E5F 
+ 1782      315F5265 
+ 1782      616400
+ 1783              	.LASF46:
+ 1784 005e 4C696D69 		.ascii	"Limit_Right_Read\000"
+ 1784      745F5269 
+ 1784      6768745F 
+ 1784      52656164 
+ 1784      00
+ 1785              	.LASF56:
+ 1786 006f 4C696D69 		.ascii	"Limit_Down_Read\000"
+ 1786      745F446F 
+ 1786      776E5F52 
+ 1786      65616400 
+ 1787              	.LASF32:
+ 1788 007f 55415254 		.ascii	"UART_HANDLER\000"
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 37
 
 
- 1656              	.LASF35:
- 1657 0101 417A696D 		.ascii	"Azimuth_Pin_3_Write\000"
- 1657      7574685F 
- 1657      50696E5F 
- 1657      335F5772 
- 1657      69746500 
- 1658              	.LASF13:
- 1659 0115 666C6F61 		.ascii	"float\000"
- 1659      7400
- 1660              	.LASF40:
- 1661 011b 417A696D 		.ascii	"Azimuth_Pin_4_Read\000"
- 1661      7574685F 
- 1661      50696E5F 
- 1661      345F5265 
- 1661      616400
- 1662              	.LASF42:
- 1663 012e 4C696D69 		.ascii	"Limit_Left_Read\000"
- 1663      745F4C65 
- 1663      66745F52 
- 1663      65616400 
- 1664              	.LASF1:
- 1665 013e 756E7369 		.ascii	"unsigned char\000"
- 1665      676E6564 
- 1665      20636861 
- 1665      7200
- 1666              	.LASF55:
- 1667 014c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1667      43313120 
- 1667      352E342E 
- 1667      31203230 
- 1667      31363036 
- 1668 017f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1668      20726576 
- 1668      6973696F 
- 1668      6E203233 
- 1668      37373135 
- 1669 01b2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1669      66756E63 
- 1669      74696F6E 
- 1669      2D736563 
- 1669      74696F6E 
- 1670              	.LASF34:
- 1671 01da 417A696D 		.ascii	"Azimuth_Pin_2_Write\000"
- 1671      7574685F 
- 1671      50696E5F 
- 1671      325F5772 
- 1671      69746500 
- 1672              	.LASF37:
- 1673 01ee 417A696D 		.ascii	"Azimuth_Pin_1_Read\000"
- 1673      7574685F 
- 1673      50696E5F 
- 1673      315F5265 
- 1673      616400
- 1674              	.LASF7:
- 1675 0201 6C6F6E67 		.ascii	"long unsigned int\000"
- 1675      20756E73 
- 1675      69676E65 
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 36
+ 1788      5F48414E 
+ 1788      444C4552 
+ 1788      00
+ 1789              	.LASF50:
+ 1790 008c 456C6576 		.ascii	"Elevation_Pin_3_Write\000"
+ 1790      6174696F 
+ 1790      6E5F5069 
+ 1790      6E5F335F 
+ 1790      57726974 
+ 1791              	.LASF2:
+ 1792 00a2 73686F72 		.ascii	"short int\000"
+ 1792      7420696E 
+ 1792      7400
+ 1793              	.LASF21:
+ 1794 00ac 73657175 		.ascii	"sequence\000"
+ 1794      656E6365 
+ 1794      00
+ 1795              	.LASF41:
+ 1796 00b5 417A696D 		.ascii	"Azimuth_Pin_4_Write\000"
+ 1796      7574685F 
+ 1796      50696E5F 
+ 1796      345F5772 
+ 1796      69746500 
+ 1797              	.LASF47:
+ 1798 00c9 4C696D69 		.ascii	"Limit_Left_Read\000"
+ 1798      745F4C65 
+ 1798      66745F52 
+ 1798      65616400 
+ 1799              	.LASF31:
+ 1800 00d9 6C696D69 		.ascii	"limitDown\000"
+ 1800      74446F77 
+ 1800      6E00
+ 1801              	.LASF34:
+ 1802 00e3 617A696D 		.ascii	"azimuthSteps\000"
+ 1802      75746853 
+ 1802      74657073 
+ 1802      00
+ 1803              	.LASF52:
+ 1804 00f0 456C6576 		.ascii	"Elevation_Pin_1_Read\000"
+ 1804      6174696F 
+ 1804      6E5F5069 
+ 1804      6E5F315F 
+ 1804      52656164 
+ 1805              	.LASF23:
+ 1806 0105 6D6F7665 		.ascii	"moveElevation\000"
+ 1806      456C6576 
+ 1806      6174696F 
+ 1806      6E00
+ 1807              	.LASF11:
+ 1808 0113 75696E74 		.ascii	"uint8_t\000"
+ 1808      385F7400 
+ 1809              	.LASF30:
+ 1810 011b 6C696D69 		.ascii	"limitUp\000"
+ 1810      74557000 
+ 1811              	.LASF29:
+ 1812 0123 6C696D69 		.ascii	"limitRight\000"
+ 1812      74526967 
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 38
 
 
- 1675      6420696E 
- 1675      7400
- 1676              	.LASF3:
- 1677 0213 73686F72 		.ascii	"short unsigned int\000"
- 1677      7420756E 
- 1677      7369676E 
- 1677      65642069 
- 1677      6E7400
- 1678              	.LASF14:
- 1679 0226 646F7562 		.ascii	"double\000"
- 1679      6C6500
- 1680              	.LASF58:
- 1681 022d 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1681      52784275 
- 1681      66666572 
- 1681      00
- 1682              	.LASF50:
- 1683 023a 456C6576 		.ascii	"Elevation_Pin_4_Read\000"
- 1683      6174696F 
- 1683      6E5F5069 
- 1683      6E5F345F 
- 1683      52656164 
- 1684              	.LASF26:
- 1685 024f 4D4F544F 		.ascii	"MOTOR_STEP\000"
- 1685      525F5354 
- 1685      455000
- 1686              	.LASF20:
- 1687 025a 73746570 		.ascii	"steps\000"
- 1687      7300
- 1688              	.LASF47:
- 1689 0260 456C6576 		.ascii	"Elevation_Pin_1_Read\000"
- 1689      6174696F 
- 1689      6E5F5069 
- 1689      6E5F315F 
- 1689      52656164 
- 1690              	.LASF18:
- 1691 0275 6D6F7665 		.ascii	"moveAzimuth\000"
- 1691      417A696D 
- 1691      75746800 
- 1692              	.LASF43:
- 1693 0281 456C6576 		.ascii	"Elevation_Pin_1_Write\000"
- 1693      6174696F 
- 1693      6E5F5069 
- 1693      6E5F315F 
- 1693      57726974 
- 1694              	.LASF32:
- 1695 0297 65537465 		.ascii	"eStep\000"
- 1695      7000
- 1696              	.LASF21:
- 1697 029d 73657175 		.ascii	"sequence\000"
- 1697      656E6365 
- 1697      00
- 1698              	.LASF54:
- 1699 02a6 55415254 		.ascii	"UART_1_PutChar\000"
- 1699      5F315F50 
- 1699      75744368 
- 1699      617200
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 37
+ 1812      687400
+ 1813              	.LASF59:
+ 1814 012e 55415254 		.ascii	"UART_1_PutChar\000"
+ 1814      5F315F50 
+ 1814      75744368 
+ 1814      617200
+ 1815              	.LASF13:
+ 1816 013d 666C6F61 		.ascii	"float\000"
+ 1816      7400
+ 1817              	.LASF8:
+ 1818 0143 6C6F6E67 		.ascii	"long long int\000"
+ 1818      206C6F6E 
+ 1818      6720696E 
+ 1818      7400
+ 1819              	.LASF25:
+ 1820 0151 656C6576 		.ascii	"elevation\000"
+ 1820      6174696F 
+ 1820      6E00
+ 1821              	.LASF6:
+ 1822 015b 6C6F6E67 		.ascii	"long int\000"
+ 1822      20696E74 
+ 1822      00
+ 1823              	.LASF4:
+ 1824 0164 5F5F7569 		.ascii	"__uint8_t\000"
+ 1824      6E74385F 
+ 1824      7400
+ 1825              	.LASF1:
+ 1826 016e 756E7369 		.ascii	"unsigned char\000"
+ 1826      676E6564 
+ 1826      20636861 
+ 1826      7200
+ 1827              	.LASF33:
+ 1828 017c 73746570 		.ascii	"stepSequence\000"
+ 1828      53657175 
+ 1828      656E6365 
+ 1828      00
+ 1829              	.LASF16:
+ 1830 0189 6C6F6E67 		.ascii	"long double\000"
+ 1830      20646F75 
+ 1830      626C6500 
+ 1831              	.LASF55:
+ 1832 0195 456C6576 		.ascii	"Elevation_Pin_4_Read\000"
+ 1832      6174696F 
+ 1832      6E5F5069 
+ 1832      6E5F345F 
+ 1832      52656164 
+ 1833              	.LASF38:
+ 1834 01aa 417A696D 		.ascii	"Azimuth_Pin_1_Write\000"
+ 1834      7574685F 
+ 1834      50696E5F 
+ 1834      315F5772 
+ 1834      69746500 
+ 1835              	.LASF57:
+ 1836 01be 4C696D69 		.ascii	"Limit_Up_Read\000"
+ 1836      745F5570 
+ 1836      5F526561 
+ 1836      6400
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 39
 
 
- 1700              	.LASF10:
- 1701 02b5 756E7369 		.ascii	"unsigned int\000"
- 1701      676E6564 
- 1701      20696E74 
- 1701      00
- 1702              	.LASF9:
- 1703 02c2 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1703      206C6F6E 
- 1703      6720756E 
- 1703      7369676E 
- 1703      65642069 
- 1704              	.LASF11:
- 1705 02d9 75696E74 		.ascii	"uint8_t\000"
- 1705      385F7400 
- 1706              	.LASF22:
- 1707 02e1 617A696D 		.ascii	"azimuth\000"
- 1707      75746800 
- 1708              	.LASF56:
- 1709 02e9 53746570 		.ascii	"StepperMotorDriver.c\000"
- 1709      7065724D 
- 1709      6F746F72 
- 1709      44726976 
- 1709      65722E63 
- 1710              	.LASF31:
- 1711 02fe 61537465 		.ascii	"aStep\000"
- 1711      7000
- 1712              	.LASF12:
- 1713 0304 696E7433 		.ascii	"int32_t\000"
- 1713      325F7400 
- 1714              	.LASF17:
- 1715 030c 73697A65 		.ascii	"sizetype\000"
- 1715      74797065 
- 1715      00
- 1716              	.LASF45:
- 1717 0315 456C6576 		.ascii	"Elevation_Pin_3_Write\000"
- 1717      6174696F 
- 1717      6E5F5069 
- 1717      6E5F335F 
- 1717      57726974 
- 1718              	.LASF29:
- 1719 032b 617A696D 		.ascii	"azimuthSteps\000"
- 1719      75746853 
- 1719      74657073 
- 1719      00
- 1720              	.LASF8:
- 1721 0338 6C6F6E67 		.ascii	"long long int\000"
- 1721      206C6F6E 
- 1721      6720696E 
- 1721      7400
- 1722              	.LASF44:
- 1723 0346 456C6576 		.ascii	"Elevation_Pin_2_Write\000"
- 1723      6174696F 
- 1723      6E5F5069 
- 1723      6E5F325F 
- 1723      57726974 
- 1724              	.LASF15:
- 1725 035c 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 38
+ 1837              	.LASF26:
+ 1838 01cc 4D4F544F 		.ascii	"MOTOR_STEP\000"
+ 1838      525F5354 
+ 1838      455000
+ 1839              	.LASF0:
+ 1840 01d7 7369676E 		.ascii	"signed char\000"
+ 1840      65642063 
+ 1840      68617200 
+ 1841              	.LASF12:
+ 1842 01e3 696E7433 		.ascii	"int32_t\000"
+ 1842      325F7400 
+ 1843              	.LASF9:
+ 1844 01eb 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1844      206C6F6E 
+ 1844      6720756E 
+ 1844      7369676E 
+ 1844      65642069 
+ 1845              	.LASF44:
+ 1846 0202 417A696D 		.ascii	"Azimuth_Pin_3_Read\000"
+ 1846      7574685F 
+ 1846      50696E5F 
+ 1846      335F5265 
+ 1846      616400
+ 1847              	.LASF49:
+ 1848 0215 456C6576 		.ascii	"Elevation_Pin_2_Write\000"
+ 1848      6174696F 
+ 1848      6E5F5069 
+ 1848      6E5F325F 
+ 1848      57726974 
+ 1849              	.LASF10:
+ 1850 022b 756E7369 		.ascii	"unsigned int\000"
+ 1850      676E6564 
+ 1850      20696E74 
+ 1850      00
+ 1851              	.LASF36:
+ 1852 0238 61537465 		.ascii	"aStep\000"
+ 1852      7000
+ 1853              	.LASF40:
+ 1854 023e 417A696D 		.ascii	"Azimuth_Pin_3_Write\000"
+ 1854      7574685F 
+ 1854      50696E5F 
+ 1854      335F5772 
+ 1854      69746500 
+ 1855              	.LASF20:
+ 1856 0252 73746570 		.ascii	"steps\000"
+ 1856      7300
+ 1857              	.LASF3:
+ 1858 0258 73686F72 		.ascii	"short unsigned int\000"
+ 1858      7420756E 
+ 1858      7369676E 
+ 1858      65642069 
+ 1858      6E7400
+ 1859              	.LASF51:
+ 1860 026b 456C6576 		.ascii	"Elevation_Pin_4_Write\000"
+ 1860      6174696F 
+ 1860      6E5F5069 
+ 1860      6E5F345F 
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 40
 
 
- 1725      00
- 1726              	.LASF25:
- 1727 0361 656C6576 		.ascii	"elevation\000"
- 1727      6174696F 
- 1727      6E00
- 1728              	.LASF28:
- 1729 036b 73746570 		.ascii	"stepSequence\000"
- 1729      53657175 
- 1729      656E6365 
- 1729      00
- 1730              	.LASF46:
- 1731 0378 456C6576 		.ascii	"Elevation_Pin_4_Write\000"
- 1731      6174696F 
- 1731      6E5F5069 
- 1731      6E5F345F 
- 1731      57726974 
- 1732              	.LASF2:
- 1733 038e 73686F72 		.ascii	"short int\000"
- 1733      7420696E 
- 1733      7400
- 1734              	.LASF52:
- 1735 0398 4C696D69 		.ascii	"Limit_Down_Read\000"
- 1735      745F446F 
- 1735      776E5F52 
- 1735      65616400 
- 1736              	.LASF30:
- 1737 03a8 656C6576 		.ascii	"elevationSteps\000"
- 1737      6174696F 
- 1737      6E537465 
- 1737      707300
- 1738              	.LASF19:
- 1739 03b7 617A696D 		.ascii	"azimuthStep\000"
- 1739      75746853 
- 1739      74657000 
- 1740              	.LASF51:
- 1741 03c3 4C696D69 		.ascii	"Limit_Up_Read\000"
- 1741      745F5570 
- 1741      5F526561 
- 1741      6400
- 1742              	.LASF27:
- 1743 03d1 55415254 		.ascii	"UART_HANDLER\000"
- 1743      5F48414E 
- 1743      444C4552 
- 1743      00
- 1744              	.LASF6:
- 1745 03de 6C6F6E67 		.ascii	"long int\000"
- 1745      20696E74 
- 1745      00
- 1746              	.LASF16:
- 1747 03e7 6C6F6E67 		.ascii	"long double\000"
- 1747      20646F75 
- 1747      626C6500 
- 1748              	.LASF0:
- 1749 03f3 7369676E 		.ascii	"signed char\000"
- 1749      65642063 
- 1749      68617200 
- 1750              	.LASF39:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\cc5j1TH9.s 			page 39
+ 1860      57726974 
+ 1861              	.LASF15:
+ 1862 0281 63686172 		.ascii	"char\000"
+ 1862      00
+ 1863              	.LASF19:
+ 1864 0286 617A696D 		.ascii	"azimuthStep\000"
+ 1864      75746853 
+ 1864      74657000 
+ 1865              	.LASF54:
+ 1866 0292 456C6576 		.ascii	"Elevation_Pin_3_Read\000"
+ 1866      6174696F 
+ 1866      6E5F5069 
+ 1866      6E5F335F 
+ 1866      52656164 
+ 1867              	.LASF28:
+ 1868 02a7 5F426F6F 		.ascii	"_Bool\000"
+ 1868      6C00
+ 1869              	.LASF22:
+ 1870 02ad 617A696D 		.ascii	"azimuth\000"
+ 1870      75746800 
+ 1871              	.LASF7:
+ 1872 02b5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1872      20756E73 
+ 1872      69676E65 
+ 1872      6420696E 
+ 1872      7400
+ 1873              	.LASF14:
+ 1874 02c7 646F7562 		.ascii	"double\000"
+ 1874      6C6500
+ 1875              	.LASF35:
+ 1876 02ce 656C6576 		.ascii	"elevationSteps\000"
+ 1876      6174696F 
+ 1876      6E537465 
+ 1876      707300
+ 1877              	.LASF5:
+ 1878 02dd 5F5F696E 		.ascii	"__int32_t\000"
+ 1878      7433325F 
+ 1878      7400
+ 1879              	.LASF58:
+ 1880 02e7 55415254 		.ascii	"UART_1_GetByte\000"
+ 1880      5F315F47 
+ 1880      65744279 
+ 1880      746500
+ 1881              	.LASF61:
+ 1882 02f6 53746570 		.ascii	"StepperMotorDriver.c\000"
+ 1882      7065724D 
+ 1882      6F746F72 
+ 1882      44726976 
+ 1882      65722E63 
+ 1883              	.LASF17:
+ 1884 030b 73697A65 		.ascii	"sizetype\000"
+ 1884      74797065 
+ 1884      00
+ 1885              	.LASF27:
+ 1886 0314 6C696D69 		.ascii	"limitLeft\000"
+ 1886      744C6566 
+ 1886      7400
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 41
 
 
- 1751 03ff 417A696D 		.ascii	"Azimuth_Pin_3_Read\000"
- 1751      7574685F 
- 1751      50696E5F 
- 1751      335F5265 
- 1751      616400
- 1752              	.LASF36:
- 1753 0412 417A696D 		.ascii	"Azimuth_Pin_4_Write\000"
- 1753      7574685F 
- 1753      50696E5F 
- 1753      345F5772 
- 1753      69746500 
- 1754              	.LASF38:
- 1755 0426 417A696D 		.ascii	"Azimuth_Pin_2_Read\000"
- 1755      7574685F 
- 1755      50696E5F 
- 1755      325F5265 
- 1755      616400
- 1756              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1887              	.LASF63:
+ 1888 031e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1888      52784275 
+ 1888      66666572 
+ 1888      00
+ 1889              	.LASF60:
+ 1890 032b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1890      43313120 
+ 1890      352E342E 
+ 1890      31203230 
+ 1890      31363036 
+ 1891 035e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1891      20726576 
+ 1891      6973696F 
+ 1891      6E203233 
+ 1891      37373135 
+ 1892 0391 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1892      66756E63 
+ 1892      74696F6E 
+ 1892      2D736563 
+ 1892      74696F6E 
+ 1893              	.LASF62:
+ 1894 03b9 433A5C55 		.ascii	"C:\\Users\\degn\\OneDrive - Aarhus universitet\\Skr"
+ 1894      73657273 
+ 1894      5C646567 
+ 1894      6E5C4F6E 
+ 1894      65447269 
+ 1895 03e8 69766562 		.ascii	"ivebord\\AU\\E3\\PRJ3\\Kode\\StepperMotorDriver\\St"
+ 1895      6F72645C 
+ 1895      41555C45 
+ 1895      335C5052 
+ 1895      4A335C4B 
+ 1896 0415 65707065 		.ascii	"epperMotorDriver.cydsn\000"
+ 1896      724D6F74 
+ 1896      6F724472 
+ 1896      69766572 
+ 1896      2E637964 
+ 1897              	.LASF37:
+ 1898 042c 65537465 		.ascii	"eStep\000"
+ 1898      7000
+ 1899              	.LASF43:
+ 1900 0432 417A696D 		.ascii	"Azimuth_Pin_2_Read\000"
+ 1900      7574685F 
+ 1900      50696E5F 
+ 1900      325F5265 
+ 1900      616400
+ 1901              	.LASF53:
+ 1902 0445 456C6576 		.ascii	"Elevation_Pin_2_Read\000"
+ 1902      6174696F 
+ 1902      6E5F5069 
+ 1902      6E5F325F 
+ 1902      52656164 
+ 1903              	.LASF18:
+ 1904 045a 6D6F7665 		.ascii	"moveAzimuth\000"
+ 1904      417A696D 
+ 1904      75746800 
+ 1905              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccdWEYXz.s 			page 42
+
+
