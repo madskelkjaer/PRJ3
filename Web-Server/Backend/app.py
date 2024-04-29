@@ -77,5 +77,10 @@ def runner():
         time.sleep(1)
     return "Data runner is running continuously"
 
+@app.route("saveForm")
+def form():
+    
+    
+
 if __name__ == "__main__":
     app.run(threaded=True, port=5000)
