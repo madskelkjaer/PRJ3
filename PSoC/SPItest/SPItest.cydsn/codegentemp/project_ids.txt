@@ -1,0 +1,6 @@
+C:\code\PRJ3\PSoC\SPItest\SPItest.cydsn\SPItest.cyprj|f4bfc6e3-e091-428f-9766-ea57c694842e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|33be18f4-6516-4574-8f7a-ac52fbefc121
+C:\Users\madse\OneDrive\Dokumenter\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|ff6e74f9-38ff-478f-840b-5b09f087e3ba
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|ec2d7969-2d19-44c5-ae8b-b18a9a543213
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|34c89392-7ad2-480f-aec8-befad7424d58
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|1fbcd05b-504c-46d1-a3ce-a28be0bbb312

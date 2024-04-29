@@ -1,0 +1,672 @@
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"SensorDriver.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.sunLeft,"ax",%progbits
+  20              		.align	2
+  21              		.global	sunLeft
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	sunLeft, %function
+  25              	sunLeft:
+  26              	.LFB63:
+  27              		.file 1 "SensorDriver.c"
+   1:SensorDriver.c **** #include "project.h"
+   2:SensorDriver.c **** #include "SensorDriver.h"
+   3:SensorDriver.c **** 
+   4:SensorDriver.c **** bool sunLeft()
+   5:SensorDriver.c **** {
+  28              		.loc 1 5 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+   6:SensorDriver.c ****     return !sunLeft_Read();
+  36              		.loc 1 6 0
+  37 0002 FFF7FEFF 		bl	sunLeft_Read
+  38              	.LVL0:
+   7:SensorDriver.c **** }
+  39              		.loc 1 7 0
+  40 0006 B0FA80F0 		clz	r0, r0
+  41 000a 4009     		lsrs	r0, r0, #5
+  42 000c 08BD     		pop	{r3, pc}
+  43              		.cfi_endproc
+  44              	.LFE63:
+  45              		.size	sunLeft, .-sunLeft
+  46 000e 00BF     		.section	.text.sunRight,"ax",%progbits
+  47              		.align	2
+  48              		.global	sunRight
+  49              		.thumb
+  50              		.thumb_func
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 2
+
+
+  51              		.type	sunRight, %function
+  52              	sunRight:
+  53              	.LFB64:
+   8:SensorDriver.c **** 
+   9:SensorDriver.c **** bool sunRight()
+  10:SensorDriver.c **** {
+  54              		.loc 1 10 0
+  55              		.cfi_startproc
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58 0000 08B5     		push	{r3, lr}
+  59              		.cfi_def_cfa_offset 8
+  60              		.cfi_offset 3, -8
+  61              		.cfi_offset 14, -4
+  11:SensorDriver.c ****     return !sunRight_Read();
+  62              		.loc 1 11 0
+  63 0002 FFF7FEFF 		bl	sunRight_Read
+  64              	.LVL1:
+  12:SensorDriver.c **** }
+  65              		.loc 1 12 0
+  66 0006 B0FA80F0 		clz	r0, r0
+  67 000a 4009     		lsrs	r0, r0, #5
+  68 000c 08BD     		pop	{r3, pc}
+  69              		.cfi_endproc
+  70              	.LFE64:
+  71              		.size	sunRight, .-sunRight
+  72 000e 00BF     		.section	.text.sunUp,"ax",%progbits
+  73              		.align	2
+  74              		.global	sunUp
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	sunUp, %function
+  78              	sunUp:
+  79              	.LFB65:
+  13:SensorDriver.c **** 
+  14:SensorDriver.c **** bool sunUp()
+  15:SensorDriver.c **** {
+  80              		.loc 1 15 0
+  81              		.cfi_startproc
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84 0000 08B5     		push	{r3, lr}
+  85              		.cfi_def_cfa_offset 8
+  86              		.cfi_offset 3, -8
+  87              		.cfi_offset 14, -4
+  16:SensorDriver.c ****     return !sunUp_Read();
+  88              		.loc 1 16 0
+  89 0002 FFF7FEFF 		bl	sunUp_Read
+  90              	.LVL2:
+  17:SensorDriver.c **** }
+  91              		.loc 1 17 0
+  92 0006 B0FA80F0 		clz	r0, r0
+  93 000a 4009     		lsrs	r0, r0, #5
+  94 000c 08BD     		pop	{r3, pc}
+  95              		.cfi_endproc
+  96              	.LFE65:
+  97              		.size	sunUp, .-sunUp
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 3
+
+
+  98 000e 00BF     		.section	.text.sunDown,"ax",%progbits
+  99              		.align	2
+ 100              		.global	sunDown
+ 101              		.thumb
+ 102              		.thumb_func
+ 103              		.type	sunDown, %function
+ 104              	sunDown:
+ 105              	.LFB66:
+  18:SensorDriver.c **** 
+  19:SensorDriver.c **** bool sunDown()
+  20:SensorDriver.c **** {
+ 106              		.loc 1 20 0
+ 107              		.cfi_startproc
+ 108              		@ args = 0, pretend = 0, frame = 0
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110 0000 08B5     		push	{r3, lr}
+ 111              		.cfi_def_cfa_offset 8
+ 112              		.cfi_offset 3, -8
+ 113              		.cfi_offset 14, -4
+  21:SensorDriver.c ****     return !sunDown_Read();
+ 114              		.loc 1 21 0
+ 115 0002 FFF7FEFF 		bl	sunDown_Read
+ 116              	.LVL3:
+  22:SensorDriver.c **** }
+ 117              		.loc 1 22 0
+ 118 0006 B0FA80F0 		clz	r0, r0
+ 119 000a 4009     		lsrs	r0, r0, #5
+ 120 000c 08BD     		pop	{r3, pc}
+ 121              		.cfi_endproc
+ 122              	.LFE66:
+ 123              		.size	sunDown, .-sunDown
+ 124 000e 00BF     		.text
+ 125              	.Letext0:
+ 126              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 127              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 128              		.file 4 "Generated_Source\\PSoC5/sunLeft.h"
+ 129              		.file 5 "Generated_Source\\PSoC5/sunRight.h"
+ 130              		.file 6 "Generated_Source\\PSoC5/sunUp.h"
+ 131              		.file 7 "Generated_Source\\PSoC5/sunDown.h"
+ 132              		.file 8 "Generated_Source\\PSoC5/core_cm3.h"
+ 133              		.section	.debug_info,"",%progbits
+ 134              	.Ldebug_info0:
+ 135 0000 71010000 		.4byte	0x171
+ 136 0004 0400     		.2byte	0x4
+ 137 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 138 000a 04       		.byte	0x4
+ 139 000b 01       		.uleb128 0x1
+ 140 000c 60000000 		.4byte	.LASF25
+ 141 0010 0C       		.byte	0xc
+ 142 0011 65010000 		.4byte	.LASF26
+ 143 0015 BF010000 		.4byte	.LASF27
+ 144 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 145 001d 00000000 		.4byte	0
+ 146 0021 00000000 		.4byte	.Ldebug_line0
+ 147 0025 02       		.uleb128 0x2
+ 148 0026 01       		.byte	0x1
+ 149 0027 06       		.byte	0x6
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 4
+
+
+ 150 0028 85010000 		.4byte	.LASF0
+ 151 002c 02       		.uleb128 0x2
+ 152 002d 01       		.byte	0x1
+ 153 002e 08       		.byte	0x8
+ 154 002f 4C000000 		.4byte	.LASF1
+ 155 0033 02       		.uleb128 0x2
+ 156 0034 02       		.byte	0x2
+ 157 0035 05       		.byte	0x5
+ 158 0036 AD010000 		.4byte	.LASF2
+ 159 003a 02       		.uleb128 0x2
+ 160 003b 02       		.byte	0x2
+ 161 003c 07       		.byte	0x7
+ 162 003d 17010000 		.4byte	.LASF3
+ 163 0041 03       		.uleb128 0x3
+ 164 0042 9D010000 		.4byte	.LASF9
+ 165 0046 02       		.byte	0x2
+ 166 0047 3F       		.byte	0x3f
+ 167 0048 4C000000 		.4byte	0x4c
+ 168 004c 02       		.uleb128 0x2
+ 169 004d 04       		.byte	0x4
+ 170 004e 05       		.byte	0x5
+ 171 004f 47010000 		.4byte	.LASF4
+ 172 0053 02       		.uleb128 0x2
+ 173 0054 04       		.byte	0x4
+ 174 0055 07       		.byte	0x7
+ 175 0056 EE000000 		.4byte	.LASF5
+ 176 005a 02       		.uleb128 0x2
+ 177 005b 08       		.byte	0x8
+ 178 005c 05       		.byte	0x5
+ 179 005d 00000000 		.4byte	.LASF6
+ 180 0061 02       		.uleb128 0x2
+ 181 0062 08       		.byte	0x8
+ 182 0063 07       		.byte	0x7
+ 183 0064 00010000 		.4byte	.LASF7
+ 184 0068 04       		.uleb128 0x4
+ 185 0069 04       		.byte	0x4
+ 186 006a 05       		.byte	0x5
+ 187 006b 696E7400 		.ascii	"int\000"
+ 188 006f 02       		.uleb128 0x2
+ 189 0070 04       		.byte	0x4
+ 190 0071 07       		.byte	0x7
+ 191 0072 29000000 		.4byte	.LASF8
+ 192 0076 03       		.uleb128 0x3
+ 193 0077 B7010000 		.4byte	.LASF10
+ 194 007b 03       		.byte	0x3
+ 195 007c 2C       		.byte	0x2c
+ 196 007d 41000000 		.4byte	0x41
+ 197 0081 02       		.uleb128 0x2
+ 198 0082 04       		.byte	0x4
+ 199 0083 04       		.byte	0x4
+ 200 0084 A7010000 		.4byte	.LASF11
+ 201 0088 02       		.uleb128 0x2
+ 202 0089 08       		.byte	0x8
+ 203 008a 04       		.byte	0x4
+ 204 008b 58010000 		.4byte	.LASF12
+ 205 008f 02       		.uleb128 0x2
+ 206 0090 01       		.byte	0x1
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 5
+
+
+ 207 0091 08       		.byte	0x8
+ 208 0092 42010000 		.4byte	.LASF13
+ 209 0096 02       		.uleb128 0x2
+ 210 0097 04       		.byte	0x4
+ 211 0098 07       		.byte	0x7
+ 212 0099 74010000 		.4byte	.LASF14
+ 213 009d 02       		.uleb128 0x2
+ 214 009e 08       		.byte	0x8
+ 215 009f 04       		.byte	0x4
+ 216 00a0 91010000 		.4byte	.LASF15
+ 217 00a4 05       		.uleb128 0x5
+ 218 00a5 50010000 		.4byte	.LASF17
+ 219 00a9 01       		.byte	0x1
+ 220 00aa 04       		.byte	0x4
+ 221 00ab C7000000 		.4byte	0xc7
+ 222 00af 00000000 		.4byte	.LFB63
+ 223 00b3 0E000000 		.4byte	.LFE63-.LFB63
+ 224 00b7 01       		.uleb128 0x1
+ 225 00b8 9C       		.byte	0x9c
+ 226 00b9 C7000000 		.4byte	0xc7
+ 227 00bd 06       		.uleb128 0x6
+ 228 00be 06000000 		.4byte	.LVL0
+ 229 00c2 48010000 		.4byte	0x148
+ 230 00c6 00       		.byte	0
+ 231 00c7 02       		.uleb128 0x2
+ 232 00c8 01       		.byte	0x1
+ 233 00c9 02       		.byte	0x2
+ 234 00ca 5F010000 		.4byte	.LASF16
+ 235 00ce 05       		.uleb128 0x5
+ 236 00cf 36000000 		.4byte	.LASF18
+ 237 00d3 01       		.byte	0x1
+ 238 00d4 09       		.byte	0x9
+ 239 00d5 C7000000 		.4byte	0xc7
+ 240 00d9 00000000 		.4byte	.LFB64
+ 241 00dd 0E000000 		.4byte	.LFE64-.LFB64
+ 242 00e1 01       		.uleb128 0x1
+ 243 00e2 9C       		.byte	0x9c
+ 244 00e3 F1000000 		.4byte	0xf1
+ 245 00e7 06       		.uleb128 0x6
+ 246 00e8 06000000 		.4byte	.LVL1
+ 247 00ec 53010000 		.4byte	0x153
+ 248 00f0 00       		.byte	0
+ 249 00f1 05       		.uleb128 0x5
+ 250 00f2 5A000000 		.4byte	.LASF19
+ 251 00f6 01       		.byte	0x1
+ 252 00f7 0E       		.byte	0xe
+ 253 00f8 C7000000 		.4byte	0xc7
+ 254 00fc 00000000 		.4byte	.LFB65
+ 255 0100 0E000000 		.4byte	.LFE65-.LFB65
+ 256 0104 01       		.uleb128 0x1
+ 257 0105 9C       		.byte	0x9c
+ 258 0106 14010000 		.4byte	0x114
+ 259 010a 06       		.uleb128 0x6
+ 260 010b 06000000 		.4byte	.LVL2
+ 261 010f 5E010000 		.4byte	0x15e
+ 262 0113 00       		.byte	0
+ 263 0114 05       		.uleb128 0x5
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 6
+
+
+ 264 0115 7D010000 		.4byte	.LASF20
+ 265 0119 01       		.byte	0x1
+ 266 011a 13       		.byte	0x13
+ 267 011b C7000000 		.4byte	0xc7
+ 268 011f 00000000 		.4byte	.LFB66
+ 269 0123 0E000000 		.4byte	.LFE66-.LFB66
+ 270 0127 01       		.uleb128 0x1
+ 271 0128 9C       		.byte	0x9c
+ 272 0129 37010000 		.4byte	0x137
+ 273 012d 06       		.uleb128 0x6
+ 274 012e 06000000 		.4byte	.LVL3
+ 275 0132 69010000 		.4byte	0x169
+ 276 0136 00       		.byte	0
+ 277 0137 07       		.uleb128 0x7
+ 278 0138 1C000000 		.4byte	.LASF28
+ 279 013c 08       		.byte	0x8
+ 280 013d 1207     		.2byte	0x712
+ 281 013f 43010000 		.4byte	0x143
+ 282 0143 08       		.uleb128 0x8
+ 283 0144 76000000 		.4byte	0x76
+ 284 0148 09       		.uleb128 0x9
+ 285 0149 35010000 		.4byte	.LASF21
+ 286 014d 35010000 		.4byte	.LASF21
+ 287 0151 04       		.byte	0x4
+ 288 0152 29       		.byte	0x29
+ 289 0153 09       		.uleb128 0x9
+ 290 0154 0E000000 		.4byte	.LASF22
+ 291 0158 0E000000 		.4byte	.LASF22
+ 292 015c 05       		.byte	0x5
+ 293 015d 29       		.byte	0x29
+ 294 015e 09       		.uleb128 0x9
+ 295 015f 2A010000 		.4byte	.LASF23
+ 296 0163 2A010000 		.4byte	.LASF23
+ 297 0167 06       		.byte	0x6
+ 298 0168 29       		.byte	0x29
+ 299 0169 09       		.uleb128 0x9
+ 300 016a 3F000000 		.4byte	.LASF24
+ 301 016e 3F000000 		.4byte	.LASF24
+ 302 0172 07       		.byte	0x7
+ 303 0173 29       		.byte	0x29
+ 304 0174 00       		.byte	0
+ 305              		.section	.debug_abbrev,"",%progbits
+ 306              	.Ldebug_abbrev0:
+ 307 0000 01       		.uleb128 0x1
+ 308 0001 11       		.uleb128 0x11
+ 309 0002 01       		.byte	0x1
+ 310 0003 25       		.uleb128 0x25
+ 311 0004 0E       		.uleb128 0xe
+ 312 0005 13       		.uleb128 0x13
+ 313 0006 0B       		.uleb128 0xb
+ 314 0007 03       		.uleb128 0x3
+ 315 0008 0E       		.uleb128 0xe
+ 316 0009 1B       		.uleb128 0x1b
+ 317 000a 0E       		.uleb128 0xe
+ 318 000b 55       		.uleb128 0x55
+ 319 000c 17       		.uleb128 0x17
+ 320 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 7
+
+
+ 321 000e 01       		.uleb128 0x1
+ 322 000f 10       		.uleb128 0x10
+ 323 0010 17       		.uleb128 0x17
+ 324 0011 00       		.byte	0
+ 325 0012 00       		.byte	0
+ 326 0013 02       		.uleb128 0x2
+ 327 0014 24       		.uleb128 0x24
+ 328 0015 00       		.byte	0
+ 329 0016 0B       		.uleb128 0xb
+ 330 0017 0B       		.uleb128 0xb
+ 331 0018 3E       		.uleb128 0x3e
+ 332 0019 0B       		.uleb128 0xb
+ 333 001a 03       		.uleb128 0x3
+ 334 001b 0E       		.uleb128 0xe
+ 335 001c 00       		.byte	0
+ 336 001d 00       		.byte	0
+ 337 001e 03       		.uleb128 0x3
+ 338 001f 16       		.uleb128 0x16
+ 339 0020 00       		.byte	0
+ 340 0021 03       		.uleb128 0x3
+ 341 0022 0E       		.uleb128 0xe
+ 342 0023 3A       		.uleb128 0x3a
+ 343 0024 0B       		.uleb128 0xb
+ 344 0025 3B       		.uleb128 0x3b
+ 345 0026 0B       		.uleb128 0xb
+ 346 0027 49       		.uleb128 0x49
+ 347 0028 13       		.uleb128 0x13
+ 348 0029 00       		.byte	0
+ 349 002a 00       		.byte	0
+ 350 002b 04       		.uleb128 0x4
+ 351 002c 24       		.uleb128 0x24
+ 352 002d 00       		.byte	0
+ 353 002e 0B       		.uleb128 0xb
+ 354 002f 0B       		.uleb128 0xb
+ 355 0030 3E       		.uleb128 0x3e
+ 356 0031 0B       		.uleb128 0xb
+ 357 0032 03       		.uleb128 0x3
+ 358 0033 08       		.uleb128 0x8
+ 359 0034 00       		.byte	0
+ 360 0035 00       		.byte	0
+ 361 0036 05       		.uleb128 0x5
+ 362 0037 2E       		.uleb128 0x2e
+ 363 0038 01       		.byte	0x1
+ 364 0039 3F       		.uleb128 0x3f
+ 365 003a 19       		.uleb128 0x19
+ 366 003b 03       		.uleb128 0x3
+ 367 003c 0E       		.uleb128 0xe
+ 368 003d 3A       		.uleb128 0x3a
+ 369 003e 0B       		.uleb128 0xb
+ 370 003f 3B       		.uleb128 0x3b
+ 371 0040 0B       		.uleb128 0xb
+ 372 0041 49       		.uleb128 0x49
+ 373 0042 13       		.uleb128 0x13
+ 374 0043 11       		.uleb128 0x11
+ 375 0044 01       		.uleb128 0x1
+ 376 0045 12       		.uleb128 0x12
+ 377 0046 06       		.uleb128 0x6
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 8
+
+
+ 378 0047 40       		.uleb128 0x40
+ 379 0048 18       		.uleb128 0x18
+ 380 0049 9742     		.uleb128 0x2117
+ 381 004b 19       		.uleb128 0x19
+ 382 004c 01       		.uleb128 0x1
+ 383 004d 13       		.uleb128 0x13
+ 384 004e 00       		.byte	0
+ 385 004f 00       		.byte	0
+ 386 0050 06       		.uleb128 0x6
+ 387 0051 898201   		.uleb128 0x4109
+ 388 0054 00       		.byte	0
+ 389 0055 11       		.uleb128 0x11
+ 390 0056 01       		.uleb128 0x1
+ 391 0057 31       		.uleb128 0x31
+ 392 0058 13       		.uleb128 0x13
+ 393 0059 00       		.byte	0
+ 394 005a 00       		.byte	0
+ 395 005b 07       		.uleb128 0x7
+ 396 005c 34       		.uleb128 0x34
+ 397 005d 00       		.byte	0
+ 398 005e 03       		.uleb128 0x3
+ 399 005f 0E       		.uleb128 0xe
+ 400 0060 3A       		.uleb128 0x3a
+ 401 0061 0B       		.uleb128 0xb
+ 402 0062 3B       		.uleb128 0x3b
+ 403 0063 05       		.uleb128 0x5
+ 404 0064 49       		.uleb128 0x49
+ 405 0065 13       		.uleb128 0x13
+ 406 0066 3F       		.uleb128 0x3f
+ 407 0067 19       		.uleb128 0x19
+ 408 0068 3C       		.uleb128 0x3c
+ 409 0069 19       		.uleb128 0x19
+ 410 006a 00       		.byte	0
+ 411 006b 00       		.byte	0
+ 412 006c 08       		.uleb128 0x8
+ 413 006d 35       		.uleb128 0x35
+ 414 006e 00       		.byte	0
+ 415 006f 49       		.uleb128 0x49
+ 416 0070 13       		.uleb128 0x13
+ 417 0071 00       		.byte	0
+ 418 0072 00       		.byte	0
+ 419 0073 09       		.uleb128 0x9
+ 420 0074 2E       		.uleb128 0x2e
+ 421 0075 00       		.byte	0
+ 422 0076 3F       		.uleb128 0x3f
+ 423 0077 19       		.uleb128 0x19
+ 424 0078 3C       		.uleb128 0x3c
+ 425 0079 19       		.uleb128 0x19
+ 426 007a 6E       		.uleb128 0x6e
+ 427 007b 0E       		.uleb128 0xe
+ 428 007c 03       		.uleb128 0x3
+ 429 007d 0E       		.uleb128 0xe
+ 430 007e 3A       		.uleb128 0x3a
+ 431 007f 0B       		.uleb128 0xb
+ 432 0080 3B       		.uleb128 0x3b
+ 433 0081 0B       		.uleb128 0xb
+ 434 0082 00       		.byte	0
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 9
+
+
+ 435 0083 00       		.byte	0
+ 436 0084 00       		.byte	0
+ 437              		.section	.debug_aranges,"",%progbits
+ 438 0000 34000000 		.4byte	0x34
+ 439 0004 0200     		.2byte	0x2
+ 440 0006 00000000 		.4byte	.Ldebug_info0
+ 441 000a 04       		.byte	0x4
+ 442 000b 00       		.byte	0
+ 443 000c 0000     		.2byte	0
+ 444 000e 0000     		.2byte	0
+ 445 0010 00000000 		.4byte	.LFB63
+ 446 0014 0E000000 		.4byte	.LFE63-.LFB63
+ 447 0018 00000000 		.4byte	.LFB64
+ 448 001c 0E000000 		.4byte	.LFE64-.LFB64
+ 449 0020 00000000 		.4byte	.LFB65
+ 450 0024 0E000000 		.4byte	.LFE65-.LFB65
+ 451 0028 00000000 		.4byte	.LFB66
+ 452 002c 0E000000 		.4byte	.LFE66-.LFB66
+ 453 0030 00000000 		.4byte	0
+ 454 0034 00000000 		.4byte	0
+ 455              		.section	.debug_ranges,"",%progbits
+ 456              	.Ldebug_ranges0:
+ 457 0000 00000000 		.4byte	.LFB63
+ 458 0004 0E000000 		.4byte	.LFE63
+ 459 0008 00000000 		.4byte	.LFB64
+ 460 000c 0E000000 		.4byte	.LFE64
+ 461 0010 00000000 		.4byte	.LFB65
+ 462 0014 0E000000 		.4byte	.LFE65
+ 463 0018 00000000 		.4byte	.LFB66
+ 464 001c 0E000000 		.4byte	.LFE66
+ 465 0020 00000000 		.4byte	0
+ 466 0024 00000000 		.4byte	0
+ 467              		.section	.debug_line,"",%progbits
+ 468              	.Ldebug_line0:
+ 469 0000 C2010000 		.section	.debug_str,"MS",%progbits,1
+ 469      02007A01 
+ 469      00000201 
+ 469      FB0E0D00 
+ 469      01010101 
+ 470              	.LASF6:
+ 471 0000 6C6F6E67 		.ascii	"long long int\000"
+ 471      206C6F6E 
+ 471      6720696E 
+ 471      7400
+ 472              	.LASF22:
+ 473 000e 73756E52 		.ascii	"sunRight_Read\000"
+ 473      69676874 
+ 473      5F526561 
+ 473      6400
+ 474              	.LASF28:
+ 475 001c 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 475      52784275 
+ 475      66666572 
+ 475      00
+ 476              	.LASF8:
+ 477 0029 756E7369 		.ascii	"unsigned int\000"
+ 477      676E6564 
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 10
+
+
+ 477      20696E74 
+ 477      00
+ 478              	.LASF18:
+ 479 0036 73756E52 		.ascii	"sunRight\000"
+ 479      69676874 
+ 479      00
+ 480              	.LASF24:
+ 481 003f 73756E44 		.ascii	"sunDown_Read\000"
+ 481      6F776E5F 
+ 481      52656164 
+ 481      00
+ 482              	.LASF1:
+ 483 004c 756E7369 		.ascii	"unsigned char\000"
+ 483      676E6564 
+ 483      20636861 
+ 483      7200
+ 484              	.LASF19:
+ 485 005a 73756E55 		.ascii	"sunUp\000"
+ 485      7000
+ 486              	.LASF25:
+ 487 0060 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 487      43313120 
+ 487      352E342E 
+ 487      31203230 
+ 487      31363036 
+ 488 0093 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 488      20726576 
+ 488      6973696F 
+ 488      6E203233 
+ 488      37373135 
+ 489 00c6 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 489      66756E63 
+ 489      74696F6E 
+ 489      2D736563 
+ 489      74696F6E 
+ 490              	.LASF5:
+ 491 00ee 6C6F6E67 		.ascii	"long unsigned int\000"
+ 491      20756E73 
+ 491      69676E65 
+ 491      6420696E 
+ 491      7400
+ 492              	.LASF7:
+ 493 0100 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 493      206C6F6E 
+ 493      6720756E 
+ 493      7369676E 
+ 493      65642069 
+ 494              	.LASF3:
+ 495 0117 73686F72 		.ascii	"short unsigned int\000"
+ 495      7420756E 
+ 495      7369676E 
+ 495      65642069 
+ 495      6E7400
+ 496              	.LASF23:
+ 497 012a 73756E55 		.ascii	"sunUp_Read\000"
+ 497      705F5265 
+ 497      616400
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 11
+
+
+ 498              	.LASF21:
+ 499 0135 73756E4C 		.ascii	"sunLeft_Read\000"
+ 499      6566745F 
+ 499      52656164 
+ 499      00
+ 500              	.LASF13:
+ 501 0142 63686172 		.ascii	"char\000"
+ 501      00
+ 502              	.LASF4:
+ 503 0147 6C6F6E67 		.ascii	"long int\000"
+ 503      20696E74 
+ 503      00
+ 504              	.LASF17:
+ 505 0150 73756E4C 		.ascii	"sunLeft\000"
+ 505      65667400 
+ 506              	.LASF12:
+ 507 0158 646F7562 		.ascii	"double\000"
+ 507      6C6500
+ 508              	.LASF16:
+ 509 015f 5F426F6F 		.ascii	"_Bool\000"
+ 509      6C00
+ 510              	.LASF26:
+ 511 0165 53656E73 		.ascii	"SensorDriver.c\000"
+ 511      6F724472 
+ 511      69766572 
+ 511      2E6300
+ 512              	.LASF14:
+ 513 0174 73697A65 		.ascii	"sizetype\000"
+ 513      74797065 
+ 513      00
+ 514              	.LASF20:
+ 515 017d 73756E44 		.ascii	"sunDown\000"
+ 515      6F776E00 
+ 516              	.LASF0:
+ 517 0185 7369676E 		.ascii	"signed char\000"
+ 517      65642063 
+ 517      68617200 
+ 518              	.LASF15:
+ 519 0191 6C6F6E67 		.ascii	"long double\000"
+ 519      20646F75 
+ 519      626C6500 
+ 520              	.LASF9:
+ 521 019d 5F5F696E 		.ascii	"__int32_t\000"
+ 521      7433325F 
+ 521      7400
+ 522              	.LASF11:
+ 523 01a7 666C6F61 		.ascii	"float\000"
+ 523      7400
+ 524              	.LASF2:
+ 525 01ad 73686F72 		.ascii	"short int\000"
+ 525      7420696E 
+ 525      7400
+ 526              	.LASF10:
+ 527 01b7 696E7433 		.ascii	"int32_t\000"
+ 527      325F7400 
+ 528              	.LASF27:
+ 529 01bf 433A5C55 		.ascii	"C:\\Users\\rsaue\\Desktop\\PRJ3\\SensorDriver\\Sens"
+ARM GAS  C:\Users\rsaue\AppData\Local\Temp\ccIn6o99.s 			page 12
+
+
+ 529      73657273 
+ 529      5C727361 
+ 529      75655C44 
+ 529      65736B74 
+ 530 01ec 6F724472 		.ascii	"orDriver.cydsn\000"
+ 530      69766572 
+ 530      2E637964 
+ 530      736E00
+ 531              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
