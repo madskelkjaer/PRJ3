@@ -3,6 +3,7 @@ from flask_cors import CORS
 import spidev
 import time
 import sqlite3
+import smtplib
 
 ### SQLITE ###
 con = sqlite3.connect("database.db")
@@ -18,6 +19,19 @@ except:
     pass
 finally:
     con.close()
+
+def sendEmail(name, email, message):
+    mail = smtplib.SMTP('mail.madse.nu', 465)
+    mail.ehlo()
+    mail.starttls()
+    mail.login('wam@madse.nu', 'wamersejt')
+    header = 'To:' + email + '\n' + 'From:' \
+            + 'wam@madse.nu' + '\n' + 'Subject: Modtaget ny besked fra '+name+' \n'
+    content = header + message
+    mail.sendmail('wam@madse.nu', email, content) # (1) = Sender, (2) = Receiver
+    mail.close
+
+
 
 def insertData(date, azimuth, elevation, batteristatus):
     try:
@@ -107,6 +121,7 @@ def form():
     email = data['email']
     message = data['message']
     print(name, email, message)
+    sendEmail(name, email, message)
     return "Data modtaget"
 
 if __name__ == "__main__":
