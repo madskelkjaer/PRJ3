@@ -3,7 +3,6 @@ import spidev
 import time
 import sqlite3
 
-
 ### SQLITE ###
 con = sqlite3.connect("database.db")
 cur = con.cursor()
@@ -65,6 +64,9 @@ def runner():
         sendSpiData()
         time.sleep(1)
     return "Data runner is running continuously"
+
+def sendMail():
+    
 
 if __name__ == "__main__":
     app.run(threaded=True, port=5000)
