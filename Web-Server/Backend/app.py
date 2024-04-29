@@ -103,10 +103,11 @@ def form():
     # Hent data fra anmodningen
     print("DATA")
     data = request.data
-    name = data['name']
-    email = data['email']
-    message = data['message']
-    print(name, email, message)
+    print(data)
+    # name = data['name']
+    # email = data['email']
+    # message = data['message']
+    # print(name, email, message)
     
 
 if __name__ == "__main__":
