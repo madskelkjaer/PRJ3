@@ -53,6 +53,18 @@ def sendSpiData():
     except Exception as e:
         print("Error in sending data: ", e)
 
+@app.route("/api/getdata/<int:limit>")
+def getdata(limit: int):
+    cur.execute("SELECT * FROM data ORDER BY id DESC LIMIT ?", (limit,))
+    data = cur.fetchall()
+    return data
+
+@app.route("/api/insertdata/<int:azimuth>/<int:elevation>/<float:batteristatus>")
+def insertdata(azimuth: int, elevation: int, batteristatus: float):
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
+    insertData(date, azimuth, elevation, batteristatus)
+    return "Data inserted"
+
 @app.route("/")
 def hello_world():
     to_send.append(0xFF)
