@@ -15,14 +15,22 @@ try:
     con.commit()
 except:
     pass
+finally:
+    con.close()
 
 def insertData(date, azimuth, elevation, batteristatus):
-    cur.execute(
-        "INSERT INTO data(date, azimuth, elevation, batteristatus) VALUES(?, ?, ?, ?)",
-        (date, azimuth, elevation, batteristatus)
-    )
-    con.commit()
-
+    try:
+        con = sqlite3.connect("database.db")
+        cur = con.cursor()
+        cur.execute(
+            "INSERT INTO data(date, azimuth, elevation, batteristatus) VALUES(?, ?, ?, ?)",
+            (date, azimuth, elevation, batteristatus)
+        )
+        con.commit()
+    except Exception as e:
+        print("Error in inserting data: ", e)
+    finally:
+        con.close()
 
 ### SPI DEV ###
 spi = spidev.SpiDev()
