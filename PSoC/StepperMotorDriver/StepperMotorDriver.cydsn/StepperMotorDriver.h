@@ -6,6 +6,7 @@
 */
 
 #include "project.h"
+#include <stdbool.h>
 
 // ISR functions
 CY_ISR_PROTO(UART_HANDLER);
@@ -20,5 +21,11 @@ void azimuthStep(int sequence[4]);
 void moveElevation(int steps);
 int elevation();
 void elevationStep(int sequence[4]);
+
+// function to get limit switches status
+bool limitLeft();
+bool limitRight();
+bool limitUp();
+bool limitDown();
 
 /* [] END OF FILE */

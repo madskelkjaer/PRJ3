@@ -94,9 +94,9 @@ int elevation()
         return 0;
     }
     if (eStep > 0)
-    {   // turning up (positiv steps)
-        if (!Limit_Up_Read())
-        {   // if up limit is reached, don't move
+    {   // turning down (positiv steps)
+        if (!Limit_Down_Read())
+        {   // if down limit is reached, don't move
             eStep = 0;
             return 0;
         }
@@ -107,9 +107,9 @@ int elevation()
     }
     
     else if (eStep < 0)
-    {   // turning down (negativ steps)
-        if (!Limit_Down_Read())
-        {   // if down limit is reached, don't move
+    {   // turning up (negativ steps)
+        if (!Limit_Up_Read())
+        {   // if up limit is reached, don't move
             eStep = 0;
             return 0;
         }
@@ -151,42 +151,38 @@ CY_ISR(MOTOR_STEP)
     }
 }
 
+bool limitLeft(){return !Limit_Left_Read();}
+
+bool limitRight(){return !Limit_Right_Read();}
+
+bool limitUp(){return !Limit_Up_Read();}
+
+bool limitDown(){return !Limit_Down_Read();}
+
 // to be deleted
 CY_ISR(UART_HANDLER)
 {
     uint8_t c = UART_1_GetByte();
     UART_1_PutChar(c);
-    if (c == 'f')
+    if (c == 'j')
     {
-        aStep = aStep - 1;
+        aStep = aStep - 800;
     }
     else if (c == 'h')
     {
-        aStep = aStep + 1;
+        aStep = aStep + 800;
     }
-    else if (c == 'd')
+    else if (c == 'u')
     {
-        aStep = aStep - 80;
-    }
-    else if (c == 'j')
-    {
-        aStep = aStep + 80;
-    }
-    else if (c == 'b')
-    {
-        eStep = eStep - 1;
-    }
-    else if (c == 't')
-    {
-        eStep = eStep + 1;
+        eStep = eStep - 8000;
     }
     else if (c == 'n')
     {
-        eStep = eStep - 80;
+        eStep = eStep + 8000;
     }
-    else if (c == 'y')
+    else if (c == 'a')
     {
-        eStep = eStep + 80;
+        eStep = eStep + 650;
     }
 }
 /* [] END OF FILE */
