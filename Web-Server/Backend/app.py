@@ -58,7 +58,7 @@ spi.mode = 0
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 to_send = []
 
 def sendSpiData():
@@ -77,7 +77,6 @@ def sendSpiData():
         print("Error in sending data: ", e)
 
 @app.route("/api/getdata/<int:limit>")
-@cross_origin()
 def getdata(limit: int):
     return getData(limit)
 
