@@ -98,7 +98,7 @@ def runner():
         time.sleep(1)
     return "Data runner is running continuously"
 
-@app.route("/api/saveform")
+@app.route("/api/saveform", methods=["POST"])
 def form():
     # Hent data fra anmodningen
     print("DATA")
