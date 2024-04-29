@@ -103,12 +103,11 @@ def form():
     # Hent data fra anmodningen
     print("DATA")
     data = request.form
-    print(data)
-    # name = data['name']
-    # email = data['email']
-    # message = data['message']
-    # print(name, email, message)
-    
+    name = data['name']
+    email = data['email']
+    message = data['message']
+    print(name, email, message)
+    return "Data modtaget"
 
 if __name__ == "__main__":
     app.run(threaded=True, port=5000)
