@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 import spidev
 import time
@@ -101,10 +101,12 @@ def runner():
 @app.route("/saveForm")
 def form():
     # Hent data fra anmodningen
+    print("DATA")
     data = request.json
     name = data['name']
     email = data['email']
     message = data['message']
+    print(name, email, message)
     
 
 if __name__ == "__main__":
