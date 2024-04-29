@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import spidev
 import time
 import sqlite3
@@ -79,7 +79,11 @@ def runner():
 
 @app.route("saveForm")
 def form():
-    
+    # Hent data fra anmodningen
+    data = request.json
+    name = data['name']
+    email = data['email']
+    message = data['message']
     
 
 if __name__ == "__main__":
