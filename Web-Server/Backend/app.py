@@ -85,7 +85,7 @@ def runner():
         time.sleep(1)
     return "Data runner is running continuously"
 
-@app.route("saveForm")
+@app.route("/saveForm")
 def form():
     return "Form saved"
     
