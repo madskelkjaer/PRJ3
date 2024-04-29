@@ -102,7 +102,7 @@ def runner():
 def form():
     # Hent data fra anmodningen
     print("DATA")
-    data = request.data
+    data = request.form
     print(data)
     # name = data['name']
     # email = data['email']
