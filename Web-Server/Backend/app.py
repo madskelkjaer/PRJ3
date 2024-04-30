@@ -106,7 +106,7 @@ def sendAndRecieveSpiData():
     print("----")
     print("Sending data: ", data_to_send)
     try:
-        response = spi.xfer([data_to_send], 1000, 0, 16)
+        response = spi.xfer([data_to_send])
         saveData(response[0])
         print("Data sent: ", data_to_send)
         print("Data received: ", response)
