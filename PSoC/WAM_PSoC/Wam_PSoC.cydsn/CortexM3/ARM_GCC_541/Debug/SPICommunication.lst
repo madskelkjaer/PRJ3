@@ -1,0 +1,726 @@
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"SPICommunication.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.SPI_Init,"ax",%progbits
+  20              		.align	2
+  21              		.global	SPI_Init
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	SPI_Init, %function
+  25              	SPI_Init:
+  26              	.LFB63:
+  27              		.file 1 "SPICommunication.c"
+   1:SPICommunication.c **** #include "SPICommunication.h"
+   2:SPICommunication.c **** #include "SPIS_1.h" // Include the SPI Slave component's generated API.
+   3:SPICommunication.c **** 
+   4:SPICommunication.c **** void SPI_Init() {
+  28              		.loc 1 4 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+   5:SPICommunication.c ****     SPIS_1_Start(); // Initialize the SPI Slave component
+  36              		.loc 1 5 0
+  37 0002 FFF7FEFF 		bl	SPIS_1_Start
+  38              	.LVL0:
+  39 0006 08BD     		pop	{r3, pc}
+  40              		.cfi_endproc
+  41              	.LFE63:
+  42              		.size	SPI_Init, .-SPI_Init
+  43              		.section	.text.SPI_SendData,"ax",%progbits
+  44              		.align	2
+  45              		.global	SPI_SendData
+  46              		.thumb
+  47              		.thumb_func
+  48              		.type	SPI_SendData, %function
+  49              	SPI_SendData:
+  50              	.LFB64:
+   6:SPICommunication.c **** }
+   7:SPICommunication.c **** 
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 2
+
+
+   8:SPICommunication.c **** void SPI_SendData(uint8_t* data, uint16_t length) {
+  51              		.loc 1 8 0
+  52              		.cfi_startproc
+  53              		@ args = 0, pretend = 0, frame = 0
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55              	.LVL1:
+  56 0000 38B5     		push	{r3, r4, r5, lr}
+  57              		.cfi_def_cfa_offset 16
+  58              		.cfi_offset 3, -16
+  59              		.cfi_offset 4, -12
+  60              		.cfi_offset 5, -8
+  61              		.cfi_offset 14, -4
+  62 0002 0446     		mov	r4, r0
+  63 0004 0D46     		mov	r5, r1
+  64              	.LVL2:
+  65              	.L4:
+   9:SPICommunication.c ****     // Ensure SPI is ready and then send data
+  10:SPICommunication.c ****     while (SPIS_1_GetTxBufferSize() != 0); // Wait until buffer is not full
+  66              		.loc 1 10 0 discriminator 1
+  67 0006 FFF7FEFF 		bl	SPIS_1_GetTxBufferSize
+  68              	.LVL3:
+  69 000a 0028     		cmp	r0, #0
+  70 000c FBD1     		bne	.L4
+  11:SPICommunication.c ****     SPIS_1_PutArray(data, length); // Send the array of data via SPI
+  71              		.loc 1 11 0
+  72 000e E9B2     		uxtb	r1, r5
+  73 0010 2046     		mov	r0, r4
+  74 0012 FFF7FEFF 		bl	SPIS_1_PutArray
+  75              	.LVL4:
+  76 0016 38BD     		pop	{r3, r4, r5, pc}
+  77              		.cfi_endproc
+  78              	.LFE64:
+  79              		.size	SPI_SendData, .-SPI_SendData
+  80              		.text
+  81              	.Letext0:
+  82              		.file 2 "e:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\mac
+  83              		.file 3 "e:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\sys
+  84              		.file 4 "Generated_Source\\PSoC5/SPIS_1.h"
+  85              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+  86              		.section	.debug_info,"",%progbits
+  87              	.Ldebug_info0:
+  88 0000 77010000 		.4byte	0x177
+  89 0004 0400     		.2byte	0x4
+  90 0006 00000000 		.4byte	.Ldebug_abbrev0
+  91 000a 04       		.byte	0x4
+  92 000b 01       		.uleb128 0x1
+  93 000c 46000000 		.4byte	.LASF25
+  94 0010 0C       		.byte	0xc
+  95 0011 F6010000 		.4byte	.LASF26
+  96 0015 5E010000 		.4byte	.LASF27
+  97 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  98 001d 00000000 		.4byte	0
+  99 0021 00000000 		.4byte	.Ldebug_line0
+ 100 0025 02       		.uleb128 0x2
+ 101 0026 01       		.byte	0x1
+ 102 0027 06       		.byte	0x6
+ 103 0028 31020000 		.4byte	.LASF0
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 3
+
+
+ 104 002c 03       		.uleb128 0x3
+ 105 002d 00000000 		.4byte	.LASF3
+ 106 0031 02       		.byte	0x2
+ 107 0032 1D       		.byte	0x1d
+ 108 0033 37000000 		.4byte	0x37
+ 109 0037 02       		.uleb128 0x2
+ 110 0038 01       		.byte	0x1
+ 111 0039 08       		.byte	0x8
+ 112 003a 38000000 		.4byte	.LASF1
+ 113 003e 02       		.uleb128 0x2
+ 114 003f 02       		.byte	0x2
+ 115 0040 05       		.byte	0x5
+ 116 0041 09020000 		.4byte	.LASF2
+ 117 0045 03       		.uleb128 0x3
+ 118 0046 13010000 		.4byte	.LASF4
+ 119 004a 02       		.byte	0x2
+ 120 004b 2B       		.byte	0x2b
+ 121 004c 50000000 		.4byte	0x50
+ 122 0050 02       		.uleb128 0x2
+ 123 0051 02       		.byte	0x2
+ 124 0052 07       		.byte	0x7
+ 125 0053 E6000000 		.4byte	.LASF5
+ 126 0057 03       		.uleb128 0x3
+ 127 0058 0A000000 		.4byte	.LASF6
+ 128 005c 02       		.byte	0x2
+ 129 005d 3F       		.byte	0x3f
+ 130 005e 62000000 		.4byte	0x62
+ 131 0062 02       		.uleb128 0x2
+ 132 0063 04       		.byte	0x4
+ 133 0064 05       		.byte	0x5
+ 134 0065 1C020000 		.4byte	.LASF7
+ 135 0069 02       		.uleb128 0x2
+ 136 006a 04       		.byte	0x4
+ 137 006b 07       		.byte	0x7
+ 138 006c D4000000 		.4byte	.LASF8
+ 139 0070 02       		.uleb128 0x2
+ 140 0071 08       		.byte	0x8
+ 141 0072 05       		.byte	0x5
+ 142 0073 E3010000 		.4byte	.LASF9
+ 143 0077 02       		.uleb128 0x2
+ 144 0078 08       		.byte	0x8
+ 145 0079 07       		.byte	0x7
+ 146 007a 3F010000 		.4byte	.LASF10
+ 147 007e 04       		.uleb128 0x4
+ 148 007f 04       		.byte	0x4
+ 149 0080 05       		.byte	0x5
+ 150 0081 696E7400 		.ascii	"int\000"
+ 151 0085 02       		.uleb128 0x2
+ 152 0086 04       		.byte	0x4
+ 153 0087 07       		.byte	0x7
+ 154 0088 25010000 		.4byte	.LASF11
+ 155 008c 03       		.uleb128 0x3
+ 156 008d 56010000 		.4byte	.LASF12
+ 157 0091 03       		.byte	0x3
+ 158 0092 18       		.byte	0x18
+ 159 0093 2C000000 		.4byte	0x2c
+ 160 0097 03       		.uleb128 0x3
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 4
+
+
+ 161 0098 13020000 		.4byte	.LASF13
+ 162 009c 03       		.byte	0x3
+ 163 009d 24       		.byte	0x24
+ 164 009e 45000000 		.4byte	0x45
+ 165 00a2 03       		.uleb128 0x3
+ 166 00a3 D2010000 		.4byte	.LASF14
+ 167 00a7 03       		.byte	0x3
+ 168 00a8 2C       		.byte	0x2c
+ 169 00a9 57000000 		.4byte	0x57
+ 170 00ad 02       		.uleb128 0x2
+ 171 00ae 04       		.byte	0x4
+ 172 00af 04       		.byte	0x4
+ 173 00b0 2D000000 		.4byte	.LASF15
+ 174 00b4 02       		.uleb128 0x2
+ 175 00b5 08       		.byte	0x8
+ 176 00b6 04       		.byte	0x4
+ 177 00b7 1E010000 		.4byte	.LASF16
+ 178 00bb 02       		.uleb128 0x2
+ 179 00bc 01       		.byte	0x1
+ 180 00bd 08       		.byte	0x8
+ 181 00be F1010000 		.4byte	.LASF17
+ 182 00c2 02       		.uleb128 0x2
+ 183 00c3 08       		.byte	0x8
+ 184 00c4 04       		.byte	0x4
+ 185 00c5 25020000 		.4byte	.LASF18
+ 186 00c9 02       		.uleb128 0x2
+ 187 00ca 04       		.byte	0x4
+ 188 00cb 07       		.byte	0x7
+ 189 00cc DA010000 		.4byte	.LASF19
+ 190 00d0 05       		.uleb128 0x5
+ 191 00d1 14000000 		.4byte	.LASF28
+ 192 00d5 01       		.byte	0x1
+ 193 00d6 04       		.byte	0x4
+ 194 00d7 00000000 		.4byte	.LFB63
+ 195 00db 08000000 		.4byte	.LFE63-.LFB63
+ 196 00df 01       		.uleb128 0x1
+ 197 00e0 9C       		.byte	0x9c
+ 198 00e1 EF000000 		.4byte	0xef
+ 199 00e5 06       		.uleb128 0x6
+ 200 00e6 06000000 		.4byte	.LVL0
+ 201 00ea 59010000 		.4byte	0x159
+ 202 00ee 00       		.byte	0
+ 203 00ef 07       		.uleb128 0x7
+ 204 00f0 32010000 		.4byte	.LASF29
+ 205 00f4 01       		.byte	0x1
+ 206 00f5 08       		.byte	0x8
+ 207 00f6 00000000 		.4byte	.LFB64
+ 208 00fa 18000000 		.4byte	.LFE64-.LFB64
+ 209 00fe 01       		.uleb128 0x1
+ 210 00ff 9C       		.byte	0x9c
+ 211 0100 42010000 		.4byte	0x142
+ 212 0104 08       		.uleb128 0x8
+ 213 0105 33000000 		.4byte	.LASF20
+ 214 0109 01       		.byte	0x1
+ 215 010a 08       		.byte	0x8
+ 216 010b 42010000 		.4byte	0x142
+ 217 010f 00000000 		.4byte	.LLST0
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 5
+
+
+ 218 0113 08       		.uleb128 0x8
+ 219 0114 3D020000 		.4byte	.LASF21
+ 220 0118 01       		.byte	0x1
+ 221 0119 08       		.byte	0x8
+ 222 011a 97000000 		.4byte	0x97
+ 223 011e 1E000000 		.4byte	.LLST1
+ 224 0122 06       		.uleb128 0x6
+ 225 0123 0A000000 		.4byte	.LVL3
+ 226 0127 64010000 		.4byte	0x164
+ 227 012b 09       		.uleb128 0x9
+ 228 012c 16000000 		.4byte	.LVL4
+ 229 0130 6F010000 		.4byte	0x16f
+ 230 0134 0A       		.uleb128 0xa
+ 231 0135 01       		.uleb128 0x1
+ 232 0136 50       		.byte	0x50
+ 233 0137 02       		.uleb128 0x2
+ 234 0138 74       		.byte	0x74
+ 235 0139 00       		.sleb128 0
+ 236 013a 0A       		.uleb128 0xa
+ 237 013b 01       		.uleb128 0x1
+ 238 013c 51       		.byte	0x51
+ 239 013d 02       		.uleb128 0x2
+ 240 013e 75       		.byte	0x75
+ 241 013f 00       		.sleb128 0
+ 242 0140 00       		.byte	0
+ 243 0141 00       		.byte	0
+ 244 0142 0B       		.uleb128 0xb
+ 245 0143 04       		.byte	0x4
+ 246 0144 8C000000 		.4byte	0x8c
+ 247 0148 0C       		.uleb128 0xc
+ 248 0149 06010000 		.4byte	.LASF30
+ 249 014d 05       		.byte	0x5
+ 250 014e 1207     		.2byte	0x712
+ 251 0150 54010000 		.4byte	0x154
+ 252 0154 0D       		.uleb128 0xd
+ 253 0155 A2000000 		.4byte	0xa2
+ 254 0159 0E       		.uleb128 0xe
+ 255 015a F9000000 		.4byte	.LASF22
+ 256 015e F9000000 		.4byte	.LASF22
+ 257 0162 04       		.byte	0x4
+ 258 0163 46       		.byte	0x46
+ 259 0164 0E       		.uleb128 0xe
+ 260 0165 BB010000 		.4byte	.LASF23
+ 261 0169 BB010000 		.4byte	.LASF23
+ 262 016d 04       		.byte	0x4
+ 263 016e 59       		.byte	0x59
+ 264 016f 0E       		.uleb128 0xe
+ 265 0170 1D000000 		.4byte	.LASF24
+ 266 0174 1D000000 		.4byte	.LASF24
+ 267 0178 04       		.byte	0x4
+ 268 0179 62       		.byte	0x62
+ 269 017a 00       		.byte	0
+ 270              		.section	.debug_abbrev,"",%progbits
+ 271              	.Ldebug_abbrev0:
+ 272 0000 01       		.uleb128 0x1
+ 273 0001 11       		.uleb128 0x11
+ 274 0002 01       		.byte	0x1
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 6
+
+
+ 275 0003 25       		.uleb128 0x25
+ 276 0004 0E       		.uleb128 0xe
+ 277 0005 13       		.uleb128 0x13
+ 278 0006 0B       		.uleb128 0xb
+ 279 0007 03       		.uleb128 0x3
+ 280 0008 0E       		.uleb128 0xe
+ 281 0009 1B       		.uleb128 0x1b
+ 282 000a 0E       		.uleb128 0xe
+ 283 000b 55       		.uleb128 0x55
+ 284 000c 17       		.uleb128 0x17
+ 285 000d 11       		.uleb128 0x11
+ 286 000e 01       		.uleb128 0x1
+ 287 000f 10       		.uleb128 0x10
+ 288 0010 17       		.uleb128 0x17
+ 289 0011 00       		.byte	0
+ 290 0012 00       		.byte	0
+ 291 0013 02       		.uleb128 0x2
+ 292 0014 24       		.uleb128 0x24
+ 293 0015 00       		.byte	0
+ 294 0016 0B       		.uleb128 0xb
+ 295 0017 0B       		.uleb128 0xb
+ 296 0018 3E       		.uleb128 0x3e
+ 297 0019 0B       		.uleb128 0xb
+ 298 001a 03       		.uleb128 0x3
+ 299 001b 0E       		.uleb128 0xe
+ 300 001c 00       		.byte	0
+ 301 001d 00       		.byte	0
+ 302 001e 03       		.uleb128 0x3
+ 303 001f 16       		.uleb128 0x16
+ 304 0020 00       		.byte	0
+ 305 0021 03       		.uleb128 0x3
+ 306 0022 0E       		.uleb128 0xe
+ 307 0023 3A       		.uleb128 0x3a
+ 308 0024 0B       		.uleb128 0xb
+ 309 0025 3B       		.uleb128 0x3b
+ 310 0026 0B       		.uleb128 0xb
+ 311 0027 49       		.uleb128 0x49
+ 312 0028 13       		.uleb128 0x13
+ 313 0029 00       		.byte	0
+ 314 002a 00       		.byte	0
+ 315 002b 04       		.uleb128 0x4
+ 316 002c 24       		.uleb128 0x24
+ 317 002d 00       		.byte	0
+ 318 002e 0B       		.uleb128 0xb
+ 319 002f 0B       		.uleb128 0xb
+ 320 0030 3E       		.uleb128 0x3e
+ 321 0031 0B       		.uleb128 0xb
+ 322 0032 03       		.uleb128 0x3
+ 323 0033 08       		.uleb128 0x8
+ 324 0034 00       		.byte	0
+ 325 0035 00       		.byte	0
+ 326 0036 05       		.uleb128 0x5
+ 327 0037 2E       		.uleb128 0x2e
+ 328 0038 01       		.byte	0x1
+ 329 0039 3F       		.uleb128 0x3f
+ 330 003a 19       		.uleb128 0x19
+ 331 003b 03       		.uleb128 0x3
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 7
+
+
+ 332 003c 0E       		.uleb128 0xe
+ 333 003d 3A       		.uleb128 0x3a
+ 334 003e 0B       		.uleb128 0xb
+ 335 003f 3B       		.uleb128 0x3b
+ 336 0040 0B       		.uleb128 0xb
+ 337 0041 11       		.uleb128 0x11
+ 338 0042 01       		.uleb128 0x1
+ 339 0043 12       		.uleb128 0x12
+ 340 0044 06       		.uleb128 0x6
+ 341 0045 40       		.uleb128 0x40
+ 342 0046 18       		.uleb128 0x18
+ 343 0047 9742     		.uleb128 0x2117
+ 344 0049 19       		.uleb128 0x19
+ 345 004a 01       		.uleb128 0x1
+ 346 004b 13       		.uleb128 0x13
+ 347 004c 00       		.byte	0
+ 348 004d 00       		.byte	0
+ 349 004e 06       		.uleb128 0x6
+ 350 004f 898201   		.uleb128 0x4109
+ 351 0052 00       		.byte	0
+ 352 0053 11       		.uleb128 0x11
+ 353 0054 01       		.uleb128 0x1
+ 354 0055 31       		.uleb128 0x31
+ 355 0056 13       		.uleb128 0x13
+ 356 0057 00       		.byte	0
+ 357 0058 00       		.byte	0
+ 358 0059 07       		.uleb128 0x7
+ 359 005a 2E       		.uleb128 0x2e
+ 360 005b 01       		.byte	0x1
+ 361 005c 3F       		.uleb128 0x3f
+ 362 005d 19       		.uleb128 0x19
+ 363 005e 03       		.uleb128 0x3
+ 364 005f 0E       		.uleb128 0xe
+ 365 0060 3A       		.uleb128 0x3a
+ 366 0061 0B       		.uleb128 0xb
+ 367 0062 3B       		.uleb128 0x3b
+ 368 0063 0B       		.uleb128 0xb
+ 369 0064 27       		.uleb128 0x27
+ 370 0065 19       		.uleb128 0x19
+ 371 0066 11       		.uleb128 0x11
+ 372 0067 01       		.uleb128 0x1
+ 373 0068 12       		.uleb128 0x12
+ 374 0069 06       		.uleb128 0x6
+ 375 006a 40       		.uleb128 0x40
+ 376 006b 18       		.uleb128 0x18
+ 377 006c 9742     		.uleb128 0x2117
+ 378 006e 19       		.uleb128 0x19
+ 379 006f 01       		.uleb128 0x1
+ 380 0070 13       		.uleb128 0x13
+ 381 0071 00       		.byte	0
+ 382 0072 00       		.byte	0
+ 383 0073 08       		.uleb128 0x8
+ 384 0074 05       		.uleb128 0x5
+ 385 0075 00       		.byte	0
+ 386 0076 03       		.uleb128 0x3
+ 387 0077 0E       		.uleb128 0xe
+ 388 0078 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 8
+
+
+ 389 0079 0B       		.uleb128 0xb
+ 390 007a 3B       		.uleb128 0x3b
+ 391 007b 0B       		.uleb128 0xb
+ 392 007c 49       		.uleb128 0x49
+ 393 007d 13       		.uleb128 0x13
+ 394 007e 02       		.uleb128 0x2
+ 395 007f 17       		.uleb128 0x17
+ 396 0080 00       		.byte	0
+ 397 0081 00       		.byte	0
+ 398 0082 09       		.uleb128 0x9
+ 399 0083 898201   		.uleb128 0x4109
+ 400 0086 01       		.byte	0x1
+ 401 0087 11       		.uleb128 0x11
+ 402 0088 01       		.uleb128 0x1
+ 403 0089 31       		.uleb128 0x31
+ 404 008a 13       		.uleb128 0x13
+ 405 008b 00       		.byte	0
+ 406 008c 00       		.byte	0
+ 407 008d 0A       		.uleb128 0xa
+ 408 008e 8A8201   		.uleb128 0x410a
+ 409 0091 00       		.byte	0
+ 410 0092 02       		.uleb128 0x2
+ 411 0093 18       		.uleb128 0x18
+ 412 0094 9142     		.uleb128 0x2111
+ 413 0096 18       		.uleb128 0x18
+ 414 0097 00       		.byte	0
+ 415 0098 00       		.byte	0
+ 416 0099 0B       		.uleb128 0xb
+ 417 009a 0F       		.uleb128 0xf
+ 418 009b 00       		.byte	0
+ 419 009c 0B       		.uleb128 0xb
+ 420 009d 0B       		.uleb128 0xb
+ 421 009e 49       		.uleb128 0x49
+ 422 009f 13       		.uleb128 0x13
+ 423 00a0 00       		.byte	0
+ 424 00a1 00       		.byte	0
+ 425 00a2 0C       		.uleb128 0xc
+ 426 00a3 34       		.uleb128 0x34
+ 427 00a4 00       		.byte	0
+ 428 00a5 03       		.uleb128 0x3
+ 429 00a6 0E       		.uleb128 0xe
+ 430 00a7 3A       		.uleb128 0x3a
+ 431 00a8 0B       		.uleb128 0xb
+ 432 00a9 3B       		.uleb128 0x3b
+ 433 00aa 05       		.uleb128 0x5
+ 434 00ab 49       		.uleb128 0x49
+ 435 00ac 13       		.uleb128 0x13
+ 436 00ad 3F       		.uleb128 0x3f
+ 437 00ae 19       		.uleb128 0x19
+ 438 00af 3C       		.uleb128 0x3c
+ 439 00b0 19       		.uleb128 0x19
+ 440 00b1 00       		.byte	0
+ 441 00b2 00       		.byte	0
+ 442 00b3 0D       		.uleb128 0xd
+ 443 00b4 35       		.uleb128 0x35
+ 444 00b5 00       		.byte	0
+ 445 00b6 49       		.uleb128 0x49
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 9
+
+
+ 446 00b7 13       		.uleb128 0x13
+ 447 00b8 00       		.byte	0
+ 448 00b9 00       		.byte	0
+ 449 00ba 0E       		.uleb128 0xe
+ 450 00bb 2E       		.uleb128 0x2e
+ 451 00bc 00       		.byte	0
+ 452 00bd 3F       		.uleb128 0x3f
+ 453 00be 19       		.uleb128 0x19
+ 454 00bf 3C       		.uleb128 0x3c
+ 455 00c0 19       		.uleb128 0x19
+ 456 00c1 6E       		.uleb128 0x6e
+ 457 00c2 0E       		.uleb128 0xe
+ 458 00c3 03       		.uleb128 0x3
+ 459 00c4 0E       		.uleb128 0xe
+ 460 00c5 3A       		.uleb128 0x3a
+ 461 00c6 0B       		.uleb128 0xb
+ 462 00c7 3B       		.uleb128 0x3b
+ 463 00c8 0B       		.uleb128 0xb
+ 464 00c9 00       		.byte	0
+ 465 00ca 00       		.byte	0
+ 466 00cb 00       		.byte	0
+ 467              		.section	.debug_loc,"",%progbits
+ 468              	.Ldebug_loc0:
+ 469              	.LLST0:
+ 470 0000 00000000 		.4byte	.LVL1
+ 471 0004 06000000 		.4byte	.LVL2
+ 472 0008 0100     		.2byte	0x1
+ 473 000a 50       		.byte	0x50
+ 474 000b 06000000 		.4byte	.LVL2
+ 475 000f 18000000 		.4byte	.LFE64
+ 476 0013 0100     		.2byte	0x1
+ 477 0015 54       		.byte	0x54
+ 478 0016 00000000 		.4byte	0
+ 479 001a 00000000 		.4byte	0
+ 480              	.LLST1:
+ 481 001e 00000000 		.4byte	.LVL1
+ 482 0022 06000000 		.4byte	.LVL2
+ 483 0026 0100     		.2byte	0x1
+ 484 0028 51       		.byte	0x51
+ 485 0029 06000000 		.4byte	.LVL2
+ 486 002d 18000000 		.4byte	.LFE64
+ 487 0031 0400     		.2byte	0x4
+ 488 0033 F3       		.byte	0xf3
+ 489 0034 01       		.uleb128 0x1
+ 490 0035 51       		.byte	0x51
+ 491 0036 9F       		.byte	0x9f
+ 492 0037 00000000 		.4byte	0
+ 493 003b 00000000 		.4byte	0
+ 494              		.section	.debug_aranges,"",%progbits
+ 495 0000 24000000 		.4byte	0x24
+ 496 0004 0200     		.2byte	0x2
+ 497 0006 00000000 		.4byte	.Ldebug_info0
+ 498 000a 04       		.byte	0x4
+ 499 000b 00       		.byte	0
+ 500 000c 0000     		.2byte	0
+ 501 000e 0000     		.2byte	0
+ 502 0010 00000000 		.4byte	.LFB63
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 10
+
+
+ 503 0014 08000000 		.4byte	.LFE63-.LFB63
+ 504 0018 00000000 		.4byte	.LFB64
+ 505 001c 18000000 		.4byte	.LFE64-.LFB64
+ 506 0020 00000000 		.4byte	0
+ 507 0024 00000000 		.4byte	0
+ 508              		.section	.debug_ranges,"",%progbits
+ 509              	.Ldebug_ranges0:
+ 510 0000 00000000 		.4byte	.LFB63
+ 511 0004 08000000 		.4byte	.LFE63
+ 512 0008 00000000 		.4byte	.LFB64
+ 513 000c 18000000 		.4byte	.LFE64
+ 514 0010 00000000 		.4byte	0
+ 515 0014 00000000 		.4byte	0
+ 516              		.section	.debug_line,"",%progbits
+ 517              	.Ldebug_line0:
+ 518 0000 46010000 		.section	.debug_str,"MS",%progbits,1
+ 518      02001F01 
+ 518      00000201 
+ 518      FB0E0D00 
+ 518      01010101 
+ 519              	.LASF3:
+ 520 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 520      6E74385F 
+ 520      7400
+ 521              	.LASF6:
+ 522 000a 5F5F696E 		.ascii	"__int32_t\000"
+ 522      7433325F 
+ 522      7400
+ 523              	.LASF28:
+ 524 0014 5350495F 		.ascii	"SPI_Init\000"
+ 524      496E6974 
+ 524      00
+ 525              	.LASF24:
+ 526 001d 53504953 		.ascii	"SPIS_1_PutArray\000"
+ 526      5F315F50 
+ 526      75744172 
+ 526      72617900 
+ 527              	.LASF15:
+ 528 002d 666C6F61 		.ascii	"float\000"
+ 528      7400
+ 529              	.LASF20:
+ 530 0033 64617461 		.ascii	"data\000"
+ 530      00
+ 531              	.LASF1:
+ 532 0038 756E7369 		.ascii	"unsigned char\000"
+ 532      676E6564 
+ 532      20636861 
+ 532      7200
+ 533              	.LASF25:
+ 534 0046 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 534      43313120 
+ 534      352E342E 
+ 534      31203230 
+ 534      31363036 
+ 535 0079 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 535      20726576 
+ 535      6973696F 
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 11
+
+
+ 535      6E203233 
+ 535      37373135 
+ 536 00ac 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 536      66756E63 
+ 536      74696F6E 
+ 536      2D736563 
+ 536      74696F6E 
+ 537              	.LASF8:
+ 538 00d4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 538      20756E73 
+ 538      69676E65 
+ 538      6420696E 
+ 538      7400
+ 539              	.LASF5:
+ 540 00e6 73686F72 		.ascii	"short unsigned int\000"
+ 540      7420756E 
+ 540      7369676E 
+ 540      65642069 
+ 540      6E7400
+ 541              	.LASF22:
+ 542 00f9 53504953 		.ascii	"SPIS_1_Start\000"
+ 542      5F315F53 
+ 542      74617274 
+ 542      00
+ 543              	.LASF30:
+ 544 0106 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 544      52784275 
+ 544      66666572 
+ 544      00
+ 545              	.LASF4:
+ 546 0113 5F5F7569 		.ascii	"__uint16_t\000"
+ 546      6E743136 
+ 546      5F7400
+ 547              	.LASF16:
+ 548 011e 646F7562 		.ascii	"double\000"
+ 548      6C6500
+ 549              	.LASF11:
+ 550 0125 756E7369 		.ascii	"unsigned int\000"
+ 550      676E6564 
+ 550      20696E74 
+ 550      00
+ 551              	.LASF29:
+ 552 0132 5350495F 		.ascii	"SPI_SendData\000"
+ 552      53656E64 
+ 552      44617461 
+ 552      00
+ 553              	.LASF10:
+ 554 013f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 554      206C6F6E 
+ 554      6720756E 
+ 554      7369676E 
+ 554      65642069 
+ 555              	.LASF12:
+ 556 0156 75696E74 		.ascii	"uint8_t\000"
+ 556      385F7400 
+ 557              	.LASF27:
+ 558 015e 433A5C55 		.ascii	"C:\\Users\\perhi\\OneDrive - Aarhus universitet\\Do"
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 12
+
+
+ 558      73657273 
+ 558      5C706572 
+ 558      68695C4F 
+ 558      6E654472 
+ 559 018d 6B756D65 		.ascii	"kumenter\\PSoC Creator\\WAM_PSoC\\Wam_PSoC.cydsn\000"
+ 559      6E746572 
+ 559      5C50536F 
+ 559      43204372 
+ 559      6561746F 
+ 560              	.LASF23:
+ 561 01bb 53504953 		.ascii	"SPIS_1_GetTxBufferSize\000"
+ 561      5F315F47 
+ 561      65745478 
+ 561      42756666 
+ 561      65725369 
+ 562              	.LASF14:
+ 563 01d2 696E7433 		.ascii	"int32_t\000"
+ 563      325F7400 
+ 564              	.LASF19:
+ 565 01da 73697A65 		.ascii	"sizetype\000"
+ 565      74797065 
+ 565      00
+ 566              	.LASF9:
+ 567 01e3 6C6F6E67 		.ascii	"long long int\000"
+ 567      206C6F6E 
+ 567      6720696E 
+ 567      7400
+ 568              	.LASF17:
+ 569 01f1 63686172 		.ascii	"char\000"
+ 569      00
+ 570              	.LASF26:
+ 571 01f6 53504943 		.ascii	"SPICommunication.c\000"
+ 571      6F6D6D75 
+ 571      6E696361 
+ 571      74696F6E 
+ 571      2E6300
+ 572              	.LASF2:
+ 573 0209 73686F72 		.ascii	"short int\000"
+ 573      7420696E 
+ 573      7400
+ 574              	.LASF13:
+ 575 0213 75696E74 		.ascii	"uint16_t\000"
+ 575      31365F74 
+ 575      00
+ 576              	.LASF7:
+ 577 021c 6C6F6E67 		.ascii	"long int\000"
+ 577      20696E74 
+ 577      00
+ 578              	.LASF18:
+ 579 0225 6C6F6E67 		.ascii	"long double\000"
+ 579      20646F75 
+ 579      626C6500 
+ 580              	.LASF0:
+ 581 0231 7369676E 		.ascii	"signed char\000"
+ 581      65642063 
+ 581      68617200 
+ 582              	.LASF21:
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccL29vME.s 			page 13
+
+
+ 583 023d 6C656E67 		.ascii	"length\000"
+ 583      746800
+ 584              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
