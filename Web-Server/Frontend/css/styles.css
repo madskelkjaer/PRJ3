@@ -31,7 +31,8 @@ button {
 	font-size: 35px;
 	text-align: center;
 	padding: 10px 10px;
-	margin: 10px 10px; /*plads mellem knapper*/
+	margin: 10px 10px;
+	/*plads mellem knapper*/
 	text-decoration: none;
 	background-color: #b6d5d8;
 	transition: background-color 0.3s ease;
@@ -44,13 +45,23 @@ button {
 }
 
 .topnav.night-mode a {
-	background-color: #32465a; /*mørkere baggrund til night mode*/
-	color: white; /*hvid tekst i night mode*/
+	background-color: #32465a;
+	/*mørkere baggrund til night mode*/
+	color: white;
+	/*hvid tekst i night mode*/
 }
 
 .topnav a:hover {
-	background-color: #097885; /*mørkere baggrund ved hover*/
-	color: white; /*hvid tekst til hover*/
+	background-color: #097885;
+	/*mørkere baggrund ved hover*/
+	color: white;
+	/*hvid tekst til hover*/
+}
+
+.topnav a.active {
+	background-color: #32465a;
+	/* En anden farve for aktive links */
+	color: white;
 }
 
 /* random sol */
