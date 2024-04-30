@@ -11,7 +11,7 @@ cur = con.cursor()
 
 try:
     cur.execute(
-        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus REAL)"
+        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus REAL, sun_up INTEGER, sun_down INTEGER, sun_left INTEGER, sun_right INTEGER)"
         )
 
     con.commit()
@@ -33,12 +33,12 @@ def sendEmail(name, email, message):
 
 
 
-def insertData(date, azimuth, elevation, batteristatus):
+def insertData(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right):
     try:
         con = sqlite3.connect("database.db")
         cur = con.cursor()
         cur.execute(
-            "INSERT INTO data(date, azimuth, elevation, batteristatus) VALUES(?, ?, ?, ?)",
+            "INSERT INTO data(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
             (date, azimuth, elevation, batteristatus)
         )
         con.commit()
@@ -75,7 +75,32 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 to_send = []
 
-def sendSpiData():
+recieved_data: int = []
+
+def saveData(data):
+    recieved_data.append(data)
+
+    if (len(recieved_data) != 15):
+        return
+    
+    if (recieved_data[0] != 0xFF and recieved_data[14] != 0xFF):
+        return
+    
+    print("Data saved: ", recieved_data)
+    AZIMUTH = recieved_data[1]
+    ELEVATION = recieved_data[3]
+    BATTERY = recieved_data[5]
+    SUN_LEFT = recieved_data[7]
+    SUN_RIGHT = recieved_data[9]
+    SUN_UP = recieved_data[11]
+    SUN_DOWN = recieved_data[13]
+
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
+    insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)
+    recieved_data.clear()
+
+
+def sendAndRecieveSpiData():
     if not len(to_send) > 0:
          to_send.append(0x00)
          
@@ -94,11 +119,21 @@ def sendSpiData():
 def getdata(limit: int):
     return getData(limit)
 
-@app.route("/api/insertdata/<int:azimuth>/<int:elevation>/<float:batteristatus>")
-def insertdata(azimuth: int, elevation: int, batteristatus: float):
-    date = time.strftime("%Y-%m-%d %H:%M:%S")
-    insertData(date, azimuth, elevation, batteristatus)
-    return "Data inserted"
+@app.route("/api/move/<str:direction>")
+def move(direction: str):
+    match direction:
+        case "left":
+            to_send.append(0x01)
+        case "right":
+            to_send.append(0x02)
+        case "up":
+            to_send.append(0x03)
+        case "down":
+            to_send.append(0x04)
+        case "home":
+            to_send.append(0x05)
+        case _:
+            return
 
 @app.route("/")
 def hello_world():
@@ -108,7 +143,7 @@ def hello_world():
 @app.route("/datarunner")
 def runner():
     while True:
-        sendSpiData()
+        sendAndRecieveSpiData()
         time.sleep(1)
     return "Data runner is running continuously"
 
@@ -126,3 +161,4 @@ def form():
 
 if __name__ == "__main__":
     app.run(threaded=True, port=5000)
+    runner()
