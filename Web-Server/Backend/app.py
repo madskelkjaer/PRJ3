@@ -79,7 +79,7 @@ recieved_data: int = []
 
 def saveData(data):
     recieved_data.append(data)
-
+    print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data))
     if (len(recieved_data) != 15):
         return
     
