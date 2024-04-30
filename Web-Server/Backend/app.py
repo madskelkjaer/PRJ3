@@ -144,7 +144,7 @@ def hello_world():
 def runner():
     while True:
         sendAndRecieveSpiData()
-        time.sleep(1)
+        # time.sleep(1)
     return "Data runner is running continuously"
 
 @app.route("/api/inserttestdata")
