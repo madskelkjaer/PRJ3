@@ -11,7 +11,7 @@ cur = con.cursor()
 
 try:
     cur.execute(
-        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus REAL, sun_up INTEGER, sun_down INTEGER, sun_left INTEGER, sun_right INTEGER)"
+        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus INTEGER, sun_up INTEGER, sun_down INTEGER, sun_left INTEGER, sun_right INTEGER)"
         )
 
     con.commit()
@@ -107,9 +107,9 @@ def sendAndRecieveSpiData():
     print("Sending data: ", data_to_send)
     try:
         response = spi.xfer([data_to_send])
-        saveData(response[0])
         print("Data sent: ", data_to_send)
         print("Data received: ", response)
+        saveData(response[0])
         print("----")
     except Exception as e:
         print("Error in sending data: ", e)
