@@ -78,8 +78,12 @@ to_send = []
 recieved_data: int = []
 
 def saveData(data):
+    if data == 0x0:
+        return
+
     recieved_data.append(data)
     print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data))
+    
     if (len(recieved_data) < 15):
         return
     
