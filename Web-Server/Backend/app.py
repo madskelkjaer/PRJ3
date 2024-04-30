@@ -119,7 +119,7 @@ def sendAndRecieveSpiData():
 def getdata(limit: int):
     return getData(limit)
 
-@app.route("/api/move/<str:direction>")
+@app.route("/api/move/<string:direction>")
 def move(direction: str):
     if direction == "left":
         to_send.append(0x01)
