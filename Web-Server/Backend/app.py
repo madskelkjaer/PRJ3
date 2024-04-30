@@ -78,9 +78,12 @@ to_send = []
 recieved_data: int = []
 
 
-
+first = True
 
 def saveData(data):
+    if first:
+        first = False
+
     recieved_data.append(data)
     print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data))
 
