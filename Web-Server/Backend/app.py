@@ -83,11 +83,11 @@ def saveData(data):
 
     recieved_data.append(data)
     print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data))
-    
+
     if (len(recieved_data) < 15):
         return
     
-    if (recieved_data[0] != 0x0a and recieved_data[14] != 0x0a):
+    if (recieved_data[0] != 0x0A and recieved_data[14] != 0x0A):
         return
     
     print("Data saved: ", recieved_data)
