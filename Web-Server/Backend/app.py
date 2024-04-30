@@ -68,7 +68,6 @@ spi.open(bus, device)
 
 spi.max_speed_hz = 1000
 spi.mode = 0
-spi.bits_per_word = 16
 
 
 
@@ -107,7 +106,7 @@ def sendAndRecieveSpiData():
     print("----")
     print("Sending data: ", data_to_send)
     try:
-        response = spi.xfer([data_to_send])
+        response = spi.xfer([data_to_send], 1000, 0, 16)
         saveData(response[0])
         print("Data sent: ", data_to_send)
         print("Data received: ", response)
