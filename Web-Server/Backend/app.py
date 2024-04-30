@@ -150,8 +150,11 @@ def runner():
 def inserttestdata():
     date = time.strftime("%Y-%m-%d %H:%M:%S")
     insertData(date, 240, 69, 100.0, 1, 0, 1, 0)
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
     insertData(date, 69, 100, 98.0, 0, 1, 1, 0)
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
     insertData(date, 64, 432, 95.0, 1, 1, 0, 0)
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
     return "Data inserted"
 
 @app.route("/api/saveform", methods=["POST"])
