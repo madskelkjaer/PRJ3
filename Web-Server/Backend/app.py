@@ -100,8 +100,8 @@ def saveData(data):
 
 def sendAndRecieveSpiData():
     if not len(to_send) > 0:
-         to_send.append(0x00)
-         
+        to_send.append(0x00)
+
     data_to_send = to_send.pop(0)
     print("----")
     print("Sending data: ", data_to_send)
@@ -144,7 +144,7 @@ def hello_world():
 def runner():
     while True:
         sendAndRecieveSpiData()
-        # time.sleep(1)
+        time.sleep(1)
     return "Data runner is running continuously"
 
 @app.route("/api/inserttestdata")
