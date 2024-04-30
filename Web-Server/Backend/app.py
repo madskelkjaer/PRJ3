@@ -77,27 +77,24 @@ to_send = []
 
 recieved_data: int = []
 
-def saveData(data):
-    if data == 0x0:
-        return
 
+
+
+def saveData(data):
     recieved_data.append(data)
     print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data))
 
-    if (len(recieved_data) < 15):
-        return
-    
-    if (recieved_data[0] != 0x0A and recieved_data[14] != 0x0A):
+    if (len(recieved_data) < 7):
         return
     
     print("Data saved: ", recieved_data)
     AZIMUTH = recieved_data[1]
-    ELEVATION = recieved_data[3]
-    BATTERY = recieved_data[5]
-    SUN_LEFT = recieved_data[7]
-    SUN_RIGHT = recieved_data[9]
-    SUN_UP = recieved_data[11]
-    SUN_DOWN = recieved_data[13]
+    ELEVATION = recieved_data[2]
+    BATTERY = recieved_data[3]
+    SUN_LEFT = recieved_data[4]
+    SUN_RIGHT = recieved_data[5]
+    SUN_UP = recieved_data[6]
+    SUN_DOWN = recieved_data[7]
 
     date = time.strftime("%Y-%m-%d %H:%M:%S")
     insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)
