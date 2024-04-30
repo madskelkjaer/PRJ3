@@ -132,6 +132,8 @@ def move(direction: str):
         to_send.append(0x05)
     else:
         return "Invalid direction"
+    
+    return "Moving " + direction
 
 @app.route("/")
 def hello_world():
