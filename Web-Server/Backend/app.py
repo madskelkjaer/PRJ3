@@ -80,10 +80,10 @@ recieved_data: int = []
 def saveData(data):
     recieved_data.append(data)
     print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data))
-    if (len(recieved_data) != 15):
+    if (len(recieved_data) < 15):
         return
     
-    if (recieved_data[0] != 0xFF and recieved_data[14] != 0xFF):
+    if (recieved_data[0] != 0x0a and recieved_data[14] != 0x0a):
         return
     
     print("Data saved: ", recieved_data)
@@ -137,7 +137,7 @@ def move(direction: str):
 
 @app.route("/")
 def hello_world():
-    to_send.append(0xFF)
+    to_send.append(0x00)
     return "<p>hejsa</p>"
 
 @app.route("/datarunner")
