@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" href="/images/favicon.png" />
-		<link rel="stylesheet" href="/css/styles.css" />
-		<link rel="stylesheet" href="/css/data.css" />
-		<link rel="stylesheet" href="/css/tilbageKnap.css" />
-		<title>Data Page</title>
-	</head>
 
-	<body>
-		<div class="header-container">
-			<h1 style="text-align: center; font-size: 200%">
-				<a href="index.html" style="text-decoration: none; color: inherit"
-					>PRJ3 - WAM</a
-				>
-			</h1>
-			<a href="index.html" class="custom-button">
-				<div class="arrow"></div>
-			</a>
-		</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/data.css" />
+	<link rel="stylesheet" href="/css/tilbageKnap.css" />
+	<title>Data Page</title>
+</head>
 
-		<h1>Velkommen til datasiden!</h1>
-		<p>
-			Nedenfor vises en tabel med de seneste 10 datalinjer fra solcellesystemet.
-			Azimuth beskriver, hvor langt til højre eller venstre solcellen peger.
-			Elevation beskriver, hvor langt solcellen peger op eller ned.
-			Batteristatus beskriver, hvor meget batteriet er opladt i procent.
-		</p>
-		<!-- Empty table body with an ID -->
-		<table class="data-table">
-			<thead>
-				<tr>
-					<th>Dato og tid</th>
-					<th>Azimuth</th>
-					<th>Elevation</th>
-					<th>Batteristatus</th>
-				</tr>
-			</thead>
-			<tbody id="data-table-body">
-				<!-- Table rows will be generated dynamically here -->
-			</tbody>
-		</table>
-		<script src="/js/nyData.js"></script>
-	</body>
+<body>
+	<div class="header-container">
+		<h1 style="text-align: center; font-size: 200%">
+			<a href="index.html" style="text-decoration: none; color: inherit">PRJ3 - WAM</a>
+		</h1>
+		<a href="index.html" class="custom-button">
+			<div class="arrow"></div>
+		</a>
+	</div>
+
+	<h1>Velkommen til datasiden!</h1>
+	<p>
+		Nedenfor vises en tabel med de seneste 10 datalinjer fra solcellesystemet.
+		Azimuth beskriver, hvor langt til højre eller venstre solcellen peger.
+		Elevation beskriver, hvor langt solcellen peger op eller ned.
+		Batteristatus beskriver, hvor meget batteriet er opladt i procent.
+	</p>
+	<!-- Empty table body with an ID -->
+	<table class="data-table">
+		<thead>
+			<tr>
+				<th>Dato og tid</th>
+				<th>Azimuth</th>
+				<th>Elevation</th>
+				<th>Batteristatus</th>
+			</tr>
+		</thead>
+		<tbody id="data-table-body">
+			<!-- Table rows will be generated dynamically here -->
+		</tbody>
+	</table>
+	<script src="/js/nyData.js"></script>
+</body>
+
 </html>
