@@ -121,19 +121,18 @@ def getdata(limit: int):
 
 @app.route("/api/move/<str:direction>")
 def move(direction: str):
-    match direction:
-        case "left":
-            to_send.append(0x01)
-        case "right":
-            to_send.append(0x02)
-        case "up":
-            to_send.append(0x03)
-        case "down":
-            to_send.append(0x04)
-        case "home":
-            to_send.append(0x05)
-        case _:
-            return
+    if direction == "left":
+        to_send.append(0x01)
+    elif direction == "right":
+        to_send.append(0x02)
+    elif direction == "up":
+        to_send.append(0x03)
+    elif direction == "down":
+        to_send.append(0x04)
+    elif direction == "home":
+        to_send.append(0x05)
+    else:
+        return "Invalid direction"
 
 @app.route("/")
 def hello_world():
