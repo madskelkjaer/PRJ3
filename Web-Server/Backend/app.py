@@ -147,6 +147,14 @@ def runner():
         time.sleep(1)
     return "Data runner is running continuously"
 
+@app.route("/api/inserttestdata")
+def inserttestdata():
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
+    insertData(date, 240, 69, 100.0, 1, 0, 1, 0)
+    insertData(date, 69, 100, 98.0, 0, 1, 1, 0)
+    insertData(date, 64, 432, 95.0, 1, 1, 0, 0)
+    return "Data inserted"
+
 @app.route("/api/saveform", methods=["POST"])
 def form():
     # Hent data fra anmodningen
@@ -161,4 +169,3 @@ def form():
 
 if __name__ == "__main__":
     app.run(threaded=True, port=5000)
-    runner()
