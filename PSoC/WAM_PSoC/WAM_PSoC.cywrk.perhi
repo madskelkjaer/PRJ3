@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WAM_PSoC\Wam_PSoC\Header Files\StepperMotorDriver.h">
+<ExpandedNodeIds>
+<v>WAM_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC\TopDesign</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Pins</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Analog</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Clocks</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Interrupts</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\DMA</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\System</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Directives</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Flash Security</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\EEPROM</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\cyapicallbacks.h</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\SensorDriver.h</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\SPI.h</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\StepperMotorDriver.h</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\SunTracker.h</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\main.c</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\SensorDriver.c</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\SPI.c</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\StepperMotorDriver.c</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\SunTracker.c</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>WAM_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC\TopDesign</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Pins</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Analog</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Clocks</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Interrupts</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\DMA</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\System</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Directives</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Flash Security</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\EEPROM</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\cyapicallbacks.h</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\SensorDriver.h</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\SPI.h</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\StepperMotorDriver.h</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\SunTracker.h</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\main.c</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\SensorDriver.c</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\SPI.c</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\StepperMotorDriver.c</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\SunTracker.c</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Azimuth_Pin_1</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Azimuth_Pin_2</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Azimuth_Pin_3</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Azimuth_Pin_4</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Clock_1</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\cy_boot</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Elevation_Pin_1</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Elevation_Pin_2</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Elevation_Pin_3</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Elevation_Pin_4</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\isr_motor</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\isr_uart_rx</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Down</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Left</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Right</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Up</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\MISO_1</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\MOSI_1</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>WAM_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC\TopDesign</v>
+<v>WAM_PSoC\Wam_PSoC\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>WAM_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC\TopDesign</v>
+<v>WAM_PSoC\Wam_PSoC\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>WAM_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_2.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_3.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_4.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_2.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_3.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_4.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_motor.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_uart_rx.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Down.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Left.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Right.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Up.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\MISO_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\MOSI_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SCLK_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SensorDriver.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPI.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_BOOT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_INT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_IntClock.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_PM.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\StepperMotorDriver.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunDown.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunLeft.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunRight.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SunTracker.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunUp.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_BOOT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Wam_PSoC.elf</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Wam_PSoC.hex</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Wam_PSoC.map</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.gpdsc</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC.rpt</v>
+<v>WAM_PSoC\Wam_PSoC\Wam_PSoC_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>WAM_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_2.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_3.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_4.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_2.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_3.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_4.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_motor.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_uart_rx.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Down.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Left.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Right.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Up.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\MISO_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\MOSI_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SCLK_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SensorDriver.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPI.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_BOOT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_INT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_IntClock.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_PM.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\StepperMotorDriver.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunDown.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunLeft.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>WAM_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC\PSoC 5LP Architecture TRM</v>
+<v>WAM_PSoC\Wam_PSoC\CY8C58LP Family Datasheet</v>
+<v>WAM_PSoC\Wam_PSoC\System Reference Guides</v>
+<v>WAM_PSoC\Wam_PSoC\System Reference Guides\cy_boot_v6_10</v>
+<v>WAM_PSoC\Wam_PSoC\cy_clock_v2_20.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\cy_isr_v1_70</v>
+<v>WAM_PSoC\Wam_PSoC\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\cy_pins_v2_20</v>
+<v>WAM_PSoC\Wam_PSoC\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\SPI_Slave_v2_70.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\UART_v2_50.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\ZeroTerminal.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>WAM_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC</v>
+<v>WAM_PSoC\Wam_PSoC\PSoC 5LP Architecture TRM</v>
+<v>WAM_PSoC\Wam_PSoC\CY8C58LP Family Datasheet</v>
+<v>WAM_PSoC\Wam_PSoC\System Reference Guides</v>
+<v>WAM_PSoC\Wam_PSoC\System Reference Guides\cy_boot_v6_10</v>
+<v>WAM_PSoC\Wam_PSoC\cy_clock_v2_20.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\cy_isr_v1_70</v>
+<v>WAM_PSoC\Wam_PSoC\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\cy_pins_v2_20</v>
+<v>WAM_PSoC\Wam_PSoC\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\SPI_Slave_v2_70.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\UART_v2_50.pdf</v>
+<v>WAM_PSoC\Wam_PSoC\ZeroTerminal.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Wam_PSoC.cydsn\Wam_PSoC.cydwr" />
+<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.c" />
+<name v=".\Wam_PSoC.cydsn\SensorDriver.h" />
+<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.h" />
+<name v=".\Wam_PSoC.cydsn\main.c" />
+<name v=".\Wam_PSoC.cydsn\SensorDriver.c" />
+<name v=".\Wam_PSoC.cydsn\SPI.h" />
+<name v=".\Wam_PSoC.cydsn\SPI.c" />
+<name v=".\Wam_PSoC.cydsn\SunTracker.h" />
+<name v=".\Wam_PSoC.cydsn\SunTracker.c" />
+<name v=".\Wam_PSoC.cydsn\cyapicallbacks.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="569, 1551" SelectedTabbedMdiWindow="8e26b1d7-08f1-4a59-8b9d-961facee7a69"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c5a72657-9cd1-48a4-b60e-845c41bfec09" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" Guid="b161908c-91c7-4964-9fc9-8dc107e3ed50" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\Wam_PSoC.cydwr" Guid="51c35816-e93d-4ee9-85cb-695843cd113b" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.c" Guid="9ad41da8-1c01-49fc-a0d0-b12a02336e70" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.h" Guid="4bff2b75-c736-4935-8904-441265cafe59" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.h" Guid="5dd8b50c-a346-4d0c-904c-f0ef05bffb88" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\main.c" Guid="8e26b1d7-08f1-4a59-8b9d-961facee7a69" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.c" Guid="89e802bb-d7d7-42d4-8dee-d0da895cf103" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SPI.h" Guid="40ec9db8-0868-4628-901f-a1ee3da601a8" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SPI.c" Guid="4f0d87a9-d5fb-45d8-ae62-5ca82b2e22d3" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.h" Guid="42c0fedd-8462-48d3-a35e-6d76ac704ce3" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.c" Guid="1ac7b923-7677-4722-bfca-c463390d1c98" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\cyapicallbacks.h" Guid="d6e97bd3-647a-4442-b462-edf312155119" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

@@ -11,7 +11,7 @@ cur = con.cursor()
 
 try:
     cur.execute(
-        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus REAL)"
+        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus INTEGER, sun_up INTEGER, sun_down INTEGER, sun_left INTEGER, sun_right INTEGER)"
         )
 
     con.commit()
@@ -33,13 +33,13 @@ def sendEmail(name, email, message):
 
 
 
-def insertData(date, azimuth, elevation, batteristatus):
+def insertData(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right):
     try:
         con = sqlite3.connect("database.db")
         cur = con.cursor()
         cur.execute(
-            "INSERT INTO data(date, azimuth, elevation, batteristatus) VALUES(?, ?, ?, ?)",
-            (date, azimuth, elevation, batteristatus)
+            "INSERT INTO data(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
+            (date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right)
         )
         con.commit()
     except Exception as e:
@@ -75,10 +75,33 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 to_send = []
 
-def sendSpiData():
+recieved_data: int = []
+
+def saveData(data):
+    recieved_data.append(data)
+    print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data))
+
+    if (len(recieved_data) < 7):
+        return
+    
+    print("Data saved: ", recieved_data)
+    AZIMUTH = recieved_data[1]
+    ELEVATION = recieved_data[2]
+    BATTERY = recieved_data[3]
+    SUN_LEFT = recieved_data[4]
+    SUN_RIGHT = recieved_data[5]
+    SUN_UP = recieved_data[6]
+    SUN_DOWN = recieved_data[7]
+
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
+    insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)
+    recieved_data.clear()
+
+
+def sendAndRecieveSpiData():
     if not len(to_send) > 0:
-         to_send.append(0x00)
-         
+        to_send.append(0x00)
+
     data_to_send = to_send.pop(0)
     print("----")
     print("Sending data: ", data_to_send)
@@ -86,6 +109,7 @@ def sendSpiData():
         response = spi.xfer([data_to_send])
         print("Data sent: ", data_to_send)
         print("Data received: ", response)
+        saveData(response[0])
         print("----")
     except Exception as e:
         print("Error in sending data: ", e)
@@ -94,23 +118,45 @@ def sendSpiData():
 def getdata(limit: int):
     return getData(limit)
 
-@app.route("/api/insertdata/<int:azimuth>/<int:elevation>/<float:batteristatus>")
-def insertdata(azimuth: int, elevation: int, batteristatus: float):
-    date = time.strftime("%Y-%m-%d %H:%M:%S")
-    insertData(date, azimuth, elevation, batteristatus)
-    return "Data inserted"
+@app.route("/api/move/<string:direction>")
+def move(direction: str):
+    if direction == "left":
+        to_send.append(0x01)
+    elif direction == "right":
+        to_send.append(0x02)
+    elif direction == "up":
+        to_send.append(0x03)
+    elif direction == "down":
+        to_send.append(0x04)
+    elif direction == "home":
+        to_send.append(0x05)
+    else:
+        return "Invalid direction"
+    
+    return "Moving " + direction
 
 @app.route("/")
 def hello_world():
-    to_send.append(0xFF)
+    to_send.append(0x00)
     return "<p>hejsa</p>"
 
 @app.route("/datarunner")
 def runner():
     while True:
-        sendSpiData()
+        sendAndRecieveSpiData()
         time.sleep(1)
     return "Data runner is running continuously"
+
+@app.route("/api/inserttestdata")
+def inserttestdata():
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
+    insertData(date, 240, 69, 100.0, 1, 0, 1, 0)
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
+    insertData(date, 69, 100, 98.0, 0, 1, 1, 0)
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
+    insertData(date, 64, 432, 95.0, 1, 1, 0, 0)
+    date = time.strftime("%Y-%m-%d %H:%M:%S")
+    return "Data inserted"
 
 @app.route("/api/saveform", methods=["POST"])
 def form():
