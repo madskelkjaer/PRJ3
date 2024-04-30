@@ -39,7 +39,7 @@ def insertData(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_le
         cur = con.cursor()
         cur.execute(
             "INSERT INTO data(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
-            (date, azimuth, elevation, batteristatus)
+            (date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right)
         )
         con.commit()
     except Exception as e:
