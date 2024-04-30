@@ -15,7 +15,7 @@ function drawChart() {
 			console.log("Data from API:", data); // vil godt se data
 
 			//konverterer data til Google Charts format
-			const chartData = [["Time", "Battery Status"]];
+			const chartData = [["Tid", "Batteristatus"]];
 			data.forEach((item) => {
 				const time = new Date(item[1]).toLocaleTimeString([], {
 					hour: "2-digit",
@@ -31,17 +31,19 @@ function drawChart() {
 				//laver chart wuhu
 				const dataTable = google.visualization.arrayToDataTable(chartData);
 				const options = {
-					title: "Battery Status",
+					title: "Batteristatus",
 					curveType: "function",
-					legend: { position: "bottom" },
+					legend: { position: "right" },
 					hAxis: {
 						title: "Time",
 					},
 					vAxis: {
-						title: "Battery Status (%)",
+						title: "Batteristatus (%)",
 						minValue: 0,
 						maxValue: 100,
 					},
+					width: 850,
+					height: 700,
 				};
 				const chart = new google.visualization.LineChart(
 					document.getElementById("batteryChart")

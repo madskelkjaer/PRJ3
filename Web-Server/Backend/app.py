@@ -11,7 +11,7 @@ cur = con.cursor()
 
 try:
     cur.execute(
-        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus REAL, sun_up INTEGER, sun_down INTEGER, sun_left INTEGER, sun_right INTEGER)"
+        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus INTEGER, sun_up INTEGER, sun_down INTEGER, sun_left INTEGER, sun_right INTEGER)"
         )
 
     con.commit()
@@ -77,13 +77,7 @@ to_send = []
 
 recieved_data: int = []
 
-
-first = True
-
 def saveData(data):
-    if first:
-        first = False
-
     recieved_data.append(data)
     print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data))
 
@@ -106,16 +100,16 @@ def saveData(data):
 
 def sendAndRecieveSpiData():
     if not len(to_send) > 0:
-         to_send.append(0x00)
-         
+        to_send.append(0x00)
+
     data_to_send = to_send.pop(0)
     print("----")
     print("Sending data: ", data_to_send)
     try:
         response = spi.xfer([data_to_send])
-        saveData(response[0])
         print("Data sent: ", data_to_send)
         print("Data received: ", response)
+        saveData(response[0])
         print("----")
     except Exception as e:
         print("Error in sending data: ", e)
@@ -138,6 +132,8 @@ def move(direction: str):
         to_send.append(0x05)
     else:
         return "Invalid direction"
+    
+    return "Moving " + direction
 
 @app.route("/")
 def hello_world():
