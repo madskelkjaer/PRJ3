@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="/css/styles.css" />
 	<link rel="stylesheet" href="/css/solcelleStyles.css" />
 	<link rel="stylesheet" href="/css/tilbageKnap.css" />
+	<link rel="stylesheet" href="/css/solcelleData.css" />
+	<link rel="stylesheet" href="/css/infoboks.css" />
 	<title>Styring Page</title>
 </head>
 
@@ -29,32 +31,21 @@
 	</div>
 
 	<h1>Manuel styring af solcellen</h1>
-	<p>
-		Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
+	<div class="infoboks">
+		<h2>INFORMATION</h2>
+		<p>
+			Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
 		piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
-	</p>
-	<p>Man kan maksimalt dreje solcellen <span id="maxUp"></span> grader op</p>
-	<p>
-		Man kan maksimalt dreje solcellen (<span id="maxDown"></span>) grader ned
-	</p>
-	<p>
-		Man kan maksimalt dreje solcellen <span id="maxRight"></span> grader til
-		højre
-	</p>
-	<p>
-		Man kan maksimalt dreje solcellen (<span id="maxLeft"></span>) grader til
-		venstre
-	</p>
-	<p> Nedenfor kan du manuelt sætte return position/home position??</p>
-	<div class="input-home" style="margin-bottom: 150px">
-		<label for="homeXInput">Azimuth:</label>
-		<input type="number" id="homeXInput" value="0">
-		<label for="homeYInput">Elevation:</label>
-		<input type="number" id="homeYInput" value="0">
-		<button id="updateButton">Opdater</button>
+		</p>
+		<p>Man kan maksimalt dreje solcellen:</p>
+		<p><span id="maxUp"></span> grader op</p>
+		<p>(<span id="maxDown"></span>) grader ned</p>
+		<p> <span id="maxRight"></span> grader til
+			højre</p>
+			<p>(<span id="maxLeft"></span>) grader til
+			venstre</p>
 	</div>
-
-	<header style="margin-bottom: 150px">
+	<header style="margin-bottom: 150px;margin-top: 150px;">
 		<div class="container">
 			<div class="solarcell-container">
 				<div class="solarcell">
@@ -78,8 +69,31 @@
 				</div>
 			</div>
 		</div>
+		<table class="data-table">
+			<thead>
+				<tr>
+					<th>Sol venstre</th>
+					<th>Sol højre</th>
+					<th>Sol op</th>
+					<th>Sol ned</th>
+				</tr>
+			</thead>
+			<tbody id="data-table-body">
+				<!-- Table rows will be generated dynamically here -->
+			</tbody>
+		</table>
 	</header>
+	<p> Nedenfor kan du manuelt sætte return position/home position??</p>
+	<div class="input-home" style="margin-bottom: 150px">
+		<label for="homeXInput">Azimuth:</label>
+		<input type="number" id="homeXInput" value="0">
+		<label for="homeYInput">Elevation:</label>
+		<input type="number" id="homeYInput" value="0">
+		<button id="updateButton">Opdater</button>
+	</div>
+	<script src="/js/solcelleData.js"></script>
 	<script src="/js/solcelle.js"></script>
+	<script src="/js/infoboks.js"></script>
 	</script>
 </body>
 

@@ -22,6 +22,13 @@
 			</a>
 		</div>
 
+		<div class="topnav">
+			<a href="styring.html">STYRING</a>
+			<a href="batteri.html">BATTERI</a>
+			<a href="data.html">DATA</a>
+			<a href="om.html">OM</a>
+		</div>
+
 		<h1>Velkommen til datasiden!</h1>
 		<p>
 			Nedenfor vises en tabel med de seneste 10 datalinjer fra solcellesystemet.
@@ -29,7 +36,7 @@
 			Elevation beskriver, hvor langt solcellen peger op eller ned.
 			Batteristatus beskriver, hvor meget batteriet er opladt i procent.
 		</p>
-		<!-- Empty table body with an ID -->
+		<!-- Tom tabel med ID -->
 		<table class="data-table">
 			<thead>
 				<tr>
@@ -37,10 +44,14 @@
 					<th>Azimuth</th>
 					<th>Elevation</th>
 					<th>Batteristatus</th>
+					<th>Sol venstre</th>
+					<th>Sol højre</th>
+					<th>Sol op</th>
+					<th>Sol ned</th>
 				</tr>
 			</thead>
 			<tbody id="data-table-body">
-				<!-- Table rows will be generated dynamically here -->
+				<!-- Raekker genereres dynamisk vha javascript funktion -->
 			</tbody>
 		</table>
 		<script src="/js/nyData.js"></script>

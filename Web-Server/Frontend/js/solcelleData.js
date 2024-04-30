@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function getData() {
 	// faar data fra server vha API kald
-	return fetch("http://192.168.1.250:5000/api/getdata/10")
+	return fetch("http://192.168.1.250:5000/api/getdata/5")
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error("Network response was not ok");
@@ -64,12 +64,6 @@ function updateData() {
 				// haandterer udefinerede vaerdier m default eller empty string
 				const row = [
 					(index + 1).toString(),
-					record.date || "", // tom string hvis undefined
-					record.azimuth !== undefined ? record.azimuth.toString() : "", // konverterer til string hvis undefined
-					record.elevation !== undefined ? record.elevation.toString() : "", // konverterer til string hvis undefined
-					record.batteristatus !== undefined
-						? record.batteristatus.toString()
-						: "", // konverterer til string hvis undefined
 					record.sunLeft == 1 ? "Ja" : "Nej",
 					record.sunRight == 1 ? "Ja" : "Nej",
 					record.sunUp == 1 ? "Ja" : "Nej",
@@ -82,10 +76,6 @@ function updateData() {
 				generateTableRow(row, tableBody);
 
 				// console af hver data
-				console.log("Dato:", record.date);
-				console.log("Azimuth:", record.azimuth);
-				console.log("Elevation:", record.elevation);
-				console.log("Batteristatus:", record.batteristatus);
 				console.log("sunLeft:", record.sunLeft);
 				console.log("sunRight:", record.sunRight);
 				console.log("sunUp:", record.sunUp);

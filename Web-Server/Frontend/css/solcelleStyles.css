@@ -65,14 +65,14 @@ header {
 
 .solarcell-container .top {
 	height: var(--solarcell-width);
-	background: rgb(125, 162, 192);
+	background-image: url("/images/test_solcelle_top.png");
+	background-size: cover;
 	transform: rotateX(90deg) translateZ(var(--translateZ));
 }
 
 .solarcell-container .bottom {
 	height: var(--solarcell-width);
-	background-image: url("/images/test_solcelle_top.png");
-	background-size: cover;
+	background: rgb(125, 162, 192);
 	transform: rotateX(-90deg) translateZ(-100px);
 }
 
