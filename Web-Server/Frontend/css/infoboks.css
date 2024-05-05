@@ -8,11 +8,11 @@
 	background-color: #f9f9f9;
 	position: absolute;
 	/* Eller 'fixed' hvis det skal være i forhold til viewport */
-	right: 200px;
+	right: 750px;
 	/* Placerer boksen i højre side */
 	margin-right: 10px;
 	/* Juster margin for at skabe plads til højre */
-	top: 250px;
+	top: 600px;
 	/* Juster positionen vertikalt */
 }
 

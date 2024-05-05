@@ -9,22 +9,27 @@
 header {
 	color: white;
 	display: flex;
-	align-items: center;
 }
 
 .container {
-	max-width: 500px;
+	width: 100%;
 	margin: 0 auto;
 	display: flex;
-	align-items: center;
+	margin-left: 30px;
 }
 
 .solarcell-container {
-	perspective: 1000px;
 	margin-right: 100px;
 }
 
-.solarcell-container .solarcell {
+.solarcell-container .solarcell1 {
+	width: var(--solarcell-width);
+	height: var(--solarcell-height);
+	transform-style: preserve-3d;
+	transition: transform 0.2s ease;
+}
+
+.solarcell-container .solarcell2 {
 	width: var(--solarcell-width);
 	height: var(--solarcell-height);
 	transform-style: preserve-3d;
