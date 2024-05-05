@@ -79,7 +79,8 @@ document.addEventListener("keydown", (event) => {
 });
 
 function updateRotation() {
-	solarcell1.style.transform = `rotateX(${rotateElevation}deg)`; //drejer solcellen
+	solarcell1.style.transform = `rotateX(${rotateElevation}deg) rotateY(${rotateAzimuth}deg) rotateZ(0deg)`;
+	// solarcell1.style.transform = `rotateX(${rotateElevation}deg)`; //drejer solcellen
 	solarcell2.style.transform = `rotateY(${rotateAzimuth}deg)`; //drejer solcellen
 
 	//saa current rotation kommer i console
