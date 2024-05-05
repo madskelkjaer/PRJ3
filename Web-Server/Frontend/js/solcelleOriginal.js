@@ -1,8 +1,6 @@
-const solarcell1 = document.querySelector(".solarcell1");
-const solarcell2 = document.querySelector(".solarcell2");
-
-let rotateElevation = 0;
-let rotateAzimuth = 0;
+const solarcell = document.querySelector(".solarcell");
+let rotateX = 0; //Det her er omvendt, idk what to do :((( x er i opad og nedad, y er venstre og hoejre???
+let rotateY = 0;
 const rotationIncrement = 2; //hvor hurtigt skal den dreje????
 const maxUp = 90;
 const maxDown = -30;
@@ -79,8 +77,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 function updateRotation() {
-	solarcell1.style.transform = `rotateX(${rotateElevation}deg)`; //drejer solcellen
-	solarcell2.style.transform = `rotateY(${rotateAzimuth}deg)`; //drejer solcellen
+	solarcell.style.transform = `rotateX(${rotateElevation}deg) rotateY(${rotateAzimuth}deg)`; //drejer solcellen
 
 	//saa current rotation kommer i console
 	console.log(

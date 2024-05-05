@@ -31,6 +31,19 @@
 	</div>
 
 	<h1>Manuel styring af solcellen</h1>
+	<table class="data-table" style = "margin-right: 30px">
+		<thead>
+			<tr>
+				<th>Sol venstre</th>
+				<th>Sol højre</th>
+				<th>Sol op</th>
+				<th>Sol ned</th>
+			</tr>
+		</thead>
+		<tbody id="data-table-body">
+			<!-- Table rows will be generated dynamically here -->
+		</tbody>
+	</table>
 	<div class="infoboks">
 		<h2>INFORMATION</h2>
 		<p>
@@ -48,7 +61,17 @@
 	<header style="margin-bottom: 150px;margin-top: 150px;">
 		<div class="container">
 			<div class="solarcell-container">
-				<div class="solarcell">
+				<div class="solarcell1">
+					<div class="solarcell-face front">Front</div>
+					<div class="solarcell-face back">Back</div>
+					<div class="solarcell-face left">Left</div>
+					<div class="solarcell-face right">Right</div>
+					<div class="solarcell-face top">Top</div>
+					<div class="solarcell-face bottom">Bottom</div>
+				</div>
+			</div>
+			<div class="solarcell-container">
+				<div class="solarcell2">
 					<div class="solarcell-face front">Front</div>
 					<div class="solarcell-face back">Back</div>
 					<div class="solarcell-face left">Left</div>
@@ -69,19 +92,6 @@
 				</div>
 			</div>
 		</div>
-		<table class="data-table">
-			<thead>
-				<tr>
-					<th>Sol venstre</th>
-					<th>Sol højre</th>
-					<th>Sol op</th>
-					<th>Sol ned</th>
-				</tr>
-			</thead>
-			<tbody id="data-table-body">
-				<!-- Table rows will be generated dynamically here -->
-			</tbody>
-		</table>
 	</header>
 	<p> Nedenfor kan du manuelt sætte return position/home position??</p>
 	<div class="input-home" style="margin-bottom: 150px">
