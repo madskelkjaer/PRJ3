@@ -91,6 +91,16 @@ function updateRotation() {
 	console.log(
 		`Azimuth lige nu: ${rotateAzimuth >= 0 ? "+" : ""}${rotateAzimuth} deg`
 	);
+
+	//skal sende rotation til server
+	// wam.katvu.dk/api/getdata/<limit>
+	// wam.katvu.dk/api/move/up
+	// wam.katvu.dk/api/move/down
+	// wam.katvu.dk/api/move/left
+	// wam.katvu.dk/api/move/right
+	// wam.katvu.dk/api/move/home
+
+	// wam.katvu.dk/api/saveform
 }
 
 //MED KNAPPERNE -----------------------------------------------
