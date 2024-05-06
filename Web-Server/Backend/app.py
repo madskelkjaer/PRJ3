@@ -77,25 +77,36 @@ to_send = []
 
 recieved_data: int = []
 
+START_CODE = 0xAA
+STOP_CODE = 0xBB
+EXPECTED_DATA_LENGTH = 9 # 7 bytes data + start og slut
+
 def saveData(data):
     recieved_data.append(data)
-    print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data))
+    print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data), " DATA I ARRAY: ", recieved_data)
+
+    if len(recieved_data) < EXPECTED_DATA_LENGTH:
+        return
+
+    if recieved_data[0] == START_CODE and recieved_data[-1] == STOP_CODE:
+        print("Data saved: ", recieved_data)
+        AZIMUTH = recieved_data[1]
+        ELEVATION = recieved_data[2]
+        BATTERY = recieved_data[3]
+        SUN_LEFT = recieved_data[4]
+        SUN_RIGHT = recieved_data[5]
+        SUN_UP = recieved_data[6]
+        SUN_DOWN = recieved_data[7]
+
+        date = time.strftime("%Y-%m-%d %H:%M:%S")
+        insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)
+        recieved_data.clear()
+    else:
+        recieved_data.pop()
+        return
 
     if (len(recieved_data) < 7):
         return
-    
-    print("Data saved: ", recieved_data)
-    AZIMUTH = recieved_data[1]
-    ELEVATION = recieved_data[2]
-    BATTERY = recieved_data[3]
-    SUN_LEFT = recieved_data[4]
-    SUN_RIGHT = recieved_data[5]
-    SUN_UP = recieved_data[6]
-    SUN_DOWN = recieved_data[7]
-
-    date = time.strftime("%Y-%m-%d %H:%M:%S")
-    insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)
-    recieved_data.clear()
 
 
 def sendAndRecieveSpiData():
