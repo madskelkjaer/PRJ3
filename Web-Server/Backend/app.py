@@ -98,6 +98,8 @@ def saveData(data):
         SUN_UP = recieved_data[6]
         SUN_DOWN = recieved_data[7]
 
+        print(f"{AZIMUTH=}, {ELEVATION=}, {BATTERY=}, {SUN_LEFT=}, {SUN_RIGHT=}, {SUN_UP=}, {SUN_DOWN=}")
+
         date = time.strftime("%Y-%m-%d %H:%M:%S")
         insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)
         recieved_data.clear()
