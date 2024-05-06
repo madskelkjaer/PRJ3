@@ -105,7 +105,7 @@ def saveData(data):
         recieved_data.clear()
     else:
         if recieved_data:
-            recieved_data = recieved_data[1:]
+            recieved_data.pop(0)
         return
 
     if (len(recieved_data) < 7):
