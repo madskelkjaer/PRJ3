@@ -21,10 +21,10 @@ function getData() {
 					azimuth,
 					elevation,
 					batteristatus,
-					sunLeft,
-					sunRight,
 					sunUp,
 					sunDown,
+					sunLeft,
+					sunRight,
 				] = item;
 				//checker at elevation og batteristatus er tal, ellers saettes de til 0
 				const validElevation =
@@ -70,10 +70,10 @@ function updateData() {
 					record.batteristatus !== undefined
 						? record.batteristatus.toString()
 						: "", // konverterer til string hvis undefined
-					record.sunLeft == 1 ? "Ja" : "Nej",
-					record.sunRight == 1 ? "Ja" : "Nej",
 					record.sunUp == 1 ? "Ja" : "Nej",
 					record.sunDown == 1 ? "Ja" : "Nej",
+					record.sunLeft == 1 ? "Ja" : "Nej",
+					record.sunRight == 1 ? "Ja" : "Nej",
 					// record.sunLeft !== undefined ? record.sunLeft.toString() : "", // konverterer til string hvis undefined
 					// record.sunRight !== undefined ? record.sunRight.toString() : "", // konverterer til string hvis undefined
 					// record.sunUp !== undefined ? record.sunUp.toString() : "", // konverterer til string hvis undefined
