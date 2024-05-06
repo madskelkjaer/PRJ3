@@ -83,7 +83,7 @@ EXPECTED_DATA_LENGTH = 9 # 7 bytes data + start og slut
 
 def saveData(data):
     recieved_data.append(data)
-    print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data), " DATA I ARRAY: ", recieved_data)
+    print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data), "\nDATA I ARRAY: ", recieved_data)
 
     if len(recieved_data) < EXPECTED_DATA_LENGTH:
         return
