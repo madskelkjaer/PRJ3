@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function getData() {
 	// faar data fra server vha API kald
-	return fetch("http://192.168.1.250:5000/api/getdata/10")
+	return fetch("http://192.168.1.149:5000/api/getdata/10")
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error("Network response was not ok");
