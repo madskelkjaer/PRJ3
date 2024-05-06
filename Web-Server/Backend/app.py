@@ -104,7 +104,7 @@ def saveData(data):
         insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)
         recieved_data.clear()
     else:
-        recieved_data.pop()
+        recieved_data = recieved_data[1:]
         return
 
     if (len(recieved_data) < 7):
