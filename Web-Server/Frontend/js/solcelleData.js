@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 	updateData(); //opdaterer data ved page load
-	setInterval(updateData, 10000); // opdaterer hvert minut
+	setInterval(updateData, 60000); // opdaterer hvert minut
 });
 
 function getData() {
