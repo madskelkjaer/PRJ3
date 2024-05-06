@@ -4,8 +4,8 @@ const solarcell2 = document.querySelector(".solarcell2");
 let rotateElevation = 0;
 let rotateAzimuth = 0;
 const rotationIncrement = 2; //hvor hurtigt skal den dreje????
-const maxUp = 90;
-const maxDown = -30;
+const maxUp = 30;
+const maxDown = -90;
 const maxRight = 150;
 const maxLeft = -150;
 
@@ -121,7 +121,7 @@ document.getElementById("rotateDown").addEventListener("mousedown", () => {
 
 document.getElementById("rotateRight").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		if (rotateElevation >= maxRight) {
+		if (rotateAzimuth >= maxRight) {
 			console.log("for mange grader til til højre!!!");
 		} else {
 			rotateAzimuth += rotationIncrement;
@@ -132,7 +132,7 @@ document.getElementById("rotateRight").addEventListener("mousedown", () => {
 
 document.getElementById("rotateLeft").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		if (rotateElevation <= maxLeft) {
+		if (rotateAzimuth <= maxLeft) {
 			console.log("for mange grader til til venstre!!!");
 		} else {
 			rotateAzimuth -= rotationIncrement;
