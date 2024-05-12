@@ -33,6 +33,19 @@ function updateHome() {
 	}
 }
 
+
+// Funktion til API kald for at sende data til server
+function moveSolarCell(direction) {
+	fetch(`http://192.168.1.250:5000/api/move/${direction}`)
+		.then(response => {
+			if (response.ok) {
+				return response.json();
+			} else {
+				throw new Error('API request failed');
+			}
+		})
+}
+
 // Event listener for the "Update" button
 document.getElementById("updateButton").addEventListener("click", updateHome);
 
@@ -45,6 +58,7 @@ document.addEventListener("keydown", (event) => {
 				console.log("for manage grader op!!!");
 				break;
 			} else {
+				moveSolarCell("up");
 				rotateElevation += rotationIncrement;
 				updateRotation();
 				break;
@@ -54,6 +68,7 @@ document.addEventListener("keydown", (event) => {
 				console.log("for mange grader ned!!!!");
 				break;
 			} else {
+				moveSolarCell("down");
 				rotateElevation -= rotationIncrement;
 				updateRotation();
 				break;
@@ -63,6 +78,7 @@ document.addEventListener("keydown", (event) => {
 				console.log("for mange grader til venstre!!!!");
 				break;
 			} else {
+				moveSolarCell("left");
 				rotateAzimuth -= rotationIncrement;
 				updateRotation();
 				break;
@@ -71,6 +87,7 @@ document.addEventListener("keydown", (event) => {
 			if (rotateAzimuth >= maxRight) {
 				console.log("for mange grader til højre!!!");
 			} else {
+				moveSolarCell("right");
 				rotateAzimuth += rotationIncrement;
 				updateRotation();
 				break;
@@ -84,8 +101,7 @@ function updateRotation() {
 
 	//saa current rotation kommer i console
 	console.log(
-		`Elevation lige nu: ${
-			rotateElevation >= 0 ? "+" : ""
+		`Elevation lige nu: ${rotateElevation >= 0 ? "+" : ""
 		}${rotateElevation} deg`
 	);
 	console.log(
@@ -112,6 +128,7 @@ document.getElementById("rotateUp").addEventListener("mousedown", () => {
 		if (rotateElevation >= maxUp) {
 			console.log("for mange grader til op!!!");
 		} else {
+			moveSolarCell("up");
 			rotateElevation += rotationIncrement;
 			updateRotation();
 		}
@@ -123,6 +140,7 @@ document.getElementById("rotateDown").addEventListener("mousedown", () => {
 		if (rotateElevation <= maxDown) {
 			console.log("for mange grader til ned!!!");
 		} else {
+			moveSolarCell("down");
 			rotateElevation -= rotationIncrement;
 			updateRotation();
 		}
@@ -134,6 +152,7 @@ document.getElementById("rotateRight").addEventListener("mousedown", () => {
 		if (rotateAzimuth >= maxRight) {
 			console.log("for mange grader til til højre!!!");
 		} else {
+			moveSolarCell("right");
 			rotateAzimuth += rotationIncrement;
 			updateRotation();
 		}
@@ -145,6 +164,7 @@ document.getElementById("rotateLeft").addEventListener("mousedown", () => {
 		if (rotateAzimuth <= maxLeft) {
 			console.log("for mange grader til til venstre!!!");
 		} else {
+			moveSolarCell("left");
 			rotateAzimuth -= rotationIncrement;
 			updateRotation();
 		}
@@ -155,6 +175,7 @@ document.getElementById("reset").addEventListener("mousedown", () => {
 	rotateAzimuth = homeX; //omvendt end hvad man forventer lol
 	rotateElevation = homeY;
 	updateRotation();
+	moveSolarCell("home");
 });
 
 document.addEventListener("mouseup", () => {
