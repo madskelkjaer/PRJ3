@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask_cors import CORS
+from flask_sock import Sock
 import spidev
 import time
 import sqlite3
@@ -73,6 +74,7 @@ spi.mode = 0
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
+sock = Sock(app)
 to_send = []
 
 recieved_data: int = []
@@ -183,6 +185,15 @@ def form():
     print(name, email, message)
     sendEmail(name, email, message)
     return "Data modtaget"
+
+@sock.route("/ws")
+def echo(ws):
+    while True:
+        data = ws.receive()
+        if data:
+            ws.send(data)
+        else:
+            break
 
 if __name__ == "__main__":
     app.run(threaded=True, port=5000)
