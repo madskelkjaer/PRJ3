@@ -15,6 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
+
+const updateWSData = (message_data) => {
+	console.log("Data from WS:", message_data);
+	document.getElementById("venstre").innerHTML = message_data.sun_left == 1 ? "Ja" : "Nej";
+	document.getElementById("hojre").innerHTML = message_data.sun_right == 1 ? "Ja" : "Nej";
+	document.getElementById("op").innerHTML = message_data.sun_up == 1 ? "Ja" : "Nej";
+	document.getElementById("ned").innerHTML = message_data.sun_down == 1 ? "Ja" : "Nej";
+};
+
 // function getData() {
 //     // faar data fra server vha API kald
 //     return fetch("http://192.168.1.250:5000/api/getdata/5")
@@ -64,14 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //             throw error;
 //         });
 // }
-
-const updateWSData = (message_data) => {
-	console.log("Data from WS:", message_data);
-	document.getElementById("venstre").innerHTML = message_data.sun_left == 1 ? "Ja" : "Nej";
-	document.getElementById("hojre").innerHTML = message_data.sun_right == 1 ? "Ja" : "Nej";
-	document.getElementById("op").innerHTML = message_data.sun_up == 1 ? "Ja" : "Nej";
-	document.getElementById("ned").innerHTML = message_data.sun_down == 1 ? "Ja" : "Nej";
-};
 
 // function updateData() {
 //     // opdaterer data og laver tabel
