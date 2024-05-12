@@ -4,12 +4,12 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/png" href="/images/favicon.png" />
-	<link rel="stylesheet" href="/css/styles.css" />
-	<link rel="stylesheet" href="/css/solcelleStyles.css" />
-	<link rel="stylesheet" href="/css/tilbageKnap.css" />
-	<link rel="stylesheet" href="/css/solcelleData.css" />
-	<link rel="stylesheet" href="/css/infoboks.css" />
+	<link rel="icon" type="image/png" href="./images/favicon.png" />
+	<link rel="stylesheet" href="./css/styles.css" />
+	<link rel="stylesheet" href="./css/solcelleStyles.css" />
+	<link rel="stylesheet" href="./css/tilbageKnap.css" />
+	<link rel="stylesheet" href="./css/solcelleData.css" />
+	<link rel="stylesheet" href="./css/infoboks.css" />
 	<title>Styring Page</title>
 </head>
 
@@ -31,19 +31,16 @@
 	</div>
 
 	<h1>Manuel styring af solcellen</h1>
-	<table class="data-table" style = "margin-right: 30px">
-		<thead>
-			<tr>
-				<th>Sol venstre</th>
-				<th>Sol højre</th>
-				<th>Sol op</th>
-				<th>Sol ned</th>
-			</tr>
-		</thead>
-		<tbody id="data-table-body">
-			<!-- Table rows will be generated dynamically here -->
-		</tbody>
-	</table>
+
+	<div>
+		<ul>
+			<li>Sol venstre: <span id="venstre">Ja</span></li>
+			<li>Sol højre: <span id="hojre"></span></li>
+			<li>Sol op: <span id="op"></span></li>
+			<li>Sol ned: <span id="ned"></span></li>
+		</ul>
+	</div>
+
 	<div class="infoboks">
 		<h2>INFORMATION</h2>
 		<p>
@@ -101,9 +98,9 @@
 		<input type="number" id="homeYInput" value="0">
 		<button id="updateButton">Opdater</button>
 	</div>
-	<script src="/js/solcelleData.js"></script>
-	<script src="/js/solcelle.js"></script>
-	<script src="/js/infoboks.js"></script>
+	<script src="./js/solcelleData.js"></script>
+	<script src="./js/solcelle.js"></script>
+	<script src="./js/infoboks.js"></script>
 	</script>
 </body>
 

@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_cors import CORS
 from flask_sock import Sock
 import spidev
+import json
 import time
 import sqlite3
 import smtplib
@@ -44,7 +45,7 @@ def insertData(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_le
         )
         con.commit()
 
-        message = {
+        message = json.dumps({
             "date": date,
             "azimuth": azimuth,
             "elevation": elevation,
@@ -53,7 +54,7 @@ def insertData(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_le
             "sun_down": sun_down,
             "sun_left": sun_left,
             "sun_right": sun_right
-        }
+        })
 
         for ws in ws_connections:
             try:
