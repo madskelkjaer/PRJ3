@@ -43,6 +43,24 @@ def insertData(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_le
             (date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right)
         )
         con.commit()
+
+        message = {
+            "date": date,
+            "azimuth": azimuth,
+            "elevation": elevation,
+            "batteristatus": batteristatus,
+            "sun_up": sun_up,
+            "sun_down": sun_down,
+            "sun_left": sun_left,
+            "sun_right": sun_right
+        }
+
+        for ws in ws_connections:
+            try:
+                ws.send(message)
+            except:
+                ws_connections.remove(ws)
+
     except Exception as e:
         print("Error in inserting data: ", e)
     finally:
@@ -75,6 +93,7 @@ spi.mode = 0
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 sock = Sock(app)
+ws_connections = []
 to_send = []
 
 recieved_data: int = []
@@ -103,7 +122,7 @@ def saveData(data):
         print(f"{AZIMUTH=}, {ELEVATION=}, {BATTERY=}, {SUN_LEFT=}, {SUN_RIGHT=}, {SUN_UP=}, {SUN_DOWN=}")
 
         date = time.strftime("%Y-%m-%d %H:%M:%S")
-        insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)
+        insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)        
         recieved_data.clear()
     else:
         if recieved_data:
@@ -188,6 +207,7 @@ def form():
 
 @sock.route("/ws")
 def echo(ws):
+    ws_connections.append(ws)
     while True:
         data = ws.receive()
         if data:
