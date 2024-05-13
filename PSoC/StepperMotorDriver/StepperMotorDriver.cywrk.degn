@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="StepperMotorDriver\StepperMotorDriver\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>StepperMotorDriver</v>
 <v>StepperMotorDriver\StepperMotorDriver</v>
@@ -238,19 +238,7 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs>
-<name v=".\StepperMotorDriver.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\StepperMotorDriver.cydsn\StepperMotorDriver.cydwr" />
-<name v=".\StepperMotorDriver.cydsn\StepperMotorDriver.c" />
-<name v=".\StepperMotorDriver.cydsn\main.c" />
-</OpenDocs>
-<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
-
-  Actipro Docking/MDI for WinForms
-  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
-  http://www.actiprosoftware.com
-
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1180, 690" SelectedTabbedMdiWindow="45f38f76-4744-4b2c-9472-f34f2f4a9407"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="5681afec-bc77-4588-93bc-602fdbeb6ef8" /><DocumentWindow Key="C:\Users\degn\OneDrive - Aarhus universitet\Skrivebord\AU\E3\PRJ3\Kode\StepperMotorDriver\StepperMotorDriver.cydsn\TopDesign\TopDesign.cysch" Guid="2b1b4763-3c7f-495c-800a-561e049cafc3" /><DocumentWindow Key="C:\Users\degn\OneDrive - Aarhus universitet\Skrivebord\AU\E3\PRJ3\Kode\StepperMotorDriver\StepperMotorDriver.cydsn\StepperMotorDriver.cydwr" Guid="5eed51cb-3551-4512-bcbf-f4fb1be4728a" /><DocumentWindow Key="C:\Users\degn\OneDrive - Aarhus universitet\Skrivebord\AU\E3\PRJ3\Kode\StepperMotorDriver\StepperMotorDriver.cydsn\StepperMotorDriver.c" Guid="ff13b3a7-8689-4fdd-a21e-26c60375b7eb" /><DocumentWindow Key="C:\Users\degn\OneDrive - Aarhus universitet\Skrivebord\AU\E3\PRJ3\Kode\StepperMotorDriver\StepperMotorDriver.cydsn\main.c" Guid="45f38f76-4744-4b2c-9472-f34f2f4a9407" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<OpenDocs />
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
