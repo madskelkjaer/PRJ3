@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
   28:Generated_Source\PSoC5/Elevation_Pin_2.c **** *
   29:Generated_Source\PSoC5/Elevation_Pin_2.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/Elevation_Pin_2.c **** *  and shifting the bits appropriately. 
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 2
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 2
 
 
   31:Generated_Source\PSoC5/Elevation_Pin_2.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
   52              		.size	Elevation_Pin_2_Write, .-Elevation_Pin_2_Write
   53              		.section	.text.Elevation_Pin_2_SetDriveMode,"ax",%progbits
   54              		.align	2
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 3
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 3
 
 
   55              		.global	Elevation_Pin_2_SetDriveMode
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
   77 0012 00BF     		.align	2
   78              	.L5:
   79 0014 19500040 		.word	1073762329
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 4
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 4
 
 
   80              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  110              		.align	2
  111              		.global	Elevation_Pin_2_ReadDataReg
  112              		.thumb
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 5
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 5
 
 
  113              		.thumb_func
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  139              	.Ldebug_info0:
  140 0000 1B010000 		.4byte	0x11b
  141 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 6
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 6
 
 
  142 0006 00000000 		.4byte	.Ldebug_abbrev0
@@ -307,14 +307,14 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  145 000c 6A000000 		.4byte	.LASF20
  146 0010 0C       		.byte	0xc
  147 0011 2D000000 		.4byte	.LASF21
- 148 0015 76010000 		.4byte	.LASF22
+ 148 0015 98010000 		.4byte	.LASF22
  149 0019 00000000 		.4byte	.Ldebug_ranges0+0
  150 001d 00000000 		.4byte	0
  151 0021 00000000 		.4byte	.Ldebug_line0
  152 0025 02       		.uleb128 0x2
  153 0026 01       		.byte	0x1
  154 0027 06       		.byte	0x6
- 155 0028 39020000 		.4byte	.LASF0
+ 155 0028 42020000 		.4byte	.LASF0
  156 002c 02       		.uleb128 0x2
  157 002d 01       		.byte	0x1
  158 002e 08       		.byte	0x8
@@ -322,7 +322,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  160 0033 02       		.uleb128 0x2
  161 0034 02       		.byte	0x2
  162 0035 05       		.byte	0x5
- 163 0036 06020000 		.4byte	.LASF2
+ 163 0036 14020000 		.4byte	.LASF2
  164 003a 02       		.uleb128 0x2
  165 003b 02       		.byte	0x2
  166 003c 07       		.byte	0x7
@@ -330,7 +330,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  168 0041 02       		.uleb128 0x2
  169 0042 04       		.byte	0x4
  170 0043 05       		.byte	0x5
- 171 0044 2B020000 		.4byte	.LASF4
+ 171 0044 39020000 		.4byte	.LASF4
  172 0048 02       		.uleb128 0x2
  173 0049 04       		.byte	0x4
  174 004a 07       		.byte	0x7
@@ -352,13 +352,13 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  190 0066 07       		.byte	0x7
  191 0067 29010000 		.4byte	.LASF8
  192 006b 04       		.uleb128 0x4
- 193 006c 10020000 		.4byte	.LASF12
+ 193 006c 1E020000 		.4byte	.LASF12
  194 0070 02       		.byte	0x2
  195 0071 E801     		.2byte	0x1e8
  196 0073 2C000000 		.4byte	0x2c
  197 0077 02       		.uleb128 0x2
  198 0078 04       		.byte	0x4
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 7
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 7
 
 
  199 0079 04       		.byte	0x4
@@ -370,7 +370,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  205 0085 02       		.uleb128 0x2
  206 0086 01       		.byte	0x1
  207 0087 08       		.byte	0x8
- 208 0088 34020000 		.4byte	.LASF11
+ 208 0088 76010000 		.4byte	.LASF11
  209 008c 04       		.uleb128 0x4
  210 008d F8000000 		.4byte	.LASF13
  211 0091 02       		.byte	0x2
@@ -402,7 +402,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  237 00cd 53       		.byte	0x53
  238 00ce 00       		.byte	0
  239 00cf 06       		.uleb128 0x6
- 240 00d0 E9010000 		.4byte	.LASF15
+ 240 00d0 7B010000 		.4byte	.LASF15
  241 00d4 01       		.byte	0x1
  242 00d5 5A       		.byte	0x5a
  243 00d6 00000000 		.4byte	.LFB1
@@ -418,10 +418,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  253 00ef 21000000 		.4byte	.LLST1
  254 00f3 00       		.byte	0
  255 00f4 09       		.uleb128 0x9
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 8
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 8
 
 
- 256 00f5 16020000 		.4byte	.LASF18
+ 256 00f5 24020000 		.4byte	.LASF18
  257 00f9 01       		.byte	0x1
  258 00fa 71       		.byte	0x71
  259 00fb 6B000000 		.4byte	0x6b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  310 0022 0B       		.uleb128 0xb
  311 0023 3E       		.uleb128 0x3e
  312 0024 0B       		.uleb128 0xb
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 9
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 9
 
 
  313 0025 03       		.uleb128 0x3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  367 005c 3A       		.uleb128 0x3a
  368 005d 0B       		.uleb128 0xb
  369 005e 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 10
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 10
 
 
  370 005f 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  424 000a 50       		.byte	0x50
  425 000b 0A000000 		.4byte	.LVL2
  426 000f 18000000 		.4byte	.LFE0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 11
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 11
 
 
  427 0013 0400     		.2byte	0x4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  480      02004C00 
  480      00000201 
  480      FB0E0D00 
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 12
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 12
 
 
  480      01010101 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  502 010f 73686F72 		.ascii	"short unsigned int\000"
  502      7420756E 
  502      7369676E 
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 13
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 13
 
 
  502      65642069 
@@ -751,53 +751,53 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 1
  514      206C6F6E 
  514      6720696E 
  514      7400
- 515              	.LASF22:
- 516 0176 433A5C55 		.ascii	"C:\\Users\\degn\\OneDrive - Aarhus universitet\\Skr"
- 516      73657273 
- 516      5C646567 
- 516      6E5C4F6E 
- 516      65447269 
- 517 01a5 69766562 		.ascii	"ivebord\\AU\\E3\\PRJ3\\Kode\\StepperMotorDriver\\St"
- 517      6F72645C 
- 517      41555C45 
- 517      335C5052 
- 517      4A335C4B 
- 518 01d2 65707065 		.ascii	"epperMotorDriver.cydsn\000"
- 518      724D6F74 
- 518      6F724472 
- 518      69766572 
- 518      2E637964 
- 519              	.LASF15:
- 520 01e9 456C6576 		.ascii	"Elevation_Pin_2_SetDriveMode\000"
- 520      6174696F 
- 520      6E5F5069 
- 520      6E5F325F 
- 520      53657444 
- 521              	.LASF2:
- 522 0206 73686F72 		.ascii	"short int\000"
- 522      7420696E 
- 522      7400
- 523              	.LASF12:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccERnabJ.s 			page 14
+ 515              	.LASF11:
+ 516 0176 63686172 		.ascii	"char\000"
+ 516      00
+ 517              	.LASF15:
+ 518 017b 456C6576 		.ascii	"Elevation_Pin_2_SetDriveMode\000"
+ 518      6174696F 
+ 518      6E5F5069 
+ 518      6E5F325F 
+ 518      53657444 
+ 519              	.LASF22:
+ 520 0198 433A5C55 		.ascii	"C:\\Users\\degn\\OneDrive - Aarhus universitet\\Skr"
+ 520      73657273 
+ 520      5C646567 
+ 520      6E5C4F6E 
+ 520      65447269 
+ 521 01c7 69766562 		.ascii	"ivebord\\AU\\E3\\PRJ3\\Git\\PRJ3\\PSoC\\StepperMoto"
+ 521      6F72645C 
+ 521      41555C45 
+ 521      335C5052 
+ 521      4A335C47 
+ 522 01f3 72447269 		.ascii	"rDriver\\StepperMotorDriver.cydsn\000"
+ 522      7665725C 
+ 522      53746570 
+ 522      7065724D 
+ 522      6F746F72 
+ 523              	.LASF2:
+ 524 0214 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccbKCv9I.s 			page 14
 
 
- 524 0210 75696E74 		.ascii	"uint8\000"
- 524      3800
- 525              	.LASF18:
- 526 0216 456C6576 		.ascii	"Elevation_Pin_2_Read\000"
- 526      6174696F 
- 526      6E5F5069 
- 526      6E5F325F 
- 526      52656164 
- 527              	.LASF4:
- 528 022b 6C6F6E67 		.ascii	"long int\000"
- 528      20696E74 
- 528      00
- 529              	.LASF11:
- 530 0234 63686172 		.ascii	"char\000"
+ 524      7420696E 
+ 524      7400
+ 525              	.LASF12:
+ 526 021e 75696E74 		.ascii	"uint8\000"
+ 526      3800
+ 527              	.LASF18:
+ 528 0224 456C6576 		.ascii	"Elevation_Pin_2_Read\000"
+ 528      6174696F 
+ 528      6E5F5069 
+ 528      6E5F325F 
+ 528      52656164 
+ 529              	.LASF4:
+ 530 0239 6C6F6E67 		.ascii	"long int\000"
+ 530      20696E74 
  530      00
  531              	.LASF0:
- 532 0239 7369676E 		.ascii	"signed char\000"
+ 532 0242 7369676E 		.ascii	"signed char\000"
  532      65642063 
  532      68617200 
  533              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

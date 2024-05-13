@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 1
 
 
    1              		.syntax unified
@@ -44,38 +44,39 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
   14:StepperMotorDriver.c **** **   Variables   **
   15:StepperMotorDriver.c **** ******************/
   16:StepperMotorDriver.c **** static int stepSequence[STEPS][4] = {   // step sequence for motors
-  17:StepperMotorDriver.c ****     {1, 0, 0, 0},                       // step 1
-  18:StepperMotorDriver.c ****     {1, 1, 0, 0},                       // step 2
-  19:StepperMotorDriver.c ****     {0, 1, 0, 0},                       // step 3
-  20:StepperMotorDriver.c ****     {0, 1, 1, 0},                       // step 4
-  21:StepperMotorDriver.c ****     {0, 0, 1, 0},                       // step 5
-  22:StepperMotorDriver.c ****     {0, 0, 1, 1},                       // step 6
-  23:StepperMotorDriver.c ****     {0, 0, 0, 1},                       // step 7
-  24:StepperMotorDriver.c ****     {1, 0, 0, 1}                        // step 8
+  17:StepperMotorDriver.c ****     {1, 0, 0, 1},                       // step 1
+  18:StepperMotorDriver.c ****     {0, 0, 0, 1},                       // step 2
+  19:StepperMotorDriver.c ****     {0, 0, 1, 1},                       // step 3
+  20:StepperMotorDriver.c ****     {0, 0, 1, 0},                       // step 4
+  21:StepperMotorDriver.c ****     {0, 1, 1, 0},                       // step 5
+  22:StepperMotorDriver.c ****     {0, 1, 0, 0},                       // step 6
+  23:StepperMotorDriver.c ****     {1, 1, 0, 0},                       // step 7
+  24:StepperMotorDriver.c ****     {1, 0, 0, 0}                        // step 8
   25:StepperMotorDriver.c **** };
-  26:StepperMotorDriver.c **** static int off[4] = {0, 0, 0, 0};       // step used to turn of motors
-  27:StepperMotorDriver.c **** static long azimuthSteps = 8000000;     // counting steps for steppermotor moving solar panel horit
-  28:StepperMotorDriver.c **** static long elevationSteps = 8000000;   // counting steps for steppermotor moving solar panel verti
-  29:StepperMotorDriver.c **** static int aStep = 0;                   // number of steps to be taken with azimuth motor
-  30:StepperMotorDriver.c **** static int eStep = 0;                   // number of steps to be taken with elevation motor
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 2
+  26:StepperMotorDriver.c ****     
+  27:StepperMotorDriver.c **** static int off[4] = {0, 0, 0, 0};       // step used to turn of motors
+  28:StepperMotorDriver.c **** static long azimuthSteps = 8000000;     // counting steps for steppermotor moving solar panel horit
+  29:StepperMotorDriver.c **** static long elevationSteps = 8000000;   // counting steps for steppermotor moving solar panel verti
+  30:StepperMotorDriver.c **** static int aStep = 0;                   // number of steps to be taken with azimuth motor
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 2
 
 
-  31:StepperMotorDriver.c **** 
+  31:StepperMotorDriver.c **** static int eStep = 0;                   // number of steps to be taken with elevation motor
   32:StepperMotorDriver.c **** 
-  33:StepperMotorDriver.c **** /******************
-  34:StepperMotorDriver.c **** **   Functions   **
-  35:StepperMotorDriver.c **** ******************/
-  36:StepperMotorDriver.c **** void moveAzimuth(int steps)
-  37:StepperMotorDriver.c **** {   // function to set steps to be takben by azimuth motor
-  28              		.loc 1 37 0
+  33:StepperMotorDriver.c **** 
+  34:StepperMotorDriver.c **** /******************
+  35:StepperMotorDriver.c **** **   Functions   **
+  36:StepperMotorDriver.c **** ******************/
+  37:StepperMotorDriver.c **** void moveAzimuth(int steps)
+  38:StepperMotorDriver.c **** {   // function to set steps to be takben by azimuth motor
+  28              		.loc 1 38 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		@ link register save eliminated.
   33              	.LVL0:
-  38:StepperMotorDriver.c ****     aStep = steps;
-  34              		.loc 1 38 0
+  39:StepperMotorDriver.c ****     aStep = steps;
+  34              		.loc 1 39 0
   35 0000 014B     		ldr	r3, .L2
   36 0002 1860     		str	r0, [r3]
   37 0004 7047     		bx	lr
@@ -94,48 +95,48 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
   50              		.type	azimuthStep, %function
   51              	azimuthStep:
   52              	.LFB66:
-  39:StepperMotorDriver.c **** }
-  40:StepperMotorDriver.c **** 
-  41:StepperMotorDriver.c **** void azimuth()
-  42:StepperMotorDriver.c **** {   // function to calculate next azimutgh step based and call azimuthStep()
-  43:StepperMotorDriver.c ****     if (Azimuth_Pin_1_Read() == 0 && Azimuth_Pin_2_Read() == 0 && Azimuth_Pin_3_Read() == 0 && Azim
-  44:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
-  45:StepperMotorDriver.c ****         azimuthStep(stepSequence[azimuthSteps % STEPS]);
-  46:StepperMotorDriver.c ****         return;
-  47:StepperMotorDriver.c ****     }
-  48:StepperMotorDriver.c ****     if (aStep > 0)
-  49:StepperMotorDriver.c ****     {   // turning right (positiv steps)
-  50:StepperMotorDriver.c ****         if (!Limit_Right_Read())
-  51:StepperMotorDriver.c ****         {   // if right limit is reached, don't move
-  52:StepperMotorDriver.c ****             aStep = 0;
-  53:StepperMotorDriver.c ****             return;
-  54:StepperMotorDriver.c ****         }
-  55:StepperMotorDriver.c ****         // set azimuth motor pins to next step and decrease steps to be taken
-  56:StepperMotorDriver.c ****         azimuthStep(stepSequence[++azimuthSteps % STEPS]);
-  57:StepperMotorDriver.c ****         aStep = aStep - 1;
-  58:StepperMotorDriver.c ****         return;
-  59:StepperMotorDriver.c ****     }
-  60:StepperMotorDriver.c ****     else if (aStep < 0)
-  61:StepperMotorDriver.c ****     {    // turning left (negativ steps)
-  62:StepperMotorDriver.c ****         if (!Limit_Left_Read())
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 3
+  40:StepperMotorDriver.c **** }
+  41:StepperMotorDriver.c **** 
+  42:StepperMotorDriver.c **** void azimuth()
+  43:StepperMotorDriver.c **** {   // function to calculate next azimutgh step based and call azimuthStep()
+  44:StepperMotorDriver.c ****     if (Azimuth_Pin_1_Read() == 0 && Azimuth_Pin_2_Read() == 0 && Azimuth_Pin_3_Read() == 0 && Azim
+  45:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+  46:StepperMotorDriver.c ****         azimuthStep(stepSequence[azimuthSteps % STEPS]);
+  47:StepperMotorDriver.c ****         return;
+  48:StepperMotorDriver.c ****     }
+  49:StepperMotorDriver.c ****     if (aStep > 0)
+  50:StepperMotorDriver.c ****     {   // turning left (positiv steps)
+  51:StepperMotorDriver.c ****         if (!Limit_Left_Read())
+  52:StepperMotorDriver.c ****         {   // if left limit is reached, don't move
+  53:StepperMotorDriver.c ****             aStep = 0;
+  54:StepperMotorDriver.c ****             return;
+  55:StepperMotorDriver.c ****         }
+  56:StepperMotorDriver.c ****         // set azimuth motor pins to next step and decrease steps to be taken
+  57:StepperMotorDriver.c ****         azimuthStep(stepSequence[++azimuthSteps % STEPS]);
+  58:StepperMotorDriver.c ****         aStep = aStep - 1;
+  59:StepperMotorDriver.c ****         return;
+  60:StepperMotorDriver.c ****     }
+  61:StepperMotorDriver.c ****     else if (aStep < 0)
+  62:StepperMotorDriver.c ****     {    // turning right (negativ steps)
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 3
 
 
-  63:StepperMotorDriver.c ****         {   // if left limit is reached, don't move
-  64:StepperMotorDriver.c ****             aStep = 0;
-  65:StepperMotorDriver.c ****             return;
-  66:StepperMotorDriver.c ****         }
-  67:StepperMotorDriver.c ****         // set azimuth motor pins to next step and decrease steps to be taken
-  68:StepperMotorDriver.c ****         azimuthStep(stepSequence[--azimuthSteps % STEPS]);
-  69:StepperMotorDriver.c ****         aStep = aStep + 1;
-  70:StepperMotorDriver.c ****         return;
-  71:StepperMotorDriver.c ****     }
-  72:StepperMotorDriver.c ****     return;
-  73:StepperMotorDriver.c **** }
-  74:StepperMotorDriver.c **** 
-  75:StepperMotorDriver.c **** void azimuthStep(int sequence[4])
-  76:StepperMotorDriver.c **** {   // function to write sequence to azimuth motor pins
-  53              		.loc 1 76 0
+  63:StepperMotorDriver.c ****         if (!Limit_Right_Read())
+  64:StepperMotorDriver.c ****         {   // if right limit is reached, don't move
+  65:StepperMotorDriver.c ****             aStep = 0;
+  66:StepperMotorDriver.c ****             return;
+  67:StepperMotorDriver.c ****         }
+  68:StepperMotorDriver.c ****         // set azimuth motor pins to next step and decrease steps to be taken
+  69:StepperMotorDriver.c ****         azimuthStep(stepSequence[--azimuthSteps % STEPS]);
+  70:StepperMotorDriver.c ****         aStep = aStep + 1;
+  71:StepperMotorDriver.c ****         return;
+  72:StepperMotorDriver.c ****     }
+  73:StepperMotorDriver.c ****     return;
+  74:StepperMotorDriver.c **** }
+  75:StepperMotorDriver.c **** 
+  76:StepperMotorDriver.c **** void azimuthStep(int sequence[4])
+  77:StepperMotorDriver.c **** {   // function to write sequence to azimuth motor pins
+  53              		.loc 1 77 0
   54              		.cfi_startproc
   55              		@ args = 0, pretend = 0, frame = 0
   56              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -145,24 +146,24 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
   60              		.cfi_offset 4, -8
   61              		.cfi_offset 14, -4
   62 0002 0446     		mov	r4, r0
-  77:StepperMotorDriver.c ****     Azimuth_Pin_1_Write(sequence[0]);
-  63              		.loc 1 77 0
+  78:StepperMotorDriver.c ****     Azimuth_Pin_1_Write(sequence[0]);
+  63              		.loc 1 78 0
   64 0004 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
   65              	.LVL2:
   66 0006 FFF7FEFF 		bl	Azimuth_Pin_1_Write
   67              	.LVL3:
-  78:StepperMotorDriver.c ****     Azimuth_Pin_2_Write(sequence[1]);
-  68              		.loc 1 78 0
+  79:StepperMotorDriver.c ****     Azimuth_Pin_2_Write(sequence[1]);
+  68              		.loc 1 79 0
   69 000a 2079     		ldrb	r0, [r4, #4]	@ zero_extendqisi2
   70 000c FFF7FEFF 		bl	Azimuth_Pin_2_Write
   71              	.LVL4:
-  79:StepperMotorDriver.c ****     Azimuth_Pin_3_Write(sequence[2]);
-  72              		.loc 1 79 0
+  80:StepperMotorDriver.c ****     Azimuth_Pin_3_Write(sequence[2]);
+  72              		.loc 1 80 0
   73 0010 207A     		ldrb	r0, [r4, #8]	@ zero_extendqisi2
   74 0012 FFF7FEFF 		bl	Azimuth_Pin_3_Write
   75              	.LVL5:
-  80:StepperMotorDriver.c ****     Azimuth_Pin_4_Write(sequence[3]);
-  76              		.loc 1 80 0
+  81:StepperMotorDriver.c ****     Azimuth_Pin_4_Write(sequence[3]);
+  76              		.loc 1 81 0
   77 0016 207B     		ldrb	r0, [r4, #12]	@ zero_extendqisi2
   78 0018 FFF7FEFF 		bl	Azimuth_Pin_4_Write
   79              	.LVL6:
@@ -177,12 +178,12 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
   88              		.thumb_func
   89              		.type	azimuth, %function
   90              	azimuth:
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 4
+
+
   91              	.LFB65:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 4
-
-
-  42:StepperMotorDriver.c ****     if (Azimuth_Pin_1_Read() == 0 && Azimuth_Pin_2_Read() == 0 && Azimuth_Pin_3_Read() == 0 && Azim
-  92              		.loc 1 42 0
+  43:StepperMotorDriver.c ****     if (Azimuth_Pin_1_Read() == 0 && Azimuth_Pin_2_Read() == 0 && Azimuth_Pin_3_Read() == 0 && Azim
+  92              		.loc 1 43 0
   93              		.cfi_startproc
   94              		@ args = 0, pretend = 0, frame = 0
   95              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -190,28 +191,28 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
   97              		.cfi_def_cfa_offset 8
   98              		.cfi_offset 3, -8
   99              		.cfi_offset 14, -4
-  43:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 100              		.loc 1 43 0
+  44:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+ 100              		.loc 1 44 0
  101 0002 FFF7FEFF 		bl	Azimuth_Pin_1_Read
  102              	.LVL7:
  103 0006 B8B9     		cbnz	r0, .L7
-  43:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 104              		.loc 1 43 0 is_stmt 0 discriminator 1
+  44:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+ 104              		.loc 1 44 0 is_stmt 0 discriminator 1
  105 0008 FFF7FEFF 		bl	Azimuth_Pin_2_Read
  106              	.LVL8:
  107 000c A0B9     		cbnz	r0, .L7
-  43:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 108              		.loc 1 43 0 discriminator 2
+  44:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+ 108              		.loc 1 44 0 discriminator 2
  109 000e FFF7FEFF 		bl	Azimuth_Pin_3_Read
  110              	.LVL9:
  111 0012 88B9     		cbnz	r0, .L7
-  43:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 112              		.loc 1 43 0 discriminator 3
+  44:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+ 112              		.loc 1 44 0 discriminator 3
  113 0014 FFF7FEFF 		bl	Azimuth_Pin_4_Read
  114              	.LVL10:
  115 0018 70B9     		cbnz	r0, .L7
-  45:StepperMotorDriver.c ****         return;
- 116              		.loc 1 45 0 is_stmt 1
+  46:StepperMotorDriver.c ****         return;
+ 116              		.loc 1 46 0 is_stmt 1
  117 001a 264B     		ldr	r3, .L16
  118 001c 1B68     		ldr	r3, [r3]
  119 001e 264A     		ldr	r2, .L16+4
@@ -225,35 +226,35 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  127 002e 00EB0310 		add	r0, r0, r3, lsl #4
  128 0032 FFF7FEFF 		bl	azimuthStep
  129              	.LVL11:
-  46:StepperMotorDriver.c ****     }
- 130              		.loc 1 46 0
+  47:StepperMotorDriver.c ****     }
+ 130              		.loc 1 47 0
  131 0036 08BD     		pop	{r3, pc}
  132              	.L7:
-  48:StepperMotorDriver.c ****     {   // turning right (positiv steps)
- 133              		.loc 1 48 0
+  49:StepperMotorDriver.c ****     {   // turning left (positiv steps)
+ 133              		.loc 1 49 0
  134 0038 214B     		ldr	r3, .L16+12
  135 003a 1B68     		ldr	r3, [r3]
  136 003c 002B     		cmp	r3, #0
  137 003e 1BDD     		ble	.L10
-  50:StepperMotorDriver.c ****         {   // if right limit is reached, don't move
- 138              		.loc 1 50 0
- 139 0040 FFF7FEFF 		bl	Limit_Right_Read
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 5
+  51:StepperMotorDriver.c ****         {   // if left limit is reached, don't move
+ 138              		.loc 1 51 0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 5
 
 
+ 139 0040 FFF7FEFF 		bl	Limit_Left_Read
  140              	.LVL12:
  141 0044 18B9     		cbnz	r0, .L11
-  52:StepperMotorDriver.c ****             return;
- 142              		.loc 1 52 0
+  53:StepperMotorDriver.c ****             return;
+ 142              		.loc 1 53 0
  143 0046 0022     		movs	r2, #0
  144 0048 1D4B     		ldr	r3, .L16+12
  145 004a 1A60     		str	r2, [r3]
-  53:StepperMotorDriver.c ****         }
- 146              		.loc 1 53 0
+  54:StepperMotorDriver.c ****         }
+ 146              		.loc 1 54 0
  147 004c 08BD     		pop	{r3, pc}
  148              	.L11:
-  56:StepperMotorDriver.c ****         aStep = aStep - 1;
- 149              		.loc 1 56 0
+  57:StepperMotorDriver.c ****         aStep = aStep - 1;
+ 149              		.loc 1 57 0
  150 004e 194A     		ldr	r2, .L16
  151 0050 1368     		ldr	r3, [r2]
  152 0052 0133     		adds	r3, r3, #1
@@ -269,39 +270,39 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  162 0066 00EB0310 		add	r0, r0, r3, lsl #4
  163 006a FFF7FEFF 		bl	azimuthStep
  164              	.LVL13:
-  57:StepperMotorDriver.c ****         return;
- 165              		.loc 1 57 0
+  58:StepperMotorDriver.c ****         return;
+ 165              		.loc 1 58 0
  166 006e 144A     		ldr	r2, .L16+12
  167 0070 1368     		ldr	r3, [r2]
  168 0072 013B     		subs	r3, r3, #1
  169 0074 1360     		str	r3, [r2]
-  58:StepperMotorDriver.c ****     }
- 170              		.loc 1 58 0
+  59:StepperMotorDriver.c ****     }
+ 170              		.loc 1 59 0
  171 0076 08BD     		pop	{r3, pc}
  172              	.L10:
-  60:StepperMotorDriver.c ****     {    // turning left (negativ steps)
- 173              		.loc 1 60 0
+  61:StepperMotorDriver.c ****     {    // turning right (negativ steps)
+ 173              		.loc 1 61 0
  174 0078 002B     		cmp	r3, #0
  175 007a 1ADA     		bge	.L6
-  62:StepperMotorDriver.c ****         {   // if left limit is reached, don't move
- 176              		.loc 1 62 0
- 177 007c FFF7FEFF 		bl	Limit_Left_Read
+  63:StepperMotorDriver.c ****         {   // if right limit is reached, don't move
+ 176              		.loc 1 63 0
+ 177 007c FFF7FEFF 		bl	Limit_Right_Read
  178              	.LVL14:
  179 0080 18B9     		cbnz	r0, .L13
-  64:StepperMotorDriver.c ****             return;
- 180              		.loc 1 64 0
+  65:StepperMotorDriver.c ****             return;
+ 180              		.loc 1 65 0
  181 0082 0022     		movs	r2, #0
  182 0084 0E4B     		ldr	r3, .L16+12
  183 0086 1A60     		str	r2, [r3]
-  65:StepperMotorDriver.c ****         }
- 184              		.loc 1 65 0
+  66:StepperMotorDriver.c ****         }
+ 184              		.loc 1 66 0
  185 0088 08BD     		pop	{r3, pc}
  186              	.L13:
-  68:StepperMotorDriver.c ****         aStep = aStep + 1;
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 6
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 6
 
 
- 187              		.loc 1 68 0
+  69:StepperMotorDriver.c ****         aStep = aStep + 1;
+ 187              		.loc 1 69 0
  188 008a 0A4A     		ldr	r2, .L16
  189 008c 1368     		ldr	r3, [r2]
  190 008e 013B     		subs	r3, r3, #1
@@ -317,8 +318,8 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  200 00a2 00EB0310 		add	r0, r0, r3, lsl #4
  201 00a6 FFF7FEFF 		bl	azimuthStep
  202              	.LVL15:
-  69:StepperMotorDriver.c ****         return;
- 203              		.loc 1 69 0
+  70:StepperMotorDriver.c ****         return;
+ 203              		.loc 1 70 0
  204 00aa 054A     		ldr	r2, .L16+12
  205 00ac 1368     		ldr	r3, [r2]
  206 00ae 0133     		adds	r3, r3, #1
@@ -343,24 +344,24 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  225              		.type	moveElevation, %function
  226              	moveElevation:
  227              	.LFB67:
-  81:StepperMotorDriver.c **** }
-  82:StepperMotorDriver.c **** 
+  82:StepperMotorDriver.c **** }
   83:StepperMotorDriver.c **** 
-  84:StepperMotorDriver.c **** void moveElevation(int steps)
-  85:StepperMotorDriver.c **** {   // function to set steps to be takben by elevation motor
- 228              		.loc 1 85 0
+  84:StepperMotorDriver.c **** 
+  85:StepperMotorDriver.c **** void moveElevation(int steps)
+  86:StepperMotorDriver.c **** {   // function to set steps to be takben by elevation motor
+ 228              		.loc 1 86 0
  229              		.cfi_startproc
  230              		@ args = 0, pretend = 0, frame = 0
  231              		@ frame_needed = 0, uses_anonymous_args = 0
  232              		@ link register save eliminated.
  233              	.LVL16:
-  86:StepperMotorDriver.c ****     eStep = steps;
- 234              		.loc 1 86 0
+  87:StepperMotorDriver.c ****     eStep = steps;
+ 234              		.loc 1 87 0
  235 0000 014B     		ldr	r3, .L19
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 7
+
+
  236 0002 5860     		str	r0, [r3, #4]
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 7
-
-
  237 0004 7047     		bx	lr
  238              	.L20:
  239 0006 00BF     		.align	2
@@ -377,50 +378,50 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  250              		.type	elevationStep, %function
  251              	elevationStep:
  252              	.LFB69:
-  87:StepperMotorDriver.c **** }
-  88:StepperMotorDriver.c **** 
-  89:StepperMotorDriver.c **** void elevation()
-  90:StepperMotorDriver.c **** {   // function to calculate next elevation step based and call elevationStep()
-  91:StepperMotorDriver.c ****     if (Elevation_Pin_1_Read() == 0 && Elevation_Pin_2_Read() == 0 && Elevation_Pin_3_Read() == 0 &
-  92:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
-  93:StepperMotorDriver.c ****         elevationStep(stepSequence[elevationSteps % STEPS]);
-  94:StepperMotorDriver.c ****         return;
-  95:StepperMotorDriver.c ****     }
-  96:StepperMotorDriver.c ****     if (eStep > 0)
-  97:StepperMotorDriver.c ****     {   // turning down (positiv steps)
-  98:StepperMotorDriver.c ****         if (!Limit_Down_Read())
-  99:StepperMotorDriver.c ****         {   // if down limit is reached, don't move
- 100:StepperMotorDriver.c ****             eStep = 0;
- 101:StepperMotorDriver.c ****             return;
- 102:StepperMotorDriver.c ****         }
- 103:StepperMotorDriver.c ****         // set elevation motor pins to next step and decrease steps to be taken
- 104:StepperMotorDriver.c ****         elevationStep(stepSequence[++elevationSteps % STEPS]);
- 105:StepperMotorDriver.c ****         eStep = eStep - 1;
- 106:StepperMotorDriver.c ****         return;
- 107:StepperMotorDriver.c ****     }
- 108:StepperMotorDriver.c ****     
- 109:StepperMotorDriver.c ****     else if (eStep < 0)
- 110:StepperMotorDriver.c ****     {   // turning up (negativ steps)
- 111:StepperMotorDriver.c ****         if (!Limit_Up_Read())
- 112:StepperMotorDriver.c ****         {   // if up limit is reached, don't move
- 113:StepperMotorDriver.c ****             eStep = 0;
- 114:StepperMotorDriver.c ****             return;
- 115:StepperMotorDriver.c ****         }
- 116:StepperMotorDriver.c ****         // set elevation motor pins to next step and decrease steps to be taken
- 117:StepperMotorDriver.c ****         elevationStep(stepSequence[--elevationSteps % STEPS]);
- 118:StepperMotorDriver.c ****         eStep = eStep + 1;
- 119:StepperMotorDriver.c ****         return;
- 120:StepperMotorDriver.c ****     }
- 121:StepperMotorDriver.c ****     return;
- 122:StepperMotorDriver.c **** }
- 123:StepperMotorDriver.c **** 
- 124:StepperMotorDriver.c **** void elevationStep(int sequence[4])
- 125:StepperMotorDriver.c **** {   // function to write sequence to elevation motor pins
- 253              		.loc 1 125 0
+  88:StepperMotorDriver.c **** }
+  89:StepperMotorDriver.c **** 
+  90:StepperMotorDriver.c **** void elevation()
+  91:StepperMotorDriver.c **** {   // function to calculate next elevation step based and call elevationStep()
+  92:StepperMotorDriver.c ****     if (Elevation_Pin_1_Read() == 0 && Elevation_Pin_2_Read() == 0 && Elevation_Pin_3_Read() == 0 &
+  93:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+  94:StepperMotorDriver.c ****         elevationStep(stepSequence[elevationSteps % STEPS]);
+  95:StepperMotorDriver.c ****         return;
+  96:StepperMotorDriver.c ****     }
+  97:StepperMotorDriver.c ****     if (eStep > 0)
+  98:StepperMotorDriver.c ****     {   // turning up (positiv steps)
+  99:StepperMotorDriver.c ****         if (!Limit_Up_Read())
+ 100:StepperMotorDriver.c ****         {   // if up limit is reached, don't move
+ 101:StepperMotorDriver.c ****             eStep = 0;
+ 102:StepperMotorDriver.c ****             return;
+ 103:StepperMotorDriver.c ****         }
+ 104:StepperMotorDriver.c ****         // set elevation motor pins to next step and decrease steps to be taken
+ 105:StepperMotorDriver.c ****         elevationStep(stepSequence[++elevationSteps % STEPS]);
+ 106:StepperMotorDriver.c ****         eStep = eStep - 1;
+ 107:StepperMotorDriver.c ****         return;
+ 108:StepperMotorDriver.c ****     }
+ 109:StepperMotorDriver.c ****     
+ 110:StepperMotorDriver.c ****     else if (eStep < 0)
+ 111:StepperMotorDriver.c ****     {   // turning down (negativ steps)
+ 112:StepperMotorDriver.c ****         if (!Limit_Down_Read())
+ 113:StepperMotorDriver.c ****         {   // if down limit is reached, don't move
+ 114:StepperMotorDriver.c ****             eStep = 0;
+ 115:StepperMotorDriver.c ****             return;
+ 116:StepperMotorDriver.c ****         }
+ 117:StepperMotorDriver.c ****         // set elevation motor pins to next step and decrease steps to be taken
+ 118:StepperMotorDriver.c ****         elevationStep(stepSequence[--elevationSteps % STEPS]);
+ 119:StepperMotorDriver.c ****         eStep = eStep + 1;
+ 120:StepperMotorDriver.c ****         return;
+ 121:StepperMotorDriver.c ****     }
+ 122:StepperMotorDriver.c ****     return;
+ 123:StepperMotorDriver.c **** }
+ 124:StepperMotorDriver.c **** 
+ 125:StepperMotorDriver.c **** void elevationStep(int sequence[4])
+ 126:StepperMotorDriver.c **** {   // function to write sequence to elevation motor pins
+ 253              		.loc 1 126 0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 8
+
+
  254              		.cfi_startproc
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 8
-
-
  255              		@ args = 0, pretend = 0, frame = 0
  256              		@ frame_needed = 0, uses_anonymous_args = 0
  257              	.LVL17:
@@ -429,24 +430,24 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  260              		.cfi_offset 4, -8
  261              		.cfi_offset 14, -4
  262 0002 0446     		mov	r4, r0
- 126:StepperMotorDriver.c ****     Elevation_Pin_1_Write(sequence[0]);
- 263              		.loc 1 126 0
+ 127:StepperMotorDriver.c ****     Elevation_Pin_1_Write(sequence[0]);
+ 263              		.loc 1 127 0
  264 0004 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
  265              	.LVL18:
  266 0006 FFF7FEFF 		bl	Elevation_Pin_1_Write
  267              	.LVL19:
- 127:StepperMotorDriver.c ****     Elevation_Pin_2_Write(sequence[1]);
- 268              		.loc 1 127 0
+ 128:StepperMotorDriver.c ****     Elevation_Pin_2_Write(sequence[1]);
+ 268              		.loc 1 128 0
  269 000a 2079     		ldrb	r0, [r4, #4]	@ zero_extendqisi2
  270 000c FFF7FEFF 		bl	Elevation_Pin_2_Write
  271              	.LVL20:
- 128:StepperMotorDriver.c ****     Elevation_Pin_3_Write(sequence[2]);
- 272              		.loc 1 128 0
+ 129:StepperMotorDriver.c ****     Elevation_Pin_3_Write(sequence[2]);
+ 272              		.loc 1 129 0
  273 0010 207A     		ldrb	r0, [r4, #8]	@ zero_extendqisi2
  274 0012 FFF7FEFF 		bl	Elevation_Pin_3_Write
  275              	.LVL21:
- 129:StepperMotorDriver.c ****     Elevation_Pin_4_Write(sequence[3]);
- 276              		.loc 1 129 0
+ 130:StepperMotorDriver.c ****     Elevation_Pin_4_Write(sequence[3]);
+ 276              		.loc 1 130 0
  277 0016 207B     		ldrb	r0, [r4, #12]	@ zero_extendqisi2
  278 0018 FFF7FEFF 		bl	Elevation_Pin_4_Write
  279              	.LVL22:
@@ -462,8 +463,8 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  289              		.type	elevation, %function
  290              	elevation:
  291              	.LFB68:
-  90:StepperMotorDriver.c ****     if (Elevation_Pin_1_Read() == 0 && Elevation_Pin_2_Read() == 0 && Elevation_Pin_3_Read() == 0 &
- 292              		.loc 1 90 0
+  91:StepperMotorDriver.c ****     if (Elevation_Pin_1_Read() == 0 && Elevation_Pin_2_Read() == 0 && Elevation_Pin_3_Read() == 0 &
+ 292              		.loc 1 91 0
  293              		.cfi_startproc
  294              		@ args = 0, pretend = 0, frame = 0
  295              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -471,31 +472,31 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  297              		.cfi_def_cfa_offset 8
  298              		.cfi_offset 3, -8
  299              		.cfi_offset 14, -4
-  91:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 300              		.loc 1 91 0
+  92:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+ 300              		.loc 1 92 0
  301 0002 FFF7FEFF 		bl	Elevation_Pin_1_Read
  302              	.LVL23:
  303 0006 C0B9     		cbnz	r0, .L24
-  91:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 304              		.loc 1 91 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 9
+  92:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 9
 
 
+ 304              		.loc 1 92 0 is_stmt 0 discriminator 1
  305 0008 FFF7FEFF 		bl	Elevation_Pin_2_Read
  306              	.LVL24:
  307 000c A8B9     		cbnz	r0, .L24
-  91:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 308              		.loc 1 91 0 discriminator 2
+  92:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+ 308              		.loc 1 92 0 discriminator 2
  309 000e FFF7FEFF 		bl	Elevation_Pin_3_Read
  310              	.LVL25:
  311 0012 90B9     		cbnz	r0, .L24
-  91:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
- 312              		.loc 1 91 0 discriminator 3
+  92:StepperMotorDriver.c ****     {   // if the motor is off turn it on, on the same step as last time
+ 312              		.loc 1 92 0 discriminator 3
  313 0014 FFF7FEFF 		bl	Elevation_Pin_4_Read
  314              	.LVL26:
  315 0018 78B9     		cbnz	r0, .L24
-  93:StepperMotorDriver.c ****         return;
- 316              		.loc 1 93 0 is_stmt 1
+  94:StepperMotorDriver.c ****         return;
+ 316              		.loc 1 94 0 is_stmt 1
  317 001a 294B     		ldr	r3, .L33
  318 001c D3F88430 		ldr	r3, [r3, #132]
  319 0020 284A     		ldr	r2, .L33+4
@@ -509,38 +510,38 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  327 0030 00EB0310 		add	r0, r0, r3, lsl #4
  328 0034 FFF7FEFF 		bl	elevationStep
  329              	.LVL27:
-  94:StepperMotorDriver.c ****     }
- 330              		.loc 1 94 0
+  95:StepperMotorDriver.c ****     }
+ 330              		.loc 1 95 0
  331 0038 08BD     		pop	{r3, pc}
  332              	.L24:
-  96:StepperMotorDriver.c ****     {   // turning down (positiv steps)
- 333              		.loc 1 96 0
+  97:StepperMotorDriver.c ****     {   // turning up (positiv steps)
+ 333              		.loc 1 97 0
  334 003a 244B     		ldr	r3, .L33+12
  335 003c 5B68     		ldr	r3, [r3, #4]
  336 003e 002B     		cmp	r3, #0
  337 0040 1DDD     		ble	.L27
-  98:StepperMotorDriver.c ****         {   // if down limit is reached, don't move
- 338              		.loc 1 98 0
- 339 0042 FFF7FEFF 		bl	Limit_Down_Read
+  99:StepperMotorDriver.c ****         {   // if up limit is reached, don't move
+ 338              		.loc 1 99 0
+ 339 0042 FFF7FEFF 		bl	Limit_Up_Read
  340              	.LVL28:
  341 0046 18B9     		cbnz	r0, .L28
- 100:StepperMotorDriver.c ****             return;
- 342              		.loc 1 100 0
+ 101:StepperMotorDriver.c ****             return;
+ 342              		.loc 1 101 0
  343 0048 0022     		movs	r2, #0
  344 004a 204B     		ldr	r3, .L33+12
  345 004c 5A60     		str	r2, [r3, #4]
- 101:StepperMotorDriver.c ****         }
- 346              		.loc 1 101 0
+ 102:StepperMotorDriver.c ****         }
+ 346              		.loc 1 102 0
  347 004e 08BD     		pop	{r3, pc}
  348              	.L28:
- 104:StepperMotorDriver.c ****         eStep = eStep - 1;
- 349              		.loc 1 104 0
+ 105:StepperMotorDriver.c ****         eStep = eStep - 1;
+ 349              		.loc 1 105 0
  350 0050 1B4A     		ldr	r2, .L33
  351 0052 D2F88430 		ldr	r3, [r2, #132]
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 10
+
+
  352 0056 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 10
-
-
  353 0058 C2F88430 		str	r3, [r2, #132]
  354 005c 1948     		ldr	r0, .L33+4
  355 005e 0340     		ands	r3, r3, r0
@@ -553,36 +554,36 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  362 006c 00EB0310 		add	r0, r0, r3, lsl #4
  363 0070 FFF7FEFF 		bl	elevationStep
  364              	.LVL29:
- 105:StepperMotorDriver.c ****         return;
- 365              		.loc 1 105 0
+ 106:StepperMotorDriver.c ****         return;
+ 365              		.loc 1 106 0
  366 0074 154A     		ldr	r2, .L33+12
  367 0076 5368     		ldr	r3, [r2, #4]
  368 0078 013B     		subs	r3, r3, #1
  369 007a 5360     		str	r3, [r2, #4]
- 106:StepperMotorDriver.c ****     }
- 370              		.loc 1 106 0
+ 107:StepperMotorDriver.c ****     }
+ 370              		.loc 1 107 0
  371 007c 08BD     		pop	{r3, pc}
  372              	.L27:
- 109:StepperMotorDriver.c ****     {   // turning up (negativ steps)
- 373              		.loc 1 109 0
+ 110:StepperMotorDriver.c ****     {   // turning down (negativ steps)
+ 373              		.loc 1 110 0
  374 007e 002B     		cmp	r3, #0
  375 0080 1CDA     		bge	.L23
- 111:StepperMotorDriver.c ****         {   // if up limit is reached, don't move
- 376              		.loc 1 111 0
- 377 0082 FFF7FEFF 		bl	Limit_Up_Read
+ 112:StepperMotorDriver.c ****         {   // if down limit is reached, don't move
+ 376              		.loc 1 112 0
+ 377 0082 FFF7FEFF 		bl	Limit_Down_Read
  378              	.LVL30:
  379 0086 18B9     		cbnz	r0, .L30
- 113:StepperMotorDriver.c ****             return;
- 380              		.loc 1 113 0
+ 114:StepperMotorDriver.c ****             return;
+ 380              		.loc 1 114 0
  381 0088 0022     		movs	r2, #0
  382 008a 104B     		ldr	r3, .L33+12
  383 008c 5A60     		str	r2, [r3, #4]
- 114:StepperMotorDriver.c ****         }
- 384              		.loc 1 114 0
+ 115:StepperMotorDriver.c ****         }
+ 384              		.loc 1 115 0
  385 008e 08BD     		pop	{r3, pc}
  386              	.L30:
- 117:StepperMotorDriver.c ****         eStep = eStep + 1;
- 387              		.loc 1 117 0
+ 118:StepperMotorDriver.c ****         eStep = eStep + 1;
+ 387              		.loc 1 118 0
  388 0090 0B4A     		ldr	r2, .L33
  389 0092 D2F88430 		ldr	r3, [r2, #132]
  390 0096 013B     		subs	r3, r3, #1
@@ -597,12 +598,12 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  399 00aa 0748     		ldr	r0, .L33+8
  400 00ac 00EB0310 		add	r0, r0, r3, lsl #4
  401 00b0 FFF7FEFF 		bl	elevationStep
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 11
+
+
  402              	.LVL31:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 11
-
-
- 118:StepperMotorDriver.c ****         return;
- 403              		.loc 1 118 0
+ 119:StepperMotorDriver.c ****         return;
+ 403              		.loc 1 119 0
  404 00b4 054A     		ldr	r2, .L33+12
  405 00b6 5368     		ldr	r3, [r2, #4]
  406 00b8 0133     		adds	r3, r3, #1
@@ -627,12 +628,12 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  425              		.type	MOTOR_STEP, %function
  426              	MOTOR_STEP:
  427              	.LFB70:
- 130:StepperMotorDriver.c **** }
- 131:StepperMotorDriver.c **** 
+ 131:StepperMotorDriver.c **** }
  132:StepperMotorDriver.c **** 
- 133:StepperMotorDriver.c **** CY_ISR(MOTOR_STEP)
- 134:StepperMotorDriver.c **** {   // interupt rutine activated by clock to take steps
- 428              		.loc 1 134 0
+ 133:StepperMotorDriver.c **** 
+ 134:StepperMotorDriver.c **** CY_ISR(MOTOR_STEP)
+ 135:StepperMotorDriver.c **** {   // interupt rutine activated by clock to take steps
+ 428              		.loc 1 135 0
  429              		.cfi_startproc
  430              		@ args = 0, pretend = 0, frame = 0
  431              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -640,94 +641,94 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  433              		.cfi_def_cfa_offset 8
  434              		.cfi_offset 3, -8
  435              		.cfi_offset 14, -4
- 135:StepperMotorDriver.c ****     if (aStep)
- 436              		.loc 1 135 0
+ 136:StepperMotorDriver.c ****     if (aStep)
+ 436              		.loc 1 136 0
  437 0002 194B     		ldr	r3, .L43
  438 0004 1B68     		ldr	r3, [r3]
  439 0006 13B1     		cbz	r3, .L36
- 136:StepperMotorDriver.c ****     {   // if aStep != 0 move
- 137:StepperMotorDriver.c ****         azimuth();
- 440              		.loc 1 137 0
+ 137:StepperMotorDriver.c ****     {   // if aStep != 0 move
+ 138:StepperMotorDriver.c ****         azimuth();
+ 440              		.loc 1 138 0
  441 0008 FFF7FEFF 		bl	azimuth
  442              	.LVL32:
  443 000c 12E0     		b	.L37
  444              	.L36:
- 138:StepperMotorDriver.c ****     }
- 139:StepperMotorDriver.c ****     else if (Azimuth_Pin_1_Read() == 1 || Azimuth_Pin_2_Read() == 1 || Azimuth_Pin_3_Read() == 1 ||
- 445              		.loc 1 139 0
+ 139:StepperMotorDriver.c ****     }
+ 140:StepperMotorDriver.c ****     else if (Azimuth_Pin_1_Read() == 1 || Azimuth_Pin_2_Read() == 1 || Azimuth_Pin_3_Read() == 1 ||
+ 445              		.loc 1 140 0
  446 000e FFF7FEFF 		bl	Azimuth_Pin_1_Read
  447              	.LVL33:
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 12
+
+
  448 0012 0128     		cmp	r0, #1
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 12
-
-
  449 0014 0BD0     		beq	.L38
- 450              		.loc 1 139 0 is_stmt 0 discriminator 1
+ 450              		.loc 1 140 0 is_stmt 0 discriminator 1
  451 0016 FFF7FEFF 		bl	Azimuth_Pin_2_Read
  452              	.LVL34:
  453 001a 0128     		cmp	r0, #1
  454 001c 07D0     		beq	.L38
- 455              		.loc 1 139 0 discriminator 2
+ 455              		.loc 1 140 0 discriminator 2
  456 001e FFF7FEFF 		bl	Azimuth_Pin_3_Read
  457              	.LVL35:
  458 0022 0128     		cmp	r0, #1
  459 0024 03D0     		beq	.L38
- 460              		.loc 1 139 0 discriminator 3
+ 460              		.loc 1 140 0 discriminator 3
  461 0026 FFF7FEFF 		bl	Azimuth_Pin_4_Read
  462              	.LVL36:
  463 002a 0128     		cmp	r0, #1
  464 002c 02D1     		bne	.L37
  465              	.L38:
- 140:StepperMotorDriver.c ****     {   // if we didn't move and motor is on, turn it off
- 141:StepperMotorDriver.c ****         azimuthStep(off);
- 466              		.loc 1 141 0 is_stmt 1
+ 141:StepperMotorDriver.c ****     {   // if we didn't move and motor is on, turn it off
+ 142:StepperMotorDriver.c ****         azimuthStep(off);
+ 466              		.loc 1 142 0 is_stmt 1
  467 002e 0F48     		ldr	r0, .L43+4
  468 0030 FFF7FEFF 		bl	azimuthStep
  469              	.LVL37:
  470              	.L37:
- 142:StepperMotorDriver.c ****     }
- 143:StepperMotorDriver.c ****     
- 144:StepperMotorDriver.c ****     if (eStep)
- 471              		.loc 1 144 0
+ 143:StepperMotorDriver.c ****     }
+ 144:StepperMotorDriver.c ****     
+ 145:StepperMotorDriver.c ****     if (eStep)
+ 471              		.loc 1 145 0
  472 0034 0C4B     		ldr	r3, .L43
  473 0036 5B68     		ldr	r3, [r3, #4]
  474 0038 13B1     		cbz	r3, .L39
- 145:StepperMotorDriver.c ****     {   // if eStep != 0 move
- 146:StepperMotorDriver.c ****         elevation();
- 475              		.loc 1 146 0
+ 146:StepperMotorDriver.c ****     {   // if eStep != 0 move
+ 147:StepperMotorDriver.c ****         elevation();
+ 475              		.loc 1 147 0
  476 003a FFF7FEFF 		bl	elevation
  477              	.LVL38:
  478 003e 08BD     		pop	{r3, pc}
  479              	.L39:
- 147:StepperMotorDriver.c ****     }
- 148:StepperMotorDriver.c ****     else if (Elevation_Pin_1_Read() == 1 || Elevation_Pin_2_Read() == 1 || Elevation_Pin_3_Read() =
- 480              		.loc 1 148 0
+ 148:StepperMotorDriver.c ****     }
+ 149:StepperMotorDriver.c ****     else if (Elevation_Pin_1_Read() == 1 || Elevation_Pin_2_Read() == 1 || Elevation_Pin_3_Read() =
+ 480              		.loc 1 149 0
  481 0040 FFF7FEFF 		bl	Elevation_Pin_1_Read
  482              	.LVL39:
  483 0044 0128     		cmp	r0, #1
  484 0046 0BD0     		beq	.L41
- 485              		.loc 1 148 0 is_stmt 0 discriminator 1
+ 485              		.loc 1 149 0 is_stmt 0 discriminator 1
  486 0048 FFF7FEFF 		bl	Elevation_Pin_2_Read
  487              	.LVL40:
  488 004c 0128     		cmp	r0, #1
  489 004e 07D0     		beq	.L41
- 490              		.loc 1 148 0 discriminator 2
+ 490              		.loc 1 149 0 discriminator 2
  491 0050 FFF7FEFF 		bl	Elevation_Pin_3_Read
  492              	.LVL41:
  493 0054 0128     		cmp	r0, #1
  494 0056 03D0     		beq	.L41
- 495              		.loc 1 148 0 discriminator 3
+ 495              		.loc 1 149 0 discriminator 3
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 13
+
+
  496 0058 FFF7FEFF 		bl	Elevation_Pin_4_Read
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 13
-
-
  497              	.LVL42:
  498 005c 0128     		cmp	r0, #1
  499 005e 02D1     		bne	.L35
  500              	.L41:
- 149:StepperMotorDriver.c ****     {   // if we didn't move and motor is on, turn it off
- 150:StepperMotorDriver.c ****         elevationStep(off);
- 501              		.loc 1 150 0 is_stmt 1
+ 150:StepperMotorDriver.c ****     {   // if we didn't move and motor is on, turn it off
+ 151:StepperMotorDriver.c ****         elevationStep(off);
+ 501              		.loc 1 151 0 is_stmt 1
  502 0060 0248     		ldr	r0, .L43+4
  503 0062 FFF7FEFF 		bl	elevationStep
  504              	.LVL43:
@@ -749,11 +750,11 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  520              		.type	limitLeft, %function
  521              	limitLeft:
  522              	.LFB71:
- 151:StepperMotorDriver.c ****     }
- 152:StepperMotorDriver.c **** }
- 153:StepperMotorDriver.c **** 
- 154:StepperMotorDriver.c **** bool limitLeft(){return !Limit_Left_Read();}
- 523              		.loc 1 154 0
+ 152:StepperMotorDriver.c ****     }
+ 153:StepperMotorDriver.c **** }
+ 154:StepperMotorDriver.c **** 
+ 155:StepperMotorDriver.c **** bool limitLeft(){return !Limit_Left_Read();}
+ 523              		.loc 1 155 0
  524              		.cfi_startproc
  525              		@ args = 0, pretend = 0, frame = 0
  526              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -761,7 +762,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  528              		.cfi_def_cfa_offset 8
  529              		.cfi_offset 3, -8
  530              		.cfi_offset 14, -4
- 531              		.loc 1 154 0
+ 531              		.loc 1 155 0
  532 0002 FFF7FEFF 		bl	Limit_Left_Read
  533              	.LVL44:
  534 0006 B0FA80F0 		clz	r0, r0
@@ -777,13 +778,13 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  544              		.thumb_func
  545              		.type	limitRight, %function
  546              	limitRight:
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 14
+
+
  547              	.LFB72:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 14
-
-
- 155:StepperMotorDriver.c **** 
- 156:StepperMotorDriver.c **** bool limitRight(){return !Limit_Right_Read();}
- 548              		.loc 1 156 0
+ 156:StepperMotorDriver.c **** 
+ 157:StepperMotorDriver.c **** bool limitRight(){return !Limit_Right_Read();}
+ 548              		.loc 1 157 0
  549              		.cfi_startproc
  550              		@ args = 0, pretend = 0, frame = 0
  551              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -791,7 +792,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  553              		.cfi_def_cfa_offset 8
  554              		.cfi_offset 3, -8
  555              		.cfi_offset 14, -4
- 556              		.loc 1 156 0
+ 556              		.loc 1 157 0
  557 0002 FFF7FEFF 		bl	Limit_Right_Read
  558              	.LVL45:
  559 0006 B0FA80F0 		clz	r0, r0
@@ -808,9 +809,9 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  570              		.type	limitUp, %function
  571              	limitUp:
  572              	.LFB73:
- 157:StepperMotorDriver.c **** 
- 158:StepperMotorDriver.c **** bool limitUp(){return !Limit_Up_Read();}
- 573              		.loc 1 158 0
+ 158:StepperMotorDriver.c **** 
+ 159:StepperMotorDriver.c **** bool limitUp(){return !Limit_Up_Read();}
+ 573              		.loc 1 159 0
  574              		.cfi_startproc
  575              		@ args = 0, pretend = 0, frame = 0
  576              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -818,7 +819,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  578              		.cfi_def_cfa_offset 8
  579              		.cfi_offset 3, -8
  580              		.cfi_offset 14, -4
- 581              		.loc 1 158 0
+ 581              		.loc 1 159 0
  582 0002 FFF7FEFF 		bl	Limit_Up_Read
  583              	.LVL46:
  584 0006 B0FA80F0 		clz	r0, r0
@@ -835,12 +836,12 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  595              		.type	limitDown, %function
  596              	limitDown:
  597              	.LFB74:
- 159:StepperMotorDriver.c **** 
- 160:StepperMotorDriver.c **** bool limitDown(){return !Limit_Down_Read();}
- 598              		.loc 1 160 0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 15
+ 160:StepperMotorDriver.c **** 
+ 161:StepperMotorDriver.c **** bool limitDown(){return !Limit_Down_Read();}
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 15
 
 
+ 598              		.loc 1 161 0
  599              		.cfi_startproc
  600              		@ args = 0, pretend = 0, frame = 0
  601              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -848,7 +849,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  603              		.cfi_def_cfa_offset 8
  604              		.cfi_offset 3, -8
  605              		.cfi_offset 14, -4
- 606              		.loc 1 160 0
+ 606              		.loc 1 161 0
  607 0002 FFF7FEFF 		bl	Limit_Down_Read
  608              	.LVL47:
  609 0006 B0FA80F0 		clz	r0, r0
@@ -865,11 +866,11 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  620              		.type	UART_HANDLER, %function
  621              	UART_HANDLER:
  622              	.LFB75:
- 161:StepperMotorDriver.c **** 
- 162:StepperMotorDriver.c **** // to be deleted
- 163:StepperMotorDriver.c **** CY_ISR(UART_HANDLER)
- 164:StepperMotorDriver.c **** {
- 623              		.loc 1 164 0
+ 162:StepperMotorDriver.c **** 
+ 163:StepperMotorDriver.c **** // to be deleted
+ 164:StepperMotorDriver.c **** CY_ISR(UART_HANDLER)
+ 165:StepperMotorDriver.c **** {
+ 623              		.loc 1 165 0
  624              		.cfi_startproc
  625              		@ args = 0, pretend = 0, frame = 0
  626              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -877,42 +878,42 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  628              		.cfi_def_cfa_offset 8
  629              		.cfi_offset 4, -8
  630              		.cfi_offset 14, -4
- 165:StepperMotorDriver.c ****     uint8_t c = UART_1_GetByte();
- 631              		.loc 1 165 0
+ 166:StepperMotorDriver.c ****     uint8_t c = UART_1_GetByte();
+ 631              		.loc 1 166 0
  632 0002 FFF7FEFF 		bl	UART_1_GetByte
  633              	.LVL48:
  634 0006 C4B2     		uxtb	r4, r0
  635              	.LVL49:
- 166:StepperMotorDriver.c ****     UART_1_PutChar(c);
- 636              		.loc 1 166 0
+ 167:StepperMotorDriver.c ****     UART_1_PutChar(c);
+ 636              		.loc 1 167 0
  637 0008 2046     		mov	r0, r4
  638 000a FFF7FEFF 		bl	UART_1_PutChar
  639              	.LVL50:
- 167:StepperMotorDriver.c ****     if (c == 'j')
- 640              		.loc 1 167 0
+ 168:StepperMotorDriver.c ****     if (c == 'j')
+ 640              		.loc 1 168 0
  641 000e 6A2C     		cmp	r4, #106
  642 0010 05D1     		bne	.L54
- 168:StepperMotorDriver.c ****     {
- 169:StepperMotorDriver.c ****         aStep = aStep - 800;
- 643              		.loc 1 169 0
+ 169:StepperMotorDriver.c ****     {
+ 170:StepperMotorDriver.c ****         aStep = aStep - 800;
+ 643              		.loc 1 170 0
  644 0012 134A     		ldr	r2, .L60
  645 0014 1368     		ldr	r3, [r2]
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 16
+
+
  646 0016 A3F54873 		sub	r3, r3, #800
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 16
-
-
  647 001a 1360     		str	r3, [r2]
  648 001c 10BD     		pop	{r4, pc}
  649              	.LVL51:
  650              	.L54:
- 170:StepperMotorDriver.c ****     }
- 171:StepperMotorDriver.c ****     else if (c == 'h')
- 651              		.loc 1 171 0
+ 171:StepperMotorDriver.c ****     }
+ 172:StepperMotorDriver.c ****     else if (c == 'h')
+ 651              		.loc 1 172 0
  652 001e 682C     		cmp	r4, #104
  653 0020 05D1     		bne	.L56
- 172:StepperMotorDriver.c ****     {
- 173:StepperMotorDriver.c ****         aStep = aStep + 800;
- 654              		.loc 1 173 0
+ 173:StepperMotorDriver.c ****     {
+ 174:StepperMotorDriver.c ****         aStep = aStep + 800;
+ 654              		.loc 1 174 0
  655 0022 0F4A     		ldr	r2, .L60
  656 0024 1368     		ldr	r3, [r2]
  657 0026 03F54873 		add	r3, r3, #800
@@ -920,14 +921,14 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  659 002c 10BD     		pop	{r4, pc}
  660              	.LVL52:
  661              	.L56:
- 174:StepperMotorDriver.c ****     }
- 175:StepperMotorDriver.c ****     else if (c == 'u')
- 662              		.loc 1 175 0
+ 175:StepperMotorDriver.c ****     }
+ 176:StepperMotorDriver.c ****     else if (c == 'u')
+ 662              		.loc 1 176 0
  663 002e 752C     		cmp	r4, #117
  664 0030 05D1     		bne	.L57
- 176:StepperMotorDriver.c ****     {
- 177:StepperMotorDriver.c ****         eStep = eStep - 8000;
- 665              		.loc 1 177 0
+ 177:StepperMotorDriver.c ****     {
+ 178:StepperMotorDriver.c ****         eStep = eStep - 8000;
+ 665              		.loc 1 178 0
  666 0032 0B4A     		ldr	r2, .L60
  667 0034 5368     		ldr	r3, [r2, #4]
  668 0036 A3F5FA53 		sub	r3, r3, #8000
@@ -935,14 +936,14 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  670 003c 10BD     		pop	{r4, pc}
  671              	.LVL53:
  672              	.L57:
- 178:StepperMotorDriver.c ****     }
- 179:StepperMotorDriver.c ****     else if (c == 'n')
- 673              		.loc 1 179 0
+ 179:StepperMotorDriver.c ****     }
+ 180:StepperMotorDriver.c ****     else if (c == 'n')
+ 673              		.loc 1 180 0
  674 003e 6E2C     		cmp	r4, #110
  675 0040 05D1     		bne	.L58
- 180:StepperMotorDriver.c ****     {
- 181:StepperMotorDriver.c ****         eStep = eStep + 8000;
- 676              		.loc 1 181 0
+ 181:StepperMotorDriver.c ****     {
+ 182:StepperMotorDriver.c ****         eStep = eStep + 8000;
+ 676              		.loc 1 182 0
  677 0042 074A     		ldr	r2, .L60
  678 0044 5368     		ldr	r3, [r2, #4]
  679 0046 03F5FA53 		add	r3, r3, #8000
@@ -950,20 +951,20 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  681 004c 10BD     		pop	{r4, pc}
  682              	.LVL54:
  683              	.L58:
- 182:StepperMotorDriver.c ****     }
- 183:StepperMotorDriver.c ****     else if (c == 'a')
- 684              		.loc 1 183 0
+ 183:StepperMotorDriver.c ****     }
+ 184:StepperMotorDriver.c ****     else if (c == 'a')
+ 684              		.loc 1 184 0
  685 004e 612C     		cmp	r4, #97
  686 0050 04D1     		bne	.L53
- 184:StepperMotorDriver.c ****     {
- 185:StepperMotorDriver.c ****         eStep = eStep + 650;
- 687              		.loc 1 185 0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 17
+ 185:StepperMotorDriver.c ****     {
+ 186:StepperMotorDriver.c ****         eStep = eStep - 650;
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 17
 
 
+ 687              		.loc 1 186 0
  688 0052 034A     		ldr	r2, .L60
  689 0054 5368     		ldr	r3, [r2, #4]
- 690 0056 03F28A23 		addw	r3, r3, #650
+ 690 0056 A3F28A23 		subw	r3, r3, #650
  691 005a 5360     		str	r3, [r2, #4]
  692              	.L53:
  693 005c 10BD     		pop	{r4, pc}
@@ -988,39 +989,39 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  712 0004 01000000 		.word	1
  713 0008 00000000 		.word	0
  714 000c 00000000 		.word	0
- 715 0010 00000000 		.word	0
- 716 0014 01000000 		.word	1
- 717 0018 01000000 		.word	1
+ 715 0010 01000000 		.word	1
+ 716 0014 00000000 		.word	0
+ 717 0018 00000000 		.word	0
  718 001c 00000000 		.word	0
- 719 0020 00000000 		.word	0
+ 719 0020 01000000 		.word	1
  720 0024 00000000 		.word	0
- 721 0028 01000000 		.word	1
- 722 002c 00000000 		.word	0
- 723 0030 00000000 		.word	0
+ 721 0028 00000000 		.word	0
+ 722 002c 01000000 		.word	1
+ 723 0030 01000000 		.word	1
  724 0034 00000000 		.word	0
- 725 0038 01000000 		.word	1
+ 725 0038 00000000 		.word	0
  726 003c 01000000 		.word	1
  727 0040 00000000 		.word	0
  728 0044 00000000 		.word	0
- 729 0048 00000000 		.word	0
+ 729 0048 01000000 		.word	1
  730 004c 01000000 		.word	1
  731 0050 00000000 		.word	0
  732 0054 00000000 		.word	0
- 733 0058 00000000 		.word	0
- 734 005c 01000000 		.word	1
- 735 0060 01000000 		.word	1
- 736 0064 00000000 		.word	0
- 737 0068 00000000 		.word	0
+ 733 0058 01000000 		.word	1
+ 734 005c 00000000 		.word	0
+ 735 0060 00000000 		.word	0
+ 736 0064 01000000 		.word	1
+ 737 0068 01000000 		.word	1
  738 006c 00000000 		.word	0
- 739 0070 01000000 		.word	1
+ 739 0070 00000000 		.word	0
  740 0074 01000000 		.word	1
  741 0078 00000000 		.word	0
  742 007c 00000000 		.word	0
- 743 0080 01000000 		.word	1
+ 743 0080 00000000 		.word	0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 18
+
+
  744              		.type	elevationSteps, %object
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 18
-
-
  745              		.size	elevationSteps, 4
  746              	elevationSteps:
  747 0084 00127A00 		.word	8000000
@@ -1050,14 +1051,14 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  768              		.file 5 "Generated_Source\\PSoC5/Azimuth_Pin_2.h"
  769              		.file 6 "Generated_Source\\PSoC5/Azimuth_Pin_3.h"
  770              		.file 7 "Generated_Source\\PSoC5/Azimuth_Pin_4.h"
- 771              		.file 8 "Generated_Source\\PSoC5/Limit_Right.h"
- 772              		.file 9 "Generated_Source\\PSoC5/Limit_Left.h"
+ 771              		.file 8 "Generated_Source\\PSoC5/Limit_Left.h"
+ 772              		.file 9 "Generated_Source\\PSoC5/Limit_Right.h"
  773              		.file 10 "Generated_Source\\PSoC5/Elevation_Pin_1.h"
  774              		.file 11 "Generated_Source\\PSoC5/Elevation_Pin_2.h"
  775              		.file 12 "Generated_Source\\PSoC5/Elevation_Pin_3.h"
  776              		.file 13 "Generated_Source\\PSoC5/Elevation_Pin_4.h"
- 777              		.file 14 "Generated_Source\\PSoC5/Limit_Down.h"
- 778              		.file 15 "Generated_Source\\PSoC5/Limit_Up.h"
+ 777              		.file 14 "Generated_Source\\PSoC5/Limit_Up.h"
+ 778              		.file 15 "Generated_Source\\PSoC5/Limit_Down.h"
  779              		.file 16 "Generated_Source\\PSoC5/UART_1.h"
  780              		.file 17 "Generated_Source\\PSoC5/core_cm3.h"
  781              		.section	.debug_info,"",%progbits
@@ -1067,20 +1068,20 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  785 0006 00000000 		.4byte	.Ldebug_abbrev0
  786 000a 04       		.byte	0x4
  787 000b 01       		.uleb128 0x1
- 788 000c 2B030000 		.4byte	.LASF60
+ 788 000c A7030000 		.4byte	.LASF60
  789 0010 0C       		.byte	0xc
- 790 0011 F6020000 		.4byte	.LASF61
- 791 0015 B9030000 		.4byte	.LASF62
+ 790 0011 72030000 		.4byte	.LASF61
+ 791 0015 D7010000 		.4byte	.LASF62
  792 0019 00000000 		.4byte	.Ldebug_ranges0+0
  793 001d 00000000 		.4byte	0
  794 0021 00000000 		.4byte	.Ldebug_line0
  795 0025 02       		.uleb128 0x2
  796 0026 01       		.byte	0x1
  797 0027 06       		.byte	0x6
- 798 0028 D7010000 		.4byte	.LASF0
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 19
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 19
 
 
+ 798 0028 53020000 		.4byte	.LASF0
  799 002c 03       		.uleb128 0x3
  800 002d 64010000 		.4byte	.LASF4
  801 0031 02       		.byte	0x2
@@ -1097,9 +1098,9 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  812 0045 02       		.uleb128 0x2
  813 0046 02       		.byte	0x2
  814 0047 07       		.byte	0x7
- 815 0048 58020000 		.4byte	.LASF3
+ 815 0048 D4020000 		.4byte	.LASF3
  816 004c 03       		.uleb128 0x3
- 817 004d DD020000 		.4byte	.LASF5
+ 817 004d 59030000 		.4byte	.LASF5
  818 0051 02       		.byte	0x2
  819 0052 3F       		.byte	0x3f
  820 0053 57000000 		.4byte	0x57
@@ -1110,7 +1111,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  825 005e 02       		.uleb128 0x2
  826 005f 04       		.byte	0x4
  827 0060 07       		.byte	0x7
- 828 0061 B5020000 		.4byte	.LASF7
+ 828 0061 31030000 		.4byte	.LASF7
  829 0065 02       		.uleb128 0x2
  830 0066 08       		.byte	0x8
  831 0067 05       		.byte	0x5
@@ -1118,7 +1119,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  833 006c 02       		.uleb128 0x2
  834 006d 08       		.byte	0x8
  835 006e 07       		.byte	0x7
- 836 006f EB010000 		.4byte	.LASF9
+ 836 006f 67020000 		.4byte	.LASF9
  837 0073 04       		.uleb128 0x4
  838 0074 04       		.byte	0x4
  839 0075 05       		.byte	0x5
@@ -1126,32 +1127,32 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  841 007a 02       		.uleb128 0x2
  842 007b 04       		.byte	0x4
  843 007c 07       		.byte	0x7
- 844 007d 2B020000 		.4byte	.LASF10
+ 844 007d A7020000 		.4byte	.LASF10
  845 0081 03       		.uleb128 0x3
  846 0082 13010000 		.4byte	.LASF11
  847 0086 03       		.byte	0x3
  848 0087 18       		.byte	0x18
  849 0088 2C000000 		.4byte	0x2c
  850 008c 03       		.uleb128 0x3
- 851 008d E3010000 		.4byte	.LASF12
+ 851 008d 5F020000 		.4byte	.LASF12
  852 0091 03       		.byte	0x3
  853 0092 2C       		.byte	0x2c
  854 0093 4C000000 		.4byte	0x4c
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 20
+
+
  855 0097 02       		.uleb128 0x2
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 20
-
-
  856 0098 04       		.byte	0x4
  857 0099 04       		.byte	0x4
  858 009a 3D010000 		.4byte	.LASF13
  859 009e 02       		.uleb128 0x2
  860 009f 08       		.byte	0x8
  861 00a0 04       		.byte	0x4
- 862 00a1 C7020000 		.4byte	.LASF14
+ 862 00a1 43030000 		.4byte	.LASF14
  863 00a5 02       		.uleb128 0x2
  864 00a6 01       		.byte	0x1
  865 00a7 08       		.byte	0x8
- 866 00a8 81020000 		.4byte	.LASF15
+ 866 00a8 FD020000 		.4byte	.LASF15
  867 00ac 02       		.uleb128 0x2
  868 00ad 08       		.byte	0x8
  869 00ae 04       		.byte	0x4
@@ -1159,28 +1160,28 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  871 00b3 02       		.uleb128 0x2
  872 00b4 04       		.byte	0x4
  873 00b5 07       		.byte	0x7
- 874 00b6 0B030000 		.4byte	.LASF17
+ 874 00b6 87030000 		.4byte	.LASF17
  875 00ba 05       		.uleb128 0x5
- 876 00bb 5A040000 		.4byte	.LASF18
+ 876 00bb 63040000 		.4byte	.LASF18
  877 00bf 01       		.byte	0x1
- 878 00c0 24       		.byte	0x24
+ 878 00c0 25       		.byte	0x25
  879 00c1 00000000 		.4byte	.LFB64
  880 00c5 0C000000 		.4byte	.LFE64-.LFB64
  881 00c9 01       		.uleb128 0x1
  882 00ca 9C       		.byte	0x9c
  883 00cb DD000000 		.4byte	0xdd
  884 00cf 06       		.uleb128 0x6
- 885 00d0 52020000 		.4byte	.LASF20
+ 885 00d0 CE020000 		.4byte	.LASF20
  886 00d4 01       		.byte	0x1
- 887 00d5 24       		.byte	0x24
+ 887 00d5 25       		.byte	0x25
  888 00d6 73000000 		.4byte	0x73
  889 00da 01       		.uleb128 0x1
  890 00db 50       		.byte	0x50
  891 00dc 00       		.byte	0
  892 00dd 05       		.uleb128 0x5
- 893 00de 86020000 		.4byte	.LASF19
+ 893 00de 02030000 		.4byte	.LASF19
  894 00e2 01       		.byte	0x1
- 895 00e3 4B       		.byte	0x4b
+ 895 00e3 4C       		.byte	0x4c
  896 00e4 00000000 		.4byte	.LFB66
  897 00e8 1E000000 		.4byte	.LFE66-.LFB66
  898 00ec 01       		.uleb128 0x1
@@ -1189,7 +1190,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  901 00f2 07       		.uleb128 0x7
  902 00f3 AC000000 		.4byte	.LASF21
  903 00f7 01       		.byte	0x1
- 904 00f8 4B       		.byte	0x4b
+ 904 00f8 4C       		.byte	0x4c
  905 00f9 26010000 		.4byte	0x126
  906 00fd 00000000 		.4byte	.LLST0
  907 0101 08       		.uleb128 0x8
@@ -1197,10 +1198,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  909 0106 6C040000 		.4byte	0x46c
  910 010a 08       		.uleb128 0x8
  911 010b 10000000 		.4byte	.LVL4
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 21
+
+
  912 010f 77040000 		.4byte	0x477
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 21
-
-
  913 0113 08       		.uleb128 0x8
  914 0114 16000000 		.4byte	.LVL5
  915 0118 82040000 		.4byte	0x482
@@ -1212,9 +1213,9 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  921 0127 04       		.byte	0x4
  922 0128 73000000 		.4byte	0x73
  923 012c 0A       		.uleb128 0xa
- 924 012d AD020000 		.4byte	.LASF24
+ 924 012d 29030000 		.4byte	.LASF24
  925 0131 01       		.byte	0x1
- 926 0132 29       		.byte	0x29
+ 926 0132 2A       		.byte	0x2a
  927 0133 00000000 		.4byte	.LFB65
  928 0137 C4000000 		.4byte	.LFE65-.LFB65
  929 013b 01       		.uleb128 0x1
@@ -1251,19 +1252,19 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  960 0193 05       		.uleb128 0x5
  961 0194 05010000 		.4byte	.LASF22
  962 0198 01       		.byte	0x1
- 963 0199 54       		.byte	0x54
+ 963 0199 55       		.byte	0x55
  964 019a 00000000 		.4byte	.LFB67
  965 019e 0C000000 		.4byte	.LFE67-.LFB67
  966 01a2 01       		.uleb128 0x1
  967 01a3 9C       		.byte	0x9c
  968 01a4 B6010000 		.4byte	0x1b6
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 22
+
+
  969 01a8 06       		.uleb128 0x6
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 22
-
-
- 970 01a9 52020000 		.4byte	.LASF20
+ 970 01a9 CE020000 		.4byte	.LASF20
  971 01ad 01       		.byte	0x1
- 972 01ae 54       		.byte	0x54
+ 972 01ae 55       		.byte	0x55
  973 01af 73000000 		.4byte	0x73
  974 01b3 01       		.uleb128 0x1
  975 01b4 50       		.byte	0x50
@@ -1271,7 +1272,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  977 01b6 05       		.uleb128 0x5
  978 01b7 3D000000 		.4byte	.LASF23
  979 01bb 01       		.byte	0x1
- 980 01bc 7C       		.byte	0x7c
+ 980 01bc 7D       		.byte	0x7d
  981 01bd 00000000 		.4byte	.LFB69
  982 01c1 1E000000 		.4byte	.LFE69-.LFB69
  983 01c5 01       		.uleb128 0x1
@@ -1280,7 +1281,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  986 01cb 07       		.uleb128 0x7
  987 01cc AC000000 		.4byte	.LASF21
  988 01d0 01       		.byte	0x1
- 989 01d1 7C       		.byte	0x7c
+ 989 01d1 7D       		.byte	0x7d
  990 01d2 26010000 		.4byte	0x126
  991 01d6 1E000000 		.4byte	.LLST1
  992 01da 08       		.uleb128 0x8
@@ -1299,7 +1300,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1005 01ff 0A       		.uleb128 0xa
  1006 0200 51010000 		.4byte	.LASF25
  1007 0204 01       		.byte	0x1
- 1008 0205 59       		.byte	0x59
+ 1008 0205 5A       		.byte	0x5a
  1009 0206 00000000 		.4byte	.LFB68
  1010 020a D0000000 		.4byte	.LFE68-.LFB68
  1011 020e 01       		.uleb128 0x1
@@ -1317,10 +1318,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1023 022f 08       		.uleb128 0x8
  1024 0230 18000000 		.4byte	.LVL26
  1025 0234 27050000 		.4byte	0x527
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 23
+
+
  1026 0238 08       		.uleb128 0x8
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 23
-
-
  1027 0239 38000000 		.4byte	.LVL27
  1028 023d B6010000 		.4byte	0x1b6
  1029 0241 08       		.uleb128 0x8
@@ -1339,7 +1340,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1042 0266 05       		.uleb128 0x5
  1043 0267 CC010000 		.4byte	.LASF26
  1044 026b 01       		.byte	0x1
- 1045 026c 85       		.byte	0x85
+ 1045 026c 86       		.byte	0x86
  1046 026d 00000000 		.4byte	.LFB70
  1047 0271 70000000 		.4byte	.LFE70-.LFB70
  1048 0275 01       		.uleb128 0x1
@@ -1377,10 +1378,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1080 02c8 08       		.uleb128 0x8
  1081 02c9 44000000 		.4byte	.LVL39
  1082 02cd 06050000 		.4byte	0x506
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 24
+
+
  1083 02d1 08       		.uleb128 0x8
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 24
-
-
  1084 02d2 4C000000 		.4byte	.LVL40
  1085 02d6 11050000 		.4byte	0x511
  1086 02da 08       		.uleb128 0x8
@@ -1401,9 +1402,9 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1101 02fe 00       		.byte	0
  1102 02ff 00       		.byte	0
  1103 0300 0E       		.uleb128 0xe
- 1104 0301 14030000 		.4byte	.LASF27
+ 1104 0301 90030000 		.4byte	.LASF27
  1105 0305 01       		.byte	0x1
- 1106 0306 9A       		.byte	0x9a
+ 1106 0306 9B       		.byte	0x9b
  1107 0307 23030000 		.4byte	0x323
  1108 030b 00000000 		.4byte	.LFB71
  1109 030f 0E000000 		.4byte	.LFE71-.LFB71
@@ -1412,16 +1413,16 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1112 0315 23030000 		.4byte	0x323
  1113 0319 08       		.uleb128 0x8
  1114 031a 06000000 		.4byte	.LVL44
- 1115 031e CF040000 		.4byte	0x4cf
+ 1115 031e C4040000 		.4byte	0x4c4
  1116 0322 00       		.byte	0
  1117 0323 02       		.uleb128 0x2
  1118 0324 01       		.byte	0x1
  1119 0325 02       		.byte	0x2
- 1120 0326 A7020000 		.4byte	.LASF28
+ 1120 0326 23030000 		.4byte	.LASF28
  1121 032a 0E       		.uleb128 0xe
  1122 032b 23010000 		.4byte	.LASF29
  1123 032f 01       		.byte	0x1
- 1124 0330 9C       		.byte	0x9c
+ 1124 0330 9D       		.byte	0x9d
  1125 0331 23030000 		.4byte	0x323
  1126 0335 00000000 		.4byte	.LFB72
  1127 0339 0E000000 		.4byte	.LFE72-.LFB72
@@ -1430,29 +1431,29 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1130 033f 4D030000 		.4byte	0x34d
  1131 0343 08       		.uleb128 0x8
  1132 0344 06000000 		.4byte	.LVL45
- 1133 0348 C4040000 		.4byte	0x4c4
+ 1133 0348 CF040000 		.4byte	0x4cf
  1134 034c 00       		.byte	0
  1135 034d 0E       		.uleb128 0xe
  1136 034e 1B010000 		.4byte	.LASF30
  1137 0352 01       		.byte	0x1
- 1138 0353 9E       		.byte	0x9e
+ 1138 0353 9F       		.byte	0x9f
  1139 0354 23030000 		.4byte	0x323
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 25
+
+
  1140 0358 00000000 		.4byte	.LFB73
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 25
-
-
  1141 035c 0E000000 		.4byte	.LFE73-.LFB73
  1142 0360 01       		.uleb128 0x1
  1143 0361 9C       		.byte	0x9c
  1144 0362 70030000 		.4byte	0x370
  1145 0366 08       		.uleb128 0x8
  1146 0367 06000000 		.4byte	.LVL46
- 1147 036b 3D050000 		.4byte	0x53d
+ 1147 036b 32050000 		.4byte	0x532
  1148 036f 00       		.byte	0
  1149 0370 0E       		.uleb128 0xe
  1150 0371 D9000000 		.4byte	.LASF31
  1151 0375 01       		.byte	0x1
- 1152 0376 A0       		.byte	0xa0
+ 1152 0376 A1       		.byte	0xa1
  1153 0377 23030000 		.4byte	0x323
  1154 037b 00000000 		.4byte	.LFB74
  1155 037f 0E000000 		.4byte	.LFE74-.LFB74
@@ -1461,12 +1462,12 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1158 0385 93030000 		.4byte	0x393
  1159 0389 08       		.uleb128 0x8
  1160 038a 06000000 		.4byte	.LVL47
- 1161 038e 32050000 		.4byte	0x532
+ 1161 038e 3D050000 		.4byte	0x53d
  1162 0392 00       		.byte	0
  1163 0393 05       		.uleb128 0x5
  1164 0394 7F000000 		.4byte	.LASF32
  1165 0398 01       		.byte	0x1
- 1166 0399 A3       		.byte	0xa3
+ 1166 0399 A4       		.byte	0xa4
  1167 039a 00000000 		.4byte	.LFB75
  1168 039e 64000000 		.4byte	.LFE75-.LFB75
  1169 03a2 01       		.uleb128 0x1
@@ -1475,7 +1476,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1172 03a8 0F       		.uleb128 0xf
  1173 03a9 6300     		.ascii	"c\000"
  1174 03ab 01       		.byte	0x1
- 1175 03ac A5       		.byte	0xa5
+ 1175 03ac A6       		.byte	0xa6
  1176 03ad 81000000 		.4byte	0x81
  1177 03b1 3C000000 		.4byte	.LLST2
  1178 03b5 08       		.uleb128 0x8
@@ -1497,10 +1498,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1194 03d4 E5030000 		.4byte	0x3e5
  1195 03d8 11       		.uleb128 0x11
  1196 03d9 B3000000 		.4byte	0xb3
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 26
+
+
  1197 03dd 07       		.byte	0x7
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 26
-
-
  1198 03de 11       		.uleb128 0x11
  1199 03df B3000000 		.4byte	0xb3
  1200 03e3 03       		.byte	0x3
@@ -1523,7 +1524,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1217 0406 13       		.uleb128 0x13
  1218 0407 6F666600 		.ascii	"off\000"
  1219 040b 01       		.byte	0x1
- 1220 040c 1A       		.byte	0x1a
+ 1220 040c 1B       		.byte	0x1b
  1221 040d F6030000 		.4byte	0x3f6
  1222 0411 05       		.uleb128 0x5
  1223 0412 03       		.byte	0x3
@@ -1531,40 +1532,40 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1225 0417 12       		.uleb128 0x12
  1226 0418 E3000000 		.4byte	.LASF34
  1227 041c 01       		.byte	0x1
- 1228 041d 1B       		.byte	0x1b
+ 1228 041d 1C       		.byte	0x1c
  1229 041e 57000000 		.4byte	0x57
  1230 0422 05       		.uleb128 0x5
  1231 0423 03       		.byte	0x3
  1232 0424 00000000 		.4byte	azimuthSteps
  1233 0428 12       		.uleb128 0x12
- 1234 0429 CE020000 		.4byte	.LASF35
+ 1234 0429 4A030000 		.4byte	.LASF35
  1235 042d 01       		.byte	0x1
- 1236 042e 1C       		.byte	0x1c
+ 1236 042e 1D       		.byte	0x1d
  1237 042f 57000000 		.4byte	0x57
  1238 0433 05       		.uleb128 0x5
  1239 0434 03       		.byte	0x3
  1240 0435 84000000 		.4byte	elevationSteps
  1241 0439 12       		.uleb128 0x12
- 1242 043a 38020000 		.4byte	.LASF36
+ 1242 043a B4020000 		.4byte	.LASF36
  1243 043e 01       		.byte	0x1
- 1244 043f 1D       		.byte	0x1d
+ 1244 043f 1E       		.byte	0x1e
  1245 0440 73000000 		.4byte	0x73
  1246 0444 05       		.uleb128 0x5
  1247 0445 03       		.byte	0x3
  1248 0446 00000000 		.4byte	aStep
  1249 044a 12       		.uleb128 0x12
- 1250 044b 2C040000 		.4byte	.LASF37
+ 1250 044b 35040000 		.4byte	.LASF37
  1251 044f 01       		.byte	0x1
- 1252 0450 1E       		.byte	0x1e
+ 1252 0450 1F       		.byte	0x1f
  1253 0451 73000000 		.4byte	0x73
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 27
+
+
  1254 0455 05       		.uleb128 0x5
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 27
-
-
  1255 0456 03       		.byte	0x3
  1256 0457 04000000 		.4byte	eStep
  1257 045b 14       		.uleb128 0x14
- 1258 045c 1E030000 		.4byte	.LASF63
+ 1258 045c 9A030000 		.4byte	.LASF63
  1259 0460 11       		.byte	0x11
  1260 0461 1207     		.2byte	0x712
  1261 0463 67040000 		.4byte	0x467
@@ -1581,8 +1582,8 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1272 0480 05       		.byte	0x5
  1273 0481 26       		.byte	0x26
  1274 0482 16       		.uleb128 0x16
- 1275 0483 3E020000 		.4byte	.LASF40
- 1276 0487 3E020000 		.4byte	.LASF40
+ 1275 0483 BA020000 		.4byte	.LASF40
+ 1276 0487 BA020000 		.4byte	.LASF40
  1277 048b 06       		.byte	0x6
  1278 048c 26       		.byte	0x26
  1279 048d 16       		.uleb128 0x16
@@ -1596,13 +1597,13 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1287 04a1 04       		.byte	0x4
  1288 04a2 29       		.byte	0x29
  1289 04a3 16       		.uleb128 0x16
- 1290 04a4 32040000 		.4byte	.LASF43
- 1291 04a8 32040000 		.4byte	.LASF43
+ 1290 04a4 3B040000 		.4byte	.LASF43
+ 1291 04a8 3B040000 		.4byte	.LASF43
  1292 04ac 05       		.byte	0x5
  1293 04ad 29       		.byte	0x29
  1294 04ae 16       		.uleb128 0x16
- 1295 04af 02020000 		.4byte	.LASF44
- 1296 04b3 02020000 		.4byte	.LASF44
+ 1295 04af 7E020000 		.4byte	.LASF44
+ 1296 04b3 7E020000 		.4byte	.LASF44
  1297 04b7 06       		.byte	0x6
  1298 04b8 29       		.byte	0x29
  1299 04b9 16       		.uleb128 0x16
@@ -1611,16 +1612,16 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1302 04c2 07       		.byte	0x7
  1303 04c3 29       		.byte	0x29
  1304 04c4 16       		.uleb128 0x16
- 1305 04c5 5E000000 		.4byte	.LASF46
- 1306 04c9 5E000000 		.4byte	.LASF46
+ 1305 04c5 C9000000 		.4byte	.LASF46
+ 1306 04c9 C9000000 		.4byte	.LASF46
  1307 04cd 08       		.byte	0x8
  1308 04ce 29       		.byte	0x29
  1309 04cf 16       		.uleb128 0x16
- 1310 04d0 C9000000 		.4byte	.LASF47
- 1311 04d4 C9000000 		.4byte	.LASF47
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 28
+ 1310 04d0 5E000000 		.4byte	.LASF47
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 28
 
 
+ 1311 04d4 5E000000 		.4byte	.LASF47
  1312 04d8 09       		.byte	0x9
  1313 04d9 29       		.byte	0x29
  1314 04da 16       		.uleb128 0x16
@@ -1629,8 +1630,8 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1317 04e3 0A       		.byte	0xa
  1318 04e4 26       		.byte	0x26
  1319 04e5 16       		.uleb128 0x16
- 1320 04e6 15020000 		.4byte	.LASF49
- 1321 04ea 15020000 		.4byte	.LASF49
+ 1320 04e6 91020000 		.4byte	.LASF49
+ 1321 04ea 91020000 		.4byte	.LASF49
  1322 04ee 0B       		.byte	0xb
  1323 04ef 26       		.byte	0x26
  1324 04f0 16       		.uleb128 0x16
@@ -1639,8 +1640,8 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1327 04f9 0C       		.byte	0xc
  1328 04fa 26       		.byte	0x26
  1329 04fb 16       		.uleb128 0x16
- 1330 04fc 6B020000 		.4byte	.LASF51
- 1331 0500 6B020000 		.4byte	.LASF51
+ 1330 04fc E7020000 		.4byte	.LASF51
+ 1331 0500 E7020000 		.4byte	.LASF51
  1332 0504 0D       		.byte	0xd
  1333 0505 26       		.byte	0x26
  1334 0506 16       		.uleb128 0x16
@@ -1649,13 +1650,13 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1337 050f 0A       		.byte	0xa
  1338 0510 29       		.byte	0x29
  1339 0511 16       		.uleb128 0x16
- 1340 0512 45040000 		.4byte	.LASF53
- 1341 0516 45040000 		.4byte	.LASF53
+ 1340 0512 4E040000 		.4byte	.LASF53
+ 1341 0516 4E040000 		.4byte	.LASF53
  1342 051a 0B       		.byte	0xb
  1343 051b 29       		.byte	0x29
  1344 051c 16       		.uleb128 0x16
- 1345 051d 92020000 		.4byte	.LASF54
- 1346 0521 92020000 		.4byte	.LASF54
+ 1345 051d 0E030000 		.4byte	.LASF54
+ 1346 0521 0E030000 		.4byte	.LASF54
  1347 0525 0C       		.byte	0xc
  1348 0526 29       		.byte	0x29
  1349 0527 16       		.uleb128 0x16
@@ -1664,23 +1665,23 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1352 0530 0D       		.byte	0xd
  1353 0531 29       		.byte	0x29
  1354 0532 16       		.uleb128 0x16
- 1355 0533 6F000000 		.4byte	.LASF56
- 1356 0537 6F000000 		.4byte	.LASF56
+ 1355 0533 BE010000 		.4byte	.LASF56
+ 1356 0537 BE010000 		.4byte	.LASF56
  1357 053b 0E       		.byte	0xe
  1358 053c 29       		.byte	0x29
  1359 053d 16       		.uleb128 0x16
- 1360 053e BE010000 		.4byte	.LASF57
- 1361 0542 BE010000 		.4byte	.LASF57
+ 1360 053e 6F000000 		.4byte	.LASF57
+ 1361 0542 6F000000 		.4byte	.LASF57
  1362 0546 0F       		.byte	0xf
  1363 0547 29       		.byte	0x29
  1364 0548 16       		.uleb128 0x16
- 1365 0549 E7020000 		.4byte	.LASF58
- 1366 054d E7020000 		.4byte	.LASF58
+ 1365 0549 63030000 		.4byte	.LASF58
+ 1366 054d 63030000 		.4byte	.LASF58
  1367 0551 10       		.byte	0x10
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 29
+
+
  1368 0552 72       		.byte	0x72
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 29
-
-
  1369 0553 16       		.uleb128 0x16
  1370 0554 2E010000 		.4byte	.LASF59
  1371 0558 2E010000 		.4byte	.LASF59
@@ -1737,10 +1738,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1422 002d 00       		.byte	0
  1423 002e 0B       		.uleb128 0xb
  1424 002f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 30
+
+
  1425 0030 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 30
-
-
  1426 0031 0B       		.uleb128 0xb
  1427 0032 03       		.uleb128 0x3
  1428 0033 08       		.uleb128 0x8
@@ -1797,10 +1798,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1479 0067 0B       		.uleb128 0xb
  1480 0068 49       		.uleb128 0x49
  1481 0069 13       		.uleb128 0x13
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 31
+
+
  1482 006a 02       		.uleb128 0x2
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 31
-
-
  1483 006b 17       		.uleb128 0x17
  1484 006c 00       		.byte	0
  1485 006d 00       		.byte	0
@@ -1857,10 +1858,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1536 00a5 00       		.byte	0
  1537 00a6 00       		.byte	0
  1538 00a7 0C       		.uleb128 0xc
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 32
+
+
  1539 00a8 8A8201   		.uleb128 0x410a
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 32
-
-
  1540 00ab 00       		.byte	0
  1541 00ac 02       		.uleb128 0x2
  1542 00ad 18       		.uleb128 0x18
@@ -1917,10 +1918,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1593 00e4 17       		.uleb128 0x17
  1594 00e5 00       		.byte	0
  1595 00e6 00       		.byte	0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 33
+
+
  1596 00e7 10       		.uleb128 0x10
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 33
-
-
  1597 00e8 01       		.uleb128 0x1
  1598 00e9 01       		.byte	0x1
  1599 00ea 49       		.uleb128 0x49
@@ -1977,10 +1978,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1650 011d 0B       		.uleb128 0xb
  1651 011e 3B       		.uleb128 0x3b
  1652 011f 05       		.uleb128 0x5
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 34
+
+
  1653 0120 49       		.uleb128 0x49
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 34
-
-
  1654 0121 13       		.uleb128 0x13
  1655 0122 3F       		.uleb128 0x3f
  1656 0123 19       		.uleb128 0x19
@@ -2037,10 +2038,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1707 0033 54       		.byte	0x54
  1708 0034 00000000 		.4byte	0
  1709 0038 00000000 		.4byte	0
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 35
+
+
  1710              	.LLST2:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 35
-
-
  1711 003c 08000000 		.4byte	.LVL49
  1712 0040 5E000000 		.4byte	.LVL55
  1713 0044 0100     		.2byte	0x1
@@ -2097,10 +2098,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1764 002c D0000000 		.4byte	.LFE68
  1765 0030 00000000 		.4byte	.LFB70
  1766 0034 70000000 		.4byte	.LFE70
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 36
+
+
  1767 0038 00000000 		.4byte	.LFB71
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 36
-
-
  1768 003c 0E000000 		.4byte	.LFE71
  1769 0040 00000000 		.4byte	.LFB72
  1770 0044 0E000000 		.4byte	.LFE72
@@ -2148,19 +2149,19 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1791      50696E5F 
  1791      315F5265 
  1791      616400
- 1792              	.LASF46:
+ 1792              	.LASF47:
  1793 005e 4C696D69 		.ascii	"Limit_Right_Read\000"
  1793      745F5269 
  1793      6768745F 
  1793      52656164 
  1793      00
- 1794              	.LASF56:
+ 1794              	.LASF57:
  1795 006f 4C696D69 		.ascii	"Limit_Down_Read\000"
  1795      745F446F 
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 37
+
+
  1795      776E5F52 
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 37
-
-
  1795      65616400 
  1796              	.LASF32:
  1797 007f 55415254 		.ascii	"UART_HANDLER\000"
@@ -2187,7 +2188,7 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1805      50696E5F 
  1805      345F5772 
  1805      69746500 
- 1806              	.LASF47:
+ 1806              	.LASF46:
  1807 00c9 4C696D69 		.ascii	"Limit_Left_Read\000"
  1807      745F4C65 
  1807      66745F52 
@@ -2217,10 +2218,10 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1817      385F7400 
  1818              	.LASF30:
  1819 011b 6C696D69 		.ascii	"limitUp\000"
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 38
+
+
  1819      74557000 
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 38
-
-
  1820              	.LASF29:
  1821 0123 6C696D69 		.ascii	"limitRight\000"
  1821      74526967 
@@ -2276,11 +2277,11 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1843      50696E5F 
  1843      315F5772 
  1843      69746500 
- 1844              	.LASF57:
+ 1844              	.LASF56:
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 39
+
+
  1845 01be 4C696D69 		.ascii	"Limit_Up_Read\000"
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 39
-
-
  1845      745F5570 
  1845      5F526561 
  1845      6400
@@ -2288,179 +2289,179 @@ ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 1
  1847 01cc 4D4F544F 		.ascii	"MOTOR_STEP\000"
  1847      525F5354 
  1847      455000
- 1848              	.LASF0:
- 1849 01d7 7369676E 		.ascii	"signed char\000"
- 1849      65642063 
- 1849      68617200 
- 1850              	.LASF12:
- 1851 01e3 696E7433 		.ascii	"int32_t\000"
- 1851      325F7400 
- 1852              	.LASF9:
- 1853 01eb 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1853      206C6F6E 
- 1853      6720756E 
- 1853      7369676E 
- 1853      65642069 
- 1854              	.LASF44:
- 1855 0202 417A696D 		.ascii	"Azimuth_Pin_3_Read\000"
- 1855      7574685F 
- 1855      50696E5F 
- 1855      335F5265 
- 1855      616400
- 1856              	.LASF49:
- 1857 0215 456C6576 		.ascii	"Elevation_Pin_2_Write\000"
- 1857      6174696F 
- 1857      6E5F5069 
- 1857      6E5F325F 
- 1857      57726974 
- 1858              	.LASF10:
- 1859 022b 756E7369 		.ascii	"unsigned int\000"
- 1859      676E6564 
- 1859      20696E74 
- 1859      00
- 1860              	.LASF36:
- 1861 0238 61537465 		.ascii	"aStep\000"
- 1861      7000
- 1862              	.LASF40:
- 1863 023e 417A696D 		.ascii	"Azimuth_Pin_3_Write\000"
- 1863      7574685F 
- 1863      50696E5F 
- 1863      335F5772 
- 1863      69746500 
- 1864              	.LASF20:
- 1865 0252 73746570 		.ascii	"steps\000"
- 1865      7300
- 1866              	.LASF3:
- 1867 0258 73686F72 		.ascii	"short unsigned int\000"
- 1867      7420756E 
- 1867      7369676E 
- 1867      65642069 
- 1867      6E7400
- 1868              	.LASF51:
- 1869 026b 456C6576 		.ascii	"Elevation_Pin_4_Write\000"
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 40
+ 1848              	.LASF62:
+ 1849 01d7 433A5C55 		.ascii	"C:\\Users\\degn\\OneDrive - Aarhus universitet\\Skr"
+ 1849      73657273 
+ 1849      5C646567 
+ 1849      6E5C4F6E 
+ 1849      65447269 
+ 1850 0206 69766562 		.ascii	"ivebord\\AU\\E3\\PRJ3\\Git\\PRJ3\\PSoC\\StepperMoto"
+ 1850      6F72645C 
+ 1850      41555C45 
+ 1850      335C5052 
+ 1850      4A335C47 
+ 1851 0232 72447269 		.ascii	"rDriver\\StepperMotorDriver.cydsn\000"
+ 1851      7665725C 
+ 1851      53746570 
+ 1851      7065724D 
+ 1851      6F746F72 
+ 1852              	.LASF0:
+ 1853 0253 7369676E 		.ascii	"signed char\000"
+ 1853      65642063 
+ 1853      68617200 
+ 1854              	.LASF12:
+ 1855 025f 696E7433 		.ascii	"int32_t\000"
+ 1855      325F7400 
+ 1856              	.LASF9:
+ 1857 0267 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1857      206C6F6E 
+ 1857      6720756E 
+ 1857      7369676E 
+ 1857      65642069 
+ 1858              	.LASF44:
+ 1859 027e 417A696D 		.ascii	"Azimuth_Pin_3_Read\000"
+ 1859      7574685F 
+ 1859      50696E5F 
+ 1859      335F5265 
+ 1859      616400
+ 1860              	.LASF49:
+ 1861 0291 456C6576 		.ascii	"Elevation_Pin_2_Write\000"
+ 1861      6174696F 
+ 1861      6E5F5069 
+ 1861      6E5F325F 
+ 1861      57726974 
+ 1862              	.LASF10:
+ 1863 02a7 756E7369 		.ascii	"unsigned int\000"
+ 1863      676E6564 
+ 1863      20696E74 
+ 1863      00
+ 1864              	.LASF36:
+ 1865 02b4 61537465 		.ascii	"aStep\000"
+ 1865      7000
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 40
 
 
- 1869      6174696F 
- 1869      6E5F5069 
- 1869      6E5F345F 
- 1869      57726974 
- 1870              	.LASF15:
- 1871 0281 63686172 		.ascii	"char\000"
- 1871      00
- 1872              	.LASF19:
- 1873 0286 617A696D 		.ascii	"azimuthStep\000"
- 1873      75746853 
- 1873      74657000 
- 1874              	.LASF54:
- 1875 0292 456C6576 		.ascii	"Elevation_Pin_3_Read\000"
- 1875      6174696F 
- 1875      6E5F5069 
- 1875      6E5F335F 
- 1875      52656164 
- 1876              	.LASF28:
- 1877 02a7 5F426F6F 		.ascii	"_Bool\000"
- 1877      6C00
- 1878              	.LASF24:
- 1879 02ad 617A696D 		.ascii	"azimuth\000"
- 1879      75746800 
- 1880              	.LASF7:
- 1881 02b5 6C6F6E67 		.ascii	"long unsigned int\000"
- 1881      20756E73 
- 1881      69676E65 
- 1881      6420696E 
- 1881      7400
- 1882              	.LASF14:
- 1883 02c7 646F7562 		.ascii	"double\000"
- 1883      6C6500
- 1884              	.LASF35:
- 1885 02ce 656C6576 		.ascii	"elevationSteps\000"
- 1885      6174696F 
- 1885      6E537465 
- 1885      707300
- 1886              	.LASF5:
- 1887 02dd 5F5F696E 		.ascii	"__int32_t\000"
- 1887      7433325F 
- 1887      7400
- 1888              	.LASF58:
- 1889 02e7 55415254 		.ascii	"UART_1_GetByte\000"
- 1889      5F315F47 
- 1889      65744279 
- 1889      746500
- 1890              	.LASF61:
- 1891 02f6 53746570 		.ascii	"StepperMotorDriver.c\000"
- 1891      7065724D 
- 1891      6F746F72 
- 1891      44726976 
- 1891      65722E63 
- 1892              	.LASF17:
- 1893 030b 73697A65 		.ascii	"sizetype\000"
- 1893      74797065 
- 1893      00
- 1894              	.LASF27:
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 41
+ 1866              	.LASF40:
+ 1867 02ba 417A696D 		.ascii	"Azimuth_Pin_3_Write\000"
+ 1867      7574685F 
+ 1867      50696E5F 
+ 1867      335F5772 
+ 1867      69746500 
+ 1868              	.LASF20:
+ 1869 02ce 73746570 		.ascii	"steps\000"
+ 1869      7300
+ 1870              	.LASF3:
+ 1871 02d4 73686F72 		.ascii	"short unsigned int\000"
+ 1871      7420756E 
+ 1871      7369676E 
+ 1871      65642069 
+ 1871      6E7400
+ 1872              	.LASF51:
+ 1873 02e7 456C6576 		.ascii	"Elevation_Pin_4_Write\000"
+ 1873      6174696F 
+ 1873      6E5F5069 
+ 1873      6E5F345F 
+ 1873      57726974 
+ 1874              	.LASF15:
+ 1875 02fd 63686172 		.ascii	"char\000"
+ 1875      00
+ 1876              	.LASF19:
+ 1877 0302 617A696D 		.ascii	"azimuthStep\000"
+ 1877      75746853 
+ 1877      74657000 
+ 1878              	.LASF54:
+ 1879 030e 456C6576 		.ascii	"Elevation_Pin_3_Read\000"
+ 1879      6174696F 
+ 1879      6E5F5069 
+ 1879      6E5F335F 
+ 1879      52656164 
+ 1880              	.LASF28:
+ 1881 0323 5F426F6F 		.ascii	"_Bool\000"
+ 1881      6C00
+ 1882              	.LASF24:
+ 1883 0329 617A696D 		.ascii	"azimuth\000"
+ 1883      75746800 
+ 1884              	.LASF7:
+ 1885 0331 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1885      20756E73 
+ 1885      69676E65 
+ 1885      6420696E 
+ 1885      7400
+ 1886              	.LASF14:
+ 1887 0343 646F7562 		.ascii	"double\000"
+ 1887      6C6500
+ 1888              	.LASF35:
+ 1889 034a 656C6576 		.ascii	"elevationSteps\000"
+ 1889      6174696F 
+ 1889      6E537465 
+ 1889      707300
+ 1890              	.LASF5:
+ 1891 0359 5F5F696E 		.ascii	"__int32_t\000"
+ 1891      7433325F 
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 41
 
 
- 1895 0314 6C696D69 		.ascii	"limitLeft\000"
- 1895      744C6566 
- 1895      7400
- 1896              	.LASF63:
- 1897 031e 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1897      52784275 
- 1897      66666572 
+ 1891      7400
+ 1892              	.LASF58:
+ 1893 0363 55415254 		.ascii	"UART_1_GetByte\000"
+ 1893      5F315F47 
+ 1893      65744279 
+ 1893      746500
+ 1894              	.LASF61:
+ 1895 0372 53746570 		.ascii	"StepperMotorDriver.c\000"
+ 1895      7065724D 
+ 1895      6F746F72 
+ 1895      44726976 
+ 1895      65722E63 
+ 1896              	.LASF17:
+ 1897 0387 73697A65 		.ascii	"sizetype\000"
+ 1897      74797065 
  1897      00
- 1898              	.LASF60:
- 1899 032b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1899      43313120 
- 1899      352E342E 
- 1899      31203230 
- 1899      31363036 
- 1900 035e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1900      20726576 
- 1900      6973696F 
- 1900      6E203233 
- 1900      37373135 
- 1901 0391 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1901      66756E63 
- 1901      74696F6E 
- 1901      2D736563 
- 1901      74696F6E 
- 1902              	.LASF62:
- 1903 03b9 433A5C55 		.ascii	"C:\\Users\\degn\\OneDrive - Aarhus universitet\\Skr"
- 1903      73657273 
- 1903      5C646567 
- 1903      6E5C4F6E 
- 1903      65447269 
- 1904 03e8 69766562 		.ascii	"ivebord\\AU\\E3\\PRJ3\\Kode\\StepperMotorDriver\\St"
- 1904      6F72645C 
- 1904      41555C45 
- 1904      335C5052 
- 1904      4A335C4B 
- 1905 0415 65707065 		.ascii	"epperMotorDriver.cydsn\000"
- 1905      724D6F74 
- 1905      6F724472 
- 1905      69766572 
- 1905      2E637964 
+ 1898              	.LASF27:
+ 1899 0390 6C696D69 		.ascii	"limitLeft\000"
+ 1899      744C6566 
+ 1899      7400
+ 1900              	.LASF63:
+ 1901 039a 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1901      52784275 
+ 1901      66666572 
+ 1901      00
+ 1902              	.LASF60:
+ 1903 03a7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1903      43313120 
+ 1903      352E342E 
+ 1903      31203230 
+ 1903      31363036 
+ 1904 03da 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1904      20726576 
+ 1904      6973696F 
+ 1904      6E203233 
+ 1904      37373135 
+ 1905 040d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1905      66756E63 
+ 1905      74696F6E 
+ 1905      2D736563 
+ 1905      74696F6E 
  1906              	.LASF37:
- 1907 042c 65537465 		.ascii	"eStep\000"
+ 1907 0435 65537465 		.ascii	"eStep\000"
  1907      7000
  1908              	.LASF43:
- 1909 0432 417A696D 		.ascii	"Azimuth_Pin_2_Read\000"
+ 1909 043b 417A696D 		.ascii	"Azimuth_Pin_2_Read\000"
  1909      7574685F 
  1909      50696E5F 
  1909      325F5265 
  1909      616400
  1910              	.LASF53:
- 1911 0445 456C6576 		.ascii	"Elevation_Pin_2_Read\000"
+ 1911 044e 456C6576 		.ascii	"Elevation_Pin_2_Read\000"
  1911      6174696F 
  1911      6E5F5069 
  1911      6E5F325F 
  1911      52656164 
  1912              	.LASF18:
- 1913 045a 6D6F7665 		.ascii	"moveAzimuth\000"
-ARM GAS  C:\Users\degn\AppData\Local\Temp\ccCIQ3L8.s 			page 42
+ARM GAS  C:\Users\degn\AppData\Local\Temp\ccErVDRX.s 			page 42
 
 
+ 1913 0463 6D6F7665 		.ascii	"moveAzimuth\000"
  1913      417A696D 
  1913      75746800 
  1914              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

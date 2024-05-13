@@ -383,14 +383,14 @@ Discarded input sections
  .text.Azimuth_Pin_1_SetDriveMode
                 0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_1.o)
  .text.Azimuth_Pin_1_ReadDataReg
-                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_1.o)
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_1.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
  .text.Azimuth_Pin_4_SetDriveMode
                 0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
  .text.Azimuth_Pin_4_ReadDataReg
-                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_3.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_3.o)
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_3.o)
@@ -808,14 +808,14 @@ END GROUP
                 0x0000081c       0x18 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_1.o)
                 0x0000081c                Azimuth_Pin_1_Write
  .text.Azimuth_Pin_1_Read
-                0x00000834        0xc .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_1.o)
+                0x00000834       0x10 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_1.o)
                 0x00000834                Azimuth_Pin_1_Read
  .text.Azimuth_Pin_4_Write
-                0x00000840       0x18 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
-                0x00000840                Azimuth_Pin_4_Write
+                0x00000844       0x18 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
+                0x00000844                Azimuth_Pin_4_Write
  .text.Azimuth_Pin_4_Read
-                0x00000858       0x10 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
-                0x00000858                Azimuth_Pin_4_Read
+                0x0000085c        0xc .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
+                0x0000085c                Azimuth_Pin_4_Read
  .text.Azimuth_Pin_3_Write
                 0x00000868       0x18 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_3.o)
                 0x00000868                Azimuth_Pin_3_Write
@@ -1240,7 +1240,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x57ba
+.debug_info     0x00000000     0x57c3
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x1fb .\CortexM3\ARM_GCC_541\Debug\main.o
  .debug_info    0x000001fb      0x55f .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.o
@@ -1265,9 +1265,9 @@ END GROUP
  .debug_info    0x00004499      0x11f .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Elevation_Pin_4.o)
  .debug_info    0x000045b8      0x2d2 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(isr_uart_rx.o)
  .debug_info    0x0000488a      0x2d2 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(isr_motor.o)
- .debug_info    0x00004b5c       0xc1 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CyBootAsmGnu.o)
- .debug_info    0x00004c1d      0x64d .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CyFlash.o)
- .debug_info    0x0000526a      0x550 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CySpc.o)
+ .debug_info    0x00004b5c       0xca .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CyBootAsmGnu.o)
+ .debug_info    0x00004c26      0x64d .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CyFlash.o)
+ .debug_info    0x00005273      0x550 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CySpc.o)
 
 .debug_abbrev   0x00000000     0x1a18
  *(.debug_abbrev)
@@ -1371,58 +1371,58 @@ END GROUP
  .debug_frame   0x00001bc0       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
  .debug_frame   0x00001be0       0x5c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
 
-.debug_str      0x00000000     0x210a
+.debug_str      0x00000000     0x2113
  *(.debug_str)
- .debug_str     0x00000000      0x208 .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x250 (size before relaxing)
- .debug_str     0x00000208      0x26c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.o
-                                0x466 (size before relaxing)
- .debug_str     0x00000474      0x1bc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                                0x375 (size before relaxing)
- .debug_str     0x00000630       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
-                                0x215 (size before relaxing)
- .debug_str     0x000006a5      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                                0x33b (size before relaxing)
- .debug_str     0x000007e9      0x2d6 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(UART_1.o)
-                                0x4e4 (size before relaxing)
- .debug_str     0x00000abf      0x19d .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(UART_1_IntClock.o)
-                                0x37f (size before relaxing)
- .debug_str     0x00000c5c      0x821 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CyLib.o)
-                                0xa78 (size before relaxing)
- .debug_str     0x0000147d      0x365 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(cyPm.o)
-                                0x764 (size before relaxing)
- .debug_str     0x000017e2       0x67 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_1.o)
-                                0x23b (size before relaxing)
- .debug_str     0x00001849       0x5c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
-                                0x23b (size before relaxing)
- .debug_str     0x000018a5       0x5c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_3.o)
-                                0x23b (size before relaxing)
- .debug_str     0x00001901       0x5c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_2.o)
-                                0x23b (size before relaxing)
- .debug_str     0x0000195d       0x5c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Limit_Up.o)
-                                0x222 (size before relaxing)
- .debug_str     0x000019b9       0x64 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Limit_Down.o)
-                                0x22c (size before relaxing)
- .debug_str     0x00001a1d       0x68 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Limit_Right.o)
-                                0x231 (size before relaxing)
- .debug_str     0x00001a85       0x64 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Limit_Left.o)
-                                0x22c (size before relaxing)
- .debug_str     0x00001ae9       0x62 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Elevation_Pin_1.o)
-                                0x245 (size before relaxing)
- .debug_str     0x00001b4b       0x62 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Elevation_Pin_2.o)
-                                0x245 (size before relaxing)
- .debug_str     0x00001bad       0x62 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Elevation_Pin_3.o)
-                                0x245 (size before relaxing)
- .debug_str     0x00001c0f       0x62 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Elevation_Pin_4.o)
-                                0x245 (size before relaxing)
- .debug_str     0x00001c71      0x126 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(isr_uart_rx.o)
-                                0x32b (size before relaxing)
- .debug_str     0x00001d97      0x10c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(isr_motor.o)
-                                0x30f (size before relaxing)
- .debug_str     0x00001ea3      0x1bb .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CyFlash.o)
-                                0x3f1 (size before relaxing)
- .debug_str     0x0000205e       0xac .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CySpc.o)
-                                0x369 (size before relaxing)
+ .debug_str     0x00000000      0x211 .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x259 (size before relaxing)
+ .debug_str     0x00000211      0x26c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.o
+                                0x46f (size before relaxing)
+ .debug_str     0x0000047d      0x1bc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x37e (size before relaxing)
+ .debug_str     0x00000639       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                                0x21e (size before relaxing)
+ .debug_str     0x000006ae      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                                0x344 (size before relaxing)
+ .debug_str     0x000007f2      0x2d6 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(UART_1.o)
+                                0x4ed (size before relaxing)
+ .debug_str     0x00000ac8      0x19d .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(UART_1_IntClock.o)
+                                0x388 (size before relaxing)
+ .debug_str     0x00000c65      0x821 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CyLib.o)
+                                0xa81 (size before relaxing)
+ .debug_str     0x00001486      0x365 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(cyPm.o)
+                                0x76d (size before relaxing)
+ .debug_str     0x000017eb       0x67 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_1.o)
+                                0x244 (size before relaxing)
+ .debug_str     0x00001852       0x5c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_4.o)
+                                0x244 (size before relaxing)
+ .debug_str     0x000018ae       0x5c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_3.o)
+                                0x244 (size before relaxing)
+ .debug_str     0x0000190a       0x5c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Azimuth_Pin_2.o)
+                                0x244 (size before relaxing)
+ .debug_str     0x00001966       0x5c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Limit_Up.o)
+                                0x22b (size before relaxing)
+ .debug_str     0x000019c2       0x64 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Limit_Down.o)
+                                0x235 (size before relaxing)
+ .debug_str     0x00001a26       0x68 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Limit_Right.o)
+                                0x23a (size before relaxing)
+ .debug_str     0x00001a8e       0x64 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Limit_Left.o)
+                                0x235 (size before relaxing)
+ .debug_str     0x00001af2       0x62 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Elevation_Pin_1.o)
+                                0x24e (size before relaxing)
+ .debug_str     0x00001b54       0x62 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Elevation_Pin_2.o)
+                                0x24e (size before relaxing)
+ .debug_str     0x00001bb6       0x62 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Elevation_Pin_3.o)
+                                0x24e (size before relaxing)
+ .debug_str     0x00001c18       0x62 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(Elevation_Pin_4.o)
+                                0x24e (size before relaxing)
+ .debug_str     0x00001c7a      0x126 .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(isr_uart_rx.o)
+                                0x334 (size before relaxing)
+ .debug_str     0x00001da0      0x10c .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(isr_motor.o)
+                                0x318 (size before relaxing)
+ .debug_str     0x00001eac      0x1bb .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CyFlash.o)
+                                0x3fa (size before relaxing)
+ .debug_str     0x00002067       0xac .\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.a(CySpc.o)
+                                0x372 (size before relaxing)
 
 .debug_loc      0x00000000     0x2210
  *(.debug_loc)
@@ -1627,4 +1627,4 @@ END GROUP
 
 /DISCARD/
  *(.note.GNU-stack)
-OUTPUT(C:\Users\degn\OneDrive - Aarhus universitet\Skrivebord\AU\E3\PRJ3\Kode\StepperMotorDriver\StepperMotorDriver.cydsn\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.elf elf32-littlearm)
+OUTPUT(C:\Users\degn\OneDrive - Aarhus universitet\Skrivebord\AU\E3\PRJ3\Git\PRJ3\PSoC\StepperMotorDriver\StepperMotorDriver.cydsn\CortexM3\ARM_GCC_541\Debug\StepperMotorDriver.elf elf32-littlearm)

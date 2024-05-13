@@ -1,6 +1,6 @@
 // ======================================================================
 // StepperMotorDriver.v generated from TopDesign.cysch
-// 05/08/2024 at 18:22
+// 05/13/2024 at 14:52
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -848,7 +848,7 @@ module top ;
 
 	cy_psoc3_pins_v1_10
 		#(.id("3190c3ad-1d2c-4599-8c6f-a1ae2a658a61"),
-		  .drive_mode(3'b001),
+		  .drive_mode(3'b011),
 		  .ibuf_enabled(1'b1),
 		  .init_dr_st(1'b0),
 		  .input_clk_en(0),
@@ -923,7 +923,7 @@ module top ;
 
 	cy_psoc3_pins_v1_10
 		#(.id("9bed6fd4-d6ae-49f9-8068-c62679a069a8"),
-		  .drive_mode(3'b001),
+		  .drive_mode(3'b011),
 		  .ibuf_enabled(1'b1),
 		  .init_dr_st(1'b0),
 		  .input_clk_en(0),
@@ -998,7 +998,7 @@ module top ;
 
 	cy_psoc3_pins_v1_10
 		#(.id("898c9a91-890b-4eed-a4bd-a07ef9897eb5"),
-		  .drive_mode(3'b001),
+		  .drive_mode(3'b011),
 		  .ibuf_enabled(1'b1),
 		  .init_dr_st(1'b0),
 		  .input_clk_en(0),
