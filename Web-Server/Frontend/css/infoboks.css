@@ -1,10 +1,9 @@
 .infoboks {
-	border: 2px solid #000;
+	display: flex;
+	border: 1px solid #000;
 	border-radius: 15px;
 	padding: 20px;
-	width: 300px;
-	/* Juster bredden efter behov */
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	width: 600px;
 	background-color: #f9f9f9;
 	position: absolute;
 	/* Eller 'fixed' hvis det skal være i forhold til viewport */
@@ -25,4 +24,16 @@
 .infoboks p {
 	color: #666;
 	font-size: 1rem;
+}
+
+/* Kolonne 1*/
+.left-column {
+	flex: 3;
+}
+
+/*Kolonne 2*/
+.right-column {
+	flex: 1;
+	padding-left: 20px;
+	/* Juster afstand mellem kolonner efter behov */
 }

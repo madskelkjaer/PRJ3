@@ -30,35 +30,38 @@
 		<a href="om.html">OM</a>
 	</div>
 
-	<h1>Manuel styring af solcellen</h1>
-
-	<div>
-		<ul>
-			<li>Sol venstre: <span id="venstre">Ja</span></li>
-			<li>Sol højre: <span id="hojre"></span></li>
-			<li>Sol op: <span id="op"></span></li>
-			<li>Sol ned: <span id="ned"></span></li>
-		</ul>
-	</div>
-
+	<!-- Oprettelsen af infoboksen -->
 	<div class="infoboks">
-		<h2>INFORMATION</h2>
-		<p>
-			Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
-		piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
-		</p>
-		<p>Man kan maksimalt dreje solcellen:</p>
-		<p><span id="maxUp"></span> grader op</p>
-		<p>(<span id="maxDown"></span>) grader ned</p>
-		<p> <span id="maxRight"></span> grader til
-			højre</p>
+		<div class="left-column">
+			<h2>INFORMATION</h2>
+			<p>
+				Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
+				piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
+			</p>
+			<p>Man kan maksimalt dreje solcellen:</p>
+			<p><span id="maxUp"></span> grader op</p>
+			<p>(<span id="maxDown"></span>) grader ned</p>
+			<p> <span id="maxRight"></span> grader til
+				højre</p>
 			<p>(<span id="maxLeft"></span>) grader til
-			venstre</p>
+				venstre</p>
+		</div>
+
+		<div class="right-column">
+			<ul>
+				<li>Sol venstre: <span id="venstre">Ja</span></li>
+				<li>Sol højre: <span id="hojre"></span></li>
+				<li>Sol op: <span id="op"></span></li>
+				<li>Sol ned: <span id="ned"></span></li>
+			</ul>
+		</div>
 	</div>
-	<header style="margin-bottom: 150px;margin-top: 150px;">
+
+	<!-- Solcelleillustration -->
+	<header style="margin-bottom: 150px; margin-top: 150px; text-align: center;">
 		<div class="container">
 			<div class="solarcell-container">
-				<div class="solarcell1">
+				<div class=" solarcell1">
 					<div class="solarcell-face front">Front</div>
 					<div class="solarcell-face back">Back</div>
 					<div class="solarcell-face left">Left</div>
@@ -77,21 +80,25 @@
 					<div class="solarcell-face bottom">Bottom</div>
 				</div>
 			</div>
-			<div class="buttons">
-				<div class="row">
-					<button id="reset">🏠</button>
-					<button id="rotateUp">↑</button>
-				</div>
-				<div class="row">
-					<button id="rotateLeft">←</button>
-					<button id="rotateDown">↓</button>
-					<button id="rotateRight">→</button>
-				</div>
+		</div>
+		<!-- Piletasteknapperne nok -->
+		<div class="buttons" style="position: absolute; bottom: 150px; right: 300px;">
+			<div class="row">
+				<button id="reset">🏠</button>
+				<button id="rotateUp">↑</button>
+			</div>
+			<div class="row">
+				<button id="rotateLeft">←</button>
+				<button id="rotateDown">↓</button>
+				<button id="rotateRight">→</button>
 			</div>
 		</div>
+		</div>
 	</header>
-	<p> Nedenfor kan du manuelt sætte return position/home position??</p>
-	<div class="input-home" style="margin-bottom: 150px">
+
+	<!-- Manuel indstilling af returposition -->
+	<div class="input-home" style="position: absolute; bottom: 50px; right: 200px;">
+		<p> Nedenfor kan du manuelt sætte return position/home position??</p>
 		<label for="homeXInput">Azimuth:</label>
 		<input type="number" id="homeXInput" value="0">
 		<label for="homeYInput">Elevation:</label>
@@ -102,6 +109,13 @@
 	<script src="./js/solcelle.js"></script>
 	<script src="./js/infoboks.js"></script>
 	</script>
+
+	<script>
+		window.onload = function () {
+			moveInfoboks(500, 700);  // Ændr værdierne som nødvendigt
+		};
+	</script>
+
 </body>
 
 </html>
