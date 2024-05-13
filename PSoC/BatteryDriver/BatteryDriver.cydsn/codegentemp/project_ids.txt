@@ -1,0 +1,6 @@
+C:\Users\andre\OneDrive\Skrivebord\BatteriDriver.cywrk.Archive01\BatteriDriver\BatteriDriver.cydsn\BatteriDriver.cyprj|68d3ea47-7eb9-4fef-bbbf-021d452c0550
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|5291328e-5003-4a0f-aead-1dc5d944c546
+C:\Users\andre\OneDrive\Dokumenter\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|34791e9c-a907-4315-8a64-2780fb7ce766
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|75897867-c0d9-4308-a6f5-e3b788720407
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|d116f660-12e7-40fc-886f-d154da9a0f18
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|380adba8-5310-4c98-aeb7-3fc85cc17825
