@@ -91,12 +91,12 @@ spi.mode = 0
 
 
 
+spi_has_started = False
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 sock = Sock(app)
 ws_connections = []
 to_send = []
-spi_has_started = False
 
 recieved_data: int = []
 
