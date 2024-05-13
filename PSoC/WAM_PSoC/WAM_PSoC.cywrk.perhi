@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WAM_PSoC\Wam_PSoC\Header Files\StepperMotorDriver.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WAM_PSoC\Wam_PSoC\Source Files\main.c">
 <ExpandedNodeIds>
 <v>WAM_PSoC</v>
 <v>WAM_PSoC\Wam_PSoC</v>
@@ -29,12 +29,14 @@
 <v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Flash Security</v>
 <v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\EEPROM</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\BatteryDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\cyapicallbacks.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SensorDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SPI.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\StepperMotorDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SunTracker.h</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\BatteryDriver.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\main.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\SensorDriver.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\SPI.c</v>
@@ -58,12 +60,14 @@
 <v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Flash Security</v>
 <v>WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\EEPROM</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files</v>
+<v>WAM_PSoC\Wam_PSoC\Header Files\BatteryDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\cyapicallbacks.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SensorDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SPI.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\StepperMotorDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SunTracker.h</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files</v>
+<v>WAM_PSoC\Wam_PSoC\Source Files\BatteryDriver.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\main.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\SensorDriver.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\SPI.c</v>
@@ -89,7 +93,6 @@
 <v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Right</v>
 <v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Up</v>
 <v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\MISO_1</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\MOSI_1</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -216,6 +219,7 @@
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\StepperMotorDriver.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunDown.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunLeft.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunRight.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -231,6 +235,8 @@
 <v>WAM_PSoC\Wam_PSoC\CY8C58LP Family Datasheet</v>
 <v>WAM_PSoC\Wam_PSoC\System Reference Guides</v>
 <v>WAM_PSoC\Wam_PSoC\System Reference Guides\cy_boot_v6_10</v>
+<v>WAM_PSoC\Wam_PSoC\ADC_SAR_v3_10</v>
+<v>WAM_PSoC\Wam_PSoC\ADC_SAR_v3_10\ADC_SAR_v3_10.pdf</v>
 <v>WAM_PSoC\Wam_PSoC\cy_clock_v2_20.pdf</v>
 <v>WAM_PSoC\Wam_PSoC\cy_isr_v1_70</v>
 <v>WAM_PSoC\Wam_PSoC\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
@@ -247,6 +253,8 @@
 <v>WAM_PSoC\Wam_PSoC\CY8C58LP Family Datasheet</v>
 <v>WAM_PSoC\Wam_PSoC\System Reference Guides</v>
 <v>WAM_PSoC\Wam_PSoC\System Reference Guides\cy_boot_v6_10</v>
+<v>WAM_PSoC\Wam_PSoC\ADC_SAR_v3_10</v>
+<v>WAM_PSoC\Wam_PSoC\ADC_SAR_v3_10\ADC_SAR_v3_10.pdf</v>
 <v>WAM_PSoC\Wam_PSoC\cy_clock_v2_20.pdf</v>
 <v>WAM_PSoC\Wam_PSoC\cy_isr_v1_70</v>
 <v>WAM_PSoC\Wam_PSoC\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
@@ -264,18 +272,17 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Wam_PSoC.cydsn\Wam_PSoC.cydwr" />
-<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.c" />
-<name v=".\Wam_PSoC.cydsn\SensorDriver.h" />
-<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.h" />
-<name v=".\Wam_PSoC.cydsn\main.c" />
-<name v=".\Wam_PSoC.cydsn\SensorDriver.c" />
+<name v=".\Wam_PSoC.cydsn\SunTracker.h" />
 <name v=".\Wam_PSoC.cydsn\SPI.h" />
 <name v=".\Wam_PSoC.cydsn\SPI.c" />
-<name v=".\Wam_PSoC.cydsn\SunTracker.h" />
+<name v=".\Wam_PSoC.cydsn\main.c" />
 <name v=".\Wam_PSoC.cydsn\SunTracker.c" />
-<name v=".\Wam_PSoC.cydsn\cyapicallbacks.h" />
+<name v=".\Wam_PSoC.cydsn\SensorDriver.h" />
+<name v=".\Wam_PSoC.cydsn\SensorDriver.c" />
+<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.h" />
+<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.c" />
+<name v=".\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Wam_PSoC.cydsn\Wam_PSoC.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -283,7 +290,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="569, 1551" SelectedTabbedMdiWindow="8e26b1d7-08f1-4a59-8b9d-961facee7a69"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c5a72657-9cd1-48a4-b60e-845c41bfec09" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" Guid="b161908c-91c7-4964-9fc9-8dc107e3ed50" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\Wam_PSoC.cydwr" Guid="51c35816-e93d-4ee9-85cb-695843cd113b" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.c" Guid="9ad41da8-1c01-49fc-a0d0-b12a02336e70" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.h" Guid="4bff2b75-c736-4935-8904-441265cafe59" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.h" Guid="5dd8b50c-a346-4d0c-904c-f0ef05bffb88" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\main.c" Guid="8e26b1d7-08f1-4a59-8b9d-961facee7a69" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.c" Guid="89e802bb-d7d7-42d4-8dee-d0da895cf103" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SPI.h" Guid="40ec9db8-0868-4628-901f-a1ee3da601a8" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SPI.c" Guid="4f0d87a9-d5fb-45d8-ae62-5ca82b2e22d3" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.h" Guid="42c0fedd-8462-48d3-a35e-6d76ac704ce3" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.c" Guid="1ac7b923-7677-4722-bfca-c463390d1c98" /><DocumentWindow Key="C:\Users\perhi\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\WAM_PSoC\Wam_PSoC.cydsn\cyapicallbacks.h" Guid="d6e97bd3-647a-4442-b462-edf312155119" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1482, 703" SelectedTabbedMdiWindow="56b9dd09-74ba-47b6-be05-aacbe80ca2a2"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c5a72657-9cd1-48a4-b60e-845c41bfec09" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.h" Guid="97db3d44-3cb1-40dc-8dcf-d3612971fce3" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SPI.h" Guid="c29e226e-9079-4d7a-a6d2-4ed763911d12" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SPI.c" Guid="801c0705-f588-4e82-b564-9970f84fcdd2" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\main.c" Guid="56b9dd09-74ba-47b6-be05-aacbe80ca2a2" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.c" Guid="d5dbd37e-2d39-4e34-a3fc-7b536474fc4f" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.h" Guid="79d7b809-10d1-4efc-88b6-4b650c430b85" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.c" Guid="ce39be49-087c-4baa-bdc5-0345d195e8c9" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.h" Guid="1f88ad34-ad1a-4ea0-9599-602231ff4a15" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.c" Guid="f6d88073-b0aa-4c32-96b7-cee666467275" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" Guid="5de2d203-ad45-414f-9d68-a3ce32e4ce16" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\Wam_PSoC.cydwr" Guid="a5543b01-c35c-471e-a916-26c45b7893f3" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

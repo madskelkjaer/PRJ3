@@ -15,7 +15,7 @@ int main(void) {
 
     uint32_t lastTime = 0;
     uint32_t currentTime;
-    const uint32_t delayInterval = 600000; // Delay (10 min)
+    const uint32_t delayInterval = 1200000; // Delay (20 min)
 
     while (true) {
         currentTime = CySysTickGetValue();

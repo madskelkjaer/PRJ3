@@ -28,8 +28,15 @@ void trackSun(void) {
     }
 }
 
-void setMode(int mode) {
-    currentMode = mode;
+void setMode(uint8_t command) {
+    if (command == 0x10) {
+        // Toggle mode between manual and automatic
+        if (currentMode == MODE_AUTO) {
+            currentMode = MODE_MANUAL;
+        } else {
+            currentMode = MODE_AUTO;
+        }
+    }
 }
 
 void manualControl(uint8_t command) {
