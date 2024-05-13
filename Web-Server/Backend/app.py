@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_sock import Sock
 import spidev
@@ -89,9 +89,8 @@ spi.open(bus, device)
 spi.max_speed_hz = 1000
 spi.mode = 0
 
-
-
 app = Flask(__name__)
+running_status = False
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 sock = Sock(app)
 ws_connections = []
@@ -150,8 +149,21 @@ def sendAndRecieveSpiData():
     except Exception as e:
         print("Error in sending data: ", e)
 
+def runner():
+    global running_status
+
+    if running_status == True:
+        return
+
+    running_status = True
+
+    while True:
+        sendAndRecieveSpiData()
+        time.sleep(1)
+
 @app.route("/api/getdata/<int:limit>")
 def getdata(limit: int):
+    runner()
     return getData(limit)
 
 @app.route("/api/move/<string:direction>")
@@ -171,17 +183,23 @@ def move(direction: str):
     
     return "Moving " + direction
 
+@app.route("/api/status")
+def check_status():
+    global running_status
+    return jsonify({"status": running_status})
+
 @app.route("/")
 def hello_world():
+    runner()
     to_send.append(0x00)
     return "<p>hejsa</p>"
 
-@app.route("/datarunner")
-def runner():
-    while True:
-        sendAndRecieveSpiData()
-        time.sleep(1)
-    return "Data runner is running continuously"
+# @app.route("/datarunner")
+# def runner():
+#     while True:
+#         sendAndRecieveSpiData()
+#         time.sleep(1)
+#     return "Data runner is running continuously"
 
 @app.route("/api/inserttestdata")
 def inserttestdata():
@@ -217,4 +235,4 @@ def echo(ws):
             break
 
 if __name__ == "__main__":
-    app.run(threaded=True, port=5000)
+    app.run(port=5000)
