@@ -11510,41 +11510,41 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  204              	.set Clock_1__PM_STBY_MSK, 0x02
  205              	
  206              	/* Limit_Up */
- 207              	.set Limit_Up__0__INTTYPE, CYREG_PICU15_INTTYPE3
- 208              	.set Limit_Up__0__MASK, 0x08
- 209              	.set Limit_Up__0__PC, CYREG_IO_PC_PRT15_PC3
- 210              	.set Limit_Up__0__PORT, 15
- 211              	.set Limit_Up__0__SHIFT, 3
- 212              	.set Limit_Up__AG, CYREG_PRT15_AG
- 213              	.set Limit_Up__AMUX, CYREG_PRT15_AMUX
- 214              	.set Limit_Up__BIE, CYREG_PRT15_BIE
+ 207              	.set Limit_Up__0__INTTYPE, CYREG_PICU1_INTTYPE2
+ 208              	.set Limit_Up__0__MASK, 0x04
+ 209              	.set Limit_Up__0__PC, CYREG_PRT1_PC2
+ 210              	.set Limit_Up__0__PORT, 1
+ 211              	.set Limit_Up__0__SHIFT, 2
+ 212              	.set Limit_Up__AG, CYREG_PRT1_AG
+ 213              	.set Limit_Up__AMUX, CYREG_PRT1_AMUX
+ 214              	.set Limit_Up__BIE, CYREG_PRT1_BIE
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 193
 
 
- 215              	.set Limit_Up__BIT_MASK, CYREG_PRT15_BIT_MASK
- 216              	.set Limit_Up__BYP, CYREG_PRT15_BYP
- 217              	.set Limit_Up__CTL, CYREG_PRT15_CTL
- 218              	.set Limit_Up__DM0, CYREG_PRT15_DM0
- 219              	.set Limit_Up__DM1, CYREG_PRT15_DM1
- 220              	.set Limit_Up__DM2, CYREG_PRT15_DM2
- 221              	.set Limit_Up__DR, CYREG_PRT15_DR
- 222              	.set Limit_Up__INP_DIS, CYREG_PRT15_INP_DIS
- 223              	.set Limit_Up__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU15_BASE
- 224              	.set Limit_Up__LCD_COM_SEG, CYREG_PRT15_LCD_COM_SEG
- 225              	.set Limit_Up__LCD_EN, CYREG_PRT15_LCD_EN
- 226              	.set Limit_Up__MASK, 0x08
- 227              	.set Limit_Up__PORT, 15
- 228              	.set Limit_Up__PRT, CYREG_PRT15_PRT
- 229              	.set Limit_Up__PRTDSI__CAPS_SEL, CYREG_PRT15_CAPS_SEL
- 230              	.set Limit_Up__PRTDSI__DBL_SYNC_IN, CYREG_PRT15_DBL_SYNC_IN
- 231              	.set Limit_Up__PRTDSI__OE_SEL0, CYREG_PRT15_OE_SEL0
- 232              	.set Limit_Up__PRTDSI__OE_SEL1, CYREG_PRT15_OE_SEL1
- 233              	.set Limit_Up__PRTDSI__OUT_SEL0, CYREG_PRT15_OUT_SEL0
- 234              	.set Limit_Up__PRTDSI__OUT_SEL1, CYREG_PRT15_OUT_SEL1
- 235              	.set Limit_Up__PRTDSI__SYNC_OUT, CYREG_PRT15_SYNC_OUT
- 236              	.set Limit_Up__PS, CYREG_PRT15_PS
- 237              	.set Limit_Up__SHIFT, 3
- 238              	.set Limit_Up__SLW, CYREG_PRT15_SLW
+ 215              	.set Limit_Up__BIT_MASK, CYREG_PRT1_BIT_MASK
+ 216              	.set Limit_Up__BYP, CYREG_PRT1_BYP
+ 217              	.set Limit_Up__CTL, CYREG_PRT1_CTL
+ 218              	.set Limit_Up__DM0, CYREG_PRT1_DM0
+ 219              	.set Limit_Up__DM1, CYREG_PRT1_DM1
+ 220              	.set Limit_Up__DM2, CYREG_PRT1_DM2
+ 221              	.set Limit_Up__DR, CYREG_PRT1_DR
+ 222              	.set Limit_Up__INP_DIS, CYREG_PRT1_INP_DIS
+ 223              	.set Limit_Up__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU1_BASE
+ 224              	.set Limit_Up__LCD_COM_SEG, CYREG_PRT1_LCD_COM_SEG
+ 225              	.set Limit_Up__LCD_EN, CYREG_PRT1_LCD_EN
+ 226              	.set Limit_Up__MASK, 0x04
+ 227              	.set Limit_Up__PORT, 1
+ 228              	.set Limit_Up__PRT, CYREG_PRT1_PRT
+ 229              	.set Limit_Up__PRTDSI__CAPS_SEL, CYREG_PRT1_CAPS_SEL
+ 230              	.set Limit_Up__PRTDSI__DBL_SYNC_IN, CYREG_PRT1_DBL_SYNC_IN
+ 231              	.set Limit_Up__PRTDSI__OE_SEL0, CYREG_PRT1_OE_SEL0
+ 232              	.set Limit_Up__PRTDSI__OE_SEL1, CYREG_PRT1_OE_SEL1
+ 233              	.set Limit_Up__PRTDSI__OUT_SEL0, CYREG_PRT1_OUT_SEL0
+ 234              	.set Limit_Up__PRTDSI__OUT_SEL1, CYREG_PRT1_OUT_SEL1
+ 235              	.set Limit_Up__PRTDSI__SYNC_OUT, CYREG_PRT1_SYNC_OUT
+ 236              	.set Limit_Up__PS, CYREG_PRT1_PS
+ 237              	.set Limit_Up__SHIFT, 2
+ 238              	.set Limit_Up__SLW, CYREG_PRT1_SLW
  239              	
  240              	/* isr_motor */
  241              	.set isr_motor__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0

@@ -33,8 +33,7 @@ set_location "\UART_1:BUART:rx_state_3\" macrocell 1 1 0 2
 set_location "\UART_1:BUART:tx_state_0\" macrocell 1 0 0 0
 # Note: port 15 is the logical name for port 8
 set_io "Limit_Right(0)" iocell 15 2
-# Note: port 15 is the logical name for port 8
-set_io "Limit_Up(0)" iocell 15 3
+set_io "Limit_Up(0)" iocell 1 2
 # Note: port 12 is the logical name for port 7
 set_io "Rx_1(0)" iocell 12 6
 # Note: port 15 is the logical name for port 8

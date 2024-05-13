@@ -14,15 +14,16 @@
 **   Variables   **
 ******************/
 static int stepSequence[STEPS][4] = {   // step sequence for motors
-    {1, 0, 0, 0},                       // step 1
-    {1, 1, 0, 0},                       // step 2
-    {0, 1, 0, 0},                       // step 3
-    {0, 1, 1, 0},                       // step 4
-    {0, 0, 1, 0},                       // step 5
-    {0, 0, 1, 1},                       // step 6
-    {0, 0, 0, 1},                       // step 7
-    {1, 0, 0, 1}                        // step 8
+    {1, 0, 0, 1},                       // step 1
+    {0, 0, 0, 1},                       // step 2
+    {0, 0, 1, 1},                       // step 3
+    {0, 0, 1, 0},                       // step 4
+    {0, 1, 1, 0},                       // step 5
+    {0, 1, 0, 0},                       // step 6
+    {1, 1, 0, 0},                       // step 7
+    {1, 0, 0, 0}                        // step 8
 };
+    
 static int off[4] = {0, 0, 0, 0};       // step used to turn of motors
 static long azimuthSteps = 8000000;     // counting steps for steppermotor moving solar panel horitontal
 static long elevationSteps = 8000000;   // counting steps for steppermotor moving solar panel vertical
@@ -38,38 +39,38 @@ void moveAzimuth(int steps)
     aStep = steps;
 }
 
-int azimuth()
+void azimuth()
 {   // function to calculate next azimutgh step based and call azimuthStep()
     if (Azimuth_Pin_1_Read() == 0 && Azimuth_Pin_2_Read() == 0 && Azimuth_Pin_3_Read() == 0 && Azimuth_Pin_4_Read() == 0)
     {   // if the motor is off turn it on, on the same step as last time
         azimuthStep(stepSequence[azimuthSteps % STEPS]);
-        return 0;
+        return;
     }
     if (aStep > 0)
     {   // turning right (positiv steps)
         if (!Limit_Right_Read())
         {   // if right limit is reached, don't move
             aStep = 0;
-            return 0;
+            return;
         }
         // set azimuth motor pins to next step and decrease steps to be taken
         azimuthStep(stepSequence[++azimuthSteps % STEPS]);
         aStep = aStep - 1;
-        return 1;
+        return;
     }
     else if (aStep < 0)
     {    // turning left (negativ steps)
         if (!Limit_Left_Read())
         {   // if left limit is reached, don't move
             aStep = 0;
-            return 0;
+            return;
         }
         // set azimuth motor pins to next step and decrease steps to be taken
         azimuthStep(stepSequence[--azimuthSteps % STEPS]);
         aStep = aStep + 1;
-        return 1;
+        return;
     }
-    return -1;
+    return;
 }
 
 void azimuthStep(int sequence[4])
@@ -86,24 +87,24 @@ void moveElevation(int steps)
     eStep = steps;
 }
 
-int elevation()
+void elevation()
 {   // function to calculate next elevation step based and call elevationStep()
     if (Elevation_Pin_1_Read() == 0 && Elevation_Pin_2_Read() == 0 && Elevation_Pin_3_Read() == 0 && Elevation_Pin_4_Read() == 0)
     {   // if the motor is off turn it on, on the same step as last time
         elevationStep(stepSequence[elevationSteps % STEPS]);
-        return 0;
+        return;
     }
     if (eStep > 0)
     {   // turning down (positiv steps)
         if (!Limit_Down_Read())
         {   // if down limit is reached, don't move
             eStep = 0;
-            return 0;
+            return;
         }
         // set elevation motor pins to next step and decrease steps to be taken
         elevationStep(stepSequence[++elevationSteps % STEPS]);
         eStep = eStep - 1;
-        return 1;
+        return;
     }
     
     else if (eStep < 0)
@@ -111,14 +112,14 @@ int elevation()
         if (!Limit_Up_Read())
         {   // if up limit is reached, don't move
             eStep = 0;
-            return 0;
+            return;
         }
         // set elevation motor pins to next step and decrease steps to be taken
         elevationStep(stepSequence[--elevationSteps % STEPS]);
         eStep = eStep + 1;
-        return 1;
+        return;
     }
-    return -1;
+    return;
 }
 
 void elevationStep(int sequence[4])

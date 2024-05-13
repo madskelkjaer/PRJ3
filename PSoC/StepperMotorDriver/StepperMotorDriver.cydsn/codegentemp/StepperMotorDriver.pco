@@ -1,5 +1,5 @@
 # StepperMotorDriver
-# 2024-04-17 13:05:10Z
+# 2024-05-08 16:22:17Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -14,7 +14,7 @@ set_io "Azimuth_Pin_1(0)" iocell 1 7
 set_io "Azimuth_Pin_4(0)" iocell 1 4
 set_io "Azimuth_Pin_3(0)" iocell 1 5
 set_io "Azimuth_Pin_2(0)" iocell 1 6
-set_io "Limit_Up(0)" iocell 15 3
+set_io "Limit_Up(0)" iocell 1 2
 set_io "Limit_Down(0)" iocell 15 0
 set_io "Limit_Right(0)" iocell 15 2
 set_io "Limit_Left(0)" iocell 15 1

@@ -1,5 +1,5 @@
 -- Project:   StepperMotorDriver
--- Generated: 04/17/2024 15:05:10
+-- Generated: 05/08/2024 18:22:17
 -- PSoC Creator  4.4
 
 ENTITY StepperMotorDriver IS
@@ -149,7 +149,7 @@ ARCHITECTURE __DEFAULT__ OF StepperMotorDriver IS
     ATTRIBUTE lib_model OF Azimuth_Pin_2(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF Azimuth_Pin_2(0) : LABEL IS "P1[6]";
     ATTRIBUTE lib_model OF Limit_Up(0) : LABEL IS "iocell7";
-    ATTRIBUTE Location OF Limit_Up(0) : LABEL IS "P15[3]";
+    ATTRIBUTE Location OF Limit_Up(0) : LABEL IS "P1[2]";
     ATTRIBUTE lib_model OF Limit_Down(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF Limit_Down(0) : LABEL IS "P15[0]";
     ATTRIBUTE lib_model OF Limit_Right(0) : LABEL IS "iocell9";
@@ -1080,7 +1080,7 @@ BEGIN
 
     Limit_Up:logicalport
         GENERIC MAP(
-            drive_mode => "001",
+            drive_mode => "011",
             ibuf_enabled => "1",
             id => "5eececc5-a75f-4fb5-b5e3-b624173c00e9",
             init_dr_st => "0",

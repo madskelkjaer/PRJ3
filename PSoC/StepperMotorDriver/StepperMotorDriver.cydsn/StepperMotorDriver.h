@@ -14,12 +14,12 @@ CY_ISR_PROTO(MOTOR_STEP);
 
 // functions for azimuth motor
 void moveAzimuth(int steps);
-int azimuth();
+void azimuth();
 void azimuthStep(int sequence[4]);
 
 // functions for elevation motor
 void moveElevation(int steps);
-int elevation();
+void elevation();
 void elevationStep(int sequence[4]);
 
 // function to get limit switches status

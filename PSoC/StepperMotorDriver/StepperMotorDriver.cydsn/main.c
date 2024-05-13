@@ -19,9 +19,9 @@ int main(void)
    
     for(;;) 
     {
-        /*char buff[64];
+        char buff[64];
         snprintf(buff, sizeof(buff), "Up: %i, Down: %i, Right: %i, Left: %i  \r\n", limitUp(), limitDown(), limitRight(), limitLeft());
-        UART_1_PutString(buff);*/
+        UART_1_PutString(buff);
     }
 }
 
