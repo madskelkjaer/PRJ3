@@ -96,6 +96,7 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 sock = Sock(app)
 ws_connections = []
 to_send = []
+spi_has_started = False
 
 recieved_data: int = []
 
@@ -151,12 +152,17 @@ def sendAndRecieveSpiData():
         print("Error in sending data: ", e)
 
 def runner():
+    if spi_has_started:
+        return
+
     while True:
+        spi_has_started = True
         sendAndRecieveSpiData()
         time.sleep(1)
 
 @app.route("/api/getdata/<int:limit>")
 def getdata(limit: int):
+    runner()
     return getData(limit)
 
 @app.route("/api/move/<string:direction>")
@@ -178,6 +184,7 @@ def move(direction: str):
 
 @app.route("/")
 def hello_world():
+    runner()
     to_send.append(0x00)
     return "<p>hejsa</p>"
 
