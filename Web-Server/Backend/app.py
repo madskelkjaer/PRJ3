@@ -6,6 +6,7 @@ import json
 import time
 import sqlite3
 import smtplib
+import threading
 
 ### SQLITE ###
 con = sqlite3.connect("database.db")
@@ -150,6 +151,11 @@ def sendAndRecieveSpiData():
     except Exception as e:
         print("Error in sending data: ", e)
 
+def runner():
+    while True:
+        sendAndRecieveSpiData()
+        time.sleep(1)
+
 @app.route("/api/getdata/<int:limit>")
 def getdata(limit: int):
     return getData(limit)
@@ -176,12 +182,12 @@ def hello_world():
     to_send.append(0x00)
     return "<p>hejsa</p>"
 
-@app.route("/datarunner")
-def runner():
-    while True:
-        sendAndRecieveSpiData()
-        time.sleep(1)
-    return "Data runner is running continuously"
+# @app.route("/datarunner")
+# def runner():
+#     while True:
+#         sendAndRecieveSpiData()
+#         time.sleep(1)
+#     return "Data runner is running continuously"
 
 @app.route("/api/inserttestdata")
 def inserttestdata():
@@ -217,4 +223,8 @@ def echo(ws):
             break
 
 if __name__ == "__main__":
+    thread = threading.Thread(target=runner)
+    thread.daemon = True
+    thread.start()
+    
     app.run(threaded=True, port=5000)
