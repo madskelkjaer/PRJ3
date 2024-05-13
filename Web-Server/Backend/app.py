@@ -6,7 +6,6 @@ import json
 import time
 import sqlite3
 import smtplib
-import threading
 
 ### SQLITE ###
 con = sqlite3.connect("database.db")
@@ -223,8 +222,6 @@ def echo(ws):
             break
 
 if __name__ == "__main__":
-    thread = threading.Thread(target=runner)
-    thread.daemon = True
-    thread.start()
-    
+    runner()
+
     app.run(threaded=True, port=5000)
