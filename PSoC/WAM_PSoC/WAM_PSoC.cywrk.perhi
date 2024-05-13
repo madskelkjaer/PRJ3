@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WAM_PSoC\Wam_PSoC\Source Files\SPI.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WAM_PSoC\Wam_PSoC\Source Files\main.c">
 <ExpandedNodeIds>
 <v>WAM_PSoC</v>
 <v>WAM_PSoC\Wam_PSoC</v>
@@ -272,17 +272,8 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Wam_PSoC.cydsn\SunTracker.h" />
-<name v=".\Wam_PSoC.cydsn\SPI.h" />
-<name v=".\Wam_PSoC.cydsn\SPI.c" />
-<name v=".\Wam_PSoC.cydsn\main.c" />
-<name v=".\Wam_PSoC.cydsn\SunTracker.c" />
-<name v=".\Wam_PSoC.cydsn\SensorDriver.h" />
 <name v=".\Wam_PSoC.cydsn\SensorDriver.c" />
-<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.h" />
-<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.c" />
-<name v=".\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Wam_PSoC.cydsn\Wam_PSoC.cydwr" />
+<name v=".\Wam_PSoC.cydsn\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -290,7 +281,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1482, 703" SelectedTabbedMdiWindow="56b9dd09-74ba-47b6-be05-aacbe80ca2a2"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c5a72657-9cd1-48a4-b60e-845c41bfec09" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.h" Guid="97db3d44-3cb1-40dc-8dcf-d3612971fce3" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SPI.h" Guid="c29e226e-9079-4d7a-a6d2-4ed763911d12" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SPI.c" Guid="801c0705-f588-4e82-b564-9970f84fcdd2" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\main.c" Guid="56b9dd09-74ba-47b6-be05-aacbe80ca2a2" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.c" Guid="d5dbd37e-2d39-4e34-a3fc-7b536474fc4f" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.h" Guid="79d7b809-10d1-4efc-88b6-4b650c430b85" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.c" Guid="ce39be49-087c-4baa-bdc5-0345d195e8c9" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.h" Guid="1f88ad34-ad1a-4ea0-9599-602231ff4a15" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.c" Guid="f6d88073-b0aa-4c32-96b7-cee666467275" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" Guid="5de2d203-ad45-414f-9d68-a3ce32e4ce16" /><DocumentWindow Key="C:\Users\perhi\Downloads\WAM_PSoC\WAM_PSoC\Wam_PSoC.cydsn\Wam_PSoC.cydwr" Guid="a5543b01-c35c-471e-a916-26c45b7893f3" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1482, 703" SelectedTabbedMdiWindow="43d016f6-a840-4d7e-9d2e-62a80a242bd2"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c5a72657-9cd1-48a4-b60e-845c41bfec09" /><DocumentWindow Key="C:\Users\perhi\PRJ3\PSoC\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.c" Guid="038b4aaa-60d4-451c-8d6e-88ec8fdfe5e7" /><DocumentWindow Key="C:\Users\perhi\PRJ3\PSoC\WAM_PSoC\Wam_PSoC.cydsn\main.c" Guid="43d016f6-a840-4d7e-9d2e-62a80a242bd2" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
