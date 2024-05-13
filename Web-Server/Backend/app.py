@@ -140,6 +140,7 @@ def sendAndRecieveSpiData():
     data_to_send = to_send.pop(0)
     print("----")
     print("Sending data: ", data_to_send)
+    print("Number of data in queue: ", len(to_send))
     try:
         response = spi.xfer([data_to_send])
         print("Data sent: ", data_to_send)
