@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_sock import Sock
 import spidev
@@ -89,10 +89,8 @@ spi.open(bus, device)
 spi.max_speed_hz = 1000
 spi.mode = 0
 
-
-
-spi_has_started = False
 app = Flask(__name__)
+running_status = False
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 sock = Sock(app)
 ws_connections = []
@@ -152,11 +150,14 @@ def sendAndRecieveSpiData():
         print("Error in sending data: ", e)
 
 def runner():
-    if spi_has_started:
+    global running_status
+
+    if running_status == True:
         return
 
+    running_status = True
+
     while True:
-        spi_has_started = True
         sendAndRecieveSpiData()
         time.sleep(1)
 
@@ -181,6 +182,11 @@ def move(direction: str):
         return "Invalid direction"
     
     return "Moving " + direction
+
+@app.route("/api/status")
+def check_status():
+    global running_status
+    return jsonify({"status": running_status})
 
 @app.route("/")
 def hello_world():
@@ -229,6 +235,4 @@ def echo(ws):
             break
 
 if __name__ == "__main__":
-    runner()
-
-    app.run(threaded=True, port=5000)
+    app.run(port=5000)
