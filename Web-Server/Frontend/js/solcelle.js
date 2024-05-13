@@ -1,9 +1,11 @@
-const solarcell = document.querySelector(".solarcell");
-let rotateX = 0; //Det her er omvendt, idk what to do :((( x er i opad og nedad, y er venstre og hoejre???
-let rotateY = 0;
+const solarcell1 = document.querySelector(".solarcell1");
+const solarcell2 = document.querySelector(".solarcell2");
+
+let rotateElevation = 0;
+let rotateAzimuth = 0;
 const rotationIncrement = 2; //hvor hurtigt skal den dreje????
-const maxUp = 90;
-const maxDown = -30;
+const maxUp = 30;
+const maxDown = -90;
 const maxRight = 150;
 const maxLeft = -150;
 
@@ -31,6 +33,19 @@ function updateHome() {
 	}
 }
 
+
+// Funktion til API kald for at sende data til server
+function moveSolarCell(direction) {
+	fetch(`http://192.168.1.250:5000/api/move/${direction}`)
+		.then(response => {
+			if (response.ok) {
+				return response.json();
+			} else {
+				throw new Error('API request failed');
+			}
+		})
+}
+
 // Event listener for the "Update" button
 document.getElementById("updateButton").addEventListener("click", updateHome);
 
@@ -39,37 +54,41 @@ document.addEventListener("keydown", (event) => {
 	//hvis man trykker en tast ned
 	switch (event.key) {
 		case "ArrowUp":
-			if (rotateX >= maxUp) {
+			if (rotateElevation >= maxUp) {
 				console.log("for manage grader op!!!");
 				break;
 			} else {
-				rotateX += rotationIncrement;
+				moveSolarCell("up");
+				rotateElevation += rotationIncrement;
 				updateRotation();
 				break;
 			}
 		case "ArrowDown":
-			if (rotateX <= maxDown) {
+			if (rotateElevation <= maxDown) {
 				console.log("for mange grader ned!!!!");
 				break;
 			} else {
-				rotateX -= rotationIncrement;
+				moveSolarCell("down");
+				rotateElevation -= rotationIncrement;
 				updateRotation();
 				break;
 			}
 		case "ArrowLeft":
-			if (rotateY <= maxLeft) {
+			if (rotateAzimuth <= maxLeft) {
 				console.log("for mange grader til venstre!!!!");
 				break;
 			} else {
-				rotateY -= rotationIncrement;
+				moveSolarCell("left");
+				rotateAzimuth -= rotationIncrement;
 				updateRotation();
 				break;
 			}
 		case "ArrowRight":
-			if (rotateY >= maxRight) {
+			if (rotateAzimuth >= maxRight) {
 				console.log("for mange grader til højre!!!");
 			} else {
-				rotateY += rotationIncrement;
+				moveSolarCell("right");
+				rotateAzimuth += rotationIncrement;
 				updateRotation();
 				break;
 			}
@@ -77,11 +96,27 @@ document.addEventListener("keydown", (event) => {
 });
 
 function updateRotation() {
-	solarcell.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`; //drejer solcellen
+	solarcell1.style.transform = `rotateX(${rotateElevation}deg)`; //drejer solcellen
+	solarcell2.style.transform = `rotateY(${rotateAzimuth}deg)`; //drejer solcellen
 
 	//saa current rotation kommer i console
-	console.log(`Elevation lige nu: ${rotateX >= 0 ? "+" : ""}${rotateX} deg`);
-	console.log(`Azimuth lige nu: ${rotateY >= 0 ? "+" : ""}${rotateY} deg`);
+	console.log(
+		`Elevation lige nu: ${rotateElevation >= 0 ? "+" : ""
+		}${rotateElevation} deg`
+	);
+	console.log(
+		`Azimuth lige nu: ${rotateAzimuth >= 0 ? "+" : ""}${rotateAzimuth} deg`
+	);
+
+	//skal sende rotation til server
+	// wam.katvu.dk/api/getdata/<limit>
+	// wam.katvu.dk/api/move/up
+	// wam.katvu.dk/api/move/down
+	// wam.katvu.dk/api/move/left
+	// wam.katvu.dk/api/move/right
+	// wam.katvu.dk/api/move/home
+
+	// wam.katvu.dk/api/saveform
 }
 
 //MED KNAPPERNE -----------------------------------------------
@@ -90,10 +125,11 @@ let rotateInterval;
 
 document.getElementById("rotateUp").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		if (rotateX >= maxUp) {
+		if (rotateElevation >= maxUp) {
 			console.log("for mange grader til op!!!");
 		} else {
-			rotateX += rotationIncrement;
+			moveSolarCell("up");
+			rotateElevation += rotationIncrement;
 			updateRotation();
 		}
 	}, 50); //50 ms tryk foer den registrerer, samme for de andre 3
@@ -101,10 +137,11 @@ document.getElementById("rotateUp").addEventListener("mousedown", () => {
 
 document.getElementById("rotateDown").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		if (rotateX <= maxDown) {
+		if (rotateElevation <= maxDown) {
 			console.log("for mange grader til ned!!!");
 		} else {
-			rotateX -= rotationIncrement;
+			moveSolarCell("down");
+			rotateElevation -= rotationIncrement;
 			updateRotation();
 		}
 	}, 50);
@@ -112,10 +149,11 @@ document.getElementById("rotateDown").addEventListener("mousedown", () => {
 
 document.getElementById("rotateRight").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		if (rotateX >= maxRight) {
+		if (rotateAzimuth >= maxRight) {
 			console.log("for mange grader til til højre!!!");
 		} else {
-			rotateY += rotationIncrement;
+			moveSolarCell("right");
+			rotateAzimuth += rotationIncrement;
 			updateRotation();
 		}
 	}, 50);
@@ -123,19 +161,21 @@ document.getElementById("rotateRight").addEventListener("mousedown", () => {
 
 document.getElementById("rotateLeft").addEventListener("mousedown", () => {
 	rotateInterval = setInterval(() => {
-		if (rotateX <= maxLeft) {
+		if (rotateAzimuth <= maxLeft) {
 			console.log("for mange grader til til venstre!!!");
 		} else {
-			rotateY -= rotationIncrement;
+			moveSolarCell("left");
+			rotateAzimuth -= rotationIncrement;
 			updateRotation();
 		}
 	}, 50);
 });
 
 document.getElementById("reset").addEventListener("mousedown", () => {
-	rotateY = homeX; //omvendt end hvad man forventer lol
-	rotateX = homeY;
+	rotateAzimuth = homeX; //omvendt end hvad man forventer lol
+	rotateElevation = homeY;
 	updateRotation();
+	moveSolarCell("home");
 });
 
 document.addEventListener("mouseup", () => {

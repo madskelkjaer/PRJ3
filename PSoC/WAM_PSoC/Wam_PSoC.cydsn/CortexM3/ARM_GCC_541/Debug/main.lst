@@ -1,0 +1,941 @@
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.receiveCommand,"ax",%progbits
+  20              		.align	2
+  21              		.global	receiveCommand
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	receiveCommand, %function
+  25              	receiveCommand:
+  26              	.LFB64:
+  27              		.file 1 "main.c"
+   1:main.c        **** #include "project.h"
+   2:main.c        **** #include "SunTracker.h"
+   3:main.c        **** #include "SensorDriver.h"
+   4:main.c        **** #include "StepperMotorDriver.h"
+   5:main.c        **** #include "SPI.h"
+   6:main.c        **** 
+   7:main.c        **** uint8_t receiveCommand(void);
+   8:main.c        **** 
+   9:main.c        **** int main(void) {
+  10:main.c        ****     CyGlobalIntEnable; // Enable global interrupts.
+  11:main.c        **** 
+  12:main.c        ****     SPI_Init();  // Initialize SPI
+  13:main.c        **** 
+  14:main.c        ****     setMode(MODE_AUTO); // Start in automatic mode
+  15:main.c        **** 
+  16:main.c        ****     uint32_t lastTime = 0;
+  17:main.c        ****     uint32_t currentTime;
+  18:main.c        ****     const uint32_t delayInterval = 600000; // Delay (10 min)
+  19:main.c        **** 
+  20:main.c        ****     while (true) {
+  21:main.c        ****         currentTime = CySysTickGetValue();
+  22:main.c        **** 
+  23:main.c        ****         if (getCurrentMode() == MODE_AUTO) {
+  24:main.c        ****             if ((currentTime - lastTime) >= delayInterval) {
+  25:main.c        ****                 trackSun();  // Adjust the solar panel's position automatically
+  26:main.c        ****                 lastTime = currentTime; // Update the last checked time
+  27:main.c        ****             }
+  28:main.c        ****         } else if (getCurrentMode() == MODE_MANUAL) {
+  29:main.c        ****             uint8_t command = receiveCommand();
+  30:main.c        ****             manualControl(command);
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 2
+
+
+  31:main.c        ****         }
+  32:main.c        ****     }
+  33:main.c        **** 
+  34:main.c        ****     return 0;
+  35:main.c        **** }
+  36:main.c        **** 
+  37:main.c        **** uint8_t receiveCommand(void) {
+  28              		.loc 1 37 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  38:main.c        ****     return SPI_ReceiveData();
+  36              		.loc 1 38 0
+  37 0002 FFF7FEFF 		bl	SPI_ReceiveData
+  38              	.LVL0:
+  39:main.c        **** }
+  39              		.loc 1 39 0
+  40 0006 08BD     		pop	{r3, pc}
+  41              		.cfi_endproc
+  42              	.LFE64:
+  43              		.size	receiveCommand, .-receiveCommand
+  44              		.section	.text.main,"ax",%progbits
+  45              		.align	2
+  46              		.global	main
+  47              		.thumb
+  48              		.thumb_func
+  49              		.type	main, %function
+  50              	main:
+  51              	.LFB63:
+   9:main.c        ****     CyGlobalIntEnable; // Enable global interrupts.
+  52              		.loc 1 9 0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56 0000 38B5     		push	{r3, r4, r5, lr}
+  57              		.cfi_def_cfa_offset 16
+  58              		.cfi_offset 3, -16
+  59              		.cfi_offset 4, -12
+  60              		.cfi_offset 5, -8
+  61              		.cfi_offset 14, -4
+  10:main.c        **** 
+  62              		.loc 1 10 0
+  63              		.syntax unified
+  64              	@ 10 "main.c" 1
+  65 0002 62B6     		CPSIE   i
+  66              	@ 0 "" 2
+  12:main.c        **** 
+  67              		.loc 1 12 0
+  68              		.thumb
+  69              		.syntax unified
+  70 0004 FFF7FEFF 		bl	SPI_Init
+  71              	.LVL1:
+  14:main.c        **** 
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 3
+
+
+  72              		.loc 1 14 0
+  73 0008 0120     		movs	r0, #1
+  74 000a FFF7FEFF 		bl	setMode
+  75              	.LVL2:
+  16:main.c        ****     uint32_t currentTime;
+  76              		.loc 1 16 0
+  77 000e 0025     		movs	r5, #0
+  78              	.LVL3:
+  79              	.L4:
+  21:main.c        **** 
+  80              		.loc 1 21 0
+  81 0010 FFF7FEFF 		bl	CySysTickGetValue
+  82              	.LVL4:
+  83 0014 0446     		mov	r4, r0
+  84              	.LVL5:
+  23:main.c        ****             if ((currentTime - lastTime) >= delayInterval) {
+  85              		.loc 1 23 0
+  86 0016 FFF7FEFF 		bl	getCurrentMode
+  87              	.LVL6:
+  88 001a 0128     		cmp	r0, #1
+  89 001c 07D1     		bne	.L5
+  24:main.c        ****                 trackSun();  // Adjust the solar panel's position automatically
+  90              		.loc 1 24 0
+  91 001e 621B     		subs	r2, r4, r5
+  92 0020 074B     		ldr	r3, .L8
+  93 0022 9A42     		cmp	r2, r3
+  94 0024 F4D9     		bls	.L4
+  25:main.c        ****                 lastTime = currentTime; // Update the last checked time
+  95              		.loc 1 25 0
+  96 0026 FFF7FEFF 		bl	trackSun
+  97              	.LVL7:
+  26:main.c        ****             }
+  98              		.loc 1 26 0
+  99 002a 2546     		mov	r5, r4
+ 100 002c F0E7     		b	.L4
+ 101              	.LVL8:
+ 102              	.L5:
+  28:main.c        ****             uint8_t command = receiveCommand();
+ 103              		.loc 1 28 0
+ 104 002e FFF7FEFF 		bl	getCurrentMode
+ 105              	.LVL9:
+ 106 0032 0028     		cmp	r0, #0
+ 107 0034 ECD1     		bne	.L4
+ 108              	.LBB2:
+  29:main.c        ****             manualControl(command);
+ 109              		.loc 1 29 0
+ 110 0036 FFF7FEFF 		bl	receiveCommand
+ 111              	.LVL10:
+  30:main.c        ****         }
+ 112              		.loc 1 30 0
+ 113 003a FFF7FEFF 		bl	manualControl
+ 114              	.LVL11:
+ 115 003e E7E7     		b	.L4
+ 116              	.L9:
+ 117              		.align	2
+ 118              	.L8:
+ 119 0040 BF270900 		.word	599999
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 4
+
+
+ 120              	.LBE2:
+ 121              		.cfi_endproc
+ 122              	.LFE63:
+ 123              		.size	main, .-main
+ 124              		.text
+ 125              	.Letext0:
+ 126              		.file 2 "e:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\mac
+ 127              		.file 3 "e:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\sys
+ 128              		.file 4 "SPI.h"
+ 129              		.file 5 "SunTracker.h"
+ 130              		.file 6 "Generated_Source\\PSoC5/CyLib.h"
+ 131              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
+ 132              		.section	.debug_info,"",%progbits
+ 133              	.Ldebug_info0:
+ 134 0000 09020000 		.4byte	0x209
+ 135 0004 0400     		.2byte	0x4
+ 136 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 137 000a 04       		.byte	0x4
+ 138 000b 01       		.uleb128 0x1
+ 139 000c 49000000 		.4byte	.LASF31
+ 140 0010 0C       		.byte	0xc
+ 141 0011 1C020000 		.4byte	.LASF32
+ 142 0015 8F010000 		.4byte	.LASF33
+ 143 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 144 001d 00000000 		.4byte	0
+ 145 0021 00000000 		.4byte	.Ldebug_line0
+ 146 0025 02       		.uleb128 0x2
+ 147 0026 01       		.byte	0x1
+ 148 0027 06       		.byte	0x6
+ 149 0028 60020000 		.4byte	.LASF0
+ 150 002c 03       		.uleb128 0x3
+ 151 002d 00000000 		.4byte	.LASF4
+ 152 0031 02       		.byte	0x2
+ 153 0032 1D       		.byte	0x1d
+ 154 0033 37000000 		.4byte	0x37
+ 155 0037 02       		.uleb128 0x2
+ 156 0038 01       		.byte	0x1
+ 157 0039 08       		.byte	0x8
+ 158 003a 3B000000 		.4byte	.LASF1
+ 159 003e 02       		.uleb128 0x2
+ 160 003f 02       		.byte	0x2
+ 161 0040 05       		.byte	0x5
+ 162 0041 31020000 		.4byte	.LASF2
+ 163 0045 02       		.uleb128 0x2
+ 164 0046 02       		.byte	0x2
+ 165 0047 07       		.byte	0x7
+ 166 0048 E9000000 		.4byte	.LASF3
+ 167 004c 03       		.uleb128 0x3
+ 168 004d 0A000000 		.4byte	.LASF5
+ 169 0051 02       		.byte	0x2
+ 170 0052 3F       		.byte	0x3f
+ 171 0053 57000000 		.4byte	0x57
+ 172 0057 02       		.uleb128 0x2
+ 173 0058 04       		.byte	0x4
+ 174 0059 05       		.byte	0x5
+ 175 005a 23000000 		.4byte	.LASF6
+ 176 005e 03       		.uleb128 0x3
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 5
+
+
+ 177 005f 32010000 		.4byte	.LASF7
+ 178 0063 02       		.byte	0x2
+ 179 0064 41       		.byte	0x41
+ 180 0065 69000000 		.4byte	0x69
+ 181 0069 02       		.uleb128 0x2
+ 182 006a 04       		.byte	0x4
+ 183 006b 07       		.byte	0x7
+ 184 006c D7000000 		.4byte	.LASF8
+ 185 0070 02       		.uleb128 0x2
+ 186 0071 08       		.byte	0x8
+ 187 0072 05       		.byte	0x5
+ 188 0073 0E020000 		.4byte	.LASF9
+ 189 0077 02       		.uleb128 0x2
+ 190 0078 08       		.byte	0x8
+ 191 0079 07       		.byte	0x7
+ 192 007a 70010000 		.4byte	.LASF10
+ 193 007e 04       		.uleb128 0x4
+ 194 007f 04       		.byte	0x4
+ 195 0080 05       		.byte	0x5
+ 196 0081 696E7400 		.ascii	"int\000"
+ 197 0085 02       		.uleb128 0x2
+ 198 0086 04       		.byte	0x4
+ 199 0087 07       		.byte	0x7
+ 200 0088 63010000 		.4byte	.LASF11
+ 201 008c 03       		.uleb128 0x3
+ 202 008d 87010000 		.4byte	.LASF12
+ 203 0091 03       		.byte	0x3
+ 204 0092 18       		.byte	0x18
+ 205 0093 2C000000 		.4byte	0x2c
+ 206 0097 03       		.uleb128 0x3
+ 207 0098 FD010000 		.4byte	.LASF13
+ 208 009c 03       		.byte	0x3
+ 209 009d 2C       		.byte	0x2c
+ 210 009e 4C000000 		.4byte	0x4c
+ 211 00a2 03       		.uleb128 0x3
+ 212 00a3 43020000 		.4byte	.LASF14
+ 213 00a7 03       		.byte	0x3
+ 214 00a8 30       		.byte	0x30
+ 215 00a9 5E000000 		.4byte	0x5e
+ 216 00ad 02       		.uleb128 0x2
+ 217 00ae 04       		.byte	0x4
+ 218 00af 04       		.byte	0x4
+ 219 00b0 35000000 		.4byte	.LASF15
+ 220 00b4 02       		.uleb128 0x2
+ 221 00b5 08       		.byte	0x8
+ 222 00b6 04       		.byte	0x4
+ 223 00b7 2B010000 		.4byte	.LASF16
+ 224 00bb 02       		.uleb128 0x2
+ 225 00bc 01       		.byte	0x1
+ 226 00bd 08       		.byte	0x8
+ 227 00be 23020000 		.4byte	.LASF17
+ 228 00c2 02       		.uleb128 0x2
+ 229 00c3 08       		.byte	0x8
+ 230 00c4 04       		.byte	0x4
+ 231 00c5 54020000 		.4byte	.LASF18
+ 232 00c9 02       		.uleb128 0x2
+ 233 00ca 04       		.byte	0x4
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 6
+
+
+ 234 00cb 07       		.byte	0x7
+ 235 00cc 05020000 		.4byte	.LASF19
+ 236 00d0 05       		.uleb128 0x5
+ 237 00d1 54010000 		.4byte	.LASF34
+ 238 00d5 01       		.byte	0x1
+ 239 00d6 25       		.byte	0x25
+ 240 00d7 8C000000 		.4byte	0x8c
+ 241 00db 00000000 		.4byte	.LFB64
+ 242 00df 08000000 		.4byte	.LFE64-.LFB64
+ 243 00e3 01       		.uleb128 0x1
+ 244 00e4 9C       		.byte	0x9c
+ 245 00e5 F3000000 		.4byte	0xf3
+ 246 00e9 06       		.uleb128 0x6
+ 247 00ea 06000000 		.4byte	.LVL0
+ 248 00ee BF010000 		.4byte	0x1bf
+ 249 00f2 00       		.byte	0
+ 250 00f3 07       		.uleb128 0x7
+ 251 00f4 F8010000 		.4byte	.LASF35
+ 252 00f8 01       		.byte	0x1
+ 253 00f9 09       		.byte	0x9
+ 254 00fa 7E000000 		.4byte	0x7e
+ 255 00fe 00000000 		.4byte	.LFB63
+ 256 0102 44000000 		.4byte	.LFE63-.LFB63
+ 257 0106 01       		.uleb128 0x1
+ 258 0107 9C       		.byte	0x9c
+ 259 0108 A9010000 		.4byte	0x1a9
+ 260 010c 08       		.uleb128 0x8
+ 261 010d 28020000 		.4byte	.LASF20
+ 262 0111 01       		.byte	0x1
+ 263 0112 10       		.byte	0x10
+ 264 0113 A2000000 		.4byte	0xa2
+ 265 0117 00000000 		.4byte	.LLST0
+ 266 011b 08       		.uleb128 0x8
+ 267 011c EC010000 		.4byte	.LASF21
+ 268 0120 01       		.byte	0x1
+ 269 0121 11       		.byte	0x11
+ 270 0122 A2000000 		.4byte	0xa2
+ 271 0126 35000000 		.4byte	.LLST1
+ 272 012a 09       		.uleb128 0x9
+ 273 012b 3D010000 		.4byte	.LASF22
+ 274 012f 01       		.byte	0x1
+ 275 0130 12       		.byte	0x12
+ 276 0131 A9010000 		.4byte	0x1a9
+ 277 0135 C0270900 		.4byte	0x927c0
+ 278 0139 0A       		.uleb128 0xa
+ 279 013a 36000000 		.4byte	.LBB2
+ 280 013e 0E000000 		.4byte	.LBE2-.LBB2
+ 281 0142 68010000 		.4byte	0x168
+ 282 0146 08       		.uleb128 0x8
+ 283 0147 3B020000 		.4byte	.LASF23
+ 284 014b 01       		.byte	0x1
+ 285 014c 1D       		.byte	0x1d
+ 286 014d 8C000000 		.4byte	0x8c
+ 287 0151 53000000 		.4byte	.LLST2
+ 288 0155 06       		.uleb128 0x6
+ 289 0156 3A000000 		.4byte	.LVL10
+ 290 015a D0000000 		.4byte	0xd0
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 7
+
+
+ 291 015e 06       		.uleb128 0x6
+ 292 015f 3E000000 		.4byte	.LVL11
+ 293 0163 CA010000 		.4byte	0x1ca
+ 294 0167 00       		.byte	0
+ 295 0168 06       		.uleb128 0x6
+ 296 0169 08000000 		.4byte	.LVL1
+ 297 016d D5010000 		.4byte	0x1d5
+ 298 0171 0B       		.uleb128 0xb
+ 299 0172 0E000000 		.4byte	.LVL2
+ 300 0176 E0010000 		.4byte	0x1e0
+ 301 017a 84010000 		.4byte	0x184
+ 302 017e 0C       		.uleb128 0xc
+ 303 017f 01       		.uleb128 0x1
+ 304 0180 50       		.byte	0x50
+ 305 0181 01       		.uleb128 0x1
+ 306 0182 31       		.byte	0x31
+ 307 0183 00       		.byte	0
+ 308 0184 06       		.uleb128 0x6
+ 309 0185 14000000 		.4byte	.LVL4
+ 310 0189 EB010000 		.4byte	0x1eb
+ 311 018d 06       		.uleb128 0x6
+ 312 018e 1A000000 		.4byte	.LVL6
+ 313 0192 F6010000 		.4byte	0x1f6
+ 314 0196 06       		.uleb128 0x6
+ 315 0197 2A000000 		.4byte	.LVL7
+ 316 019b 01020000 		.4byte	0x201
+ 317 019f 06       		.uleb128 0x6
+ 318 01a0 32000000 		.4byte	.LVL9
+ 319 01a4 F6010000 		.4byte	0x1f6
+ 320 01a8 00       		.byte	0
+ 321 01a9 0D       		.uleb128 0xd
+ 322 01aa A2000000 		.4byte	0xa2
+ 323 01ae 0E       		.uleb128 0xe
+ 324 01af 0E010000 		.4byte	.LASF36
+ 325 01b3 07       		.byte	0x7
+ 326 01b4 1207     		.2byte	0x712
+ 327 01b6 BA010000 		.4byte	0x1ba
+ 328 01ba 0F       		.uleb128 0xf
+ 329 01bb 97000000 		.4byte	0x97
+ 330 01bf 10       		.uleb128 0x10
+ 331 01c0 1B010000 		.4byte	.LASF24
+ 332 01c4 1B010000 		.4byte	.LASF24
+ 333 01c8 04       		.byte	0x4
+ 334 01c9 06       		.byte	0x6
+ 335 01ca 10       		.uleb128 0x10
+ 336 01cb 6C020000 		.4byte	.LASF25
+ 337 01cf 6C020000 		.4byte	.LASF25
+ 338 01d3 05       		.byte	0x5
+ 339 01d4 08       		.byte	0x8
+ 340 01d5 10       		.uleb128 0x10
+ 341 01d6 2C000000 		.4byte	.LASF26
+ 342 01da 2C000000 		.4byte	.LASF26
+ 343 01de 04       		.byte	0x4
+ 344 01df 04       		.byte	0x4
+ 345 01e0 10       		.uleb128 0x10
+ 346 01e1 4C020000 		.4byte	.LASF27
+ 347 01e5 4C020000 		.4byte	.LASF27
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 8
+
+
+ 348 01e9 05       		.byte	0x5
+ 349 01ea 07       		.byte	0x7
+ 350 01eb 10       		.uleb128 0x10
+ 351 01ec FC000000 		.4byte	.LASF28
+ 352 01f0 FC000000 		.4byte	.LASF28
+ 353 01f4 06       		.byte	0x6
+ 354 01f5 B6       		.byte	0xb6
+ 355 01f6 10       		.uleb128 0x10
+ 356 01f7 14000000 		.4byte	.LASF29
+ 357 01fb 14000000 		.4byte	.LASF29
+ 358 01ff 05       		.byte	0x5
+ 359 0200 09       		.byte	0x9
+ 360 0201 10       		.uleb128 0x10
+ 361 0202 4B010000 		.4byte	.LASF30
+ 362 0206 4B010000 		.4byte	.LASF30
+ 363 020a 05       		.byte	0x5
+ 364 020b 06       		.byte	0x6
+ 365 020c 00       		.byte	0
+ 366              		.section	.debug_abbrev,"",%progbits
+ 367              	.Ldebug_abbrev0:
+ 368 0000 01       		.uleb128 0x1
+ 369 0001 11       		.uleb128 0x11
+ 370 0002 01       		.byte	0x1
+ 371 0003 25       		.uleb128 0x25
+ 372 0004 0E       		.uleb128 0xe
+ 373 0005 13       		.uleb128 0x13
+ 374 0006 0B       		.uleb128 0xb
+ 375 0007 03       		.uleb128 0x3
+ 376 0008 0E       		.uleb128 0xe
+ 377 0009 1B       		.uleb128 0x1b
+ 378 000a 0E       		.uleb128 0xe
+ 379 000b 55       		.uleb128 0x55
+ 380 000c 17       		.uleb128 0x17
+ 381 000d 11       		.uleb128 0x11
+ 382 000e 01       		.uleb128 0x1
+ 383 000f 10       		.uleb128 0x10
+ 384 0010 17       		.uleb128 0x17
+ 385 0011 00       		.byte	0
+ 386 0012 00       		.byte	0
+ 387 0013 02       		.uleb128 0x2
+ 388 0014 24       		.uleb128 0x24
+ 389 0015 00       		.byte	0
+ 390 0016 0B       		.uleb128 0xb
+ 391 0017 0B       		.uleb128 0xb
+ 392 0018 3E       		.uleb128 0x3e
+ 393 0019 0B       		.uleb128 0xb
+ 394 001a 03       		.uleb128 0x3
+ 395 001b 0E       		.uleb128 0xe
+ 396 001c 00       		.byte	0
+ 397 001d 00       		.byte	0
+ 398 001e 03       		.uleb128 0x3
+ 399 001f 16       		.uleb128 0x16
+ 400 0020 00       		.byte	0
+ 401 0021 03       		.uleb128 0x3
+ 402 0022 0E       		.uleb128 0xe
+ 403 0023 3A       		.uleb128 0x3a
+ 404 0024 0B       		.uleb128 0xb
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 9
+
+
+ 405 0025 3B       		.uleb128 0x3b
+ 406 0026 0B       		.uleb128 0xb
+ 407 0027 49       		.uleb128 0x49
+ 408 0028 13       		.uleb128 0x13
+ 409 0029 00       		.byte	0
+ 410 002a 00       		.byte	0
+ 411 002b 04       		.uleb128 0x4
+ 412 002c 24       		.uleb128 0x24
+ 413 002d 00       		.byte	0
+ 414 002e 0B       		.uleb128 0xb
+ 415 002f 0B       		.uleb128 0xb
+ 416 0030 3E       		.uleb128 0x3e
+ 417 0031 0B       		.uleb128 0xb
+ 418 0032 03       		.uleb128 0x3
+ 419 0033 08       		.uleb128 0x8
+ 420 0034 00       		.byte	0
+ 421 0035 00       		.byte	0
+ 422 0036 05       		.uleb128 0x5
+ 423 0037 2E       		.uleb128 0x2e
+ 424 0038 01       		.byte	0x1
+ 425 0039 3F       		.uleb128 0x3f
+ 426 003a 19       		.uleb128 0x19
+ 427 003b 03       		.uleb128 0x3
+ 428 003c 0E       		.uleb128 0xe
+ 429 003d 3A       		.uleb128 0x3a
+ 430 003e 0B       		.uleb128 0xb
+ 431 003f 3B       		.uleb128 0x3b
+ 432 0040 0B       		.uleb128 0xb
+ 433 0041 27       		.uleb128 0x27
+ 434 0042 19       		.uleb128 0x19
+ 435 0043 49       		.uleb128 0x49
+ 436 0044 13       		.uleb128 0x13
+ 437 0045 11       		.uleb128 0x11
+ 438 0046 01       		.uleb128 0x1
+ 439 0047 12       		.uleb128 0x12
+ 440 0048 06       		.uleb128 0x6
+ 441 0049 40       		.uleb128 0x40
+ 442 004a 18       		.uleb128 0x18
+ 443 004b 9742     		.uleb128 0x2117
+ 444 004d 19       		.uleb128 0x19
+ 445 004e 01       		.uleb128 0x1
+ 446 004f 13       		.uleb128 0x13
+ 447 0050 00       		.byte	0
+ 448 0051 00       		.byte	0
+ 449 0052 06       		.uleb128 0x6
+ 450 0053 898201   		.uleb128 0x4109
+ 451 0056 00       		.byte	0
+ 452 0057 11       		.uleb128 0x11
+ 453 0058 01       		.uleb128 0x1
+ 454 0059 31       		.uleb128 0x31
+ 455 005a 13       		.uleb128 0x13
+ 456 005b 00       		.byte	0
+ 457 005c 00       		.byte	0
+ 458 005d 07       		.uleb128 0x7
+ 459 005e 2E       		.uleb128 0x2e
+ 460 005f 01       		.byte	0x1
+ 461 0060 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 10
+
+
+ 462 0061 19       		.uleb128 0x19
+ 463 0062 03       		.uleb128 0x3
+ 464 0063 0E       		.uleb128 0xe
+ 465 0064 3A       		.uleb128 0x3a
+ 466 0065 0B       		.uleb128 0xb
+ 467 0066 3B       		.uleb128 0x3b
+ 468 0067 0B       		.uleb128 0xb
+ 469 0068 27       		.uleb128 0x27
+ 470 0069 19       		.uleb128 0x19
+ 471 006a 49       		.uleb128 0x49
+ 472 006b 13       		.uleb128 0x13
+ 473 006c 8701     		.uleb128 0x87
+ 474 006e 19       		.uleb128 0x19
+ 475 006f 11       		.uleb128 0x11
+ 476 0070 01       		.uleb128 0x1
+ 477 0071 12       		.uleb128 0x12
+ 478 0072 06       		.uleb128 0x6
+ 479 0073 40       		.uleb128 0x40
+ 480 0074 18       		.uleb128 0x18
+ 481 0075 9742     		.uleb128 0x2117
+ 482 0077 19       		.uleb128 0x19
+ 483 0078 01       		.uleb128 0x1
+ 484 0079 13       		.uleb128 0x13
+ 485 007a 00       		.byte	0
+ 486 007b 00       		.byte	0
+ 487 007c 08       		.uleb128 0x8
+ 488 007d 34       		.uleb128 0x34
+ 489 007e 00       		.byte	0
+ 490 007f 03       		.uleb128 0x3
+ 491 0080 0E       		.uleb128 0xe
+ 492 0081 3A       		.uleb128 0x3a
+ 493 0082 0B       		.uleb128 0xb
+ 494 0083 3B       		.uleb128 0x3b
+ 495 0084 0B       		.uleb128 0xb
+ 496 0085 49       		.uleb128 0x49
+ 497 0086 13       		.uleb128 0x13
+ 498 0087 02       		.uleb128 0x2
+ 499 0088 17       		.uleb128 0x17
+ 500 0089 00       		.byte	0
+ 501 008a 00       		.byte	0
+ 502 008b 09       		.uleb128 0x9
+ 503 008c 34       		.uleb128 0x34
+ 504 008d 00       		.byte	0
+ 505 008e 03       		.uleb128 0x3
+ 506 008f 0E       		.uleb128 0xe
+ 507 0090 3A       		.uleb128 0x3a
+ 508 0091 0B       		.uleb128 0xb
+ 509 0092 3B       		.uleb128 0x3b
+ 510 0093 0B       		.uleb128 0xb
+ 511 0094 49       		.uleb128 0x49
+ 512 0095 13       		.uleb128 0x13
+ 513 0096 1C       		.uleb128 0x1c
+ 514 0097 06       		.uleb128 0x6
+ 515 0098 00       		.byte	0
+ 516 0099 00       		.byte	0
+ 517 009a 0A       		.uleb128 0xa
+ 518 009b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 11
+
+
+ 519 009c 01       		.byte	0x1
+ 520 009d 11       		.uleb128 0x11
+ 521 009e 01       		.uleb128 0x1
+ 522 009f 12       		.uleb128 0x12
+ 523 00a0 06       		.uleb128 0x6
+ 524 00a1 01       		.uleb128 0x1
+ 525 00a2 13       		.uleb128 0x13
+ 526 00a3 00       		.byte	0
+ 527 00a4 00       		.byte	0
+ 528 00a5 0B       		.uleb128 0xb
+ 529 00a6 898201   		.uleb128 0x4109
+ 530 00a9 01       		.byte	0x1
+ 531 00aa 11       		.uleb128 0x11
+ 532 00ab 01       		.uleb128 0x1
+ 533 00ac 31       		.uleb128 0x31
+ 534 00ad 13       		.uleb128 0x13
+ 535 00ae 01       		.uleb128 0x1
+ 536 00af 13       		.uleb128 0x13
+ 537 00b0 00       		.byte	0
+ 538 00b1 00       		.byte	0
+ 539 00b2 0C       		.uleb128 0xc
+ 540 00b3 8A8201   		.uleb128 0x410a
+ 541 00b6 00       		.byte	0
+ 542 00b7 02       		.uleb128 0x2
+ 543 00b8 18       		.uleb128 0x18
+ 544 00b9 9142     		.uleb128 0x2111
+ 545 00bb 18       		.uleb128 0x18
+ 546 00bc 00       		.byte	0
+ 547 00bd 00       		.byte	0
+ 548 00be 0D       		.uleb128 0xd
+ 549 00bf 26       		.uleb128 0x26
+ 550 00c0 00       		.byte	0
+ 551 00c1 49       		.uleb128 0x49
+ 552 00c2 13       		.uleb128 0x13
+ 553 00c3 00       		.byte	0
+ 554 00c4 00       		.byte	0
+ 555 00c5 0E       		.uleb128 0xe
+ 556 00c6 34       		.uleb128 0x34
+ 557 00c7 00       		.byte	0
+ 558 00c8 03       		.uleb128 0x3
+ 559 00c9 0E       		.uleb128 0xe
+ 560 00ca 3A       		.uleb128 0x3a
+ 561 00cb 0B       		.uleb128 0xb
+ 562 00cc 3B       		.uleb128 0x3b
+ 563 00cd 05       		.uleb128 0x5
+ 564 00ce 49       		.uleb128 0x49
+ 565 00cf 13       		.uleb128 0x13
+ 566 00d0 3F       		.uleb128 0x3f
+ 567 00d1 19       		.uleb128 0x19
+ 568 00d2 3C       		.uleb128 0x3c
+ 569 00d3 19       		.uleb128 0x19
+ 570 00d4 00       		.byte	0
+ 571 00d5 00       		.byte	0
+ 572 00d6 0F       		.uleb128 0xf
+ 573 00d7 35       		.uleb128 0x35
+ 574 00d8 00       		.byte	0
+ 575 00d9 49       		.uleb128 0x49
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 12
+
+
+ 576 00da 13       		.uleb128 0x13
+ 577 00db 00       		.byte	0
+ 578 00dc 00       		.byte	0
+ 579 00dd 10       		.uleb128 0x10
+ 580 00de 2E       		.uleb128 0x2e
+ 581 00df 00       		.byte	0
+ 582 00e0 3F       		.uleb128 0x3f
+ 583 00e1 19       		.uleb128 0x19
+ 584 00e2 3C       		.uleb128 0x3c
+ 585 00e3 19       		.uleb128 0x19
+ 586 00e4 6E       		.uleb128 0x6e
+ 587 00e5 0E       		.uleb128 0xe
+ 588 00e6 03       		.uleb128 0x3
+ 589 00e7 0E       		.uleb128 0xe
+ 590 00e8 3A       		.uleb128 0x3a
+ 591 00e9 0B       		.uleb128 0xb
+ 592 00ea 3B       		.uleb128 0x3b
+ 593 00eb 0B       		.uleb128 0xb
+ 594 00ec 00       		.byte	0
+ 595 00ed 00       		.byte	0
+ 596 00ee 00       		.byte	0
+ 597              		.section	.debug_loc,"",%progbits
+ 598              	.Ldebug_loc0:
+ 599              	.LLST0:
+ 600 0000 0E000000 		.4byte	.LVL2
+ 601 0004 10000000 		.4byte	.LVL3
+ 602 0008 0200     		.2byte	0x2
+ 603 000a 30       		.byte	0x30
+ 604 000b 9F       		.byte	0x9f
+ 605 000c 10000000 		.4byte	.LVL3
+ 606 0010 2A000000 		.4byte	.LVL7
+ 607 0014 0100     		.2byte	0x1
+ 608 0016 55       		.byte	0x55
+ 609 0017 2A000000 		.4byte	.LVL7
+ 610 001b 2E000000 		.4byte	.LVL8
+ 611 001f 0100     		.2byte	0x1
+ 612 0021 54       		.byte	0x54
+ 613 0022 2E000000 		.4byte	.LVL8
+ 614 0026 44000000 		.4byte	.LFE63
+ 615 002a 0100     		.2byte	0x1
+ 616 002c 55       		.byte	0x55
+ 617 002d 00000000 		.4byte	0
+ 618 0031 00000000 		.4byte	0
+ 619              	.LLST1:
+ 620 0035 16000000 		.4byte	.LVL5
+ 621 0039 19000000 		.4byte	.LVL6-1
+ 622 003d 0100     		.2byte	0x1
+ 623 003f 50       		.byte	0x50
+ 624 0040 19000000 		.4byte	.LVL6-1
+ 625 0044 44000000 		.4byte	.LFE63
+ 626 0048 0100     		.2byte	0x1
+ 627 004a 54       		.byte	0x54
+ 628 004b 00000000 		.4byte	0
+ 629 004f 00000000 		.4byte	0
+ 630              	.LLST2:
+ 631 0053 3A000000 		.4byte	.LVL10
+ 632 0057 3D000000 		.4byte	.LVL11-1
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 13
+
+
+ 633 005b 0100     		.2byte	0x1
+ 634 005d 50       		.byte	0x50
+ 635 005e 00000000 		.4byte	0
+ 636 0062 00000000 		.4byte	0
+ 637              		.section	.debug_aranges,"",%progbits
+ 638 0000 24000000 		.4byte	0x24
+ 639 0004 0200     		.2byte	0x2
+ 640 0006 00000000 		.4byte	.Ldebug_info0
+ 641 000a 04       		.byte	0x4
+ 642 000b 00       		.byte	0
+ 643 000c 0000     		.2byte	0
+ 644 000e 0000     		.2byte	0
+ 645 0010 00000000 		.4byte	.LFB64
+ 646 0014 08000000 		.4byte	.LFE64-.LFB64
+ 647 0018 00000000 		.4byte	.LFB63
+ 648 001c 44000000 		.4byte	.LFE63-.LFB63
+ 649 0020 00000000 		.4byte	0
+ 650 0024 00000000 		.4byte	0
+ 651              		.section	.debug_ranges,"",%progbits
+ 652              	.Ldebug_ranges0:
+ 653 0000 00000000 		.4byte	.LFB64
+ 654 0004 08000000 		.4byte	.LFE64
+ 655 0008 00000000 		.4byte	.LFB63
+ 656 000c 44000000 		.4byte	.LFE63
+ 657 0010 00000000 		.4byte	0
+ 658 0014 00000000 		.4byte	0
+ 659              		.section	.debug_line,"",%progbits
+ 660              	.Ldebug_line0:
+ 661 0000 5B010000 		.section	.debug_str,"MS",%progbits,1
+ 661      02002B01 
+ 661      00000201 
+ 661      FB0E0D00 
+ 661      01010101 
+ 662              	.LASF4:
+ 663 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 663      6E74385F 
+ 663      7400
+ 664              	.LASF5:
+ 665 000a 5F5F696E 		.ascii	"__int32_t\000"
+ 665      7433325F 
+ 665      7400
+ 666              	.LASF29:
+ 667 0014 67657443 		.ascii	"getCurrentMode\000"
+ 667      75727265 
+ 667      6E744D6F 
+ 667      646500
+ 668              	.LASF6:
+ 669 0023 6C6F6E67 		.ascii	"long int\000"
+ 669      20696E74 
+ 669      00
+ 670              	.LASF26:
+ 671 002c 5350495F 		.ascii	"SPI_Init\000"
+ 671      496E6974 
+ 671      00
+ 672              	.LASF15:
+ 673 0035 666C6F61 		.ascii	"float\000"
+ 673      7400
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 14
+
+
+ 674              	.LASF1:
+ 675 003b 756E7369 		.ascii	"unsigned char\000"
+ 675      676E6564 
+ 675      20636861 
+ 675      7200
+ 676              	.LASF31:
+ 677 0049 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 677      43313120 
+ 677      352E342E 
+ 677      31203230 
+ 677      31363036 
+ 678 007c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 678      20726576 
+ 678      6973696F 
+ 678      6E203233 
+ 678      37373135 
+ 679 00af 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 679      66756E63 
+ 679      74696F6E 
+ 679      2D736563 
+ 679      74696F6E 
+ 680              	.LASF8:
+ 681 00d7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 681      20756E73 
+ 681      69676E65 
+ 681      6420696E 
+ 681      7400
+ 682              	.LASF3:
+ 683 00e9 73686F72 		.ascii	"short unsigned int\000"
+ 683      7420756E 
+ 683      7369676E 
+ 683      65642069 
+ 683      6E7400
+ 684              	.LASF28:
+ 685 00fc 43795379 		.ascii	"CySysTickGetValue\000"
+ 685      73546963 
+ 685      6B476574 
+ 685      56616C75 
+ 685      6500
+ 686              	.LASF36:
+ 687 010e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 687      52784275 
+ 687      66666572 
+ 687      00
+ 688              	.LASF24:
+ 689 011b 5350495F 		.ascii	"SPI_ReceiveData\000"
+ 689      52656365 
+ 689      69766544 
+ 689      61746100 
+ 690              	.LASF16:
+ 691 012b 646F7562 		.ascii	"double\000"
+ 691      6C6500
+ 692              	.LASF7:
+ 693 0132 5F5F7569 		.ascii	"__uint32_t\000"
+ 693      6E743332 
+ 693      5F7400
+ 694              	.LASF22:
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 15
+
+
+ 695 013d 64656C61 		.ascii	"delayInterval\000"
+ 695      79496E74 
+ 695      65727661 
+ 695      6C00
+ 696              	.LASF30:
+ 697 014b 74726163 		.ascii	"trackSun\000"
+ 697      6B53756E 
+ 697      00
+ 698              	.LASF34:
+ 699 0154 72656365 		.ascii	"receiveCommand\000"
+ 699      69766543 
+ 699      6F6D6D61 
+ 699      6E6400
+ 700              	.LASF11:
+ 701 0163 756E7369 		.ascii	"unsigned int\000"
+ 701      676E6564 
+ 701      20696E74 
+ 701      00
+ 702              	.LASF10:
+ 703 0170 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 703      206C6F6E 
+ 703      6720756E 
+ 703      7369676E 
+ 703      65642069 
+ 704              	.LASF12:
+ 705 0187 75696E74 		.ascii	"uint8_t\000"
+ 705      385F7400 
+ 706              	.LASF33:
+ 707 018f 433A5C55 		.ascii	"C:\\Users\\perhi\\OneDrive - Aarhus universitet\\Do"
+ 707      73657273 
+ 707      5C706572 
+ 707      68695C4F 
+ 707      6E654472 
+ 708 01be 6B756D65 		.ascii	"kumenter\\PSoC Creator\\WAM_PSoC\\Wam_PSoC.cydsn\000"
+ 708      6E746572 
+ 708      5C50536F 
+ 708      43204372 
+ 708      6561746F 
+ 709              	.LASF21:
+ 710 01ec 63757272 		.ascii	"currentTime\000"
+ 710      656E7454 
+ 710      696D6500 
+ 711              	.LASF35:
+ 712 01f8 6D61696E 		.ascii	"main\000"
+ 712      00
+ 713              	.LASF13:
+ 714 01fd 696E7433 		.ascii	"int32_t\000"
+ 714      325F7400 
+ 715              	.LASF19:
+ 716 0205 73697A65 		.ascii	"sizetype\000"
+ 716      74797065 
+ 716      00
+ 717              	.LASF9:
+ 718 020e 6C6F6E67 		.ascii	"long long int\000"
+ 718      206C6F6E 
+ 718      6720696E 
+ 718      7400
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccz3GtD7.s 			page 16
+
+
+ 719              	.LASF32:
+ 720 021c 6D61696E 		.ascii	"main.c\000"
+ 720      2E6300
+ 721              	.LASF17:
+ 722 0223 63686172 		.ascii	"char\000"
+ 722      00
+ 723              	.LASF20:
+ 724 0228 6C617374 		.ascii	"lastTime\000"
+ 724      54696D65 
+ 724      00
+ 725              	.LASF2:
+ 726 0231 73686F72 		.ascii	"short int\000"
+ 726      7420696E 
+ 726      7400
+ 727              	.LASF23:
+ 728 023b 636F6D6D 		.ascii	"command\000"
+ 728      616E6400 
+ 729              	.LASF14:
+ 730 0243 75696E74 		.ascii	"uint32_t\000"
+ 730      33325F74 
+ 730      00
+ 731              	.LASF27:
+ 732 024c 7365744D 		.ascii	"setMode\000"
+ 732      6F646500 
+ 733              	.LASF18:
+ 734 0254 6C6F6E67 		.ascii	"long double\000"
+ 734      20646F75 
+ 734      626C6500 
+ 735              	.LASF0:
+ 736 0260 7369676E 		.ascii	"signed char\000"
+ 736      65642063 
+ 736      68617200 
+ 737              	.LASF25:
+ 738 026c 6D616E75 		.ascii	"manualControl\000"
+ 738      616C436F 
+ 738      6E74726F 
+ 738      6C00
+ 739              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

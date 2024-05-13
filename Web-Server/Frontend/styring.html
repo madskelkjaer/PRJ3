@@ -4,10 +4,12 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/png" href="/images/favicon.png" />
-	<link rel="stylesheet" href="/css/styles.css" />
-	<link rel="stylesheet" href="/css/solcelleStyles.css" />
-	<link rel="stylesheet" href="/css/tilbageKnap.css" />
+	<link rel="icon" type="image/png" href="./images/favicon.png" />
+	<link rel="stylesheet" href="./css/styles.css" />
+	<link rel="stylesheet" href="./css/solcelleStyles.css" />
+	<link rel="stylesheet" href="./css/tilbageKnap.css" />
+	<link rel="stylesheet" href="./css/solcelleData.css" />
+	<link rel="stylesheet" href="./css/infoboks.css" />
 	<title>Styring Page</title>
 </head>
 
@@ -22,42 +24,51 @@
 	</div>
 
 	<div class="topnav">
-		<a href="styring.html">STYRING</a>
+		<a href="styring.html" class="active">STYRING</a>
 		<a href="batteri.html">BATTERI</a>
 		<a href="data.html">DATA</a>
 		<a href="om.html">OM</a>
 	</div>
 
 	<h1>Manuel styring af solcellen</h1>
-	<p>
-		Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
-		piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
-	</p>
-	<p>Man kan maksimalt dreje solcellen <span id="maxUp"></span> grader op</p>
-	<p>
-		Man kan maksimalt dreje solcellen (<span id="maxDown"></span>) grader ned
-	</p>
-	<p>
-		Man kan maksimalt dreje solcellen <span id="maxRight"></span> grader til
-		højre
-	</p>
-	<p>
-		Man kan maksimalt dreje solcellen (<span id="maxLeft"></span>) grader til
-		venstre
-	</p>
-	<p> Nedenfor kan du manuelt sætte return position/home position??</p>
-	<div class="input-home" style="margin-bottom: 150px">
-		<label for="homeXInput">Azimuth:</label>
-		<input type="number" id="homeXInput" value="0">
-		<label for="homeYInput">Elevation:</label>
-		<input type="number" id="homeYInput" value="0">
-		<button id="updateButton">Opdater</button>
+
+	<div>
+		<ul>
+			<li>Sol venstre: <span id="venstre">Ja</span></li>
+			<li>Sol højre: <span id="hojre"></span></li>
+			<li>Sol op: <span id="op"></span></li>
+			<li>Sol ned: <span id="ned"></span></li>
+		</ul>
 	</div>
 
-	<header style="margin-bottom: 150px">
+	<div class="infoboks">
+		<h2>INFORMATION</h2>
+		<p>
+			Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
+		piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
+		</p>
+		<p>Man kan maksimalt dreje solcellen:</p>
+		<p><span id="maxUp"></span> grader op</p>
+		<p>(<span id="maxDown"></span>) grader ned</p>
+		<p> <span id="maxRight"></span> grader til
+			højre</p>
+			<p>(<span id="maxLeft"></span>) grader til
+			venstre</p>
+	</div>
+	<header style="margin-bottom: 150px;margin-top: 150px;">
 		<div class="container">
 			<div class="solarcell-container">
-				<div class="solarcell">
+				<div class="solarcell1">
+					<div class="solarcell-face front">Front</div>
+					<div class="solarcell-face back">Back</div>
+					<div class="solarcell-face left">Left</div>
+					<div class="solarcell-face right">Right</div>
+					<div class="solarcell-face top">Top</div>
+					<div class="solarcell-face bottom">Bottom</div>
+				</div>
+			</div>
+			<div class="solarcell-container">
+				<div class="solarcell2">
 					<div class="solarcell-face front">Front</div>
 					<div class="solarcell-face back">Back</div>
 					<div class="solarcell-face left">Left</div>
@@ -79,7 +90,17 @@
 			</div>
 		</div>
 	</header>
-	<script src="/js/solcelle.js"></script>
+	<p> Nedenfor kan du manuelt sætte return position/home position??</p>
+	<div class="input-home" style="margin-bottom: 150px">
+		<label for="homeXInput">Azimuth:</label>
+		<input type="number" id="homeXInput" value="0">
+		<label for="homeYInput">Elevation:</label>
+		<input type="number" id="homeYInput" value="0">
+		<button id="updateButton">Opdater</button>
+	</div>
+	<script src="./js/solcelleData.js"></script>
+	<script src="./js/solcelle.js"></script>
+	<script src="./js/infoboks.js"></script>
 	</script>
 </body>
 

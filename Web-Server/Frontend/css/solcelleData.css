@@ -1,0 +1,29 @@
+.data-table {
+	width: 600px;
+	margin: 0 auto; /* Center the table horizontally */
+	border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+	border: 1px solid #e0e0e0;
+	padding: 8px;
+	width: 200px;
+	text-align: center;
+}
+
+.data-table th {
+	background-color: #cecece;
+}
+
+.data-table tr:nth-child(even) {
+	background-color: #f1f1f1;
+}
+
+.data-table tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+
+.data-table tr:hover {
+	background-color: #ffc3ff;
+}

@@ -25,7 +25,7 @@
 		<a href="styring.html">STYRING</a>
 		<a href="batteri.html">BATTERI</a>
 		<a href="data.html">DATA</a>
-		<a href="om.html">OM</a>
+		<a href="om.html" class="active">OM</a>
 	</div>
 
 	<section class="about">
@@ -45,15 +45,15 @@
 	</section>
 
 	<div class="container">
-		<form action="action_page.php">
-			<label for="fname">Fornavn</label>
-			<input type="text" id="fname" name="firstname" placeholder="Your name.." />
+		<form action="http://192.168.1.250:5000/api/saveform" method="post">
+			<label for="fname">Navn</label>
+			<input type="text" id="fname" name="name" placeholder="Your name.." />
 
-			<label for="lname">Efternavn</label>
-			<input type="text" id="lname" name="lastname" placeholder="Your last name.." />
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" placeholder="Your email address" />
 
 			<label for="subject">Besked</label>
-			<textarea id="subject" name="subject" placeholder="Write something.." style="height: 200px"></textarea>
+			<textarea id="subject" name="message" placeholder="Write something.." style="height: 200px"></textarea>
 
 			<input type="submit" value="Submit" />
 		</form>

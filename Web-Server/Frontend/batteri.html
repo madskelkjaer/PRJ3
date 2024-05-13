@@ -6,35 +6,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/infoboks.css" />
+	<link rel="stylesheet" href="/css/tilbageKnap.css" />
+	<title>Batteri Page</title>
+	<!-- Google Charts library -->
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<div class="header-container">
+	<h1 style="text-align: center; font-size: 200%">
+		<a href="index.html" style="text-decoration: none; color: inherit">PRJ3 - WAM</a>
+	</h1>
+	<a href="index.html" class="custom-button">
+		<div class="arrow"></div>
+	</a>
+</div>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<link rel="stylesheet" href="/css/styles.css" />
 	<link rel="stylesheet" href="/css/batteriStyles.css" />
 	<link rel="stylesheet" href="/css/tilbageKnap.css" />
 	<title>Batteri Page</title>
+	<!-- Google Charts library -->
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
-<body>
-	<div class="header-container">
-		<h1 style="text-align: center; font-size: 200%">
-			<a href="index.html" style="text-decoration: none; color: inherit">PRJ3 - WAM</a>
-		</h1>
-		<a href="index.html" class="custom-button">
-			<div class="arrow"></div>
-		</a>
-	</div>
+<div class="topnav">
+	<a href="styring.html">STYRING</a>
+	<a href="batteri.html" class="active">BATTERI</a>
+	<a href="data.html">DATA</a>
+	<a href="om.html">OM</a>
+</div>
 
-	<div class="topnav">
-		<a href="styring.html">STYRING</a>
-		<a href="batteri.html">BATTERI</a>
-		<a href="data.html">DATA</a>
-		<a href="om.html">OM</a>
-	</div>
+<div class="chart-container" style="margin-top: 50px; margin-left: 100px">
+	<div id="batteryChart"></div>
+</div>
 
-	<div class="infoboks">
-		<h2>INFORMATION</h2>
-		<p>
-			Her er noget tekst inden i infoboksen for at forklare noget vigtigt.
-		</p>
-	</div>
-	<script src="/js/infoboks.js"></script>
+<div class="infoboks">
+	<h2>INFORMATION</h2>
+	<p>
+		Her er noget tekst inden i infoboksen for at forklare noget vigtigt.
+	</p>
+</div>
+
+<script src="/js/batteri.js"></script>
+<script src="/js/infoboks.js"></script>
 </body>
 
 </html>
