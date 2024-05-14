@@ -12,6 +12,9 @@ spi.mode = 0
 
 while True:
     inputtet = input("Enter data to send: ")
+
+    if inputtet == "":
+        inputtet = 0
     
     print("----")
     print("Sending data: ", inputtet)
