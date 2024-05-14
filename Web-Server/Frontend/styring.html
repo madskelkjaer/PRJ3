@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="./css/tilbageKnap.css" />
 	<link rel="stylesheet" href="./css/solcelleData.css" />
 	<link rel="stylesheet" href="./css/infoboks.css" />
+	<link rel="stylesheet" href="./css/styring.css" />
 	<title>Styring Page</title>
 </head>
 
@@ -30,59 +31,56 @@
 		<a href="om.html">OM</a>
 	</div>
 
-	<!-- Oprettelsen af infoboksen -->
-	<div class="infoboks">
-		<div class="left-column">
-			<h2>INFORMATION</h2>
-			<p>
-				Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
-				piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
-			</p>
-			<p>Man kan maksimalt dreje solcellen:</p>
-			<p><span id="maxUp"></span> grader op</p>
-			<p>(<span id="maxDown"></span>) grader ned</p>
-			<p> <span id="maxRight"></span> grader til
-				højre</p>
-			<p>(<span id="maxLeft"></span>) grader til
-				venstre</p>
+	<!-- Solcelleillustration -->
+	<header style="margin-bottom: 150px; margin-top: 150px; margin-left: 200px;">
+		<div class="solarcell-container">
+			<div class="solarcell1">
+				<div class="solarcell-face front">Front</div>
+				<div class="solarcell-face back">Back</div>
+				<div class="solarcell-face left">Left</div>
+				<div class="solarcell-face right">Right</div>
+				<div class="solarcell-face top">Top</div>
+				<div class="solarcell-face bottom">Bottom</div>
+			</div>
 		</div>
+	</header>
 
-		<div class="right-column">
-			<ul>
-				<li>Sol venstre: <span id="venstre">Ja</span></li>
-				<li>Sol højre: <span id="hojre"></span></li>
-				<li>Sol op: <span id="op"></span></li>
-				<li>Sol ned: <span id="ned"></span></li>
-			</ul>
+	<header style="margin-bottom: 150px; margin-top: 150px; margin-left: 200px">
+		<div class="solarcell-container">
+			<div class="solarcell2">
+				<div class="solarcell-face front">Front</div>
+				<div class="solarcell-face back">Back</div>
+				<div class="solarcell-face left">Left</div>
+				<div class="solarcell-face right">Right</div>
+				<div class="solarcell-face top">Top</div>
+				<div class="solarcell-face bottom">Bottom</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="dropdown" style="position: absolute; top:300px; right: 325px;">
+		<button onclick="dropDownBox('information')" class="dropbtn">INFORMATION</button>
+		<div id="information" class="dropdown-content">
+			<div class="left-column">
+				<h2>INFORMATION</h2>
+				<p>
+					Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
+					piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
+				</p>
+				<p>Man kan maksimalt dreje solcellen:</p>
+				<p><span id="maxUp"></span> grader op</p>
+				<p>(<span id="maxDown"></span>) grader ned</p>
+				<p> <span id="maxRight"></span> grader til
+					højre</p>
+				<p>(<span id="maxLeft"></span>) grader til
+					venstre</p>
+			</div>
 		</div>
 	</div>
 
-	<!-- Solcelleillustration -->
-	<header style="margin-bottom: 150px; margin-top: 150px; text-align: center;">
-		<div class="container">
-			<div class="solarcell-container">
-				<div class=" solarcell1">
-					<div class="solarcell-face front">Front</div>
-					<div class="solarcell-face back">Back</div>
-					<div class="solarcell-face left">Left</div>
-					<div class="solarcell-face right">Right</div>
-					<div class="solarcell-face top">Top</div>
-					<div class="solarcell-face bottom">Bottom</div>
-				</div>
-			</div>
-			<div class="solarcell-container">
-				<div class="solarcell2">
-					<div class="solarcell-face front">Front</div>
-					<div class="solarcell-face back">Back</div>
-					<div class="solarcell-face left">Left</div>
-					<div class="solarcell-face right">Right</div>
-					<div class="solarcell-face top">Top</div>
-					<div class="solarcell-face bottom">Bottom</div>
-				</div>
-			</div>
-		</div>
-		<!-- Piletasteknapperne nok -->
-		<div class="buttons" style="position: absolute; bottom: 150px; right: 300px;">
+	<div class="dropdown" style="position: absolute; top:400px; right: 325px;">
+		<button onclick="dropDownBox('piletaster')" class="dropbtn">PILETASTER</button>
+		<div id="piletaster" class="dropdown-content">
 			<div class="row">
 				<button id="reset">🏠</button>
 				<button id="rotateUp">↑</button>
@@ -93,21 +91,39 @@
 				<button id="rotateRight">→</button>
 			</div>
 		</div>
-		</div>
-	</header>
-
-	<!-- Manuel indstilling af returposition -->
-	<div class="input-home" style="position: absolute; bottom: 50px; right: 200px;">
-		<p> Nedenfor kan du manuelt sætte return position/home position??</p>
-		<label for="homeXInput">Azimuth:</label>
-		<input type="number" id="homeXInput" value="0">
-		<label for="homeYInput">Elevation:</label>
-		<input type="number" id="homeYInput" value="0">
-		<button id="updateButton">Opdater</button>
 	</div>
+
+	<div class="dropdown" style="position: absolute; top:500px; right: 325px;">
+		<button onclick="dropDownBox('solInput')" class="dropbtn">SOL INPUT</button>
+		<div id="solInput" class="dropdown-content">
+			<div class="right-column">
+				<ul>
+					<li>Sol venstre: <span id="venstre">Ja</span></li>
+					<li>Sol højre: <span id="hojre"></span></li>
+					<li>Sol op: <span id="op"></span></li>
+					<li>Sol ned: <span id="ned"></span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="dropdown" style="position: absolute; top:600px; right: 325px;">
+		<button onclick="dropDownBox('homePosition')" class="dropbtn">HOME POSITION</button>
+		<div id="homePosition" class="dropdown-content">
+			<p> Nedenfor kan du manuelt sætte return position/home position??</p>
+			<label for="homeXInput">Azimuth:</label>
+			<input type="number" id="homeXInput" value="0">
+			<label for="homeYInput">Elevation:</label>
+			<input type="number" id="homeYInput" value="0">
+			<button id="updateButton">Opdater</button>
+		</div>
+	</div>
+
 	<script src="./js/solcelleData.js"></script>
 	<script src="./js/solcelle.js"></script>
 	<script src="./js/infoboks.js"></script>
+	<script src="./js/styring.js"></script>
 	</script>
 
 	<script>

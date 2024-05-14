@@ -51,6 +51,7 @@ document.getElementById("updateButton").addEventListener("click", updateHome);
 
 //MED PILETASER -----------------------------------------------
 document.addEventListener("keydown", (event) => {
+	event.preventDefault();
 	//hvis man trykker en tast ned
 	switch (event.key) {
 		case "ArrowUp":
