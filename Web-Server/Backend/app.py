@@ -91,6 +91,7 @@ spi.mode = 0
 
 app = Flask(__name__)
 running_status = False
+manual_mode = False
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 sock = Sock(app)
 ws_connections = []
@@ -183,6 +184,20 @@ def move(direction: str):
         return "Invalid direction"
     
     return "Moving " + direction
+
+@app.route("/api/manual")
+def manual():
+    global manual_mode
+    manual_mode = not manual_mode
+
+    to_send.append(0x10)
+
+    return f"Manual mode {"activated" if manual_mode else "deactivated"}"
+
+@app.route("/api/manual/status")
+def manual_status():
+    global manual_mode
+    return jsonify({"status": manual_mode})
 
 @app.route("/api/status")
 def check_status():
