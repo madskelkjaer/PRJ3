@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //funktion der henter data fra API og laver en graf
 function drawChart() {
-	fetch("http://192.168.1.250:5000/api/getdata/10")
+	fetch("http://192.168.146.130:5000/api/getdata/10")
 		.then((response) => response.json())
 		.then((data) => {
 			//dataen kommer ind sjovt
