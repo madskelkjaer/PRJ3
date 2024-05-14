@@ -15,9 +15,9 @@ int16_t currentHall()
     for (int i = 0; i < 1000; i++)
     {
         //This iteration summarizes 1000 measurements, with the purpose of returning a mean value.
-        int16_t result1 = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()); 
+        int16_t convToAmps = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())-2.495)/0.3339;
         
-        sum+= result1;
+        sum+= convToAmps;
     }
     //Returns the summarization divided with the amount of samples
     return sum/1000;

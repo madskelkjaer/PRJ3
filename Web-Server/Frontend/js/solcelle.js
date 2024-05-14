@@ -36,7 +36,7 @@ function updateHome() {
 
 // Funktion til API kald for at sende data til server
 function moveSolarCell(direction) {
-	fetch(`http://192.168.1.250:5000/api/move/${direction}`)
+	fetch(`http://192.168.146.130:5000/api/move/${direction}`)
 		.then(response => {
 			if (response.ok) {
 				return response.json();

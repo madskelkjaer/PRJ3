@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // updateData(); //opdaterer data ved page load
 	// setInterval(updateData, 60000); // opdaterer hvert minut
 
-    const ws = new WebSocket("ws://192.168.1.250:5000/ws");
+    const ws = new WebSocket("ws://192.168.146.130:5000/ws");
     ws.onopen = () => {
         console.log("Connected to WS");
     };
@@ -26,7 +26,7 @@ const updateWSData = (message_data) => {
 
 // function getData() {
 //     // faar data fra server vha API kald
-//     return fetch("http://192.168.1.250:5000/api/getdata/5")
+//     return fetch("http://192.168.146.130:5000/api/getdata/5")
 //         .then((response) => {
 //             if (!response.ok) {
 //                 throw new Error("Network response was not ok");

@@ -1,5 +1,5 @@
--- Project:   C:\Users\degn\OneDrive - Aarhus universitet\Skrivebord\AU\E3\PRJ3\Kode\StepperMotorDriver\StepperMotorDriver.cydsn\StepperMotorDriver.cyprj
--- Generated: 05/08/2024 18:22:20
+-- Project:   C:\Users\degn\OneDrive - Aarhus universitet\Skrivebord\AU\E3\PRJ3\Git\PRJ3\PSoC\StepperMotorDriver\StepperMotorDriver.cydsn\StepperMotorDriver.cyprj
+-- Generated: 05/13/2024 14:52:26
 -- PSoC Creator  4.4
 
 ENTITY StepperMotorDriver IS
@@ -141,21 +141,21 @@ ARCHITECTURE __DEFAULT__ OF StepperMotorDriver IS
     ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P12[7]";
     ATTRIBUTE lib_model OF Azimuth_Pin_1(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF Azimuth_Pin_1(0) : LABEL IS "P1[7]";
+    ATTRIBUTE Location OF Azimuth_Pin_1(0) : LABEL IS "P3[4]";
     ATTRIBUTE lib_model OF Azimuth_Pin_4(0) : LABEL IS "iocell4";
-    ATTRIBUTE Location OF Azimuth_Pin_4(0) : LABEL IS "P1[4]";
+    ATTRIBUTE Location OF Azimuth_Pin_4(0) : LABEL IS "P3[7]";
     ATTRIBUTE lib_model OF Azimuth_Pin_3(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF Azimuth_Pin_3(0) : LABEL IS "P1[5]";
+    ATTRIBUTE Location OF Azimuth_Pin_3(0) : LABEL IS "P3[6]";
     ATTRIBUTE lib_model OF Azimuth_Pin_2(0) : LABEL IS "iocell6";
-    ATTRIBUTE Location OF Azimuth_Pin_2(0) : LABEL IS "P1[6]";
+    ATTRIBUTE Location OF Azimuth_Pin_2(0) : LABEL IS "P3[5]";
     ATTRIBUTE lib_model OF Limit_Up(0) : LABEL IS "iocell7";
-    ATTRIBUTE Location OF Limit_Up(0) : LABEL IS "P1[2]";
+    ATTRIBUTE Location OF Limit_Up(0) : LABEL IS "P2[6]";
     ATTRIBUTE lib_model OF Limit_Down(0) : LABEL IS "iocell8";
-    ATTRIBUTE Location OF Limit_Down(0) : LABEL IS "P15[0]";
+    ATTRIBUTE Location OF Limit_Down(0) : LABEL IS "P2[5]";
     ATTRIBUTE lib_model OF Limit_Right(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF Limit_Right(0) : LABEL IS "P15[2]";
+    ATTRIBUTE Location OF Limit_Right(0) : LABEL IS "P2[3]";
     ATTRIBUTE lib_model OF Limit_Left(0) : LABEL IS "iocell10";
-    ATTRIBUTE Location OF Limit_Left(0) : LABEL IS "P15[1]";
+    ATTRIBUTE Location OF Limit_Left(0) : LABEL IS "P2[4]";
     ATTRIBUTE lib_model OF Elevation_Pin_1(0) : LABEL IS "iocell11";
     ATTRIBUTE Location OF Elevation_Pin_1(0) : LABEL IS "P3[0]";
     ATTRIBUTE lib_model OF Elevation_Pin_2(0) : LABEL IS "iocell12";
@@ -1170,7 +1170,7 @@ BEGIN
 
     Limit_Down:logicalport
         GENERIC MAP(
-            drive_mode => "001",
+            drive_mode => "011",
             ibuf_enabled => "1",
             id => "3190c3ad-1d2c-4599-8c6f-a1ae2a658a61",
             init_dr_st => "0",
@@ -1260,7 +1260,7 @@ BEGIN
 
     Limit_Right:logicalport
         GENERIC MAP(
-            drive_mode => "001",
+            drive_mode => "011",
             ibuf_enabled => "1",
             id => "9bed6fd4-d6ae-49f9-8068-c62679a069a8",
             init_dr_st => "0",
@@ -1350,7 +1350,7 @@ BEGIN
 
     Limit_Left:logicalport
         GENERIC MAP(
-            drive_mode => "001",
+            drive_mode => "011",
             ibuf_enabled => "1",
             id => "898c9a91-890b-4eed-a4bd-a07ef9897eb5",
             init_dr_st => "0",

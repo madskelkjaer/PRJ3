@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     May 13 2024 09:57:14
+#File Generated:     May 13 2024 15:38:11
 
 #Purpose:            
 
@@ -14,7 +14,7 @@
 
 #***************************************************************************
 
-Executing : C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\bin/sjplacer.exe --proj-name BatteriDriver --netlist-vh2 BatteriDriver_p.vh2 --arch p35_udb4x6 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata --ip-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/ip_blocks.cydata --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/irqconn.cydata --drq-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/dmaconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/dsiconn.cydata --pins-file pins_68-QFN.xml --lib-file BatteriDriver_p.lib --sdc-file BatteriDriver.sdc --io-pcf BatteriDriver.pci --outdir .
+Executing : C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\bin/sjplacer.exe --proj-name BatteryDriver --netlist-vh2 BatteryDriver_p.vh2 --arch p35_udb4x6 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata --ip-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/ip_blocks.cydata --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/irqconn.cydata --drq-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/dmaconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/dsiconn.cydata --pins-file pins_68-QFN.xml --lib-file BatteryDriver_p.lib --sdc-file BatteryDriver.sdc --io-pcf BatteryDriver.pci --outdir .
 
 		Softjin Techologies Placer, Version 1.1
 
@@ -22,18 +22,18 @@ Build Date : Sep  9 2019	11:45:12
 
 D2004: Option and Settings Summary
 =============================================================
-Netlist vh2 file          - BatteriDriver_p.vh2
+Netlist vh2 file          - BatteryDriver_p.vh2
 Architecture file         - C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata
 Package                   - 
 Defparam file             - 
-SDC file                  - BatteriDriver.sdc
+SDC file                  - BatteryDriver.sdc
 Output directory          - .
-Timing library            - BatteriDriver_p.lib
-IO Placement file         - BatteriDriver.pci
+Timing library            - BatteryDriver_p.lib
+IO Placement file         - BatteryDriver.pci
 
 D2050: Starting reading inputs for placer
 =============================================================
-D2065: Reading netlist file : "BatteriDriver_p.vh2"
+D2065: Reading netlist file : "BatteryDriver_p.vh2"
 D2065: Reading arch file : "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_4x6_24.cydata"
 D2051: Reading of inputs for placer completed successfully
 
@@ -167,5 +167,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.7 sec.
+I2076: Total run-time: 0.6 sec.
 

@@ -47,9 +47,9 @@ void azimuth()
         return;
     }
     if (aStep > 0)
-    {   // turning right (positiv steps)
-        if (!Limit_Right_Read())
-        {   // if right limit is reached, don't move
+    {   // turning left (positiv steps)
+        if (!Limit_Left_Read())
+        {   // if left limit is reached, don't move
             aStep = 0;
             return;
         }
@@ -59,9 +59,9 @@ void azimuth()
         return;
     }
     else if (aStep < 0)
-    {    // turning left (negativ steps)
-        if (!Limit_Left_Read())
-        {   // if left limit is reached, don't move
+    {    // turning right (negativ steps)
+        if (!Limit_Right_Read())
+        {   // if right limit is reached, don't move
             aStep = 0;
             return;
         }
@@ -95,9 +95,9 @@ void elevation()
         return;
     }
     if (eStep > 0)
-    {   // turning down (positiv steps)
-        if (!Limit_Down_Read())
-        {   // if down limit is reached, don't move
+    {   // turning up (positiv steps)
+        if (!Limit_Up_Read())
+        {   // if up limit is reached, don't move
             eStep = 0;
             return;
         }
@@ -108,9 +108,9 @@ void elevation()
     }
     
     else if (eStep < 0)
-    {   // turning up (negativ steps)
-        if (!Limit_Up_Read())
-        {   // if up limit is reached, don't move
+    {   // turning down (negativ steps)
+        if (!Limit_Down_Read())
+        {   // if down limit is reached, don't move
             eStep = 0;
             return;
         }
@@ -183,7 +183,7 @@ CY_ISR(UART_HANDLER)
     }
     else if (c == 'a')
     {
-        eStep = eStep + 650;
+        eStep = eStep - 650;
     }
 }
 /* [] END OF FILE */
