@@ -11,10 +11,14 @@ spi.max_speed_hz = 1000
 spi.mode = 0
 
 while True:
-    inputtet = input("Enter data to send: ")
+    inputtet = input("Enter data to send (q to quit): ")
 
     if inputtet == "":
         inputtet = 0
+    
+    if inputtet == "q":
+        spi.close()
+        break
     
     print("----")
     print("Sending data: ", inputtet)
