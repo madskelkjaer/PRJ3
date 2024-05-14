@@ -192,7 +192,18 @@ def manual():
 
     to_send.append(0x10)
 
-    return f"Manual mode {"activated" if manual_mode else "deactivated"}"
+    message = json.dumps({
+        "manual": manual_mode,
+    })
+
+    for ws in ws_connections:
+        try:
+            ws.send(message)
+        except:
+            ws_connections.remove(ws)
+
+    manual_status = "activated" if manual_mode else "deactivated"
+    return f"Manual mode {manual_status}"
 
 @app.route("/api/manual/status")
 def manual_status():
