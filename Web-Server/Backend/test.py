@@ -16,7 +16,7 @@ while True:
     print("----")
     print("Sending data: ", inputtet)
     try:
-        response = spi.xfer(int(inputtet))
+        response = spi.xfer([int(inputtet)])
         print("Data sent: ", inputtet)
         print("Data received: ", response)
         print("----")
