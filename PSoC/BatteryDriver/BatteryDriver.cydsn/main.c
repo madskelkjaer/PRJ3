@@ -17,7 +17,7 @@
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
-    char UartBuffer[256];
+    char uartBuffer[256];
     UART_1_Start();
     ADC_SAR_1_Start();
     ADC_SAR_1_StartConvert();
@@ -26,9 +26,9 @@ int main(void)
 
     for(;;)
     { 
-        //snprintf(uartBuffer, sizeof(uartBuffer), "Voltage divider: %i Percent\r\n", voltageDividerToPercent());
-        snprintf(UartBuffer, sizeof(UartBuffer), "Current hall: %i Volts\r\n", currentHall());
-        UART_1_PutString(UartBuffer); 
+        snprintf(uartBuffer, sizeof(uartBuffer), "Voltage divider: %i Percent\r\n", voltageDividerToPercent());
+        //snprintf(UartBuffer, sizeof(UartBuffer), "Current hall: %i Amps\r\n", currentHall());
+        UART_1_PutString(uartBuffer); 
     }
 }
 

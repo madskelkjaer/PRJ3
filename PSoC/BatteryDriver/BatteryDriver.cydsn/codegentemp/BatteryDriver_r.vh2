@@ -1,8 +1,8 @@
--- Project:   BatteriDriver
--- Generated: 05/13/2024 09:57:14
+-- Project:   BatteryDriver
+-- Generated: 05/13/2024 15:38:12
 -- PSoC Creator  4.4
 
-ENTITY BatteriDriver IS
+ENTITY BatteryDriver IS
     PORT(
         Tx_1(0)_PAD : OUT std_ulogic;
         Rx_1(0)_PAD : IN std_ulogic);
@@ -14,9 +14,9 @@ ENTITY BatteriDriver IS
     ATTRIBUTE voltage_VDDIO1 OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDIO2 OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDIO3 OF __DEFAULT__ : ENTITY IS 5e0;
-END BatteriDriver;
+END BatteryDriver;
 
-ARCHITECTURE __DEFAULT__ OF BatteriDriver IS
+ARCHITECTURE __DEFAULT__ OF BatteryDriver IS
     SIGNAL ClockBlock_100k : bit;
     SIGNAL ClockBlock_1k : bit;
     SIGNAL ClockBlock_32k : bit;

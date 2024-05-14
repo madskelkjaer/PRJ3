@@ -1,14 +1,14 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2024-05-13T07:57:16Z")
- (DESIGN "BatteriDriver")
+ (DATE "2024-05-13T13:38:14Z")
+ (DESIGN "BatteryDriver")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
  (VERSION " 4.4")
  (DIVIDER .)
  (TIMESCALE 1 ns)
  (CELL
-  (CELLTYPE "BatteriDriver")
+  (CELLTYPE "BatteryDriver")
   (INSTANCE *)
   (DELAY
    (ABSOLUTE

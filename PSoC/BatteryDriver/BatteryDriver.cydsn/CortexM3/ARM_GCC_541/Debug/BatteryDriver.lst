@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 1
 
 
    1              		.syntax unified
@@ -30,21 +30,17 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
   27              		.file 1 "BatteryDriver.c"
    1:BatteryDriver.c **** /* ========================================
    2:BatteryDriver.c ****  *
-   3:BatteryDriver.c ****  * Copyright YOUR COMPANY, THE YEAR
-   4:BatteryDriver.c ****  * All Rights Reserved
-   5:BatteryDriver.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
-   6:BatteryDriver.c ****  *
-   7:BatteryDriver.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
-   8:BatteryDriver.c ****  * WHICH IS THE PROPERTY OF your company.
-   9:BatteryDriver.c ****  *
-  10:BatteryDriver.c ****  * ========================================
-  11:BatteryDriver.c **** */
-  12:BatteryDriver.c **** #include"BatteryDriver.h"
-  13:BatteryDriver.c **** 
-  14:BatteryDriver.c **** 
-  15:BatteryDriver.c **** int16_t currentHall()
-  16:BatteryDriver.c **** {
-  28              		.loc 1 16 0
+   3:BatteryDriver.c ****  * Andreas Strander Jakobsen
+   4:BatteryDriver.c ****  * AU677469
+   5:BatteryDriver.c ****  *
+   6:BatteryDriver.c ****  * ========================================
+   7:BatteryDriver.c **** */
+   8:BatteryDriver.c **** #include"BatteryDriver.h"
+   9:BatteryDriver.c **** 
+  10:BatteryDriver.c **** 
+  11:BatteryDriver.c **** int16_t currentHall()
+  12:BatteryDriver.c **** {
+  28              		.loc 1 12 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -56,59 +52,59 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
   37              		.cfi_offset 14, -4
   38              	.LVL0:
   39              	.LBB2:
-  17:BatteryDriver.c ****     int32_t sum = 0;
-  18:BatteryDriver.c ****     
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 2
-
-
-  19:BatteryDriver.c ****     for (int i = 0; i < 1000; i++)
-  40              		.loc 1 19 0
+  13:BatteryDriver.c ****     int32_t sum = 0;
+  14:BatteryDriver.c ****     
+  15:BatteryDriver.c ****     for (int i = 0; i < 1000; i++)
+  40              		.loc 1 15 0
   41 0002 0024     		movs	r4, #0
   42              	.LBE2:
-  17:BatteryDriver.c ****     int32_t sum = 0;
-  43              		.loc 1 17 0
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 2
+
+
+  13:BatteryDriver.c ****     int32_t sum = 0;
+  43              		.loc 1 13 0
   44 0004 2546     		mov	r5, r4
   45              	.LBB4:
-  46              		.loc 1 19 0
+  46              		.loc 1 15 0
   47 0006 05E0     		b	.L2
   48              	.LVL1:
   49              	.L3:
   50              	.LBB3:
-  20:BatteryDriver.c ****     {
-  21:BatteryDriver.c ****         //This iteration summarizes 1000 measurements, with the purpose of returning a mean value.
-  22:BatteryDriver.c ****         int16_t result1 = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()); 
-  51              		.loc 1 22 0 discriminator 3
+  16:BatteryDriver.c ****     {
+  17:BatteryDriver.c ****         //This iteration summarizes 1000 measurements, with the purpose of returning a mean value.
+  18:BatteryDriver.c ****         int16_t result1 = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()); 
+  51              		.loc 1 18 0 discriminator 3
   52 0008 FFF7FEFF 		bl	ADC_SAR_1_GetResult16
   53              	.LVL2:
   54 000c FFF7FEFF 		bl	ADC_SAR_1_CountsTo_mVolts
   55              	.LVL3:
-  23:BatteryDriver.c ****         
-  24:BatteryDriver.c ****         sum+= result1;
-  56              		.loc 1 24 0 discriminator 3
+  19:BatteryDriver.c ****         
+  20:BatteryDriver.c ****         sum+= result1;
+  56              		.loc 1 20 0 discriminator 3
   57 0010 0544     		add	r5, r5, r0
   58              	.LVL4:
   59              	.LBE3:
-  19:BatteryDriver.c ****     {
-  60              		.loc 1 19 0 discriminator 3
+  15:BatteryDriver.c ****     {
+  60              		.loc 1 15 0 discriminator 3
   61 0012 0134     		adds	r4, r4, #1
   62              	.LVL5:
   63              	.L2:
-  19:BatteryDriver.c ****     {
-  64              		.loc 1 19 0 is_stmt 0 discriminator 1
+  15:BatteryDriver.c ****     {
+  64              		.loc 1 15 0 is_stmt 0 discriminator 1
   65 0014 B4F57A7F 		cmp	r4, #1000
   66 0018 F6DB     		blt	.L3
   67              	.LBE4:
-  25:BatteryDriver.c ****     }
-  26:BatteryDriver.c ****     
-  27:BatteryDriver.c ****     return sum/1000;
-  68              		.loc 1 27 0 is_stmt 1
+  21:BatteryDriver.c ****     }
+  22:BatteryDriver.c ****     //Returns the summarization divided with the amount of samples
+  23:BatteryDriver.c ****     return sum/1000;
+  68              		.loc 1 23 0 is_stmt 1
   69 001a 0448     		ldr	r0, .L5
   70 001c 80FB0530 		smull	r3, r0, r0, r5
   71 0020 ED17     		asrs	r5, r5, #31
   72              	.LVL6:
   73 0022 C5EBA010 		rsb	r0, r5, r0, asr #6
-  28:BatteryDriver.c **** }
-  74              		.loc 1 28 0
+  24:BatteryDriver.c **** }
+  74              		.loc 1 24 0
   75 0026 00B2     		sxth	r0, r0
   76 0028 38BD     		pop	{r3, r4, r5, pc}
   77              	.LVL7:
@@ -118,21 +114,21 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
   81 002c D34D6210 		.word	274877907
   82              		.cfi_endproc
   83              	.LFE64:
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 3
-
-
   84              		.size	currentHall, .-currentHall
   85              		.section	.text.voltageDividerToPercent,"ax",%progbits
   86              		.align	2
   87              		.global	voltageDividerToPercent
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 3
+
+
   88              		.thumb
   89              		.thumb_func
   90              		.type	voltageDividerToPercent, %function
   91              	voltageDividerToPercent:
   92              	.LFB65:
-  29:BatteryDriver.c **** int16_t voltageDividerToPercent()
-  30:BatteryDriver.c **** {
-  93              		.loc 1 30 0
+  25:BatteryDriver.c **** int16_t voltageDividerToPercent()
+  26:BatteryDriver.c **** {
+  93              		.loc 1 26 0
   94              		.cfi_startproc
   95              		@ args = 0, pretend = 0, frame = 0
   96              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -141,18 +137,21 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
   99              		.cfi_offset 3, -8
  100              		.cfi_offset 14, -4
  101              	.LVL8:
-  31:BatteryDriver.c ****    int16_t UpperLimit = 12000;
-  32:BatteryDriver.c ****    int16_t LowerLimit = 8200;
-  33:BatteryDriver.c ****     
-  34:BatteryDriver.c ****    int16_t result2 = ADC_SAR_2_CountsTo_mVolts(ADC_SAR_2_GetResult16());
- 102              		.loc 1 34 0
+  27:BatteryDriver.c ****    //Defines the upper and lower limit
+  28:BatteryDriver.c ****    int16_t UpperLimit = 12000;
+  29:BatteryDriver.c ****    int16_t LowerLimit = 8200;
+  30:BatteryDriver.c ****     
+  31:BatteryDriver.c ****    //Convertning the ADC value to milivolts
+  32:BatteryDriver.c ****    int16_t result2 = ADC_SAR_2_CountsTo_mVolts(ADC_SAR_2_GetResult16());
+ 102              		.loc 1 32 0
  103 0002 FFF7FEFF 		bl	ADC_SAR_2_GetResult16
  104              	.LVL9:
  105 0006 FFF7FEFF 		bl	ADC_SAR_2_CountsTo_mVolts
  106              	.LVL10:
-  35:BatteryDriver.c **** 
-  36:BatteryDriver.c ****    int16_t scaled = (result2 * 3 - LowerLimit) * 100 / (UpperLimit - LowerLimit);
- 107              		.loc 1 36 0
+  33:BatteryDriver.c **** 
+  34:BatteryDriver.c ****    //Returns a scaled value, that shows the charge state of the battery
+  35:BatteryDriver.c ****    int16_t scaled = (result2 * 3 - LowerLimit) * 100 / (UpperLimit - LowerLimit);
+ 107              		.loc 1 35 0
  108 000a 00EB4000 		add	r0, r0, r0, lsl #1
  109              	.LVL11:
  110 000e A0F50050 		sub	r0, r0, #8192
@@ -165,25 +164,25 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  117 0022 C0EBA320 		rsb	r0, r0, r3, asr #10
  118 0026 00B2     		sxth	r0, r0
  119              	.LVL12:
-  37:BatteryDriver.c **** 
-  38:BatteryDriver.c ****    return scaled > 100 ? 100 : (scaled < 0 ? 0 : scaled);
- 120              		.loc 1 38 0
+  36:BatteryDriver.c **** 
+  37:BatteryDriver.c ****    return scaled > 100 ? 100 : (scaled < 0 ? 0 : scaled);
+ 120              		.loc 1 37 0
  121 0028 6428     		cmp	r0, #100
  122 002a 02DC     		bgt	.L9
- 123              		.loc 1 38 0 is_stmt 0 discriminator 1
+ 123              		.loc 1 37 0 is_stmt 0 discriminator 1
  124 002c 20EAE070 		bic	r0, r0, r0, asr #31
  125              	.LVL13:
  126 0030 08BD     		pop	{r3, pc}
  127              	.LVL14:
  128              	.L9:
- 129              		.loc 1 38 0
+ 129              		.loc 1 37 0
  130 0032 6420     		movs	r0, #100
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 4
-
-
  131              	.LVL15:
-  39:BatteryDriver.c **** }
- 132              		.loc 1 39 0 is_stmt 1
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 4
+
+
+  38:BatteryDriver.c **** }
+ 132              		.loc 1 38 0 is_stmt 1
  133 0034 08BD     		pop	{r3, pc}
  134              	.L12:
  135 0036 00BF     		.align	2
@@ -200,10 +199,10 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  146              		.type	ISR_UART_rx_handler, %function
  147              	ISR_UART_rx_handler:
  148              	.LFB66:
-  40:BatteryDriver.c **** 
-  41:BatteryDriver.c **** CY_ISR(ISR_UART_rx_handler)
-  42:BatteryDriver.c **** {
- 149              		.loc 1 42 0
+  39:BatteryDriver.c **** 
+  40:BatteryDriver.c **** CY_ISR(ISR_UART_rx_handler)
+  41:BatteryDriver.c **** {
+ 149              		.loc 1 41 0
  150              		.cfi_startproc
  151              		@ args = 0, pretend = 0, frame = 0
  152              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -213,6 +212,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  156              		.cfi_offset 4, -12
  157              		.cfi_offset 5, -8
  158              		.cfi_offset 14, -4
+  42:BatteryDriver.c ****     //ISR routine that handles the receiving data of the UART
   43:BatteryDriver.c ****     uint8_t bytesToRead = UART_1_GetRxBufferSize();
  159              		.loc 1 43 0
  160 0002 FFF7FEFF 		bl	UART_1_GetRxBufferSize
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
   48:BatteryDriver.c ****         
   49:BatteryDriver.c ****         handleByteReceived(byteReceived);
  176              		.loc 1 49 0
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 5
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 5
 
 
  177 0014 2846     		mov	r0, r5
@@ -282,15 +282,15 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  210 000b 01       		.uleb128 0x1
  211 000c 86000000 		.4byte	.LASF38
  212 0010 0C       		.byte	0xc
- 213 0011 FF020000 		.4byte	.LASF39
- 214 0015 84020000 		.4byte	.LASF40
+ 213 0011 9C020000 		.4byte	.LASF39
+ 214 0015 AC020000 		.4byte	.LASF40
  215 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
  216 001d 00000000 		.4byte	0
  217 0021 00000000 		.4byte	.Ldebug_line0
  218 0025 02       		.uleb128 0x2
  219 0026 01       		.byte	0x1
  220 0027 06       		.byte	0x6
- 221 0028 F3020000 		.4byte	.LASF0
+ 221 0028 90020000 		.4byte	.LASF0
  222 002c 03       		.uleb128 0x3
  223 002d 10000000 		.4byte	.LASF2
  224 0031 02       		.byte	0x2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  226 0033 37000000 		.4byte	0x37
  227 0037 02       		.uleb128 0x2
  228 0038 01       		.byte	0x1
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 6
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 6
 
 
  229 0039 08       		.byte	0x8
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  283 00a2 03       		.uleb128 0x3
  284 00a3 FF010000 		.4byte	.LASF14
  285 00a7 03       		.byte	0x3
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 7
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 7
 
 
  286 00a8 2C       		.byte	0x2c
@@ -378,7 +378,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  300 00c2 02       		.uleb128 0x2
  301 00c3 08       		.byte	0x8
  302 00c4 04       		.byte	0x4
- 303 00c5 E7020000 		.4byte	.LASF18
+ 303 00c5 84020000 		.4byte	.LASF18
  304 00c9 02       		.uleb128 0x2
  305 00ca 04       		.byte	0x4
  306 00cb 07       		.byte	0x7
@@ -386,7 +386,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  308 00d0 05       		.uleb128 0x5
  309 00d1 6F020000 		.4byte	.LASF21
  310 00d5 01       		.byte	0x1
- 311 00d6 0F       		.byte	0xf
+ 311 00d6 0B       		.byte	0xb
  312 00d7 97000000 		.4byte	0x97
  313 00db 00000000 		.4byte	.LFB64
  314 00df 30000000 		.4byte	.LFE64-.LFB64
@@ -396,7 +396,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  318 00e9 06       		.uleb128 0x6
  319 00ea 73756D00 		.ascii	"sum\000"
  320 00ee 01       		.byte	0x1
- 321 00ef 11       		.byte	0x11
+ 321 00ef 0D       		.byte	0xd
  322 00f0 A2000000 		.4byte	0xa2
  323 00f4 00000000 		.4byte	.LLST0
  324 00f8 07       		.uleb128 0x7
@@ -404,7 +404,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  326 00fd 06       		.uleb128 0x6
  327 00fe 6900     		.ascii	"i\000"
  328 0100 01       		.byte	0x1
- 329 0101 13       		.byte	0x13
+ 329 0101 0F       		.byte	0xf
  330 0102 7E000000 		.4byte	0x7e
  331 0106 1F000000 		.4byte	.LLST1
  332 010a 08       		.uleb128 0x8
@@ -413,12 +413,12 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  335 0113 09       		.uleb128 0x9
  336 0114 00000000 		.4byte	.LASF20
  337 0118 01       		.byte	0x1
- 338 0119 16       		.byte	0x16
+ 338 0119 12       		.byte	0x12
  339 011a 97000000 		.4byte	0x97
  340 011e 3E000000 		.4byte	.LLST2
  341 0122 0A       		.uleb128 0xa
  342 0123 0C000000 		.4byte	.LVL2
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 8
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 8
 
 
  343 0127 24020000 		.4byte	0x224
@@ -431,7 +431,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  350 0137 05       		.uleb128 0x5
  351 0138 9C010000 		.4byte	.LASF22
  352 013c 01       		.byte	0x1
- 353 013d 1D       		.byte	0x1d
+ 353 013d 19       		.byte	0x19
  354 013e 97000000 		.4byte	0x97
  355 0142 00000000 		.4byte	.LFB65
  356 0146 3C000000 		.4byte	.LFE65-.LFB65
@@ -441,25 +441,25 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  360 0150 0B       		.uleb128 0xb
  361 0151 40020000 		.4byte	.LASF23
  362 0155 01       		.byte	0x1
- 363 0156 1F       		.byte	0x1f
+ 363 0156 1C       		.byte	0x1c
  364 0157 97000000 		.4byte	0x97
  365 015b E02E     		.2byte	0x2ee0
  366 015d 0B       		.uleb128 0xb
  367 015e 67000000 		.4byte	.LASF24
  368 0162 01       		.byte	0x1
- 369 0163 20       		.byte	0x20
+ 369 0163 1D       		.byte	0x1d
  370 0164 97000000 		.4byte	0x97
  371 0168 0820     		.2byte	0x2008
  372 016a 09       		.uleb128 0x9
  373 016b 08000000 		.4byte	.LASF25
  374 016f 01       		.byte	0x1
- 375 0170 22       		.byte	0x22
+ 375 0170 20       		.byte	0x20
  376 0171 97000000 		.4byte	0x97
  377 0175 51000000 		.4byte	.LLST3
  378 0179 09       		.uleb128 0x9
  379 017a 34020000 		.4byte	.LASF26
  380 017e 01       		.byte	0x1
- 381 017f 24       		.byte	0x24
+ 381 017f 23       		.byte	0x23
  382 0180 97000000 		.4byte	0x97
  383 0184 64000000 		.4byte	.LLST4
  384 0188 0A       		.uleb128 0xa
@@ -472,13 +472,13 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  391 019b 0C       		.uleb128 0xc
  392 019c 14010000 		.4byte	.LASF27
  393 01a0 01       		.byte	0x1
- 394 01a1 29       		.byte	0x29
+ 394 01a1 28       		.byte	0x28
  395 01a2 00000000 		.4byte	.LFB66
  396 01a6 24000000 		.4byte	.LFE66-.LFB66
  397 01aa 01       		.uleb128 0x1
  398 01ab 9C       		.byte	0x9c
  399 01ac 13020000 		.4byte	0x213
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 9
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 9
 
 
  400 01b0 09       		.uleb128 0x9
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  454 0229 10020000 		.4byte	.LASF30
  455 022d 04       		.byte	0x4
  456 022e 3B       		.byte	0x3b
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 10
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 10
 
 
  457 022f 13       		.uleb128 0x13
@@ -570,7 +570,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  483 0267 4C010000 		.4byte	.LASF36
  484 026b 4C010000 		.4byte	.LASF36
  485 026f 07       		.byte	0x7
- 486 0270 13       		.byte	0x13
+ 486 0270 0F       		.byte	0xf
  487 0271 13       		.uleb128 0x13
  488 0272 E0010000 		.4byte	.LASF37
  489 0276 E0010000 		.4byte	.LASF37
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  511 0010 17       		.uleb128 0x17
  512 0011 00       		.byte	0
  513 0012 00       		.byte	0
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 11
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 11
 
 
  514 0013 02       		.uleb128 0x2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  568 0049 9742     		.uleb128 0x2117
  569 004b 19       		.uleb128 0x19
  570 004c 01       		.uleb128 0x1
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 12
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 12
 
 
  571 004d 13       		.uleb128 0x13
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  625 0085 31       		.uleb128 0x31
  626 0086 13       		.uleb128 0x13
  627 0087 00       		.byte	0
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 13
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 13
 
 
  628 0088 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  682 00c1 01       		.byte	0x1
  683 00c2 11       		.uleb128 0x11
  684 00c3 01       		.uleb128 0x1
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 14
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 14
 
 
  685 00c4 31       		.uleb128 0x31
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  739 00ff 19       		.uleb128 0x19
  740 0100 6E       		.uleb128 0x6e
  741 0101 0E       		.uleb128 0xe
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 15
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 15
 
 
  742 0102 03       		.uleb128 0x3
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  796 006f 32000000 		.4byte	.LVL14
  797 0073 34000000 		.4byte	.LVL15
  798 0077 0100     		.2byte	0x1
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 16
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 16
 
 
  799 0079 50       		.byte	0x50
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  853              	.Ldebug_line0:
  854 0000 EB010000 		.section	.debug_str,"MS",%progbits,1
  854      02008501 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 17
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 17
 
 
  854      00000201 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  878      31363036 
  879 00b9 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  879      20726576 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 18
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 18
 
 
  879      6973696F 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  898      61676544 
  898      69766964 
  898      6572546F 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 19
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 19
 
 
  898      50657263 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  924      5341525F 
  924      325F436F 
  924      756E7473 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 20
+ARM GAS  C:\Users\andre\AppData\Local\Temp\ccBHtHQ3.s 			page 20
 
 
  924      546F5F6D 
@@ -1154,31 +1154,31 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cc0CFM9m.s 			page 1
  930 027b 6C6F6E67 		.ascii	"long int\000"
  930      20696E74 
  930      00
- 931              	.LASF40:
- 932 0284 433A5C55 		.ascii	"C:\\Users\\andre\\OneDrive\\Skrivebord\\BatteriDriv"
- 932      73657273 
- 932      5C616E64 
- 932      72655C4F 
- 932      6E654472 
- 933 02b2 65722E63 		.ascii	"er.cywrk.Archive01\\BatteriDriver\\BatteriDriver.cy"
- 933      7977726B 
- 933      2E417263 
- 933      68697665 
- 933      30315C42 
- 934 02e3 64736E00 		.ascii	"dsn\000"
- 935              	.LASF18:
- 936 02e7 6C6F6E67 		.ascii	"long double\000"
- 936      20646F75 
- 936      626C6500 
- 937              	.LASF0:
- 938 02f3 7369676E 		.ascii	"signed char\000"
- 938      65642063 
- 938      68617200 
- 939              	.LASF39:
- 940 02ff 42617474 		.ascii	"BatteryDriver.c\000"
- 940      65727944 
- 940      72697665 
- 940      722E6300 
+ 931              	.LASF18:
+ 932 0284 6C6F6E67 		.ascii	"long double\000"
+ 932      20646F75 
+ 932      626C6500 
+ 933              	.LASF0:
+ 934 0290 7369676E 		.ascii	"signed char\000"
+ 934      65642063 
+ 934      68617200 
+ 935              	.LASF39:
+ 936 029c 42617474 		.ascii	"BatteryDriver.c\000"
+ 936      65727944 
+ 936      72697665 
+ 936      722E6300 
+ 937              	.LASF40:
+ 938 02ac 433A5C55 		.ascii	"C:\\Users\\andre\\OneDrive\\Skrivebord\\BatteriDriv"
+ 938      73657273 
+ 938      5C616E64 
+ 938      72655C4F 
+ 938      6E654472 
+ 939 02da 65722E63 		.ascii	"er.cywrk.Archive01\\BatteryDriver\\BatteryDriver.cy"
+ 939      7977726B 
+ 939      2E417263 
+ 939      68697665 
+ 939      30315C42 
+ 940 030b 64736E00 		.ascii	"dsn\000"
  941              	.LASF29:
  942 030f 62797465 		.ascii	"byteReceived\000"
  942      52656365 

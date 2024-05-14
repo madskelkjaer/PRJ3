@@ -1,6 +1,6 @@
-C:\Users\andre\OneDrive\Skrivebord\BatteriDriver.cywrk.Archive01\BatteriDriver\BatteriDriver.cydsn\BatteriDriver.cyprj|68d3ea47-7eb9-4fef-bbbf-021d452c0550
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|5291328e-5003-4a0f-aead-1dc5d944c546
-C:\Users\andre\OneDrive\Dokumenter\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|34791e9c-a907-4315-8a64-2780fb7ce766
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|75897867-c0d9-4308-a6f5-e3b788720407
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|d116f660-12e7-40fc-886f-d154da9a0f18
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|380adba8-5310-4c98-aeb7-3fc85cc17825
+C:\Users\andre\OneDrive\Skrivebord\BatteriDriver.cywrk.Archive01\BatteryDriver\BatteryDriver.cydsn\BatteryDriver.cyprj|38e7820e-1fa4-4a6e-9677-90e043ff8723
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c4e24641-8b8e-40cd-8335-50b5058b5412
+C:\Users\andre\OneDrive\Dokumenter\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|c38da317-2be0-496e-940d-995718849dfe
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|a5874cb2-1007-48c2-ae2e-0660580d231f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|654a202f-1d67-4036-b53a-3d8f2dd5a6cc
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|4433b814-082a-41a5-b4e2-d2f47925f4db
