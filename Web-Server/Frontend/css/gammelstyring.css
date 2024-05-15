@@ -1,4 +1,3 @@
-
 .dropbtn {
     background-color: #f9f9f9;
     width: 300px;
@@ -50,27 +49,37 @@
     right: 10px;
     position: block;
     display: relative;
-    text-align: center;
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: 0.4s;
+    text-align: left;
 }
-  .active, .dropdown:hover {
-    background-color: #ccc;
-  }
-  
+
 
 .dropdown-content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
     max-width: 400px;
     display: none;
+    position: relative;
+    top: -50px;
     background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    right: 15px;
     z-index: 1;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+.show {
+    /* Viser dropdown box*/
+    display: block;
+}
+
+.dropdownmenu {
+    width: 100%;
+    align-items: right;
 }
 
 
@@ -84,8 +93,7 @@
 
 .row {
     display: flex;
-    margin-left: 30%;
-    justify-content: left;
+    justify-content: start;
     align-items: center;
 }
 
