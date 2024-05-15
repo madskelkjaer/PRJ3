@@ -14,3 +14,10 @@ window.onclick = function (event) {
         }
     }
 }
+
+$(".program").on('click', function () {
+    $('li div ul').toggle('');
+});
+$('.nav > li div ul li a').click(function (e) {
+    e.stopPropagation();
+});
