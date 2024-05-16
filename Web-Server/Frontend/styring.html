@@ -46,7 +46,7 @@
 					</div>
 				</div>
 			</header>
-		
+
 			<!-- Solcelleillustration (bund)-->
 			<header>
 				<div class="solarcell-container">
@@ -61,59 +61,65 @@
 				</div>
 			</header>
 		</div>
-		<div class="child">   
-            <!-- Information dropdown knap -->
-            <button class="dropdown">INFORMATION</button>
-            <div class="dropdown-content">
-                <h2>INFORMATION</h2>
-                <p>
-                    Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
-                    piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
-                </p>
-                <p>Man kan maksimalt dreje solcellen:</p>
-                <p><span id="maxUp"></span> grader op</p>
-                <p>(<span id="maxDown"></span>) grader ned</p>
-                <p> <span id="maxRight"></span> grader til
-                    højre</p>
-                <p>(<span id="maxLeft"></span>) grader til
-                    venstre</p>
-            </div>
-            <!-- Piletaster dropdown knap -->
-            <button class="dropdown">PILETASTER</button>
-            <div class="dropdown-content">
-                <div id="piletaster">
-                    <div class="row">
-                        <button id="reset">🏠</button>
-                        <button id="rotateUp">↑</button>
-                    </div>
-                    <div class="row">
-                        <button id="rotateLeft">←</button>
-                        <button id="rotateDown">↓</button>
-                        <button id="rotateRight">→</button>
-                    </div>
-                </div>
-            </div>
-                <!-- Sol input dropdown knap -->
-            <button class="dropdown">SOL INPUT</button>
-            <div class="dropdown-content">
-                <ul>
-                    <li>Sol venstre: <span id="venstre">Ja</span></li>
-                    <li>Sol højre: <span id="hojre"></span></li>
-                    <li>Sol op: <span id="op"></span></li>
-                    <li>Sol ned: <span id="ned"></span></li>
-                </ul>
-            </div>
+		<div class="child">
+			<!-- Information dropdown knap -->
+			<button class="dropdown">INFORMATION</button>
+			<div class="dropdown-content">
+				<h2>INFORMATION</h2>
+				<p>
+					Her kan man manuelt styre solcellen. Dette kan både lade sig gøre med
+					piletasterne på dit tastatur, eller med de indsatte knapper her på siden.
+				</p>
+				<p>Man kan maksimalt dreje solcellen:</p>
+				<p><span id="maxUp"></span> grader op</p>
+				<p>(<span id="maxDown"></span>) grader ned</p>
+				<p> <span id="maxRight"></span> grader til
+					højre</p>
+				<p>(<span id="maxLeft"></span>) grader til
+					venstre</p>
+			</div>
+			<!-- Piletaster dropdown knap -->
+			<button class="dropdown">PILETASTER</button>
+			<div class="dropdown-content">
+				<div id="piletaster">
+					<div class="row">
+						<button id="reset">🏠</button>
+						<button id="rotateUp">↑</button>
+					</div>
+					<div class="row">
+						<button id="rotateLeft">←</button>
+						<button id="rotateDown">↓</button>
+						<button id="rotateRight">→</button>
+					</div>
+				</div>
+			</div>
+			<!-- Sol input dropdown knap -->
+			<button class="dropdown">SOL INPUT</button>
+			<div class="dropdown-content">
+				<ul>
+					<li>Sol venstre: <span id="venstre">Ja</span></li>
+					<li>Sol højre: <span id="hojre"></span></li>
+					<li>Sol op: <span id="op"></span></li>
+					<li>Sol ned: <span id="ned"></span></li>
+				</ul>
+				<div id="solar-square">
+					<div class="sun-active" id="up"></div>
+					<div class="sun-active" id="right"></div>
+					<div id="down"></div>
+					<div id="left"></div>
+				</div>
+			</div>
 			<!-- Home position dropdown knap -->
-            <button class="dropdown">HOME POSITION</button>
-            <div class="dropdown-content">
-					<p>Nedenfor kan du manuelt sætte return position/home position??</p>
-					<label for="homeXInput">Azimuth:</label>
-					<input type="number" id="homeXInput" value="0">
-					<label for="homeYInput">Elevation:</label>
-					<input type="number" id="homeYInput" value="0">
-					<button id="updateButton">Opdater</button>
-            </div>
-        </div>
+			<button class="dropdown">HOME POSITION</button>
+			<div class="dropdown-content">
+				<p>Nedenfor kan du manuelt sætte return position/home position??</p>
+				<label for="homeXInput">Azimuth:</label>
+				<input type="number" id="homeXInput" value="0">
+				<label for="homeYInput">Elevation:</label>
+				<input type="number" id="homeYInput" value="0">
+				<button id="updateButton">Opdater</button>
+			</div>
+		</div>
 	</div>
 
 	<div id="solar-square">

@@ -1,4 +1,4 @@
-.dropbtn {
+/* .dropbtn {
     background-color: #f9f9f9;
     width: 300px;
     border: 1px solid #000;
@@ -74,7 +74,7 @@
 
 .show {
     /* Viser dropdown box*/
-    display: block;
+display: block;
 }
 
 .dropdownmenu {
@@ -97,7 +97,8 @@
     align-items: center;
 }
 
-#piletaster .row button {
+*/
+/* #piletaster .row button {
     font-size: 25px;
     display: flex;
     text-align: center;
@@ -109,8 +110,8 @@
     background-color: lightgray;
     cursor: pointer;
     border-radius: 10px;
-}
+} */
 
-#piletaster .row button:hover {
+/* #piletaster .row button:hover {
     background-color: gray;
-}
+} */
