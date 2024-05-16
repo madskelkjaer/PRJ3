@@ -15,7 +15,7 @@ CY_ISR_PROTO(ISR_UART_rx_handler);
 void handleByteReceived(uint8_t byteReceived);
 
 //Function to get the voltage signal from the ADC and returns it as an int16_t
-int16_t currentHall(); 
+float currentHall(); 
 
 //Function that converts the voltage dividers signal, and returns it as a percentage
 int16_t voltageDividerToPercent(); 

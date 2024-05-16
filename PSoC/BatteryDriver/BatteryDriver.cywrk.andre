@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="BatteryDriver\BatteryDriver\Source Files\BatteryDriver.c">
 <ExpandedNodeIds>
 <v>BatteryDriver</v>
 <v>BatteryDriver\BatteryDriver</v>
@@ -146,6 +146,45 @@
 <VisibleNodeIds>
 <v>BatteryDriver</v>
 <v>BatteryDriver\BatteryDriver</v>
+<v>BatteryDriver\BatteryDriver\CortexM3</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_ExtVref.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_ExtVref.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_INT.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_IRQ.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_PM.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_theACLK.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\BatteryDriver.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\Current_Hall_In.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_uart_rx.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_BOOT.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\Listing Files\Voltage_Divider_In.lst</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\BatteryDriver.elf</v>
+<v>BatteryDriver\BatteryDriver\CortexM3\ARM_GCC_541\Debug\BatteryDriver.hex</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -191,6 +230,7 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\BatteryDriver.cydsn\BatteryDriver.c" />
+<name v=".\BatteryDriver.cydsn\BatteryDriver.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -198,7 +238,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1077, 583" SelectedTabbedMdiWindow="6cbbc661-2ae9-4179-b764-2a5c53d00faf"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c9309de9-170d-47aa-98c1-5aee54ccc657" /><DocumentWindow Key="C:\Users\andre\OneDrive\Skrivebord\BatteryDriver\BatteryDriver.cydsn\BatteryDriver.c" Guid="6cbbc661-2ae9-4179-b764-2a5c53d00faf" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1077, 583" SelectedTabbedMdiWindow="822c3c39-b4e5-4fe2-8a45-27cf503f9da1"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c9309de9-170d-47aa-98c1-5aee54ccc657" /><DocumentWindow Key="C:\Users\andre\OneDrive\Skrivebord\BatteriDriver.cywrk.Archive01\BatteryDriver\BatteryDriver.cydsn\BatteryDriver.c" Guid="822c3c39-b4e5-4fe2-8a45-27cf503f9da1" /><DocumentWindow Key="C:\Users\andre\OneDrive\Skrivebord\BatteriDriver.cywrk.Archive01\BatteryDriver\BatteryDriver.cydsn\BatteryDriver.h" Guid="c406799c-f299-45ea-84d1-96e6dbf3b737" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

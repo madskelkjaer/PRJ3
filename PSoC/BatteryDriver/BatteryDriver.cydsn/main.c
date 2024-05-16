@@ -27,7 +27,7 @@ int main(void)
     for(;;)
     { 
         snprintf(uartBuffer, sizeof(uartBuffer), "Voltage divider: %i Percent\r\n", voltageDividerToPercent());
-        //snprintf(UartBuffer, sizeof(UartBuffer), "Current hall: %i Amps\r\n", currentHall());
+        //snprintf(UartBuffer, sizeof(UartBuffer), "Current hall: %i Volts\r\n", currentHall());
         UART_1_PutString(uartBuffer); 
     }
 }

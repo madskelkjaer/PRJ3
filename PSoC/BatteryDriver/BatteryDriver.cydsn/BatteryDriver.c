@@ -8,14 +8,15 @@
 #include"BatteryDriver.h"
 
 
-int16_t currentHall()
+float currentHall()
 {
-    int32_t sum = 0;
+    float sum = 0;
     
     for (int i = 0; i < 1000; i++)
     {
         //This iteration summarizes 1000 measurements, with the purpose of returning a mean value.
-        int16_t convToAmps = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())-2.495)/0.3339;
+        int16_t result1 = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16());
+        float convToAmps = (result1-2.495)/0.3339;
         
         sum+= convToAmps;
     }
