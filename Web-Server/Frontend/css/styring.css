@@ -106,3 +106,44 @@
 #piletaster .row button:hover {
     background-color: gray;
 }
+
+#solar-square {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    position: relative;
+    transform: rotate(45deg);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    margin: 100px;
+}
+
+#up, #down, #left, #right {
+    width: 50%;
+    height: 50%;
+    background: #EDB758;
+    position: absolute;
+    box-shadow:inset 0px 0px 0px 1px #a0a0a0;
+}
+
+.sun-active {
+    background-color: #ffff55 !important;
+}
+
+#up {
+    top: 0;
+}
+
+#right {
+    top: 0;
+    left: 50%;
+}
+
+#down {
+    top: 50%;
+    left: 50%;
+}
+
+#left {
+    top: 50%;
+    left: 0;
+}
