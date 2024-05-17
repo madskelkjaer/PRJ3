@@ -19,3 +19,5 @@ cd /home/perhi/PRJ3/Web-Server/Backend/ || { echo "Failed to change directory to
 /usr/bin/flask run --host=0.0.0.0 --port=5000 &
 
 echo "Backend started"
+
+tail -f /dev/null
