@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function getData() {
 	// faar data fra server vha API kald
-	return fetch("http://https://capital-renewing-jennet.ngrok-free.app/api/getdata/10")
+	return fetch("https://capital-renewing-jennet.ngrok-free.app/api/getdata/10")
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error("Network response was not ok");

@@ -36,7 +36,7 @@ const updateWSData = (message_data) => {
 
 // function getData() {
 //     // faar data fra server vha API kald
-//     return fetch("http://https://capital-renewing-jennet.ngrok-free.app/api/getdata/5")
+//     return fetch("https://capital-renewing-jennet.ngrok-free.app/api/getdata/5")
 //         .then((response) => {
 //             if (!response.ok) {
 //                 throw new Error("Network response was not ok");

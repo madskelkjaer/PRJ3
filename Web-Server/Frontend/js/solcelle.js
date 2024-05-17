@@ -36,7 +36,7 @@ function updateHome() {
 
 // Funktion til API kald for at sende data til server
 function moveSolarCell(direction) {
-	fetch(`http://https://capital-renewing-jennet.ngrok-free.app/api/move/${direction}`)
+	fetch(`https://capital-renewing-jennet.ngrok-free.app/api/move/${direction}`)
 		.then(response => {
 			if (response.ok) {
 				return response.json();

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //funktion der henter data fra API og laver en graf
 function drawChart() {
-	fetch("http://https://capital-renewing-jennet.ngrok-free.app/api/getdata/10")
+	fetch("https://capital-renewing-jennet.ngrok-free.app/api/getdata/10")
 		.then((response) => response.json())
 		.then((data) => {
 			//dataen kommer ind sjovt
