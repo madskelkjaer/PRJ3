@@ -96,6 +96,8 @@
 			<!-- Sol input dropdown knap -->
 			<button class="dropdown">SOL INPUT</button>
 			<div class="dropdown-content">
+				<p>Nedenfor ses data for de sensorer, der sidder på solcellen. 
+					Dette kan med fordel anvendes ved manuel styring af solcellen, således at den rettes i en optimal position.</p>
 				<ul>
 					<li>Sol venstre: <span id="venstre">Ja</span></li>
 					<li>Sol højre: <span id="hojre"></span></li>
@@ -105,8 +107,8 @@
 				<div id="solar-square">
 					<div class="sun-active" id="up"></div>
 					<div class="sun-active" id="right"></div>
-					<div id="down"></div>
-					<div id="left"></div>
+					<div class="sun-active" id="down"></div>
+					<div class="sun-active" id="left"></div>
 				</div>
 			</div>
 			<!-- Home position dropdown knap -->
@@ -122,18 +124,21 @@
 		</div>
 	</div>
 
-	<div id="solar-square">
-		<div class="sun-active" id="up"></div>
-		<div class="sun-active" id="right"></div>
-		<div id="down"></div>
-		<div id="left"></div>
-	</div>
-
 	<script src="./js/solcelleData.js"></script>
 	<script src="./js/solcelle.js"></script>
 	<script src="./js/infoboks.js"></script>
 	<script src="./js/styring.js"></script>
 	</script>
+
+	<div>
+		<img
+			src="/images/battery0-25.png"
+			alt="batteri"
+			class="battery"
+			id="battery"
+		/>
+	</div>
+	<script src="/js/batteriCorner.js" defer></script>
 
 </body>
 

@@ -1,18 +1,11 @@
-/* .container {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 50vh;
-} */
-
-/* Placering på menuen */
+/* container til det hele!! */
 .child {
     width: 50%;
     height: 100%;
     padding: 100px;
 }
 
-/* Noget med bredden på menuen */
+/* container til solcelleillustration */
 .child:nth-child(1) {
     width: 25%;
 }
@@ -21,31 +14,25 @@
 .child>header {
     margin-top: 100px;
     margin-bottom: 200px;
-    margin-left: 150px;
+    margin-left: 50px;
 }
 
 /* Styrer bredden og placeringen på menuen */
 .child:nth-child(2) {
-    width: 50%;
-    margin-right: 100px;
+    width: 45%;
+    /* margin-right: 100px; */
 }
 
-/* Dont touch this shit
-Er det som formattere menuen */
+/* formatterer menuen */
 .dropdown {
     width: 100%;
-    /* right: 100px; */
     position: block;
-    /* display: relative; */
     font-size: 24px;
     text-align: center;
     margin: 10px;
     background-color: #f9f9f9;
-    /* color: black; */
     cursor: pointer;
     border: 1px solid black;
-    /* outline: none; */
-    /* transition: 0.4s; */
 }
 
 /* Er hover på menuknapperne */
@@ -55,30 +42,25 @@ Er det som formattere menuen */
 }
 
 /* Sætter baggrundsfarve på dropdown kasser */
-/* .dropdown-content {
+.dropdown-content {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    max-width: 400px;
-    display: none;
-    background-color: #f1f1f1;
-    z-index: 1;
-} */
+}
 
 /* BRUGES TIL KNAPPERNE TIL HOEJRE */
 .piletaster {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 20px;
 }
 
 /* Centrerer piletastknapperne */
 .row {
     display: flex;
-    margin-left: 38%;
     justify-content: left;
     align-items: center;
+    margin-left: 290px;
 }
 
 /* Piletasternes styling yo */
@@ -108,7 +90,6 @@ Er det som formattere menuen */
     position: relative;
     transform: rotate(45deg);
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    margin: 100px;
 }
 
 #up,

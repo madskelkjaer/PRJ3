@@ -66,10 +66,20 @@ button {
 	color: white;
 }
 
-/* random sol */
+/* index sol */
 .sun {
 	position: absolute;
 	width: 480px;
 	height: auto;
 	transition: transform 0.6s ease-in-out;
+}
+
+/* batteri i hjoerne */
+.battery {
+    position: fixed;
+    width: 150px;
+    height: auto;
+    transition: transform 0.6s ease-in-out;
+    bottom: 30px;
+    right: 30px;
 }
