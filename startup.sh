@@ -11,7 +11,7 @@ until /usr/bin/git pull; do
     sleep 10
 done
 
-/usr/local/bin/ngrok http -hostname=capital-renewing-jennet.ngrok-free.app 5000 &
+/usr/local/bin/ngrok http --domain=capital-renewing-jennet.ngrok-free.app 5000 &
 
 sleep 5
 
