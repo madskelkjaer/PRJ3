@@ -9,3 +9,4 @@ ngrok http --domain=capital-renewing-jennet.ngrok-free.app 5000 &
 
 cd /Web-Server/Backend/
 flask run --host=0.0.0.0 --port=5000 &
+echo "Backend started"
