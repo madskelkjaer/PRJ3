@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // updateData(); //opdaterer data ved page load
 	// setInterval(updateData, 60000); // opdaterer hvert minut
 
-    const ws = new WebSocket("ws://https://capital-renewing-jennet.ngrok-free.app/ws");
+    const ws = new WebSocket("ws://capital-renewing-jennet.ngrok-free.app/ws");
     ws.onopen = () => {
         console.log("Connected to WS");
     };
