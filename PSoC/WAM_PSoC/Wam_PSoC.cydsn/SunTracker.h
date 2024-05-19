@@ -9,8 +9,9 @@
 
 // Function declarations
 void trackSun(void);              // Function to track the sun automatically
-void setMode(uint8_t mode);       // Function to set the current mode
+void setMode(uint8_t command);    // Function to set the current mode
 void manualControl(uint8_t command); // Function for manual control
 int getCurrentMode(void);         // Function to get the current mode
+void sendData(void);              // Function to send data to the Raspberry Pi
 
 #endif // SUN_TRACKER_H

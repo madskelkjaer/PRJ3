@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WAM_PSoC\Wam_PSoC\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WAM_PSoC\Wam_PSoC\Wam_PSoC.cydwr\Pins">
 <ExpandedNodeIds>
 <v>WAM_PSoC</v>
 <v>WAM_PSoC\Wam_PSoC</v>
@@ -32,14 +32,12 @@
 <v>WAM_PSoC\Wam_PSoC\Header Files\BatteryDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\cyapicallbacks.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SensorDriver.h</v>
-<v>WAM_PSoC\Wam_PSoC\Header Files\SPI.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\StepperMotorDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SunTracker.h</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\BatteryDriver.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\main.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\SensorDriver.c</v>
-<v>WAM_PSoC\Wam_PSoC\Source Files\SPI.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\StepperMotorDriver.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\SunTracker.c</v>
 <v>WAM_PSoC\Wam_PSoC\Generated_Source</v>
@@ -63,36 +61,25 @@
 <v>WAM_PSoC\Wam_PSoC\Header Files\BatteryDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\cyapicallbacks.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SensorDriver.h</v>
-<v>WAM_PSoC\Wam_PSoC\Header Files\SPI.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\StepperMotorDriver.h</v>
 <v>WAM_PSoC\Wam_PSoC\Header Files\SunTracker.h</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\BatteryDriver.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\main.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\SensorDriver.c</v>
-<v>WAM_PSoC\Wam_PSoC\Source Files\SPI.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\StepperMotorDriver.c</v>
 <v>WAM_PSoC\Wam_PSoC\Source Files\SunTracker.c</v>
 <v>WAM_PSoC\Wam_PSoC\Generated_Source</v>
 <v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\ADC_SAR_1</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\ADC_SAR_1_ExtVref</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\ADC_SAR_1_IRQ</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\ADC_SAR_1_theACLK</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\ADC_SAR_2</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\ADC_SAR_2_ExtVref</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\ADC_SAR_2_IRQ</v>
+<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\ADC_SAR_2_theACLK</v>
 <v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Azimuth_Pin_1</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Azimuth_Pin_2</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Azimuth_Pin_3</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Azimuth_Pin_4</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Clock_1</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\cy_boot</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Elevation_Pin_1</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Elevation_Pin_2</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Elevation_Pin_3</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Elevation_Pin_4</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\isr_motor</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\isr_uart_rx</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Down</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Left</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Right</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\Limit_Up</v>
-<v>WAM_PSoC\Wam_PSoC\Generated_Source\PSoC5\MISO_1</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -117,12 +104,26 @@
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_ExtVref.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_ExtVref.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_INT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_IRQ.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_PM.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_theACLK.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_1.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_2.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_3.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_4.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\BatteryDriver.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Current_Hall_In.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
@@ -138,6 +139,7 @@
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_3.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_4.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_motor.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_spi.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_uart_rx.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Down.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Left.lst</v>
@@ -148,7 +150,6 @@
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\MOSI_1.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SCLK_1.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SensorDriver.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPI.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_BOOT.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_INT.lst</v>
@@ -165,6 +166,7 @@
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Voltage_Divider_In.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Wam_PSoC.elf</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Wam_PSoC.hex</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Wam_PSoC.map</v>
@@ -179,12 +181,26 @@
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_ExtVref.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_ExtVref.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_INT.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_IRQ.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_PM.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_2_theACLK.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_1.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_2.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_3.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Azimuth_Pin_4.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\BatteryDriver.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Current_Hall_In.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
@@ -195,31 +211,6 @@
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
 <v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_1.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_2.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_3.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Elevation_Pin_4.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_motor.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_uart_rx.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Down.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Left.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Right.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\Limit_Up.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\MISO_1.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\MOSI_1.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SCLK_1.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SensorDriver.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPI.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_BOOT.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_INT.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_IntClock.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIS_1_PM.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\StepperMotorDriver.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunDown.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunLeft.lst</v>
-<v>WAM_PSoC\Wam_PSoC\CortexM3\ARM_GCC_541\Debug\Listing Files\sunRight.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -272,8 +263,17 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Wam_PSoC.cydsn\SensorDriver.c" />
+<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.h" />
 <name v=".\Wam_PSoC.cydsn\main.c" />
+<name v=".\Wam_PSoC.cydsn\Wam_PSoC.cydwr" />
+<name v=".\Wam_PSoC.cydsn\SunTracker.h" />
+<name v=".\Wam_PSoC.cydsn\SunTracker.c" />
+<name v=".\Wam_PSoC.cydsn\SensorDriver.c" />
+<name v=".\Wam_PSoC.cydsn\StepperMotorDriver.c" />
+<name v=".\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Wam_PSoC.cydsn\SensorDriver.h" />
+<name v=".\Wam_PSoC.cydsn\BatteryDriver.h" />
+<name v=".\Wam_PSoC.cydsn\BatteryDriver.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -281,7 +281,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1482, 703" SelectedTabbedMdiWindow="43d016f6-a840-4d7e-9d2e-62a80a242bd2"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c5a72657-9cd1-48a4-b60e-845c41bfec09" /><DocumentWindow Key="C:\Users\perhi\PRJ3\PSoC\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.c" Guid="038b4aaa-60d4-451c-8d6e-88ec8fdfe5e7" /><DocumentWindow Key="C:\Users\perhi\PRJ3\PSoC\WAM_PSoC\Wam_PSoC.cydsn\main.c" Guid="43d016f6-a840-4d7e-9d2e-62a80a242bd2" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="520, 694" SelectedTabbedMdiWindow="1258297a-6cc0-4a63-89fd-a28e26f860ac"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c5a72657-9cd1-48a4-b60e-845c41bfec09" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.h" Guid="58cc3e24-19c5-4733-bcde-320109f230e1" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\main.c" Guid="1258297a-6cc0-4a63-89fd-a28e26f860ac" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\Wam_PSoC.cydwr" Guid="960b7a1c-8753-465d-b67c-229ce4d0ba93" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.h" Guid="6609ca25-4b20-40b2-a921-149b2f5d0e05" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\SunTracker.c" Guid="6458c02f-d4b4-49e8-a76a-4846a4008299" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.c" Guid="5a4fcbca-7415-481c-b650-54d2e48280f7" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\StepperMotorDriver.c" Guid="04fc0dc0-72f5-48d7-aca8-01b391f76f86" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\TopDesign\TopDesign.cysch" Guid="3967e30c-41d0-416e-b490-fb19b2099c3e" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\SensorDriver.h" Guid="82813b0a-2c57-4e79-901b-be460c3bc994" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\BatteryDriver.h" Guid="4d1c5e9c-ae6b-493d-8f05-0caac891ec3e" /><DocumentWindow Key="C:\Users\perhi\PRJ3-main\PRJ3-main\PSoC\WAM_PSoC\Wam_PSoC.cydsn\BatteryDriver.c" Guid="4a612271-d081-4c28-865c-96292e62551d" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

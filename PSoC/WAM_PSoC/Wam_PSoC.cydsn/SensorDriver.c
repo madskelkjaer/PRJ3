@@ -1,22 +1,18 @@
 #include "project.h"
 #include "SensorDriver.h"
 
-bool sunLeft()
-{
+bool sunLeft() {
     return !sunLeft_Read();
 }
 
-bool sunRight()
-{
+bool sunRight() {
     return !sunRight_Read();
 }
 
-bool sunUp()
-{
+bool sunUp() {
     return !sunUp_Read();
 }
 
-bool sunDown()
-{
+bool sunDown() {
     return !sunDown_Read();
 }

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 1
 
 
    1              		.syntax unified
@@ -31,9 +31,8 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
    1:SensorDriver.c **** #include "project.h"
    2:SensorDriver.c **** #include "SensorDriver.h"
    3:SensorDriver.c **** 
-   4:SensorDriver.c **** bool sunLeft()
-   5:SensorDriver.c **** {
-  28              		.loc 1 5 0
+   4:SensorDriver.c **** bool sunLeft() {
+  28              		.loc 1 4 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -41,12 +40,12 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 3, -8
   35              		.cfi_offset 14, -4
-   6:SensorDriver.c ****     return !sunLeft_Read();
-  36              		.loc 1 6 0
+   5:SensorDriver.c ****     return !sunLeft_Read();
+  36              		.loc 1 5 0
   37 0002 FFF7FEFF 		bl	sunLeft_Read
   38              	.LVL0:
-   7:SensorDriver.c **** }
-  39              		.loc 1 7 0
+   6:SensorDriver.c **** }
+  39              		.loc 1 6 0
   40 0006 B0FA80F0 		clz	r0, r0
   41 000a 4009     		lsrs	r0, r0, #5
   42 000c 08BD     		pop	{r3, pc}
@@ -58,16 +57,15 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
   48              		.global	sunRight
   49              		.thumb
   50              		.thumb_func
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 2
-
-
   51              		.type	sunRight, %function
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 2
+
+
   52              	sunRight:
   53              	.LFB64:
-   8:SensorDriver.c **** 
-   9:SensorDriver.c **** bool sunRight()
-  10:SensorDriver.c **** {
-  54              		.loc 1 10 0
+   7:SensorDriver.c **** 
+   8:SensorDriver.c **** bool sunRight() {
+  54              		.loc 1 8 0
   55              		.cfi_startproc
   56              		@ args = 0, pretend = 0, frame = 0
   57              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -75,12 +73,12 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
   59              		.cfi_def_cfa_offset 8
   60              		.cfi_offset 3, -8
   61              		.cfi_offset 14, -4
-  11:SensorDriver.c ****     return !sunRight_Read();
-  62              		.loc 1 11 0
+   9:SensorDriver.c ****     return !sunRight_Read();
+  62              		.loc 1 9 0
   63 0002 FFF7FEFF 		bl	sunRight_Read
   64              	.LVL1:
-  12:SensorDriver.c **** }
-  65              		.loc 1 12 0
+  10:SensorDriver.c **** }
+  65              		.loc 1 10 0
   66 0006 B0FA80F0 		clz	r0, r0
   67 000a 4009     		lsrs	r0, r0, #5
   68 000c 08BD     		pop	{r3, pc}
@@ -95,10 +93,9 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
   77              		.type	sunUp, %function
   78              	sunUp:
   79              	.LFB65:
-  13:SensorDriver.c **** 
-  14:SensorDriver.c **** bool sunUp()
-  15:SensorDriver.c **** {
-  80              		.loc 1 15 0
+  11:SensorDriver.c **** 
+  12:SensorDriver.c **** bool sunUp() {
+  80              		.loc 1 12 0
   81              		.cfi_startproc
   82              		@ args = 0, pretend = 0, frame = 0
   83              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -106,33 +103,32 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
   85              		.cfi_def_cfa_offset 8
   86              		.cfi_offset 3, -8
   87              		.cfi_offset 14, -4
-  16:SensorDriver.c ****     return !sunUp_Read();
-  88              		.loc 1 16 0
+  13:SensorDriver.c ****     return !sunUp_Read();
+  88              		.loc 1 13 0
   89 0002 FFF7FEFF 		bl	sunUp_Read
   90              	.LVL2:
-  17:SensorDriver.c **** }
-  91              		.loc 1 17 0
+  14:SensorDriver.c **** }
+  91              		.loc 1 14 0
   92 0006 B0FA80F0 		clz	r0, r0
   93 000a 4009     		lsrs	r0, r0, #5
   94 000c 08BD     		pop	{r3, pc}
   95              		.cfi_endproc
   96              	.LFE65:
   97              		.size	sunUp, .-sunUp
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 3
-
-
   98 000e 00BF     		.section	.text.sunDown,"ax",%progbits
   99              		.align	2
  100              		.global	sunDown
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 3
+
+
  101              		.thumb
  102              		.thumb_func
  103              		.type	sunDown, %function
  104              	sunDown:
  105              	.LFB66:
-  18:SensorDriver.c **** 
-  19:SensorDriver.c **** bool sunDown()
-  20:SensorDriver.c **** {
- 106              		.loc 1 20 0
+  15:SensorDriver.c **** 
+  16:SensorDriver.c **** bool sunDown() {
+ 106              		.loc 1 16 0
  107              		.cfi_startproc
  108              		@ args = 0, pretend = 0, frame = 0
  109              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -140,12 +136,12 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  111              		.cfi_def_cfa_offset 8
  112              		.cfi_offset 3, -8
  113              		.cfi_offset 14, -4
-  21:SensorDriver.c ****     return !sunDown_Read();
- 114              		.loc 1 21 0
+  17:SensorDriver.c ****     return !sunDown_Read();
+ 114              		.loc 1 17 0
  115 0002 FFF7FEFF 		bl	sunDown_Read
  116              	.LVL3:
-  22:SensorDriver.c **** }
- 117              		.loc 1 22 0
+  18:SensorDriver.c **** }
+ 117              		.loc 1 18 0
  118 0006 B0FA80F0 		clz	r0, r0
  119 000a 4009     		lsrs	r0, r0, #5
  120 000c 08BD     		pop	{r3, pc}
@@ -154,8 +150,8 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  123              		.size	sunDown, .-sunDown
  124 000e 00BF     		.text
  125              	.Letext0:
- 126              		.file 2 "e:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\mac
- 127              		.file 3 "e:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\sys
+ 126              		.file 2 "d:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\mac
+ 127              		.file 3 "d:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\sys
  128              		.file 4 "Generated_Source\\PSoC5/sunLeft.h"
  129              		.file 5 "Generated_Source\\PSoC5/sunRight.h"
  130              		.file 6 "Generated_Source\\PSoC5/sunUp.h"
@@ -168,45 +164,45 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  137 0006 00000000 		.4byte	.Ldebug_abbrev0
  138 000a 04       		.byte	0x4
  139 000b 01       		.uleb128 0x1
- 140 000c 60000000 		.4byte	.LASF25
+ 140 000c 6C000000 		.4byte	.LASF25
  141 0010 0C       		.byte	0xc
- 142 0011 5A010000 		.4byte	.LASF26
- 143 0015 9E010000 		.4byte	.LASF27
+ 142 0011 66010000 		.4byte	.LASF26
+ 143 0015 88010000 		.4byte	.LASF27
  144 0019 00000000 		.4byte	.Ldebug_ranges0+0
  145 001d 00000000 		.4byte	0
  146 0021 00000000 		.4byte	.Ldebug_line0
  147 0025 02       		.uleb128 0x2
  148 0026 01       		.byte	0x1
  149 0027 06       		.byte	0x6
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 4
-
-
- 150 0028 7C010000 		.4byte	.LASF0
+ 150 0028 60000000 		.4byte	.LASF0
  151 002c 02       		.uleb128 0x2
  152 002d 01       		.byte	0x1
  153 002e 08       		.byte	0x8
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 4
+
+
  154 002f 4C000000 		.4byte	.LASF1
  155 0033 02       		.uleb128 0x2
  156 0034 02       		.byte	0x2
  157 0035 05       		.byte	0x5
- 158 0036 01020000 		.4byte	.LASF2
+ 158 0036 BF010000 		.4byte	.LASF2
  159 003a 02       		.uleb128 0x2
  160 003b 02       		.byte	0x2
  161 003c 07       		.byte	0x7
- 162 003d 17010000 		.4byte	.LASF3
+ 162 003d 23010000 		.4byte	.LASF3
  163 0041 03       		.uleb128 0x3
- 164 0042 94010000 		.4byte	.LASF9
+ 164 0042 AF010000 		.4byte	.LASF9
  165 0046 02       		.byte	0x2
  166 0047 3F       		.byte	0x3f
  167 0048 4C000000 		.4byte	0x4c
  168 004c 02       		.uleb128 0x2
  169 004d 04       		.byte	0x4
  170 004e 05       		.byte	0x5
- 171 004f 3C010000 		.4byte	.LASF4
+ 171 004f 48010000 		.4byte	.LASF4
  172 0053 02       		.uleb128 0x2
  173 0054 04       		.byte	0x4
  174 0055 07       		.byte	0x7
- 175 0056 EE000000 		.4byte	.LASF5
+ 175 0056 FA000000 		.4byte	.LASF5
  176 005a 02       		.uleb128 0x2
  177 005b 08       		.byte	0x8
  178 005c 05       		.byte	0x5
@@ -214,7 +210,7 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  180 0061 02       		.uleb128 0x2
  181 0062 08       		.byte	0x8
  182 0063 07       		.byte	0x7
- 183 0064 00010000 		.4byte	.LASF7
+ 183 0064 0C010000 		.4byte	.LASF7
  184 0068 04       		.uleb128 0x4
  185 0069 04       		.byte	0x4
  186 006a 05       		.byte	0x5
@@ -224,35 +220,35 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  190 0071 07       		.byte	0x7
  191 0072 29000000 		.4byte	.LASF8
  192 0076 03       		.uleb128 0x3
- 193 0077 0B020000 		.4byte	.LASF10
+ 193 0077 C9010000 		.4byte	.LASF10
  194 007b 03       		.byte	0x3
  195 007c 2C       		.byte	0x2c
  196 007d 41000000 		.4byte	0x41
  197 0081 02       		.uleb128 0x2
  198 0082 04       		.byte	0x4
  199 0083 04       		.byte	0x4
- 200 0084 FB010000 		.4byte	.LASF11
+ 200 0084 B9010000 		.4byte	.LASF11
  201 0088 02       		.uleb128 0x2
  202 0089 08       		.byte	0x8
  203 008a 04       		.byte	0x4
- 204 008b 4D010000 		.4byte	.LASF12
+ 204 008b 59010000 		.4byte	.LASF12
  205 008f 02       		.uleb128 0x2
  206 0090 01       		.byte	0x1
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 5
-
-
  207 0091 08       		.byte	0x8
- 208 0092 37010000 		.4byte	.LASF13
+ 208 0092 43010000 		.4byte	.LASF13
  209 0096 02       		.uleb128 0x2
  210 0097 08       		.byte	0x8
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 5
+
+
  211 0098 04       		.byte	0x4
- 212 0099 88010000 		.4byte	.LASF14
+ 212 0099 A3010000 		.4byte	.LASF14
  213 009d 02       		.uleb128 0x2
  214 009e 04       		.byte	0x4
  215 009f 07       		.byte	0x7
- 216 00a0 13020000 		.4byte	.LASF15
+ 216 00a0 D1010000 		.4byte	.LASF15
  217 00a4 05       		.uleb128 0x5
- 218 00a5 45010000 		.4byte	.LASF17
+ 218 00a5 51010000 		.4byte	.LASF17
  219 00a9 01       		.byte	0x1
  220 00aa 04       		.byte	0x4
  221 00ab C7000000 		.4byte	0xc7
@@ -268,11 +264,11 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  231 00c7 02       		.uleb128 0x2
  232 00c8 01       		.byte	0x1
  233 00c9 02       		.byte	0x2
- 234 00ca 54010000 		.4byte	.LASF16
+ 234 00ca 60010000 		.4byte	.LASF16
  235 00ce 05       		.uleb128 0x5
  236 00cf 36000000 		.4byte	.LASF18
  237 00d3 01       		.byte	0x1
- 238 00d4 09       		.byte	0x9
+ 238 00d4 08       		.byte	0x8
  239 00d5 C7000000 		.4byte	0xc7
  240 00d9 00000000 		.4byte	.LFB64
  241 00dd 0E000000 		.4byte	.LFE64-.LFB64
@@ -286,7 +282,7 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  249 00f1 05       		.uleb128 0x5
  250 00f2 5A000000 		.4byte	.LASF19
  251 00f6 01       		.byte	0x1
- 252 00f7 0E       		.byte	0xe
+ 252 00f7 0C       		.byte	0xc
  253 00f8 C7000000 		.4byte	0xc7
  254 00fc 00000000 		.4byte	.LFB65
  255 0100 0E000000 		.4byte	.LFE65-.LFB65
@@ -298,13 +294,13 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  261 010f 5E010000 		.4byte	0x15e
  262 0113 00       		.byte	0
  263 0114 05       		.uleb128 0x5
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 6
-
-
- 264 0115 74010000 		.4byte	.LASF20
+ 264 0115 80010000 		.4byte	.LASF20
  265 0119 01       		.byte	0x1
- 266 011a 13       		.byte	0x13
+ 266 011a 10       		.byte	0x10
  267 011b C7000000 		.4byte	0xc7
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 6
+
+
  268 011f 00000000 		.4byte	.LFB66
  269 0123 0E000000 		.4byte	.LFE66-.LFB66
  270 0127 01       		.uleb128 0x1
@@ -322,8 +318,8 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  282 0143 08       		.uleb128 0x8
  283 0144 76000000 		.4byte	0x76
  284 0148 09       		.uleb128 0x9
- 285 0149 2A010000 		.4byte	.LASF21
- 286 014d 2A010000 		.4byte	.LASF21
+ 285 0149 36010000 		.4byte	.LASF21
+ 286 014d 36010000 		.4byte	.LASF21
  287 0151 04       		.byte	0x4
  288 0152 29       		.byte	0x29
  289 0153 09       		.uleb128 0x9
@@ -332,8 +328,8 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  292 015c 05       		.byte	0x5
  293 015d 29       		.byte	0x29
  294 015e 09       		.uleb128 0x9
- 295 015f 69010000 		.4byte	.LASF23
- 296 0163 69010000 		.4byte	.LASF23
+ 295 015f 75010000 		.4byte	.LASF23
+ 296 0163 75010000 		.4byte	.LASF23
  297 0167 06       		.byte	0x6
  298 0168 29       		.byte	0x29
  299 0169 09       		.uleb128 0x9
@@ -358,13 +354,13 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  318 000b 55       		.uleb128 0x55
  319 000c 17       		.uleb128 0x17
  320 000d 11       		.uleb128 0x11
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 7
-
-
  321 000e 01       		.uleb128 0x1
  322 000f 10       		.uleb128 0x10
  323 0010 17       		.uleb128 0x17
  324 0011 00       		.byte	0
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 7
+
+
  325 0012 00       		.byte	0
  326 0013 02       		.uleb128 0x2
  327 0014 24       		.uleb128 0x24
@@ -418,13 +414,13 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  375 0044 01       		.uleb128 0x1
  376 0045 12       		.uleb128 0x12
  377 0046 06       		.uleb128 0x6
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 8
-
-
  378 0047 40       		.uleb128 0x40
  379 0048 18       		.uleb128 0x18
  380 0049 9742     		.uleb128 0x2117
  381 004b 19       		.uleb128 0x19
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 8
+
+
  382 004c 01       		.uleb128 0x1
  383 004d 13       		.uleb128 0x13
  384 004e 00       		.byte	0
@@ -478,13 +474,13 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  432 0080 3B       		.uleb128 0x3b
  433 0081 0B       		.uleb128 0xb
  434 0082 00       		.byte	0
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 9
-
-
  435 0083 00       		.byte	0
  436 0084 00       		.byte	0
  437              		.section	.debug_aranges,"",%progbits
  438 0000 34000000 		.4byte	0x34
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 9
+
+
  439 0004 0200     		.2byte	0x2
  440 0006 00000000 		.4byte	.Ldebug_info0
  441 000a 04       		.byte	0x4
@@ -515,7 +511,7 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  466 0024 00000000 		.4byte	0
  467              		.section	.debug_line,"",%progbits
  468              	.Ldebug_line0:
- 469 0000 8A010000 		.section	.debug_str,"MS",%progbits,1
+ 469 0000 88010000 		.section	.debug_str,"MS",%progbits,1
  469      02004201 
  469      00000201 
  469      FB0E0D00 
@@ -538,13 +534,13 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  476              	.LASF8:
  477 0029 756E7369 		.ascii	"unsigned int\000"
  477      676E6564 
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 10
-
-
  477      20696E74 
  477      00
  478              	.LASF18:
  479 0036 73756E52 		.ascii	"sunRight\000"
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 10
+
+
  479      69676874 
  479      00
  480              	.LASF24:
@@ -560,114 +556,109 @@ ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 1
  484              	.LASF19:
  485 005a 73756E55 		.ascii	"sunUp\000"
  485      7000
- 486              	.LASF25:
- 487 0060 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 487      43313120 
- 487      352E342E 
- 487      31203230 
- 487      31363036 
- 488 0093 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 488      20726576 
- 488      6973696F 
- 488      6E203233 
- 488      37373135 
- 489 00c6 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 489      66756E63 
- 489      74696F6E 
- 489      2D736563 
- 489      74696F6E 
- 490              	.LASF5:
- 491 00ee 6C6F6E67 		.ascii	"long unsigned int\000"
- 491      20756E73 
- 491      69676E65 
- 491      6420696E 
- 491      7400
- 492              	.LASF7:
- 493 0100 6C6F6E67 		.ascii	"long long unsigned int\000"
- 493      206C6F6E 
- 493      6720756E 
- 493      7369676E 
- 493      65642069 
- 494              	.LASF3:
- 495 0117 73686F72 		.ascii	"short unsigned int\000"
- 495      7420756E 
+ 486              	.LASF0:
+ 487 0060 7369676E 		.ascii	"signed char\000"
+ 487      65642063 
+ 487      68617200 
+ 488              	.LASF25:
+ 489 006c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 489      43313120 
+ 489      352E342E 
+ 489      31203230 
+ 489      31363036 
+ 490 009f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 490      20726576 
+ 490      6973696F 
+ 490      6E203233 
+ 490      37373135 
+ 491 00d2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 491      66756E63 
+ 491      74696F6E 
+ 491      2D736563 
+ 491      74696F6E 
+ 492              	.LASF5:
+ 493 00fa 6C6F6E67 		.ascii	"long unsigned int\000"
+ 493      20756E73 
+ 493      69676E65 
+ 493      6420696E 
+ 493      7400
+ 494              	.LASF7:
+ 495 010c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 495      206C6F6E 
+ 495      6720756E 
  495      7369676E 
  495      65642069 
- 495      6E7400
- 496              	.LASF21:
- 497 012a 73756E4C 		.ascii	"sunLeft_Read\000"
- 497      6566745F 
- 497      52656164 
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 11
+ 496              	.LASF3:
+ 497 0123 73686F72 		.ascii	"short unsigned int\000"
+ 497      7420756E 
+ 497      7369676E 
+ 497      65642069 
+ 497      6E7400
+ 498              	.LASF21:
+ 499 0136 73756E4C 		.ascii	"sunLeft_Read\000"
+ 499      6566745F 
+ 499      52656164 
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 11
 
 
- 497      00
- 498              	.LASF13:
- 499 0137 63686172 		.ascii	"char\000"
  499      00
- 500              	.LASF4:
- 501 013c 6C6F6E67 		.ascii	"long int\000"
- 501      20696E74 
+ 500              	.LASF13:
+ 501 0143 63686172 		.ascii	"char\000"
  501      00
- 502              	.LASF17:
- 503 0145 73756E4C 		.ascii	"sunLeft\000"
- 503      65667400 
- 504              	.LASF12:
- 505 014d 646F7562 		.ascii	"double\000"
- 505      6C6500
- 506              	.LASF16:
- 507 0154 5F426F6F 		.ascii	"_Bool\000"
- 507      6C00
- 508              	.LASF26:
- 509 015a 53656E73 		.ascii	"SensorDriver.c\000"
- 509      6F724472 
- 509      69766572 
- 509      2E6300
- 510              	.LASF23:
- 511 0169 73756E55 		.ascii	"sunUp_Read\000"
- 511      705F5265 
- 511      616400
- 512              	.LASF20:
- 513 0174 73756E44 		.ascii	"sunDown\000"
- 513      6F776E00 
- 514              	.LASF0:
- 515 017c 7369676E 		.ascii	"signed char\000"
- 515      65642063 
- 515      68617200 
- 516              	.LASF14:
- 517 0188 6C6F6E67 		.ascii	"long double\000"
- 517      20646F75 
- 517      626C6500 
- 518              	.LASF9:
- 519 0194 5F5F696E 		.ascii	"__int32_t\000"
- 519      7433325F 
- 519      7400
- 520              	.LASF27:
- 521 019e 433A5C55 		.ascii	"C:\\Users\\perhi\\OneDrive - Aarhus universitet\\Do"
- 521      73657273 
- 521      5C706572 
- 521      68695C4F 
- 521      6E654472 
- 522 01cd 6B756D65 		.ascii	"kumenter\\PSoC Creator\\WAM_PSoC\\Wam_PSoC.cydsn\000"
- 522      6E746572 
- 522      5C50536F 
- 522      43204372 
- 522      6561746F 
- 523              	.LASF11:
- 524 01fb 666C6F61 		.ascii	"float\000"
- 524      7400
- 525              	.LASF2:
- 526 0201 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccUDEqdi.s 			page 12
+ 502              	.LASF4:
+ 503 0148 6C6F6E67 		.ascii	"long int\000"
+ 503      20696E74 
+ 503      00
+ 504              	.LASF17:
+ 505 0151 73756E4C 		.ascii	"sunLeft\000"
+ 505      65667400 
+ 506              	.LASF12:
+ 507 0159 646F7562 		.ascii	"double\000"
+ 507      6C6500
+ 508              	.LASF16:
+ 509 0160 5F426F6F 		.ascii	"_Bool\000"
+ 509      6C00
+ 510              	.LASF26:
+ 511 0166 53656E73 		.ascii	"SensorDriver.c\000"
+ 511      6F724472 
+ 511      69766572 
+ 511      2E6300
+ 512              	.LASF23:
+ 513 0175 73756E55 		.ascii	"sunUp_Read\000"
+ 513      705F5265 
+ 513      616400
+ 514              	.LASF20:
+ 515 0180 73756E44 		.ascii	"sunDown\000"
+ 515      6F776E00 
+ 516              	.LASF27:
+ 517 0188 453A5C57 		.ascii	"E:\\WAM_PSoC\\Wam_PSoC.cydsn\000"
+ 517      414D5F50 
+ 517      536F435C 
+ 517      57616D5F 
+ 517      50536F43 
+ 518              	.LASF14:
+ 519 01a3 6C6F6E67 		.ascii	"long double\000"
+ 519      20646F75 
+ 519      626C6500 
+ 520              	.LASF9:
+ 521 01af 5F5F696E 		.ascii	"__int32_t\000"
+ 521      7433325F 
+ 521      7400
+ 522              	.LASF11:
+ 523 01b9 666C6F61 		.ascii	"float\000"
+ 523      7400
+ 524              	.LASF2:
+ 525 01bf 73686F72 		.ascii	"short int\000"
+ 525      7420696E 
+ 525      7400
+ 526              	.LASF10:
+ 527 01c9 696E7433 		.ascii	"int32_t\000"
+ 527      325F7400 
+ 528              	.LASF15:
+ 529 01d1 73697A65 		.ascii	"sizetype\000"
+ 529      74797065 
+ 529      00
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\cc5Tx6LF.s 			page 12
 
 
- 526      7420696E 
- 526      7400
- 527              	.LASF10:
- 528 020b 696E7433 		.ascii	"int32_t\000"
- 528      325F7400 
- 529              	.LASF15:
- 530 0213 73697A65 		.ascii	"sizetype\000"
- 530      74797065 
- 530      00
- 531              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 530              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

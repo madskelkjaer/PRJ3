@@ -1,0 +1,1413 @@
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"BatteryDriver.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_i2d
+  20              		.global	__aeabi_dsub
+  21              		.global	__aeabi_ddiv
+  22              		.global	__aeabi_d2f
+  23              		.global	__aeabi_fadd
+  24              		.global	__aeabi_fdiv
+  25              		.section	.text.currentHall,"ax",%progbits
+  26              		.align	2
+  27              		.global	currentHall
+  28              		.thumb
+  29              		.thumb_func
+  30              		.type	currentHall, %function
+  31              	currentHall:
+  32              	.LFB64:
+  33              		.file 1 "BatteryDriver.c"
+   1:BatteryDriver.c **** #include "BatteryDriver.h"
+   2:BatteryDriver.c **** 
+   3:BatteryDriver.c **** float currentHall() {
+  34              		.loc 1 3 0
+  35              		.cfi_startproc
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38 0000 38B5     		push	{r3, r4, r5, lr}
+  39              		.cfi_def_cfa_offset 16
+  40              		.cfi_offset 3, -16
+  41              		.cfi_offset 4, -12
+  42              		.cfi_offset 5, -8
+  43              		.cfi_offset 14, -4
+  44              	.LVL0:
+  45              	.LBB2:
+   4:BatteryDriver.c ****     float sum = 0;
+   5:BatteryDriver.c ****     
+   6:BatteryDriver.c ****     for (int i = 0; i < 1000; i++) {
+  46              		.loc 1 6 0
+  47 0002 0024     		movs	r4, #0
+  48              	.LBE2:
+   4:BatteryDriver.c ****     float sum = 0;
+  49              		.loc 1 4 0
+  50 0004 0025     		movs	r5, #0
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 2
+
+
+  51              	.LBB4:
+  52              		.loc 1 6 0
+  53 0006 17E0     		b	.L2
+  54              	.LVL1:
+  55              	.L3:
+  56              	.LBB3:
+   7:BatteryDriver.c ****         // This iteration summarizes 1000 measurements, with the purpose of returning a mean value.
+   8:BatteryDriver.c ****         int16_t result1 = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16());
+  57              		.loc 1 8 0 discriminator 3
+  58 0008 FFF7FEFF 		bl	ADC_SAR_1_GetResult16
+  59              	.LVL2:
+  60 000c FFF7FEFF 		bl	ADC_SAR_1_CountsTo_mVolts
+  61              	.LVL3:
+   9:BatteryDriver.c ****         float convToAmps = (result1-2.495)/0.3339;
+  62              		.loc 1 9 0 discriminator 3
+  63 0010 FFF7FEFF 		bl	__aeabi_i2d
+  64              	.LVL4:
+  65 0014 0CA3     		adr	r3, .L5
+  66 0016 D3E90023 		ldrd	r2, [r3]
+  67 001a FFF7FEFF 		bl	__aeabi_dsub
+  68              	.LVL5:
+  69 001e 0CA3     		adr	r3, .L5+8
+  70 0020 D3E90023 		ldrd	r2, [r3]
+  71 0024 FFF7FEFF 		bl	__aeabi_ddiv
+  72              	.LVL6:
+  73 0028 FFF7FEFF 		bl	__aeabi_d2f
+  74              	.LVL7:
+  10:BatteryDriver.c ****         
+  11:BatteryDriver.c ****         sum += convToAmps;
+  75              		.loc 1 11 0 discriminator 3
+  76 002c 0146     		mov	r1, r0
+  77 002e 2846     		mov	r0, r5
+  78              	.LVL8:
+  79 0030 FFF7FEFF 		bl	__aeabi_fadd
+  80              	.LVL9:
+  81 0034 0546     		mov	r5, r0
+  82              	.LVL10:
+  83              	.LBE3:
+   6:BatteryDriver.c ****         // This iteration summarizes 1000 measurements, with the purpose of returning a mean value.
+  84              		.loc 1 6 0 discriminator 3
+  85 0036 0134     		adds	r4, r4, #1
+  86              	.LVL11:
+  87              	.L2:
+   6:BatteryDriver.c ****         // This iteration summarizes 1000 measurements, with the purpose of returning a mean value.
+  88              		.loc 1 6 0 is_stmt 0 discriminator 1
+  89 0038 B4F57A7F 		cmp	r4, #1000
+  90 003c E4DB     		blt	.L3
+  91              	.LBE4:
+  12:BatteryDriver.c ****     }
+  13:BatteryDriver.c ****     // Returns the summarization divided with the amount of samples
+  14:BatteryDriver.c ****     return sum / 1000;
+  92              		.loc 1 14 0 is_stmt 1
+  93 003e 0649     		ldr	r1, .L5+16
+  94 0040 2846     		mov	r0, r5
+  95 0042 FFF7FEFF 		bl	__aeabi_fdiv
+  96              	.LVL12:
+  15:BatteryDriver.c **** }
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 3
+
+
+  97              		.loc 1 15 0
+  98 0046 38BD     		pop	{r3, r4, r5, pc}
+  99              	.LVL13:
+ 100              	.L6:
+ 101              		.align	3
+ 102              	.L5:
+ 103 0048 F6285C8F 		.word	-1889785610
+ 104 004c C2F50340 		.word	1074001346
+ 105 0050 029A081B 		.word	453548546
+ 106 0054 9E5ED53F 		.word	1070947998
+ 107 0058 00007A44 		.word	1148846080
+ 108              		.cfi_endproc
+ 109              	.LFE64:
+ 110              		.size	currentHall, .-currentHall
+ 111              		.global	__aeabi_fmul
+ 112              		.global	__aeabi_f2iz
+ 113              		.section	.text.scaledCurrentHall,"ax",%progbits
+ 114              		.align	2
+ 115              		.global	scaledCurrentHall
+ 116              		.thumb
+ 117              		.thumb_func
+ 118              		.type	scaledCurrentHall, %function
+ 119              	scaledCurrentHall:
+ 120              	.LFB65:
+  16:BatteryDriver.c **** 
+  17:BatteryDriver.c **** uint16_t scaledCurrentHall() {
+ 121              		.loc 1 17 0
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 08B5     		push	{r3, lr}
+ 126              		.cfi_def_cfa_offset 8
+ 127              		.cfi_offset 3, -8
+ 128              		.cfi_offset 14, -4
+  18:BatteryDriver.c ****     float current = currentHall();
+ 129              		.loc 1 18 0
+ 130 0002 FFF7FEFF 		bl	currentHall
+ 131              	.LVL14:
+  19:BatteryDriver.c ****     // Scale the current to preserve more decimals. Assuming max expected current is 25.5 amps,
+  20:BatteryDriver.c ****     // we multiply by 100 to preserve two decimal places.
+  21:BatteryDriver.c ****     int scaledCurrent = (int)(current * 100);
+ 132              		.loc 1 21 0
+ 133 0006 0849     		ldr	r1, .L12
+ 134 0008 FFF7FEFF 		bl	__aeabi_fmul
+ 135              	.LVL15:
+ 136 000c FFF7FEFF 		bl	__aeabi_f2iz
+ 137              	.LVL16:
+  22:BatteryDriver.c ****     if (scaledCurrent > 65535) {
+ 138              		.loc 1 22 0
+ 139 0010 B0F5803F 		cmp	r0, #65536
+ 140 0014 02DA     		bge	.L9
+  23:BatteryDriver.c ****         scaledCurrent = 65535;
+  24:BatteryDriver.c ****     } else if (scaledCurrent < 0) {
+ 141              		.loc 1 24 0
+ 142 0016 0028     		cmp	r0, #0
+ 143 0018 04DA     		bge	.L8
+ 144 001a 02E0     		b	.L10
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 4
+
+
+ 145              	.L9:
+  23:BatteryDriver.c ****         scaledCurrent = 65535;
+ 146              		.loc 1 23 0
+ 147 001c 4FF6FF70 		movw	r0, #65535
+ 148              	.LVL17:
+ 149 0020 00E0     		b	.L8
+ 150              	.LVL18:
+ 151              	.L10:
+  25:BatteryDriver.c ****         scaledCurrent = 0;
+ 152              		.loc 1 25 0
+ 153 0022 0020     		movs	r0, #0
+ 154              	.LVL19:
+ 155              	.L8:
+  26:BatteryDriver.c ****     }
+  27:BatteryDriver.c ****     return (uint16_t)scaledCurrent;
+  28:BatteryDriver.c **** }
+ 156              		.loc 1 28 0
+ 157 0024 80B2     		uxth	r0, r0
+ 158              	.LVL20:
+ 159 0026 08BD     		pop	{r3, pc}
+ 160              	.L13:
+ 161              		.align	2
+ 162              	.L12:
+ 163 0028 0000C842 		.word	1120403456
+ 164              		.cfi_endproc
+ 165              	.LFE65:
+ 166              		.size	scaledCurrentHall, .-scaledCurrentHall
+ 167              		.section	.text.voltageDividerToPercent,"ax",%progbits
+ 168              		.align	2
+ 169              		.global	voltageDividerToPercent
+ 170              		.thumb
+ 171              		.thumb_func
+ 172              		.type	voltageDividerToPercent, %function
+ 173              	voltageDividerToPercent:
+ 174              	.LFB66:
+  29:BatteryDriver.c **** 
+  30:BatteryDriver.c **** int16_t voltageDividerToPercent() {
+ 175              		.loc 1 30 0
+ 176              		.cfi_startproc
+ 177              		@ args = 0, pretend = 0, frame = 0
+ 178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 179 0000 08B5     		push	{r3, lr}
+ 180              		.cfi_def_cfa_offset 8
+ 181              		.cfi_offset 3, -8
+ 182              		.cfi_offset 14, -4
+ 183              	.LVL21:
+  31:BatteryDriver.c ****     // Defines the upper and lower limit
+  32:BatteryDriver.c ****     int16_t UpperLimit = 12000;
+  33:BatteryDriver.c ****     int16_t LowerLimit = 8200;
+  34:BatteryDriver.c ****     
+  35:BatteryDriver.c ****     // Converting the ADC value to millivolts
+  36:BatteryDriver.c ****     int16_t result2 = ADC_SAR_2_CountsTo_mVolts(ADC_SAR_2_GetResult16());
+ 184              		.loc 1 36 0
+ 185 0002 FFF7FEFF 		bl	ADC_SAR_2_GetResult16
+ 186              	.LVL22:
+ 187 0006 FFF7FEFF 		bl	ADC_SAR_2_CountsTo_mVolts
+ 188              	.LVL23:
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 5
+
+
+  37:BatteryDriver.c **** 
+  38:BatteryDriver.c ****     // Returns a scaled value that shows the charge state of the battery
+  39:BatteryDriver.c ****     int16_t scaled = (result2 * 3 - LowerLimit) * 100 / (UpperLimit - LowerLimit);
+ 189              		.loc 1 39 0
+ 190 000a 00EB4000 		add	r0, r0, r0, lsl #1
+ 191              	.LVL24:
+ 192 000e A0F50050 		sub	r0, r0, #8192
+ 193 0012 0838     		subs	r0, r0, #8
+ 194 0014 6423     		movs	r3, #100
+ 195 0016 03FB00F0 		mul	r0, r3, r0
+ 196 001a 074B     		ldr	r3, .L18
+ 197 001c 83FB0023 		smull	r2, r3, r3, r0
+ 198 0020 C017     		asrs	r0, r0, #31
+ 199 0022 C0EBA320 		rsb	r0, r0, r3, asr #10
+ 200 0026 00B2     		sxth	r0, r0
+ 201              	.LVL25:
+  40:BatteryDriver.c **** 
+  41:BatteryDriver.c ****     return scaled > 100 ? 100 : (scaled < 0 ? 0 : scaled);
+ 202              		.loc 1 41 0
+ 203 0028 6428     		cmp	r0, #100
+ 204 002a 02DC     		bgt	.L16
+ 205              		.loc 1 41 0 is_stmt 0 discriminator 1
+ 206 002c 20EAE070 		bic	r0, r0, r0, asr #31
+ 207              	.LVL26:
+ 208 0030 08BD     		pop	{r3, pc}
+ 209              	.LVL27:
+ 210              	.L16:
+ 211              		.loc 1 41 0
+ 212 0032 6420     		movs	r0, #100
+ 213              	.LVL28:
+  42:BatteryDriver.c **** }
+ 214              		.loc 1 42 0 is_stmt 1
+ 215 0034 08BD     		pop	{r3, pc}
+ 216              	.L19:
+ 217 0036 00BF     		.align	2
+ 218              	.L18:
+ 219 0038 353AFC44 		.word	1157380661
+ 220              		.cfi_endproc
+ 221              	.LFE66:
+ 222              		.size	voltageDividerToPercent, .-voltageDividerToPercent
+ 223              		.section	.text.ISR_UART_rx_handler,"ax",%progbits
+ 224              		.align	2
+ 225              		.global	ISR_UART_rx_handler
+ 226              		.thumb
+ 227              		.thumb_func
+ 228              		.type	ISR_UART_rx_handler, %function
+ 229              	ISR_UART_rx_handler:
+ 230              	.LFB67:
+  43:BatteryDriver.c **** 
+  44:BatteryDriver.c **** CY_ISR(ISR_UART_rx_handler) {
+ 231              		.loc 1 44 0
+ 232              		.cfi_startproc
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235 0000 38B5     		push	{r3, r4, r5, lr}
+ 236              		.cfi_def_cfa_offset 16
+ 237              		.cfi_offset 3, -16
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 6
+
+
+ 238              		.cfi_offset 4, -12
+ 239              		.cfi_offset 5, -8
+ 240              		.cfi_offset 14, -4
+  45:BatteryDriver.c ****     // ISR routine that handles the receiving data of the UART
+  46:BatteryDriver.c ****     uint8_t bytesToRead = UART_1_GetRxBufferSize();
+ 241              		.loc 1 46 0
+ 242 0002 FFF7FEFF 		bl	UART_1_GetRxBufferSize
+ 243              	.LVL29:
+ 244 0006 0446     		mov	r4, r0
+ 245              	.LVL30:
+  47:BatteryDriver.c ****     while (bytesToRead > 0) {
+ 246              		.loc 1 47 0
+ 247 0008 09E0     		b	.L21
+ 248              	.L22:
+ 249              	.LBB5:
+  48:BatteryDriver.c ****         uint8_t byteReceived = UART_1_ReadRxData();
+ 250              		.loc 1 48 0
+ 251 000a FFF7FEFF 		bl	UART_1_ReadRxData
+ 252              	.LVL31:
+ 253 000e 0546     		mov	r5, r0
+ 254              	.LVL32:
+  49:BatteryDriver.c ****         UART_1_WriteTxData(byteReceived); // echo back
+ 255              		.loc 1 49 0
+ 256 0010 FFF7FEFF 		bl	UART_1_WriteTxData
+ 257              	.LVL33:
+  50:BatteryDriver.c ****         
+  51:BatteryDriver.c ****         handleByteReceived(byteReceived);
+ 258              		.loc 1 51 0
+ 259 0014 2846     		mov	r0, r5
+ 260 0016 FFF7FEFF 		bl	handleByteReceived
+ 261              	.LVL34:
+  52:BatteryDriver.c ****         
+  53:BatteryDriver.c ****         bytesToRead--;
+ 262              		.loc 1 53 0
+ 263 001a 013C     		subs	r4, r4, #1
+ 264              	.LVL35:
+ 265 001c E4B2     		uxtb	r4, r4
+ 266              	.LVL36:
+ 267              	.L21:
+ 268              	.LBE5:
+  47:BatteryDriver.c ****         uint8_t byteReceived = UART_1_ReadRxData();
+ 269              		.loc 1 47 0
+ 270 001e 002C     		cmp	r4, #0
+ 271 0020 F3D1     		bne	.L22
+  54:BatteryDriver.c ****     }
+  55:BatteryDriver.c **** }
+ 272              		.loc 1 55 0
+ 273 0022 38BD     		pop	{r3, r4, r5, pc}
+ 274              		.cfi_endproc
+ 275              	.LFE67:
+ 276              		.size	ISR_UART_rx_handler, .-ISR_UART_rx_handler
+ 277              		.text
+ 278              	.Letext0:
+ 279              		.file 2 "d:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\mac
+ 280              		.file 3 "d:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\sys
+ 281              		.file 4 "Generated_Source\\PSoC5/ADC_SAR_1.h"
+ 282              		.file 5 "Generated_Source\\PSoC5/ADC_SAR_2.h"
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 7
+
+
+ 283              		.file 6 "Generated_Source\\PSoC5/UART_1.h"
+ 284              		.file 7 "BatteryDriver.h"
+ 285              		.file 8 "Generated_Source\\PSoC5/core_cm3.h"
+ 286              		.section	.debug_info,"",%progbits
+ 287              	.Ldebug_info0:
+ 288 0000 DF020000 		.4byte	0x2df
+ 289 0004 0400     		.2byte	0x4
+ 290 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 291 000a 04       		.byte	0x4
+ 292 000b 01       		.uleb128 0x1
+ 293 000c 9F000000 		.4byte	.LASF44
+ 294 0010 0C       		.byte	0xc
+ 295 0011 FE020000 		.4byte	.LASF45
+ 296 0015 DC010000 		.4byte	.LASF46
+ 297 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 298 001d 00000000 		.4byte	0
+ 299 0021 00000000 		.4byte	.Ldebug_line0
+ 300 0025 02       		.uleb128 0x2
+ 301 0026 01       		.byte	0x1
+ 302 0027 06       		.byte	0x6
+ 303 0028 F2020000 		.4byte	.LASF0
+ 304 002c 03       		.uleb128 0x3
+ 305 002d 22000000 		.4byte	.LASF2
+ 306 0031 02       		.byte	0x2
+ 307 0032 1D       		.byte	0x1d
+ 308 0033 37000000 		.4byte	0x37
+ 309 0037 02       		.uleb128 0x2
+ 310 0038 01       		.byte	0x1
+ 311 0039 08       		.byte	0x8
+ 312 003a 91000000 		.4byte	.LASF1
+ 313 003e 03       		.uleb128 0x3
+ 314 003f 2C000000 		.4byte	.LASF3
+ 315 0043 02       		.byte	0x2
+ 316 0044 29       		.byte	0x29
+ 317 0045 49000000 		.4byte	0x49
+ 318 0049 02       		.uleb128 0x2
+ 319 004a 02       		.byte	0x2
+ 320 004b 05       		.byte	0x5
+ 321 004c B6020000 		.4byte	.LASF4
+ 322 0050 03       		.uleb128 0x3
+ 323 0051 C6010000 		.4byte	.LASF5
+ 324 0055 02       		.byte	0x2
+ 325 0056 2B       		.byte	0x2b
+ 326 0057 5B000000 		.4byte	0x5b
+ 327 005b 02       		.uleb128 0x2
+ 328 005c 02       		.byte	0x2
+ 329 005d 07       		.byte	0x7
+ 330 005e 40000000 		.4byte	.LASF6
+ 331 0062 03       		.uleb128 0x3
+ 332 0063 36000000 		.4byte	.LASF7
+ 333 0067 02       		.byte	0x2
+ 334 0068 3F       		.byte	0x3f
+ 335 0069 6D000000 		.4byte	0x6d
+ 336 006d 02       		.uleb128 0x2
+ 337 006e 04       		.byte	0x4
+ 338 006f 05       		.byte	0x5
+ 339 0070 DD020000 		.4byte	.LASF8
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 8
+
+
+ 340 0074 02       		.uleb128 0x2
+ 341 0075 04       		.byte	0x4
+ 342 0076 07       		.byte	0x7
+ 343 0077 54010000 		.4byte	.LASF9
+ 344 007b 02       		.uleb128 0x2
+ 345 007c 08       		.byte	0x8
+ 346 007d 05       		.byte	0x5
+ 347 007e 77020000 		.4byte	.LASF10
+ 348 0082 02       		.uleb128 0x2
+ 349 0083 08       		.byte	0x8
+ 350 0084 07       		.byte	0x7
+ 351 0085 04020000 		.4byte	.LASF11
+ 352 0089 04       		.uleb128 0x4
+ 353 008a 04       		.byte	0x4
+ 354 008b 05       		.byte	0x5
+ 355 008c 696E7400 		.ascii	"int\000"
+ 356 0090 02       		.uleb128 0x2
+ 357 0091 04       		.byte	0x4
+ 358 0092 07       		.byte	0x7
+ 359 0093 F7010000 		.4byte	.LASF12
+ 360 0097 03       		.uleb128 0x3
+ 361 0098 1B020000 		.4byte	.LASF13
+ 362 009c 03       		.byte	0x3
+ 363 009d 18       		.byte	0x18
+ 364 009e 2C000000 		.4byte	0x2c
+ 365 00a2 03       		.uleb128 0x3
+ 366 00a3 3A020000 		.4byte	.LASF14
+ 367 00a7 03       		.byte	0x3
+ 368 00a8 20       		.byte	0x20
+ 369 00a9 3E000000 		.4byte	0x3e
+ 370 00ad 03       		.uleb128 0x3
+ 371 00ae C0020000 		.4byte	.LASF15
+ 372 00b2 03       		.byte	0x3
+ 373 00b3 24       		.byte	0x24
+ 374 00b4 50000000 		.4byte	0x50
+ 375 00b8 03       		.uleb128 0x3
+ 376 00b9 42020000 		.4byte	.LASF16
+ 377 00bd 03       		.byte	0x3
+ 378 00be 2C       		.byte	0x2c
+ 379 00bf 62000000 		.4byte	0x62
+ 380 00c3 02       		.uleb128 0x2
+ 381 00c4 04       		.byte	0x4
+ 382 00c5 04       		.byte	0x4
+ 383 00c6 8B000000 		.4byte	.LASF17
+ 384 00ca 02       		.uleb128 0x2
+ 385 00cb 08       		.byte	0x8
+ 386 00cc 04       		.byte	0x4
+ 387 00cd 6D000000 		.4byte	.LASF18
+ 388 00d1 02       		.uleb128 0x2
+ 389 00d2 01       		.byte	0x1
+ 390 00d3 08       		.byte	0x8
+ 391 00d4 8C020000 		.4byte	.LASF19
+ 392 00d8 02       		.uleb128 0x2
+ 393 00d9 08       		.byte	0x8
+ 394 00da 04       		.byte	0x4
+ 395 00db E6020000 		.4byte	.LASF20
+ 396 00df 02       		.uleb128 0x2
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 9
+
+
+ 397 00e0 04       		.byte	0x4
+ 398 00e1 07       		.byte	0x7
+ 399 00e2 4A020000 		.4byte	.LASF21
+ 400 00e6 05       		.uleb128 0x5
+ 401 00e7 D1020000 		.4byte	.LASF24
+ 402 00eb 01       		.byte	0x1
+ 403 00ec 03       		.byte	0x3
+ 404 00ed C3000000 		.4byte	0xc3
+ 405 00f1 00000000 		.4byte	.LFB64
+ 406 00f5 5C000000 		.4byte	.LFE64-.LFB64
+ 407 00f9 01       		.uleb128 0x1
+ 408 00fa 9C       		.byte	0x9c
+ 409 00fb 5C010000 		.4byte	0x15c
+ 410 00ff 06       		.uleb128 0x6
+ 411 0100 73756D00 		.ascii	"sum\000"
+ 412 0104 01       		.byte	0x1
+ 413 0105 04       		.byte	0x4
+ 414 0106 C3000000 		.4byte	0xc3
+ 415 010a 00000000 		.4byte	.LLST0
+ 416 010e 07       		.uleb128 0x7
+ 417 010f 00000000 		.4byte	.Ldebug_ranges0+0
+ 418 0113 06       		.uleb128 0x6
+ 419 0114 6900     		.ascii	"i\000"
+ 420 0116 01       		.byte	0x1
+ 421 0117 06       		.byte	0x6
+ 422 0118 89000000 		.4byte	0x89
+ 423 011c 39000000 		.4byte	.LLST1
+ 424 0120 08       		.uleb128 0x8
+ 425 0121 08000000 		.4byte	.LBB3
+ 426 0125 2E000000 		.4byte	.LBE3-.LBB3
+ 427 0129 09       		.uleb128 0x9
+ 428 012a 12000000 		.4byte	.LASF22
+ 429 012e 01       		.byte	0x1
+ 430 012f 08       		.byte	0x8
+ 431 0130 A2000000 		.4byte	0xa2
+ 432 0134 58000000 		.4byte	.LLST2
+ 433 0138 09       		.uleb128 0x9
+ 434 0139 D1010000 		.4byte	.LASF23
+ 435 013d 01       		.byte	0x1
+ 436 013e 09       		.byte	0x9
+ 437 013f C3000000 		.4byte	0xc3
+ 438 0143 6B000000 		.4byte	.LLST3
+ 439 0147 0A       		.uleb128 0xa
+ 440 0148 0C000000 		.4byte	.LVL2
+ 441 014c 8A020000 		.4byte	0x28a
+ 442 0150 0A       		.uleb128 0xa
+ 443 0151 10000000 		.4byte	.LVL3
+ 444 0155 95020000 		.4byte	0x295
+ 445 0159 00       		.byte	0
+ 446 015a 00       		.byte	0
+ 447 015b 00       		.byte	0
+ 448 015c 05       		.uleb128 0x5
+ 449 015d 00000000 		.4byte	.LASF25
+ 450 0161 01       		.byte	0x1
+ 451 0162 11       		.byte	0x11
+ 452 0163 AD000000 		.4byte	0xad
+ 453 0167 00000000 		.4byte	.LFB65
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 10
+
+
+ 454 016b 2C000000 		.4byte	.LFE65-.LFB65
+ 455 016f 01       		.uleb128 0x1
+ 456 0170 9C       		.byte	0x9c
+ 457 0171 9D010000 		.4byte	0x19d
+ 458 0175 09       		.uleb128 0x9
+ 459 0176 C9020000 		.4byte	.LASF26
+ 460 017a 01       		.byte	0x1
+ 461 017b 12       		.byte	0x12
+ 462 017c C3000000 		.4byte	0xc3
+ 463 0180 89000000 		.4byte	.LLST4
+ 464 0184 09       		.uleb128 0x9
+ 465 0185 53020000 		.4byte	.LASF27
+ 466 0189 01       		.byte	0x1
+ 467 018a 15       		.byte	0x15
+ 468 018b 89000000 		.4byte	0x89
+ 469 018f 9C000000 		.4byte	.LLST5
+ 470 0193 0A       		.uleb128 0xa
+ 471 0194 06000000 		.4byte	.LVL14
+ 472 0198 E6000000 		.4byte	0xe6
+ 473 019c 00       		.byte	0
+ 474 019d 0B       		.uleb128 0xb
+ 475 019e 8B010000 		.4byte	.LASF28
+ 476 01a2 01       		.byte	0x1
+ 477 01a3 1E       		.byte	0x1e
+ 478 01a4 A2000000 		.4byte	0xa2
+ 479 01a8 00000000 		.4byte	.LFB66
+ 480 01ac 3C000000 		.4byte	.LFE66-.LFB66
+ 481 01b0 01       		.uleb128 0x1
+ 482 01b1 9C       		.byte	0x9c
+ 483 01b2 01020000 		.4byte	0x201
+ 484 01b6 0C       		.uleb128 0xc
+ 485 01b7 91020000 		.4byte	.LASF29
+ 486 01bb 01       		.byte	0x1
+ 487 01bc 20       		.byte	0x20
+ 488 01bd A2000000 		.4byte	0xa2
+ 489 01c1 E02E     		.2byte	0x2ee0
+ 490 01c3 0C       		.uleb128 0xc
+ 491 01c4 80000000 		.4byte	.LASF30
+ 492 01c8 01       		.byte	0x1
+ 493 01c9 21       		.byte	0x21
+ 494 01ca A2000000 		.4byte	0xa2
+ 495 01ce 0820     		.2byte	0x2008
+ 496 01d0 09       		.uleb128 0x9
+ 497 01d1 1A000000 		.4byte	.LASF31
+ 498 01d5 01       		.byte	0x1
+ 499 01d6 24       		.byte	0x24
+ 500 01d7 A2000000 		.4byte	0xa2
+ 501 01db BA000000 		.4byte	.LLST6
+ 502 01df 09       		.uleb128 0x9
+ 503 01e0 85020000 		.4byte	.LASF32
+ 504 01e4 01       		.byte	0x1
+ 505 01e5 27       		.byte	0x27
+ 506 01e6 A2000000 		.4byte	0xa2
+ 507 01ea CD000000 		.4byte	.LLST7
+ 508 01ee 0A       		.uleb128 0xa
+ 509 01ef 06000000 		.4byte	.LVL22
+ 510 01f3 A0020000 		.4byte	0x2a0
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 11
+
+
+ 511 01f7 0A       		.uleb128 0xa
+ 512 01f8 0A000000 		.4byte	.LVL23
+ 513 01fc AB020000 		.4byte	0x2ab
+ 514 0200 00       		.byte	0
+ 515 0201 0D       		.uleb128 0xd
+ 516 0202 40010000 		.4byte	.LASF33
+ 517 0206 01       		.byte	0x1
+ 518 0207 2C       		.byte	0x2c
+ 519 0208 00000000 		.4byte	.LFB67
+ 520 020c 24000000 		.4byte	.LFE67-.LFB67
+ 521 0210 01       		.uleb128 0x1
+ 522 0211 9C       		.byte	0x9c
+ 523 0212 79020000 		.4byte	0x279
+ 524 0216 09       		.uleb128 0x9
+ 525 0217 74000000 		.4byte	.LASF34
+ 526 021b 01       		.byte	0x1
+ 527 021c 2E       		.byte	0x2e
+ 528 021d 97000000 		.4byte	0x97
+ 529 0221 EB000000 		.4byte	.LLST8
+ 530 0225 0E       		.uleb128 0xe
+ 531 0226 0A000000 		.4byte	.LBB5
+ 532 022a 14000000 		.4byte	.LBE5-.LBB5
+ 533 022e 6F020000 		.4byte	0x26f
+ 534 0232 09       		.uleb128 0x9
+ 535 0233 0E030000 		.4byte	.LASF35
+ 536 0237 01       		.byte	0x1
+ 537 0238 30       		.byte	0x30
+ 538 0239 97000000 		.4byte	0x97
+ 539 023d 09010000 		.4byte	.LLST9
+ 540 0241 0A       		.uleb128 0xa
+ 541 0242 0E000000 		.4byte	.LVL31
+ 542 0246 B6020000 		.4byte	0x2b6
+ 543 024a 0F       		.uleb128 0xf
+ 544 024b 14000000 		.4byte	.LVL33
+ 545 024f C1020000 		.4byte	0x2c1
+ 546 0253 5E020000 		.4byte	0x25e
+ 547 0257 10       		.uleb128 0x10
+ 548 0258 01       		.uleb128 0x1
+ 549 0259 50       		.byte	0x50
+ 550 025a 02       		.uleb128 0x2
+ 551 025b 75       		.byte	0x75
+ 552 025c 00       		.sleb128 0
+ 553 025d 00       		.byte	0
+ 554 025e 11       		.uleb128 0x11
+ 555 025f 1A000000 		.4byte	.LVL34
+ 556 0263 CC020000 		.4byte	0x2cc
+ 557 0267 10       		.uleb128 0x10
+ 558 0268 01       		.uleb128 0x1
+ 559 0269 50       		.byte	0x50
+ 560 026a 02       		.uleb128 0x2
+ 561 026b 75       		.byte	0x75
+ 562 026c 00       		.sleb128 0
+ 563 026d 00       		.byte	0
+ 564 026e 00       		.byte	0
+ 565 026f 0A       		.uleb128 0xa
+ 566 0270 06000000 		.4byte	.LVL29
+ 567 0274 D7020000 		.4byte	0x2d7
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 12
+
+
+ 568 0278 00       		.byte	0
+ 569 0279 12       		.uleb128 0x12
+ 570 027a A3010000 		.4byte	.LASF47
+ 571 027e 08       		.byte	0x8
+ 572 027f 1207     		.2byte	0x712
+ 573 0281 85020000 		.4byte	0x285
+ 574 0285 13       		.uleb128 0x13
+ 575 0286 B8000000 		.4byte	0xb8
+ 576 028a 14       		.uleb128 0x14
+ 577 028b 61020000 		.4byte	.LASF36
+ 578 028f 61020000 		.4byte	.LASF36
+ 579 0293 04       		.byte	0x4
+ 580 0294 3B       		.byte	0x3b
+ 581 0295 14       		.uleb128 0x14
+ 582 0296 53000000 		.4byte	.LASF37
+ 583 029a 53000000 		.4byte	.LASF37
+ 584 029e 04       		.byte	0x4
+ 585 029f 3F       		.byte	0x3f
+ 586 02a0 14       		.uleb128 0x14
+ 587 02a1 B0010000 		.4byte	.LASF38
+ 588 02a5 B0010000 		.4byte	.LASF38
+ 589 02a9 05       		.byte	0x5
+ 590 02aa 3B       		.byte	0x3b
+ 591 02ab 14       		.uleb128 0x14
+ 592 02ac 9C020000 		.4byte	.LASF39
+ 593 02b0 9C020000 		.4byte	.LASF39
+ 594 02b4 05       		.byte	0x5
+ 595 02b5 3F       		.byte	0x3f
+ 596 02b6 14       		.uleb128 0x14
+ 597 02b7 66010000 		.4byte	.LASF40
+ 598 02bb 66010000 		.4byte	.LASF40
+ 599 02bf 06       		.byte	0x6
+ 600 02c0 6F       		.byte	0x6f
+ 601 02c1 14       		.uleb128 0x14
+ 602 02c2 2D010000 		.4byte	.LASF41
+ 603 02c6 2D010000 		.4byte	.LASF41
+ 604 02ca 06       		.byte	0x6
+ 605 02cb 88       		.byte	0x88
+ 606 02cc 14       		.uleb128 0x14
+ 607 02cd 78010000 		.4byte	.LASF42
+ 608 02d1 78010000 		.4byte	.LASF42
+ 609 02d5 07       		.byte	0x7
+ 610 02d6 0F       		.byte	0xf
+ 611 02d7 14       		.uleb128 0x14
+ 612 02d8 23020000 		.4byte	.LASF43
+ 613 02dc 23020000 		.4byte	.LASF43
+ 614 02e0 06       		.byte	0x6
+ 615 02e1 73       		.byte	0x73
+ 616 02e2 00       		.byte	0
+ 617              		.section	.debug_abbrev,"",%progbits
+ 618              	.Ldebug_abbrev0:
+ 619 0000 01       		.uleb128 0x1
+ 620 0001 11       		.uleb128 0x11
+ 621 0002 01       		.byte	0x1
+ 622 0003 25       		.uleb128 0x25
+ 623 0004 0E       		.uleb128 0xe
+ 624 0005 13       		.uleb128 0x13
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 13
+
+
+ 625 0006 0B       		.uleb128 0xb
+ 626 0007 03       		.uleb128 0x3
+ 627 0008 0E       		.uleb128 0xe
+ 628 0009 1B       		.uleb128 0x1b
+ 629 000a 0E       		.uleb128 0xe
+ 630 000b 55       		.uleb128 0x55
+ 631 000c 17       		.uleb128 0x17
+ 632 000d 11       		.uleb128 0x11
+ 633 000e 01       		.uleb128 0x1
+ 634 000f 10       		.uleb128 0x10
+ 635 0010 17       		.uleb128 0x17
+ 636 0011 00       		.byte	0
+ 637 0012 00       		.byte	0
+ 638 0013 02       		.uleb128 0x2
+ 639 0014 24       		.uleb128 0x24
+ 640 0015 00       		.byte	0
+ 641 0016 0B       		.uleb128 0xb
+ 642 0017 0B       		.uleb128 0xb
+ 643 0018 3E       		.uleb128 0x3e
+ 644 0019 0B       		.uleb128 0xb
+ 645 001a 03       		.uleb128 0x3
+ 646 001b 0E       		.uleb128 0xe
+ 647 001c 00       		.byte	0
+ 648 001d 00       		.byte	0
+ 649 001e 03       		.uleb128 0x3
+ 650 001f 16       		.uleb128 0x16
+ 651 0020 00       		.byte	0
+ 652 0021 03       		.uleb128 0x3
+ 653 0022 0E       		.uleb128 0xe
+ 654 0023 3A       		.uleb128 0x3a
+ 655 0024 0B       		.uleb128 0xb
+ 656 0025 3B       		.uleb128 0x3b
+ 657 0026 0B       		.uleb128 0xb
+ 658 0027 49       		.uleb128 0x49
+ 659 0028 13       		.uleb128 0x13
+ 660 0029 00       		.byte	0
+ 661 002a 00       		.byte	0
+ 662 002b 04       		.uleb128 0x4
+ 663 002c 24       		.uleb128 0x24
+ 664 002d 00       		.byte	0
+ 665 002e 0B       		.uleb128 0xb
+ 666 002f 0B       		.uleb128 0xb
+ 667 0030 3E       		.uleb128 0x3e
+ 668 0031 0B       		.uleb128 0xb
+ 669 0032 03       		.uleb128 0x3
+ 670 0033 08       		.uleb128 0x8
+ 671 0034 00       		.byte	0
+ 672 0035 00       		.byte	0
+ 673 0036 05       		.uleb128 0x5
+ 674 0037 2E       		.uleb128 0x2e
+ 675 0038 01       		.byte	0x1
+ 676 0039 3F       		.uleb128 0x3f
+ 677 003a 19       		.uleb128 0x19
+ 678 003b 03       		.uleb128 0x3
+ 679 003c 0E       		.uleb128 0xe
+ 680 003d 3A       		.uleb128 0x3a
+ 681 003e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 14
+
+
+ 682 003f 3B       		.uleb128 0x3b
+ 683 0040 0B       		.uleb128 0xb
+ 684 0041 49       		.uleb128 0x49
+ 685 0042 13       		.uleb128 0x13
+ 686 0043 11       		.uleb128 0x11
+ 687 0044 01       		.uleb128 0x1
+ 688 0045 12       		.uleb128 0x12
+ 689 0046 06       		.uleb128 0x6
+ 690 0047 40       		.uleb128 0x40
+ 691 0048 18       		.uleb128 0x18
+ 692 0049 9642     		.uleb128 0x2116
+ 693 004b 19       		.uleb128 0x19
+ 694 004c 01       		.uleb128 0x1
+ 695 004d 13       		.uleb128 0x13
+ 696 004e 00       		.byte	0
+ 697 004f 00       		.byte	0
+ 698 0050 06       		.uleb128 0x6
+ 699 0051 34       		.uleb128 0x34
+ 700 0052 00       		.byte	0
+ 701 0053 03       		.uleb128 0x3
+ 702 0054 08       		.uleb128 0x8
+ 703 0055 3A       		.uleb128 0x3a
+ 704 0056 0B       		.uleb128 0xb
+ 705 0057 3B       		.uleb128 0x3b
+ 706 0058 0B       		.uleb128 0xb
+ 707 0059 49       		.uleb128 0x49
+ 708 005a 13       		.uleb128 0x13
+ 709 005b 02       		.uleb128 0x2
+ 710 005c 17       		.uleb128 0x17
+ 711 005d 00       		.byte	0
+ 712 005e 00       		.byte	0
+ 713 005f 07       		.uleb128 0x7
+ 714 0060 0B       		.uleb128 0xb
+ 715 0061 01       		.byte	0x1
+ 716 0062 55       		.uleb128 0x55
+ 717 0063 17       		.uleb128 0x17
+ 718 0064 00       		.byte	0
+ 719 0065 00       		.byte	0
+ 720 0066 08       		.uleb128 0x8
+ 721 0067 0B       		.uleb128 0xb
+ 722 0068 01       		.byte	0x1
+ 723 0069 11       		.uleb128 0x11
+ 724 006a 01       		.uleb128 0x1
+ 725 006b 12       		.uleb128 0x12
+ 726 006c 06       		.uleb128 0x6
+ 727 006d 00       		.byte	0
+ 728 006e 00       		.byte	0
+ 729 006f 09       		.uleb128 0x9
+ 730 0070 34       		.uleb128 0x34
+ 731 0071 00       		.byte	0
+ 732 0072 03       		.uleb128 0x3
+ 733 0073 0E       		.uleb128 0xe
+ 734 0074 3A       		.uleb128 0x3a
+ 735 0075 0B       		.uleb128 0xb
+ 736 0076 3B       		.uleb128 0x3b
+ 737 0077 0B       		.uleb128 0xb
+ 738 0078 49       		.uleb128 0x49
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 15
+
+
+ 739 0079 13       		.uleb128 0x13
+ 740 007a 02       		.uleb128 0x2
+ 741 007b 17       		.uleb128 0x17
+ 742 007c 00       		.byte	0
+ 743 007d 00       		.byte	0
+ 744 007e 0A       		.uleb128 0xa
+ 745 007f 898201   		.uleb128 0x4109
+ 746 0082 00       		.byte	0
+ 747 0083 11       		.uleb128 0x11
+ 748 0084 01       		.uleb128 0x1
+ 749 0085 31       		.uleb128 0x31
+ 750 0086 13       		.uleb128 0x13
+ 751 0087 00       		.byte	0
+ 752 0088 00       		.byte	0
+ 753 0089 0B       		.uleb128 0xb
+ 754 008a 2E       		.uleb128 0x2e
+ 755 008b 01       		.byte	0x1
+ 756 008c 3F       		.uleb128 0x3f
+ 757 008d 19       		.uleb128 0x19
+ 758 008e 03       		.uleb128 0x3
+ 759 008f 0E       		.uleb128 0xe
+ 760 0090 3A       		.uleb128 0x3a
+ 761 0091 0B       		.uleb128 0xb
+ 762 0092 3B       		.uleb128 0x3b
+ 763 0093 0B       		.uleb128 0xb
+ 764 0094 49       		.uleb128 0x49
+ 765 0095 13       		.uleb128 0x13
+ 766 0096 11       		.uleb128 0x11
+ 767 0097 01       		.uleb128 0x1
+ 768 0098 12       		.uleb128 0x12
+ 769 0099 06       		.uleb128 0x6
+ 770 009a 40       		.uleb128 0x40
+ 771 009b 18       		.uleb128 0x18
+ 772 009c 9742     		.uleb128 0x2117
+ 773 009e 19       		.uleb128 0x19
+ 774 009f 01       		.uleb128 0x1
+ 775 00a0 13       		.uleb128 0x13
+ 776 00a1 00       		.byte	0
+ 777 00a2 00       		.byte	0
+ 778 00a3 0C       		.uleb128 0xc
+ 779 00a4 34       		.uleb128 0x34
+ 780 00a5 00       		.byte	0
+ 781 00a6 03       		.uleb128 0x3
+ 782 00a7 0E       		.uleb128 0xe
+ 783 00a8 3A       		.uleb128 0x3a
+ 784 00a9 0B       		.uleb128 0xb
+ 785 00aa 3B       		.uleb128 0x3b
+ 786 00ab 0B       		.uleb128 0xb
+ 787 00ac 49       		.uleb128 0x49
+ 788 00ad 13       		.uleb128 0x13
+ 789 00ae 1C       		.uleb128 0x1c
+ 790 00af 05       		.uleb128 0x5
+ 791 00b0 00       		.byte	0
+ 792 00b1 00       		.byte	0
+ 793 00b2 0D       		.uleb128 0xd
+ 794 00b3 2E       		.uleb128 0x2e
+ 795 00b4 01       		.byte	0x1
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 16
+
+
+ 796 00b5 3F       		.uleb128 0x3f
+ 797 00b6 19       		.uleb128 0x19
+ 798 00b7 03       		.uleb128 0x3
+ 799 00b8 0E       		.uleb128 0xe
+ 800 00b9 3A       		.uleb128 0x3a
+ 801 00ba 0B       		.uleb128 0xb
+ 802 00bb 3B       		.uleb128 0x3b
+ 803 00bc 0B       		.uleb128 0xb
+ 804 00bd 27       		.uleb128 0x27
+ 805 00be 19       		.uleb128 0x19
+ 806 00bf 11       		.uleb128 0x11
+ 807 00c0 01       		.uleb128 0x1
+ 808 00c1 12       		.uleb128 0x12
+ 809 00c2 06       		.uleb128 0x6
+ 810 00c3 40       		.uleb128 0x40
+ 811 00c4 18       		.uleb128 0x18
+ 812 00c5 9742     		.uleb128 0x2117
+ 813 00c7 19       		.uleb128 0x19
+ 814 00c8 01       		.uleb128 0x1
+ 815 00c9 13       		.uleb128 0x13
+ 816 00ca 00       		.byte	0
+ 817 00cb 00       		.byte	0
+ 818 00cc 0E       		.uleb128 0xe
+ 819 00cd 0B       		.uleb128 0xb
+ 820 00ce 01       		.byte	0x1
+ 821 00cf 11       		.uleb128 0x11
+ 822 00d0 01       		.uleb128 0x1
+ 823 00d1 12       		.uleb128 0x12
+ 824 00d2 06       		.uleb128 0x6
+ 825 00d3 01       		.uleb128 0x1
+ 826 00d4 13       		.uleb128 0x13
+ 827 00d5 00       		.byte	0
+ 828 00d6 00       		.byte	0
+ 829 00d7 0F       		.uleb128 0xf
+ 830 00d8 898201   		.uleb128 0x4109
+ 831 00db 01       		.byte	0x1
+ 832 00dc 11       		.uleb128 0x11
+ 833 00dd 01       		.uleb128 0x1
+ 834 00de 31       		.uleb128 0x31
+ 835 00df 13       		.uleb128 0x13
+ 836 00e0 01       		.uleb128 0x1
+ 837 00e1 13       		.uleb128 0x13
+ 838 00e2 00       		.byte	0
+ 839 00e3 00       		.byte	0
+ 840 00e4 10       		.uleb128 0x10
+ 841 00e5 8A8201   		.uleb128 0x410a
+ 842 00e8 00       		.byte	0
+ 843 00e9 02       		.uleb128 0x2
+ 844 00ea 18       		.uleb128 0x18
+ 845 00eb 9142     		.uleb128 0x2111
+ 846 00ed 18       		.uleb128 0x18
+ 847 00ee 00       		.byte	0
+ 848 00ef 00       		.byte	0
+ 849 00f0 11       		.uleb128 0x11
+ 850 00f1 898201   		.uleb128 0x4109
+ 851 00f4 01       		.byte	0x1
+ 852 00f5 11       		.uleb128 0x11
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 17
+
+
+ 853 00f6 01       		.uleb128 0x1
+ 854 00f7 31       		.uleb128 0x31
+ 855 00f8 13       		.uleb128 0x13
+ 856 00f9 00       		.byte	0
+ 857 00fa 00       		.byte	0
+ 858 00fb 12       		.uleb128 0x12
+ 859 00fc 34       		.uleb128 0x34
+ 860 00fd 00       		.byte	0
+ 861 00fe 03       		.uleb128 0x3
+ 862 00ff 0E       		.uleb128 0xe
+ 863 0100 3A       		.uleb128 0x3a
+ 864 0101 0B       		.uleb128 0xb
+ 865 0102 3B       		.uleb128 0x3b
+ 866 0103 05       		.uleb128 0x5
+ 867 0104 49       		.uleb128 0x49
+ 868 0105 13       		.uleb128 0x13
+ 869 0106 3F       		.uleb128 0x3f
+ 870 0107 19       		.uleb128 0x19
+ 871 0108 3C       		.uleb128 0x3c
+ 872 0109 19       		.uleb128 0x19
+ 873 010a 00       		.byte	0
+ 874 010b 00       		.byte	0
+ 875 010c 13       		.uleb128 0x13
+ 876 010d 35       		.uleb128 0x35
+ 877 010e 00       		.byte	0
+ 878 010f 49       		.uleb128 0x49
+ 879 0110 13       		.uleb128 0x13
+ 880 0111 00       		.byte	0
+ 881 0112 00       		.byte	0
+ 882 0113 14       		.uleb128 0x14
+ 883 0114 2E       		.uleb128 0x2e
+ 884 0115 00       		.byte	0
+ 885 0116 3F       		.uleb128 0x3f
+ 886 0117 19       		.uleb128 0x19
+ 887 0118 3C       		.uleb128 0x3c
+ 888 0119 19       		.uleb128 0x19
+ 889 011a 6E       		.uleb128 0x6e
+ 890 011b 0E       		.uleb128 0xe
+ 891 011c 03       		.uleb128 0x3
+ 892 011d 0E       		.uleb128 0xe
+ 893 011e 3A       		.uleb128 0x3a
+ 894 011f 0B       		.uleb128 0xb
+ 895 0120 3B       		.uleb128 0x3b
+ 896 0121 0B       		.uleb128 0xb
+ 897 0122 00       		.byte	0
+ 898 0123 00       		.byte	0
+ 899 0124 00       		.byte	0
+ 900              		.section	.debug_loc,"",%progbits
+ 901              	.Ldebug_loc0:
+ 902              	.LLST0:
+ 903 0000 02000000 		.4byte	.LVL0
+ 904 0004 08000000 		.4byte	.LVL1
+ 905 0008 0600     		.2byte	0x6
+ 906 000a 9E       		.byte	0x9e
+ 907 000b 04       		.uleb128 0x4
+ 908 000c 00000000 		.4byte	0
+ 909 0010 08000000 		.4byte	.LVL1
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 18
+
+
+ 910 0014 36000000 		.4byte	.LVL10
+ 911 0018 0100     		.2byte	0x1
+ 912 001a 55       		.byte	0x55
+ 913 001b 36000000 		.4byte	.LVL10
+ 914 001f 38000000 		.4byte	.LVL11
+ 915 0023 0100     		.2byte	0x1
+ 916 0025 50       		.byte	0x50
+ 917 0026 38000000 		.4byte	.LVL11
+ 918 002a 48000000 		.4byte	.LVL13
+ 919 002e 0100     		.2byte	0x1
+ 920 0030 55       		.byte	0x55
+ 921 0031 00000000 		.4byte	0
+ 922 0035 00000000 		.4byte	0
+ 923              	.LLST1:
+ 924 0039 02000000 		.4byte	.LVL0
+ 925 003d 08000000 		.4byte	.LVL1
+ 926 0041 0200     		.2byte	0x2
+ 927 0043 30       		.byte	0x30
+ 928 0044 9F       		.byte	0x9f
+ 929 0045 08000000 		.4byte	.LVL1
+ 930 0049 48000000 		.4byte	.LVL13
+ 931 004d 0100     		.2byte	0x1
+ 932 004f 54       		.byte	0x54
+ 933 0050 00000000 		.4byte	0
+ 934 0054 00000000 		.4byte	0
+ 935              	.LLST2:
+ 936 0058 10000000 		.4byte	.LVL3
+ 937 005c 13000000 		.4byte	.LVL4-1
+ 938 0060 0100     		.2byte	0x1
+ 939 0062 50       		.byte	0x50
+ 940 0063 00000000 		.4byte	0
+ 941 0067 00000000 		.4byte	0
+ 942              	.LLST3:
+ 943 006b 2C000000 		.4byte	.LVL7
+ 944 006f 30000000 		.4byte	.LVL8
+ 945 0073 0100     		.2byte	0x1
+ 946 0075 50       		.byte	0x50
+ 947 0076 30000000 		.4byte	.LVL8
+ 948 007a 33000000 		.4byte	.LVL9-1
+ 949 007e 0100     		.2byte	0x1
+ 950 0080 51       		.byte	0x51
+ 951 0081 00000000 		.4byte	0
+ 952 0085 00000000 		.4byte	0
+ 953              	.LLST4:
+ 954 0089 06000000 		.4byte	.LVL14
+ 955 008d 0B000000 		.4byte	.LVL15-1
+ 956 0091 0100     		.2byte	0x1
+ 957 0093 50       		.byte	0x50
+ 958 0094 00000000 		.4byte	0
+ 959 0098 00000000 		.4byte	0
+ 960              	.LLST5:
+ 961 009c 10000000 		.4byte	.LVL16
+ 962 00a0 20000000 		.4byte	.LVL17
+ 963 00a4 0100     		.2byte	0x1
+ 964 00a6 50       		.byte	0x50
+ 965 00a7 22000000 		.4byte	.LVL18
+ 966 00ab 26000000 		.4byte	.LVL20
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 19
+
+
+ 967 00af 0100     		.2byte	0x1
+ 968 00b1 50       		.byte	0x50
+ 969 00b2 00000000 		.4byte	0
+ 970 00b6 00000000 		.4byte	0
+ 971              	.LLST6:
+ 972 00ba 0A000000 		.4byte	.LVL23
+ 973 00be 0E000000 		.4byte	.LVL24
+ 974 00c2 0100     		.2byte	0x1
+ 975 00c4 50       		.byte	0x50
+ 976 00c5 00000000 		.4byte	0
+ 977 00c9 00000000 		.4byte	0
+ 978              	.LLST7:
+ 979 00cd 28000000 		.4byte	.LVL25
+ 980 00d1 30000000 		.4byte	.LVL26
+ 981 00d5 0100     		.2byte	0x1
+ 982 00d7 50       		.byte	0x50
+ 983 00d8 32000000 		.4byte	.LVL27
+ 984 00dc 34000000 		.4byte	.LVL28
+ 985 00e0 0100     		.2byte	0x1
+ 986 00e2 50       		.byte	0x50
+ 987 00e3 00000000 		.4byte	0
+ 988 00e7 00000000 		.4byte	0
+ 989              	.LLST8:
+ 990 00eb 08000000 		.4byte	.LVL30
+ 991 00ef 1C000000 		.4byte	.LVL35
+ 992 00f3 0100     		.2byte	0x1
+ 993 00f5 54       		.byte	0x54
+ 994 00f6 1E000000 		.4byte	.LVL36
+ 995 00fa 24000000 		.4byte	.LFE67
+ 996 00fe 0100     		.2byte	0x1
+ 997 0100 54       		.byte	0x54
+ 998 0101 00000000 		.4byte	0
+ 999 0105 00000000 		.4byte	0
+ 1000              	.LLST9:
+ 1001 0109 10000000 		.4byte	.LVL32
+ 1002 010d 1E000000 		.4byte	.LVL36
+ 1003 0111 0100     		.2byte	0x1
+ 1004 0113 55       		.byte	0x55
+ 1005 0114 00000000 		.4byte	0
+ 1006 0118 00000000 		.4byte	0
+ 1007              		.section	.debug_aranges,"",%progbits
+ 1008 0000 34000000 		.4byte	0x34
+ 1009 0004 0200     		.2byte	0x2
+ 1010 0006 00000000 		.4byte	.Ldebug_info0
+ 1011 000a 04       		.byte	0x4
+ 1012 000b 00       		.byte	0
+ 1013 000c 0000     		.2byte	0
+ 1014 000e 0000     		.2byte	0
+ 1015 0010 00000000 		.4byte	.LFB64
+ 1016 0014 5C000000 		.4byte	.LFE64-.LFB64
+ 1017 0018 00000000 		.4byte	.LFB65
+ 1018 001c 2C000000 		.4byte	.LFE65-.LFB65
+ 1019 0020 00000000 		.4byte	.LFB66
+ 1020 0024 3C000000 		.4byte	.LFE66-.LFB66
+ 1021 0028 00000000 		.4byte	.LFB67
+ 1022 002c 24000000 		.4byte	.LFE67-.LFB67
+ 1023 0030 00000000 		.4byte	0
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 20
+
+
+ 1024 0034 00000000 		.4byte	0
+ 1025              		.section	.debug_ranges,"",%progbits
+ 1026              	.Ldebug_ranges0:
+ 1027 0000 02000000 		.4byte	.LBB2
+ 1028 0004 04000000 		.4byte	.LBE2
+ 1029 0008 06000000 		.4byte	.LBB4
+ 1030 000c 3E000000 		.4byte	.LBE4
+ 1031 0010 00000000 		.4byte	0
+ 1032 0014 00000000 		.4byte	0
+ 1033 0018 00000000 		.4byte	.LFB64
+ 1034 001c 5C000000 		.4byte	.LFE64
+ 1035 0020 00000000 		.4byte	.LFB65
+ 1036 0024 2C000000 		.4byte	.LFE65
+ 1037 0028 00000000 		.4byte	.LFB66
+ 1038 002c 3C000000 		.4byte	.LFE66
+ 1039 0030 00000000 		.4byte	.LFB67
+ 1040 0034 24000000 		.4byte	.LFE67
+ 1041 0038 00000000 		.4byte	0
+ 1042 003c 00000000 		.4byte	0
+ 1043              		.section	.debug_line,"",%progbits
+ 1044              	.Ldebug_line0:
+ 1045 0000 CA010000 		.section	.debug_str,"MS",%progbits,1
+ 1045      02004D01 
+ 1045      00000201 
+ 1045      FB0E0D00 
+ 1045      01010101 
+ 1046              	.LASF25:
+ 1047 0000 7363616C 		.ascii	"scaledCurrentHall\000"
+ 1047      65644375 
+ 1047      7272656E 
+ 1047      7448616C 
+ 1047      6C00
+ 1048              	.LASF22:
+ 1049 0012 72657375 		.ascii	"result1\000"
+ 1049      6C743100 
+ 1050              	.LASF31:
+ 1051 001a 72657375 		.ascii	"result2\000"
+ 1051      6C743200 
+ 1052              	.LASF2:
+ 1053 0022 5F5F7569 		.ascii	"__uint8_t\000"
+ 1053      6E74385F 
+ 1053      7400
+ 1054              	.LASF3:
+ 1055 002c 5F5F696E 		.ascii	"__int16_t\000"
+ 1055      7431365F 
+ 1055      7400
+ 1056              	.LASF7:
+ 1057 0036 5F5F696E 		.ascii	"__int32_t\000"
+ 1057      7433325F 
+ 1057      7400
+ 1058              	.LASF6:
+ 1059 0040 73686F72 		.ascii	"short unsigned int\000"
+ 1059      7420756E 
+ 1059      7369676E 
+ 1059      65642069 
+ 1059      6E7400
+ 1060              	.LASF37:
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 21
+
+
+ 1061 0053 4144435F 		.ascii	"ADC_SAR_1_CountsTo_mVolts\000"
+ 1061      5341525F 
+ 1061      315F436F 
+ 1061      756E7473 
+ 1061      546F5F6D 
+ 1062              	.LASF18:
+ 1063 006d 646F7562 		.ascii	"double\000"
+ 1063      6C6500
+ 1064              	.LASF34:
+ 1065 0074 62797465 		.ascii	"bytesToRead\000"
+ 1065      73546F52 
+ 1065      65616400 
+ 1066              	.LASF30:
+ 1067 0080 4C6F7765 		.ascii	"LowerLimit\000"
+ 1067      724C696D 
+ 1067      697400
+ 1068              	.LASF17:
+ 1069 008b 666C6F61 		.ascii	"float\000"
+ 1069      7400
+ 1070              	.LASF1:
+ 1071 0091 756E7369 		.ascii	"unsigned char\000"
+ 1071      676E6564 
+ 1071      20636861 
+ 1071      7200
+ 1072              	.LASF44:
+ 1073 009f 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1073      43313120 
+ 1073      352E342E 
+ 1073      31203230 
+ 1073      31363036 
+ 1074 00d2 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1074      20726576 
+ 1074      6973696F 
+ 1074      6E203233 
+ 1074      37373135 
+ 1075 0105 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1075      66756E63 
+ 1075      74696F6E 
+ 1075      2D736563 
+ 1075      74696F6E 
+ 1076              	.LASF41:
+ 1077 012d 55415254 		.ascii	"UART_1_WriteTxData\000"
+ 1077      5F315F57 
+ 1077      72697465 
+ 1077      54784461 
+ 1077      746100
+ 1078              	.LASF33:
+ 1079 0140 4953525F 		.ascii	"ISR_UART_rx_handler\000"
+ 1079      55415254 
+ 1079      5F72785F 
+ 1079      68616E64 
+ 1079      6C657200 
+ 1080              	.LASF9:
+ 1081 0154 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1081      20756E73 
+ 1081      69676E65 
+ 1081      6420696E 
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 22
+
+
+ 1081      7400
+ 1082              	.LASF40:
+ 1083 0166 55415254 		.ascii	"UART_1_ReadRxData\000"
+ 1083      5F315F52 
+ 1083      65616452 
+ 1083      78446174 
+ 1083      6100
+ 1084              	.LASF42:
+ 1085 0178 68616E64 		.ascii	"handleByteReceived\000"
+ 1085      6C654279 
+ 1085      74655265 
+ 1085      63656976 
+ 1085      656400
+ 1086              	.LASF28:
+ 1087 018b 766F6C74 		.ascii	"voltageDividerToPercent\000"
+ 1087      61676544 
+ 1087      69766964 
+ 1087      6572546F 
+ 1087      50657263 
+ 1088              	.LASF47:
+ 1089 01a3 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1089      52784275 
+ 1089      66666572 
+ 1089      00
+ 1090              	.LASF38:
+ 1091 01b0 4144435F 		.ascii	"ADC_SAR_2_GetResult16\000"
+ 1091      5341525F 
+ 1091      325F4765 
+ 1091      74526573 
+ 1091      756C7431 
+ 1092              	.LASF5:
+ 1093 01c6 5F5F7569 		.ascii	"__uint16_t\000"
+ 1093      6E743136 
+ 1093      5F7400
+ 1094              	.LASF23:
+ 1095 01d1 636F6E76 		.ascii	"convToAmps\000"
+ 1095      546F416D 
+ 1095      707300
+ 1096              	.LASF46:
+ 1097 01dc 453A5C57 		.ascii	"E:\\WAM_PSoC\\Wam_PSoC.cydsn\000"
+ 1097      414D5F50 
+ 1097      536F435C 
+ 1097      57616D5F 
+ 1097      50536F43 
+ 1098              	.LASF12:
+ 1099 01f7 756E7369 		.ascii	"unsigned int\000"
+ 1099      676E6564 
+ 1099      20696E74 
+ 1099      00
+ 1100              	.LASF11:
+ 1101 0204 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1101      206C6F6E 
+ 1101      6720756E 
+ 1101      7369676E 
+ 1101      65642069 
+ 1102              	.LASF13:
+ 1103 021b 75696E74 		.ascii	"uint8_t\000"
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 23
+
+
+ 1103      385F7400 
+ 1104              	.LASF43:
+ 1105 0223 55415254 		.ascii	"UART_1_GetRxBufferSize\000"
+ 1105      5F315F47 
+ 1105      65745278 
+ 1105      42756666 
+ 1105      65725369 
+ 1106              	.LASF14:
+ 1107 023a 696E7431 		.ascii	"int16_t\000"
+ 1107      365F7400 
+ 1108              	.LASF16:
+ 1109 0242 696E7433 		.ascii	"int32_t\000"
+ 1109      325F7400 
+ 1110              	.LASF21:
+ 1111 024a 73697A65 		.ascii	"sizetype\000"
+ 1111      74797065 
+ 1111      00
+ 1112              	.LASF27:
+ 1113 0253 7363616C 		.ascii	"scaledCurrent\000"
+ 1113      65644375 
+ 1113      7272656E 
+ 1113      7400
+ 1114              	.LASF36:
+ 1115 0261 4144435F 		.ascii	"ADC_SAR_1_GetResult16\000"
+ 1115      5341525F 
+ 1115      315F4765 
+ 1115      74526573 
+ 1115      756C7431 
+ 1116              	.LASF10:
+ 1117 0277 6C6F6E67 		.ascii	"long long int\000"
+ 1117      206C6F6E 
+ 1117      6720696E 
+ 1117      7400
+ 1118              	.LASF32:
+ 1119 0285 7363616C 		.ascii	"scaled\000"
+ 1119      656400
+ 1120              	.LASF19:
+ 1121 028c 63686172 		.ascii	"char\000"
+ 1121      00
+ 1122              	.LASF29:
+ 1123 0291 55707065 		.ascii	"UpperLimit\000"
+ 1123      724C696D 
+ 1123      697400
+ 1124              	.LASF39:
+ 1125 029c 4144435F 		.ascii	"ADC_SAR_2_CountsTo_mVolts\000"
+ 1125      5341525F 
+ 1125      325F436F 
+ 1125      756E7473 
+ 1125      546F5F6D 
+ 1126              	.LASF4:
+ 1127 02b6 73686F72 		.ascii	"short int\000"
+ 1127      7420696E 
+ 1127      7400
+ 1128              	.LASF15:
+ 1129 02c0 75696E74 		.ascii	"uint16_t\000"
+ 1129      31365F74 
+ 1129      00
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccP3Gtoi.s 			page 24
+
+
+ 1130              	.LASF26:
+ 1131 02c9 63757272 		.ascii	"current\000"
+ 1131      656E7400 
+ 1132              	.LASF24:
+ 1133 02d1 63757272 		.ascii	"currentHall\000"
+ 1133      656E7448 
+ 1133      616C6C00 
+ 1134              	.LASF8:
+ 1135 02dd 6C6F6E67 		.ascii	"long int\000"
+ 1135      20696E74 
+ 1135      00
+ 1136              	.LASF20:
+ 1137 02e6 6C6F6E67 		.ascii	"long double\000"
+ 1137      20646F75 
+ 1137      626C6500 
+ 1138              	.LASF0:
+ 1139 02f2 7369676E 		.ascii	"signed char\000"
+ 1139      65642063 
+ 1139      68617200 
+ 1140              	.LASF45:
+ 1141 02fe 42617474 		.ascii	"BatteryDriver.c\000"
+ 1141      65727944 
+ 1141      72697665 
+ 1141      722E6300 
+ 1142              	.LASF35:
+ 1143 030e 62797465 		.ascii	"byteReceived\000"
+ 1143      52656365 
+ 1143      69766564 
+ 1143      00
+ 1144              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
