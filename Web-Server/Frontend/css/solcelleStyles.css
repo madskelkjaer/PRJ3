@@ -19,6 +19,7 @@ header {
 }
 
 .solarcell-container {
+	position: fixed; /* soerger for at solcelle foelger med ved scroll!!! */
 	margin-right: 100px;
 }
 

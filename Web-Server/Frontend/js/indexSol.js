@@ -19,11 +19,11 @@ window.simulateTime = function () {
 	}
 	//kan kaldes i console
 	setTimeout(function () {
-		manualTime += 50; //plusser bare 100 minutter
+		manualTime += 10; //plusser bare 100 minutter
 		console.log("Manuel tid: ", manualTime); //tjek i console
 		updateWeatherStatus(); //alt andet opdaterer auto naar man skifter weatherstatus
 		simulateTime(); //rekursiv
-	}, 1000); //setTimeout for at det kun sker hvert 1000 ms
+	}, 10); //setTimeout for at det kun sker hvert 1000 ms
 };
 //---------------------------------------------------------------------------------------------
 
@@ -134,17 +134,17 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 	const viewportWidth = window.innerWidth - 480; //finder bredde paa window, minus 480 pga bredden af billedet
 	const viewportHeight = window.innerHeight; //finder hoejde paa window
 
-	//tid
-	const now = new Date(); //datoen
-	const hours = now.getHours(); //timer ift nuvaerende tidspunkt
-	const minutes = now.getMinutes(); //minutter ift nuvaerende tidspunkt
-	const totalMinutes = hours * 60 + minutes; //beregner total - skal kommenteres hvis der anvendes manuel tid!!!!!!!!!!!
-	console.log("Tid lige nu i min:", totalMinutes);
+	// //tid
+	// const now = new Date(); //datoen
+	// const hours = now.getHours(); //timer ift nuvaerende tidspunkt
+	// const minutes = now.getMinutes(); //minutter ift nuvaerende tidspunkt
+	// // const totalMinutes = hours * 60 + minutes; //beregner total - skal kommenteres hvis der anvendes manuel tid!!!!!!!!!!!
+	// console.log("Tid lige nu i min:", totalMinutes);
 
 	//manuel tid--------------------------------------------------------------------------------------------------------
-	// const totalMinutes = manualTime; //kan aendres vha changeTime(minutter) i console
-	// console.log("Total minutes:: ", totalMinutes);
-	//------------------------------------------------------------------------------------------------------------------
+	const totalMinutes = manualTime; //kan aendres vha changeTime(minutter) i console
+	console.log("Total minutes:: ", totalMinutes);
+	// ------------------------------------------------------------------------------------------------------------------
 
 	//sunrise og sunset paa den paagaeldende dag
 	const sunriseMinutes = timeStringToMinutes(sunriseTime); //laver fx 6AM om til 360
@@ -184,13 +184,14 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 		const percentOfDay = (totalMinutes - startTime) / (endTime - startTime); //hvor lang tid af dagen der er gaaet i procent
 		xPos = percentOfDay * viewportWidth; //xpos, altsaa hvor langt henad siden den er
 		if (totalMinutes < midTime) {
-			//foer midtime skal dens ypos rise
-			yPos = (viewportHeight / 4) * (1 - percentOfDay) + viewportHeight / 4;
+			//foer midtime skal ypos stige
+			const percentOfMorning =
+				(totalMinutes - startTime) / (midTime - startTime);
+			yPos = viewportHeight / 2 - percentOfMorning * (viewportHeight / 4);
 		} else {
 			//efter midtime skal dens ypos falde
-			const reversePercentOfDay = //bare omvendt af foer midtime
-				(totalMinutes - midTime) / (endTime - midTime);
-			yPos = (viewportHeight / 4) * reversePercentOfDay + viewportHeight / 4;
+			const percentOfEvening = (totalMinutes - midTime) / (endTime - midTime); //bare omvendt af foer midtime
+			yPos = (viewportHeight / 4) * percentOfEvening + viewportHeight / 4;
 		}
 	}
 
