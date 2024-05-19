@@ -3,77 +3,41 @@ document.addEventListener("DOMContentLoaded", function () {
 	setInterval(updateBatteryCorner, 60000); //opdaterer billedet af batteri i hjoernet
 });
 
-// function getBatteriProcent() {
-// 	// faar data fra server vha API kald
-// 	return fetch("https://capital-renewing-jennet.ngrok-free.app/api/getdata/10")
-// 		.then((response) => {
-// 			if (!response.ok) {
-// 				throw new Error("Network response was not ok");
-// 			}
-// 			return response.json();
-// 		})
-// 		.then((data) => {
-// 			// traekker den data ud, som jeg godt vil have
-// 			return data.map((item) => {
-// 				const [
-// 					id,
-// 					date,
-// 					azimuth,
-// 					elevation,
-// 					batteristatus,
-// 					sunUp,
-// 					sunDown,
-// 					sunLeft,
-// 					sunRight,
-// 				] = item;
-// 				//checker at batteristatus er tal, ellers saettes de til 0
-// 				const validBatteristatus =
-// 					typeof batteristatus === "number" && !isNaN(batteristatus)
-// 						? batteristatus
-// 						: 0;
-// 				return {
-// 					date,
-// 					azimuth,
-// 					elevation: validElevation,
-// 					batteristatus: validBatteristatus,
-// 					sunLeft,
-// 					sunRight,
-// 					sunUp,
-// 					sunDown,
-// 				};
-// 			});
-// 		})
-// 		.catch((error) => {
-// 			console.error("Fejl i API kald til batteriprocent:", error);
-// 			throw error;
-// 		});
-// }
+//UDKAST TIL WEBSOCKET -------------------------------------------------------------
+//document.addEventListener("DOMContentLoaded", function () {
+//	const ws = new WebSocket("ws://capital-renewing-jennet.ngrok-free.app/ws");
+//	ws.onopen = () => {
+//		console.log("Connected to battery WS");
+//	};
 
-// function updateBatteryCorner() {
-//     const batteri = document.getElementById("batteri");
+// 		ws.onmessage = (event) => {
+// 			console.log(event.data)
+// 			const data = JSON.parse(event.data);
+// 			console.log("Data from WS:", data);
+// 			updateWSData(data);
+// 			};
+// 	});
 
-//     getBatteriProcent()
-//         .then((batteri) => {
-//             batteri.validBatteristatus;
-//             console.log("Batteristatus: ", validBatteristatus); //tjek cloud fraction i console
-
-//             if (validBatteristatus <= 25) {
-//                 //hvis der er lig med eller mindre end 20% skyet
-//                 battery.src = "images/battery0-25.png";
-//             } else if (validBatteristatus > 25 && validBatteristatus <= 50) {
-//                 battery.src = "images/battery25-50.png";
-//             } else if (validBatteristatus > 50 && validBatteristatus <= 75) {
-//                 //hvis der er mellem 20 og 70% skyet
-//                 battery.src = "images/battery50-75.png";
-//             } else if (validBatteristatus > 75) {
-//                 //hvis der er over 70% skyet
-//                 battery.src = "images/battery75-100.png";
-//             }
-//         })
-//         .catch((error) => {
-//             console.error("Fejl i opdatering af validBatteristatus:", error);
-//         });
-// }
+//	const batteryStatus=0;
+// 	const updateWSBatteryData = (message_data) => {
+// 		console.log("Data from WS:", message_data);
+//		batteryStatus=message_data.battery_status;
+//		console.log("Batteri lige nu: ", batteryStatus);
+//
+// 		if (batteryStatus <= 25) {
+// 			//hvis der er lig med eller mindre end 25% batteri
+// 			battery.src = "images/battery0-25.png";
+// 		} else if (batteryStatus > 25 && batteryStatus <= 50) {
+// 			//hvis der er mellem 25 og 50% batteri
+// 			battery.src = "images/battery25-50.png";
+// 		} else if (batteryStatus > 50 && batteryStatus <= 75) {
+// 			//hvis der er mellem 50 og 75% batteri
+// 			battery.src = "images/battery50-75.png";
+// 		} else if (batteryStatus > 75) {
+// 			//hvis der er over 75% batteri
+// 			battery.src = "images/battery75-100.png";
+// 		}
+// 	};
 
 let manualBattery = 0; //bruges kun til manuel
 
@@ -88,15 +52,16 @@ window.setBattery = function (newBattery) {
 function updateBatteryCorner() {
 	console.log("Batteri lige nu: ", manualBattery);
 	if (manualBattery <= 25) {
-		//hvis der er lig med eller mindre end 20% skyet
+		//hvis der er lig med eller mindre end 25% batteri
 		battery.src = "images/battery0-25.png";
 	} else if (manualBattery > 25 && manualBattery <= 50) {
+		//hvis der er mellem 25 og 50% batteri
 		battery.src = "images/battery25-50.png";
 	} else if (manualBattery > 50 && manualBattery <= 75) {
-		//hvis der er mellem 20 og 70% skyet
+		//hvis der er mellem 50 og 75% batteri
 		battery.src = "images/battery50-75.png";
 	} else if (manualBattery > 75) {
-		//hvis der er over 70% skyet
+		//hvis der er over 75% batteri
 		battery.src = "images/battery75-100.png";
 	}
 }
