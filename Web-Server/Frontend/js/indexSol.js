@@ -1,4 +1,11 @@
 let isNightMode = false;
+let useManualTime = false; //flag til toggle mellem manual og automatic time
+
+//setMode, altsaa om der skal vaere manuel (1) eller automatic (1) ----------------------------
+window.setMode = function (mode) {
+	useManualTime = mode === 1;
+	console.log("Time mode:", useManualTime ? "Manual" : "Automatic");
+};
 
 //manual time ---------------------------------------------------------------------------------
 let manualTime = 0; //bruges kun til manuel
@@ -10,11 +17,12 @@ window.setTime = function (newTime) {
 	return manualTime;
 };
 
-//Simuler med +100 timeMinutes hvert 1000 ms -------------------------------------------------
+//Simuler med +10 timeMinutes hvert 100 ms -------------------------------------------------
 window.simulateTime = function () {
-	if (manualTime >= 1300) {
+	if (manualTime >= 1400) {
 		//base, fordi jeg har lavet en rekursiv funktion
 		console.log("Simulering er done."); //tjek i console
+		manualTime = 0;
 		return 0;
 	}
 	//kan kaldes i console
@@ -23,7 +31,7 @@ window.simulateTime = function () {
 		console.log("Manuel tid: ", manualTime); //tjek i console
 		updateWeatherStatus(); //alt andet opdaterer auto naar man skifter weatherstatus
 		simulateTime(); //rekursiv
-	}, 10); //setTimeout for at det kun sker hvert 1000 ms
+	}, 100); //setTimeout for at det kun sker hvert 1000 ms
 };
 //---------------------------------------------------------------------------------------------
 
@@ -134,16 +142,12 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 	const viewportWidth = window.innerWidth - 480; //finder bredde paa window, minus 480 pga bredden af billedet
 	const viewportHeight = window.innerHeight; //finder hoejde paa window
 
-	// //tid
-	// const now = new Date(); //datoen
-	// const hours = now.getHours(); //timer ift nuvaerende tidspunkt
-	// const minutes = now.getMinutes(); //minutter ift nuvaerende tidspunkt
-	// // const totalMinutes = hours * 60 + minutes; //beregner total - skal kommenteres hvis der anvendes manuel tid!!!!!!!!!!!
-	// console.log("Tid lige nu i min:", totalMinutes);
+	//tid, enten er den manualtime eller auto beregning
+	const totalMinutes = useManualTime
+		? manualTime
+		: new Date().getHours() * 60 + new Date().getMinutes();
+	console.log("Tid lige nu i min:", totalMinutes);
 
-	//manuel tid--------------------------------------------------------------------------------------------------------
-	const totalMinutes = manualTime; //kan aendres vha changeTime(minutter) i console
-	console.log("Total minutes:: ", totalMinutes);
 	// ------------------------------------------------------------------------------------------------------------------
 
 	//sunrise og sunset paa den paagaeldende dag
@@ -169,7 +173,7 @@ function updateSunPosition(sunriseTime, sunsetTime) {
 		//hvis det er mere end 10 min foer sunrise eller 10 min efter sunset
 		sun.src = "images/nat.png"; //viser natkatten, very cute
 		xPos = viewportWidth / 2; //midten af billedet
-		yPos = viewportHeight / 2 - 100; //ca. midten af billedet pga topnav
+		yPos = viewportHeight / 2 - 200; //ca. midten af billedet pga topnav
 		//body.style.backgroudImage = "background_night.jpg";
 	} else if (totalMinutes <= startTime) {
 		//foer sunrise skal den bare vaere til venstre i midten

@@ -67,7 +67,8 @@
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	margin-left: 43%;
+	margin-left: 50%;
+	transform: translateX(-15%);
 }
 
 /* Piletasternes styling yo */
