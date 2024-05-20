@@ -187,7 +187,7 @@ def move(direction: str):
     else:
         return "Invalid direction"
     
-    return "Moving " + direction
+    return jsonify({"direction": direction})
 
 @app.route("/api/manual")
 def manual():
