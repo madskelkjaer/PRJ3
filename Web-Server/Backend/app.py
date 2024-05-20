@@ -207,7 +207,7 @@ def manual():
             ws_connections.remove(ws)
 
     manual_status = "activated" if manual_mode else "deactivated"
-    return f"Manual mode {manual_status}"
+    return jsonify({"status": manual_status})
 
 @app.route("/api/manual/status")
 def manual_status():
