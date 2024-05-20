@@ -17,25 +17,25 @@ for (i = 0; i < acc.length; i++) {
 }
 
 //loader websocket
-document.addEventListener("DOMContentLoaded", function () {
-	const ws = new WebSocket("wss://capital-renewing-jennet.ngrok-free.app/api/ws");
-	ws.onopen = () => {
-		console.log("Connected to WS fra styring");
-	};
+// document.addEventListener("DOMContentLoaded", function () {
+// 	const ws = new WebSocket("wss://capital-renewing-jennet.ngrok-free.app/api/ws");
+// 	ws.onopen = () => {
+// 		console.log("Connected to WS fra styring");
+// 	};
 
-	ws.onmessage = (event) => {
-		console.log(event.data);
-		const data = JSON.parse(event.data);
-		console.log("Data fra WS fra styring:", data);
-		updateWSData(data);
-	};
+// 	ws.onmessage = (event) => {
+// 		console.log(event.data);
+// 		const data = JSON.parse(event.data);
+// 		// console.log("Data fra WS fra styring:", data);
+// 		updateWSData(data);
+// 	};
 
-	//event listener til klik paa knap
-	document
-		.getElementById("updateAutoManual")
-		.addEventListener("click", toggleAutoManualMode);
-	updateAutoManualStatus();
-});
+// 	//event listener til klik paa knap
+// 	document
+// 		.getElementById("updateAutoManual")
+// 		.addEventListener("click", toggleAutoManualMode);
+// 	updateAutoManualStatus();
+// });
 
 //styrer om der staar ja eller nej ift om den er i manuel
 const updateAutoManualStatus = async () => {
