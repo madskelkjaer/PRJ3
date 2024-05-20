@@ -1,6 +1,6 @@
 .data-table {
 	width: 600px;
-	margin: 0 auto; /* Center the table horizontally */
+	margin: 0 auto;
 	border-collapse: collapse;
 }
 

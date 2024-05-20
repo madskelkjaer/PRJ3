@@ -2,27 +2,27 @@ document.addEventListener("DOMContentLoaded", function () {
 	// updateData(); //opdaterer data ved page load
 	// setInterval(updateData, 60000); // opdaterer hvert minut
 
-	const ws = new WebSocket(
-		"ws://capital-renewing-jennet.ngrok-free.app/api/ws"
-	);
+	const ws = new WebSocket("//capital-renewing-jennet.ngrok-free.app/api/ws");
 	ws.onopen = () => {
 		console.log("Connected to WS fra solcelleData");
 	};
 
 	ws.onmessage = (event) => {
-		console.log(event.data);
 		const data = JSON.parse(event.data);
-		console.log("Data from WS:", data);
+		console.log("Data from WS solcelledata:", data);
 		updateWSData(data);
 	};
 });
 
 const updateWSData = (message_data) => {
-	console.log("Data from WS:", message_data);
-	// document.getElementById("venstre").innerHTML = message_data.sun_left == 1 ? "Ja" : "Nej";
-	// document.getElementById("hojre").innerHTML = message_data.sun_right == 1 ? "Ja" : "Nej";
-	// document.getElementById("op").innerHTML = message_data.sun_up == 1 ? "Ja" : "Nej";
-	// document.getElementById("ned").innerHTML = message_data.sun_down == 1 ? "Ja" : "Nej";
+	document.getElementById("venstre").innerHTML =
+		message_data.sun_left == 1 ? "Ja" : "Nej";
+	document.getElementById("hojre").innerHTML =
+		message_data.sun_right == 1 ? "Ja" : "Nej";
+	document.getElementById("op").innerHTML =
+		message_data.sun_up == 1 ? "Ja" : "Nej";
+	document.getElementById("ned").innerHTML =
+		message_data.sun_down == 1 ? "Ja" : "Nej";
 
 	const up = document.getElementById("up");
 	const down = document.getElementById("down");

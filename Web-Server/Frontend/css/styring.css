@@ -106,13 +106,13 @@
 #right {
 	width: 50%;
 	height: 50%;
-	background: #edb758;
+	background: #c9c9c9;
 	position: absolute;
 	box-shadow: inset 0px 0px 0px 1px #a0a0a0;
 }
 
 .sun-active {
-	background-color: #ffff55 !important;
+	background-color: #ffe74c !important;
 }
 
 #up {
@@ -142,11 +142,35 @@
 	border: none;
 	border-radius: 10px;
 	transition: background-color 0.3s ease;
-
 	cursor: pointer;
+	margin-top: 10px;
 }
 
 #updateAutoManual:hover {
 	background-color: #097885;
 	color: white;
+}
+
+.status-container {
+	margin-left:60px;
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.status-container p {
+    margin: 0;
+	flex-grow: 1;
+	text-align: center;
+	padding: 0 10px 0 10px;
+}
+
+.status-container span {
+    margin-right: 10px; /* Adjust spacing between text and status */
 }

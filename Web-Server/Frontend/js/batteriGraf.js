@@ -35,12 +35,14 @@ function drawChart() {
 					curveType: "function",
 					legend: { position: "right" },
 					hAxis: {
-						title: "Time",
+						title: "Tid",
 					},
 					vAxis: {
 						title: "Batteristatus (%)",
-						minValue: 0,
-						maxValue: 100,
+						viewWindow: {
+							min: 0,
+							max: 100,
+						},
 					},
 					width: 850,
 					height: 700,
@@ -67,7 +69,7 @@ function calculateFullChargeTime(data) {
 
 	data.forEach((item) => {
 		const time = new Date(item[1]).getTime();
-		console.log("Time:", time);
+		console.log("Tid:", time);
 		const status = item[4];
 		console.log("Status:", status);
 

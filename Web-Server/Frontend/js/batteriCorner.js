@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-	const ws = new WebSocket("ws://capital-renewing-jennet.ngrok-free.app/ws");
+	const ws = new WebSocket("//capital-renewing-jennet.ngrok-free.app/api/ws");
 	ws.onopen = () => {
 		console.log("Connected to battery WS");
 	};
 
 	ws.onmessage = (event) => {
-		console.log(event.data);
 		const data = JSON.parse(event.data);
-		console.log("Data from WS:", data);
 		updateWSBatteryData(data);
 	};
 });
@@ -19,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //		console.log("Connected to battery WS");
 //	};
 const updateWSBatteryData = (message_data) => {
-	console.log("Data from WS:", message_data);
 	let batteryStatus = message_data.battery;
 	console.log("Batteri lige nu: ", batteryStatus);
 

@@ -33,17 +33,17 @@ function updateHome() {
 	}
 }
 
-
 // Funktion til API kald for at sende data til server
 function moveSolarCell(direction) {
-	fetch(`https://capital-renewing-jennet.ngrok-free.app/api/move/${direction}`)
-		.then(response => {
-			if (response.ok) {
-				return response.json();
-			} else {
-				throw new Error('API request failed');
-			}
-		})
+	fetch(
+		`https://capital-renewing-jennet.ngrok-free.app/api/move/${direction}`
+	).then((response) => {
+		if (response.ok) {
+			return response.json();
+		} else {
+			throw new Error("API request failed");
+		}
+	});
 }
 
 // Event listener for the "Update" button
@@ -102,22 +102,13 @@ function updateRotation() {
 
 	//saa current rotation kommer i console
 	console.log(
-		`Elevation lige nu: ${rotateElevation >= 0 ? "+" : ""
+		`Elevation lige nu: ${
+			rotateElevation >= 0 ? "+" : ""
 		}${rotateElevation} deg`
 	);
 	console.log(
 		`Azimuth lige nu: ${rotateAzimuth >= 0 ? "+" : ""}${rotateAzimuth} deg`
 	);
-
-	//skal sende rotation til server
-	// wam.katvu.dk/api/getdata/<limit>
-	// wam.katvu.dk/api/move/up
-	// wam.katvu.dk/api/move/down
-	// wam.katvu.dk/api/move/left
-	// wam.katvu.dk/api/move/right
-	// wam.katvu.dk/api/move/home
-
-	// wam.katvu.dk/api/saveform
 }
 
 //MED KNAPPERNE -----------------------------------------------
