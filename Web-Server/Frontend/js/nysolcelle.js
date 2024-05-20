@@ -5,6 +5,8 @@ const maxUp = 30;
 const maxDown = -90;
 const maxRight = 150;
 const maxLeft = -150;
+let rotationAzimuth = 0;
+let rotationElevation = 0;
 
 document.getElementById("maxUp").textContent = maxUp;
 document.getElementById("maxDown").textContent = maxDown;
@@ -14,9 +16,6 @@ document.getElementById("maxLeft").textContent = maxLeft;
 //Set home/returnposition ----------------------------------------------------
 let homeX = 0;
 let homeY = 0;
-
-let rotationAzimuth = 0;
-let rotationElevation = 0;
 
 function updateHome() {
 	if (
@@ -71,8 +70,8 @@ const updateSolcelle = (message_data) => {
 	console.log(`Elevation lige nu: ${elevation} deg`);
 	console.log(`Azimuth lige nu: ${azimuth} deg`);
 
-	rotateAzimuth = azimuth;
-	rotateElevation = elevation;
+	rotationAzimuth = azimuth;
+	rotationElevation = elevation;
 };
 
 // Event listener for the "Update" button
@@ -84,7 +83,7 @@ document.addEventListener("keydown", (event) => {
 	//hvis man trykker en tast ned
 	switch (event.key) {
 		case "ArrowUp":
-			if (rotateElevation >= maxUp) {
+			if (rotationElevation >= maxUp) {
 				console.log("for manage grader op!!!");
 				break;
 			} else {
@@ -92,7 +91,7 @@ document.addEventListener("keydown", (event) => {
 				break;
 			}
 		case "ArrowDown":
-			if (rotateElevation <= maxDown) {
+			if (rotationElevation <= maxDown) {
 				console.log("for mange grader ned!!!!");
 				break;
 			} else {
@@ -100,7 +99,7 @@ document.addEventListener("keydown", (event) => {
 				break;
 			}
 		case "ArrowLeft":
-			if (rotateAzimuth <= maxLeft) {
+			if (rotationAzimuth <= maxLeft) {
 				console.log("for mange grader til venstre!!!!");
 				break;
 			} else {
@@ -108,7 +107,7 @@ document.addEventListener("keydown", (event) => {
 				break;
 			}
 		case "ArrowRight":
-			if (rotateAzimuth >= maxRight) {
+			if (rotationAzimuth >= maxRight) {
 				console.log("for mange grader til højre!!!");
 			} else {
 				moveSolarCell("right");
@@ -122,7 +121,7 @@ document.addEventListener("keydown", (event) => {
 let rotateInterval;
 
 document.getElementById("rotateUp").addEventListener("mousedown", () => {
-	if (rotateElevation >= maxUp) {
+	if (rotationElevation >= maxUp) {
 		console.log("for mange grader til op!!!");
 	} else {
 		moveSolarCell("up");
@@ -130,7 +129,7 @@ document.getElementById("rotateUp").addEventListener("mousedown", () => {
 });
 
 document.getElementById("rotateDown").addEventListener("mousedown", () => {
-	if (rotateElevation <= maxDown) {
+	if (rotationElevation <= maxDown) {
 		console.log("for mange grader til ned!!!");
 	} else {
 		moveSolarCell("down");
@@ -138,7 +137,7 @@ document.getElementById("rotateDown").addEventListener("mousedown", () => {
 });
 
 document.getElementById("rotateRight").addEventListener("mousedown", () => {
-	if (rotateAzimuth >= maxRight) {
+	if (rotationAzimuth >= maxRight) {
 		console.log("for mange grader til højre!!!");
 	} else {
 		moveSolarCell("right");
@@ -146,7 +145,7 @@ document.getElementById("rotateRight").addEventListener("mousedown", () => {
 });
 
 document.getElementById("rotateLeft").addEventListener("mousedown", () => {
-	if (rotateAzimuth <= maxLeft) {
+	if (rotationAzimuth <= maxLeft) {
 		console.log("for mange grader til venstre!!!");
 	} else {
 		moveSolarCell("left");
@@ -154,8 +153,8 @@ document.getElementById("rotateLeft").addEventListener("mousedown", () => {
 });
 
 document.getElementById("reset").addEventListener("mousedown", () => {
-	rotateAzimuth = homeX; //omvendt end hvad man forventer lol
-	rotateElevation = homeY;
+	rotationAzimuth = homeX; //omvendt end hvad man forventer lol
+	rotationElevation = homeY;
 	moveSolarCell("home");
 });
 
