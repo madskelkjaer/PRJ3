@@ -18,7 +18,7 @@ for (i = 0; i < acc.length; i++) {
 
 //loader websocket
 document.addEventListener("DOMContentLoaded", function () {
-	const ws = new WebSocket("//capital-renewing-jennet.ngrok-free.app/api/ws");
+	const ws = new WebSocket("ws://capital-renewing-jennet.ngrok-free.app/api/ws");
 	ws.onopen = () => {
 		console.log("Connected to WS fra styring");
 	};
