@@ -103,6 +103,13 @@ START_CODE = 0xAA
 STOP_CODE = 0xBB
 EXPECTED_DATA_LENGTH = 12
 
+def bytesToInt16(high, low):
+    value = (high << 8) | low
+    if value >= 0x8000:
+        value = value - 0x10000
+    return value
+
+
 def saveData(data):
     recieved_data.append(data)
     print("SAVEDATA: ", data, " LÆNGDE: ", len(recieved_data), "\nDATA I ARRAY: ", recieved_data)
@@ -112,9 +119,9 @@ def saveData(data):
 
     if recieved_data[0] == START_CODE and recieved_data[-1] == STOP_CODE:
         print("Data saved: ", recieved_data)
-        AZIMUTH = (recieved_data[1] << 8) | recieved_data[2]
-        ELEVATION = (recieved_data[3] << 8) | recieved_data[4]
-        BATTERY = (recieved_data[5] << 8) | recieved_data[6]
+        AZIMUTH = bytesToInt16(recieved_data[1], recieved_data[2])
+        ELEVATION = bytesToInt16(recieved_data[3], recieved_data[4])
+        BATTERY = bytesToInt16(recieved_data[5], recieved_data[6])
         SUN_LEFT = recieved_data[7]
         SUN_RIGHT = recieved_data[8]
         SUN_UP = recieved_data[9]
