@@ -255,7 +255,7 @@ def form():
     sendEmail(name, email, message)
     return "Data modtaget"
 
-@sock.route("/api/api/ws")
+@sock.route("/api/ws")
 def echo(ws):
     ws_connections.append(ws)
     while True:
