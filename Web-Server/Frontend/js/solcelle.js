@@ -4,10 +4,10 @@ const solarcell2 = document.querySelector(".solarcell2");
 let rotateElevation = 0;
 let rotateAzimuth = 0;
 const rotationIncrement = 2; //hvor hurtigt skal den dreje????
-const maxUp = 28;
-const maxDown = -91;
-const maxRight = 156;
-const maxLeft = -154;
+const maxUp = 30;
+const maxDown = -90;
+const maxRight = 150;
+const maxLeft = -150;
 
 document.getElementById("maxUp").textContent = maxUp;
 document.getElementById("maxDown").textContent = maxDown;
