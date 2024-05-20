@@ -1,0 +1,15 @@
+# sudo nano /etc/systemd/system/startup.service
+[Unit]
+Description=Run startup.sh at boot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/perhi/PRJ3/startup.sh
+User=perhi
+WorkingDirectory=/home/perhi/PRJ3
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
