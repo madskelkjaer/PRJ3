@@ -1,6 +1,6 @@
 const solarcell1 = document.querySelector(".solarcell1");
 const solarcell2 = document.querySelector(".solarcell2");
-
+//test
 let rotateElevation = 0;
 let rotateAzimuth = 0;
 const rotationIncrement = 2; //hvor hurtigt skal den dreje????
