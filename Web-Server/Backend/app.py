@@ -49,7 +49,7 @@ def insertData(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_le
             "date": date,
             "azimuth": azimuth,
             "elevation": elevation,
-            "batteristatus": batteristatus,
+            "battery": batteristatus,
             "sun_up": sun_up,
             "sun_down": sun_down,
             "sun_left": sun_left,
