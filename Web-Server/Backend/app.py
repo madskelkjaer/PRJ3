@@ -101,7 +101,7 @@ recieved_data: int = []
 
 START_CODE = 0xAA
 STOP_CODE = 0xBB
-EXPECTED_DATA_LENGTH = 9 # 7 bytes data + start og slut
+EXPECTED_DATA_LENGTH = 10
 
 def saveData(data):
     recieved_data.append(data)
@@ -114,11 +114,11 @@ def saveData(data):
         print("Data saved: ", recieved_data)
         AZIMUTH = recieved_data[1]
         ELEVATION = recieved_data[2]
-        BATTERY = recieved_data[3]
-        SUN_LEFT = recieved_data[4]
-        SUN_RIGHT = recieved_data[5]
-        SUN_UP = recieved_data[6]
-        SUN_DOWN = recieved_data[7]
+        BATTERY = (recieved_data[3] << 8) | recieved_data[4]
+        SUN_LEFT = recieved_data[5]
+        SUN_RIGHT = recieved_data[6]
+        SUN_UP = recieved_data[7]
+        SUN_DOWN = recieved_data[8]
 
         print(f"{AZIMUTH=}, {ELEVATION=}, {BATTERY=}, {SUN_LEFT=}, {SUN_RIGHT=}, {SUN_UP=}, {SUN_DOWN=}")
 
