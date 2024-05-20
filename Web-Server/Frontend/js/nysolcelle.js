@@ -52,11 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	ws.onmessage = (event) => {
 		const data = JSON.parse(event.data);
 		console.log("Data from WS solcelledata:", data);
-		updateWSData(data);
+		updateSolcelle(data);
 	};
 });
 
-const updateWSData = (message_data) => {
+const updateSolcelle = (message_data) => {
 	let azimuth = message_data.azimuth;
 	let elevation = message_data.elevation;
 	console.log("azimuth: ", azimuth);
