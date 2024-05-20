@@ -69,13 +69,13 @@ function updateWeatherStatus() {
 					.cloud_area_fraction; //der hvor dataen er i API
 			console.log("Cloud fraction: ", weatherCondition); //tjek cloud fraction i console
 
-			if (weatherCondition <= 20) {
+			if (weatherCondition <= 0) {
 				//hvis der er lig med eller mindre end 20% skyet
 				sun.src = "images/sun_clear.png";
-			} else if (weatherCondition > 20 && weatherCondition <= 70) {
+			} else if (weatherCondition > 0 && weatherCondition <= 0) {
 				//hvis der er mellem 20 og 70% skyet
 				sun.src = "images/sun_partly_cloudy.png";
-			} else if (weatherCondition > 70) {
+			} else if (weatherCondition > 0) {
 				//hvis der er over 70% skyet
 				sun.src = "images/sun_totally_cloudy.png";
 			}

@@ -133,3 +133,20 @@
 	top: 50%;
 	left: 0;
 }
+
+
+#updateAutoManual {
+	padding: 10px 10px;
+	background-color: #b6d5d8;
+	color: black;
+	border: none;
+	border-radius: 10px;
+	transition: background-color 0.3s ease;
+
+	cursor: pointer;
+}
+
+#updateAutoManual:hover {
+	background-color: #097885;
+	color: white;
+}
