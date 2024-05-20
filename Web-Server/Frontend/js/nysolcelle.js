@@ -1,9 +1,6 @@
 const solarcell1 = document.querySelector(".solarcell1");
 const solarcell2 = document.querySelector(".solarcell2");
 
-let rotateElevation = 0;
-let rotateAzimuth = 0;
-const rotationIncrement = 2; //hvor hurtigt skal den dreje????
 const maxUp = 28;
 const maxDown = -91;
 const maxRight = 156;
@@ -55,118 +52,107 @@ document.addEventListener("keydown", (event) => {
 	//hvis man trykker en tast ned
 	switch (event.key) {
 		case "ArrowUp":
-			if (rotateElevation >= maxUp) {
+			if (elevation >= maxUp) {
 				console.log("for manage grader op!!!");
 				break;
 			} else {
 				moveSolarCell("up");
-				rotateElevation += rotationIncrement;
-				updateRotation();
 				break;
 			}
 		case "ArrowDown":
-			if (rotateElevation <= maxDown) {
+			if (elevation <= maxDown) {
 				console.log("for mange grader ned!!!!");
 				break;
 			} else {
 				moveSolarCell("down");
-				rotateElevation -= rotationIncrement;
-				updateRotation();
 				break;
 			}
 		case "ArrowLeft":
-			if (rotateAzimuth <= maxLeft) {
+			if (azimuth <= maxLeft) {
 				console.log("for mange grader til venstre!!!!");
 				break;
 			} else {
 				moveSolarCell("left");
-				rotateAzimuth -= rotationIncrement;
-				updateRotation();
 				break;
 			}
 		case "ArrowRight":
-			if (rotateAzimuth >= maxRight) {
+			if (azimuth >= maxRight) {
 				console.log("for mange grader til højre!!!");
 			} else {
 				moveSolarCell("right");
-				rotateAzimuth += rotationIncrement;
-				updateRotation();
 				break;
 			}
 	}
 });
 
-function updateRotation() {
-	solarcell1.style.transform = `rotateX(${rotateElevation}deg)`; //drejer solcellen
-	solarcell2.style.transform = `rotateY(${rotateAzimuth}deg)`; //drejer solcellen
+document.addEventListener("DOMContentLoaded", function () {
+	// updateData(); //opdaterer data ved page load
+	// setInterval(updateData, 60000); // opdaterer hvert minut
+
+	const ws = new WebSocket("//capital-renewing-jennet.ngrok-free.app/api/ws");
+	ws.onopen = () => {
+		console.log("Connected to WS fra solcelleData");
+	};
+
+	ws.onmessage = (event) => {
+		const data = JSON.parse(event.data);
+		console.log("Data from WS solcelledata:", data);
+		updateWSData(data);
+	};
+});
+
+const updateWSData = (message_data) => {
+	let azimuth = message_data.azimuth;
+	let elevation = message_data.elevation;
+	console.log("azimuth: ", azimuth);
+	console.log("elevation: ", elevation);
+	solarcell1.style.transform = `rotateX(${elevation}deg)`; //drejer solcellen
+	solarcell2.style.transform = `rotateY(${azimuth}deg)`; //drejer solcellen
 
 	//saa current rotation kommer i console
-	console.log(
-		`Elevation lige nu: ${
-			rotateElevation >= 0 ? "+" : ""
-		}${rotateElevation} deg`
-	);
-	console.log(
-		`Azimuth lige nu: ${rotateAzimuth >= 0 ? "+" : ""}${rotateAzimuth} deg`
-	);
-}
+	console.log(`Elevation lige nu: ${elevation} deg`);
+	console.log(`Azimuth lige nu: ${azimuth} deg`);
+};
 
 //MED KNAPPERNE -----------------------------------------------
 
 let rotateInterval;
 
 document.getElementById("rotateUp").addEventListener("mousedown", () => {
-	rotateInterval = setInterval(() => {
-		if (rotateElevation >= maxUp) {
-			console.log("for mange grader til op!!!");
-		} else {
-			moveSolarCell("up");
-			rotateElevation += rotationIncrement;
-			updateRotation();
-		}
-	}, 50); //50 ms tryk foer den registrerer, samme for de andre 3
+	if (elevation >= maxUp) {
+		console.log("for mange grader til op!!!");
+	} else {
+		moveSolarCell("up");
+	}
 });
 
 document.getElementById("rotateDown").addEventListener("mousedown", () => {
-	rotateInterval = setInterval(() => {
-		if (rotateElevation <= maxDown) {
-			console.log("for mange grader til ned!!!");
-		} else {
-			moveSolarCell("down");
-			rotateElevation -= rotationIncrement;
-			updateRotation();
-		}
-	}, 50);
+	if (elevation <= maxDown) {
+		console.log("for mange grader til ned!!!");
+	} else {
+		moveSolarCell("down");
+	}
 });
 
 document.getElementById("rotateRight").addEventListener("mousedown", () => {
-	rotateInterval = setInterval(() => {
-		if (rotateAzimuth >= maxRight) {
-			console.log("for mange grader til til højre!!!");
-		} else {
-			moveSolarCell("right");
-			rotateAzimuth += rotationIncrement;
-			updateRotation();
-		}
-	}, 50);
+	if (azimuth >= maxRight) {
+		console.log("for mange grader til højre!!!");
+	} else {
+		moveSolarCell("right");
+	}
 });
 
 document.getElementById("rotateLeft").addEventListener("mousedown", () => {
-	rotateInterval = setInterval(() => {
-		if (rotateAzimuth <= maxLeft) {
-			console.log("for mange grader til til venstre!!!");
-		} else {
-			moveSolarCell("left");
-			rotateAzimuth -= rotationIncrement;
-			updateRotation();
-		}
-	}, 50);
+	if (azimuth <= maxLeft) {
+		console.log("for mange grader til venstre!!!");
+	} else {
+		moveSolarCell("left");
+	}
 });
 
 document.getElementById("reset").addEventListener("mousedown", () => {
-	rotateAzimuth = homeX; //omvendt end hvad man forventer lol
-	rotateElevation = homeY;
-	updateRotation();
+	azimuth = homeX; //omvendt end hvad man forventer lol
+	elevation = homeY;
 	moveSolarCell("home");
 });
 
