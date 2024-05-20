@@ -1,0 +1,6 @@
+C:\PRJ3-main\PRJ3-main\PSoC\StepperMotorDriver\StepperMotorDriver.cydsn\StepperMotorDriver.cyprj|b68a03ac-b716-4ec6-8f9b-d4868d8f46cc
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|fd7c3391-2f83-4ba9-a2ed-f1f14fba1399
+C:\Users\perhi\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|8460520f-17cd-41cc-9d13-9824fb0d8f23
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|1318f91a-2169-48f9-9bd8-85c1503b92f0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|e471c175-f524-4868-81d0-c4827a52a479
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3dc1db48-6b70-4781-8aa1-e025a78ef75e

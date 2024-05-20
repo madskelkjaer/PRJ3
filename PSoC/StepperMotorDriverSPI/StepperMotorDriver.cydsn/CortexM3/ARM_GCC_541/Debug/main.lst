@@ -1,0 +1,1107 @@
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB64:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  *          Thomas Degn Larsen
+   4:main.c        ****  *
+   5:main.c        ****  * ========================================
+   6:main.c        **** */
+   7:main.c        **** 
+   8:main.c        **** #include "project.h"
+   9:main.c        **** #include "StepperMotorDriver.h"
+  10:main.c        **** #include <stdio.h>
+  11:main.c        **** 
+  12:main.c        **** int main(void)
+  13:main.c        **** {
+  28              		.loc 1 13 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 64
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 70B5     		push	{r4, r5, r6, lr}
+  33              		.cfi_def_cfa_offset 16
+  34              		.cfi_offset 4, -16
+  35              		.cfi_offset 5, -12
+  36              		.cfi_offset 6, -8
+  37              		.cfi_offset 14, -4
+  38 0002 94B0     		sub	sp, sp, #80
+  39              		.cfi_def_cfa_offset 96
+  14:main.c        ****     CyGlobalIntEnable;                                                      // Enable global interr
+  40              		.loc 1 14 0
+  41              		.syntax unified
+  42              	@ 14 "main.c" 1
+  43 0004 62B6     		CPSIE   i
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 2
+
+
+  44              	@ 0 "" 2
+  15:main.c        ****     UART_1_Start();                                                         // Enable UART
+  45              		.loc 1 15 0
+  46              		.thumb
+  47              		.syntax unified
+  48 0006 FFF7FEFF 		bl	UART_1_Start
+  49              	.LVL0:
+  16:main.c        ****     isr_uart_rx_StartEx(UART_HANDLER);                                      // Enable UART ISR
+  50              		.loc 1 16 0
+  51 000a 2148     		ldr	r0, .L10
+  52 000c FFF7FEFF 		bl	isr_uart_rx_StartEx
+  53              	.LVL1:
+  17:main.c        ****     isr_motor_StartEx(MOTOR_STEP);                                          // Enable ISR for motor
+  54              		.loc 1 17 0
+  55 0010 2048     		ldr	r0, .L10+4
+  56 0012 FFF7FEFF 		bl	isr_motor_StartEx
+  57              	.LVL2:
+  18:main.c        ****     UART_1_PutString("Ready to test new ideas that don't work!\r\n");       // Show message on UART
+  58              		.loc 1 18 0
+  59 0016 2048     		ldr	r0, .L10+8
+  60 0018 FFF7FEFF 		bl	UART_1_PutString
+  61              	.LVL3:
+  19:main.c        ****     
+  20:main.c        ****     // Start SPI Slave component.
+  21:main.c        ****     SPIS_1_Start();
+  62              		.loc 1 21 0
+  63 001c FFF7FEFF 		bl	SPIS_1_Start
+  64              	.LVL4:
+  65              	.L8:
+  66              	.LBB2:
+  22:main.c        ****     
+  23:main.c        ****     uint8_t receivedData = 0;
+  24:main.c        **** 
+  25:main.c        ****     for(;;) 
+  26:main.c        ****     {
+  27:main.c        ****         // SPI Communication Handling
+  28:main.c        ****         if (SPIS_1_GetRxBufferSize() != 0)
+  67              		.loc 1 28 0
+  68 0020 FFF7FEFF 		bl	SPIS_1_GetRxBufferSize
+  69              	.LVL5:
+  70 0024 C8B1     		cbz	r0, .L2
+  29:main.c        ****         {
+  30:main.c        ****             // Read the received data.
+  31:main.c        ****             receivedData = SPIS_1_ReadRxData();
+  71              		.loc 1 31 0
+  72 0026 FFF7FEFF 		bl	SPIS_1_ReadRxData
+  73              	.LVL6:
+  32:main.c        **** 
+  33:main.c        ****             switch (receivedData)
+  74              		.loc 1 33 0
+  75 002a 0138     		subs	r0, r0, #1
+  76              	.LVL7:
+  77 002c 0328     		cmp	r0, #3
+  78 002e 14D8     		bhi	.L2
+  79 0030 DFE800F0 		tbb	[pc, r0]
+  80              	.L4:
+  81 0034 02       		.byte	(.L3-.L4)/2
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 3
+
+
+  82 0035 06       		.byte	(.L5-.L4)/2
+  83 0036 0B       		.byte	(.L6-.L4)/2
+  84 0037 0F       		.byte	(.L7-.L4)/2
+  85              		.p2align 1
+  86              	.L3:
+  34:main.c        ****             {
+  35:main.c        ****                 case 1:
+  36:main.c        ****                     // Move 100 steps left.
+  37:main.c        ****                     moveAzimuth(100);
+  87              		.loc 1 37 0
+  88 0038 6420     		movs	r0, #100
+  89 003a FFF7FEFF 		bl	moveAzimuth
+  90              	.LVL8:
+  38:main.c        ****                     break;
+  91              		.loc 1 38 0
+  92 003e 0CE0     		b	.L2
+  93              	.L5:
+  39:main.c        ****                 case 2:
+  40:main.c        ****                     // Move 100 steps right.
+  41:main.c        ****                     moveAzimuth(-100);
+  94              		.loc 1 41 0
+  95 0040 6FF06300 		mvn	r0, #99
+  96 0044 FFF7FEFF 		bl	moveAzimuth
+  97              	.LVL9:
+  42:main.c        ****                     break;
+  98              		.loc 1 42 0
+  99 0048 07E0     		b	.L2
+ 100              	.L6:
+  43:main.c        ****                 case 3:
+  44:main.c        ****                     // Move 100 steps up.
+  45:main.c        ****                     moveElevation(100);
+ 101              		.loc 1 45 0
+ 102 004a 6420     		movs	r0, #100
+ 103 004c FFF7FEFF 		bl	moveElevation
+ 104              	.LVL10:
+  46:main.c        ****                     break;
+ 105              		.loc 1 46 0
+ 106 0050 03E0     		b	.L2
+ 107              	.L7:
+  47:main.c        ****                 case 4:
+  48:main.c        ****                     // Move 10 steps down.
+  49:main.c        ****                     moveElevation(-100);
+ 108              		.loc 1 49 0
+ 109 0052 6FF06300 		mvn	r0, #99
+ 110 0056 FFF7FEFF 		bl	moveElevation
+ 111              	.LVL11:
+ 112              	.L2:
+  50:main.c        ****                     break;
+  51:main.c        ****                 default:
+  52:main.c        ****                     // Ignore other commands.
+  53:main.c        ****                     break;
+  54:main.c        ****             }
+  55:main.c        ****         }
+  56:main.c        **** 
+  57:main.c        ****         MOTOR_STEP();
+ 113              		.loc 1 57 0 discriminator 1
+ 114 005a FFF7FEFF 		bl	MOTOR_STEP
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 4
+
+
+ 115              	.LVL12:
+  58:main.c        ****         
+  59:main.c        ****         // UART Communication Handling
+  60:main.c        ****         char buff[64];
+  61:main.c        ****         snprintf(buff, sizeof(buff), "Up: %i, Down: %i, Right: %i, Left: %i  \r\n", limitUp(), limi
+ 116              		.loc 1 61 0 discriminator 1
+ 117 005e FFF7FEFF 		bl	limitUp
+ 118              	.LVL13:
+ 119 0062 0446     		mov	r4, r0
+ 120 0064 FFF7FEFF 		bl	limitDown
+ 121              	.LVL14:
+ 122 0068 0546     		mov	r5, r0
+ 123 006a FFF7FEFF 		bl	limitRight
+ 124              	.LVL15:
+ 125 006e 0646     		mov	r6, r0
+ 126 0070 FFF7FEFF 		bl	limitLeft
+ 127              	.LVL16:
+ 128 0074 0290     		str	r0, [sp, #8]
+ 129 0076 0196     		str	r6, [sp, #4]
+ 130 0078 0095     		str	r5, [sp]
+ 131 007a 2346     		mov	r3, r4
+ 132 007c 074A     		ldr	r2, .L10+12
+ 133 007e 4021     		movs	r1, #64
+ 134 0080 04A8     		add	r0, sp, #16
+ 135 0082 FFF7FEFF 		bl	snprintf
+ 136              	.LVL17:
+  62:main.c        ****         UART_1_PutString(buff);
+ 137              		.loc 1 62 0 discriminator 1
+ 138 0086 04A8     		add	r0, sp, #16
+ 139 0088 FFF7FEFF 		bl	UART_1_PutString
+ 140              	.LVL18:
+ 141              	.LBE2:
+  63:main.c        ****     }
+ 142              		.loc 1 63 0 discriminator 1
+ 143 008c C8E7     		b	.L8
+ 144              	.L11:
+ 145 008e 00BF     		.align	2
+ 146              	.L10:
+ 147 0090 00000000 		.word	UART_HANDLER
+ 148 0094 00000000 		.word	MOTOR_STEP
+ 149 0098 00000000 		.word	.LC0
+ 150 009c 2C000000 		.word	.LC1
+ 151              		.cfi_endproc
+ 152              	.LFE64:
+ 153              		.size	main, .-main
+ 154              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 155              		.align	2
+ 156              	.LC0:
+ 157 0000 52656164 		.ascii	"Ready to test new ideas that don't work!\015\012\000"
+ 157      7920746F 
+ 157      20746573 
+ 157      74206E65 
+ 157      77206964 
+ 158 002b 00       		.space	1
+ 159              	.LC1:
+ 160 002c 55703A20 		.ascii	"Up: %i, Down: %i, Right: %i, Left: %i  \015\012\000"
+ 160      25692C20 
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 5
+
+
+ 160      446F776E 
+ 160      3A202569 
+ 160      2C205269 
+ 161              		.text
+ 162              	.Letext0:
+ 163              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 164              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 165              		.file 4 "Generated_Source\\PSoC5/SPIS_1.h"
+ 166              		.file 5 "StepperMotorDriver.h"
+ 167              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 168              		.file 7 "Generated_Source\\PSoC5/UART_1.h"
+ 169              		.file 8 "Generated_Source\\PSoC5/isr_uart_rx.h"
+ 170              		.file 9 "Generated_Source\\PSoC5/isr_motor.h"
+ 171              		.file 10 "Generated_Source\\PSoC5/core_cm3.h"
+ 172              		.section	.debug_info,"",%progbits
+ 173              	.Ldebug_info0:
+ 174 0000 D6020000 		.4byte	0x2d6
+ 175 0004 0400     		.2byte	0x4
+ 176 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 177 000a 04       		.byte	0x4
+ 178 000b 01       		.uleb128 0x1
+ 179 000c 78000000 		.4byte	.LASF35
+ 180 0010 0C       		.byte	0xc
+ 181 0011 FD010000 		.4byte	.LASF36
+ 182 0015 1C020000 		.4byte	.LASF37
+ 183 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 184 001d 00000000 		.4byte	0
+ 185 0021 00000000 		.4byte	.Ldebug_line0
+ 186 0025 02       		.uleb128 0x2
+ 187 0026 01       		.byte	0x1
+ 188 0027 06       		.byte	0x6
+ 189 0028 70020000 		.4byte	.LASF0
+ 190 002c 03       		.uleb128 0x3
+ 191 002d 2F000000 		.4byte	.LASF4
+ 192 0031 02       		.byte	0x2
+ 193 0032 1D       		.byte	0x1d
+ 194 0033 37000000 		.4byte	0x37
+ 195 0037 02       		.uleb128 0x2
+ 196 0038 01       		.byte	0x1
+ 197 0039 08       		.byte	0x8
+ 198 003a 6A000000 		.4byte	.LASF1
+ 199 003e 02       		.uleb128 0x2
+ 200 003f 02       		.byte	0x2
+ 201 0040 05       		.byte	0x5
+ 202 0041 09020000 		.4byte	.LASF2
+ 203 0045 02       		.uleb128 0x2
+ 204 0046 02       		.byte	0x2
+ 205 0047 07       		.byte	0x7
+ 206 0048 22010000 		.4byte	.LASF3
+ 207 004c 03       		.uleb128 0x3
+ 208 004d 46000000 		.4byte	.LASF5
+ 209 0051 02       		.byte	0x2
+ 210 0052 3F       		.byte	0x3f
+ 211 0053 57000000 		.4byte	0x57
+ 212 0057 02       		.uleb128 0x2
+ 213 0058 04       		.byte	0x4
+ 214 0059 05       		.byte	0x5
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 6
+
+
+ 215 005a 13020000 		.4byte	.LASF6
+ 216 005e 02       		.uleb128 0x2
+ 217 005f 04       		.byte	0x4
+ 218 0060 07       		.byte	0x7
+ 219 0061 06010000 		.4byte	.LASF7
+ 220 0065 02       		.uleb128 0x2
+ 221 0066 08       		.byte	0x8
+ 222 0067 05       		.byte	0x5
+ 223 0068 EF010000 		.4byte	.LASF8
+ 224 006c 02       		.uleb128 0x2
+ 225 006d 08       		.byte	0x8
+ 226 006e 07       		.byte	0x7
+ 227 006f 84010000 		.4byte	.LASF9
+ 228 0073 04       		.uleb128 0x4
+ 229 0074 04       		.byte	0x4
+ 230 0075 05       		.byte	0x5
+ 231 0076 696E7400 		.ascii	"int\000"
+ 232 007a 02       		.uleb128 0x2
+ 233 007b 04       		.byte	0x4
+ 234 007c 07       		.byte	0x7
+ 235 007d 77010000 		.4byte	.LASF10
+ 236 0081 03       		.uleb128 0x3
+ 237 0082 9B010000 		.4byte	.LASF11
+ 238 0086 03       		.byte	0x3
+ 239 0087 18       		.byte	0x18
+ 240 0088 2C000000 		.4byte	0x2c
+ 241 008c 03       		.uleb128 0x3
+ 242 008d B5010000 		.4byte	.LASF12
+ 243 0091 03       		.byte	0x3
+ 244 0092 2C       		.byte	0x2c
+ 245 0093 4C000000 		.4byte	0x4c
+ 246 0097 02       		.uleb128 0x2
+ 247 0098 04       		.byte	0x4
+ 248 0099 04       		.byte	0x4
+ 249 009a 64000000 		.4byte	.LASF13
+ 250 009e 02       		.uleb128 0x2
+ 251 009f 08       		.byte	0x8
+ 252 00a0 04       		.byte	0x4
+ 253 00a1 5F010000 		.4byte	.LASF14
+ 254 00a5 02       		.uleb128 0x2
+ 255 00a6 01       		.byte	0x1
+ 256 00a7 08       		.byte	0x8
+ 257 00a8 04020000 		.4byte	.LASF15
+ 258 00ac 02       		.uleb128 0x2
+ 259 00ad 08       		.byte	0x8
+ 260 00ae 04       		.byte	0x4
+ 261 00af 64020000 		.4byte	.LASF16
+ 262 00b3 02       		.uleb128 0x2
+ 263 00b4 04       		.byte	0x4
+ 264 00b5 07       		.byte	0x7
+ 265 00b6 E6010000 		.4byte	.LASF17
+ 266 00ba 05       		.uleb128 0x5
+ 267 00bb 66010000 		.4byte	.LASF38
+ 268 00bf 01       		.byte	0x1
+ 269 00c0 0C       		.byte	0xc
+ 270 00c1 73000000 		.4byte	0x73
+ 271 00c5 00000000 		.4byte	.LFB64
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 7
+
+
+ 272 00c9 A0000000 		.4byte	.LFE64-.LFB64
+ 273 00cd 01       		.uleb128 0x1
+ 274 00ce 9C       		.byte	0x9c
+ 275 00cf 13020000 		.4byte	0x213
+ 276 00d3 06       		.uleb128 0x6
+ 277 00d4 39000000 		.4byte	.LASF18
+ 278 00d8 01       		.byte	0x1
+ 279 00d9 17       		.byte	0x17
+ 280 00da 81000000 		.4byte	0x81
+ 281 00de 00000000 		.4byte	.LLST0
+ 282 00e2 07       		.uleb128 0x7
+ 283 00e3 20000000 		.4byte	.LBB2
+ 284 00e7 6C000000 		.4byte	.LBE2-.LBB2
+ 285 00eb D7010000 		.4byte	0x1d7
+ 286 00ef 08       		.uleb128 0x8
+ 287 00f0 4F010000 		.4byte	.LASF19
+ 288 00f4 01       		.byte	0x1
+ 289 00f5 3C       		.byte	0x3c
+ 290 00f6 13020000 		.4byte	0x213
+ 291 00fa 03       		.uleb128 0x3
+ 292 00fb 91       		.byte	0x91
+ 293 00fc B07F     		.sleb128 -80
+ 294 00fe 09       		.uleb128 0x9
+ 295 00ff 24000000 		.4byte	.LVL5
+ 296 0103 34020000 		.4byte	0x234
+ 297 0107 09       		.uleb128 0x9
+ 298 0108 2A000000 		.4byte	.LVL6
+ 299 010c 3F020000 		.4byte	0x23f
+ 300 0110 0A       		.uleb128 0xa
+ 301 0111 3E000000 		.4byte	.LVL8
+ 302 0115 4A020000 		.4byte	0x24a
+ 303 0119 24010000 		.4byte	0x124
+ 304 011d 0B       		.uleb128 0xb
+ 305 011e 01       		.uleb128 0x1
+ 306 011f 50       		.byte	0x50
+ 307 0120 02       		.uleb128 0x2
+ 308 0121 08       		.byte	0x8
+ 309 0122 64       		.byte	0x64
+ 310 0123 00       		.byte	0
+ 311 0124 0A       		.uleb128 0xa
+ 312 0125 48000000 		.4byte	.LVL9
+ 313 0129 4A020000 		.4byte	0x24a
+ 314 012d 38010000 		.4byte	0x138
+ 315 0131 0B       		.uleb128 0xb
+ 316 0132 01       		.uleb128 0x1
+ 317 0133 50       		.byte	0x50
+ 318 0134 02       		.uleb128 0x2
+ 319 0135 09       		.byte	0x9
+ 320 0136 9C       		.byte	0x9c
+ 321 0137 00       		.byte	0
+ 322 0138 0A       		.uleb128 0xa
+ 323 0139 50000000 		.4byte	.LVL10
+ 324 013d 55020000 		.4byte	0x255
+ 325 0141 4C010000 		.4byte	0x14c
+ 326 0145 0B       		.uleb128 0xb
+ 327 0146 01       		.uleb128 0x1
+ 328 0147 50       		.byte	0x50
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 8
+
+
+ 329 0148 02       		.uleb128 0x2
+ 330 0149 08       		.byte	0x8
+ 331 014a 64       		.byte	0x64
+ 332 014b 00       		.byte	0
+ 333 014c 0A       		.uleb128 0xa
+ 334 014d 5A000000 		.4byte	.LVL11
+ 335 0151 55020000 		.4byte	0x255
+ 336 0155 60010000 		.4byte	0x160
+ 337 0159 0B       		.uleb128 0xb
+ 338 015a 01       		.uleb128 0x1
+ 339 015b 50       		.byte	0x50
+ 340 015c 02       		.uleb128 0x2
+ 341 015d 09       		.byte	0x9
+ 342 015e 9C       		.byte	0x9c
+ 343 015f 00       		.byte	0
+ 344 0160 09       		.uleb128 0x9
+ 345 0161 5E000000 		.4byte	.LVL12
+ 346 0165 60020000 		.4byte	0x260
+ 347 0169 09       		.uleb128 0x9
+ 348 016a 62000000 		.4byte	.LVL13
+ 349 016e 6B020000 		.4byte	0x26b
+ 350 0172 09       		.uleb128 0x9
+ 351 0173 68000000 		.4byte	.LVL14
+ 352 0177 76020000 		.4byte	0x276
+ 353 017b 09       		.uleb128 0x9
+ 354 017c 6E000000 		.4byte	.LVL15
+ 355 0180 81020000 		.4byte	0x281
+ 356 0184 09       		.uleb128 0x9
+ 357 0185 74000000 		.4byte	.LVL16
+ 358 0189 8C020000 		.4byte	0x28c
+ 359 018d 0A       		.uleb128 0xa
+ 360 018e 86000000 		.4byte	.LVL17
+ 361 0192 97020000 		.4byte	0x297
+ 362 0196 C5010000 		.4byte	0x1c5
+ 363 019a 0B       		.uleb128 0xb
+ 364 019b 01       		.uleb128 0x1
+ 365 019c 50       		.byte	0x50
+ 366 019d 03       		.uleb128 0x3
+ 367 019e 91       		.byte	0x91
+ 368 019f B07F     		.sleb128 -80
+ 369 01a1 0B       		.uleb128 0xb
+ 370 01a2 01       		.uleb128 0x1
+ 371 01a3 51       		.byte	0x51
+ 372 01a4 02       		.uleb128 0x2
+ 373 01a5 08       		.byte	0x8
+ 374 01a6 40       		.byte	0x40
+ 375 01a7 0B       		.uleb128 0xb
+ 376 01a8 01       		.uleb128 0x1
+ 377 01a9 52       		.byte	0x52
+ 378 01aa 05       		.uleb128 0x5
+ 379 01ab 03       		.byte	0x3
+ 380 01ac 2C000000 		.4byte	.LC1
+ 381 01b0 0B       		.uleb128 0xb
+ 382 01b1 01       		.uleb128 0x1
+ 383 01b2 53       		.byte	0x53
+ 384 01b3 02       		.uleb128 0x2
+ 385 01b4 74       		.byte	0x74
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 9
+
+
+ 386 01b5 00       		.sleb128 0
+ 387 01b6 0B       		.uleb128 0xb
+ 388 01b7 02       		.uleb128 0x2
+ 389 01b8 7D       		.byte	0x7d
+ 390 01b9 00       		.sleb128 0
+ 391 01ba 02       		.uleb128 0x2
+ 392 01bb 75       		.byte	0x75
+ 393 01bc 00       		.sleb128 0
+ 394 01bd 0B       		.uleb128 0xb
+ 395 01be 02       		.uleb128 0x2
+ 396 01bf 7D       		.byte	0x7d
+ 397 01c0 04       		.sleb128 4
+ 398 01c1 02       		.uleb128 0x2
+ 399 01c2 76       		.byte	0x76
+ 400 01c3 00       		.sleb128 0
+ 401 01c4 00       		.byte	0
+ 402 01c5 0C       		.uleb128 0xc
+ 403 01c6 8C000000 		.4byte	.LVL18
+ 404 01ca A2020000 		.4byte	0x2a2
+ 405 01ce 0B       		.uleb128 0xb
+ 406 01cf 01       		.uleb128 0x1
+ 407 01d0 50       		.byte	0x50
+ 408 01d1 03       		.uleb128 0x3
+ 409 01d2 91       		.byte	0x91
+ 410 01d3 B07F     		.sleb128 -80
+ 411 01d5 00       		.byte	0
+ 412 01d6 00       		.byte	0
+ 413 01d7 09       		.uleb128 0x9
+ 414 01d8 0A000000 		.4byte	.LVL0
+ 415 01dc AD020000 		.4byte	0x2ad
+ 416 01e0 09       		.uleb128 0x9
+ 417 01e1 10000000 		.4byte	.LVL1
+ 418 01e5 B8020000 		.4byte	0x2b8
+ 419 01e9 09       		.uleb128 0x9
+ 420 01ea 16000000 		.4byte	.LVL2
+ 421 01ee C3020000 		.4byte	0x2c3
+ 422 01f2 0A       		.uleb128 0xa
+ 423 01f3 1C000000 		.4byte	.LVL3
+ 424 01f7 A2020000 		.4byte	0x2a2
+ 425 01fb 09020000 		.4byte	0x209
+ 426 01ff 0B       		.uleb128 0xb
+ 427 0200 01       		.uleb128 0x1
+ 428 0201 50       		.byte	0x50
+ 429 0202 05       		.uleb128 0x5
+ 430 0203 03       		.byte	0x3
+ 431 0204 00000000 		.4byte	.LC0
+ 432 0208 00       		.byte	0
+ 433 0209 09       		.uleb128 0x9
+ 434 020a 20000000 		.4byte	.LVL4
+ 435 020e CE020000 		.4byte	0x2ce
+ 436 0212 00       		.byte	0
+ 437 0213 0D       		.uleb128 0xd
+ 438 0214 A5000000 		.4byte	0xa5
+ 439 0218 23020000 		.4byte	0x223
+ 440 021c 0E       		.uleb128 0xe
+ 441 021d B3000000 		.4byte	0xb3
+ 442 0221 3F       		.byte	0x3f
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 10
+
+
+ 443 0222 00       		.byte	0
+ 444 0223 0F       		.uleb128 0xf
+ 445 0224 42010000 		.4byte	.LASF39
+ 446 0228 0A       		.byte	0xa
+ 447 0229 1207     		.2byte	0x712
+ 448 022b 2F020000 		.4byte	0x22f
+ 449 022f 10       		.uleb128 0x10
+ 450 0230 8C000000 		.4byte	0x8c
+ 451 0234 11       		.uleb128 0x11
+ 452 0235 CF010000 		.4byte	.LASF20
+ 453 0239 CF010000 		.4byte	.LASF20
+ 454 023d 04       		.byte	0x4
+ 455 023e 58       		.byte	0x58
+ 456 023f 11       		.uleb128 0x11
+ 457 0240 8D020000 		.4byte	.LASF21
+ 458 0244 8D020000 		.4byte	.LASF21
+ 459 0248 04       		.byte	0x4
+ 460 0249 57       		.byte	0x57
+ 461 024a 11       		.uleb128 0x11
+ 462 024b 6B010000 		.4byte	.LASF22
+ 463 024f 6B010000 		.4byte	.LASF22
+ 464 0253 05       		.byte	0x5
+ 465 0254 10       		.byte	0x10
+ 466 0255 11       		.uleb128 0x11
+ 467 0256 00000000 		.4byte	.LASF23
+ 468 025a 00000000 		.4byte	.LASF23
+ 469 025e 05       		.byte	0x5
+ 470 025f 15       		.byte	0x15
+ 471 0260 11       		.uleb128 0x11
+ 472 0261 54010000 		.4byte	.LASF24
+ 473 0265 54010000 		.4byte	.LASF24
+ 474 0269 05       		.byte	0x5
+ 475 026a 0D       		.byte	0xd
+ 476 026b 11       		.uleb128 0x11
+ 477 026c A3010000 		.4byte	.LASF25
+ 478 0270 A3010000 		.4byte	.LASF25
+ 479 0274 05       		.byte	0x5
+ 480 0275 1C       		.byte	0x1c
+ 481 0276 11       		.uleb128 0x11
+ 482 0277 18010000 		.4byte	.LASF26
+ 483 027b 18010000 		.4byte	.LASF26
+ 484 027f 05       		.byte	0x5
+ 485 0280 1D       		.byte	0x1d
+ 486 0281 11       		.uleb128 0x11
+ 487 0282 59000000 		.4byte	.LASF27
+ 488 0286 59000000 		.4byte	.LASF27
+ 489 028a 05       		.byte	0x5
+ 490 028b 1B       		.byte	0x1b
+ 491 028c 11       		.uleb128 0x11
+ 492 028d AB010000 		.4byte	.LASF28
+ 493 0291 AB010000 		.4byte	.LASF28
+ 494 0295 05       		.byte	0x5
+ 495 0296 1A       		.byte	0x1a
+ 496 0297 11       		.uleb128 0x11
+ 497 0298 50000000 		.4byte	.LASF29
+ 498 029c 50000000 		.4byte	.LASF29
+ 499 02a0 06       		.byte	0x6
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 11
+
+
+ 500 02a1 FD       		.byte	0xfd
+ 501 02a2 11       		.uleb128 0x11
+ 502 02a3 7C020000 		.4byte	.LASF30
+ 503 02a7 7C020000 		.4byte	.LASF30
+ 504 02ab 07       		.byte	0x7
+ 505 02ac 8B       		.byte	0x8b
+ 506 02ad 11       		.uleb128 0x11
+ 507 02ae 22000000 		.4byte	.LASF31
+ 508 02b2 22000000 		.4byte	.LASF31
+ 509 02b6 07       		.byte	0x7
+ 510 02b7 54       		.byte	0x54
+ 511 02b8 11       		.uleb128 0x11
+ 512 02b9 0E000000 		.4byte	.LASF32
+ 513 02bd 0E000000 		.4byte	.LASF32
+ 514 02c1 08       		.byte	0x8
+ 515 02c2 18       		.byte	0x18
+ 516 02c3 11       		.uleb128 0x11
+ 517 02c4 BD010000 		.4byte	.LASF33
+ 518 02c8 BD010000 		.4byte	.LASF33
+ 519 02cc 09       		.byte	0x9
+ 520 02cd 18       		.byte	0x18
+ 521 02ce 11       		.uleb128 0x11
+ 522 02cf 35010000 		.4byte	.LASF34
+ 523 02d3 35010000 		.4byte	.LASF34
+ 524 02d7 04       		.byte	0x4
+ 525 02d8 46       		.byte	0x46
+ 526 02d9 00       		.byte	0
+ 527              		.section	.debug_abbrev,"",%progbits
+ 528              	.Ldebug_abbrev0:
+ 529 0000 01       		.uleb128 0x1
+ 530 0001 11       		.uleb128 0x11
+ 531 0002 01       		.byte	0x1
+ 532 0003 25       		.uleb128 0x25
+ 533 0004 0E       		.uleb128 0xe
+ 534 0005 13       		.uleb128 0x13
+ 535 0006 0B       		.uleb128 0xb
+ 536 0007 03       		.uleb128 0x3
+ 537 0008 0E       		.uleb128 0xe
+ 538 0009 1B       		.uleb128 0x1b
+ 539 000a 0E       		.uleb128 0xe
+ 540 000b 55       		.uleb128 0x55
+ 541 000c 17       		.uleb128 0x17
+ 542 000d 11       		.uleb128 0x11
+ 543 000e 01       		.uleb128 0x1
+ 544 000f 10       		.uleb128 0x10
+ 545 0010 17       		.uleb128 0x17
+ 546 0011 00       		.byte	0
+ 547 0012 00       		.byte	0
+ 548 0013 02       		.uleb128 0x2
+ 549 0014 24       		.uleb128 0x24
+ 550 0015 00       		.byte	0
+ 551 0016 0B       		.uleb128 0xb
+ 552 0017 0B       		.uleb128 0xb
+ 553 0018 3E       		.uleb128 0x3e
+ 554 0019 0B       		.uleb128 0xb
+ 555 001a 03       		.uleb128 0x3
+ 556 001b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 12
+
+
+ 557 001c 00       		.byte	0
+ 558 001d 00       		.byte	0
+ 559 001e 03       		.uleb128 0x3
+ 560 001f 16       		.uleb128 0x16
+ 561 0020 00       		.byte	0
+ 562 0021 03       		.uleb128 0x3
+ 563 0022 0E       		.uleb128 0xe
+ 564 0023 3A       		.uleb128 0x3a
+ 565 0024 0B       		.uleb128 0xb
+ 566 0025 3B       		.uleb128 0x3b
+ 567 0026 0B       		.uleb128 0xb
+ 568 0027 49       		.uleb128 0x49
+ 569 0028 13       		.uleb128 0x13
+ 570 0029 00       		.byte	0
+ 571 002a 00       		.byte	0
+ 572 002b 04       		.uleb128 0x4
+ 573 002c 24       		.uleb128 0x24
+ 574 002d 00       		.byte	0
+ 575 002e 0B       		.uleb128 0xb
+ 576 002f 0B       		.uleb128 0xb
+ 577 0030 3E       		.uleb128 0x3e
+ 578 0031 0B       		.uleb128 0xb
+ 579 0032 03       		.uleb128 0x3
+ 580 0033 08       		.uleb128 0x8
+ 581 0034 00       		.byte	0
+ 582 0035 00       		.byte	0
+ 583 0036 05       		.uleb128 0x5
+ 584 0037 2E       		.uleb128 0x2e
+ 585 0038 01       		.byte	0x1
+ 586 0039 3F       		.uleb128 0x3f
+ 587 003a 19       		.uleb128 0x19
+ 588 003b 03       		.uleb128 0x3
+ 589 003c 0E       		.uleb128 0xe
+ 590 003d 3A       		.uleb128 0x3a
+ 591 003e 0B       		.uleb128 0xb
+ 592 003f 3B       		.uleb128 0x3b
+ 593 0040 0B       		.uleb128 0xb
+ 594 0041 27       		.uleb128 0x27
+ 595 0042 19       		.uleb128 0x19
+ 596 0043 49       		.uleb128 0x49
+ 597 0044 13       		.uleb128 0x13
+ 598 0045 8701     		.uleb128 0x87
+ 599 0047 19       		.uleb128 0x19
+ 600 0048 11       		.uleb128 0x11
+ 601 0049 01       		.uleb128 0x1
+ 602 004a 12       		.uleb128 0x12
+ 603 004b 06       		.uleb128 0x6
+ 604 004c 40       		.uleb128 0x40
+ 605 004d 18       		.uleb128 0x18
+ 606 004e 9742     		.uleb128 0x2117
+ 607 0050 19       		.uleb128 0x19
+ 608 0051 01       		.uleb128 0x1
+ 609 0052 13       		.uleb128 0x13
+ 610 0053 00       		.byte	0
+ 611 0054 00       		.byte	0
+ 612 0055 06       		.uleb128 0x6
+ 613 0056 34       		.uleb128 0x34
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 13
+
+
+ 614 0057 00       		.byte	0
+ 615 0058 03       		.uleb128 0x3
+ 616 0059 0E       		.uleb128 0xe
+ 617 005a 3A       		.uleb128 0x3a
+ 618 005b 0B       		.uleb128 0xb
+ 619 005c 3B       		.uleb128 0x3b
+ 620 005d 0B       		.uleb128 0xb
+ 621 005e 49       		.uleb128 0x49
+ 622 005f 13       		.uleb128 0x13
+ 623 0060 02       		.uleb128 0x2
+ 624 0061 17       		.uleb128 0x17
+ 625 0062 00       		.byte	0
+ 626 0063 00       		.byte	0
+ 627 0064 07       		.uleb128 0x7
+ 628 0065 0B       		.uleb128 0xb
+ 629 0066 01       		.byte	0x1
+ 630 0067 11       		.uleb128 0x11
+ 631 0068 01       		.uleb128 0x1
+ 632 0069 12       		.uleb128 0x12
+ 633 006a 06       		.uleb128 0x6
+ 634 006b 01       		.uleb128 0x1
+ 635 006c 13       		.uleb128 0x13
+ 636 006d 00       		.byte	0
+ 637 006e 00       		.byte	0
+ 638 006f 08       		.uleb128 0x8
+ 639 0070 34       		.uleb128 0x34
+ 640 0071 00       		.byte	0
+ 641 0072 03       		.uleb128 0x3
+ 642 0073 0E       		.uleb128 0xe
+ 643 0074 3A       		.uleb128 0x3a
+ 644 0075 0B       		.uleb128 0xb
+ 645 0076 3B       		.uleb128 0x3b
+ 646 0077 0B       		.uleb128 0xb
+ 647 0078 49       		.uleb128 0x49
+ 648 0079 13       		.uleb128 0x13
+ 649 007a 02       		.uleb128 0x2
+ 650 007b 18       		.uleb128 0x18
+ 651 007c 00       		.byte	0
+ 652 007d 00       		.byte	0
+ 653 007e 09       		.uleb128 0x9
+ 654 007f 898201   		.uleb128 0x4109
+ 655 0082 00       		.byte	0
+ 656 0083 11       		.uleb128 0x11
+ 657 0084 01       		.uleb128 0x1
+ 658 0085 31       		.uleb128 0x31
+ 659 0086 13       		.uleb128 0x13
+ 660 0087 00       		.byte	0
+ 661 0088 00       		.byte	0
+ 662 0089 0A       		.uleb128 0xa
+ 663 008a 898201   		.uleb128 0x4109
+ 664 008d 01       		.byte	0x1
+ 665 008e 11       		.uleb128 0x11
+ 666 008f 01       		.uleb128 0x1
+ 667 0090 31       		.uleb128 0x31
+ 668 0091 13       		.uleb128 0x13
+ 669 0092 01       		.uleb128 0x1
+ 670 0093 13       		.uleb128 0x13
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 14
+
+
+ 671 0094 00       		.byte	0
+ 672 0095 00       		.byte	0
+ 673 0096 0B       		.uleb128 0xb
+ 674 0097 8A8201   		.uleb128 0x410a
+ 675 009a 00       		.byte	0
+ 676 009b 02       		.uleb128 0x2
+ 677 009c 18       		.uleb128 0x18
+ 678 009d 9142     		.uleb128 0x2111
+ 679 009f 18       		.uleb128 0x18
+ 680 00a0 00       		.byte	0
+ 681 00a1 00       		.byte	0
+ 682 00a2 0C       		.uleb128 0xc
+ 683 00a3 898201   		.uleb128 0x4109
+ 684 00a6 01       		.byte	0x1
+ 685 00a7 11       		.uleb128 0x11
+ 686 00a8 01       		.uleb128 0x1
+ 687 00a9 31       		.uleb128 0x31
+ 688 00aa 13       		.uleb128 0x13
+ 689 00ab 00       		.byte	0
+ 690 00ac 00       		.byte	0
+ 691 00ad 0D       		.uleb128 0xd
+ 692 00ae 01       		.uleb128 0x1
+ 693 00af 01       		.byte	0x1
+ 694 00b0 49       		.uleb128 0x49
+ 695 00b1 13       		.uleb128 0x13
+ 696 00b2 01       		.uleb128 0x1
+ 697 00b3 13       		.uleb128 0x13
+ 698 00b4 00       		.byte	0
+ 699 00b5 00       		.byte	0
+ 700 00b6 0E       		.uleb128 0xe
+ 701 00b7 21       		.uleb128 0x21
+ 702 00b8 00       		.byte	0
+ 703 00b9 49       		.uleb128 0x49
+ 704 00ba 13       		.uleb128 0x13
+ 705 00bb 2F       		.uleb128 0x2f
+ 706 00bc 0B       		.uleb128 0xb
+ 707 00bd 00       		.byte	0
+ 708 00be 00       		.byte	0
+ 709 00bf 0F       		.uleb128 0xf
+ 710 00c0 34       		.uleb128 0x34
+ 711 00c1 00       		.byte	0
+ 712 00c2 03       		.uleb128 0x3
+ 713 00c3 0E       		.uleb128 0xe
+ 714 00c4 3A       		.uleb128 0x3a
+ 715 00c5 0B       		.uleb128 0xb
+ 716 00c6 3B       		.uleb128 0x3b
+ 717 00c7 05       		.uleb128 0x5
+ 718 00c8 49       		.uleb128 0x49
+ 719 00c9 13       		.uleb128 0x13
+ 720 00ca 3F       		.uleb128 0x3f
+ 721 00cb 19       		.uleb128 0x19
+ 722 00cc 3C       		.uleb128 0x3c
+ 723 00cd 19       		.uleb128 0x19
+ 724 00ce 00       		.byte	0
+ 725 00cf 00       		.byte	0
+ 726 00d0 10       		.uleb128 0x10
+ 727 00d1 35       		.uleb128 0x35
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 15
+
+
+ 728 00d2 00       		.byte	0
+ 729 00d3 49       		.uleb128 0x49
+ 730 00d4 13       		.uleb128 0x13
+ 731 00d5 00       		.byte	0
+ 732 00d6 00       		.byte	0
+ 733 00d7 11       		.uleb128 0x11
+ 734 00d8 2E       		.uleb128 0x2e
+ 735 00d9 00       		.byte	0
+ 736 00da 3F       		.uleb128 0x3f
+ 737 00db 19       		.uleb128 0x19
+ 738 00dc 3C       		.uleb128 0x3c
+ 739 00dd 19       		.uleb128 0x19
+ 740 00de 6E       		.uleb128 0x6e
+ 741 00df 0E       		.uleb128 0xe
+ 742 00e0 03       		.uleb128 0x3
+ 743 00e1 0E       		.uleb128 0xe
+ 744 00e2 3A       		.uleb128 0x3a
+ 745 00e3 0B       		.uleb128 0xb
+ 746 00e4 3B       		.uleb128 0x3b
+ 747 00e5 0B       		.uleb128 0xb
+ 748 00e6 00       		.byte	0
+ 749 00e7 00       		.byte	0
+ 750 00e8 00       		.byte	0
+ 751              		.section	.debug_loc,"",%progbits
+ 752              	.Ldebug_loc0:
+ 753              	.LLST0:
+ 754 0000 2A000000 		.4byte	.LVL6
+ 755 0004 2C000000 		.4byte	.LVL7
+ 756 0008 0100     		.2byte	0x1
+ 757 000a 50       		.byte	0x50
+ 758 000b 00000000 		.4byte	0
+ 759 000f 00000000 		.4byte	0
+ 760              		.section	.debug_aranges,"",%progbits
+ 761 0000 1C000000 		.4byte	0x1c
+ 762 0004 0200     		.2byte	0x2
+ 763 0006 00000000 		.4byte	.Ldebug_info0
+ 764 000a 04       		.byte	0x4
+ 765 000b 00       		.byte	0
+ 766 000c 0000     		.2byte	0
+ 767 000e 0000     		.2byte	0
+ 768 0010 00000000 		.4byte	.LFB64
+ 769 0014 A0000000 		.4byte	.LFE64-.LFB64
+ 770 0018 00000000 		.4byte	0
+ 771 001c 00000000 		.4byte	0
+ 772              		.section	.debug_ranges,"",%progbits
+ 773              	.Ldebug_ranges0:
+ 774 0000 00000000 		.4byte	.LFB64
+ 775 0004 A0000000 		.4byte	.LFE64
+ 776 0008 00000000 		.4byte	0
+ 777 000c 00000000 		.4byte	0
+ 778              		.section	.debug_line,"",%progbits
+ 779              	.Ldebug_line0:
+ 780 0000 3C020000 		.section	.debug_str,"MS",%progbits,1
+ 780      02000202 
+ 780      00000201 
+ 780      FB0E0D00 
+ 780      01010101 
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 16
+
+
+ 781              	.LASF23:
+ 782 0000 6D6F7665 		.ascii	"moveElevation\000"
+ 782      456C6576 
+ 782      6174696F 
+ 782      6E00
+ 783              	.LASF32:
+ 784 000e 6973725F 		.ascii	"isr_uart_rx_StartEx\000"
+ 784      75617274 
+ 784      5F72785F 
+ 784      53746172 
+ 784      74457800 
+ 785              	.LASF31:
+ 786 0022 55415254 		.ascii	"UART_1_Start\000"
+ 786      5F315F53 
+ 786      74617274 
+ 786      00
+ 787              	.LASF4:
+ 788 002f 5F5F7569 		.ascii	"__uint8_t\000"
+ 788      6E74385F 
+ 788      7400
+ 789              	.LASF18:
+ 790 0039 72656365 		.ascii	"receivedData\000"
+ 790      69766564 
+ 790      44617461 
+ 790      00
+ 791              	.LASF5:
+ 792 0046 5F5F696E 		.ascii	"__int32_t\000"
+ 792      7433325F 
+ 792      7400
+ 793              	.LASF29:
+ 794 0050 736E7072 		.ascii	"snprintf\000"
+ 794      696E7466 
+ 794      00
+ 795              	.LASF27:
+ 796 0059 6C696D69 		.ascii	"limitRight\000"
+ 796      74526967 
+ 796      687400
+ 797              	.LASF13:
+ 798 0064 666C6F61 		.ascii	"float\000"
+ 798      7400
+ 799              	.LASF1:
+ 800 006a 756E7369 		.ascii	"unsigned char\000"
+ 800      676E6564 
+ 800      20636861 
+ 800      7200
+ 801              	.LASF35:
+ 802 0078 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 802      43313120 
+ 802      352E342E 
+ 802      31203230 
+ 802      31363036 
+ 803 00ab 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 803      20726576 
+ 803      6973696F 
+ 803      6E203233 
+ 803      37373135 
+ 804 00de 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 17
+
+
+ 804      66756E63 
+ 804      74696F6E 
+ 804      2D736563 
+ 804      74696F6E 
+ 805              	.LASF7:
+ 806 0106 6C6F6E67 		.ascii	"long unsigned int\000"
+ 806      20756E73 
+ 806      69676E65 
+ 806      6420696E 
+ 806      7400
+ 807              	.LASF26:
+ 808 0118 6C696D69 		.ascii	"limitDown\000"
+ 808      74446F77 
+ 808      6E00
+ 809              	.LASF3:
+ 810 0122 73686F72 		.ascii	"short unsigned int\000"
+ 810      7420756E 
+ 810      7369676E 
+ 810      65642069 
+ 810      6E7400
+ 811              	.LASF34:
+ 812 0135 53504953 		.ascii	"SPIS_1_Start\000"
+ 812      5F315F53 
+ 812      74617274 
+ 812      00
+ 813              	.LASF39:
+ 814 0142 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 814      52784275 
+ 814      66666572 
+ 814      00
+ 815              	.LASF19:
+ 816 014f 62756666 		.ascii	"buff\000"
+ 816      00
+ 817              	.LASF24:
+ 818 0154 4D4F544F 		.ascii	"MOTOR_STEP\000"
+ 818      525F5354 
+ 818      455000
+ 819              	.LASF14:
+ 820 015f 646F7562 		.ascii	"double\000"
+ 820      6C6500
+ 821              	.LASF38:
+ 822 0166 6D61696E 		.ascii	"main\000"
+ 822      00
+ 823              	.LASF22:
+ 824 016b 6D6F7665 		.ascii	"moveAzimuth\000"
+ 824      417A696D 
+ 824      75746800 
+ 825              	.LASF10:
+ 826 0177 756E7369 		.ascii	"unsigned int\000"
+ 826      676E6564 
+ 826      20696E74 
+ 826      00
+ 827              	.LASF9:
+ 828 0184 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 828      206C6F6E 
+ 828      6720756E 
+ 828      7369676E 
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 18
+
+
+ 828      65642069 
+ 829              	.LASF11:
+ 830 019b 75696E74 		.ascii	"uint8_t\000"
+ 830      385F7400 
+ 831              	.LASF25:
+ 832 01a3 6C696D69 		.ascii	"limitUp\000"
+ 832      74557000 
+ 833              	.LASF28:
+ 834 01ab 6C696D69 		.ascii	"limitLeft\000"
+ 834      744C6566 
+ 834      7400
+ 835              	.LASF12:
+ 836 01b5 696E7433 		.ascii	"int32_t\000"
+ 836      325F7400 
+ 837              	.LASF33:
+ 838 01bd 6973725F 		.ascii	"isr_motor_StartEx\000"
+ 838      6D6F746F 
+ 838      725F5374 
+ 838      61727445 
+ 838      7800
+ 839              	.LASF20:
+ 840 01cf 53504953 		.ascii	"SPIS_1_GetRxBufferSize\000"
+ 840      5F315F47 
+ 840      65745278 
+ 840      42756666 
+ 840      65725369 
+ 841              	.LASF17:
+ 842 01e6 73697A65 		.ascii	"sizetype\000"
+ 842      74797065 
+ 842      00
+ 843              	.LASF8:
+ 844 01ef 6C6F6E67 		.ascii	"long long int\000"
+ 844      206C6F6E 
+ 844      6720696E 
+ 844      7400
+ 845              	.LASF36:
+ 846 01fd 6D61696E 		.ascii	"main.c\000"
+ 846      2E6300
+ 847              	.LASF15:
+ 848 0204 63686172 		.ascii	"char\000"
+ 848      00
+ 849              	.LASF2:
+ 850 0209 73686F72 		.ascii	"short int\000"
+ 850      7420696E 
+ 850      7400
+ 851              	.LASF6:
+ 852 0213 6C6F6E67 		.ascii	"long int\000"
+ 852      20696E74 
+ 852      00
+ 853              	.LASF37:
+ 854 021c 433A5C50 		.ascii	"C:\\PRJ3-main\\PRJ3-main\\PSoC\\StepperMotorDriver\\"
+ 854      524A332D 
+ 854      6D61696E 
+ 854      5C50524A 
+ 854      332D6D61 
+ 855 024b 53746570 		.ascii	"StepperMotorDriver.cydsn\000"
+ 855      7065724D 
+ARM GAS  C:\Users\perhi\AppData\Local\Temp\ccn8DKw6.s 			page 19
+
+
+ 855      6F746F72 
+ 855      44726976 
+ 855      65722E63 
+ 856              	.LASF16:
+ 857 0264 6C6F6E67 		.ascii	"long double\000"
+ 857      20646F75 
+ 857      626C6500 
+ 858              	.LASF0:
+ 859 0270 7369676E 		.ascii	"signed char\000"
+ 859      65642063 
+ 859      68617200 
+ 860              	.LASF30:
+ 861 027c 55415254 		.ascii	"UART_1_PutString\000"
+ 861      5F315F50 
+ 861      75745374 
+ 861      72696E67 
+ 861      00
+ 862              	.LASF21:
+ 863 028d 53504953 		.ascii	"SPIS_1_ReadRxData\000"
+ 863      5F315F52 
+ 863      65616452 
+ 863      78446174 
+ 863      6100
+ 864              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
