@@ -204,7 +204,21 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\BatteryDriver.cydsn\main.c" />
+<name v=".\BatteryDriver.cydsn\BatteryDriver.h" />
+<name v=".\BatteryDriver.cydsn\cyapicallbacks.h" />
+<name v=".\BatteryDriver.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\BatteryDriver.cydsn\BatteryDriver.cydwr" />
+<name v=".\BatteryDriver.cydsn\BatteryDriver.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="557, 587" SelectedTabbedMdiWindow="b401b18d-8939-4621-bb26-a9da1126951e"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ff222b99-ca19-4998-985b-f9e050176289" /><DocumentWindow Key="C:\code\PRJ3\PSoC\BatteryDriver\BatteryDriver.cydsn\main.c" Guid="b401b18d-8939-4621-bb26-a9da1126951e" /><DocumentWindow Key="C:\code\PRJ3\PSoC\BatteryDriver\BatteryDriver.cydsn\BatteryDriver.h" Guid="7170baaf-543b-4d6a-a52c-ae04be56ea4b" /><DocumentWindow Key="C:\code\PRJ3\PSoC\BatteryDriver\BatteryDriver.cydsn\cyapicallbacks.h" Guid="61e81568-cf1a-46b6-bac6-80a967eec9c8" /><DocumentWindow Key="C:\code\PRJ3\PSoC\BatteryDriver\BatteryDriver.cydsn\TopDesign\TopDesign.cysch" Guid="231a5a90-b9b9-4a99-bc95-07c5e999e932" /><DocumentWindow Key="C:\code\PRJ3\PSoC\BatteryDriver\BatteryDriver.cydsn\BatteryDriver.cydwr" Guid="e3dbde9f-38e4-465c-9290-72e17ab34f1f" /><DocumentWindow Key="C:\code\PRJ3\PSoC\BatteryDriver\BatteryDriver.cydsn\BatteryDriver.c" Guid="4c1b98b4-bd19-42b6-88b6-b112f6a76d78" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
