@@ -1,7 +1,7 @@
 let isNightMode = false;
 let useManualTime = false; //flag til toggle mellem manual og automatic time
 
-//setMode, altsaa om der skal vaere manuel (1) eller automatic (1) ----------------------------
+//setMode, altsaa om der skal vaere manuel (1) eller automatic (0) ----------------------------
 window.setMode = function (mode) {
 	useManualTime = mode === 1;
 	console.log("Time mode:", useManualTime ? "Manual" : "Automatic");
