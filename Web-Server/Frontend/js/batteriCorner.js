@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //UDKAST TIL WEBSOCKET -------------------------------------------------------------
 //document.addEventListener("DOMContentLoaded", function () {
-//	const ws = new WebSocket("ws://capital-renewing-jennet.ngrok-free.app/ws");
+//	const ws = new WebSocket("ws://capital-renewing-jennet.ngrok-free.app/api/ws");
 //	ws.onopen = () => {
 //		console.log("Connected to battery WS");
 //	};
