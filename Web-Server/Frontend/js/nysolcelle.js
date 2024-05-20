@@ -1,10 +1,10 @@
 const solarcell1 = document.querySelector(".solarcell1");
 const solarcell2 = document.querySelector(".solarcell2");
 
-const maxUp = 30;
-const maxDown = -90;
-const maxRight = 150;
-const maxLeft = -150;
+const maxUp = 40;
+const maxDown = -100;
+const maxRight = 160;
+const maxLeft = -160;
 let rotationAzimuth = 0;
 let rotationElevation = 0;
 
