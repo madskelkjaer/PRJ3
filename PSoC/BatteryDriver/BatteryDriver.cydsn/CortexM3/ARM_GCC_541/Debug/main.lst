@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
   19:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
   37              		.loc 1 19 0
   38              		.syntax unified
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 2
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 2
 
 
   39              	@ 19 "main.c" 1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
   81              		.section	.rodata.str1.4,"aMS",%progbits,1
   82              		.align	2
   83              	.LC0:
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 3
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 3
 
 
   84 0000 566F6C74 		.ascii	"Voltage divider: %i Percent\015\012\000"
@@ -145,15 +145,15 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  101 000b 01       		.uleb128 0x1
  102 000c 62000000 		.4byte	.LASF24
  103 0010 0C       		.byte	0xc
- 104 0011 75010000 		.4byte	.LASF25
- 105 0015 FC010000 		.4byte	.LASF26
+ 104 0011 A9010000 		.4byte	.LASF25
+ 105 0015 19010000 		.4byte	.LASF26
  106 0019 00000000 		.4byte	.Ldebug_ranges0+0
  107 001d 00000000 		.4byte	0
  108 0021 00000000 		.4byte	.Ldebug_line0
  109 0025 02       		.uleb128 0x2
  110 0026 01       		.byte	0x1
  111 0027 06       		.byte	0x6
- 112 0028 CF010000 		.4byte	.LASF0
+ 112 0028 03020000 		.4byte	.LASF0
  113 002c 02       		.uleb128 0x2
  114 002d 01       		.byte	0x1
  115 002e 08       		.byte	0x8
@@ -161,7 +161,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  117 0033 02       		.uleb128 0x2
  118 0034 02       		.byte	0x2
  119 0035 05       		.byte	0x5
- 120 0036 99010000 		.4byte	.LASF2
+ 120 0036 CD010000 		.4byte	.LASF2
  121 003a 02       		.uleb128 0x2
  122 003b 02       		.byte	0x2
  123 003c 07       		.byte	0x7
@@ -174,22 +174,22 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  130 004c 02       		.uleb128 0x2
  131 004d 04       		.byte	0x4
  132 004e 05       		.byte	0x5
- 133 004f A3010000 		.4byte	.LASF4
+ 133 004f D7010000 		.4byte	.LASF4
  134 0053 02       		.uleb128 0x2
  135 0054 04       		.byte	0x4
  136 0055 07       		.byte	0x7
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 4
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 4
 
 
  137 0056 F0000000 		.4byte	.LASF5
  138 005a 02       		.uleb128 0x2
  139 005b 08       		.byte	0x8
  140 005c 05       		.byte	0x5
- 141 005d 67010000 		.4byte	.LASF6
+ 141 005d 9B010000 		.4byte	.LASF6
  142 0061 02       		.uleb128 0x2
  143 0062 08       		.byte	0x8
  144 0063 07       		.byte	0x7
- 145 0064 3F010000 		.4byte	.LASF7
+ 145 0064 73010000 		.4byte	.LASF7
  146 0068 04       		.uleb128 0x4
  147 0069 04       		.byte	0x4
  148 006a 05       		.byte	0x5
@@ -197,9 +197,9 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  150 006f 02       		.uleb128 0x2
  151 0070 04       		.byte	0x4
  152 0071 07       		.byte	0x7
- 153 0072 32010000 		.4byte	.LASF8
+ 153 0072 66010000 		.4byte	.LASF8
  154 0076 03       		.uleb128 0x3
- 155 0077 56010000 		.4byte	.LASF10
+ 155 0077 8A010000 		.4byte	.LASF10
  156 007b 03       		.byte	0x3
  157 007c 2C       		.byte	0x2c
  158 007d 41000000 		.4byte	0x41
@@ -210,21 +210,21 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  163 0088 02       		.uleb128 0x2
  164 0089 08       		.byte	0x8
  165 008a 04       		.byte	0x4
- 166 008b 26010000 		.4byte	.LASF12
+ 166 008b 5A010000 		.4byte	.LASF12
  167 008f 02       		.uleb128 0x2
  168 0090 01       		.byte	0x1
  169 0091 08       		.byte	0x8
- 170 0092 7C010000 		.4byte	.LASF13
+ 170 0092 B0010000 		.4byte	.LASF13
  171 0096 02       		.uleb128 0x2
  172 0097 08       		.byte	0x8
  173 0098 04       		.byte	0x4
- 174 0099 C3010000 		.4byte	.LASF14
+ 174 0099 F7010000 		.4byte	.LASF14
  175 009d 02       		.uleb128 0x2
  176 009e 04       		.byte	0x4
  177 009f 07       		.byte	0x7
- 178 00a0 5E010000 		.4byte	.LASF15
+ 178 00a0 92010000 		.4byte	.LASF15
  179 00a4 05       		.uleb128 0x5
- 180 00a5 2D010000 		.4byte	.LASF27
+ 180 00a5 61010000 		.4byte	.LASF27
  181 00a9 01       		.byte	0x1
  182 00aa 11       		.byte	0x11
  183 00ab 68000000 		.4byte	0x68
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  191 00c2 01       		.byte	0x1
  192 00c3 14       		.byte	0x14
  193 00c4 37010000 		.4byte	0x137
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 5
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 5
 
 
  194 00c8 03       		.uleb128 0x3
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  248 0136 00       		.byte	0
  249 0137 0B       		.uleb128 0xb
  250 0138 8F000000 		.4byte	0x8f
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 6
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 6
 
 
  251 013c 47010000 		.4byte	0x147
@@ -307,7 +307,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  254 0145 FF       		.byte	0xff
  255 0146 00       		.byte	0
  256 0147 0D       		.uleb128 0xd
- 257 0148 19010000 		.4byte	.LASF29
+ 257 0148 4D010000 		.4byte	.LASF29
  258 014c 09       		.byte	0x9
  259 014d 1207     		.2byte	0x712
  260 014f 53010000 		.4byte	0x153
@@ -319,8 +319,8 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  266 0161 04       		.byte	0x4
  267 0162 54       		.byte	0x54
  268 0163 0F       		.uleb128 0xf
- 269 0164 DB010000 		.4byte	.LASF17
- 270 0168 DB010000 		.4byte	.LASF17
+ 269 0164 0F020000 		.4byte	.LASF17
+ 270 0168 0F020000 		.4byte	.LASF17
  271 016c 05       		.byte	0x5
  272 016d 34       		.byte	0x34
  273 016e 0F       		.uleb128 0xf
@@ -334,13 +334,13 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  281 0182 06       		.byte	0x6
  282 0183 34       		.byte	0x34
  283 0184 0F       		.uleb128 0xf
- 284 0185 AC010000 		.4byte	.LASF20
- 285 0189 AC010000 		.4byte	.LASF20
+ 284 0185 E0010000 		.4byte	.LASF20
+ 285 0189 E0010000 		.4byte	.LASF20
  286 018d 06       		.byte	0x6
  287 018e D1       		.byte	0xd1
  288 018f 0F       		.uleb128 0xf
- 289 0190 81010000 		.4byte	.LASF21
- 290 0194 81010000 		.4byte	.LASF21
+ 289 0190 B5010000 		.4byte	.LASF21
+ 290 0194 B5010000 		.4byte	.LASF21
  291 0198 07       		.byte	0x7
  292 0199 15       		.byte	0x15
  293 019a 0F       		.uleb128 0xf
@@ -349,8 +349,8 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  296 01a3 08       		.byte	0x8
  297 01a4 FD       		.byte	0xfd
  298 01a5 0F       		.uleb128 0xf
- 299 01a6 EB010000 		.4byte	.LASF23
- 300 01aa EB010000 		.4byte	.LASF23
+ 299 01a6 1F020000 		.4byte	.LASF23
+ 300 01aa 1F020000 		.4byte	.LASF23
  301 01ae 04       		.byte	0x4
  302 01af 8B       		.byte	0x8b
  303 01b0 00       		.byte	0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  305              	.Ldebug_abbrev0:
  306 0000 01       		.uleb128 0x1
  307 0001 11       		.uleb128 0x11
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 7
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 7
 
 
  308 0002 01       		.byte	0x1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  362 0038 01       		.byte	0x1
  363 0039 3F       		.uleb128 0x3f
  364 003a 19       		.uleb128 0x19
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 8
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 8
 
 
  365 003b 03       		.uleb128 0x3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  419 0077 13       		.uleb128 0x13
  420 0078 01       		.uleb128 0x1
  421 0079 13       		.uleb128 0x13
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 9
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 9
 
 
  422 007a 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  476 00b5 00       		.byte	0
  477 00b6 0E       		.uleb128 0xe
  478 00b7 35       		.uleb128 0x35
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 10
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 10
 
 
  479 00b8 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  526 0010 55415254 		.ascii	"UART_1_Start\000"
  526      5F315F53 
  526      74617274 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 11
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 11
 
 
  526      00
@@ -656,101 +656,97 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 1
  546      315F5374 
  546      61727443 
  546      6F6E7665 
- 547              	.LASF29:
- 548 0119 49544D5F 		.ascii	"ITM_RxBuffer\000"
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 12
+ 547              	.LASF26:
+ 548 0119 433A5C63 		.ascii	"C:\\code\\PRJ3\\PSoC\\BatteryDriver\\BatteryDriver."
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 12
 
 
- 548      52784275 
- 548      66666572 
- 548      00
- 549              	.LASF12:
- 550 0126 646F7562 		.ascii	"double\000"
- 550      6C6500
- 551              	.LASF27:
- 552 012d 6D61696E 		.ascii	"main\000"
- 552      00
- 553              	.LASF8:
- 554 0132 756E7369 		.ascii	"unsigned int\000"
- 554      676E6564 
- 554      20696E74 
- 554      00
- 555              	.LASF7:
- 556 013f 6C6F6E67 		.ascii	"long long unsigned int\000"
- 556      206C6F6E 
- 556      6720756E 
- 556      7369676E 
- 556      65642069 
- 557              	.LASF10:
- 558 0156 696E7433 		.ascii	"int32_t\000"
- 558      325F7400 
- 559              	.LASF15:
- 560 015e 73697A65 		.ascii	"sizetype\000"
- 560      74797065 
- 560      00
- 561              	.LASF6:
- 562 0167 6C6F6E67 		.ascii	"long long int\000"
- 562      206C6F6E 
- 562      6720696E 
- 562      7400
- 563              	.LASF25:
- 564 0175 6D61696E 		.ascii	"main.c\000"
- 564      2E6300
- 565              	.LASF13:
- 566 017c 63686172 		.ascii	"char\000"
- 566      00
- 567              	.LASF21:
- 568 0181 766F6C74 		.ascii	"voltageDividerToPercent\000"
- 568      61676544 
- 568      69766964 
- 568      6572546F 
- 568      50657263 
- 569              	.LASF2:
- 570 0199 73686F72 		.ascii	"short int\000"
- 570      7420696E 
- 570      7400
- 571              	.LASF4:
- 572 01a3 6C6F6E67 		.ascii	"long int\000"
- 572      20696E74 
- 572      00
- 573              	.LASF20:
- 574 01ac 4144435F 		.ascii	"ADC_SAR_2_StartConvert\000"
- 574      5341525F 
- 574      325F5374 
- 574      61727443 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\cczPfqTu.s 			page 13
+ 548      6F64655C 
+ 548      50524A33 
+ 548      5C50536F 
+ 548      435C4261 
+ 549 0147 63796473 		.ascii	"cydsn\000"
+ 549      6E00
+ 550              	.LASF29:
+ 551 014d 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 551      52784275 
+ 551      66666572 
+ 551      00
+ 552              	.LASF12:
+ 553 015a 646F7562 		.ascii	"double\000"
+ 553      6C6500
+ 554              	.LASF27:
+ 555 0161 6D61696E 		.ascii	"main\000"
+ 555      00
+ 556              	.LASF8:
+ 557 0166 756E7369 		.ascii	"unsigned int\000"
+ 557      676E6564 
+ 557      20696E74 
+ 557      00
+ 558              	.LASF7:
+ 559 0173 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 559      206C6F6E 
+ 559      6720756E 
+ 559      7369676E 
+ 559      65642069 
+ 560              	.LASF10:
+ 561 018a 696E7433 		.ascii	"int32_t\000"
+ 561      325F7400 
+ 562              	.LASF15:
+ 563 0192 73697A65 		.ascii	"sizetype\000"
+ 563      74797065 
+ 563      00
+ 564              	.LASF6:
+ 565 019b 6C6F6E67 		.ascii	"long long int\000"
+ 565      206C6F6E 
+ 565      6720696E 
+ 565      7400
+ 566              	.LASF25:
+ 567 01a9 6D61696E 		.ascii	"main.c\000"
+ 567      2E6300
+ 568              	.LASF13:
+ 569 01b0 63686172 		.ascii	"char\000"
+ 569      00
+ 570              	.LASF21:
+ 571 01b5 766F6C74 		.ascii	"voltageDividerToPercent\000"
+ 571      61676544 
+ 571      69766964 
+ 571      6572546F 
+ 571      50657263 
+ 572              	.LASF2:
+ 573 01cd 73686F72 		.ascii	"short int\000"
+ 573      7420696E 
+ 573      7400
+ 574              	.LASF4:
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccjunFSk.s 			page 13
 
 
- 574      6F6E7665 
- 575              	.LASF14:
- 576 01c3 6C6F6E67 		.ascii	"long double\000"
- 576      20646F75 
- 576      626C6500 
- 577              	.LASF0:
- 578 01cf 7369676E 		.ascii	"signed char\000"
- 578      65642063 
- 578      68617200 
- 579              	.LASF17:
- 580 01db 4144435F 		.ascii	"ADC_SAR_1_Start\000"
- 580      5341525F 
- 580      315F5374 
- 580      61727400 
- 581              	.LASF23:
- 582 01eb 55415254 		.ascii	"UART_1_PutString\000"
- 582      5F315F50 
- 582      75745374 
- 582      72696E67 
- 582      00
- 583              	.LASF26:
- 584 01fc 433A5C55 		.ascii	"C:\\Users\\andre\\OneDrive\\Skrivebord\\BatteriDriv"
- 584      73657273 
- 584      5C616E64 
- 584      72655C4F 
- 584      6E654472 
- 585 022a 65722E63 		.ascii	"er.cywrk.Archive01\\BatteryDriver\\BatteryDriver.cy"
- 585      7977726B 
- 585      2E417263 
- 585      68697665 
- 585      30315C42 
- 586 025b 64736E00 		.ascii	"dsn\000"
- 587              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 575 01d7 6C6F6E67 		.ascii	"long int\000"
+ 575      20696E74 
+ 575      00
+ 576              	.LASF20:
+ 577 01e0 4144435F 		.ascii	"ADC_SAR_2_StartConvert\000"
+ 577      5341525F 
+ 577      325F5374 
+ 577      61727443 
+ 577      6F6E7665 
+ 578              	.LASF14:
+ 579 01f7 6C6F6E67 		.ascii	"long double\000"
+ 579      20646F75 
+ 579      626C6500 
+ 580              	.LASF0:
+ 581 0203 7369676E 		.ascii	"signed char\000"
+ 581      65642063 
+ 581      68617200 
+ 582              	.LASF17:
+ 583 020f 4144435F 		.ascii	"ADC_SAR_1_Start\000"
+ 583      5341525F 
+ 583      315F5374 
+ 583      61727400 
+ 584              	.LASF23:
+ 585 021f 55415254 		.ascii	"UART_1_PutString\000"
+ 585      5F315F50 
+ 585      75745374 
+ 585      72696E67 
+ 585      00
+ 586              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

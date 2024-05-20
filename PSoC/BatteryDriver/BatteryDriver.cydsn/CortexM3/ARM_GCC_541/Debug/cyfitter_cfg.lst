@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
   29:Generated_Source\PSoC5/cyfitter_cfg.c **** 
   30:Generated_Source\PSoC5/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
   31:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 2
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 2
 
 
   32:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED_ATTR __attribute__ ((packed))
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
   86:Generated_Source\PSoC5/cyfitter_cfg.c **** 	(void)memcpy(dest, src, n);
   87:Generated_Source\PSoC5/cyfitter_cfg.c **** }
   88:Generated_Source\PSoC5/cyfitter_cfg.c **** CY_CFG_UNUSED
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 3
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 3
 
 
   89:Generated_Source\PSoC5/cyfitter_cfg.c **** static void CYCONFIGCPYCODE(void *dest, const void *src, size_t n);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
   41              		.thumb
   42              		.thumb_func
   43              		.type	cfg_write_bytes32, %function
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 4
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 4
 
 
   44              	cfg_write_bytes32:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  181:Generated_Source\PSoC5/cyfitter_cfg.c **** * Function Name: cfg_write_bytes32
  182:Generated_Source\PSoC5/cyfitter_cfg.c **** ********************************************************************************
  183:Generated_Source\PSoC5/cyfitter_cfg.c **** * Summary:
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 5
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 5
 
 
  184:Generated_Source\PSoC5/cyfitter_cfg.c **** *  This function is used for setting up the chip configuration areas that
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
   79              	.L6:
  205:Generated_Source\PSoC5/cyfitter_cfg.c **** 		{
  206:Generated_Source\PSoC5/cyfitter_cfg.c **** 			CY_SET_REG8((void *)(baseAddr + data_table[j].offset), data_table[j].value);
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 6
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 6
 
 
   80              		.loc 1 206 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  214:Generated_Source\PSoC5/cyfitter_cfg.c **** * Function Name: ClockSetup
  215:Generated_Source\PSoC5/cyfitter_cfg.c **** ********************************************************************************
  216:Generated_Source\PSoC5/cyfitter_cfg.c **** *
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 7
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 7
 
 
  217:Generated_Source\PSoC5/cyfitter_cfg.c **** * Summary:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  271:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_BCFG2), 0x48u);
  272:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_MSTR0), 0x00u);
  273:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_LD), 0x02u);
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 8
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 8
 
 
  274:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_DLY1), 0x04u);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  145 0016 0C4B     		ldr	r3, .L10+8
  146 0018 1A70     		strb	r2, [r3]
  307:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_SW0, 0x02u);
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 9
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 9
 
 
  147              		.loc 1 307 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  195              		.cfi_def_cfa_offset 8
  196              		.cfi_offset 3, -8
  197              		.cfi_offset 14, -4
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 10
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 10
 
 
   79:Generated_Source\PSoC5/cyfitter_cfg.c **** }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  237:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_DCFG0_CFG0 + 0x2u), 0x18u);
  248              		.loc 1 237 0
  249 0002 3322     		movs	r2, #51
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 11
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 11
 
 
  250 0004 2C4B     		ldr	r3, .L22
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  294              	.L19:
  258:Generated_Source\PSoC5/cyfitter_cfg.c **** 		CyDelayCycles(10u * 48u); /* Delay 10us based on 48MHz clock */
  295              		.loc 1 258 0 discriminator 4
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 12
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 12
 
 
  296 004a 224B     		ldr	r3, .L22+28
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  339              		.loc 1 272 0
  340 008a 1A70     		strb	r2, [r3]
  273:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_DLY1), 0x04u);
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 13
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 13
 
 
  341              		.loc 1 273 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  313:Generated_Source\PSoC5/cyfitter_cfg.c **** }
  314:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  315:Generated_Source\PSoC5/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 14
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 14
 
 
  316:Generated_Source\PSoC5/cyfitter_cfg.c **** /*******************************************************************************
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  416 0016 7047     		bx	lr
  417              	.L28:
  418              		.align	2
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 15
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 15
 
 
  419              	.L27:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  446              	@ 0 "" 2
  372:Generated_Source\PSoC5/cyfitter_cfg.c **** #endif
  373:Generated_Source\PSoC5/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 16
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 16
 
 
  374:Generated_Source\PSoC5/cyfitter_cfg.c **** 	/* Enable/Disable Debug functionality based on settings from System DWR */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  413:Generated_Source\PSoC5/cyfitter_cfg.c **** 			CYMEMZERO(ms->address, (size_t)(uint32)(ms->size));
  462              		.loc 1 413 0 discriminator 3
  463 0012 334D     		ldr	r5, .L35+4
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 17
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 17
 
 
  464 0014 6300     		lsls	r3, r4, #1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  417:Generated_Source\PSoC5/cyfitter_cfg.c **** 		{
  506              		.loc 1 417 0 discriminator 3
  507 0048 0134     		adds	r4, r4, #1
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 18
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 18
 
 
  508              	.LVL43:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  545 0088 1949     		ldr	r1, .L35+20
  546 008a 1A48     		ldr	r0, .L35+24
  547 008c FFF7FEFF 		bl	CYCONFIGCPY
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 19
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 19
 
 
  548              	.LVL47:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  586              		.loc 1 455 0
  587 00cc FFF7FEFF 		bl	AnalogSetDefault
  588              	.LVL52:
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 20
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 20
 
 
  456:Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  640              		.type	cfg_memcpy_list.5019, %object
  641              		.size	cfg_memcpy_list.5019, 10
  642              	cfg_memcpy_list.5019:
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 21
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 21
 
 
  643 002c 00180140 		.word	1073813504
@@ -1216,10 +1216,10 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  655 0006 00000000 		.4byte	.Ldebug_abbrev0
  656 000a 04       		.byte	0x4
  657 000b 01       		.uleb128 0x1
- 658 000c CA010000 		.4byte	.LASF52
+ 658 000c FE010000 		.4byte	.LASF52
  659 0010 0C       		.byte	0xc
- 660 0011 1A030000 		.4byte	.LASF53
- 661 0015 7F020000 		.4byte	.LASF54
+ 660 0011 EB020000 		.4byte	.LASF53
+ 661 0015 09010000 		.4byte	.LASF54
  662 0019 00000000 		.4byte	.Ldebug_ranges0+0
  663 001d 00000000 		.4byte	0
  664 0021 00000000 		.4byte	.Ldebug_line0
@@ -1243,7 +1243,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  682 0045 04       		.uleb128 0x4
  683 0046 08       		.byte	0x8
  684 0047 04       		.byte	0x4
- 685 0048 51010000 		.4byte	.LASF2
+ 685 0048 85010000 		.4byte	.LASF2
  686 004c 04       		.uleb128 0x4
  687 004d 01       		.byte	0x1
  688 004e 06       		.byte	0x6
@@ -1251,18 +1251,18 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  690 0053 04       		.uleb128 0x4
  691 0054 01       		.byte	0x1
  692 0055 08       		.byte	0x8
- 693 0056 B2010000 		.4byte	.LASF4
+ 693 0056 E6010000 		.4byte	.LASF4
  694 005a 04       		.uleb128 0x4
  695 005b 02       		.byte	0x2
  696 005c 05       		.byte	0x5
- 697 005d C0010000 		.4byte	.LASF5
+ 697 005d F4010000 		.4byte	.LASF5
  698 0061 04       		.uleb128 0x4
  699 0062 02       		.byte	0x2
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 22
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 22
 
 
  700 0063 07       		.byte	0x7
- 701 0064 35010000 		.4byte	.LASF6
+ 701 0064 69010000 		.4byte	.LASF6
  702 0068 04       		.uleb128 0x4
  703 0069 04       		.byte	0x4
  704 006a 05       		.byte	0x5
@@ -1270,7 +1270,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  706 006f 04       		.uleb128 0x4
  707 0070 04       		.byte	0x4
  708 0071 07       		.byte	0x7
- 709 0072 09010000 		.4byte	.LASF8
+ 709 0072 3D010000 		.4byte	.LASF8
  710 0076 04       		.uleb128 0x4
  711 0077 08       		.byte	0x8
  712 0078 07       		.byte	0x7
@@ -1278,13 +1278,13 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  714 007d 04       		.uleb128 0x4
  715 007e 04       		.byte	0x4
  716 007f 07       		.byte	0x7
- 717 0080 48010000 		.4byte	.LASF10
+ 717 0080 7C010000 		.4byte	.LASF10
  718 0084 05       		.uleb128 0x5
  719 0085 04       		.byte	0x4
  720 0086 04       		.uleb128 0x4
  721 0087 01       		.byte	0x1
  722 0088 08       		.byte	0x8
- 723 0089 73020000 		.4byte	.LASF11
+ 723 0089 A7020000 		.4byte	.LASF11
  724 008d 06       		.uleb128 0x6
  725 008e C6000000 		.4byte	.LASF13
  726 0092 03       		.byte	0x3
@@ -1303,13 +1303,13 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  739 00b1 04       		.uleb128 0x4
  740 00b2 04       		.byte	0x4
  741 00b3 04       		.byte	0x4
- 742 00b4 91010000 		.4byte	.LASF16
+ 742 00b4 C5010000 		.4byte	.LASF16
  743 00b8 04       		.uleb128 0x4
  744 00b9 08       		.byte	0x8
  745 00ba 04       		.byte	0x4
  746 00bb CC000000 		.4byte	.LASF17
  747 00bf 06       		.uleb128 0x6
- 748 00c0 AD010000 		.4byte	.LASF18
+ 748 00c0 E1010000 		.4byte	.LASF18
  749 00c4 03       		.byte	0x3
  750 00c5 9302     		.2byte	0x293
  751 00c7 CB000000 		.4byte	0xcb
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  754 00d0 06       		.uleb128 0x6
  755 00d1 B9000000 		.4byte	.LASF19
  756 00d5 03       		.byte	0x3
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 23
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 23
 
 
  757 00d6 9402     		.2byte	0x294
@@ -1331,7 +1331,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  764 00e4 98       		.byte	0x98
  765 00e5 02010000 		.4byte	0x102
  766 00e9 09       		.uleb128 0x9
- 767 00ea F8020000 		.4byte	.LASF20
+ 767 00ea C9020000 		.4byte	.LASF20
  768 00ee 01       		.byte	0x1
  769 00ef 9A       		.byte	0x9a
  770 00f0 8D000000 		.4byte	0x8d
@@ -1344,7 +1344,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  777 0100 01       		.byte	0x1
  778 0101 00       		.byte	0
  779 0102 03       		.uleb128 0x3
- 780 0103 60020000 		.4byte	.LASF22
+ 780 0103 94020000 		.4byte	.LASF22
  781 0107 01       		.byte	0x1
  782 0108 9C       		.byte	0x9c
  783 0109 E1000000 		.4byte	0xe1
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  811 0146 53000000 		.4byte	.LASF24
  812 014a 01       		.byte	0x1
  813 014b C3       		.byte	0xc3
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 24
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 24
 
 
  814 014c A2010000 		.4byte	0x1a2
@@ -1438,12 +1438,12 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  868 01c4 58000000 		.4byte	.LFE6-.LFB6
  869 01c8 01       		.uleb128 0x1
  870 01c9 9C       		.byte	0x9c
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 25
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 25
 
 
  871 01ca DF010000 		.4byte	0x1df
  872 01ce 13       		.uleb128 0x13
- 873 01cf 5D010000 		.4byte	.LASF30
+ 873 01cf 91010000 		.4byte	.LASF30
  874 01d3 01       		.byte	0x1
  875 01d4 2F01     		.2byte	0x12f
  876 01d6 8D000000 		.4byte	0x8d
@@ -1495,10 +1495,10 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  922 022a 00       		.byte	0
  923 022b 00       		.byte	0
  924 022c 0C       		.uleb128 0xc
- 925 022d 0E030000 		.4byte	.LASF32
+ 925 022d DF020000 		.4byte	.LASF32
  926 0231 01       		.byte	0x1
  927 0232 54       		.byte	0x54
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 26
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 26
 
 
  928 0233 00000000 		.4byte	.LFB1
@@ -1507,7 +1507,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  931 023c 9C       		.byte	0x9c
  932 023d 8C020000 		.4byte	0x28c
  933 0241 17       		.uleb128 0x17
- 934 0242 8C010000 		.4byte	.LASF33
+ 934 0242 C0010000 		.4byte	.LASF33
  935 0246 01       		.byte	0x1
  936 0247 54       		.byte	0x54
  937 0248 84000000 		.4byte	0x84
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  982 0294 9B000000 		.4byte	.LASF34
  983 0298 01       		.byte	0x1
  984 0299 E6       		.byte	0xe6
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 27
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 27
 
 
  985 029a 00000000 		.4byte	.LFB5
@@ -1567,13 +1567,13 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  988 02a3 9C       		.byte	0x9c
  989 02a4 10030000 		.4byte	0x310
  990 02a8 0F       		.uleb128 0xf
- 991 02a9 1B010000 		.4byte	.LASF35
+ 991 02a9 4F010000 		.4byte	.LASF35
  992 02ad 01       		.byte	0x1
  993 02ae E8       		.byte	0xe8
  994 02af A5000000 		.4byte	0xa5
  995 02b3 32010000 		.4byte	.LLST10
  996 02b7 0F       		.uleb128 0xf
- 997 02b8 58020000 		.4byte	.LASF36
+ 997 02b8 8C020000 		.4byte	.LASF36
  998 02bc 01       		.byte	0x1
  999 02bd E9       		.byte	0xe9
  1000 02be 8D000000 		.4byte	0x8d
@@ -1618,14 +1618,14 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1039 030a 01       		.uleb128 0x1
  1040 030b 50       		.byte	0x50
  1041 030c 01       		.uleb128 0x1
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 28
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 28
 
 
  1042 030d 33       		.byte	0x33
  1043 030e 00       		.byte	0
  1044 030f 00       		.byte	0
  1045 0310 1A       		.uleb128 0x1a
- 1046 0311 E2020000 		.4byte	.LASF39
+ 1046 0311 B3020000 		.4byte	.LASF39
  1047 0315 01       		.byte	0x1
  1048 0316 4D01     		.2byte	0x14d
  1049 0318 00000000 		.4byte	.LFB7
@@ -1634,7 +1634,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1052 0321 9C       		.byte	0x9c
  1053 0322 43030000 		.4byte	0x343
  1054 0326 1B       		.uleb128 0x1b
- 1055 0327 FF020000 		.4byte	.LASF37
+ 1055 0327 D0020000 		.4byte	.LASF37
  1056 032b 01       		.byte	0x1
  1057 032c 4D01     		.2byte	0x14d
  1058 032e 8D000000 		.4byte	0x8d
@@ -1649,7 +1649,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1067 0341 53       		.byte	0x53
  1068 0342 00       		.byte	0
  1069 0343 1A       		.uleb128 0x1a
- 1070 0344 58030000 		.4byte	.LASF40
+ 1070 0344 29030000 		.4byte	.LASF40
  1071 0348 01       		.byte	0x1
  1072 0349 6F01     		.2byte	0x16f
  1073 034b 00000000 		.4byte	.LFB8
@@ -1667,23 +1667,23 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1085 0369 7B01     		.2byte	0x17b
  1086 036b 8A030000 		.4byte	0x38a
  1087 036f 1F       		.uleb128 0x1f
- 1088 0370 40030000 		.4byte	.LASF41
+ 1088 0370 11030000 		.4byte	.LASF41
  1089 0374 01       		.byte	0x1
  1090 0375 7C01     		.2byte	0x17c
  1091 0377 84000000 		.4byte	0x84
  1092 037b 00       		.byte	0
  1093 037c 1F       		.uleb128 0x1f
- 1094 037d 30010000 		.4byte	.LASF42
+ 1094 037d 64010000 		.4byte	.LASF42
  1095 0381 01       		.byte	0x1
  1096 0382 7D01     		.2byte	0x17d
  1097 0384 99000000 		.4byte	0x99
  1098 0388 04       		.byte	0x4
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 29
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 29
 
 
  1099 0389 00       		.byte	0
  1100 038a 06       		.uleb128 0x6
- 1101 038b 6F010000 		.4byte	.LASF43
+ 1101 038b A3010000 		.4byte	.LASF43
  1102 038f 01       		.byte	0x1
  1103 0390 7E01     		.2byte	0x17e
  1104 0392 66030000 		.4byte	0x366
@@ -1693,7 +1693,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1108 0399 8101     		.2byte	0x181
  1109 039b C7030000 		.4byte	0x3c7
  1110 039f 1F       		.uleb128 0x1f
- 1111 03a0 8C010000 		.4byte	.LASF33
+ 1111 03a0 C0010000 		.4byte	.LASF33
  1112 03a4 01       		.byte	0x1
  1113 03a5 8201     		.2byte	0x182
  1114 03a7 84000000 		.4byte	0x84
@@ -1705,14 +1705,14 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1120 03b4 8C020000 		.4byte	0x28c
  1121 03b8 04       		.byte	0x4
  1122 03b9 1F       		.uleb128 0x1f
- 1123 03ba 30010000 		.4byte	.LASF42
+ 1123 03ba 64010000 		.4byte	.LASF42
  1124 03be 01       		.byte	0x1
  1125 03bf 8401     		.2byte	0x184
  1126 03c1 99000000 		.4byte	0x99
  1127 03c5 08       		.byte	0x8
  1128 03c6 00       		.byte	0
  1129 03c7 06       		.uleb128 0x6
- 1130 03c8 23010000 		.4byte	.LASF44
+ 1130 03c8 57010000 		.4byte	.LASF44
  1131 03cc 01       		.byte	0x1
  1132 03cd 8501     		.2byte	0x185
  1133 03cf 96030000 		.4byte	0x396
@@ -1726,7 +1726,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1141 03e3 11       		.uleb128 0x11
  1142 03e4 8A030000 		.4byte	0x38a
  1143 03e8 1C       		.uleb128 0x1c
- 1144 03e9 7C010000 		.4byte	.LASF45
+ 1144 03e9 B0010000 		.4byte	.LASF45
  1145 03ed 01       		.byte	0x1
  1146 03ee 8701     		.2byte	0x187
  1147 03f0 FA030000 		.4byte	0x3fa
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1153 03ff 21       		.uleb128 0x21
  1154 0400 0F040000 		.4byte	0x40f
  1155 0404 0F040000 		.4byte	0x40f
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 30
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 30
 
 
  1156 0408 22       		.uleb128 0x22
@@ -1748,7 +1748,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1160 040f 11       		.uleb128 0x11
  1161 0410 C7030000 		.4byte	0x3c7
  1162 0414 1C       		.uleb128 0x1c
- 1163 0415 48030000 		.4byte	.LASF46
+ 1163 0415 19030000 		.4byte	.LASF46
  1164 0419 01       		.byte	0x1
  1165 041a 9201     		.2byte	0x192
  1166 041c 26040000 		.4byte	0x426
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1210 0474 23       		.byte	0x23
  1211 0475 04       		.uleb128 0x4
  1212 0476 94       		.byte	0x94
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 31
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 31
 
 
  1213 0477 02       		.byte	0x2
@@ -1821,13 +1821,13 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1230 049b 04       		.byte	0x4
  1231 049c 0F040000 		.4byte	0x40f
  1232 04a0 13       		.uleb128 0x13
- 1233 04a1 A5010000 		.4byte	.LASF47
+ 1233 04a1 D9010000 		.4byte	.LASF47
  1234 04a5 01       		.byte	0x1
  1235 04a6 A401     		.2byte	0x1a4
  1236 04a8 84000000 		.4byte	0x84
  1237 04ac 1F020000 		.4byte	.LLST15
  1238 04b0 13       		.uleb128 0x13
- 1239 04b1 78020000 		.4byte	.LASF48
+ 1239 04b1 AC020000 		.4byte	.LASF48
  1240 04b5 01       		.byte	0x1
  1241 04b6 A501     		.2byte	0x1a5
  1242 04b8 8C020000 		.4byte	0x28c
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1267 04ed 03       		.uleb128 0x3
  1268 04ee 42       		.byte	0x42
  1269 04ef 4A       		.byte	0x4a
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 32
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 32
 
 
  1270 04f0 24       		.byte	0x24
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1324 0547 A4000000 		.4byte	.LVL49
  1325 054b 2C020000 		.4byte	0x22c
  1326 054f 6B050000 		.4byte	0x56b
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 33
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 33
 
 
  1327 0553 16       		.uleb128 0x16
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1381 05b0 B0430040 		.4byte	0x400043b0
  1382 05b4 16       		.uleb128 0x16
  1383 05b5 01       		.uleb128 0x1
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 34
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 34
 
 
  1384 05b6 51       		.byte	0x51
@@ -1993,14 +1993,14 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1393 05bf 00       		.byte	0
  1394 05c0 00       		.byte	0
  1395 05c1 25       		.uleb128 0x25
- 1396 05c2 07030000 		.4byte	.LASF50
- 1397 05c6 07030000 		.4byte	.LASF50
+ 1396 05c2 D8020000 		.4byte	.LASF50
+ 1397 05c6 D8020000 		.4byte	.LASF50
  1398 05ca 25       		.uleb128 0x25
  1399 05cb BF000000 		.4byte	.LASF51
  1400 05cf BF000000 		.4byte	.LASF51
  1401 05d3 26       		.uleb128 0x26
- 1402 05d4 97010000 		.4byte	.LASF56
- 1403 05d8 97010000 		.4byte	.LASF56
+ 1402 05d4 CB010000 		.4byte	.LASF56
+ 1403 05d8 CB010000 		.4byte	.LASF56
  1404 05dc 04       		.byte	0x4
  1405 05dd 79       		.byte	0x79
  1406 05de 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1438 001d 00       		.byte	0
  1439 001e 03       		.uleb128 0x3
  1440 001f 16       		.uleb128 0x16
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 35
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 35
 
 
  1441 0020 00       		.byte	0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1495 0056 3A       		.uleb128 0x3a
  1496 0057 0B       		.uleb128 0xb
  1497 0058 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 36
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 36
 
 
  1498 0059 0B       		.uleb128 0xb
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1552 0091 49       		.uleb128 0x49
  1553 0092 13       		.uleb128 0x13
  1554 0093 02       		.uleb128 0x2
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 37
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 37
 
 
  1555 0094 18       		.uleb128 0x18
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1609 00cb 0E       		.uleb128 0xe
  1610 00cc 3A       		.uleb128 0x3a
  1611 00cd 0B       		.uleb128 0xb
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 38
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 38
 
 
  1612 00ce 3B       		.uleb128 0x3b
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1666 0105 3B       		.uleb128 0x3b
  1667 0106 05       		.uleb128 0x5
  1668 0107 49       		.uleb128 0x49
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 39
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 39
 
 
  1669 0108 13       		.uleb128 0x13
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1723 0143 26       		.uleb128 0x26
  1724 0144 00       		.byte	0
  1725 0145 00       		.byte	0
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 40
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 40
 
 
  1726 0146 00       		.byte	0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1780 017f 00       		.byte	0
  1781 0180 03       		.uleb128 0x3
  1782 0181 0E       		.uleb128 0xe
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 41
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 41
 
 
  1783 0182 3A       		.uleb128 0x3a
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1837 01b8 3A       		.uleb128 0x3a
  1838 01b9 0B       		.uleb128 0xb
  1839 01ba 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 42
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 42
 
 
  1840 01bb 05       		.uleb128 0x5
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1894 01f3 3C       		.uleb128 0x3c
  1895 01f4 19       		.uleb128 0x19
  1896 01f5 6E       		.uleb128 0x6e
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 43
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 43
 
 
  1897 01f6 0E       		.uleb128 0xe
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  1951 0049 00000000 		.4byte	0
  1952 004d 00000000 		.4byte	0
  1953              	.LLST3:
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 44
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 44
 
 
  1954 0051 0E000000 		.4byte	.LVL5
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  2008 00da 05000000 		.4byte	.LVL18-1
  2009 00de 08000000 		.4byte	.LFE1
  2010 00e2 0400     		.2byte	0x4
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 45
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 45
 
 
  2011 00e4 F3       		.byte	0xf3
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  2065 0165 0100     		.2byte	0x1
  2066 0167 54       		.byte	0x54
  2067 0168 5A000000 		.4byte	.LVL23
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 46
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 46
 
 
  2068 016c B8000000 		.4byte	.LVL27
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  2122              	.LLST14:
  2123 01ed 34000000 		.4byte	.LVL38
  2124 01f1 4A000000 		.4byte	.LVL43
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 47
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 47
 
 
  2125 01f5 0B00     		.2byte	0xb
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  2179 0014 02000000 		.4byte	.LFE3-.LFB3
  2180 0018 00000000 		.4byte	.LFB4
  2181 001c 34000000 		.4byte	.LFE4-.LFB4
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 48
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 48
 
 
  2182 0020 00000000 		.4byte	.LFB6
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  2227              	.LASF55:
  2228 001d 4379436C 		.ascii	"CyClockStartupError\000"
  2228      6F636B53 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 49
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 49
 
 
  2228      74617274 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  2252 00bf 6D656D63 		.ascii	"memcpy\000"
  2252      707900
  2253              	.LASF13:
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 50
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 50
 
 
  2254 00c6 75696E74 		.ascii	"uint8\000"
@@ -2969,167 +2969,163 @@ ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 1
  2268 0100 6E756D42 		.ascii	"numBytes\000"
  2268      79746573 
  2268      00
- 2269              	.LASF8:
- 2270 0109 6C6F6E67 		.ascii	"long unsigned int\000"
- 2270      20756E73 
- 2270      69676E65 
- 2270      6420696E 
- 2270      7400
- 2271              	.LASF35:
- 2272 011b 74696D65 		.ascii	"timeout\000"
- 2272      6F757400 
- 2273              	.LASF44:
- 2274 0123 6366675F 		.ascii	"cfg_memcpy_t\000"
- 2274      6D656D63 
- 2274      70795F74 
- 2274      00
- 2275              	.LASF42:
- 2276 0130 73697A65 		.ascii	"size\000"
- 2276      00
- 2277              	.LASF6:
- 2278 0135 73686F72 		.ascii	"short unsigned int\000"
- 2278      7420756E 
- 2278      7369676E 
- 2278      65642069 
- 2278      6E7400
- 2279              	.LASF10:
- 2280 0148 73697A65 		.ascii	"sizetype\000"
- 2280      74797065 
- 2280      00
- 2281              	.LASF2:
- 2282 0151 6C6F6E67 		.ascii	"long double\000"
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 51
+ 2269              	.LASF54:
+ 2270 0109 433A5C63 		.ascii	"C:\\code\\PRJ3\\PSoC\\BatteryDriver\\BatteryDriver."
+ 2270      6F64655C 
+ 2270      50524A33 
+ 2270      5C50536F 
+ 2270      435C4261 
+ 2271 0137 63796473 		.ascii	"cydsn\000"
+ 2271      6E00
+ 2272              	.LASF8:
+ 2273 013d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2273      20756E73 
+ 2273      69676E65 
+ 2273      6420696E 
+ 2273      7400
+ 2274              	.LASF35:
+ 2275 014f 74696D65 		.ascii	"timeout\000"
+ 2275      6F757400 
+ 2276              	.LASF44:
+ 2277 0157 6366675F 		.ascii	"cfg_memcpy_t\000"
+ 2277      6D656D63 
+ 2277      70795F74 
+ 2277      00
+ 2278              	.LASF42:
+ 2279 0164 73697A65 		.ascii	"size\000"
+ 2279      00
+ 2280              	.LASF6:
+ 2281 0169 73686F72 		.ascii	"short unsigned int\000"
+ 2281      7420756E 
+ 2281      7369676E 
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 51
 
 
- 2282      20646F75 
- 2282      626C6500 
- 2283              	.LASF30:
- 2284 015d 62675F78 		.ascii	"bg_xover_inl_trim\000"
- 2284      6F766572 
- 2284      5F696E6C 
- 2284      5F747269 
- 2284      6D00
- 2285              	.LASF43:
- 2286 016f 6366675F 		.ascii	"cfg_memset_t\000"
- 2286      6D656D73 
- 2286      65745F74 
- 2286      00
- 2287              	.LASF45:
- 2288 017c 6366675F 		.ascii	"cfg_memset_list\000"
- 2288      6D656D73 
- 2288      65745F6C 
- 2288      69737400 
- 2289              	.LASF33:
- 2290 018c 64657374 		.ascii	"dest\000"
- 2290      00
- 2291              	.LASF16:
- 2292 0191 666C6F61 		.ascii	"float\000"
- 2292      7400
- 2293              	.LASF56:
- 2294 0197 43794465 		.ascii	"CyDelayCycles\000"
- 2294      6C617943 
- 2294      79636C65 
- 2294      7300
- 2295              	.LASF47:
- 2296 01a5 64657374 		.ascii	"destPtr\000"
- 2296      50747200 
- 2297              	.LASF18:
- 2298 01ad 72656738 		.ascii	"reg8\000"
- 2298      00
- 2299              	.LASF4:
- 2300 01b2 756E7369 		.ascii	"unsigned char\000"
- 2300      676E6564 
- 2300      20636861 
- 2300      7200
- 2301              	.LASF5:
- 2302 01c0 73686F72 		.ascii	"short int\000"
- 2302      7420696E 
- 2302      7400
- 2303              	.LASF52:
- 2304 01ca 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2304      43313120 
- 2304      352E342E 
- 2304      31203230 
- 2304      31363036 
- 2305 01fd 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2305      20726576 
- 2305      6973696F 
- 2305      6E203233 
- 2305      37373135 
- 2306 0230 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2306      66756E63 
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 52
+ 2281      65642069 
+ 2281      6E7400
+ 2282              	.LASF10:
+ 2283 017c 73697A65 		.ascii	"sizetype\000"
+ 2283      74797065 
+ 2283      00
+ 2284              	.LASF2:
+ 2285 0185 6C6F6E67 		.ascii	"long double\000"
+ 2285      20646F75 
+ 2285      626C6500 
+ 2286              	.LASF30:
+ 2287 0191 62675F78 		.ascii	"bg_xover_inl_trim\000"
+ 2287      6F766572 
+ 2287      5F696E6C 
+ 2287      5F747269 
+ 2287      6D00
+ 2288              	.LASF43:
+ 2289 01a3 6366675F 		.ascii	"cfg_memset_t\000"
+ 2289      6D656D73 
+ 2289      65745F74 
+ 2289      00
+ 2290              	.LASF45:
+ 2291 01b0 6366675F 		.ascii	"cfg_memset_list\000"
+ 2291      6D656D73 
+ 2291      65745F6C 
+ 2291      69737400 
+ 2292              	.LASF33:
+ 2293 01c0 64657374 		.ascii	"dest\000"
+ 2293      00
+ 2294              	.LASF16:
+ 2295 01c5 666C6F61 		.ascii	"float\000"
+ 2295      7400
+ 2296              	.LASF56:
+ 2297 01cb 43794465 		.ascii	"CyDelayCycles\000"
+ 2297      6C617943 
+ 2297      79636C65 
+ 2297      7300
+ 2298              	.LASF47:
+ 2299 01d9 64657374 		.ascii	"destPtr\000"
+ 2299      50747200 
+ 2300              	.LASF18:
+ 2301 01e1 72656738 		.ascii	"reg8\000"
+ 2301      00
+ 2302              	.LASF4:
+ 2303 01e6 756E7369 		.ascii	"unsigned char\000"
+ 2303      676E6564 
+ 2303      20636861 
+ 2303      7200
+ 2304              	.LASF5:
+ 2305 01f4 73686F72 		.ascii	"short int\000"
+ 2305      7420696E 
+ 2305      7400
+ 2306              	.LASF52:
+ 2307 01fe 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2307      43313120 
+ 2307      352E342E 
+ 2307      31203230 
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 52
 
 
- 2306      74696F6E 
- 2306      2D736563 
- 2306      74696F6E 
- 2307              	.LASF36:
- 2308 0258 706C6C4C 		.ascii	"pllLock\000"
- 2308      6F636B00 
- 2309              	.LASF22:
- 2310 0260 63795F63 		.ascii	"cy_cfg_addrvalue_t\000"
- 2310      66675F61 
- 2310      64647276 
- 2310      616C7565 
- 2310      5F7400
- 2311              	.LASF11:
- 2312 0273 63686172 		.ascii	"char\000"
- 2312      00
- 2313              	.LASF48:
- 2314 0278 73726350 		.ascii	"srcPtr\000"
- 2314      747200
- 2315              	.LASF54:
- 2316 027f 433A5C55 		.ascii	"C:\\Users\\andre\\OneDrive\\Skrivebord\\BatteriDriv"
- 2316      73657273 
- 2316      5C616E64 
- 2316      72655C4F 
- 2316      6E654472 
- 2317 02ad 65722E63 		.ascii	"er.cywrk.Archive01\\BatteryDriver\\BatteryDriver.cy"
- 2317      7977726B 
- 2317      2E417263 
- 2317      68697665 
- 2317      30315C42 
- 2318 02de 64736E00 		.ascii	"dsn\000"
- 2319              	.LASF39:
- 2320 02e2 53657441 		.ascii	"SetAnalogRoutingPumps\000"
- 2320      6E616C6F 
- 2320      67526F75 
- 2320      74696E67 
- 2320      50756D70 
- 2321              	.LASF20:
- 2322 02f8 6F666673 		.ascii	"offset\000"
- 2322      657400
- 2323              	.LASF37:
- 2324 02ff 656E6162 		.ascii	"enabled\000"
- 2324      6C656400 
- 2325              	.LASF50:
- 2326 0307 6D656D73 		.ascii	"memset\000"
- 2326      657400
- 2327              	.LASF32:
- 2328 030e 4359434F 		.ascii	"CYCONFIGCPY\000"
- 2328      4E464947 
- 2328      43505900 
- 2329              	.LASF53:
- 2330 031a 47656E65 		.ascii	"Generated_Source\\PSoC5\\cyfitter_cfg.c\000"
- 2330      72617465 
- 2330      645F536F 
- 2330      75726365 
- 2330      5C50536F 
- 2331              	.LASF41:
- 2332 0340 61646472 		.ascii	"address\000"
-ARM GAS  C:\Users\andre\AppData\Local\Temp\ccbKSKaa.s 			page 53
+ 2307      31363036 
+ 2308 0231 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2308      20726576 
+ 2308      6973696F 
+ 2308      6E203233 
+ 2308      37373135 
+ 2309 0264 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2309      66756E63 
+ 2309      74696F6E 
+ 2309      2D736563 
+ 2309      74696F6E 
+ 2310              	.LASF36:
+ 2311 028c 706C6C4C 		.ascii	"pllLock\000"
+ 2311      6F636B00 
+ 2312              	.LASF22:
+ 2313 0294 63795F63 		.ascii	"cy_cfg_addrvalue_t\000"
+ 2313      66675F61 
+ 2313      64647276 
+ 2313      616C7565 
+ 2313      5F7400
+ 2314              	.LASF11:
+ 2315 02a7 63686172 		.ascii	"char\000"
+ 2315      00
+ 2316              	.LASF48:
+ 2317 02ac 73726350 		.ascii	"srcPtr\000"
+ 2317      747200
+ 2318              	.LASF39:
+ 2319 02b3 53657441 		.ascii	"SetAnalogRoutingPumps\000"
+ 2319      6E616C6F 
+ 2319      67526F75 
+ 2319      74696E67 
+ 2319      50756D70 
+ 2320              	.LASF20:
+ 2321 02c9 6F666673 		.ascii	"offset\000"
+ 2321      657400
+ 2322              	.LASF37:
+ 2323 02d0 656E6162 		.ascii	"enabled\000"
+ 2323      6C656400 
+ 2324              	.LASF50:
+ 2325 02d8 6D656D73 		.ascii	"memset\000"
+ 2325      657400
+ 2326              	.LASF32:
+ 2327 02df 4359434F 		.ascii	"CYCONFIGCPY\000"
+ 2327      4E464947 
+ 2327      43505900 
+ 2328              	.LASF53:
+ 2329 02eb 47656E65 		.ascii	"Generated_Source\\PSoC5\\cyfitter_cfg.c\000"
+ 2329      72617465 
+ 2329      645F536F 
+ 2329      75726365 
+ 2329      5C50536F 
+ 2330              	.LASF41:
+ 2331 0311 61646472 		.ascii	"address\000"
+ 2331      65737300 
+ 2332              	.LASF46:
+ 2333 0319 6366675F 		.ascii	"cfg_memcpy_list\000"
+ 2333      6D656D63 
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccPyVdLv.s 			page 53
 
 
- 2332      65737300 
- 2333              	.LASF46:
- 2334 0348 6366675F 		.ascii	"cfg_memcpy_list\000"
- 2334      6D656D63 
- 2334      70795F6C 
- 2334      69737400 
- 2335              	.LASF40:
- 2336 0358 63796669 		.ascii	"cyfitter_cfg\000"
- 2336      74746572 
- 2336      5F636667 
- 2336      00
- 2337              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2333      70795F6C 
+ 2333      69737400 
+ 2334              	.LASF40:
+ 2335 0329 63796669 		.ascii	"cyfitter_cfg\000"
+ 2335      74746572 
+ 2335      5F636667 
+ 2335      00
+ 2336              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

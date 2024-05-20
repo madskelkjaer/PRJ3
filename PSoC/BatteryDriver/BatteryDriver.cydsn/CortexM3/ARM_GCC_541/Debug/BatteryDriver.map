@@ -26,8 +26,14 @@ Archive member included to satisfy reference by file (symbol)
                               .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o) (CyFlash_SetWaitCycles)
 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
                               .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o) (CySpcStart)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+                              .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o (__aeabi_dsub)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+                              .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o (__aeabi_ddiv)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_truncdfsf2.o)
+                              .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o (__aeabi_d2f)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubsf3.o)
-                              .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o) (__aeabi_i2f)
+                              .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o (__aeabi_fadd)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivsf3.o)
                               .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o) (__aeabi_fmul)
 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_ldivmod.o)
@@ -109,7 +115,7 @@ Discarded input sections
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
  .text.currentHall
-                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
+                0x00000000       0x5c .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
  .text.ISR_UART_rx_handler
                 0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
@@ -554,6 +560,15 @@ Discarded input sections
                 0x00000000       0x38 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
  .text.CySpcGetAlgorithm
                 0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
+ .text          0x00000000      0x370 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+ .text          0x00000000      0x424 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+ .text          0x00000000       0xa0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_truncdfsf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_truncdfsf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_truncdfsf2.o)
  .text          0x00000000      0x21c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubsf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubsf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubsf3.o)
@@ -1182,68 +1197,68 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x53a4
+.debug_info     0x00000000     0x5384
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x1b1 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_info    0x000001b1      0x27d .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
- .debug_info    0x0000042e      0x5df .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x00000a0d      0x135 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x00000b42      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_info    0x00000efd      0x5c0 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
- .debug_info    0x000014bd       0x92 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_INT.o)
- .debug_info    0x0000154f      0x5c0 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
- .debug_info    0x00001b0f       0x92 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_INT.o)
- .debug_info    0x00001ba1      0x2c4 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
- .debug_info    0x00001e65      0x2c4 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
- .debug_info    0x00002129     0x1374 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
- .debug_info    0x0000349d      0xa2a .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
- .debug_info    0x00003ec7      0x60c .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
- .debug_info    0x000044d3      0x283 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
- .debug_info    0x00004756       0xb1 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyBootAsmGnu.o)
- .debug_info    0x00004807      0x64d .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
- .debug_info    0x00004e54      0x550 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
+ .debug_info    0x000001b1      0x28c .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
+ .debug_info    0x0000043d      0x5df .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00000a1c      0x135 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00000b51      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_info    0x00000f0c      0x5c0 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
+ .debug_info    0x000014cc       0x92 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_INT.o)
+ .debug_info    0x0000155e      0x5c0 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
+ .debug_info    0x00001b1e       0x92 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_INT.o)
+ .debug_info    0x00001bb0      0x2c4 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
+ .debug_info    0x00001e74      0x2c4 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
+ .debug_info    0x00002138     0x1374 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
+ .debug_info    0x000034ac      0xa2a .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
+ .debug_info    0x00003ed6      0x60c .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
+ .debug_info    0x000044e2      0x283 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
+ .debug_info    0x00004765       0x82 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyBootAsmGnu.o)
+ .debug_info    0x000047e7      0x64d .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
+ .debug_info    0x00004e34      0x550 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
 
-.debug_abbrev   0x00000000     0x164f
+.debug_abbrev   0x00000000     0x1669
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0xcf .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_abbrev  0x000000cf      0x10b .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
- .debug_abbrev  0x000001da      0x20d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_abbrev  0x000003e7       0x66 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_abbrev  0x0000044d      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_abbrev  0x00000635      0x1ac .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
- .debug_abbrev  0x000007e1       0x42 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_INT.o)
- .debug_abbrev  0x00000823      0x1ac .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
- .debug_abbrev  0x000009cf       0x42 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_INT.o)
- .debug_abbrev  0x00000a11      0x121 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
- .debug_abbrev  0x00000b32      0x121 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
- .debug_abbrev  0x00000c53      0x254 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
- .debug_abbrev  0x00000ea7      0x1ab .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
- .debug_abbrev  0x00001052      0x175 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
- .debug_abbrev  0x000011c7      0x139 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
- .debug_abbrev  0x00001300       0x14 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00001314      0x1a7 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
- .debug_abbrev  0x000014bb      0x194 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
+ .debug_abbrev  0x000000cf      0x125 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
+ .debug_abbrev  0x000001f4      0x20d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x00000401       0x66 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x00000467      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_abbrev  0x0000064f      0x1ac .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
+ .debug_abbrev  0x000007fb       0x42 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_INT.o)
+ .debug_abbrev  0x0000083d      0x1ac .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
+ .debug_abbrev  0x000009e9       0x42 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_INT.o)
+ .debug_abbrev  0x00000a2b      0x121 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
+ .debug_abbrev  0x00000b4c      0x121 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
+ .debug_abbrev  0x00000c6d      0x254 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
+ .debug_abbrev  0x00000ec1      0x1ab .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
+ .debug_abbrev  0x0000106c      0x175 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
+ .debug_abbrev  0x000011e1      0x139 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
+ .debug_abbrev  0x0000131a       0x14 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x0000132e      0x1a7 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
+ .debug_abbrev  0x000014d5      0x194 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
 
-.debug_line     0x00000000     0x2643
+.debug_line     0x00000000     0x264c
  *(.debug_line)
  .debug_line    0x00000000      0x218 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_line    0x00000218      0x1ef .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
- .debug_line    0x00000407      0x1fe .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x00000605      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00000746      0x234 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_line    0x0000097a      0x21e .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
- .debug_line    0x00000b98       0x56 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_INT.o)
- .debug_line    0x00000bee      0x21e .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
- .debug_line    0x00000e0c       0x56 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_INT.o)
- .debug_line    0x00000e62      0x1a3 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
- .debug_line    0x00001005      0x1a3 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
- .debug_line    0x000011a8      0x816 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
- .debug_line    0x000019be      0x367 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
- .debug_line    0x00001d25      0x2c0 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
- .debug_line    0x00001fe5      0x17e .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
- .debug_line    0x00002163       0x66 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyBootAsmGnu.o)
- .debug_line    0x000021c9      0x21a .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
- .debug_line    0x000023e3      0x260 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
+ .debug_line    0x00000218      0x1f8 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
+ .debug_line    0x00000410      0x1fe .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x0000060e      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x0000074f      0x234 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_line    0x00000983      0x21e .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
+ .debug_line    0x00000ba1       0x56 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_INT.o)
+ .debug_line    0x00000bf7      0x21e .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
+ .debug_line    0x00000e15       0x56 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_INT.o)
+ .debug_line    0x00000e6b      0x1a3 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
+ .debug_line    0x0000100e      0x1a3 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
+ .debug_line    0x000011b1      0x816 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
+ .debug_line    0x000019c7      0x367 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
+ .debug_line    0x00001d2e      0x2c0 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
+ .debug_line    0x00001fee      0x17e .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
+ .debug_line    0x0000216c       0x66 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyBootAsmGnu.o)
+ .debug_line    0x000021d2      0x21a .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
+ .debug_line    0x000023ec      0x260 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
 
 .debug_frame    0x00000000     0x1bb0
  *(.debug_frame)
@@ -1283,58 +1298,58 @@ END GROUP
  .debug_frame   0x00001b34       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
  .debug_frame   0x00001b54       0x5c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
 
-.debug_str      0x00000000     0x20b8
+.debug_str      0x00000000     0x2094
  *(.debug_str)
- .debug_str     0x00000000      0x217 .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x25f (size before relaxing)
- .debug_str     0x00000217      0x139 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
-                                0x31c (size before relaxing)
- .debug_str     0x00000350      0x1b5 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                                0x365 (size before relaxing)
- .debug_str     0x00000505       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
-                                0x205 (size before relaxing)
- .debug_str     0x0000057a      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                                0x32b (size before relaxing)
- .debug_str     0x000006be      0x282 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
-                                0x4de (size before relaxing)
- .debug_str     0x00000940       0x35 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_INT.o)
-                                0x1bc (size before relaxing)
- .debug_str     0x00000975      0x1cd .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
-                                0x4de (size before relaxing)
- .debug_str     0x00000b42       0x35 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_INT.o)
-                                0x1bc (size before relaxing)
- .debug_str     0x00000b77      0x20d .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
-                                0x3d6 (size before relaxing)
- .debug_str     0x00000d84      0x1b3 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
-                                0x3d6 (size before relaxing)
- .debug_str     0x00000f37      0x7f7 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
-                                0xa68 (size before relaxing)
- .debug_str     0x0000172e      0x365 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
-                                0x754 (size before relaxing)
- .debug_str     0x00001a93      0x272 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
-                                0x4d4 (size before relaxing)
- .debug_str     0x00001d05      0x14c .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
-                                0x36f (size before relaxing)
- .debug_str     0x00001e51      0x1bb .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
-                                0x3e1 (size before relaxing)
- .debug_str     0x0000200c       0xac .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
-                                0x359 (size before relaxing)
+ .debug_str     0x00000000      0x1e8 .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x230 (size before relaxing)
+ .debug_str     0x000001e8      0x144 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
+                                0x2f8 (size before relaxing)
+ .debug_str     0x0000032c      0x1b5 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x336 (size before relaxing)
+ .debug_str     0x000004e1       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                                0x1d6 (size before relaxing)
+ .debug_str     0x00000556      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                                0x2fc (size before relaxing)
+ .debug_str     0x0000069a      0x282 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
+                                0x4af (size before relaxing)
+ .debug_str     0x0000091c       0x35 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_INT.o)
+                                0x18d (size before relaxing)
+ .debug_str     0x00000951      0x1cd .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
+                                0x4af (size before relaxing)
+ .debug_str     0x00000b1e       0x35 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_INT.o)
+                                0x18d (size before relaxing)
+ .debug_str     0x00000b53      0x20d .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
+                                0x3a7 (size before relaxing)
+ .debug_str     0x00000d60      0x1b3 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
+                                0x3a7 (size before relaxing)
+ .debug_str     0x00000f13      0x7f7 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
+                                0xa39 (size before relaxing)
+ .debug_str     0x0000170a      0x365 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
+                                0x725 (size before relaxing)
+ .debug_str     0x00001a6f      0x272 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
+                                0x4a5 (size before relaxing)
+ .debug_str     0x00001ce1      0x14c .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
+                                0x340 (size before relaxing)
+ .debug_str     0x00001e2d      0x1bb .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
+                                0x3b2 (size before relaxing)
+ .debug_str     0x00001fe8       0xac .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
+                                0x32a (size before relaxing)
 
-.debug_loc      0x00000000     0x2641
+.debug_loc      0x00000000     0x2679
  *(.debug_loc)
- .debug_loc     0x00000000       0xb3 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
- .debug_loc     0x000000b3      0x25a .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_loc     0x0000030d      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_loc     0x00000451      0x295 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
- .debug_loc     0x000006e6      0x295 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
- .debug_loc     0x0000097b      0x149 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
- .debug_loc     0x00000ac4      0x14d .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
- .debug_loc     0x00000c11      0xa11 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
- .debug_loc     0x00001622      0x1e4 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
- .debug_loc     0x00001806      0x258 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
- .debug_loc     0x00001a5e      0x12c .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
- .debug_loc     0x00001b8a      0x3b2 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
- .debug_loc     0x00001f3c      0x705 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
+ .debug_loc     0x00000000       0xeb .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.o
+ .debug_loc     0x000000eb      0x25a .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x00000345      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_loc     0x00000489      0x295 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2.o)
+ .debug_loc     0x0000071e      0x295 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1.o)
+ .debug_loc     0x000009b3      0x149 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_2_theACLK.o)
+ .debug_loc     0x00000afc      0x14d .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(ADC_SAR_1_theACLK.o)
+ .debug_loc     0x00000c49      0xa11 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyLib.o)
+ .debug_loc     0x0000165a      0x1e4 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(cyPm.o)
+ .debug_loc     0x0000183e      0x258 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1.o)
+ .debug_loc     0x00001a96      0x12c .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(UART_1_IntClock.o)
+ .debug_loc     0x00001bc2      0x3b2 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CyFlash.o)
+ .debug_loc     0x00001f74      0x705 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1439,56 +1454,62 @@ END GROUP
  .ARM.attributes
                 0x000003b6       0x33 .\CortexM3\ARM_GCC_541\Debug\BatteryDriver.a(CySpc.o)
  .ARM.attributes
-                0x000003e9       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubsf3.o)
+                0x000003e9       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x00000406       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivsf3.o)
+                0x00000406       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x00000423       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_ldivmod.o)
+                0x00000423       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_truncdfsf2.o)
  .ARM.attributes
-                0x00000440       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
+                0x00000440       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubsf3.o)
  .ARM.attributes
-                0x0000046d       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_dvmd_tls.o)
+                0x0000045d       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivsf3.o)
  .ARM.attributes
-                0x0000048a       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x0000047a       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_ldivmod.o)
  .ARM.attributes
-                0x000004b7       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+                0x00000497       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
  .ARM.attributes
-                0x000004e4       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x000004c4       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000511       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x000004e1       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
  .ARM.attributes
-                0x0000053e       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x0000050e       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
  .ARM.attributes
-                0x0000056b       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x0000053b       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .ARM.attributes
-                0x00000598       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-snprintf.o)
+                0x00000568       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
  .ARM.attributes
-                0x000005c5       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x00000595       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
  .ARM.attributes
-                0x000005f2       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000005c2       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
  .ARM.attributes
-                0x0000061f       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+                0x000005ef       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-snprintf.o)
  .ARM.attributes
-                0x0000064c       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
+                0x0000061c       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
  .ARM.attributes
-                0x00000679       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+                0x00000649       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
  .ARM.attributes
-                0x000006a6       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x00000676       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
  .ARM.attributes
-                0x000006d3       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
+                0x000006a3       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
  .ARM.attributes
-                0x00000700       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+                0x000006d0       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
  .ARM.attributes
-                0x0000072d       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+                0x000006fd       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
  .ARM.attributes
-                0x0000075a       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
+                0x0000072a       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
  .ARM.attributes
-                0x00000787       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+                0x00000757       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x000007b4       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+                0x00000784       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
  .ARM.attributes
-                0x000007e1       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x000007b1       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
+ .ARM.attributes
+                0x000007de       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ .ARM.attributes
+                0x0000080b       0x2d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .ARM.attributes
+                0x00000838       0x1d c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
 
 /DISCARD/
  *(.note.GNU-stack)
-OUTPUT(C:\Users\andre\OneDrive\Skrivebord\BatteriDriver.cywrk.Archive01\BatteryDriver\BatteryDriver.cydsn\CortexM3\ARM_GCC_541\Debug\BatteryDriver.elf elf32-littlearm)
+OUTPUT(C:\code\PRJ3\PSoC\BatteryDriver\BatteryDriver.cydsn\CortexM3\ARM_GCC_541\Debug\BatteryDriver.elf elf32-littlearm)
