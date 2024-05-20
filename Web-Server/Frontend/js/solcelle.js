@@ -102,8 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const updateWSData = (message_data) => {
-	const azimuth = message_data.azimuth;
-	const elevation = message_data.elevation;
+	let azimuth = message_data.azimuth;
+	let elevation = message_data.elevation;
 	console.log("azimuth: ", azimuth);
 	console.log("elevation: ", elevation);
 	solarcell1.style.transform = `rotateX(${elevation}deg)`; //drejer solcellen
