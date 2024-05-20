@@ -168,7 +168,7 @@ def runner():
 
     while True:
         sendAndRecieveSpiData()
-        time.sleep(0.01)
+        time.sleep(0.15)
 
 @app.route("/api/getdata/<int:limit>")
 def getdata(limit: int):
