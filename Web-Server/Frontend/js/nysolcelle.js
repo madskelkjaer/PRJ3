@@ -15,6 +15,9 @@ document.getElementById("maxLeft").textContent = maxLeft;
 let homeX = 0;
 let homeY = 0;
 
+let rotationAzimuth = 0;
+let rotationElevation = 0;
+
 function updateHome() {
 	if (
 		parseInt(document.getElementById("homeXInput").value) > maxRight ||
@@ -67,6 +70,9 @@ const updateSolcelle = (message_data) => {
 	//saa current rotation kommer i console
 	console.log(`Elevation lige nu: ${elevation} deg`);
 	console.log(`Azimuth lige nu: ${azimuth} deg`);
+
+	rotateAzimuth = azimuth;
+	rotateElevation = elevation;
 };
 
 // Event listener for the "Update" button
