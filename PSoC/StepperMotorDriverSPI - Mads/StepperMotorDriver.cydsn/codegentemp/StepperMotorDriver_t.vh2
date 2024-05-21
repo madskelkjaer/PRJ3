@@ -1,5 +1,5 @@
 -- Project:   C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\StepperMotorDriver.cyprj
--- Generated: 05/21/2024 16:58:17
+-- Generated: 05/21/2024 17:22:57
 -- PSoC Creator  4.4
 
 ENTITY StepperMotorDriver IS

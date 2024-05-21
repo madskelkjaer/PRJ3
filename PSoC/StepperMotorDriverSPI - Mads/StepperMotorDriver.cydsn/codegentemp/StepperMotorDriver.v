@@ -1,6 +1,6 @@
 // ======================================================================
 // StepperMotorDriver.v generated from TopDesign.cysch
-// 05/21/2024 at 16:58
+// 05/21/2024 at 17:22
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -903,11 +903,11 @@ module top ;
           wire  Net_22;
           wire  Net_21;
           wire  Net_20;
+          wire  Net_17;
           wire  Net_48;
           wire  Net_125;
           wire  Net_96;
           wire  Net_18;
-          wire  Net_17;
           wire  Net_16;
 
     UART_v2_50_0 UART_1 (
