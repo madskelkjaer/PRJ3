@@ -86,7 +86,7 @@ bus = 0
 device = 0
 spi.open(bus, device)
 
-spi.max_speed_hz = 500
+spi.max_speed_hz = 1000
 spi.mode = 0
 
 app = Flask(__name__)
