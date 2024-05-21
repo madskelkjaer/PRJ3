@@ -13,7 +13,7 @@
 #include "Mode.h"
 #include <stdio.h>
 
-volatile enum mode current_mode = AUTOMATIC;
+volatile enum mode current_mode = MANUAL;
 uint16_t current_time = 0;
 
 void goHome()
@@ -44,10 +44,13 @@ void automaticAction() {
     int current_sensors_detected = countSensorsDetectingSun(); // Hent hvor mange sensorer der registerer solen
     
     if (current_time > 1200) { // Hvis der er gået over 20 minutter,
+        UART_1_PutString("20 min - Sol?: ");
         if (current_sensors_detected == 0) { // Hvis der ikke er sol mere,
             goHome();                       // Så sætter vi solcellen til hjem position.
+            UART_1_PutString("NEJ \r\n");
+        } else {
+            UART_1_PutString("JA \r\n");
         }
-        
         current_time = 0; // Resetter timeren.
     }
     
@@ -121,8 +124,12 @@ CY_ISR(SPI_RX_HANDLER)
     {
         case 10:
             current_mode = MANUAL;
+            UART_1_PutString("Manuel mode aktiveret!!\r\n");    
+            break;
         case 11:
             current_mode = AUTOMATIC;
+            UART_1_PutString("Automatisk mode aktiveret!!\r\n");   
+            break;
         default:
             break;
     }
@@ -132,7 +139,8 @@ CY_ISR(SPI_RX_HANDLER)
             automaticAction();
             break;
         case MANUAL:
-            if (current_time > 1200) { // Hvis der er gået over 20 min siden sidste kommando,
+            if (current_time > 120) { // Hvis der er gået over 20 min siden sidste kommando,
+                UART_1_PutString("Ingen kommando i 2 min, auto slaaet til\r\n");
                 current_mode = AUTOMATIC; // Så sæt mode til automatisk.
             } else {
                 current_time = 0; // Reset tiden <3
