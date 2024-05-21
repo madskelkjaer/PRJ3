@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-	const ws = new WebSocket("wss://capital-renewing-jennet.ngrok-free.app/api/ws");
+	const ws = new WebSocket(
+		"wss://capital-renewing-jennet.ngrok-free.app/api/ws"
+	);
 	ws.onopen = () => {
 		console.log("Connected to battery WS");
 	};
@@ -10,12 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 });
 
-//UDKAST TIL WEBSOCKET -------------------------------------------------------------
-//document.addEventListener("DOMContentLoaded", function () {
-//	const ws = new WebSocket("ws://capital-renewing-jennet.ngrok-free.app/api/ws");
-//	ws.onopen = () => {
-//		console.log("Connected to battery WS");
-//	};
 const updateWSBatteryData = (message_data) => {
 	let batteryStatus = message_data.battery;
 	console.log("Batteri lige nu: ", batteryStatus);
@@ -41,7 +37,7 @@ const updateWSBatteryData = (message_data) => {
 // 	//kan kaldes i console
 // 	manualBattery = newBattery;
 // 	console.log("Manuel battery: ", manualBattery);
-// 	updateBatteryCorner(); //alt andet opdaterer auto naar man skifter weatherstatus
+// 	updateWSBatteryData();
 // 	return manualBattery;
 // };
 

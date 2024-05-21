@@ -45,8 +45,11 @@ function moveSolarCell(direction) {
 	});
 }
 
+//websocket
 document.addEventListener("DOMContentLoaded", function () {
-	const ws = new WebSocket("wss://capital-renewing-jennet.ngrok-free.app/api/ws");
+	const ws = new WebSocket(
+		"wss://capital-renewing-jennet.ngrok-free.app/api/ws"
+	);
 	ws.onopen = () => {
 		console.log("Connected to WS fra solcelleData");
 	};
@@ -58,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 });
 
+//opdaterer solcellefiguren
 const updateSolcelle = (message_data) => {
 	let azimuth = message_data.azimuth;
 	let elevation = message_data.elevation;
@@ -151,8 +155,6 @@ document.getElementById("rotateLeft").addEventListener("mousedown", () => {
 });
 
 document.getElementById("reset").addEventListener("mousedown", () => {
-	rotationAzimuth = homeX; //omvendt end hvad man forventer lol
-	rotationElevation = homeY;
 	moveSolarCell("home");
 });
 
