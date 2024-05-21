@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-	// updateData(); //opdaterer data ved page load
-	// setInterval(updateData, 60000); // opdaterer hvert minut
-
-	const ws = new WebSocket("wss://capital-renewing-jennet.ngrok-free.app/api/ws");
+	const ws = new WebSocket(
+		"wss://capital-renewing-jennet.ngrok-free.app/api/ws"
+	);
 	ws.onopen = () => {
 		console.log("Connected to WS fra solcelleData");
 	};
