@@ -5700,3 +5700,6 @@ Design database save phase: Elapsed time ==> 0s.180ms
 cydsfit: Elapsed time ==> 4s.029ms
 </CYPRESSTAG>
 Fitter phase: Elapsed time ==> 4s.037ms
+API generation phase: Elapsed time ==> 1s.489ms
+Dependency generation phase: Elapsed time ==> 0s.012ms
+Cleanup phase: Elapsed time ==> 0s.002ms
