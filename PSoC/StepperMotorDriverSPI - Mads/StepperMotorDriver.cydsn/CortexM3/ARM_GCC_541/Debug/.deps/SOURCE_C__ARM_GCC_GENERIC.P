@@ -1,24 +1,4 @@
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/CortexM3/ARM_GCC_541/Debug/cyfitter_cfg.o : C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/CyFlash.h C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/CyLib.h C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/CySpc.h C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cyPm.h C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cydevice.h C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cyfitter.h C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cyfitter_cfg.c C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cytypes.h C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/cyapicallbacks.h 
+C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/CortexM3/ARM_GCC_541/Debug/cymetadata.o : C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cymetadata.c 
 
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/CyFlash.h : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/CyLib.h : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/CySpc.h : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cyPm.h : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cydevice.h : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cyfitter.h : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cyfitter_cfg.c : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cytypes.h : 
-
-C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/cyapicallbacks.h : 
+C:/code/PRJ3/PSoC/StepperMotorDriverSPI\ -\ Mads/StepperMotorDriver.cydsn/Generated_Source/PSoC5/cymetadata.c : 
 

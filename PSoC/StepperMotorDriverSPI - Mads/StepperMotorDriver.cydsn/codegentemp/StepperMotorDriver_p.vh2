@@ -1,5 +1,5 @@
 -- Project:   StepperMotorDriver
--- Generated: 05/21/2024 11:33:11
+-- Generated: 05/21/2024 11:42:18
 -- PSoC Creator  4.4
 
 ENTITY StepperMotorDriver IS
@@ -2848,7 +2848,7 @@ BEGIN
 
     Voltage_Divider_In:logicalport
         GENERIC MAP(
-            drive_mode => "000",
+            drive_mode => "011",
             ibuf_enabled => "0",
             id => "0aea8035-a0c0-4ffd-8179-246fe7aade05",
             init_dr_st => "0",

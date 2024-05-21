@@ -46,7 +46,7 @@ function moveSolarCell(direction) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-	const ws = new WebSocket("//capital-renewing-jennet.ngrok-free.app/api/ws");
+	const ws = new WebSocket("wss://capital-renewing-jennet.ngrok-free.app/api/ws");
 	ws.onopen = () => {
 		console.log("Connected to WS fra solcelleData");
 	};

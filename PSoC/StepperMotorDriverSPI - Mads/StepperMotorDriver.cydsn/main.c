@@ -11,6 +11,20 @@
 #include"BatteryDriver.h"
 #include <stdio.h>
 
+void goHome()
+{
+    moveElevation(10000); // Go to home
+    CyDelay(5000);
+    moveElevation(-640);
+    CyDelay(2000);
+    moveAzimuth(-10000);
+    CyDelay(5000);
+    moveAzimuth(3100);
+    CyDelay(5000);
+    resetAzimuth();
+    resetElevation();
+}
+
 CY_ISR(SPI_RX_HANDLER)
 {
     if (SPIS_1_GetRxBufferSize() == 0) {
@@ -42,26 +56,15 @@ CY_ISR(SPI_RX_HANDLER)
             // Move 100 steps down.
             moveElevation(-200);
             break;
+        case 7:
+            goHome();
+            break;
         default:
             // Ignore other commands.
             break;
     }
     
     MOTOR_STEP();    
-}
-
-void goHome()
-{
-    moveElevation(10000); // Go to home
-    CyDelay(5000);
-    moveElevation(-640);
-    CyDelay(2000);
-    moveAzimuth(-10000);
-    CyDelay(5000);
-    moveAzimuth(3100);
-    CyDelay(5000);
-    resetAzimuth();
-    resetElevation();
 }
 
 int main(void)
