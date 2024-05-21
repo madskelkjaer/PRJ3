@@ -15,7 +15,7 @@ void goHome()
 {
     moveElevation(10000); // Go to home
     CyDelay(5000);
-    moveElevation(-640);
+    moveElevation(-660);
     CyDelay(2000);
     moveAzimuth(-10000);
     CyDelay(5000);
@@ -34,9 +34,9 @@ CY_ISR(SPI_RX_HANDLER)
     // UART_1_PutString("Modtog SPI interrupt");
     uint8_t recievedData = SPIS_1_ReadRxData();
     
-    // char buff[64];
-    // snprintf(buff, sizeof(buff), "Data: %i  \r\n", recievedData);
-    // UART_1_PutString(buff);
+    char buff[64];
+    snprintf(buff, sizeof(buff), "Data: %i  \r\n", recievedData);
+    UART_1_PutString(buff);
     
     switch (recievedData)
     {
@@ -85,39 +85,39 @@ int main(void)
     goHome();
     
 
-    uint16_t voltage = 0;
-    uint16_t azimuth = 0;
-    uint16_t elevation = 0;
+    int16_t voltage = 0;
+    int16_t azimuth = 0;
+    int16_t elevation = 0;
     for(;;) 
     {
         SPIS_1_WriteTxData(0xAA);
         
         azimuth = getAzimuth();
-        uint16_t azimuthUnsigned = (uint16_t)azimuth;
-        uint8_t azimuthHigh = (azimuthUnsigned >> 8) & 0xFF;
-        uint8_t azimuthLow = azimuthUnsigned & 0xFF;
+        int16_t azimuthUnsigned = (int16_t)azimuth;
+        int8_t azimuthHigh = (azimuthUnsigned >> 8) & 0xFF;
+        int8_t azimuthLow = azimuthUnsigned & 0xFF;
         SPIS_1_WriteTxData(azimuthHigh);
         SPIS_1_WriteTxData(azimuthLow);
         
         elevation = getElevation();
-        uint16_t elevationUnsigned = (uint16_t)elevation;
-        uint8_t elevationHigh = (elevationUnsigned >> 8) & 0xFF;
-        uint8_t elevationLow = elevationUnsigned & 0xFF;
+        int16_t elevationUnsigned = (int16_t)elevation;
+        int8_t elevationHigh = (elevationUnsigned >> 8) & 0xFF;
+        int8_t elevationLow = elevationUnsigned & 0xFF;
         SPIS_1_WriteTxData(elevationHigh);
         SPIS_1_WriteTxData(elevationLow);
         
         voltage = voltageDividerToPercent();
-        uint16_t voltageUnsigned = (uint16_t)voltage;
-        uint8_t voltageHigh = (voltageUnsigned >> 8) & 0xFF;
-        uint8_t voltageLow = voltageUnsigned & 0xFF;
+        int16_t voltageUnsigned = (int16_t)voltage;
+        int8_t voltageHigh = (voltageUnsigned >> 8) & 0xFF;
+        int8_t voltageLow = voltageUnsigned & 0xFF;
 
         SPIS_1_WriteTxData(voltageHigh);
         SPIS_1_WriteTxData(voltageLow);
         
-        uint8_t left = sunLeft() ? 1 : 0;
-        uint8_t right = sunRight() ? 1 : 0;
-        uint8_t up = sunUp() ? 1 : 0;
-        uint8_t down = sunDown() ? 1 : 0;
+        int8_t left = sunLeft() ? 1 : 0;
+        int8_t right = sunRight() ? 1 : 0;
+        int8_t up = sunUp() ? 1 : 0;
+        int8_t down = sunDown() ? 1 : 0;
         SPIS_1_WriteTxData(left);
         SPIS_1_WriteTxData(right);
         SPIS_1_WriteTxData(up);
