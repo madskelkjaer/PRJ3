@@ -185,10 +185,6 @@ def move(direction: str):
         to_send.append(0x03)
     elif direction == "down":
         to_send.append(0x04)
-    elif direction == "azimuth":
-        to_send.append(0x05)
-    elif direction == "elevation":
-        to_send.append(0x06)
     elif direction == "home":
         to_send.append(0x07)
     else:

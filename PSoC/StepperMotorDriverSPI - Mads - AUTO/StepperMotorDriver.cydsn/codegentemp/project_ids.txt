@@ -1,6 +1,6 @@
-C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\StepperMotorDriver.cyprj|f78cf71f-c489-44b3-aa46-baaec492cabd
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|2d148f57-77a2-4fc4-8589-347502a229de
-C:\Users\madse\OneDrive\Dokumenter\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|7c8678a9-be1c-4b67-819a-5d7a41ef1d95
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|175486e6-f612-4ffa-8a58-719534bec16e
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|5fdc80ac-7900-473a-842c-bc0e00713e77
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ba12c9cf-42e0-4f66-8587-e24cf1c91940
+C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\StepperMotorDriver.cyprj|a5af589a-ae35-4e7c-8ab2-258312bf4717
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|12a79e48-d68e-42eb-81a4-c732dae7e71b
+C:\Users\madse\OneDrive\Dokumenter\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|d5e2c30c-5336-4605-a77f-6d8b325887d5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b89dbfcd-b8c1-4a3f-89c7-e64c7cc2d004
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8c75c215-b2f2-422f-88e6-051f48bed843
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|d13a428d-0b25-42cd-9d79-6e048f676fbf

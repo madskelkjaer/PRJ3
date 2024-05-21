@@ -2,15 +2,9 @@
 #include "SensorDriver.h"
 #include "StepperMotorDriver.h"
 #include "BatteryDriver.h"
+#include "Mode.h"
 
-static int currentMode = MODE_MANUAL; // Default is manual mode
-
-void setMode(uint8_t command) {
-    if (command == 16) {
-        // Toggle mode between manual and automatic
-        currentMode = (currentMode == MODE_AUTO) ? MODE_MANUAL : MODE_AUTO;
-    }
-}
+extern enum mode current_mode;
 
 void manualControl(uint8_t command) {
     if (currentMode == MODE_MANUAL) {

@@ -69,6 +69,8 @@
 #include "Current_Hall_In.h"
 #include "Voltage_Divider_In_aliases.h"
 #include "Voltage_Divider_In.h"
+#include "isr_timer_1_sek.h"
+#include "Timer_1.h"
 #include "UART_1_IntClock.h"
 #include "SPIS_1_IntClock.h"
 #include "ADC_SAR_2_IRQ.h"

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
   49              		.thumb
   50              		.thumb_func
   51              		.type	sunRight, %function
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 2
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 2
 
 
   52              	sunRight:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
   96              	.LFE65:
   97              		.size	sunUp, .-sunUp
   98 000e 00BF     		.section	.text.sunDown,"ax",%progbits
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 3
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 3
 
 
   99              		.align	2
@@ -169,16 +169,16 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  139 000b 01       		.uleb128 0x1
  140 000c 60000000 		.4byte	.LASF25
  141 0010 0C       		.byte	0xc
- 142 0011 5A010000 		.4byte	.LASF26
- 143 0015 B6010000 		.4byte	.LASF27
+ 142 0011 A9010000 		.4byte	.LASF26
+ 143 0015 17010000 		.4byte	.LASF27
  144 0019 00000000 		.4byte	.Ldebug_ranges0+0
  145 001d 00000000 		.4byte	0
  146 0021 00000000 		.4byte	.Ldebug_line0
  147 0025 02       		.uleb128 0x2
  148 0026 01       		.byte	0x1
  149 0027 06       		.byte	0x6
- 150 0028 7C010000 		.4byte	.LASF0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 4
+ 150 0028 CB010000 		.4byte	.LASF0
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 4
 
 
  151 002c 02       		.uleb128 0x2
@@ -188,20 +188,20 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  155 0033 02       		.uleb128 0x2
  156 0034 02       		.byte	0x2
  157 0035 05       		.byte	0x5
- 158 0036 A4010000 		.4byte	.LASF2
+ 158 0036 F3010000 		.4byte	.LASF2
  159 003a 02       		.uleb128 0x2
  160 003b 02       		.byte	0x2
  161 003c 07       		.byte	0x7
- 162 003d 17010000 		.4byte	.LASF3
+ 162 003d 90010000 		.4byte	.LASF3
  163 0041 03       		.uleb128 0x3
- 164 0042 94010000 		.4byte	.LASF9
+ 164 0042 E3010000 		.4byte	.LASF9
  165 0046 02       		.byte	0x2
  166 0047 3F       		.byte	0x3f
  167 0048 4C000000 		.4byte	0x4c
  168 004c 02       		.uleb128 0x2
  169 004d 04       		.byte	0x4
  170 004e 05       		.byte	0x5
- 171 004f 3C010000 		.4byte	.LASF4
+ 171 004f 7F010000 		.4byte	.LASF4
  172 0053 02       		.uleb128 0x2
  173 0054 04       		.byte	0x4
  174 0055 07       		.byte	0x7
@@ -223,35 +223,35 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  190 0071 07       		.byte	0x7
  191 0072 29000000 		.4byte	.LASF8
  192 0076 03       		.uleb128 0x3
- 193 0077 AE010000 		.4byte	.LASF10
+ 193 0077 FD010000 		.4byte	.LASF10
  194 007b 03       		.byte	0x3
  195 007c 2C       		.byte	0x2c
  196 007d 41000000 		.4byte	0x41
  197 0081 02       		.uleb128 0x2
  198 0082 04       		.byte	0x4
  199 0083 04       		.byte	0x4
- 200 0084 9E010000 		.4byte	.LASF11
+ 200 0084 ED010000 		.4byte	.LASF11
  201 0088 02       		.uleb128 0x2
  202 0089 08       		.byte	0x8
  203 008a 04       		.byte	0x4
- 204 008b 4D010000 		.4byte	.LASF12
+ 204 008b 78010000 		.4byte	.LASF12
  205 008f 02       		.uleb128 0x2
  206 0090 01       		.byte	0x1
  207 0091 08       		.byte	0x8
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 5
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 5
 
 
- 208 0092 37010000 		.4byte	.LASF13
+ 208 0092 73010000 		.4byte	.LASF13
  209 0096 02       		.uleb128 0x2
  210 0097 08       		.byte	0x8
  211 0098 04       		.byte	0x4
- 212 0099 88010000 		.4byte	.LASF14
+ 212 0099 D7010000 		.4byte	.LASF14
  213 009d 02       		.uleb128 0x2
  214 009e 04       		.byte	0x4
  215 009f 07       		.byte	0x7
- 216 00a0 FE010000 		.4byte	.LASF15
+ 216 00a0 05020000 		.4byte	.LASF15
  217 00a4 05       		.uleb128 0x5
- 218 00a5 45010000 		.4byte	.LASF17
+ 218 00a5 88010000 		.4byte	.LASF17
  219 00a9 01       		.byte	0x1
  220 00aa 03       		.byte	0x3
  221 00ab C7000000 		.4byte	0xc7
@@ -267,7 +267,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  231 00c7 02       		.uleb128 0x2
  232 00c8 01       		.byte	0x1
  233 00c9 02       		.byte	0x2
- 234 00ca 54010000 		.4byte	.LASF16
+ 234 00ca A3010000 		.4byte	.LASF16
  235 00ce 05       		.uleb128 0x5
  236 00cf 36000000 		.4byte	.LASF18
  237 00d3 01       		.byte	0x1
@@ -297,8 +297,8 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  261 010f 5E010000 		.4byte	0x15e
  262 0113 00       		.byte	0
  263 0114 05       		.uleb128 0x5
- 264 0115 74010000 		.4byte	.LASF20
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 6
+ 264 0115 C3010000 		.4byte	.LASF20
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 6
 
 
  265 0119 01       		.byte	0x1
@@ -321,8 +321,8 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  282 0143 08       		.uleb128 0x8
  283 0144 76000000 		.4byte	0x76
  284 0148 09       		.uleb128 0x9
- 285 0149 2A010000 		.4byte	.LASF21
- 286 014d 2A010000 		.4byte	.LASF21
+ 285 0149 66010000 		.4byte	.LASF21
+ 286 014d 66010000 		.4byte	.LASF21
  287 0151 04       		.byte	0x4
  288 0152 29       		.byte	0x29
  289 0153 09       		.uleb128 0x9
@@ -331,8 +331,8 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  292 015c 05       		.byte	0x5
  293 015d 29       		.byte	0x29
  294 015e 09       		.uleb128 0x9
- 295 015f 69010000 		.4byte	.LASF23
- 296 0163 69010000 		.4byte	.LASF23
+ 295 015f B8010000 		.4byte	.LASF23
+ 296 0163 B8010000 		.4byte	.LASF23
  297 0167 06       		.byte	0x6
  298 0168 29       		.byte	0x29
  299 0169 09       		.uleb128 0x9
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  319 000c 17       		.uleb128 0x17
  320 000d 11       		.uleb128 0x11
  321 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 7
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 7
 
 
  322 000f 10       		.uleb128 0x10
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  376 0045 12       		.uleb128 0x12
  377 0046 06       		.uleb128 0x6
  378 0047 40       		.uleb128 0x40
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 8
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 8
 
 
  379 0048 18       		.uleb128 0x18
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  433 0081 0B       		.uleb128 0xb
  434 0082 00       		.byte	0
  435 0083 00       		.byte	0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 9
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 9
 
 
  436 0084 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  477 0029 756E7369 		.ascii	"unsigned int\000"
  477      676E6564 
  477      20696E74 
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 10
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 10
 
 
  477      00
@@ -587,86 +587,86 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 1
  493      6720756E 
  493      7369676E 
  493      65642069 
- 494              	.LASF3:
- 495 0117 73686F72 		.ascii	"short unsigned int\000"
- 495      7420756E 
- 495      7369676E 
- 495      65642069 
- 495      6E7400
- 496              	.LASF21:
- 497 012a 73756E4C 		.ascii	"sunLeft_Read\000"
- 497      6566745F 
- 497      52656164 
- 497      00
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 11
+ 494              	.LASF27:
+ 495 0117 433A5C63 		.ascii	"C:\\code\\PRJ3\\PSoC\\StepperMotorDriverSPI - Mads "
+ 495      6F64655C 
+ 495      50524A33 
+ 495      5C50536F 
+ 495      435C5374 
+ 496 0146 2D204155 		.ascii	"- AUTO\\StepperMotorDriver.cydsn\000"
+ 496      544F5C53 
+ 496      74657070 
+ 496      65724D6F 
+ 496      746F7244 
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 11
 
 
- 498              	.LASF13:
- 499 0137 63686172 		.ascii	"char\000"
- 499      00
- 500              	.LASF4:
- 501 013c 6C6F6E67 		.ascii	"long int\000"
- 501      20696E74 
- 501      00
- 502              	.LASF17:
- 503 0145 73756E4C 		.ascii	"sunLeft\000"
- 503      65667400 
- 504              	.LASF12:
- 505 014d 646F7562 		.ascii	"double\000"
- 505      6C6500
- 506              	.LASF16:
- 507 0154 5F426F6F 		.ascii	"_Bool\000"
- 507      6C00
- 508              	.LASF26:
- 509 015a 53656E73 		.ascii	"SensorDriver.c\000"
- 509      6F724472 
- 509      69766572 
- 509      2E6300
- 510              	.LASF23:
- 511 0169 73756E55 		.ascii	"sunUp_Read\000"
- 511      705F5265 
- 511      616400
- 512              	.LASF20:
- 513 0174 73756E44 		.ascii	"sunDown\000"
- 513      6F776E00 
- 514              	.LASF0:
- 515 017c 7369676E 		.ascii	"signed char\000"
- 515      65642063 
- 515      68617200 
- 516              	.LASF14:
- 517 0188 6C6F6E67 		.ascii	"long double\000"
- 517      20646F75 
- 517      626C6500 
- 518              	.LASF9:
- 519 0194 5F5F696E 		.ascii	"__int32_t\000"
- 519      7433325F 
- 519      7400
- 520              	.LASF11:
- 521 019e 666C6F61 		.ascii	"float\000"
- 521      7400
- 522              	.LASF2:
- 523 01a4 73686F72 		.ascii	"short int\000"
- 523      7420696E 
- 523      7400
- 524              	.LASF10:
- 525 01ae 696E7433 		.ascii	"int32_t\000"
- 525      325F7400 
- 526              	.LASF27:
- 527 01b6 433A5C63 		.ascii	"C:\\code\\PRJ3\\PSoC\\StepperMotorDriverSPI - Mads\\"
- 527      6F64655C 
- 527      50524A33 
- 527      5C50536F 
- 527      435C5374 
- 528 01e5 53746570 		.ascii	"StepperMotorDriver.cydsn\000"
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc9VCTB6.s 			page 12
+ 497              	.LASF21:
+ 498 0166 73756E4C 		.ascii	"sunLeft_Read\000"
+ 498      6566745F 
+ 498      52656164 
+ 498      00
+ 499              	.LASF13:
+ 500 0173 63686172 		.ascii	"char\000"
+ 500      00
+ 501              	.LASF12:
+ 502 0178 646F7562 		.ascii	"double\000"
+ 502      6C6500
+ 503              	.LASF4:
+ 504 017f 6C6F6E67 		.ascii	"long int\000"
+ 504      20696E74 
+ 504      00
+ 505              	.LASF17:
+ 506 0188 73756E4C 		.ascii	"sunLeft\000"
+ 506      65667400 
+ 507              	.LASF3:
+ 508 0190 73686F72 		.ascii	"short unsigned int\000"
+ 508      7420756E 
+ 508      7369676E 
+ 508      65642069 
+ 508      6E7400
+ 509              	.LASF16:
+ 510 01a3 5F426F6F 		.ascii	"_Bool\000"
+ 510      6C00
+ 511              	.LASF26:
+ 512 01a9 53656E73 		.ascii	"SensorDriver.c\000"
+ 512      6F724472 
+ 512      69766572 
+ 512      2E6300
+ 513              	.LASF23:
+ 514 01b8 73756E55 		.ascii	"sunUp_Read\000"
+ 514      705F5265 
+ 514      616400
+ 515              	.LASF20:
+ 516 01c3 73756E44 		.ascii	"sunDown\000"
+ 516      6F776E00 
+ 517              	.LASF0:
+ 518 01cb 7369676E 		.ascii	"signed char\000"
+ 518      65642063 
+ 518      68617200 
+ 519              	.LASF14:
+ 520 01d7 6C6F6E67 		.ascii	"long double\000"
+ 520      20646F75 
+ 520      626C6500 
+ 521              	.LASF9:
+ 522 01e3 5F5F696E 		.ascii	"__int32_t\000"
+ 522      7433325F 
+ 522      7400
+ 523              	.LASF11:
+ 524 01ed 666C6F61 		.ascii	"float\000"
+ 524      7400
+ 525              	.LASF2:
+ 526 01f3 73686F72 		.ascii	"short int\000"
+ 526      7420696E 
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 12
 
 
- 528      7065724D 
- 528      6F746F72 
- 528      44726976 
- 528      65722E63 
+ 526      7400
+ 527              	.LASF10:
+ 528 01fd 696E7433 		.ascii	"int32_t\000"
+ 528      325F7400 
  529              	.LASF15:
- 530 01fe 73697A65 		.ascii	"sizetype\000"
+ 530 0205 73697A65 		.ascii	"sizetype\000"
  530      74797065 
  530      00
  531              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

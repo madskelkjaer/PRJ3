@@ -1,6 +1,6 @@
 /* ========================================
  *
- *          Thomas Degn Larsen
+ *          Software holdet
  *
  * ========================================
 */
@@ -8,13 +8,13 @@
 #include "project.h"
 #include "StepperMotorDriver.h"
 #include "SensorDriver.h"
-#include"BatteryDriver.h"
+#include "BatteryDriver.h"
+
+#include "Mode.h"
 #include <stdio.h>
 
-enum mode {
-    AUTOMATIC,
-    MANUAL,
-};
+volatile enum mode current_mode = AUTOMATIC;
+uint16_t current_time = 0;
 
 void goHome()
 {
@@ -30,20 +30,54 @@ void goHome()
     resetElevation();
 }
 
-CY_ISR(SPI_RX_HANDLER)
-{
-    if (SPIS_1_GetRxBufferSize() == 0) {
-        return;
+
+int countSensorsDetectingSun() {
+    int count = 0;
+    if (sunLeft()) count++;
+    if (sunRight()) count++;
+    if (sunUp()) count++;
+    if (sunDown()) count++;
+    return count;
+}
+
+void automaticAction() {
+    int current_sensors_detected = countSensorsDetectingSun();
+    
+    if (current_time > 1200) {
+        if (current_sensors_detected == 0) {
+            goHome();
+        }
+        
+        current_time = 0;
     }
     
-    // UART_1_PutString("Modtog SPI interrupt");
-    uint8_t recievedData = SPIS_1_ReadRxData();
-    
-    char buff[64];
-    snprintf(buff, sizeof(buff), "Data: %i  \r\n", recievedData);
-    UART_1_PutString(buff);
-    
-    switch (recievedData)
+    if (current_sensors_detected < 3) {
+        // Read sensor statuses
+        bool left = sunLeft();
+        bool right = sunRight();
+        bool up = sunUp();
+        bool down = sunDown();
+
+        // Determine horizontal movement
+        if (left && !right) {
+            moveAzimuth(-50); // Move left
+        } else if (right && !left) {
+            moveAzimuth(50); // Move right
+        }
+
+        // Determine vertical movement
+        if (up && !down) {
+            moveElevation(50); // Move up
+        } else if (down && !up) {
+            moveElevation(-50); // Move down
+        }
+
+        CyDelay(100); // Small delay to allow motors to move
+    }
+}
+
+void manualAction(uint8_t command) {
+    switch (command)
     {
         case 1:
             // Move 100 steps left.
@@ -68,8 +102,51 @@ CY_ISR(SPI_RX_HANDLER)
             // Ignore other commands.
             break;
     }
+}
+
+CY_ISR(SPI_RX_HANDLER)
+{ 
+    if (SPIS_1_GetRxBufferSize() == 0) {
+        return;
+    }
     
-    MOTOR_STEP();    
+    // UART_1_PutString("Modtog SPI interrupt");
+    uint8_t recievedData = SPIS_1_ReadRxData();
+    
+    char buff[64];
+    snprintf(buff, sizeof(buff), "Data: %i  \r\n", recievedData);
+    UART_1_PutString(buff);
+    
+    switch (recievedData)
+    {
+        case 10:
+            current_mode = MANUAL;
+        case 11:
+            current_mode = AUTOMATIC;
+        default:
+            break;
+    }
+    
+    switch (current_mode) {
+        case AUTOMATIC:
+            automaticAction();
+            break;
+        case MANUAL:
+            if (current_time > 1200) {
+                current_mode = AUTOMATIC;
+            } else {
+                current_time = 0;
+                manualAction(recievedData);
+            }
+            break;
+              
+    }
+    
+    MOTOR_STEP();
+}
+
+CY_ISR(TIMER_STEP) {
+    current_time++;
 }
 
 int main(void)
@@ -82,6 +159,8 @@ int main(void)
     ADC_SAR_2_StartConvert();
     isr_motor_StartEx(MOTOR_STEP);
     UART_1_PutString("WAM!\r\n");
+    Timer_1_Start();
+    isr_timer_1_sek_StartEx(TIMER_STEP);
     
     // Start SPI Slave component.
     SPIS_1_Start();

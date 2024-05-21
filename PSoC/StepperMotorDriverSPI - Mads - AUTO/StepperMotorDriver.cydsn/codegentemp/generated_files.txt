@@ -1,160 +1,165 @@
 <?xml version="1.0" encoding="us-ascii"?>
 
-<fileSet version="1" anchorPath="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cyfitter_cfg.h" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cyfitter_cfg.c" value="SOURCE_C;CortexM3;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\config.hex" value="OTHER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cymetadata.c" value="SOURCE_C;CortexM3;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cydevice.h" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cydevicegnu.inc" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cydevicerv.inc" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cydeviceiar.inc" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cydevice_trm.h" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cydevicegnu_trm.inc" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cydevicerv_trm.inc" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cydeviceiar_trm.inc" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cyfittergnu.inc" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cyfitterrv.inc" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\UART_1.c" value="SOURCE_C;CortexM3;;;;UART_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\UART_1.h" value="HEADER;;;;;UART_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\UART_1_PM.c" value="SOURCE_C;CortexM3;;;;UART_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\UART_1_INT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\UART_1_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_1_aliases.h" value="HEADER;;;;;Azimuth_Pin_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_1.c" value="SOURCE_C;CortexM3;;;;Azimuth_Pin_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_1.h" value="HEADER;;;;;Azimuth_Pin_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_4_aliases.h" value="HEADER;;;;;Azimuth_Pin_4" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_4.c" value="SOURCE_C;CortexM3;;;;Azimuth_Pin_4" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_4.h" value="HEADER;;;;;Azimuth_Pin_4" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_3_aliases.h" value="HEADER;;;;;Azimuth_Pin_3" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_3.c" value="SOURCE_C;CortexM3;;;;Azimuth_Pin_3" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_3.h" value="HEADER;;;;;Azimuth_Pin_3" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_2_aliases.h" value="HEADER;;;;;Azimuth_Pin_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_2.c" value="SOURCE_C;CortexM3;;;;Azimuth_Pin_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_2.h" value="HEADER;;;;;Azimuth_Pin_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Up_aliases.h" value="HEADER;;;;;Limit_Up" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Up.c" value="SOURCE_C;CortexM3;;;;Limit_Up" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Up.h" value="HEADER;;;;;Limit_Up" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Down_aliases.h" value="HEADER;;;;;Limit_Down" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Down.c" value="SOURCE_C;CortexM3;;;;Limit_Down" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Down.h" value="HEADER;;;;;Limit_Down" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Right_aliases.h" value="HEADER;;;;;Limit_Right" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Right.c" value="SOURCE_C;CortexM3;;;;Limit_Right" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Right.h" value="HEADER;;;;;Limit_Right" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Left_aliases.h" value="HEADER;;;;;Limit_Left" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Left.c" value="SOURCE_C;CortexM3;;;;Limit_Left" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Limit_Left.h" value="HEADER;;;;;Limit_Left" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_1_aliases.h" value="HEADER;;;;;Elevation_Pin_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_1.c" value="SOURCE_C;CortexM3;;;;Elevation_Pin_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_1.h" value="HEADER;;;;;Elevation_Pin_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_2_aliases.h" value="HEADER;;;;;Elevation_Pin_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_2.c" value="SOURCE_C;CortexM3;;;;Elevation_Pin_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_2.h" value="HEADER;;;;;Elevation_Pin_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_3_aliases.h" value="HEADER;;;;;Elevation_Pin_3" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_3.c" value="SOURCE_C;CortexM3;;;;Elevation_Pin_3" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_3.h" value="HEADER;;;;;Elevation_Pin_3" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_4_aliases.h" value="HEADER;;;;;Elevation_Pin_4" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_4.c" value="SOURCE_C;CortexM3;;;;Elevation_Pin_4" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_4.h" value="HEADER;;;;;Elevation_Pin_4" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunLeft_aliases.h" value="HEADER;;;;;sunLeft" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunLeft.c" value="SOURCE_C;CortexM3;;;;sunLeft" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunLeft.h" value="HEADER;;;;;sunLeft" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\isr_motor.c" value="SOURCE_C;CortexM3;;;;isr_motor" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\isr_motor.h" value="HEADER;;;;;isr_motor" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\MOSI_1_aliases.h" value="HEADER;;;;;MOSI_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\MOSI_1.c" value="SOURCE_C;CortexM3;;;;MOSI_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\MOSI_1.h" value="HEADER;;;;;MOSI_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SCLK_1_aliases.h" value="HEADER;;;;;SCLK_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SCLK_1.c" value="SOURCE_C;CortexM3;;;;SCLK_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SCLK_1.h" value="HEADER;;;;;SCLK_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\MISO_1_aliases.h" value="HEADER;;;;;MISO_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\MISO_1.c" value="SOURCE_C;CortexM3;;;;MISO_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\MISO_1.h" value="HEADER;;;;;MISO_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SPIS_1.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SPIS_1.h" value="HEADER;;;;;SPIS_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SPIS_1_PM.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SPIS_1_INT.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SPIS_1_BOOT.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SPIS_1_PVT.h" value="HEADER;;;;;SPIS_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\isr_spis_1_rx.c" value="SOURCE_C;CortexM3;;;;isr_spis_1_rx" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\isr_spis_1_rx.h" value="HEADER;;;;;isr_spis_1_rx" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunRight_aliases.h" value="HEADER;;;;;sunRight" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunRight.c" value="SOURCE_C;CortexM3;;;;sunRight" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunRight.h" value="HEADER;;;;;sunRight" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunUp_aliases.h" value="HEADER;;;;;sunUp" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunUp.c" value="SOURCE_C;CortexM3;;;;sunUp" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunUp.h" value="HEADER;;;;;sunUp" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunDown_aliases.h" value="HEADER;;;;;sunDown" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunDown.c" value="SOURCE_C;CortexM3;;;;sunDown" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\sunDown.h" value="HEADER;;;;;sunDown" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2.h" value="HEADER;;;;;ADC_SAR_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_INT.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_PM.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1.h" value="HEADER;;;;;ADC_SAR_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_INT.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_PM.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Current_Hall_In_aliases.h" value="HEADER;;;;;Current_Hall_In" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Current_Hall_In.c" value="SOURCE_C;CortexM3;;;;Current_Hall_In" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Current_Hall_In.h" value="HEADER;;;;;Current_Hall_In" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Voltage_Divider_In_aliases.h" value="HEADER;;;;;Voltage_Divider_In" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Voltage_Divider_In.c" value="SOURCE_C;CortexM3;;;;Voltage_Divider_In" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Voltage_Divider_In.h" value="HEADER;;;;;Voltage_Divider_In" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\UART_1_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_1_IntClock" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\UART_1_IntClock.h" value="HEADER;;;;;UART_1_IntClock" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SPIS_1_IntClock.c" value="SOURCE_C;CortexM3;;;;SPIS_1_IntClock" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\SPIS_1_IntClock.h" value="HEADER;;;;;SPIS_1_IntClock" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_IRQ.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2_IRQ" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_IRQ.h" value="HEADER;;;;;ADC_SAR_2_IRQ" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_theACLK.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2_theACLK" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_theACLK.h" value="HEADER;;;;;ADC_SAR_2_theACLK" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_ExtVref_aliases.h" value="HEADER;;;;;ADC_SAR_2_ExtVref" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_ExtVref.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2_ExtVref" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_ExtVref.h" value="HEADER;;;;;ADC_SAR_2_ExtVref" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_IRQ.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1_IRQ" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_IRQ.h" value="HEADER;;;;;ADC_SAR_1_IRQ" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_theACLK.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1_theACLK" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_theACLK.h" value="HEADER;;;;;ADC_SAR_1_theACLK" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_ExtVref_aliases.h" value="HEADER;;;;;ADC_SAR_1_ExtVref" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_ExtVref.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1_ExtVref" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_ExtVref.h" value="HEADER;;;;;ADC_SAR_1_ExtVref" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cm3gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Cm3RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Cm3Start.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\core_cm3.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\core_cm3_psoc5.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CyBootAsmGnu.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CyBootAsmRv.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CyDmac.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CyDmac.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CyFlash.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CyFlash.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CyLib.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CyLib.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cypins.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cyPm.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cyPm.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CySpc.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CySpc.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cytypes.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cyutils.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\core_cmFunc.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\core_cmInstr.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\Cm3Iar.icf" value="LINKER_SCRIPT;;;e9305a93-d091-4da5-bdc7-2813049dcdbf;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\CyBootAsmIar.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;e9305a93-d091-4da5-bdc7-2813049dcdbf;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cmsis_armcc.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cmsis_gcc.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cmsis_compiler.h" value="HEADER;;;;;cy_boot" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cy_em_eeprom.c" value="SOURCE_C;CortexM3;;;;Em_EEPROM_Dynamic" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cy_em_eeprom.h" value="HEADER;;;;;Em_EEPROM_Dynamic" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cycodeshareimport.ld" value="OTHER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cycodeshareexport.ld" value="OTHER;;;;;" />
-  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\codegentemp\cycodeshareimport.scat" value="OTHER;;;;;" />
+<fileSet version="1" anchorPath="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cyfitter_cfg.h" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cyfitter_cfg.c" value="SOURCE_C;CortexM3;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\config.hex" value="OTHER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cymetadata.c" value="SOURCE_C;CortexM3;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cydevice.h" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cydevicegnu.inc" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cydevicerv.inc" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cydeviceiar.inc" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cydevice_trm.h" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cydevicegnu_trm.inc" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cydevicerv_trm.inc" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cydeviceiar_trm.inc" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cyfittergnu.inc" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cyfitterrv.inc" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\UART_1.c" value="SOURCE_C;CortexM3;;;;UART_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\UART_1.h" value="HEADER;;;;;UART_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\UART_1_PM.c" value="SOURCE_C;CortexM3;;;;UART_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\UART_1_INT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\UART_1_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_1_aliases.h" value="HEADER;;;;;Azimuth_Pin_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_1.c" value="SOURCE_C;CortexM3;;;;Azimuth_Pin_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_1.h" value="HEADER;;;;;Azimuth_Pin_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_4_aliases.h" value="HEADER;;;;;Azimuth_Pin_4" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_4.c" value="SOURCE_C;CortexM3;;;;Azimuth_Pin_4" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_4.h" value="HEADER;;;;;Azimuth_Pin_4" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_3_aliases.h" value="HEADER;;;;;Azimuth_Pin_3" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_3.c" value="SOURCE_C;CortexM3;;;;Azimuth_Pin_3" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_3.h" value="HEADER;;;;;Azimuth_Pin_3" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_2_aliases.h" value="HEADER;;;;;Azimuth_Pin_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_2.c" value="SOURCE_C;CortexM3;;;;Azimuth_Pin_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Azimuth_Pin_2.h" value="HEADER;;;;;Azimuth_Pin_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Up_aliases.h" value="HEADER;;;;;Limit_Up" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Up.c" value="SOURCE_C;CortexM3;;;;Limit_Up" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Up.h" value="HEADER;;;;;Limit_Up" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Down_aliases.h" value="HEADER;;;;;Limit_Down" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Down.c" value="SOURCE_C;CortexM3;;;;Limit_Down" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Down.h" value="HEADER;;;;;Limit_Down" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Right_aliases.h" value="HEADER;;;;;Limit_Right" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Right.c" value="SOURCE_C;CortexM3;;;;Limit_Right" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Right.h" value="HEADER;;;;;Limit_Right" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Left_aliases.h" value="HEADER;;;;;Limit_Left" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Left.c" value="SOURCE_C;CortexM3;;;;Limit_Left" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Limit_Left.h" value="HEADER;;;;;Limit_Left" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_1_aliases.h" value="HEADER;;;;;Elevation_Pin_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_1.c" value="SOURCE_C;CortexM3;;;;Elevation_Pin_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_1.h" value="HEADER;;;;;Elevation_Pin_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_2_aliases.h" value="HEADER;;;;;Elevation_Pin_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_2.c" value="SOURCE_C;CortexM3;;;;Elevation_Pin_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_2.h" value="HEADER;;;;;Elevation_Pin_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_3_aliases.h" value="HEADER;;;;;Elevation_Pin_3" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_3.c" value="SOURCE_C;CortexM3;;;;Elevation_Pin_3" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_3.h" value="HEADER;;;;;Elevation_Pin_3" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_4_aliases.h" value="HEADER;;;;;Elevation_Pin_4" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_4.c" value="SOURCE_C;CortexM3;;;;Elevation_Pin_4" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Elevation_Pin_4.h" value="HEADER;;;;;Elevation_Pin_4" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunLeft_aliases.h" value="HEADER;;;;;sunLeft" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunLeft.c" value="SOURCE_C;CortexM3;;;;sunLeft" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunLeft.h" value="HEADER;;;;;sunLeft" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\isr_motor.c" value="SOURCE_C;CortexM3;;;;isr_motor" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\isr_motor.h" value="HEADER;;;;;isr_motor" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\MOSI_1_aliases.h" value="HEADER;;;;;MOSI_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\MOSI_1.c" value="SOURCE_C;CortexM3;;;;MOSI_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\MOSI_1.h" value="HEADER;;;;;MOSI_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SCLK_1_aliases.h" value="HEADER;;;;;SCLK_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SCLK_1.c" value="SOURCE_C;CortexM3;;;;SCLK_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SCLK_1.h" value="HEADER;;;;;SCLK_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\MISO_1_aliases.h" value="HEADER;;;;;MISO_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\MISO_1.c" value="SOURCE_C;CortexM3;;;;MISO_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\MISO_1.h" value="HEADER;;;;;MISO_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SPIS_1.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SPIS_1.h" value="HEADER;;;;;SPIS_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SPIS_1_PM.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SPIS_1_INT.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SPIS_1_BOOT.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SPIS_1_PVT.h" value="HEADER;;;;;SPIS_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\isr_spis_1_rx.c" value="SOURCE_C;CortexM3;;;;isr_spis_1_rx" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\isr_spis_1_rx.h" value="HEADER;;;;;isr_spis_1_rx" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunRight_aliases.h" value="HEADER;;;;;sunRight" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunRight.c" value="SOURCE_C;CortexM3;;;;sunRight" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunRight.h" value="HEADER;;;;;sunRight" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunUp_aliases.h" value="HEADER;;;;;sunUp" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunUp.c" value="SOURCE_C;CortexM3;;;;sunUp" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunUp.h" value="HEADER;;;;;sunUp" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunDown_aliases.h" value="HEADER;;;;;sunDown" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunDown.c" value="SOURCE_C;CortexM3;;;;sunDown" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\sunDown.h" value="HEADER;;;;;sunDown" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2.h" value="HEADER;;;;;ADC_SAR_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_INT.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_PM.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1.h" value="HEADER;;;;;ADC_SAR_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_INT.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_PM.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Current_Hall_In_aliases.h" value="HEADER;;;;;Current_Hall_In" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Current_Hall_In.c" value="SOURCE_C;CortexM3;;;;Current_Hall_In" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Current_Hall_In.h" value="HEADER;;;;;Current_Hall_In" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Voltage_Divider_In_aliases.h" value="HEADER;;;;;Voltage_Divider_In" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Voltage_Divider_In.c" value="SOURCE_C;CortexM3;;;;Voltage_Divider_In" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Voltage_Divider_In.h" value="HEADER;;;;;Voltage_Divider_In" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\isr_timer_1_sek.c" value="SOURCE_C;CortexM3;;;;isr_timer_1_sek" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\isr_timer_1_sek.h" value="HEADER;;;;;isr_timer_1_sek" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Timer_1.c" value="SOURCE_C;CortexM3;;;;Timer_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Timer_1.h" value="HEADER;;;;;Timer_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Timer_1_PM.c" value="SOURCE_C;CortexM3;;;;Timer_1" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\UART_1_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_1_IntClock" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\UART_1_IntClock.h" value="HEADER;;;;;UART_1_IntClock" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SPIS_1_IntClock.c" value="SOURCE_C;CortexM3;;;;SPIS_1_IntClock" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\SPIS_1_IntClock.h" value="HEADER;;;;;SPIS_1_IntClock" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_IRQ.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2_IRQ" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_IRQ.h" value="HEADER;;;;;ADC_SAR_2_IRQ" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_theACLK.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2_theACLK" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_theACLK.h" value="HEADER;;;;;ADC_SAR_2_theACLK" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_ExtVref_aliases.h" value="HEADER;;;;;ADC_SAR_2_ExtVref" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_ExtVref.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_2_ExtVref" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_2_ExtVref.h" value="HEADER;;;;;ADC_SAR_2_ExtVref" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_IRQ.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1_IRQ" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_IRQ.h" value="HEADER;;;;;ADC_SAR_1_IRQ" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_theACLK.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1_theACLK" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_theACLK.h" value="HEADER;;;;;ADC_SAR_1_theACLK" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_ExtVref_aliases.h" value="HEADER;;;;;ADC_SAR_1_ExtVref" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_ExtVref.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1_ExtVref" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\ADC_SAR_1_ExtVref.h" value="HEADER;;;;;ADC_SAR_1_ExtVref" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cm3gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Cm3RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Cm3Start.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\core_cm3.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\core_cm3_psoc5.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CyBootAsmGnu.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CyBootAsmRv.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CyDmac.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CyDmac.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CyFlash.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CyFlash.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CyLib.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CyLib.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cypins.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cyPm.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cyPm.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CySpc.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CySpc.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cytypes.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cyutils.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\core_cmFunc.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\core_cmInstr.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\Cm3Iar.icf" value="LINKER_SCRIPT;;;e9305a93-d091-4da5-bdc7-2813049dcdbf;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\CyBootAsmIar.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;e9305a93-d091-4da5-bdc7-2813049dcdbf;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cmsis_armcc.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cmsis_gcc.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cmsis_compiler.h" value="HEADER;;;;;cy_boot" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cy_em_eeprom.c" value="SOURCE_C;CortexM3;;;;Em_EEPROM_Dynamic" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cy_em_eeprom.h" value="HEADER;;;;;Em_EEPROM_Dynamic" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cycodeshareimport.ld" value="OTHER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cycodeshareexport.ld" value="OTHER;;;;;" />
+  <file name="C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads - AUTO\StepperMotorDriver.cydsn\codegentemp\cycodeshareimport.scat" value="OTHER;;;;;" />
 </fileSet>
