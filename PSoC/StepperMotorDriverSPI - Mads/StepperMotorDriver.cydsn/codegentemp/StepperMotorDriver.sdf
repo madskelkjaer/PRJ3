@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2024-05-21T10:48:47Z")
+ (DATE "2024-05-21T14:58:17Z")
  (DESIGN "StepperMotorDriver")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")

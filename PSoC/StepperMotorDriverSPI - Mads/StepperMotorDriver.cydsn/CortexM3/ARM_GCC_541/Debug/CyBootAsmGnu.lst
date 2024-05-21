@@ -12318,11 +12318,11 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  970              	.set isr_spis_1_rx__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
  971              	
  972              	/* Current_Hall_In */
- 973              	.set Current_Hall_In__0__INTTYPE, CYREG_PICU15_INTTYPE4
- 974              	.set Current_Hall_In__0__MASK, 0x10
- 975              	.set Current_Hall_In__0__PC, CYREG_IO_PC_PRT15_PC4
+ 973              	.set Current_Hall_In__0__INTTYPE, CYREG_PICU15_INTTYPE5
+ 974              	.set Current_Hall_In__0__MASK, 0x20
+ 975              	.set Current_Hall_In__0__PC, CYREG_IO_PC_PRT15_PC5
  976              	.set Current_Hall_In__0__PORT, 15
- 977              	.set Current_Hall_In__0__SHIFT, 4
+ 977              	.set Current_Hall_In__0__SHIFT, 5
  978              	.set Current_Hall_In__AG, CYREG_PRT15_AG
  979              	.set Current_Hall_In__AMUX, CYREG_PRT15_AMUX
  980              	.set Current_Hall_In__BIE, CYREG_PRT15_BIE
@@ -12337,7 +12337,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  989              	.set Current_Hall_In__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU15_BASE
  990              	.set Current_Hall_In__LCD_COM_SEG, CYREG_PRT15_LCD_COM_SEG
  991              	.set Current_Hall_In__LCD_EN, CYREG_PRT15_LCD_EN
- 992              	.set Current_Hall_In__MASK, 0x10
+ 992              	.set Current_Hall_In__MASK, 0x20
  993              	.set Current_Hall_In__PORT, 15
  994              	.set Current_Hall_In__PRT, CYREG_PRT15_PRT
  995              	.set Current_Hall_In__PRTDSI__CAPS_SEL, CYREG_PRT15_CAPS_SEL
@@ -12348,7 +12348,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  1000              	.set Current_Hall_In__PRTDSI__OUT_SEL1, CYREG_PRT15_OUT_SEL1
  1001              	.set Current_Hall_In__PRTDSI__SYNC_OUT, CYREG_PRT15_SYNC_OUT
  1002              	.set Current_Hall_In__PS, CYREG_PRT15_PS
- 1003              	.set Current_Hall_In__SHIFT, 4
+ 1003              	.set Current_Hall_In__SHIFT, 5
  1004              	.set Current_Hall_In__SLW, CYREG_PRT15_SLW
  1005              	
  1006              	/* Elevation_Pin_1 */
@@ -12497,38 +12497,38 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  1140              	.set Elevation_Pin_4__SLW, CYREG_PRT3_SLW
  1141              	
  1142              	/* Voltage_Divider_In */
- 1143              	.set Voltage_Divider_In__0__INTTYPE, CYREG_PICU15_INTTYPE5
- 1144              	.set Voltage_Divider_In__0__MASK, 0x20
- 1145              	.set Voltage_Divider_In__0__PC, CYREG_IO_PC_PRT15_PC5
- 1146              	.set Voltage_Divider_In__0__PORT, 15
- 1147              	.set Voltage_Divider_In__0__SHIFT, 5
- 1148              	.set Voltage_Divider_In__AG, CYREG_PRT15_AG
- 1149              	.set Voltage_Divider_In__AMUX, CYREG_PRT15_AMUX
- 1150              	.set Voltage_Divider_In__BIE, CYREG_PRT15_BIE
- 1151              	.set Voltage_Divider_In__BIT_MASK, CYREG_PRT15_BIT_MASK
- 1152              	.set Voltage_Divider_In__BYP, CYREG_PRT15_BYP
- 1153              	.set Voltage_Divider_In__CTL, CYREG_PRT15_CTL
- 1154              	.set Voltage_Divider_In__DM0, CYREG_PRT15_DM0
- 1155              	.set Voltage_Divider_In__DM1, CYREG_PRT15_DM1
- 1156              	.set Voltage_Divider_In__DM2, CYREG_PRT15_DM2
- 1157              	.set Voltage_Divider_In__DR, CYREG_PRT15_DR
- 1158              	.set Voltage_Divider_In__INP_DIS, CYREG_PRT15_INP_DIS
- 1159              	.set Voltage_Divider_In__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU15_BASE
- 1160              	.set Voltage_Divider_In__LCD_COM_SEG, CYREG_PRT15_LCD_COM_SEG
- 1161              	.set Voltage_Divider_In__LCD_EN, CYREG_PRT15_LCD_EN
- 1162              	.set Voltage_Divider_In__MASK, 0x20
- 1163              	.set Voltage_Divider_In__PORT, 15
- 1164              	.set Voltage_Divider_In__PRT, CYREG_PRT15_PRT
- 1165              	.set Voltage_Divider_In__PRTDSI__CAPS_SEL, CYREG_PRT15_CAPS_SEL
- 1166              	.set Voltage_Divider_In__PRTDSI__DBL_SYNC_IN, CYREG_PRT15_DBL_SYNC_IN
- 1167              	.set Voltage_Divider_In__PRTDSI__OE_SEL0, CYREG_PRT15_OE_SEL0
- 1168              	.set Voltage_Divider_In__PRTDSI__OE_SEL1, CYREG_PRT15_OE_SEL1
- 1169              	.set Voltage_Divider_In__PRTDSI__OUT_SEL0, CYREG_PRT15_OUT_SEL0
- 1170              	.set Voltage_Divider_In__PRTDSI__OUT_SEL1, CYREG_PRT15_OUT_SEL1
- 1171              	.set Voltage_Divider_In__PRTDSI__SYNC_OUT, CYREG_PRT15_SYNC_OUT
- 1172              	.set Voltage_Divider_In__PS, CYREG_PRT15_PS
- 1173              	.set Voltage_Divider_In__SHIFT, 5
- 1174              	.set Voltage_Divider_In__SLW, CYREG_PRT15_SLW
+ 1143              	.set Voltage_Divider_In__0__INTTYPE, CYREG_PICU2_INTTYPE7
+ 1144              	.set Voltage_Divider_In__0__MASK, 0x80
+ 1145              	.set Voltage_Divider_In__0__PC, CYREG_PRT2_PC7
+ 1146              	.set Voltage_Divider_In__0__PORT, 2
+ 1147              	.set Voltage_Divider_In__0__SHIFT, 7
+ 1148              	.set Voltage_Divider_In__AG, CYREG_PRT2_AG
+ 1149              	.set Voltage_Divider_In__AMUX, CYREG_PRT2_AMUX
+ 1150              	.set Voltage_Divider_In__BIE, CYREG_PRT2_BIE
+ 1151              	.set Voltage_Divider_In__BIT_MASK, CYREG_PRT2_BIT_MASK
+ 1152              	.set Voltage_Divider_In__BYP, CYREG_PRT2_BYP
+ 1153              	.set Voltage_Divider_In__CTL, CYREG_PRT2_CTL
+ 1154              	.set Voltage_Divider_In__DM0, CYREG_PRT2_DM0
+ 1155              	.set Voltage_Divider_In__DM1, CYREG_PRT2_DM1
+ 1156              	.set Voltage_Divider_In__DM2, CYREG_PRT2_DM2
+ 1157              	.set Voltage_Divider_In__DR, CYREG_PRT2_DR
+ 1158              	.set Voltage_Divider_In__INP_DIS, CYREG_PRT2_INP_DIS
+ 1159              	.set Voltage_Divider_In__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU2_BASE
+ 1160              	.set Voltage_Divider_In__LCD_COM_SEG, CYREG_PRT2_LCD_COM_SEG
+ 1161              	.set Voltage_Divider_In__LCD_EN, CYREG_PRT2_LCD_EN
+ 1162              	.set Voltage_Divider_In__MASK, 0x80
+ 1163              	.set Voltage_Divider_In__PORT, 2
+ 1164              	.set Voltage_Divider_In__PRT, CYREG_PRT2_PRT
+ 1165              	.set Voltage_Divider_In__PRTDSI__CAPS_SEL, CYREG_PRT2_CAPS_SEL
+ 1166              	.set Voltage_Divider_In__PRTDSI__DBL_SYNC_IN, CYREG_PRT2_DBL_SYNC_IN
+ 1167              	.set Voltage_Divider_In__PRTDSI__OE_SEL0, CYREG_PRT2_OE_SEL0
+ 1168              	.set Voltage_Divider_In__PRTDSI__OE_SEL1, CYREG_PRT2_OE_SEL1
+ 1169              	.set Voltage_Divider_In__PRTDSI__OUT_SEL0, CYREG_PRT2_OUT_SEL0
+ 1170              	.set Voltage_Divider_In__PRTDSI__OUT_SEL1, CYREG_PRT2_OUT_SEL1
+ 1171              	.set Voltage_Divider_In__PRTDSI__SYNC_OUT, CYREG_PRT2_SYNC_OUT
+ 1172              	.set Voltage_Divider_In__PS, CYREG_PRT2_PS
+ 1173              	.set Voltage_Divider_In__SHIFT, 7
+ 1174              	.set Voltage_Divider_In__SLW, CYREG_PRT2_SLW
  1175              	
  1176              	/* Miscellaneous */
  1177              	.set BCLK__BUS_CLK__HZ, 24000000
