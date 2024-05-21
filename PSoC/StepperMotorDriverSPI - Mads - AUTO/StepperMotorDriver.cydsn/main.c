@@ -147,6 +147,10 @@ CY_ISR(SPI_RX_HANDLER)
 
 CY_ISR(TIMER_STEP) {
     current_time++;
+    char buff[64];
+    sprintf(buff, "Current time: %i \r\n", current_time);
+    UART_1_PutString(buff);
+    Timer_1_ReadStatusRegister(); // Resetter timeren.
 }
 
 int main(void)

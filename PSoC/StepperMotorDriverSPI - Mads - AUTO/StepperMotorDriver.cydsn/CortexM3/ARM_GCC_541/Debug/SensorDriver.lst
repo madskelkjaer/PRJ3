@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
   49              		.thumb
   50              		.thumb_func
   51              		.type	sunRight, %function
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 2
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 2
 
 
   52              	sunRight:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
   96              	.LFE65:
   97              		.size	sunUp, .-sunUp
   98 000e 00BF     		.section	.text.sunDown,"ax",%progbits
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 3
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 3
 
 
   99              		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
  148 0026 01       		.byte	0x1
  149 0027 06       		.byte	0x6
  150 0028 CB010000 		.4byte	.LASF0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 4
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 4
 
 
  151 002c 02       		.uleb128 0x2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
  205 008f 02       		.uleb128 0x2
  206 0090 01       		.byte	0x1
  207 0091 08       		.byte	0x8
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 5
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 5
 
 
  208 0092 73010000 		.4byte	.LASF13
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
  262 0113 00       		.byte	0
  263 0114 05       		.uleb128 0x5
  264 0115 C3010000 		.4byte	.LASF20
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 6
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 6
 
 
  265 0119 01       		.byte	0x1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
  319 000c 17       		.uleb128 0x17
  320 000d 11       		.uleb128 0x11
  321 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 7
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 7
 
 
  322 000f 10       		.uleb128 0x10
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
  376 0045 12       		.uleb128 0x12
  377 0046 06       		.uleb128 0x6
  378 0047 40       		.uleb128 0x40
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 8
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 8
 
 
  379 0048 18       		.uleb128 0x18
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
  433 0081 0B       		.uleb128 0xb
  434 0082 00       		.byte	0
  435 0083 00       		.byte	0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 9
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 9
 
 
  436 0084 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
  477 0029 756E7369 		.ascii	"unsigned int\000"
  477      676E6564 
  477      20696E74 
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 10
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 10
 
 
  477      00
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
  496      74657070 
  496      65724D6F 
  496      746F7244 
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 11
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 11
 
 
  497              	.LASF21:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 1
  525              	.LASF2:
  526 01f3 73686F72 		.ascii	"short int\000"
  526      7420696E 
-ARM GAS  C:\Users\madse\AppData\Local\Temp\ccFgaY55.s 			page 12
+ARM GAS  C:\Users\madse\AppData\Local\Temp\cccfp6Yf.s 			page 12
 
 
  526      7400

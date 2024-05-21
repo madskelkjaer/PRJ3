@@ -2,6 +2,8 @@
 *.d
 venv/
 
+**/Generated_Source
+
 # Compiled Object files
 *.slo
 *.lo
