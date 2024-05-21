@@ -41,17 +41,17 @@ int countSensorsDetectingSun() {
 }
 
 void automaticAction() {
-    int current_sensors_detected = countSensorsDetectingSun();
+    int current_sensors_detected = countSensorsDetectingSun(); // Hent hvor mange sensorer der registerer solen
     
-    if (current_time > 1200) {
-        if (current_sensors_detected == 0) {
-            goHome();
+    if (current_time > 1200) { // Hvis der er gået over 20 minutter,
+        if (current_sensors_detected == 0) { // Hvis der ikke er sol mere,
+            goHome();                       // Så sætter vi solcellen til hjem position.
         }
         
-        current_time = 0;
+        current_time = 0; // Resetter timeren.
     }
     
-    if (current_sensors_detected < 3) {
+    if (current_sensors_detected < 3) { // Hvis det ikke er den mest optimale position,
         // Read sensor statuses
         bool left = sunLeft();
         bool right = sunRight();
@@ -132,11 +132,11 @@ CY_ISR(SPI_RX_HANDLER)
             automaticAction();
             break;
         case MANUAL:
-            if (current_time > 1200) {
-                current_mode = AUTOMATIC;
+            if (current_time > 1200) { // Hvis der er gået over 20 min siden sidste kommando,
+                current_mode = AUTOMATIC; // Så sæt mode til automatisk.
             } else {
-                current_time = 0;
-                manualAction(recievedData);
+                current_time = 0; // Reset tiden <3
+                manualAction(recievedData); // Håndter kommando.
             }
             break;
               
@@ -146,7 +146,7 @@ CY_ISR(SPI_RX_HANDLER)
 }
 
 CY_ISR(TIMER_STEP) {
-    current_time++;
+    current_time++; // Læg 1 til tiden.
     char buff[64];
     sprintf(buff, "Current time: %i \r\n", current_time);
     UART_1_PutString(buff);
