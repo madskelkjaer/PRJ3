@@ -69,14 +69,14 @@ CY_ISR(SPI_RX_HANDLER)
 
 int main(void)
 {
-    CyGlobalIntEnable;                                                      // Enable global interrupts.
+    CyGlobalIntEnable;
     UART_1_Start();
     ADC_SAR_1_Start();
     ADC_SAR_1_StartConvert();
     ADC_SAR_2_Start();
     ADC_SAR_2_StartConvert();
-    isr_motor_StartEx(MOTOR_STEP);                                          // Enable ISR for motor speed
-    UART_1_PutString("Ready to test new ideas that don't work!\r\n");       // Show message on UART on startup
+    isr_motor_StartEx(MOTOR_STEP);
+    UART_1_PutString("WAM!\r\n");
     
     // Start SPI Slave component.
     SPIS_1_Start();
@@ -85,9 +85,9 @@ int main(void)
     goHome();
     
 
-    int16_t voltage = 0;
-    int16_t azimuth = 0;
-    int16_t elevation = 0;
+    uint16_t voltage = 0;
+    uint16_t azimuth = 0;
+    uint16_t elevation = 0;
     for(;;) 
     {
         SPIS_1_WriteTxData(0xAA);

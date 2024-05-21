@@ -1,5 +1,5 @@
 -- Project:   C:\code\PRJ3\PSoC\StepperMotorDriverSPI - Mads\StepperMotorDriver.cydsn\StepperMotorDriver.cyprj
--- Generated: 05/21/2024 11:42:23
+-- Generated: 05/21/2024 12:48:47
 -- PSoC Creator  4.4
 
 ENTITY StepperMotorDriver IS
@@ -271,11 +271,11 @@ ARCHITECTURE __DEFAULT__ OF StepperMotorDriver IS
     ATTRIBUTE lib_model OF sunLeft(0) : LABEL IS "iocell15";
     ATTRIBUTE Location OF sunLeft(0) : LABEL IS "P1[4]";
     ATTRIBUTE lib_model OF MOSI_1(0) : LABEL IS "iocell16";
-    ATTRIBUTE Location OF MOSI_1(0) : LABEL IS "P2[1]";
+    ATTRIBUTE Location OF MOSI_1(0) : LABEL IS "P2[0]";
     ATTRIBUTE lib_model OF SCLK_1(0) : LABEL IS "iocell17";
     ATTRIBUTE Location OF SCLK_1(0) : LABEL IS "P2[2]";
     ATTRIBUTE lib_model OF MISO_1(0) : LABEL IS "iocell18";
-    ATTRIBUTE Location OF MISO_1(0) : LABEL IS "P2[0]";
+    ATTRIBUTE Location OF MISO_1(0) : LABEL IS "P2[1]";
     ATTRIBUTE lib_model OF sunRight(0) : LABEL IS "iocell19";
     ATTRIBUTE Location OF sunRight(0) : LABEL IS "P1[7]";
     ATTRIBUTE lib_model OF sunUp(0) : LABEL IS "iocell20";

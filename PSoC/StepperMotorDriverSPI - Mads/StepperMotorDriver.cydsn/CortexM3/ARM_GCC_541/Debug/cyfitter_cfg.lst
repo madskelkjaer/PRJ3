@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
   29:Generated_Source\PSoC5/cyfitter_cfg.c **** 
   30:Generated_Source\PSoC5/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
   31:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED 
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 2
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 2
 
 
   32:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED_ATTR __attribute__ ((packed))
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
   86:Generated_Source\PSoC5/cyfitter_cfg.c **** 	(void)memcpy(dest, src, n);
   87:Generated_Source\PSoC5/cyfitter_cfg.c **** }
   88:Generated_Source\PSoC5/cyfitter_cfg.c **** CY_CFG_UNUSED
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 3
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 3
 
 
   89:Generated_Source\PSoC5/cyfitter_cfg.c **** static void CYCONFIGCPYCODE(void *dest, const void *src, size_t n);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
   41              		.thumb
   42              		.thumb_func
   43              		.type	cfg_write_bytes32, %function
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 4
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 4
 
 
   44              	cfg_write_bytes32:
@@ -205,7 +205,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  148:Generated_Source\PSoC5/cyfitter_cfg.c **** }
  149:Generated_Source\PSoC5/cyfitter_cfg.c **** #endif
  150:Generated_Source\PSoC5/cyfitter_cfg.c **** 
- 151:Generated_Source\PSoC5/cyfitter_cfg.c **** #define CY_CFG_BASE_ADDR_COUNT 30u
+ 151:Generated_Source\PSoC5/cyfitter_cfg.c **** #define CY_CFG_BASE_ADDR_COUNT 29u
  152:Generated_Source\PSoC5/cyfitter_cfg.c **** CYPACKED typedef struct
  153:Generated_Source\PSoC5/cyfitter_cfg.c **** {
  154:Generated_Source\PSoC5/cyfitter_cfg.c **** 	uint8 offset;
@@ -213,7 +213,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  156:Generated_Source\PSoC5/cyfitter_cfg.c **** } CYPACKED_ATTR cy_cfg_addrvalue_t;
  157:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  158:Generated_Source\PSoC5/cyfitter_cfg.c **** #define cy_cfg_addr_table ((const uint32 CYFAR *)0x48000000u)
- 159:Generated_Source\PSoC5/cyfitter_cfg.c **** #define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000078u)
+ 159:Generated_Source\PSoC5/cyfitter_cfg.c **** #define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000074u)
  160:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  161:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_0 Address: CYREG_PRT0_DM0 Size (bytes): 8 */
  162:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_0_VAL ((const uint8 CYFAR *)0x48000590u)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  181:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  182:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  183:Generated_Source\PSoC5/cyfitter_cfg.c **** /*******************************************************************************
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 5
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 5
 
 
  184:Generated_Source\PSoC5/cyfitter_cfg.c **** * Function Name: cfg_write_bytes32
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  207:Generated_Source\PSoC5/cyfitter_cfg.c **** 		while (count != 0u)
   77              		.loc 1 207 0
   78 0012 08E0     		b	.L5
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 6
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 6
 
 
   79              	.L6:
@@ -332,7 +332,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  101              	.L4:
  202:Generated_Source\PSoC5/cyfitter_cfg.c **** 	{
  102              		.loc 1 202 0 is_stmt 0 discriminator 1
- 103 002c 1D2F     		cmp	r7, #29
+ 103 002c 1C2F     		cmp	r7, #28
  104 002e EBD9     		bls	.L7
  212:Generated_Source\PSoC5/cyfitter_cfg.c **** 		}
  213:Generated_Source\PSoC5/cyfitter_cfg.c **** 	}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  123              	.LFB6:
  215:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  216:Generated_Source\PSoC5/cyfitter_cfg.c **** /*******************************************************************************
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 7
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 7
 
 
  217:Generated_Source\PSoC5/cyfitter_cfg.c **** * Function Name: ClockSetup
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  271:Generated_Source\PSoC5/cyfitter_cfg.c **** 		CyClockStartupError(CYCLOCKSTART_PLL_ERROR);
  272:Generated_Source\PSoC5/cyfitter_cfg.c **** 	}
  273:Generated_Source\PSoC5/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 8
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 8
 
 
  274:Generated_Source\PSoC5/cyfitter_cfg.c **** 	/* Configure Bus/Master Clock based on settings from Clock DWR */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  139 000e 1B09     		lsrs	r3, r3, #4
  140              	.LVL13:
  141 0010 0132     		adds	r2, r2, #1
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 9
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 9
 
 
  142 0012 1370     		strb	r3, [r2]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
   78:Generated_Source\PSoC5/cyfitter_cfg.c **** 	(void)memset(s, 0, n);
  189              		.loc 1 78 0
  190              		.cfi_startproc
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 10
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 10
 
 
  191              		@ args = 0, pretend = 0, frame = 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  241              		@ frame_needed = 0, uses_anonymous_args = 0
  242 0000 38B5     		push	{r3, r4, r5, lr}
  243              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 11
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 11
 
 
  244              		.cfi_offset 3, -16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  256:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  288              		.loc 1 256 0
  289 0046 274B     		ldr	r3, .L22+20
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 12
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 12
 
 
  290 0048 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  333              		.loc 1 271 0
  334 0084 0320     		movs	r0, #3
  335 0086 FFF7FEFF 		bl	CyClockStartupError
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 13
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 13
 
 
  336              	.LVL26:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  380              	.L23:
  381              		.align	2
  382              	.L22:
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 14
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 14
 
 
  383 00d0 80400040 		.word	1073758336
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  414 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  415 0004 DBB2     		uxtb	r3, r3
  416              	.LVL29:
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 15
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 15
 
 
  343:Generated_Source\PSoC5/cyfitter_cfg.c **** 	if (enabled != 0u)
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  367:Generated_Source\PSoC5/cyfitter_cfg.c **** *   void
  368:Generated_Source\PSoC5/cyfitter_cfg.c **** *
  369:Generated_Source\PSoC5/cyfitter_cfg.c **** * Return:
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 16
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 16
 
 
  370:Generated_Source\PSoC5/cyfitter_cfg.c **** *   void
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  400:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  401:Generated_Source\PSoC5/cyfitter_cfg.c **** 		uint8 CYDATA i;
  402:Generated_Source\PSoC5/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 17
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 17
 
 
  403:Generated_Source\PSoC5/cyfitter_cfg.c **** 		/* Zero out critical memory blocks before beginning configuration */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  511 0046 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  512 0048 43F00203 		orr	r3, r3, #2
  513 004c 1370     		strb	r3, [r2]
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 18
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 18
 
 
  415:Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  555 0094 FFF7FEFF 		bl	CYCONFIGCPY
  556              	.LVL43:
  428:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CYCONFIGCPY((void CYFAR *)(CYREG_PRT3_DM0), (const void CYFAR *)(BS_IOPINS0_3_VAL), 8u);
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 19
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 19
 
 
  557              		.loc 1 428 0
@@ -1137,8 +1137,8 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  594              	.L33:
  595 00d0 E8460040 		.word	1073759976
  596 00d4 00000000 		.word	.LANCHOR0
- 597 00d8 78000048 		.word	1207959672
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 20
+ 597 00d8 74000048 		.word	1207959668
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 20
 
 
  598 00dc 03500140 		.word	1073827843
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  652 0015 5E000000 		.4byte	.LASF49
  653 0019 00000000 		.4byte	.Ldebug_ranges0+0
  654 001d 00000000 		.4byte	0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 21
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 21
 
 
  655 0021 00000000 		.4byte	.Ldebug_line0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  709 0084 05       		.uleb128 0x5
  710 0085 04       		.byte	0x4
  711 0086 04       		.uleb128 0x4
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 22
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 22
 
 
  712 0087 01       		.byte	0x1
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  766 00fb 9B       		.byte	0x9b
  767 00fc 8D000000 		.4byte	0x8d
  768 0100 01       		.byte	0x1
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 23
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 23
 
 
  769 0101 00       		.byte	0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  823 016f 01       		.byte	0x1
  824 0170 C9       		.byte	0xc9
  825 0171 A5000000 		.4byte	0xa5
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 24
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 24
 
 
  826 0175 1F000000 		.4byte	.LLST1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  880 01f5 7300     		.ascii	"s\000"
  881 01f7 01       		.byte	0x1
  882 01f8 4D       		.byte	0x4d
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 25
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 25
 
 
  883 01f9 84000000 		.4byte	0x84
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  937 0260 6E00     		.ascii	"n\000"
  938 0262 01       		.byte	0x1
  939 0263 54       		.byte	0x54
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 26
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 26
 
 
  940 0264 2C000000 		.4byte	0x2c
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  994 02c7 30000000 		.4byte	.LVL19
  995 02cb 2C020000 		.4byte	0x22c
  996 02cf EB020000 		.4byte	0x2eb
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 27
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 27
 
 
  997 02d3 16       		.uleb128 0x16
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1051 0333 50       		.byte	0x50
  1052 0334 1C       		.uleb128 0x1c
  1053 0335 00030000 		.4byte	.LASF38
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 28
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 28
 
 
  1054 0339 01       		.byte	0x1
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1108 03b1 8701     		.2byte	0x187
  1109 03b3 BD030000 		.4byte	0x3bd
  1110 03b7 05       		.uleb128 0x5
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 29
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 29
 
 
  1111 03b8 03       		.byte	0x3
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1165 041e 16       		.uleb128 0x16
  1166 041f 01       		.uleb128 0x1
  1167 0420 50       		.byte	0x50
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 30
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 30
 
 
  1168 0421 03       		.uleb128 0x3
@@ -1750,7 +1750,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1174 0427 51       		.byte	0x51
  1175 0428 05       		.uleb128 0x5
  1176 0429 0C       		.byte	0xc
- 1177 042a 78000048 		.4byte	0x48000078
+ 1177 042a 74000048 		.4byte	0x48000074
  1178 042e 00       		.byte	0
  1179 042f 00       		.byte	0
  1180 0430 19       		.uleb128 0x19
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1222 0478 3A       		.byte	0x3a
  1223 0479 00       		.byte	0
  1224 047a 19       		.uleb128 0x19
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 31
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 31
 
 
  1225 047b 84000000 		.4byte	.LVL41
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1279 04db 01       		.uleb128 0x1
  1280 04dc 51       		.byte	0x51
  1281 04dd 05       		.uleb128 0x5
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 32
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 32
 
 
  1282 04de 0C       		.byte	0xc
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1336 053b 01       		.uleb128 0x1
  1337 053c 3E       		.byte	0x3e
  1338 053d 00       		.byte	0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 33
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 33
 
 
  1339 053e 00       		.byte	0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1393 0027 49       		.uleb128 0x49
  1394 0028 13       		.uleb128 0x13
  1395 0029 00       		.byte	0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 34
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 34
 
 
  1396 002a 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1450 0060 00       		.byte	0
  1451 0061 03       		.uleb128 0x3
  1452 0062 0E       		.uleb128 0xe
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 35
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 35
 
 
  1453 0063 3A       		.uleb128 0x3a
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1507 009b 0E       		.uleb128 0xe
  1508 009c 3A       		.uleb128 0x3a
  1509 009d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 36
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 36
 
 
  1510 009e 3B       		.uleb128 0x3b
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1564 00d5 00       		.byte	0
  1565 00d6 10       		.uleb128 0x10
  1566 00d7 0F       		.uleb128 0xf
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 37
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 37
 
 
  1567 00d8 00       		.byte	0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1621 010f 00       		.byte	0
  1622 0110 03       		.uleb128 0x3
  1623 0111 08       		.uleb128 0x8
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 38
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 38
 
 
  1624 0112 3A       		.uleb128 0x3a
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1678 014f 13       		.uleb128 0x13
  1679 0150 01       		.uleb128 0x1
  1680 0151 13       		.uleb128 0x13
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 39
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 39
 
 
  1681 0152 00       		.byte	0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1735 0189 18       		.uleb128 0x18
  1736 018a 00       		.byte	0
  1737 018b 00       		.byte	0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 40
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 40
 
 
  1738 018c 1D       		.uleb128 0x1d
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1792 01c2 0B       		.uleb128 0xb
  1793 01c3 00       		.byte	0
  1794 01c4 00       		.byte	0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 41
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 41
 
 
  1795 01c5 22       		.uleb128 0x22
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1849 01fd 00       		.byte	0
  1850              		.section	.debug_loc,"",%progbits
  1851              	.Ldebug_loc0:
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 42
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 42
 
 
  1852              	.LLST0:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1906 008d 09000000 		.4byte	.LVL16-1
  1907 0091 0C000000 		.4byte	.LFE0
  1908 0095 0400     		.2byte	0x4
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 43
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 43
 
 
  1909 0097 F3       		.byte	0xf3
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  1963 0115 05000000 		.4byte	.LVL18-1
  1964 0119 0100     		.2byte	0x1
  1965 011b 52       		.byte	0x52
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 44
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 44
 
 
  1966 011c 05000000 		.4byte	.LVL18-1
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  2020 01a5 12000000 		.4byte	.LVL33
  2021 01a9 2A000000 		.4byte	.LVL35
  2022 01ad 0B00     		.2byte	0xb
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 45
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 45
 
 
  2023 01af 74       		.byte	0x74
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  2077 0014 58000000 		.4byte	.LFE6
  2078 0018 00000000 		.4byte	.LFB0
  2079 001c 0C000000 		.4byte	.LFE0
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 46
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 46
 
 
  2080 0020 00000000 		.4byte	.LFB1
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  2112 005e 433A5C63 		.ascii	"C:\\code\\PRJ3\\PSoC\\StepperMotorDriverSPI - Mads\\"
  2112      6F64655C 
  2112      50524A33 
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 47
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 47
 
 
  2112      5C50536F 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  2133      7400
  2134              	.LASF13:
  2135 0187 75696E74 		.ascii	"uint8\000"
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 48
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 48
 
 
  2135      3800
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  2161      20696E74 
  2161      00
  2162              	.LASF41:
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 49
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 49
 
 
  2163 0223 61646472 		.ascii	"address\000"
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 1
  2187      00
  2188              	.LASF11:
  2189 02d1 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\madse\AppData\Local\Temp\cc5DJjHc.s 			page 50
+ARM GAS  C:\Users\madse\AppData\Local\Temp\ccAzRseu.s 			page 50
 
 
  2189      00
