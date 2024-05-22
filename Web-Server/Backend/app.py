@@ -13,7 +13,7 @@ cur = con.cursor()
 
 try:
     cur.execute(
-        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus INTEGER, sun_up INTEGER, sun_down INTEGER, sun_left INTEGER, sun_right INTEGER)"
+        "CREATE TABLE data(id INTEGER PRIMARY KEY, date TEXT, azimuth INTEGER, elevation INTEGER, batteristatus INTEGER, ampere INTEGER, sun_up INTEGER, sun_down INTEGER, sun_left INTEGER, sun_right INTEGER)"
         )
 
     con.commit()
@@ -35,13 +35,13 @@ def sendEmail(name, email, message):
 
 
 
-def insertData(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right):
+def insertData(date, azimuth, elevation, batteristatus, ampere, sun_up, sun_down, sun_left, sun_right):
     try:
         con = sqlite3.connect("database.db")
         cur = con.cursor()
         cur.execute(
-            "INSERT INTO data(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
-            (date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_left, sun_right)
+            "INSERT INTO data(date, azimuth, elevation, batteristatus, ampere, sun_up, sun_down, sun_left, sun_right) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
+            (date, azimuth, elevation, batteristatus, ampere, sun_up, sun_down, sun_left, sun_right)
         )
         con.commit()
 
@@ -50,6 +50,7 @@ def insertData(date, azimuth, elevation, batteristatus, sun_up, sun_down, sun_le
             "azimuth": azimuth,
             "elevation": elevation,
             "battery": batteristatus,
+            "ampere": ampere,
             "sun_up": sun_up,
             "sun_down": sun_down,
             "sun_left": sun_left,
@@ -101,7 +102,7 @@ recieved_data: int = []
 
 START_CODE = 0xAA
 STOP_CODE = 0xBB
-EXPECTED_DATA_LENGTH = 12
+EXPECTED_DATA_LENGTH = 14
 
 def bytesToInt16(high, low):
     value = (high << 8) | low
@@ -122,15 +123,16 @@ def saveData(data):
         AZIMUTH = bytesToInt16(recieved_data[1], recieved_data[2])
         ELEVATION = bytesToInt16(recieved_data[3], recieved_data[4])
         BATTERY = bytesToInt16(recieved_data[5], recieved_data[6])
-        SUN_LEFT = recieved_data[7]
-        SUN_RIGHT = recieved_data[8]
-        SUN_UP = recieved_data[9]
-        SUN_DOWN = recieved_data[10]
+        AMPERE = bytesToInt16(recieved_data[7], recieved_data[8])
+        SUN_LEFT = recieved_data[9]
+        SUN_RIGHT = recieved_data[10]
+        SUN_UP = recieved_data[11]
+        SUN_DOWN = recieved_data[12]
 
-        print(f"{AZIMUTH=}, {ELEVATION=}, {BATTERY=}, {SUN_LEFT=}, {SUN_RIGHT=}, {SUN_UP=}, {SUN_DOWN=}")
+        print(f"{AZIMUTH=}, {ELEVATION=}, {BATTERY=}, {AMPERE=} {SUN_LEFT=}, {SUN_RIGHT=}, {SUN_UP=}, {SUN_DOWN=}")
 
         date = time.strftime("%Y-%m-%d %H:%M:%S")
-        insertData(date, AZIMUTH, ELEVATION, BATTERY, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)        
+        insertData(date, AZIMUTH, ELEVATION, BATTERY, AMPERE, SUN_UP, SUN_DOWN, SUN_LEFT, SUN_RIGHT)        
         recieved_data.clear()
     else:
         if recieved_data:
