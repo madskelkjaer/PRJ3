@@ -78,12 +78,11 @@ int main(void)
     isr_motor_StartEx(MOTOR_STEP);
     UART_1_PutString("WAM!\r\n");
     
+    goHome();
+    
     // Start SPI Slave component.
     SPIS_1_Start();
     isr_spis_1_rx_StartEx(SPI_RX_HANDLER);
-    
-    goHome();
-    
 
     int16_t voltage = 0;
     int16_t azimuth = 0;

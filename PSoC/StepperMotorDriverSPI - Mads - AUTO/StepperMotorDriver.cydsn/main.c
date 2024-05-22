@@ -43,7 +43,9 @@ int countSensorsDetectingSun() {
 void automaticAction() {
     int current_sensors_detected = countSensorsDetectingSun(); // Hent hvor mange sensorer der registerer solen
     
-    if (current_time > 1200) { // Hvis der er gået over 20 minutter,
+    UART_1_PutString("Automatisk \r\n");
+    
+    if (current_time > 10) { // Hvis der er gået over 20 minutter,
         UART_1_PutString("20 min - Sol?: ");
         if (current_sensors_detected == 0) { // Hvis der ikke er sol mere,
             goHome();                       // Så sætter vi solcellen til hjem position.
@@ -139,7 +141,7 @@ CY_ISR(SPI_RX_HANDLER)
             automaticAction();
             break;
         case MANUAL:
-            if (current_time > 120) { // Hvis der er gået over 20 min siden sidste kommando,
+            if (current_time > 120) { // Hvis der er gået over 2 min siden sidste kommando,
                 UART_1_PutString("Ingen kommando i 2 min, auto slaaet til\r\n");
                 current_mode = AUTOMATIC; // Så sæt mode til automatisk.
             } else {
@@ -147,7 +149,6 @@ CY_ISR(SPI_RX_HANDLER)
                 manualAction(recievedData); // Håndter kommando.
             }
             break;
-              
     }
     
     MOTOR_STEP();
@@ -171,14 +172,14 @@ int main(void)
     ADC_SAR_2_StartConvert();
     isr_motor_StartEx(MOTOR_STEP);
     UART_1_PutString("WAM!\r\n");
-    // Timer_1_Start();
-    // isr_timer_1_sek_StartEx(TIMER_STEP);
+    Timer_1_Start();
+    isr_timer_1_sek_StartEx(TIMER_STEP);
+    
+    goHome();
     
     // Start SPI Slave component.
     SPIS_1_Start();
     isr_spis_1_rx_StartEx(SPI_RX_HANDLER);
-    
-    goHome();
     
 
     int16_t voltage = 0;

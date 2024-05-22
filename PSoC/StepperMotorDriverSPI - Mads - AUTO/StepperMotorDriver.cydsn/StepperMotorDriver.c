@@ -49,10 +49,6 @@ int16_t getAzimuth()
     float total_degrees = currentAsteps * degress_per_step;
     int16_t rounded = (int16_t)round(total_degrees);
     
-    char buff[64];
-    sprintf(buff, "Asteps: %i - Rounded: %i \r\n", currentAsteps, rounded);
-    UART_1_PutString(buff);
-    
     return rounded;
 }
 
@@ -62,10 +58,6 @@ int16_t getElevation()
     
     float total_degrees = currentEsteps * degress_per_step;
     int16_t rounded = (int16_t)round(total_degrees);
-    
-    char buff[64];
-    sprintf(buff, "Esteps: %i - Rounded: %i \r\n", currentAsteps, rounded);
-    UART_1_PutString(buff);
     
     return rounded;
 }
