@@ -1,5 +1,5 @@
 # StepperMotorDriver
-# 2024-05-21 15:22:54Z
+# 2024-05-22 11:21:36Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -22,9 +22,9 @@ set_io "Elevation_Pin_2(0)" iocell 3 1
 set_io "Elevation_Pin_3(0)" iocell 3 2
 set_io "Elevation_Pin_4(0)" iocell 3 3
 set_io "sunLeft(0)" iocell 1 4
-set_io "MOSI_1(0)" iocell 2 0
+set_io "MOSI_1(0)" iocell 2 1
 set_io "SCLK_1(0)" iocell 2 2
-set_io "MISO_1(0)" iocell 2 1
+set_io "MISO_1(0)" iocell 2 0
 set_io "sunRight(0)" iocell 1 7
 set_io "sunUp(0)" iocell 1 6
 set_io "sunDown(0)" iocell 1 5

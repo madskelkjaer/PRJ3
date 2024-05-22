@@ -171,8 +171,8 @@ int main(void)
     ADC_SAR_2_StartConvert();
     isr_motor_StartEx(MOTOR_STEP);
     UART_1_PutString("WAM!\r\n");
-    Timer_1_Start();
-    isr_timer_1_sek_StartEx(TIMER_STEP);
+    // Timer_1_Start();
+    // isr_timer_1_sek_StartEx(TIMER_STEP);
     
     // Start SPI Slave component.
     SPIS_1_Start();
