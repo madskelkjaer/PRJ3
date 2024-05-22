@@ -16,13 +16,26 @@ float currentHall()
     {
         //This iteration summarizes 1000 measurements, with the purpose of returning a mean value.
         int16_t result1 = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16());
-        float convToAmps = (result1-2.495)/0.3339;
+        float convToAmps = (result1-2495)/0.3339;
         
         sum+= convToAmps;
     }
     //Returns the summarization divided with the amount of samples
     return sum/1000;
 }
+
+int16_t scaledCurrentHall() {
+    float current = currentHall();
+    // Scale the current to microamps (0.650 A -> 650000 uA)
+    int scaledCurrent = (int)(current * 1000000); // scale to microamps
+    if (scaledCurrent > 65535) {
+        scaledCurrent = 65535; // Cap at the maximum value for uint16_t
+    } else if (scaledCurrent < 0) {
+        scaledCurrent = 0; // Ensure non-negative value
+    }
+    return (uint16_t)scaledCurrent;
+}
+
 int16_t voltageDividerToPercent()
 {
    //Defines the upper and lower limit

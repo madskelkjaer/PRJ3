@@ -20,4 +20,7 @@ float currentHall();
 //Function that converts the voltage dividers signal, and returns it as a percentage
 int16_t voltageDividerToPercent(); 
 
+// Function to get the scaled battery current 
+int16_t scaledCurrentHall();
+
 /* [] END OF FILE */
