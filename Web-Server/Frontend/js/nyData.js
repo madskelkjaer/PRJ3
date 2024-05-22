@@ -25,6 +25,7 @@ function getData() {
 					sunDown,
 					sunLeft,
 					sunRight,
+					ampere,
 				] = item;
 				//checker at elevation og batteristatus er tal, ellers saettes de til 0
 				const validElevation =
@@ -33,6 +34,8 @@ function getData() {
 					typeof batteristatus === "number" && !isNaN(batteristatus)
 						? batteristatus
 						: 0;
+				const validAmpere =
+					typeof ampere === "number" && !isNaN(ampere) ? ampere : 0;
 				return {
 					date,
 					azimuth,
@@ -42,6 +45,7 @@ function getData() {
 					sunRight,
 					sunUp,
 					sunDown,
+					ampere: validAmpere,
 				};
 			});
 		})
@@ -65,8 +69,8 @@ function updateData() {
 				const row = [
 					(index + 1).toString(),
 					record.date || "", // tom string hvis undefined
-					record.azimuth !== undefined ? record.azimuth.toString() : "", // konverterer til string hvis undefined
-					record.elevation !== undefined ? record.elevation.toString() : "", // konverterer til string hvis undefined
+					record.azimuth !== undefined ? record.azimuth.toString() : "", // konverterer til string hvis ikke undefined
+					record.elevation !== undefined ? record.elevation.toString() : "", // konverterer til string hvis ikke undefined
 					record.batteristatus !== undefined
 						? record.batteristatus.toString()
 						: "", // konverterer til string hvis undefined
@@ -74,10 +78,7 @@ function updateData() {
 					record.sunDown == 1 ? "Ja" : "Nej",
 					record.sunLeft == 1 ? "Ja" : "Nej",
 					record.sunRight == 1 ? "Ja" : "Nej",
-					// record.sunLeft !== undefined ? record.sunLeft.toString() : "", // konverterer til string hvis undefined
-					// record.sunRight !== undefined ? record.sunRight.toString() : "", // konverterer til string hvis undefined
-					// record.sunUp !== undefined ? record.sunUp.toString() : "", // konverterer til string hvis undefined
-					// record.sunDown !== undefined ? record.sunDown.toString() : "", // konverterer til string hvis undefined
+					record.ampere !== undefined ? record.ampere.toString() : "", // konverterer til string hvis ikke undefined
 				];
 				generateTableRow(row, tableBody);
 
@@ -90,6 +91,7 @@ function updateData() {
 				console.log("sunRight:", record.sunRight);
 				console.log("sunUp:", record.sunUp);
 				console.log("sunDown:", record.sunDown);
+				console.log("ampereInOut:", record.ampere);
 			});
 		})
 		.catch((error) => {
