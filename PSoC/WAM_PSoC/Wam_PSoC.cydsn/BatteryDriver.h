@@ -17,7 +17,7 @@ void handleByteReceived(uint8_t byteReceived);
 // Function to get the voltage signal from the ADC and returns it as an int16_t
 float currentHall(); 
 
-// Function to get the scaled battery current suitable for transmission
+// Function to get the scaled battery current 
 uint16_t scaledCurrentHall(); 
 
 // Function that converts the voltage dividers signal, and returns it as a percentage
