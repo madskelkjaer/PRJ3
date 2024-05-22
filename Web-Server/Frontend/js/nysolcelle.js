@@ -17,20 +17,20 @@ document.getElementById("maxLeft").textContent = maxLeft;
 let homeX = 0;
 let homeY = 0;
 
-function updateHome() {
-	if (
-		parseInt(document.getElementById("homeXInput").value) > maxRight ||
-		parseInt(document.getElementById("homeXInput").value) < maxLeft ||
-		parseInt(document.getElementById("homeYInput").value) > maxUp ||
-		parseInt(document.getElementById("homeYInput").value) < maxDown
-	) {
-		console.log("Fejl");
-	} else {
-		homeX = parseInt(document.getElementById("homeXInput").value) || 0;
-		homeY = parseInt(document.getElementById("homeYInput").value) || 0;
-		console.log(`HOME!! Elevation: ${homeX}, Azimuth: ${homeY}`);
-	}
-}
+// function updateHome() {
+// 	if (
+// 		parseInt(document.getElementById("homeXInput").value) > maxRight ||
+// 		parseInt(document.getElementById("homeXInput").value) < maxLeft ||
+// 		parseInt(document.getElementById("homeYInput").value) > maxUp ||
+// 		parseInt(document.getElementById("homeYInput").value) < maxDown
+// 	) {
+// 		console.log("Fejl");
+// 	} else {
+// 		homeX = parseInt(document.getElementById("homeXInput").value) || 0;
+// 		homeY = parseInt(document.getElementById("homeYInput").value) || 0;
+// 		console.log(`HOME!! Elevation: ${homeX}, Azimuth: ${homeY}`);
+// 	}
+// }
 
 // Funktion til API kald for at sende data til server
 function moveSolarCell(direction) {
@@ -77,7 +77,7 @@ const updateSolcelle = (message_data) => {
 };
 
 // Event listener for the "Update" button
-document.getElementById("updateButton").addEventListener("click", updateHome);
+//document.getElementById("updateButton").addEventListener("click", updateHome);
 
 //MED PILETASER -----------------------------------------------
 document.addEventListener("keydown", (event) => {
