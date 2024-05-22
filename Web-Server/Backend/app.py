@@ -39,13 +39,11 @@ def insertData(date, azimuth, elevation, batteristatus, ampere, sun_up, sun_down
     try:
         con = sqlite3.connect("database.db")
         cur = con.cursor()
-        mads = cur.execute(
-            "INSERT INTO data(date, azimuth, elevation, batteristatus, ampere, sun_up, sun_down, sun_left, sun_right) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
+        cur.execute(
+            "INSERT INTO data(date, azimuth, elevation, batteristatus, ampere, sun_up, sun_down, sun_left, sun_right) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (date, azimuth, elevation, batteristatus, ampere, sun_up, sun_down, sun_left, sun_right)
         )
-        mads1 = con.commit()
-
-        print("HEJ", mads, mads1)
+        con.commit()
 
         message = json.dumps({
             "date": date,
