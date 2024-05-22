@@ -55,7 +55,7 @@ const updateAutoManualStatus = async () => {
 		const data = await response.json();
 		console.log("Data fra API om auto/manual:", data);
 
-		// Directly set the status as 'manual' or 'automatic'
+		//opdaterer html
 		document.getElementById("statusAutoManual").innerHTML =
 			data.mode == "manual" ? "Manuel" : "Automatisk";
 	} catch (error) {
@@ -63,7 +63,6 @@ const updateAutoManualStatus = async () => {
 	}
 };
 
-// Initialize status and set up event listener
 document.addEventListener("DOMContentLoaded", () => {
 	updateAutoManualStatus();
 	document
@@ -72,10 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //toggle mellem auto og manual
-// Function to toggle between auto and manual modes
 const toggleAutoManualMode = async () => {
 	try {
-		// Fetch the current mode
+		//nuvaerende status
 		const response = await fetch(
 			"https://capital-renewing-jennet.ngrok-free.app/api/mode",
 			{
@@ -92,7 +90,7 @@ const toggleAutoManualMode = async () => {
 		const data = await response.json();
 		console.log("Current mode data from API:", data);
 
-		// Determine the new mode URL based on the current mode
+		//skifter paa baggrund af nuvaerende mode
 		let newModeUrl;
 		if (data.mode === "manual") {
 			newModeUrl =
@@ -102,7 +100,7 @@ const toggleAutoManualMode = async () => {
 				"https://capital-renewing-jennet.ngrok-free.app/api/mode/manual";
 		}
 
-		// Call the API to switch to the new mode using GET request
+		//kalder api vha get
 		const switchResponse = await fetch(newModeUrl, {
 			method: "GET",
 		});
@@ -116,6 +114,7 @@ const toggleAutoManualMode = async () => {
 		const switchData = await switchResponse.json();
 		console.log("Switched mode data from API:", switchData);
 
+		//opdaterer status i statusboksen
 		await updateAutoManualStatus();
 	} catch (error) {
 		console.error("Fejl i toggling af auto/manual mode:", error);
