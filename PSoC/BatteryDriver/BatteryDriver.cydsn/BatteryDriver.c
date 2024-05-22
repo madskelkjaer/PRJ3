@@ -34,7 +34,7 @@ int16_t voltageDividerToPercent()
 
    //Returns a scaled value, that shows the charge state of the battery
    int16_t scaled = (result2 * 3 - LowerLimit) * 100 / (UpperLimit - LowerLimit);
-
+   //Validation that secures that a battery percentage can't be lower than 0 and higher than 100
    return scaled > 100 ? 100 : (scaled < 0 ? 0 : scaled);
 }
 
