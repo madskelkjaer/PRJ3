@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		"wss://capital-renewing-jennet.ngrok-free.app/api/ws"
 	);
 	ws.onopen = () => {
-		console.log("Connected to WS fra solcelleData");
+		console.log("Connected to solcelleData WS");
 	};
 
 	ws.onmessage = (event) => {
 		const data = JSON.parse(event.data);
-		console.log("Data from WS solcelledata:", data);
+		console.log("Data fra solcelledata WS:", data);
 		updateWSData(data);
 	};
 });
