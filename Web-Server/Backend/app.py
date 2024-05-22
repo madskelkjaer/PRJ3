@@ -86,7 +86,7 @@ bus = 0
 device = 0
 spi.open(bus, device)
 
-spi.max_speed_hz = 1000
+spi.max_speed_hz = 50_000
 spi.mode = 0
 
 app = Flask(__name__)
@@ -168,7 +168,7 @@ def runner():
 
     while True:
         sendAndRecieveSpiData()
-        time.sleep(0.2)
+        time.sleep(0.1)
 
 @app.route("/api/getdata/<int:limit>")
 def getdata(limit: int):
