@@ -16,7 +16,7 @@ float currentHall()
     {
         //This iteration summarizes 1000 measurements, with the purpose of returning a mean value.
         int16_t result1 = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16());
-        float convToAmps = (result1-2.495)/0.3339;
+        float convToAmps = (result1-2495)/0.3339;
         
         sum+= convToAmps;
     }
