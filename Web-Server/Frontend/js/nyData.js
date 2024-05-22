@@ -21,11 +21,11 @@ function getData() {
 					azimuth,
 					elevation,
 					batteristatus,
+					ampere,
 					sunUp,
 					sunDown,
 					sunLeft,
 					sunRight,
-					ampere,
 				] = item;
 				//checker at elevation og batteristatus er tal, ellers saettes de til 0
 				const validElevation =
