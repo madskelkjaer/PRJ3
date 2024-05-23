@@ -94,7 +94,7 @@ void manualAction(uint8_t command) {
             current_time = 0; // Reset tiden <3
             break;
         case 7:
-            goHome();
+            need_to_go_home = true;
             current_time = 0; // Reset tiden <3
             break;
         default:

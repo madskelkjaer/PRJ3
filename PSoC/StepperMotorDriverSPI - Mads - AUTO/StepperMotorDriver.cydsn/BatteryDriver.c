@@ -26,14 +26,10 @@ float currentHall()
 
 int16_t scaledCurrentHall() {
     float current = currentHall();
-    // Scale the current to microamps (0.650 A -> 650000 uA)
-    int scaledCurrent = (int)(current * 1000000); // scale to microamps
-    if (scaledCurrent > 65535) {
-        scaledCurrent = 65535; // Cap at the maximum value for uint16_t
-    } else if (scaledCurrent < 0) {
-        scaledCurrent = 0; // Ensure non-negative value
-    }
-    return (uint16_t)scaledCurrent;
+    // Scale the current to microamps (0.650 A -> 650 mA)
+    int16_t scaledCurrent = (int16_t)(current * 1); // scale to microamps
+    
+    return scaledCurrent;
 }
 
 int16_t voltageDividerToPercent()
