@@ -1,0 +1,26 @@
+.infoboks {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    background-color: #f9f9f9;
+    position: fixed;
+    right: 150px;
+    top: 210px;
+}
+
+.infoboks h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.infoboks p {
+    color: #666;
+    font-size: 1rem;
+    margin: 10px;
+}

@@ -1,0 +1,175 @@
+/* container til det hele hele!! */
+.container {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+}
+
+/* container til det hele!! */
+.child {
+	width: 50%;
+	height: 100%;
+	padding: 100px;
+}
+
+/* container til solcelleillustration */
+.child:nth-child(1) {
+	width: 25%;
+}
+
+/* Styrer containeren med solcelleillustration */
+.child > header {
+	margin-top: 100px;
+	margin-bottom: 200px;
+	margin-left: 50px;
+}
+
+/* Styrer bredden og placeringen på menuen */
+.child:nth-child(2) {
+	width: 45%;
+	/* margin-right: 100px; */
+}
+
+/* formatterer menuen */
+.dropdown {
+	width: 100%;
+	position: block;
+	font-size: 24px;
+	text-align: center;
+	margin: 10px;
+	background-color: #f9f9f9;
+	cursor: pointer;
+	border: 1px solid black;
+}
+
+/* Er hover på menuknapperne */
+.active,
+.dropdown:hover {
+	background-color: #e6f4f4;
+}
+
+/* Sætter baggrundsfarve på dropdown kasser */
+.dropdown-content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+}
+
+/* BRUGES TIL KNAPPERNE TIL HOEJRE */
+.piletaster {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Centrerer piletastknapperne */
+.row {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	margin-left: 50%;
+	transform: translateX(-15%);
+}
+
+/* Piletasternes styling yo */
+#piletaster .row button {
+	font-size: 25px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	margin: 2px;
+	border: none;
+	background-color: #b6d5d8;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+/* Piletast hover farve weee */
+#piletaster .row button:hover {
+	background-color: gray;
+}
+
+#solar-square {
+	width: 300px;
+	height: 300px;
+	margin: 0;
+	position: relative;
+	transform: rotate(45deg);
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+#up,
+#down,
+#left,
+#right {
+	width: 50%;
+	height: 50%;
+	background: #c9c9c9;
+	position: absolute;
+	box-shadow: inset 0px 0px 0px 1px #a0a0a0;
+}
+
+.sun-active {
+	background-color: #ffe74c !important;
+}
+
+#up {
+	top: 0;
+}
+
+#right {
+	top: 0;
+	left: 50%;
+}
+
+#down {
+	top: 50%;
+	left: 50%;
+}
+
+#left {
+	top: 50%;
+	left: 0;
+}
+
+#updateAutoManual {
+	padding: 10px 10px;
+	background-color: #b6d5d8;
+	color: black;
+	border: none;
+	border-radius: 10px;
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+#updateAutoManual:hover {
+	background-color: #097885;
+	color: white;
+}
+
+.status-container {
+	margin-left: 45px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	background-color: white;
+	border: 1px solid #000;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+.status-container p {
+	margin: 0;
+	flex-grow: 1;
+	text-align: center;
+	padding: 0 10px 0 10px;
+}
+
+.status-container span {
+	margin-right: 10px; /* Adjust spacing between text and status */
+}
