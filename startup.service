@@ -1,4 +1,5 @@
 # sudo nano /etc/systemd/system/startup.service
+#hej
 [Unit]
 Description=Run startup.sh at boot
 After=network-online.target
