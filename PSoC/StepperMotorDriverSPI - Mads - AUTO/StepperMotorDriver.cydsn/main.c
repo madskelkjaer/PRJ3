@@ -201,7 +201,7 @@ int main(void)
     {
         if (need_to_go_home) {
             setSPIEnable(false);
-            setSPIEnable(false);
+            setTimerEnable(false);
             goHome();
             need_to_go_home = false;
             setTimerEnable(true);
