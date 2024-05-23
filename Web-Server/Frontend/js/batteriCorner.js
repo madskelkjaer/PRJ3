@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	);
 	ws.onopen = () => {
 		console.log("Connected to battery WS");
+		document.getElementById("statusActive").innerHTML = "Ja";
 	};
 
 	ws.onmessage = (event) => {
