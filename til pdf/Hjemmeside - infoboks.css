@@ -1,0 +1,39 @@
+.infoboks {
+	display: flex;
+	border: 1px solid #000;
+	border-radius: 15px;
+	padding: 20px;
+	width: 600px;
+	background-color: #f9f9f9;
+	position: absolute;
+	/* Eller 'fixed' hvis det skal være i forhold til viewport */
+	right: 750px;
+	/* Placerer boksen i højre side */
+	margin-right: 10px;
+	/* Juster margin for at skabe plads til højre */
+	top: 600px;
+	/* Juster positionen vertikalt */
+}
+
+.infoboks h2 {
+	text-align: center;
+	color: #333;
+	font-size: 1.5rem;
+}
+
+.infoboks p {
+	color: #666;
+	font-size: 1rem;
+}
+
+/* Kolonne 1*/
+.left-column {
+	flex: 3;
+}
+
+/*Kolonne 2*/
+.right-column {
+	flex: 1;
+	padding-left: 20px;
+	/* Juster afstand mellem kolonner efter behov */
+}

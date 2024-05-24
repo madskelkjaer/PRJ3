@@ -3343,22 +3343,22 @@
   <Group key="Pin2">
     <Group key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba">
       <Group key="0">
-        <Data key="Port Format" value="0,6" />
+        <Data key="Port Format" value="1,4" />
       </Group>
     </Group>
     <Group key="30dd215b-2c18-463f-8f78-ec6137d76c02">
       <Group key="0">
-        <Data key="Port Format" value="0,5" />
+        <Data key="Port Format" value="1,7" />
       </Group>
     </Group>
     <Group key="283e0a92-d730-4570-a26b-2e272a962050">
       <Group key="0">
-        <Data key="Port Format" value="0,1" />
+        <Data key="Port Format" value="1,6" />
       </Group>
     </Group>
     <Group key="519e6e68-8600-491a-8adb-f8c188c3bb8e">
       <Group key="0">
-        <Data key="Port Format" value="0,7" />
+        <Data key="Port Format" value="1,5" />
       </Group>
     </Group>
   </Group>

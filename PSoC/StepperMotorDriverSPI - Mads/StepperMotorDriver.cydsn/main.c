@@ -42,19 +42,19 @@ CY_ISR(SPI_RX_HANDLER)
     {
         case 1:
             // Move 100 steps left.
-            moveAzimuth(200);
+            moveAzimuth(300);
             break;
         case 2:
             // Move 100 steps right.
-            moveAzimuth(-200);
+            moveAzimuth(-300);
             break;
         case 3:
             // Move 100 steps up.
-            moveElevation(200);
+            moveElevation(300);
             break;
         case 4:
             // Move 100 steps down.
-            moveElevation(-200);
+            moveElevation(-300);
             break;
         case 7:
             goHome();
@@ -64,7 +64,7 @@ CY_ISR(SPI_RX_HANDLER)
             break;
     }
     
-    MOTOR_STEP();    
+    // MOTOR_STEP();    
 }
 
 int main(void)
@@ -78,12 +78,11 @@ int main(void)
     isr_motor_StartEx(MOTOR_STEP);
     UART_1_PutString("WAM!\r\n");
     
+    goHome();
+    
     // Start SPI Slave component.
     SPIS_1_Start();
     isr_spis_1_rx_StartEx(SPI_RX_HANDLER);
-    
-    goHome();
-    
 
     int16_t voltage = 0;
     int16_t azimuth = 0;

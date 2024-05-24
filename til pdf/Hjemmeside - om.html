@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="/images/favicon.png" />
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="stylesheet" href="/css/omStyles.css" />
+		<link rel="stylesheet" href="/css/tilbageKnap.css" />
+		<title>Om Page</title>
+	</head>
+
+	<body>
+		<div class="header-container">
+			<h1 style="text-align: center; font-size: 200%">
+				<a href="index.html" style="text-decoration: none; color: inherit"
+					>PRJ3 - WAM</a
+				>
+			</h1>
+			<a href="index.html" class="custom-button">
+				<div class="arrow"></div>
+			</a>
+		</div>
+
+		<div class="topnav">
+			<a href="styring.html">STYRING</a>
+			<a href="batteri.html">BATTERI</a>
+			<a href="data.html">DATA</a>
+			<a href="om.html" class="active">OM</a>
+		</div>
+
+		<section class="about">
+			<h1>Om projektet</h1>
+			<p style="font-weight: bold">Watt-A-Move (WAM) Solcelleprojekt</p>
+			<div class="about-info">
+				<div>
+					<p>
+						WAM er et solcelleprojekt udarbejdet af 3. semesterstuderende fra
+						Aarhus Univeristet i en blandet gruppe af Softwareteknologi- og
+						Elektronik studerende. Projektet omhandler optimering af en
+						solcelle, så denne selv kan bevæge sig, sådan at der opnåes optimal
+						position i forhold til solens placering. Dette er for at maksimere
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="container">
+			<form
+				action="https://capital-renewing-jennet.ngrok-free.app/api/saveform"
+				method="post"
+			>
+				<label for="fname">Navn</label>
+				<input type="text" id="fname" name="name" placeholder="Your name.." />
+
+				<label for="email">Email</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					placeholder="Your email address"
+				/>
+
+				<label for="subject">Besked</label>
+				<textarea
+					id="subject"
+					name="message"
+					placeholder="Write something.."
+					style="height: 200px"
+				></textarea>
+
+				<input type="submit" value="Submit" />
+			</form>
+		</div>
+		<div>
+			<img
+				src="/images/battery0-25.png"
+				alt="batteri"
+				class="battery"
+				id="battery"
+			/>
+		</div>
+		<script src="/js/batteriCorner.js" defer></script>
+	</body>
+</html>
