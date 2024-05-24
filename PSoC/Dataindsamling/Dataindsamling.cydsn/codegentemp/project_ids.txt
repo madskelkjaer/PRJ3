@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|6be9b899-04d0-4329-a96b-785bee396160
+C:\Users\degn\OneDrive - Aarhus universitet\Dokumenter\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|91d43616-dcf1-4255-8403-7f6494a3b669
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|e2933f1b-81e7-483f-88a3-6fe11c56dedf
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|57adab81-02b4-4bdf-971f-286638a5bf3e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3f656a38-4132-4ef0-bfc6-c5a23c4f15df
+C:\Users\degn\OneDrive - Aarhus universitet\Skrivebord\AU\E3\PRJ3\Git\PRJ3\PSoC\Dataindsamling\Dataindsamling.cydsn\Dataindsamling.cyprj|f71efb62-fd62-43b6-a93a-0f76f3003c6a
